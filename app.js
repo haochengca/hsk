@@ -5892,6 +5892,7 @@ function buildCharPhraseMap() {
 
 const state = {
   auth: { loggedIn: false, role: "", username: "", token: "" },
+  lang: "zh",
   tab: "learn",
   level: "all",
   learnType: "char",
@@ -5917,6 +5918,7 @@ const state = {
   reviewList: [],
   reviewIndex: 0,
   reviewActive: false,
+  reviewSessionPointsEarned: 0,
   reviewMessage: "请选择默写类型、等级和字数，然后点击“开始默写”。",
   progress: {},
   wrongBook: [],
@@ -5938,7 +5940,9 @@ const state = {
   reviewDraftActive: false,
   reviewSessionSnapshot: null,
   pendingSubmissionPayloads: [],
-  adminWordReviewDrafts: {}
+  adminWordReviewDrafts: {},
+  adminWrongBookQueryUser: "",
+  adminWrongBookItems: []
 };
 
 const tabs = Array.from(document.querySelectorAll(".tab"));
@@ -5948,6 +5952,7 @@ const panels = {
   review: document.getElementById("review-panel"),
   wrong: document.getElementById("wrong-panel"),
   admin: document.getElementById("admin-panel"),
+  "admin-wrong": document.getElementById("admin-wrong-panel"),
   records: document.getElementById("records-panel")
 };
 const authScreen = document.getElementById("auth-screen");
@@ -5958,18 +5963,27 @@ const authUsername = document.getElementById("auth-username");
 const authPassword = document.getElementById("auth-password");
 const authPasswordConfirmRow = document.getElementById("auth-password-confirm-row");
 const authPasswordConfirm = document.getElementById("auth-password-confirm");
+const authTogglePassword = document.getElementById("auth-toggle-password");
+const authLangSelect = document.getElementById("auth-lang-select");
 const authLogin = document.getElementById("auth-login");
 const authRegister = document.getElementById("auth-register");
 const authMsg = document.getElementById("auth-msg");
 const logoutBtn = document.getElementById("logout-btn");
 const userBadge = document.getElementById("user-badge");
+const appLangSelect = document.getElementById("app-lang-select");
 const adminTab = document.getElementById("admin-tab");
+const adminWrongTab = document.getElementById("admin-wrong-tab");
 const recordsTab = document.getElementById("records-tab");
 const adminCount = document.getElementById("admin-count");
 const adminList = document.getElementById("admin-list");
 const adminUserFilter = document.getElementById("admin-user-filter");
 const adminTimeFilter = document.getElementById("admin-time-filter");
 const adminFilterApply = document.getElementById("admin-filter-apply");
+const adminWrongSearchUser = document.getElementById("admin-wrong-search-user");
+const adminWrongSearch = document.getElementById("admin-wrong-search");
+const adminWrongCount = document.getElementById("admin-wrong-count");
+const adminWrongList = document.getElementById("admin-wrong-list");
+const adminWrongMsg = document.getElementById("admin-wrong-msg");
 const recordsCount = document.getElementById("records-count");
 const recordsList = document.getElementById("records-list");
 const recordsStats = document.getElementById("records-stats");
@@ -6050,6 +6064,284 @@ const startWrongDictation = document.getElementById("start-wrong-dictation");
 
 const statsText = document.getElementById("stats-text");
 const rewardText = document.getElementById("reward-text");
+const pointsGainFx = document.getElementById("points-gain-fx");
+
+const LANG_KEY = "hsk_ui_lang";
+const SUPPORTED_LANGS = ["zh", "en", "fr", "es"];
+const I18N = {
+  zh: {
+    "app.title": "HSK 汉字学习与书写复习",
+    "lang.label": "语言",
+    "auth.welcome": "欢迎使用",
+    "auth.subtitle": "登录后开始汉字学习、书写练习与默写复习。",
+    "auth.loginTab": "登录",
+    "auth.registerTab": "注册",
+    "auth.username": "用户名",
+    "auth.password": "密码",
+    "auth.confirmPassword": "确认密码",
+    "auth.usernamePlaceholder": "请输入用户名",
+    "auth.passwordPlaceholder": "请输入密码",
+    "auth.confirmPasswordPlaceholder": "请再次输入密码",
+    "auth.showPassword": "显示密码",
+    "auth.hidePassword": "隐藏密码",
+    "auth.login": "登录",
+    "auth.register": "注册账号",
+    "auth.loggingIn": "登录中...",
+    "auth.registering": "注册中...",
+    "auth.enterUsernamePassword": "请输入用户名和密码。",
+    "auth.fillAllFields": "请完整填写注册信息。",
+    "auth.passwordNotMatch": "两次密码不一致。",
+    "auth.registerSuccess": "注册成功，请点击“登录”进入系统。",
+    "auth.loginFailed": "登录失败",
+    "auth.registerFailed": "注册失败",
+    "auth.loggedOut": "已退出登录。",
+    "auth.needLogin": "请先登录后使用。",
+    "top.logout": "退出登录",
+    "top.roleAdmin": "管理员",
+    "top.roleUser": "普通用户",
+    "top.currentUser": "当前用户：{username}（{role}）",
+    "top.notLoggedIn": "未登录",
+    "nav.learn": "学习",
+    "nav.write": "写字",
+    "nav.review": "默写测验",
+    "nav.wrong": "错题本",
+    "nav.records": "我的记录",
+    "nav.adminReview": "管理审核",
+    "nav.adminWrong": "题本管理",
+    "adminWrong.title": "题本管理",
+    "adminWrong.username": "用户名",
+    "adminWrong.usernamePlaceholder": "输入用户名后查询",
+    "adminWrong.search": "查询错题本",
+    "adminWrong.count": "错题：{count} 条",
+    "adminWrong.onlyAdmin": "仅管理员可查看。",
+    "adminWrong.promptQuery": "请输入用户名并点击“查询错题本”。",
+    "adminWrong.empty": "该用户当前没有错题。",
+    "adminWrong.delete": "删除",
+    "adminWrong.enterUsername": "请输入用户名。",
+    "adminWrong.queryOk": "已查询用户 {username} 的错题本。",
+    "adminWrong.queryFailed": "查询失败",
+    "adminWrong.deleted": "已删除：{text}",
+    "adminWrong.deleteFailed": "删除失败",
+    "adminWrong.confirmDelete": "确认从 {username} 的错题本删除「{text}」吗？"
+  },
+  en: {
+    "app.title": "HSK Chinese Characters Study & Writing Review",
+    "lang.label": "Language",
+    "auth.welcome": "Welcome",
+    "auth.subtitle": "Sign in to start learning characters, handwriting practice, and dictation review.",
+    "auth.loginTab": "Login",
+    "auth.registerTab": "Register",
+    "auth.username": "Username",
+    "auth.password": "Password",
+    "auth.confirmPassword": "Confirm Password",
+    "auth.usernamePlaceholder": "Enter username",
+    "auth.passwordPlaceholder": "Enter password",
+    "auth.confirmPasswordPlaceholder": "Enter password again",
+    "auth.showPassword": "Show Password",
+    "auth.hidePassword": "Hide Password",
+    "auth.login": "Login",
+    "auth.register": "Create Account",
+    "auth.loggingIn": "Signing in...",
+    "auth.registering": "Registering...",
+    "auth.enterUsernamePassword": "Please enter username and password.",
+    "auth.fillAllFields": "Please complete all registration fields.",
+    "auth.passwordNotMatch": "Passwords do not match.",
+    "auth.registerSuccess": "Registration successful. Please click Login to continue.",
+    "auth.loginFailed": "Login failed",
+    "auth.registerFailed": "Registration failed",
+    "auth.loggedOut": "Logged out.",
+    "auth.needLogin": "Please log in first.",
+    "top.logout": "Log out",
+    "top.roleAdmin": "Admin",
+    "top.roleUser": "User",
+    "top.currentUser": "Current user: {username} ({role})",
+    "top.notLoggedIn": "Not logged in",
+    "nav.learn": "Learn",
+    "nav.write": "Write",
+    "nav.review": "Dictation",
+    "nav.wrong": "Wrong Book",
+    "nav.records": "My Records",
+    "nav.adminReview": "Admin Review",
+    "nav.adminWrong": "Wrong-Book Admin",
+    "adminWrong.title": "Wrong-Book Management",
+    "adminWrong.username": "Username",
+    "adminWrong.usernamePlaceholder": "Enter username and query",
+    "adminWrong.search": "Query Wrong Book",
+    "adminWrong.count": "Wrong items: {count}",
+    "adminWrong.onlyAdmin": "Admin access only.",
+    "adminWrong.promptQuery": "Enter a username and click Query Wrong Book.",
+    "adminWrong.empty": "This user has no wrong items.",
+    "adminWrong.delete": "Delete",
+    "adminWrong.enterUsername": "Please enter a username.",
+    "adminWrong.queryOk": "Loaded wrong-book items for {username}.",
+    "adminWrong.queryFailed": "Query failed",
+    "adminWrong.deleted": "Deleted: {text}",
+    "adminWrong.deleteFailed": "Delete failed",
+    "adminWrong.confirmDelete": "Remove \"{text}\" from {username}'s wrong book?"
+  },
+  fr: {
+    "app.title": "HSK Étude des caractères chinois et révision d'écriture",
+    "lang.label": "Langue",
+    "auth.welcome": "Bienvenue",
+    "auth.subtitle": "Connectez-vous pour apprendre les caractères, pratiquer l'écriture et faire des dictées.",
+    "auth.loginTab": "Connexion",
+    "auth.registerTab": "Inscription",
+    "auth.username": "Nom d'utilisateur",
+    "auth.password": "Mot de passe",
+    "auth.confirmPassword": "Confirmer le mot de passe",
+    "auth.usernamePlaceholder": "Entrez le nom d'utilisateur",
+    "auth.passwordPlaceholder": "Entrez le mot de passe",
+    "auth.confirmPasswordPlaceholder": "Entrez encore le mot de passe",
+    "auth.showPassword": "Afficher",
+    "auth.hidePassword": "Masquer",
+    "auth.login": "Se connecter",
+    "auth.register": "Créer un compte",
+    "auth.loggingIn": "Connexion...",
+    "auth.registering": "Inscription...",
+    "auth.enterUsernamePassword": "Veuillez entrer le nom d'utilisateur et le mot de passe.",
+    "auth.fillAllFields": "Veuillez remplir tous les champs d'inscription.",
+    "auth.passwordNotMatch": "Les mots de passe ne correspondent pas.",
+    "auth.registerSuccess": "Inscription réussie. Cliquez sur Connexion pour continuer.",
+    "auth.loginFailed": "Échec de la connexion",
+    "auth.registerFailed": "Échec de l'inscription",
+    "auth.loggedOut": "Déconnecté.",
+    "auth.needLogin": "Veuillez vous connecter d'abord.",
+    "top.logout": "Déconnexion",
+    "top.roleAdmin": "Administrateur",
+    "top.roleUser": "Utilisateur",
+    "top.currentUser": "Utilisateur actuel : {username} ({role})",
+    "top.notLoggedIn": "Non connecté",
+    "nav.learn": "Apprendre",
+    "nav.write": "Écrire",
+    "nav.review": "Dictée",
+    "nav.wrong": "Cahier d'erreurs",
+    "nav.records": "Mes records",
+    "nav.adminReview": "Revue admin",
+    "nav.adminWrong": "Gestion du cahier",
+    "adminWrong.title": "Gestion du cahier d'erreurs",
+    "adminWrong.username": "Nom d'utilisateur",
+    "adminWrong.usernamePlaceholder": "Entrez le nom et lancez la recherche",
+    "adminWrong.search": "Rechercher",
+    "adminWrong.count": "Erreurs : {count}",
+    "adminWrong.onlyAdmin": "Accès administrateur uniquement.",
+    "adminWrong.promptQuery": "Entrez un nom d'utilisateur puis cliquez sur Rechercher.",
+    "adminWrong.empty": "Cet utilisateur n'a aucune erreur.",
+    "adminWrong.delete": "Supprimer",
+    "adminWrong.enterUsername": "Veuillez entrer un nom d'utilisateur.",
+    "adminWrong.queryOk": "Cahier d'erreurs chargé pour {username}.",
+    "adminWrong.queryFailed": "Échec de la recherche",
+    "adminWrong.deleted": "Supprimé : {text}",
+    "adminWrong.deleteFailed": "Échec de la suppression",
+    "adminWrong.confirmDelete": "Supprimer « {text} » du cahier d'erreurs de {username} ?"
+  },
+  es: {
+    "app.title": "HSK Estudio de caracteres chinos y repaso de escritura",
+    "lang.label": "Idioma",
+    "auth.welcome": "Bienvenido",
+    "auth.subtitle": "Inicia sesión para aprender caracteres, practicar escritura y repasar dictado.",
+    "auth.loginTab": "Iniciar sesión",
+    "auth.registerTab": "Registrarse",
+    "auth.username": "Usuario",
+    "auth.password": "Contraseña",
+    "auth.confirmPassword": "Confirmar contraseña",
+    "auth.usernamePlaceholder": "Ingresa usuario",
+    "auth.passwordPlaceholder": "Ingresa contraseña",
+    "auth.confirmPasswordPlaceholder": "Ingresa la contraseña de nuevo",
+    "auth.showPassword": "Mostrar",
+    "auth.hidePassword": "Ocultar",
+    "auth.login": "Entrar",
+    "auth.register": "Crear cuenta",
+    "auth.loggingIn": "Iniciando...",
+    "auth.registering": "Registrando...",
+    "auth.enterUsernamePassword": "Ingresa usuario y contraseña.",
+    "auth.fillAllFields": "Completa todos los campos de registro.",
+    "auth.passwordNotMatch": "Las contraseñas no coinciden.",
+    "auth.registerSuccess": "Registro exitoso. Haz clic en Iniciar sesión para continuar.",
+    "auth.loginFailed": "Error de inicio de sesión",
+    "auth.registerFailed": "Error de registro",
+    "auth.loggedOut": "Sesión cerrada.",
+    "auth.needLogin": "Inicia sesión primero.",
+    "top.logout": "Cerrar sesión",
+    "top.roleAdmin": "Administrador",
+    "top.roleUser": "Usuario",
+    "top.currentUser": "Usuario actual: {username} ({role})",
+    "top.notLoggedIn": "Sin iniciar sesión",
+    "nav.learn": "Aprender",
+    "nav.write": "Escribir",
+    "nav.review": "Dictado",
+    "nav.wrong": "Cuaderno de errores",
+    "nav.records": "Mis registros",
+    "nav.adminReview": "Revisión admin",
+    "nav.adminWrong": "Gestión de errores",
+    "adminWrong.title": "Gestión del cuaderno de errores",
+    "adminWrong.username": "Usuario",
+    "adminWrong.usernamePlaceholder": "Ingresa usuario y consulta",
+    "adminWrong.search": "Consultar",
+    "adminWrong.count": "Errores: {count}",
+    "adminWrong.onlyAdmin": "Solo administradores.",
+    "adminWrong.promptQuery": "Ingresa un usuario y pulsa Consultar.",
+    "adminWrong.empty": "Este usuario no tiene errores.",
+    "adminWrong.delete": "Eliminar",
+    "adminWrong.enterUsername": "Ingresa un usuario.",
+    "adminWrong.queryOk": "Cuaderno de errores cargado para {username}.",
+    "adminWrong.queryFailed": "Error de consulta",
+    "adminWrong.deleted": "Eliminado: {text}",
+    "adminWrong.deleteFailed": "Error al eliminar",
+    "adminWrong.confirmDelete": "¿Eliminar \"{text}\" del cuaderno de errores de {username}?"
+  }
+};
+
+function normalizeLang(lang) {
+  return SUPPORTED_LANGS.includes(lang) ? lang : "zh";
+}
+
+function t(key, vars = {}) {
+  const langPack = I18N[state.lang] || I18N.zh;
+  const fallback = I18N.zh[key] || key;
+  const template = langPack[key] || fallback;
+  return String(template).replace(/\{(\w+)\}/g, (_, k) => (vars[k] == null ? "" : String(vars[k])));
+}
+
+function updateAuthTogglePasswordLabel() {
+  if (!authTogglePassword) return;
+  authTogglePassword.textContent = authPassword.type === "password" ? t("auth.showPassword") : t("auth.hidePassword");
+}
+
+function translateStaticText() {
+  document.title = t("app.title");
+  document.documentElement.lang = state.lang === "zh" ? "zh-CN" : state.lang;
+  document.querySelectorAll("[data-i18n]").forEach((el) => {
+    const key = el.getAttribute("data-i18n");
+    if (!key) return;
+    el.textContent = t(key);
+  });
+  document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+    const key = el.getAttribute("data-i18n-placeholder");
+    if (!key) return;
+    el.setAttribute("placeholder", t(key));
+  });
+  updateAuthTogglePasswordLabel();
+}
+
+function refreshUserBadgeText() {
+  if (!userBadge) return;
+  if (!state.auth.loggedIn || !state.auth.username) {
+    userBadge.textContent = t("top.notLoggedIn");
+    return;
+  }
+  const roleLabel = state.auth.role === "admin" ? t("top.roleAdmin") : t("top.roleUser");
+  userBadge.textContent = t("top.currentUser", { username: state.auth.username, role: roleLabel });
+}
+
+function setLanguage(lang, persist = true) {
+  state.lang = normalizeLang(lang);
+  if (persist) localStorage.setItem(LANG_KEY, state.lang);
+  if (authLangSelect) authLangSelect.value = state.lang;
+  if (appLangSelect) appLangSelect.value = state.lang;
+  translateStaticText();
+  refreshUserBadgeText();
+  renderAdminWrongBookPanel();
+}
 
 function loadProgress(username = state.auth.username) {
   return state.progress || {};
@@ -6274,6 +6566,18 @@ function ensureWeeklyRewards() {
   saveRewards();
 }
 
+function playPointsGainEffect(amount, title = "本次") {
+  if (!pointsGainFx || !amount || amount <= 0) return;
+  pointsGainFx.textContent = `${title} +${amount} 分`;
+  pointsGainFx.classList.remove("is-show");
+  // Force reflow so repeated gains retrigger animation.
+  void pointsGainFx.offsetWidth;
+  pointsGainFx.classList.add("is-show");
+  setTimeout(() => {
+    pointsGainFx.classList.remove("is-show");
+  }, 1150);
+}
+
 function addPoints(amount) {
   if (!amount || amount <= 0) return;
   ensureWeeklyRewards();
@@ -6324,6 +6628,7 @@ async function loadUserData() {
   refreshStats();
   refreshRewards();
   renderAdminPanel();
+  renderAdminWrongBookPanel();
   renderUserRecords();
   renderLearnCharList();
 }
@@ -6433,6 +6738,57 @@ function renderAdminPanel() {
     .join("");
 }
 
+function renderAdminWrongBookPanel() {
+  if (state.auth.role !== "admin") {
+    if (adminWrongCount) adminWrongCount.textContent = t("adminWrong.count", { count: 0 });
+    if (adminWrongList) adminWrongList.innerHTML = `<p>${t("adminWrong.onlyAdmin")}</p>`;
+    if (adminWrongMsg) adminWrongMsg.textContent = "";
+    return;
+  }
+  const items = Array.isArray(state.adminWrongBookItems) ? state.adminWrongBookItems : [];
+  if (adminWrongCount) adminWrongCount.textContent = t("adminWrong.count", { count: items.length });
+  if (adminWrongSearchUser) adminWrongSearchUser.value = state.adminWrongBookQueryUser || "";
+  if (!adminWrongList) return;
+  if (!state.adminWrongBookQueryUser) {
+    adminWrongList.innerHTML = `<p>${t("adminWrong.promptQuery")}</p>`;
+    return;
+  }
+  if (!items.length) {
+    adminWrongList.innerHTML = `<p>${t("adminWrong.empty")}</p>`;
+    return;
+  }
+  adminWrongList.innerHTML = items
+    .map((it) => {
+      return `<div class="admin-item">
+        <div class="admin-wrong-row">
+          <p><strong>${it.text || "-"}</strong></p>
+          <button class="warn" data-action="delete-wrong-item" data-type="${it.type || "char"}" data-text="${it.text || ""}">${t("adminWrong.delete")}</button>
+        </div>
+      </div>`;
+    })
+    .join("");
+}
+
+async function queryAdminWrongBook(username) {
+  const name = String(username || "").trim();
+  if (!name) {
+    if (adminWrongMsg) adminWrongMsg.textContent = t("adminWrong.enterUsername");
+    return;
+  }
+  try {
+    const resp = await apiRequest(`/api/admin/users/${encodeURIComponent(name)}/wrong-book`);
+    state.adminWrongBookQueryUser = name;
+    state.adminWrongBookItems = Array.isArray(resp.wrongBook) ? resp.wrongBook : [];
+    if (adminWrongMsg) adminWrongMsg.textContent = t("adminWrong.queryOk", { username: name });
+    renderAdminWrongBookPanel();
+  } catch (err) {
+    state.adminWrongBookQueryUser = "";
+    state.adminWrongBookItems = [];
+    if (adminWrongMsg) adminWrongMsg.textContent = err && err.message ? err.message : t("adminWrong.queryFailed");
+    renderAdminWrongBookPanel();
+  }
+}
+
 function renderUserRecords() {
   if (!state.auth.username || state.auth.role !== "user") {
     recordsCount.textContent = "记录：0 条";
@@ -6524,7 +6880,7 @@ async function setAuthState(username, role, token) {
   saveSession();
   authScreen.classList.add("hidden");
   appShell.classList.remove("hidden");
-  userBadge.textContent = `当前用户：${username}（${role === "admin" ? "管理员" : "普通用户"}）`;
+  refreshUserBadgeText();
   const admin = role === "admin";
   rewardText.classList.toggle("hidden", admin);
   statsText.classList.toggle("hidden", admin);
@@ -6534,12 +6890,14 @@ async function setAuthState(username, role, token) {
   wrongTabBtn.classList.toggle("hidden", admin);
   recordsTab.classList.toggle("hidden", admin);
   adminTab.classList.toggle("hidden", !admin);
-  if (!admin && state.tab === "admin") state.tab = "learn";
+  if (adminWrongTab) adminWrongTab.classList.toggle("hidden", !admin);
+  if (!admin && (state.tab === "admin" || state.tab === "admin-wrong")) state.tab = "learn";
   if (admin) switchTab("admin");
   else switchTab("learn");
   await loadUserData();
   renderReviewCard();
   renderAdminPanel();
+  renderAdminWrongBookPanel();
   renderUserRecords();
 }
 
@@ -6556,12 +6914,15 @@ async function logout() {
   }
   state.auth = { loggedIn: false, role: "", username: "", token: "" };
   state.adminWordReviewDrafts = {};
+  state.adminWrongBookQueryUser = "";
+  state.adminWrongBookItems = [];
   clearSession();
   statsText.classList.remove("hidden");
   rewardText.classList.remove("hidden");
   appShell.classList.add("hidden");
   authScreen.classList.remove("hidden");
-  authMsg.textContent = "已退出登录。";
+  authMsg.textContent = t("auth.loggedOut");
+  refreshUserBadgeText();
 }
 
 function switchAuthMode(mode) {
@@ -6573,16 +6934,35 @@ function switchAuthMode(mode) {
   authPasswordConfirmRow.classList.toggle("hidden", isLogin);
   authLogin.classList.toggle("hidden", !isLogin);
   authRegister.classList.toggle("hidden", isLogin);
+  authPassword.type = "password";
+  authPasswordConfirm.type = "password";
+  updateAuthTogglePasswordLabel();
   authMsg.textContent = "";
 }
 
+function setAuthPending(pending, mode = "login") {
+  const isLogin = mode === "login";
+  authUsername.disabled = pending;
+  authPassword.disabled = pending;
+  authPasswordConfirm.disabled = pending;
+  authTabLogin.disabled = pending;
+  authTabRegister.disabled = pending;
+  authTogglePassword.disabled = pending;
+  authLogin.disabled = pending;
+  authRegister.disabled = pending;
+  authLogin.textContent = pending && isLogin ? t("auth.loggingIn") : t("auth.login");
+  authRegister.textContent = pending && !isLogin ? t("auth.registering") : t("auth.register");
+}
+
 async function handleLogin() {
+  if (authLogin.disabled) return;
   const username = authUsername.value.trim();
   const password = authPassword.value;
   if (!username || !password) {
-    authMsg.textContent = "请输入用户名和密码。";
+    authMsg.textContent = t("auth.enterUsernamePassword");
     return;
   }
+  setAuthPending(true, "login");
   try {
     const resp = await apiRequest("/api/login", {
       method: "POST",
@@ -6591,33 +6971,39 @@ async function handleLogin() {
     authMsg.textContent = "";
     await setAuthState(resp.user.username, resp.user.role, resp.token);
   } catch (err) {
-    authMsg.textContent = err && err.message ? err.message : "登录失败";
+    authMsg.textContent = err && err.message ? err.message : t("auth.loginFailed");
+  } finally {
+    setAuthPending(false, "login");
   }
 }
 
 async function handleRegister() {
+  if (authRegister.disabled) return;
   const username = authUsername.value.trim();
   const password = authPassword.value;
   const confirm = authPasswordConfirm.value;
   if (!username || !password || !confirm) {
-    authMsg.textContent = "请完整填写注册信息。";
+    authMsg.textContent = t("auth.fillAllFields");
     return;
   }
   if (password !== confirm) {
-    authMsg.textContent = "两次密码不一致。";
+    authMsg.textContent = t("auth.passwordNotMatch");
     return;
   }
+  setAuthPending(true, "register");
   try {
     await apiRequest("/api/register", {
       method: "POST",
       body: JSON.stringify({ username, password })
     });
-    authMsg.textContent = "注册成功，请点击“登录”进入系统。";
+    authMsg.textContent = t("auth.registerSuccess");
     authPassword.value = "";
     authPasswordConfirm.value = "";
     switchAuthMode("login");
   } catch (err) {
-    authMsg.textContent = err && err.message ? err.message : "注册失败";
+    authMsg.textContent = err && err.message ? err.message : t("auth.registerFailed");
+  } finally {
+    setAuthPending(false, "register");
   }
 }
 
@@ -7432,6 +7818,7 @@ function startReviewSession(source, emptyMessage) {
   state.reviewList = filtered;
   state.reviewIndex = 0;
   state.reviewActive = false;
+  state.reviewSessionPointsEarned = 0;
   state.reviewMessage = filtered.length > 0 ? "默写前预览中..." : emptyMessage;
   if (filtered.length > 0) beginReviewDraftSession();
   runPreReviewPreviewAndStart();
@@ -7461,6 +7848,7 @@ function startDirectReviewSession(items, emptyMessage) {
   state.reviewList = unique;
   state.reviewIndex = 0;
   state.reviewActive = false;
+  state.reviewSessionPointsEarned = 0;
   state.reviewMessage = unique.length > 0 ? "默写前预览中..." : emptyMessage;
   if (unique.length > 0) beginReviewDraftSession();
   runPreReviewPreviewAndStart();
@@ -7473,6 +7861,7 @@ function cancelReviewSessionWithoutSave() {
   state.reviewActive = false;
   state.reviewList = [];
   state.reviewIndex = 0;
+  state.reviewSessionPointsEarned = 0;
   state.reviewMessage = "已取消本轮默写，数据未保存。";
   renderReviewCard();
 }
@@ -7543,12 +7932,23 @@ function finalizeReviewResult(item, isGood, accuracyPercent, meta = {}) {
     scheduleProgress(item, true);
     removeWrongItem(item);
     addPoints(earnedPoints);
+    state.reviewSessionPointsEarned += earnedPoints;
   } else {
     reviewFeedback.textContent = `${item.type === "word" ? "词语" : "默写"}不正确`;
     reviewAnswer.textContent = `正确答案：${item.text}（${item.meaning || ""}）`;
     reviewAnswer.classList.remove("is-hidden");
     scheduleProgress(item, false);
     addWrongItem(item);
+  }
+
+  if (item.type === "char" && isGood && Array.isArray(meta.mlFeature)) {
+    updateCharMlPrototype(item.text, meta.mlFeature);
+  }
+  if (item.type === "word" && Array.isArray(meta.mlUpdates)) {
+    meta.mlUpdates.forEach((x) => {
+      if (!x || !x.isGood || !x.char || !Array.isArray(x.feature)) return;
+      updateCharMlPrototype(x.char, x.feature);
+    });
   }
 
   saveProgress();
@@ -7561,6 +7961,8 @@ function finalizeReviewResult(item, isGood, accuracyPercent, meta = {}) {
   state.advanceTimer = setTimeout(() => {
     state.reviewIndex += 1;
     if (state.reviewIndex >= state.reviewList.length) {
+      const sessionPoints = Math.max(0, Number(state.reviewSessionPointsEarned) || 0);
+      state.reviewSessionPointsEarned = 0;
       commitReviewDraftSession().catch((err) => {
         console.warn("commit review draft failed:", err && err.message ? err.message : err);
       });
@@ -7569,6 +7971,7 @@ function finalizeReviewResult(item, isGood, accuracyPercent, meta = {}) {
       state.reviewList = [];
       state.reviewIndex = 0;
       renderReviewCard();
+      if (sessionPoints > 0) playPointsGainEffect(sessionPoints, "本轮默写");
       rebuildWrongQueue();
       return;
     }
@@ -7782,6 +8185,78 @@ function scoreGridEngine(userBits, templateBits, size) {
   return Math.max(0, Math.min(1, score));
 }
 
+function downsampleProfile(profile, bins = 12) {
+  const n = profile.length;
+  const out = new Float32Array(bins);
+  if (!n || bins <= 0) return out;
+  const step = n / bins;
+  for (let i = 0; i < bins; i += 1) {
+    const start = Math.floor(i * step);
+    const end = Math.max(start + 1, Math.floor((i + 1) * step));
+    let sum = 0;
+    let cnt = 0;
+    for (let j = start; j < Math.min(n, end); j += 1) {
+      sum += profile[j];
+      cnt += 1;
+    }
+    out[i] = cnt > 0 ? sum / cnt : 0;
+  }
+  return out;
+}
+
+function extractMlFeature(bits, size) {
+  const total = Math.max(1, countActiveBits(bits));
+  const grid = buildGridDensity(bits, size, 8);
+  const gridNorm = Array.from(grid, (x) => x / total);
+  const proj = buildProjectionProfiles(bits, size);
+  const row = downsampleProfile(proj.row, 12);
+  const col = downsampleProfile(proj.col, 12);
+  const rowNorm = Array.from(row, (x) => x / size);
+  const colNorm = Array.from(col, (x) => x / size);
+  const box = findBoundingBox(bits, size);
+  const boxW = box ? box.maxX - box.minX + 1 : 1;
+  const boxH = box ? box.maxY - box.minY + 1 : 1;
+  const aspect = Math.max(0.2, Math.min(3, boxW / Math.max(1, boxH)));
+  const cover = Math.max(0, Math.min(1, (boxW * boxH) / (size * size)));
+  const density = Math.max(0, Math.min(1, total / Math.max(1, boxW * boxH)));
+  return [...gridNorm, ...rowNorm, ...colNorm, aspect / 3, cover, density];
+}
+
+function updateCharMlPrototype(char, feature) {
+  if (!char || !Array.isArray(feature) || feature.length === 0) return;
+  const item = CHAR_MAP.get(char);
+  if (!item) return;
+  const p = getProgress(item);
+  const cur = Array.isArray(p.mlFeatureMean) ? p.mlFeatureMean : null;
+  const count = Math.max(0, Number(p.mlFeatureCount) || 0);
+  if (!cur || cur.length !== feature.length) {
+    p.mlFeatureMean = [...feature];
+    p.mlFeatureCount = 1;
+    return;
+  }
+  const alpha = count < 10 ? 0.22 : 0.12;
+  const next = new Array(feature.length);
+  for (let i = 0; i < feature.length; i += 1) {
+    const prevV = Number(cur[i]) || 0;
+    const newV = Number(feature[i]) || 0;
+    next[i] = (1 - alpha) * prevV + alpha * newV;
+  }
+  p.mlFeatureMean = next;
+  p.mlFeatureCount = count + 1;
+}
+
+function scorePersonalMlForChar(char, userBits, size) {
+  const item = CHAR_MAP.get(char);
+  if (!item) return null;
+  const p = getProgress(item);
+  const proto = Array.isArray(p.mlFeatureMean) ? p.mlFeatureMean : null;
+  if (!proto || proto.length === 0) return null;
+  const feat = extractMlFeature(userBits, size);
+  if (proto.length !== feat.length) return null;
+  const sim = cosineSimilarity(proto, feat);
+  return Math.max(0, Math.min(1, sim));
+}
+
 function scoreWriting(userBits, templateBits, size) {
   const cleanUser = denoiseBits(userBits, size);
   const cleanTemplate = denoiseBits(templateBits, size);
@@ -7874,9 +8349,16 @@ function evaluateDrawing() {
   const userBits = normalizeBits(getBinaryData(userCtx, size), size, size, 10);
   const templateBits = normalizeBits(getBinaryData(templateCtx, size), size, size, 10);
   const result = scoreWriting(userBits, templateBits, size);
-  const accuracy = Math.max(0, Math.min(100, Math.round(result.score * 100)));
+  const mlScore = scorePersonalMlForChar(item.text, userBits, size);
+  const blendedScore =
+    typeof mlScore === "number" ? 0.78 * result.score + 0.22 * mlScore : result.score;
+  const finalPass = typeof mlScore === "number" ? blendedScore >= 0.61 || (mlScore >= 0.93 && result.score >= 0.5) : result.pass;
+  const accuracy = Math.max(0, Math.min(100, Math.round(blendedScore * 100)));
   const handwritingImage = userCanvas.toDataURL("image/png");
-  finalizeReviewResult(item, result.pass, accuracy, { handwritingImage });
+  finalizeReviewResult(item, finalPass, accuracy, {
+    handwritingImage,
+    mlFeature: extractMlFeature(userBits, size)
+  });
 }
 
 function createTemplateBitsForChar(char, size) {
@@ -7910,6 +8392,7 @@ function evaluateWordDrawing() {
   }
 
   const charResults = [];
+  const mlUpdates = [];
   for (let i = 0; i < chars.length; i += 1) {
     const pad = state.dictationPads[i];
     if (!pad || pad.strokeCount === 0) {
@@ -7921,10 +8404,16 @@ function evaluateWordDrawing() {
     const userBits = normalizeBits(getBinaryData(userCtx, size), size, size, 10);
     const templateBits = createTemplateBitsForChar(chars[i], size);
     const result = scoreWriting(userBits, templateBits, size);
-    const accuracy = Math.max(0, Math.min(100, Math.round(result.score * 100)));
+    const mlScore = scorePersonalMlForChar(chars[i], userBits, size);
+    const blendedScore =
+      typeof mlScore === "number" ? 0.78 * result.score + 0.22 * mlScore : result.score;
+    const isGood =
+      typeof mlScore === "number" ? blendedScore >= 0.61 || (mlScore >= 0.93 && result.score >= 0.5) : result.pass;
+    const accuracy = Math.max(0, Math.min(100, Math.round(blendedScore * 100)));
+    mlUpdates.push({ char: chars[i], feature: extractMlFeature(userBits, size), isGood });
     charResults.push({
       char: chars[i],
-      isGood: result.pass,
+      isGood,
       accuracyPercent: accuracy,
       handwritingImage: userCanvas.toDataURL("image/png")
     });
@@ -7936,6 +8425,7 @@ function evaluateWordDrawing() {
   finalizeReviewResult(item, isGood, accuracyPercent, {
     userAnswer: detailText,
     wordCharResults: charResults,
+    mlUpdates,
     handwritingImage: charResults.map((x) => x.handwritingImage).join("||")
   });
 }
@@ -8431,8 +8921,9 @@ function wireWrongBook() {
 function wireTabs() {
   tabs.forEach((btn) => {
     btn.addEventListener("click", () => {
-      if (state.auth.role === "admin" && btn.dataset.tab !== "admin") return;
+      if (state.auth.role === "admin" && !["admin", "admin-wrong"].includes(btn.dataset.tab)) return;
       if (btn.dataset.tab === "admin" && state.auth.role !== "admin") return;
+      if (btn.dataset.tab === "admin-wrong" && state.auth.role !== "admin") return;
       if ((state.reviewActive || state.reviewPreviewRunning) && state.tab === "review" && btn.dataset.tab !== "review") {
         const ok = window.confirm("正在默写中。切换菜单将取消本轮默写且数据不保存，是否继续？");
         if (!ok) return;
@@ -8440,6 +8931,7 @@ function wireTabs() {
       }
       switchTab(btn.dataset.tab);
       if (btn.dataset.tab === "admin") renderAdminPanel();
+      if (btn.dataset.tab === "admin-wrong") renderAdminWrongBookPanel();
       if (btn.dataset.tab === "records") renderUserRecords();
     });
   });
@@ -8450,6 +8942,22 @@ function wireAuth() {
   authTabRegister.addEventListener("click", () => switchAuthMode("register"));
   authLogin.addEventListener("click", handleLogin);
   authRegister.addEventListener("click", handleRegister);
+  if (authLangSelect) {
+    authLangSelect.addEventListener("change", (event) => {
+      setLanguage(event.target.value, true);
+    });
+  }
+  if (appLangSelect) {
+    appLangSelect.addEventListener("change", (event) => {
+      setLanguage(event.target.value, true);
+    });
+  }
+  authTogglePassword.addEventListener("click", () => {
+    const show = authPassword.type === "password";
+    authPassword.type = show ? "text" : "password";
+    authPasswordConfirm.type = show ? "text" : "password";
+    updateAuthTogglePasswordLabel();
+  });
   authPassword.addEventListener("keydown", (event) => {
     if (event.key !== "Enter") return;
     if (authRegister.classList.contains("hidden")) handleLogin();
@@ -8467,6 +8975,39 @@ function wireAdmin() {
     if (event.key === "Enter") renderAdminPanel();
   });
   adminTimeFilter.addEventListener("change", renderAdminPanel);
+  if (adminWrongSearch) {
+    adminWrongSearch.addEventListener("click", () => {
+      queryAdminWrongBook((adminWrongSearchUser && adminWrongSearchUser.value) || "");
+    });
+  }
+  if (adminWrongSearchUser) {
+    adminWrongSearchUser.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") queryAdminWrongBook(adminWrongSearchUser.value || "");
+    });
+  }
+  if (adminWrongList) {
+    adminWrongList.addEventListener("click", async (event) => {
+      const btn = event.target.closest("button[data-action='delete-wrong-item']");
+      if (!btn || state.auth.role !== "admin") return;
+      const username = String(state.adminWrongBookQueryUser || "").trim();
+      const type = btn.dataset.type === "word" ? "word" : "char";
+      const text = String(btn.dataset.text || "").trim();
+      if (!username || !text) return;
+      const ok = window.confirm(t("adminWrong.confirmDelete", { username, text }));
+      if (!ok) return;
+      try {
+        const resp = await apiRequest(`/api/admin/users/${encodeURIComponent(username)}/wrong-book`, {
+          method: "PUT",
+          body: JSON.stringify({ action: "remove", type, text })
+        });
+        state.adminWrongBookItems = Array.isArray(resp.wrongBook) ? resp.wrongBook : [];
+        if (adminWrongMsg) adminWrongMsg.textContent = t("adminWrong.deleted", { text });
+        renderAdminWrongBookPanel();
+      } catch (err) {
+        if (adminWrongMsg) adminWrongMsg.textContent = err && err.message ? err.message : t("adminWrong.deleteFailed");
+      }
+    });
+  }
 
   adminList.addEventListener("click", async (event) => {
     const btn = event.target.closest("button[data-action]");
@@ -8776,12 +9317,18 @@ function setupCanvas() {
       const userBits = normalizeBits(getBinaryData(userCtx, size), size, size, 10);
       const templateBits = normalizeBits(getBinaryData(templateCtx, size), size, size, 10);
       const result = scoreWriting(userBits, templateBits, size);
-      writeFeedback.textContent = result.pass ? "判定通过" : "判定未通过";
+      const mlScore = scorePersonalMlForChar(item.text, userBits, size);
+      const blendedScore =
+        typeof mlScore === "number" ? 0.78 * result.score + 0.22 * mlScore : result.score;
+      const pass =
+        typeof mlScore === "number" ? blendedScore >= 0.61 || (mlScore >= 0.93 && result.score >= 0.5) : result.pass;
+      writeFeedback.textContent = pass ? "判定通过" : "判定未通过";
 
-      scheduleProgress(item, result.pass);
-      if (result.pass) {
+      scheduleProgress(item, pass);
+      if (pass) {
         removeWrongItem(item);
         addPoints(1);
+        updateCharMlPrototype(item.text, extractMlFeature(userBits, size));
       } else addWrongItem(item);
       refreshStats();
       rebuildWrongQueue();
@@ -8792,6 +9339,9 @@ function setupCanvas() {
 }
 
 async function init() {
+  const storedLang = normalizeLang(localStorage.getItem(LANG_KEY) || "");
+  state.lang = storedLang;
+  setLanguage(state.lang, false);
   initLevelFilter();
   initWriteSelect();
   syncWriteListFromLearnSelection({ resetPage: true });
@@ -8821,7 +9371,7 @@ async function init() {
   }
   authScreen.classList.remove("hidden");
   appShell.classList.add("hidden");
-  authMsg.textContent = "请先登录后使用。";
+  authMsg.textContent = t("auth.needLogin");
 }
 
 init().catch((err) => {

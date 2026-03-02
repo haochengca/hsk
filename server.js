@@ -425,6 +425,49 @@ async function handleApi(req, res, pathname) {
     return sendJson(res, 200, { ok: true, submission });
   }
 
+  if (req.method === "GET" && pathname.startsWith("/api/admin/users/") && pathname.endsWith("/wrong-book")) {
+    if (auth.role !== "admin") return sendJson(res, 403, { ok: false, message: "仅管理员可查看" });
+    const parts = pathname.split("/");
+    const username = decodeURIComponent(parts[4] || "").trim();
+    if (!username) return sendJson(res, 400, { ok: false, message: "用户名不能为空" });
+    const user = db.users.find((x) => x && x.username === username);
+    if (!user) return sendJson(res, 404, { ok: false, message: "用户不存在" });
+    if (user.role !== "user") return sendJson(res, 400, { ok: false, message: "仅可查看普通用户错题本" });
+    const data = ensureUserData(db, username);
+    return sendJson(res, 200, { ok: true, wrongBook: Array.isArray(data.wrongBook) ? data.wrongBook : [] });
+  }
+
+  if (req.method === "PUT" && pathname.startsWith("/api/admin/users/") && pathname.endsWith("/wrong-book")) {
+    if (auth.role !== "admin") return sendJson(res, 403, { ok: false, message: "仅管理员可操作" });
+    const parts = pathname.split("/");
+    const username = decodeURIComponent(parts[4] || "").trim();
+    if (!username) return sendJson(res, 400, { ok: false, message: "用户名不能为空" });
+    const user = db.users.find((x) => x && x.username === username);
+    if (!user) return sendJson(res, 404, { ok: false, message: "用户不存在" });
+    if (user.role !== "user") return sendJson(res, 400, { ok: false, message: "仅可操作普通用户错题本" });
+
+    const body = await parseBody(req);
+    const action = String(body.action || "").trim();
+    const type = body.type === "word" ? "word" : "char";
+    const text = String(body.text || "").trim();
+    if (!["add", "remove"].includes(action)) {
+      return sendJson(res, 400, { ok: false, message: "action 必须为 add 或 remove" });
+    }
+    if (!text) return sendJson(res, 400, { ok: false, message: "错题内容不能为空" });
+
+    const data = ensureUserData(db, username);
+    const key = `${type}:${text}`;
+    const idx = data.wrongBook.findIndex((x) => x && x.key === key);
+    if (action === "add") {
+      if (idx === -1) data.wrongBook.push({ key, type, text });
+    } else if (idx !== -1) {
+      data.wrongBook.splice(idx, 1);
+    }
+
+    saveDb(db);
+    return sendJson(res, 200, { ok: true, wrongBook: data.wrongBook });
+  }
+
   return sendJson(res, 404, { ok: false, message: "API不存在" });
 }
 
