@@ -1,0 +1,5666 @@
+[
+  {
+    "char": "爱",
+    "pinyin": "ài",
+    "meaning": "love",
+    "level": 1,
+    "phrase": "爱",
+    "sentence": "这是“爱”字。"
+  },
+  {
+    "char": "八",
+    "pinyin": "bā",
+    "meaning": "eight",
+    "level": 1,
+    "phrase": "八",
+    "sentence": "这是“八”字。"
+  },
+  {
+    "char": "本",
+    "pinyin": "běn",
+    "meaning": "measure word for books",
+    "level": 1,
+    "phrase": "本",
+    "sentence": "这是“本”字。"
+  },
+  {
+    "char": "不",
+    "pinyin": "bù",
+    "meaning": "no; not",
+    "level": 1,
+    "phrase": "不",
+    "sentence": "这是“不”字。"
+  },
+  {
+    "char": "菜",
+    "pinyin": "cài",
+    "meaning": "dish (type of food); vegetables",
+    "level": 1,
+    "phrase": "菜",
+    "sentence": "这是“菜”字。"
+  },
+  {
+    "char": "茶",
+    "pinyin": "chá",
+    "meaning": "tea",
+    "level": 1,
+    "phrase": "茶",
+    "sentence": "这是“茶”字。"
+  },
+  {
+    "char": "吃",
+    "pinyin": "chī",
+    "meaning": "eat",
+    "level": 1,
+    "phrase": "吃",
+    "sentence": "这是“吃”字。"
+  },
+  {
+    "char": "大",
+    "pinyin": "dà",
+    "meaning": "big; large",
+    "level": 1,
+    "phrase": "大",
+    "sentence": "这是“大”字。"
+  },
+  {
+    "char": "的",
+    "pinyin": "de",
+    "meaning": "indicates possession, like adding 's to a noun",
+    "level": 1,
+    "phrase": "的",
+    "sentence": "这是“的”字。"
+  },
+  {
+    "char": "点",
+    "pinyin": "diǎn",
+    "meaning": "a dot; a little; o'clock",
+    "level": 1,
+    "phrase": "点",
+    "sentence": "这是“点”字。"
+  },
+  {
+    "char": "都",
+    "pinyin": "dōu",
+    "meaning": "all; both",
+    "level": 1,
+    "phrase": "都",
+    "sentence": "这是“都”字。"
+  },
+  {
+    "char": "读",
+    "pinyin": "dú",
+    "meaning": "to read; to study",
+    "level": 1,
+    "phrase": "读",
+    "sentence": "这是“读”字。"
+  },
+  {
+    "char": "多",
+    "pinyin": "duō",
+    "meaning": "many",
+    "level": 1,
+    "phrase": "多",
+    "sentence": "这是“多”字。"
+  },
+  {
+    "char": "二",
+    "pinyin": "èr",
+    "meaning": "two",
+    "level": 1,
+    "phrase": "二",
+    "sentence": "这是“二”字。"
+  },
+  {
+    "char": "个",
+    "pinyin": "ge",
+    "meaning": "general measure word",
+    "level": 1,
+    "phrase": "个",
+    "sentence": "这是“个”字。"
+  },
+  {
+    "char": "狗",
+    "pinyin": "gǒu",
+    "meaning": "dog",
+    "level": 1,
+    "phrase": "狗",
+    "sentence": "这是“狗”字。"
+  },
+  {
+    "char": "好",
+    "pinyin": "hǎo",
+    "meaning": "good",
+    "level": 1,
+    "phrase": "好",
+    "sentence": "这是“好”字。"
+  },
+  {
+    "char": "号",
+    "pinyin": "hào",
+    "meaning": "number; day of a month",
+    "level": 1,
+    "phrase": "号",
+    "sentence": "这是“号”字。"
+  },
+  {
+    "char": "喝",
+    "pinyin": "hē",
+    "meaning": "to drink",
+    "level": 1,
+    "phrase": "喝",
+    "sentence": "这是“喝”字。"
+  },
+  {
+    "char": "和",
+    "pinyin": "hé",
+    "meaning": "and; with",
+    "level": 1,
+    "phrase": "和",
+    "sentence": "这是“和”字。"
+  },
+  {
+    "char": "很",
+    "pinyin": "hěn",
+    "meaning": "very; quite",
+    "level": 1,
+    "phrase": "很",
+    "sentence": "这是“很”字。"
+  },
+  {
+    "char": "回",
+    "pinyin": "huí",
+    "meaning": "to return; to reply; to go back",
+    "level": 1,
+    "phrase": "回",
+    "sentence": "这是“回”字。"
+  },
+  {
+    "char": "会",
+    "pinyin": "huì",
+    "meaning": "know how to",
+    "level": 1,
+    "phrase": "会",
+    "sentence": "这是“会”字。"
+  },
+  {
+    "char": "几",
+    "pinyin": "jǐ",
+    "meaning": "how many; several; a few",
+    "level": 1,
+    "phrase": "几",
+    "sentence": "这是“几”字。"
+  },
+  {
+    "char": "家",
+    "pinyin": "jiā",
+    "meaning": "family; home",
+    "level": 1,
+    "phrase": "家",
+    "sentence": "这是“家”字。"
+  },
+  {
+    "char": "叫",
+    "pinyin": "jiào",
+    "meaning": "to be called",
+    "level": 1,
+    "phrase": "叫",
+    "sentence": "这是“叫”字。"
+  },
+  {
+    "char": "九",
+    "pinyin": "jiǔ",
+    "meaning": "nine",
+    "level": 1,
+    "phrase": "九",
+    "sentence": "这是“九”字。"
+  },
+  {
+    "char": "开",
+    "pinyin": "kāi",
+    "meaning": "to open; to start; to operate (a vehicle)",
+    "level": 1,
+    "phrase": "开",
+    "sentence": "这是“开”字。"
+  },
+  {
+    "char": "看",
+    "pinyin": "kàn",
+    "meaning": "see; look at; to watch",
+    "level": 1,
+    "phrase": "看",
+    "sentence": "这是“看”字。"
+  },
+  {
+    "char": "块",
+    "pinyin": "kuài",
+    "meaning": "lump; piece; sum of money",
+    "level": 1,
+    "phrase": "块",
+    "sentence": "这是“块”字。"
+  },
+  {
+    "char": "来",
+    "pinyin": "lái",
+    "meaning": "come; arrive; ever since; next",
+    "level": 1,
+    "phrase": "来",
+    "sentence": "这是“来”字。"
+  },
+  {
+    "char": "了",
+    "pinyin": "le",
+    "meaning": "indicates a completed or finished action",
+    "level": 1,
+    "phrase": "了",
+    "sentence": "这是“了”字。"
+  },
+  {
+    "char": "冷",
+    "pinyin": "lěng",
+    "meaning": "cold",
+    "level": 1,
+    "phrase": "冷",
+    "sentence": "这是“冷”字。"
+  },
+  {
+    "char": "里",
+    "pinyin": "lǐ",
+    "meaning": "inside; Chinese mile (~.5 km)",
+    "level": 1,
+    "phrase": "里",
+    "sentence": "这是“里”字。"
+  },
+  {
+    "char": "六",
+    "pinyin": "liù",
+    "meaning": "six",
+    "level": 1,
+    "phrase": "六",
+    "sentence": "这是“六”字。"
+  },
+  {
+    "char": "吗",
+    "pinyin": "ma",
+    "meaning": "indicates a yes/no question (added to a statement)",
+    "level": 1,
+    "phrase": "吗",
+    "sentence": "这是“吗”字。"
+  },
+  {
+    "char": "买",
+    "pinyin": "mǎi",
+    "meaning": "to buy",
+    "level": 1,
+    "phrase": "买",
+    "sentence": "这是“买”字。"
+  },
+  {
+    "char": "猫",
+    "pinyin": "māo",
+    "meaning": "cat",
+    "level": 1,
+    "phrase": "猫",
+    "sentence": "这是“猫”字。"
+  },
+  {
+    "char": "哪",
+    "pinyin": "nǎa",
+    "meaning": "which; how",
+    "level": 1,
+    "phrase": "哪",
+    "sentence": "这是“哪”字。"
+  },
+  {
+    "char": "那",
+    "pinyin": "nà",
+    "meaning": "that; then",
+    "level": 1,
+    "phrase": "那",
+    "sentence": "这是“那”字。"
+  },
+  {
+    "char": "呢",
+    "pinyin": "ne",
+    "meaning": "indicates a question; how about...?;",
+    "level": 1,
+    "phrase": "呢",
+    "sentence": "这是“呢”字。"
+  },
+  {
+    "char": "能",
+    "pinyin": "néng",
+    "meaning": "can; be able",
+    "level": 1,
+    "phrase": "能",
+    "sentence": "这是“能”字。"
+  },
+  {
+    "char": "你",
+    "pinyin": "nǐ",
+    "meaning": "you (singular)",
+    "level": 1,
+    "phrase": "你",
+    "sentence": "这是“你”字。"
+  },
+  {
+    "char": "年",
+    "pinyin": "nián",
+    "meaning": "year",
+    "level": 1,
+    "phrase": "年",
+    "sentence": "这是“年”字。"
+  },
+  {
+    "char": "七",
+    "pinyin": "qī",
+    "meaning": "seven",
+    "level": 1,
+    "phrase": "七",
+    "sentence": "这是“七”字。"
+  },
+  {
+    "char": "钱",
+    "pinyin": "qián",
+    "meaning": "money; coin",
+    "level": 1,
+    "phrase": "钱",
+    "sentence": "这是“钱”字。"
+  },
+  {
+    "char": "请",
+    "pinyin": "qǐng",
+    "meaning": "please; invite; to treat someone to something",
+    "level": 1,
+    "phrase": "请",
+    "sentence": "这是“请”字。"
+  },
+  {
+    "char": "去",
+    "pinyin": "qù",
+    "meaning": "go; to leave",
+    "level": 1,
+    "phrase": "去",
+    "sentence": "这是“去”字。"
+  },
+  {
+    "char": "热",
+    "pinyin": "rè",
+    "meaning": "heat; hot",
+    "level": 1,
+    "phrase": "热",
+    "sentence": "这是“热”字。"
+  },
+  {
+    "char": "人",
+    "pinyin": "rén",
+    "meaning": "person; man; people",
+    "level": 1,
+    "phrase": "人",
+    "sentence": "这是“人”字。"
+  },
+  {
+    "char": "三",
+    "pinyin": "sān",
+    "meaning": "three",
+    "level": 1,
+    "phrase": "三",
+    "sentence": "这是“三”字。"
+  },
+  {
+    "char": "上",
+    "pinyin": "shàng",
+    "meaning": "above; up",
+    "level": 1,
+    "phrase": "上",
+    "sentence": "这是“上”字。"
+  },
+  {
+    "char": "少",
+    "pinyin": "shǎo",
+    "meaning": "few; little",
+    "level": 1,
+    "phrase": "少",
+    "sentence": "这是“少”字。"
+  },
+  {
+    "char": "谁",
+    "pinyin": "shéi",
+    "meaning": "who",
+    "level": 1,
+    "phrase": "谁",
+    "sentence": "这是“谁”字。"
+  },
+  {
+    "char": "十",
+    "pinyin": "shí",
+    "meaning": "ten",
+    "level": 1,
+    "phrase": "十",
+    "sentence": "这是“十”字。"
+  },
+  {
+    "char": "是",
+    "pinyin": "shì",
+    "meaning": "be; is; are; am",
+    "level": 1,
+    "phrase": "是",
+    "sentence": "这是“是”字。"
+  },
+  {
+    "char": "书",
+    "pinyin": "shū",
+    "meaning": "book; letter",
+    "level": 1,
+    "phrase": "书",
+    "sentence": "这是“书”字。"
+  },
+  {
+    "char": "水",
+    "pinyin": "shuǐ",
+    "meaning": "water",
+    "level": 1,
+    "phrase": "水",
+    "sentence": "这是“水”字。"
+  },
+  {
+    "char": "说",
+    "pinyin": "shuō",
+    "meaning": "speak",
+    "level": 1,
+    "phrase": "说",
+    "sentence": "这是“说”字。"
+  },
+  {
+    "char": "四",
+    "pinyin": "sì",
+    "meaning": "four",
+    "level": 1,
+    "phrase": "四",
+    "sentence": "这是“四”字。"
+  },
+  {
+    "char": "岁",
+    "pinyin": "suì",
+    "meaning": "years old; age",
+    "level": 1,
+    "phrase": "岁",
+    "sentence": "这是“岁”字。"
+  },
+  {
+    "char": "他",
+    "pinyin": "tā",
+    "meaning": "he; him",
+    "level": 1,
+    "phrase": "他",
+    "sentence": "这是“他”字。"
+  },
+  {
+    "char": "她",
+    "pinyin": "tā",
+    "meaning": "she",
+    "level": 1,
+    "phrase": "她",
+    "sentence": "这是“她”字。"
+  },
+  {
+    "char": "太",
+    "pinyin": "tài",
+    "meaning": "too (much)",
+    "level": 1,
+    "phrase": "太",
+    "sentence": "这是“太”字。"
+  },
+  {
+    "char": "听",
+    "pinyin": "tīng",
+    "meaning": "listen; hear",
+    "level": 1,
+    "phrase": "听",
+    "sentence": "这是“听”字。"
+  },
+  {
+    "char": "喂",
+    "pinyin": "wèi",
+    "meaning": "hello (on the phone)",
+    "level": 1,
+    "phrase": "喂",
+    "sentence": "这是“喂”字。"
+  },
+  {
+    "char": "我",
+    "pinyin": "wǒ",
+    "meaning": "I; me",
+    "level": 1,
+    "phrase": "我",
+    "sentence": "这是“我”字。"
+  },
+  {
+    "char": "五",
+    "pinyin": "wǔ",
+    "meaning": "five",
+    "level": 1,
+    "phrase": "五",
+    "sentence": "这是“五”字。"
+  },
+  {
+    "char": "下",
+    "pinyin": "xià",
+    "meaning": "fall; below",
+    "level": 1,
+    "phrase": "下",
+    "sentence": "这是“下”字。"
+  },
+  {
+    "char": "想",
+    "pinyin": "xiǎng",
+    "meaning": "think; believe; suppose; would like to",
+    "level": 1,
+    "phrase": "想",
+    "sentence": "这是“想”字。"
+  },
+  {
+    "char": "小",
+    "pinyin": "xiǎo",
+    "meaning": "small; young",
+    "level": 1,
+    "phrase": "小",
+    "sentence": "这是“小”字。"
+  },
+  {
+    "char": "些",
+    "pinyin": "xiē",
+    "meaning": "some; few; several",
+    "level": 1,
+    "phrase": "些",
+    "sentence": "这是“些”字。"
+  },
+  {
+    "char": "写",
+    "pinyin": "xiě",
+    "meaning": "to write; to compose",
+    "level": 1,
+    "phrase": "写",
+    "sentence": "这是“写”字。"
+  },
+  {
+    "char": "一",
+    "pinyin": "yī",
+    "meaning": "one; once; a",
+    "level": 1,
+    "phrase": "一",
+    "sentence": "这是“一”字。"
+  },
+  {
+    "char": "有",
+    "pinyin": "yǒu",
+    "meaning": "have",
+    "level": 1,
+    "phrase": "有",
+    "sentence": "这是“有”字。"
+  },
+  {
+    "char": "月",
+    "pinyin": "yuè",
+    "meaning": "moon; month",
+    "level": 1,
+    "phrase": "月",
+    "sentence": "这是“月”字。"
+  },
+  {
+    "char": "在",
+    "pinyin": "zài",
+    "meaning": "at; on; in; indicates an action in progress",
+    "level": 1,
+    "phrase": "在",
+    "sentence": "这是“在”字。"
+  },
+  {
+    "char": "这",
+    "pinyin": "zhè",
+    "meaning": "this",
+    "level": 1,
+    "phrase": "这",
+    "sentence": "这是“这”字。"
+  },
+  {
+    "char": "住",
+    "pinyin": "zhù",
+    "meaning": "to live; reside; to stop",
+    "level": 1,
+    "phrase": "住",
+    "sentence": "这是“住”字。"
+  },
+  {
+    "char": "字",
+    "pinyin": "zì",
+    "meaning": "letter; character",
+    "level": 1,
+    "phrase": "字",
+    "sentence": "这是“字”字。"
+  },
+  {
+    "char": "坐",
+    "pinyin": "zuò",
+    "meaning": "sit",
+    "level": 1,
+    "phrase": "坐",
+    "sentence": "这是“坐”字。"
+  },
+  {
+    "char": "做",
+    "pinyin": "zuò",
+    "meaning": "do; make",
+    "level": 1,
+    "phrase": "做",
+    "sentence": "这是“做”字。"
+  },
+  {
+    "char": "吧",
+    "pinyin": "ba",
+    "meaning": "particle indicating polite suggestion; | onomatopoeia | bar (serving drinks, providing internet access, etc.)",
+    "level": 2,
+    "phrase": "吧",
+    "sentence": "这是“吧”字。"
+  },
+  {
+    "char": "白",
+    "pinyin": "bái",
+    "meaning": "white; snowy; pure; bright; empty (Kangxi radical 106)",
+    "level": 2,
+    "phrase": "白",
+    "sentence": "这是“白”字。"
+  },
+  {
+    "char": "百",
+    "pinyin": "bǎi",
+    "meaning": "hundred",
+    "level": 2,
+    "phrase": "百",
+    "sentence": "这是“百”字。"
+  },
+  {
+    "char": "比",
+    "pinyin": "bǐ",
+    "meaning": "compare; (indicates comparison) (Kangxi radical 81); to gesticulate as one talks",
+    "level": 2,
+    "phrase": "比",
+    "sentence": "这是“比”字。"
+  },
+  {
+    "char": "别",
+    "pinyin": "bié",
+    "meaning": "don't do something; don't | depart; | other; difference; distinguish",
+    "level": 2,
+    "phrase": "别",
+    "sentence": "这是“别”字。"
+  },
+  {
+    "char": "出",
+    "pinyin": "chū",
+    "meaning": "go out; occur",
+    "level": 2,
+    "phrase": "出",
+    "sentence": "这是“出”字。"
+  },
+  {
+    "char": "穿",
+    "pinyin": "chuān",
+    "meaning": "to wear; put on; penetrate",
+    "level": 2,
+    "phrase": "穿",
+    "sentence": "这是“穿”字。"
+  },
+  {
+    "char": "次",
+    "pinyin": "cì",
+    "meaning": "(mw for number of times of occurrence); nth; order",
+    "level": 2,
+    "phrase": "次",
+    "sentence": "这是“次”字。"
+  },
+  {
+    "char": "从",
+    "pinyin": "cóng",
+    "meaning": "from; obey; observe",
+    "level": 2,
+    "phrase": "从",
+    "sentence": "这是“从”字。"
+  },
+  {
+    "char": "错",
+    "pinyin": "cuò",
+    "meaning": "mistake; error; blunder; miss an opportunity",
+    "level": 2,
+    "phrase": "错",
+    "sentence": "这是“错”字。"
+  },
+  {
+    "char": "到",
+    "pinyin": "dào",
+    "meaning": "arrive (at a place); until (a time)",
+    "level": 2,
+    "phrase": "到",
+    "sentence": "这是“到”字。"
+  },
+  {
+    "char": "得",
+    "pinyin": "de",
+    "meaning": "(complement particle)",
+    "level": 2,
+    "phrase": "得",
+    "sentence": "这是“得”字。"
+  },
+  {
+    "char": "等",
+    "pinyin": "děng",
+    "meaning": "to wait; rank; equal; etc.",
+    "level": 2,
+    "phrase": "等",
+    "sentence": "这是“等”字。"
+  },
+  {
+    "char": "懂",
+    "pinyin": "dǒng",
+    "meaning": "understand; know",
+    "level": 2,
+    "phrase": "懂",
+    "sentence": "这是“懂”字。"
+  },
+  {
+    "char": "对",
+    "pinyin": "duì",
+    "meaning": "correct; a pair; to face; be opposite; to; towards",
+    "level": 2,
+    "phrase": "对",
+    "sentence": "这是“对”字。"
+  },
+  {
+    "char": "高",
+    "pinyin": "gāo",
+    "meaning": "high; tall (Kangxi radical 189)",
+    "level": 2,
+    "phrase": "高",
+    "sentence": "这是“高”字。"
+  },
+  {
+    "char": "给",
+    "pinyin": "gěi",
+    "meaning": "to give; to grant; (passive particle)",
+    "level": 2,
+    "phrase": "给",
+    "sentence": "这是“给”字。"
+  },
+  {
+    "char": "贵",
+    "pinyin": "guì",
+    "meaning": "expensive; noble; honorable; Guizhou province (abbreviation)",
+    "level": 2,
+    "phrase": "贵",
+    "sentence": "这是“贵”字。"
+  },
+  {
+    "char": "过",
+    "pinyin": "guò",
+    "meaning": "to pass; to cross; go over; (indicates a past experience)",
+    "level": 2,
+    "phrase": "过",
+    "sentence": "这是“过”字。"
+  },
+  {
+    "char": "还",
+    "pinyin": "hái",
+    "meaning": "still; yet; in addition; even",
+    "level": 2,
+    "phrase": "还",
+    "sentence": "这是“还”字。"
+  },
+  {
+    "char": "黑",
+    "pinyin": "hēi",
+    "meaning": "black; dark (Kangxi radical 203); Heilongjiang province (abbreviation)",
+    "level": 2,
+    "phrase": "黑",
+    "sentence": "这是“黑”字。"
+  },
+  {
+    "char": "红",
+    "pinyin": "hóng",
+    "meaning": "red; symbol of success; bonus; popular",
+    "level": 2,
+    "phrase": "红",
+    "sentence": "这是“红”字。"
+  },
+  {
+    "char": "件",
+    "pinyin": "jiàn",
+    "meaning": "(mw for things, clothes, and items)",
+    "level": 2,
+    "phrase": "件",
+    "sentence": "这是“件”字。"
+  },
+  {
+    "char": "近",
+    "pinyin": "jìn",
+    "meaning": "near; close (to)",
+    "level": 2,
+    "phrase": "近",
+    "sentence": "这是“近”字。"
+  },
+  {
+    "char": "进",
+    "pinyin": "jìn",
+    "meaning": "enter; come in",
+    "level": 2,
+    "phrase": "进",
+    "sentence": "这是“进”字。"
+  },
+  {
+    "char": "就",
+    "pinyin": "jiù",
+    "meaning": "then; at once; just; only; with regard to",
+    "level": 2,
+    "phrase": "就",
+    "sentence": "这是“就”字。"
+  },
+  {
+    "char": "课",
+    "pinyin": "kè",
+    "meaning": "class; subject; lesson; course",
+    "level": 2,
+    "phrase": "课",
+    "sentence": "这是“课”字。"
+  },
+  {
+    "char": "快",
+    "pinyin": "kuài",
+    "meaning": "fast; quick; swift",
+    "level": 2,
+    "phrase": "快",
+    "sentence": "这是“快”字。"
+  },
+  {
+    "char": "累",
+    "pinyin": "lèi",
+    "meaning": "tired",
+    "level": 2,
+    "phrase": "累",
+    "sentence": "这是“累”字。"
+  },
+  {
+    "char": "离",
+    "pinyin": "lí",
+    "meaning": "leave; depart; go away; apart from",
+    "level": 2,
+    "phrase": "离",
+    "sentence": "这是“离”字。"
+  },
+  {
+    "char": "两",
+    "pinyin": "liǎng",
+    "meaning": "two; 2; both; (unit of weight equal to 50 grams)",
+    "level": 2,
+    "phrase": "两",
+    "sentence": "这是“两”字。"
+  },
+  {
+    "char": "零",
+    "pinyin": "líng",
+    "meaning": "zero; remnant",
+    "level": 2,
+    "phrase": "零",
+    "sentence": "这是“零”字。"
+  },
+  {
+    "char": "路",
+    "pinyin": "lù",
+    "meaning": "road; path; journey; route",
+    "level": 2,
+    "phrase": "路",
+    "sentence": "这是“路”字。"
+  },
+  {
+    "char": "卖",
+    "pinyin": "mài",
+    "meaning": "to sell",
+    "level": 2,
+    "phrase": "卖",
+    "sentence": "这是“卖”字。"
+  },
+  {
+    "char": "慢",
+    "pinyin": "màn",
+    "meaning": "slow",
+    "level": 2,
+    "phrase": "慢",
+    "sentence": "这是“慢”字。"
+  },
+  {
+    "char": "忙",
+    "pinyin": "máng",
+    "meaning": "busy",
+    "level": 2,
+    "phrase": "忙",
+    "sentence": "这是“忙”字。"
+  },
+  {
+    "char": "每",
+    "pinyin": "měi",
+    "meaning": "each; every",
+    "level": 2,
+    "phrase": "每",
+    "sentence": "这是“每”字。"
+  },
+  {
+    "char": "门",
+    "pinyin": "mén",
+    "meaning": "door; opening; gate (Kangxi radical 169)",
+    "level": 2,
+    "phrase": "门",
+    "sentence": "这是“门”字。"
+  },
+  {
+    "char": "男",
+    "pinyin": "nán",
+    "meaning": "male",
+    "level": 2,
+    "phrase": "男",
+    "sentence": "这是“男”字。"
+  },
+  {
+    "char": "您",
+    "pinyin": "nín",
+    "meaning": "you (polite)",
+    "level": 2,
+    "phrase": "您",
+    "sentence": "这是“您”字。"
+  },
+  {
+    "char": "女",
+    "pinyin": "nǚ",
+    "meaning": "woman; female (Kangxi radical 38)",
+    "level": 2,
+    "phrase": "女",
+    "sentence": "这是“女”字。"
+  },
+  {
+    "char": "票",
+    "pinyin": "piào",
+    "meaning": "ticket; bank note; a vote",
+    "level": 2,
+    "phrase": "票",
+    "sentence": "这是“票”字。"
+  },
+  {
+    "char": "千",
+    "pinyin": "qiān",
+    "meaning": "one thousand",
+    "level": 2,
+    "phrase": "千",
+    "sentence": "这是“千”字。"
+  },
+  {
+    "char": "晴",
+    "pinyin": "qíng",
+    "meaning": "clear; fine (as of weather)",
+    "level": 2,
+    "phrase": "晴",
+    "sentence": "这是“晴”字。"
+  },
+  {
+    "char": "让",
+    "pinyin": "ràng",
+    "meaning": "ask; let; yield",
+    "level": 2,
+    "phrase": "让",
+    "sentence": "这是“让”字。"
+  },
+  {
+    "char": "日",
+    "pinyin": "rì",
+    "meaning": "sun; day; date; time (Kangxi radical 72)",
+    "level": 2,
+    "phrase": "日",
+    "sentence": "这是“日”字。"
+  },
+  {
+    "char": "送",
+    "pinyin": "sòng",
+    "meaning": "deliver; to carry; to give; send",
+    "level": 2,
+    "phrase": "送",
+    "sentence": "这是“送”字。"
+  },
+  {
+    "char": "它",
+    "pinyin": "tā",
+    "meaning": "it",
+    "level": 2,
+    "phrase": "它",
+    "sentence": "这是“它”字。"
+  },
+  {
+    "char": "题",
+    "pinyin": "tí",
+    "meaning": "topic; subject; question on a test or assignment",
+    "level": 2,
+    "phrase": "题",
+    "sentence": "这是“题”字。"
+  },
+  {
+    "char": "外",
+    "pinyin": "wài",
+    "meaning": "outer; outside; in addition; foreign",
+    "level": 2,
+    "phrase": "外",
+    "sentence": "这是“外”字。"
+  },
+  {
+    "char": "完",
+    "pinyin": "wán",
+    "meaning": "to finish; be over; complete",
+    "level": 2,
+    "phrase": "完",
+    "sentence": "这是“完”字。"
+  },
+  {
+    "char": "玩",
+    "pinyin": "wán",
+    "meaning": "to play; have a good time; visit; enjoy",
+    "level": 2,
+    "phrase": "玩",
+    "sentence": "这是“玩”字。"
+  },
+  {
+    "char": "往",
+    "pinyin": "wǎng",
+    "meaning": "to go (in a direction); towards; in the past",
+    "level": 2,
+    "phrase": "往",
+    "sentence": "这是“往”字。"
+  },
+  {
+    "char": "问",
+    "pinyin": "wèn",
+    "meaning": "ask; inquire",
+    "level": 2,
+    "phrase": "问",
+    "sentence": "这是“问”字。"
+  },
+  {
+    "char": "洗",
+    "pinyin": "xǐ",
+    "meaning": "to wash; bathe",
+    "level": 2,
+    "phrase": "洗",
+    "sentence": "这是“洗”字。"
+  },
+  {
+    "char": "笑",
+    "pinyin": "xiào",
+    "meaning": "to laugh; to smile",
+    "level": 2,
+    "phrase": "笑",
+    "sentence": "这是“笑”字。"
+  },
+  {
+    "char": "新",
+    "pinyin": "xīn",
+    "meaning": "new; Xinjiang autonomous region (abbreviation)",
+    "level": 2,
+    "phrase": "新",
+    "sentence": "这是“新”字。"
+  },
+  {
+    "char": "姓",
+    "pinyin": "xìng",
+    "meaning": "surname; family name",
+    "level": 2,
+    "phrase": "姓",
+    "sentence": "这是“姓”字。"
+  },
+  {
+    "char": "雪",
+    "pinyin": "xuě",
+    "meaning": "snow",
+    "level": 2,
+    "phrase": "雪",
+    "sentence": "这是“雪”字。"
+  },
+  {
+    "char": "药",
+    "pinyin": "yào",
+    "meaning": "medicine; drug; cure; chemical",
+    "level": 2,
+    "phrase": "药",
+    "sentence": "这是“药”字。"
+  },
+  {
+    "char": "要",
+    "pinyin": "yào",
+    "meaning": "to want; to need; will/shall; important",
+    "level": 2,
+    "phrase": "要",
+    "sentence": "这是“要”字。"
+  },
+  {
+    "char": "也",
+    "pinyin": "yě",
+    "meaning": "also; too",
+    "level": 2,
+    "phrase": "也",
+    "sentence": "这是“也”字。"
+  },
+  {
+    "char": "阴",
+    "pinyin": "yīn",
+    "meaning": "cloudy (weather); yin (the negative principle of Yin and Yang); secret; the moon; negative; shade",
+    "level": 2,
+    "phrase": "阴",
+    "sentence": "这是“阴”字。"
+  },
+  {
+    "char": "鱼",
+    "pinyin": "yú",
+    "meaning": "fish (Kangxi radical 195)",
+    "level": 2,
+    "phrase": "鱼",
+    "sentence": "这是“鱼”字。"
+  },
+  {
+    "char": "远",
+    "pinyin": "yuǎn",
+    "meaning": "far; distant; remote",
+    "level": 2,
+    "phrase": "远",
+    "sentence": "这是“远”字。"
+  },
+  {
+    "char": "再",
+    "pinyin": "zài",
+    "meaning": "again; once more",
+    "level": 2,
+    "phrase": "再",
+    "sentence": "这是“再”字。"
+  },
+  {
+    "char": "长",
+    "pinyin": "cháng, zhǎng",
+    "meaning": "long; length | grow; chief (Kangxi radical 168)",
+    "level": 2,
+    "phrase": "长",
+    "sentence": "这是“长”字。"
+  },
+  {
+    "char": "找",
+    "pinyin": "zhǎo",
+    "meaning": "try to find; look for; seek; to give change",
+    "level": 2,
+    "phrase": "找",
+    "sentence": "这是“找”字。"
+  },
+  {
+    "char": "着",
+    "pinyin": "zhe",
+    "meaning": "-ing (indicating action in progress)",
+    "level": 2,
+    "phrase": "着",
+    "sentence": "这是“着”字。"
+  },
+  {
+    "char": "真",
+    "pinyin": "zhēn",
+    "meaning": "real; true; genuine",
+    "level": 2,
+    "phrase": "真",
+    "sentence": "这是“真”字。"
+  },
+  {
+    "char": "走",
+    "pinyin": "zǒu",
+    "meaning": "to walk; to go; to move (Kangxi radical 156)",
+    "level": 2,
+    "phrase": "走",
+    "sentence": "这是“走”字。"
+  },
+  {
+    "char": "最",
+    "pinyin": "zuì",
+    "meaning": "the most; -est; (indicator for superlative)",
+    "level": 2,
+    "phrase": "最",
+    "sentence": "这是“最”字。"
+  },
+  {
+    "char": "啊",
+    "pinyin": "a",
+    "meaning": "ah; (particle showing elation, doubt, puzzled surprise, or approval)",
+    "level": 3,
+    "phrase": "啊",
+    "sentence": "这是“啊”字。"
+  },
+  {
+    "char": "矮",
+    "pinyin": "ǎi",
+    "meaning": "short; low",
+    "level": 3,
+    "phrase": "矮",
+    "sentence": "这是“矮”字。"
+  },
+  {
+    "char": "把",
+    "pinyin": "bǎ",
+    "meaning": "(mw for things with handles); (pretransitive particle); to hold",
+    "level": 3,
+    "phrase": "把",
+    "sentence": "这是“把”字。"
+  },
+  {
+    "char": "班",
+    "pinyin": "bān",
+    "meaning": "team; class; squad",
+    "level": 3,
+    "phrase": "班",
+    "sentence": "这是“班”字。"
+  },
+  {
+    "char": "搬",
+    "pinyin": "bān",
+    "meaning": "to move; to transport",
+    "level": 3,
+    "phrase": "搬",
+    "sentence": "这是“搬”字。"
+  },
+  {
+    "char": "半",
+    "pinyin": "bàn",
+    "meaning": "half; semi-; incomplete",
+    "level": 3,
+    "phrase": "半",
+    "sentence": "这是“半”字。"
+  },
+  {
+    "char": "包",
+    "pinyin": "bāo",
+    "meaning": "to cover; to wrap; to hold; include; (mw for containers, packages, etc.)",
+    "level": 3,
+    "phrase": "包",
+    "sentence": "这是“包”字。"
+  },
+  {
+    "char": "饱",
+    "pinyin": "bǎo",
+    "meaning": "eat until full; satisfied",
+    "level": 3,
+    "phrase": "饱",
+    "sentence": "这是“饱”字。"
+  },
+  {
+    "char": "被",
+    "pinyin": "bèi",
+    "meaning": "by (indicates passive voice sentences); a quilt/blanket",
+    "level": 3,
+    "phrase": "被",
+    "sentence": "这是“被”字。"
+  },
+  {
+    "char": "才",
+    "pinyin": "cái",
+    "meaning": "ability; talent; just now; not until",
+    "level": 3,
+    "phrase": "才",
+    "sentence": "这是“才”字。"
+  },
+  {
+    "char": "草",
+    "pinyin": "cǎo",
+    "meaning": "grass; straw; draft (of a document)",
+    "level": 3,
+    "phrase": "草",
+    "sentence": "这是“草”字。"
+  },
+  {
+    "char": "层",
+    "pinyin": "céng",
+    "meaning": "(mw for layers, floors of buildings)",
+    "level": 3,
+    "phrase": "层",
+    "sentence": "这是“层”字。"
+  },
+  {
+    "char": "差",
+    "pinyin": "chà",
+    "meaning": "differ from; fall short of; poor; inferior",
+    "level": 3,
+    "phrase": "差",
+    "sentence": "这是“差”字。"
+  },
+  {
+    "char": "船",
+    "pinyin": "chuán",
+    "meaning": "a boat; vessel; ship",
+    "level": 3,
+    "phrase": "船",
+    "sentence": "这是“船”字。"
+  },
+  {
+    "char": "春",
+    "pinyin": "chūn",
+    "meaning": "spring (season); joyful",
+    "level": 3,
+    "phrase": "春",
+    "sentence": "这是“春”字。"
+  },
+  {
+    "char": "带",
+    "pinyin": "dài",
+    "meaning": "band; belt; ribbon; carry; bring; take along; bring up (kids)",
+    "level": 3,
+    "phrase": "带",
+    "sentence": "这是“带”字。"
+  },
+  {
+    "char": "地",
+    "pinyin": "dì, de",
+    "meaning": "earth; ground | (adverbial particle)",
+    "level": 3,
+    "phrase": "地",
+    "sentence": "这是“地”字。"
+  },
+  {
+    "char": "灯",
+    "pinyin": "dēng",
+    "meaning": "lamp; light",
+    "level": 3,
+    "phrase": "灯",
+    "sentence": "这是“灯”字。"
+  },
+  {
+    "char": "东",
+    "pinyin": "dōng",
+    "meaning": "East",
+    "level": 3,
+    "phrase": "东",
+    "sentence": "这是“东”字。"
+  },
+  {
+    "char": "冬",
+    "pinyin": "dōng",
+    "meaning": "winter",
+    "level": 3,
+    "phrase": "冬",
+    "sentence": "这是“冬”字。"
+  },
+  {
+    "char": "短",
+    "pinyin": "duǎn",
+    "meaning": "short (in length, duration, or height); lack",
+    "level": 3,
+    "phrase": "短",
+    "sentence": "这是“短”字。"
+  },
+  {
+    "char": "段",
+    "pinyin": "duàn",
+    "meaning": "paragraph; segment; section",
+    "level": 3,
+    "phrase": "段",
+    "sentence": "这是“段”字。"
+  },
+  {
+    "char": "饿",
+    "pinyin": "è",
+    "meaning": "hungry",
+    "level": 3,
+    "phrase": "饿",
+    "sentence": "这是“饿”字。"
+  },
+  {
+    "char": "发",
+    "pinyin": "fā, fà",
+    "meaning": "send out; to issue; to show (one's feelings) | hair",
+    "level": 3,
+    "phrase": "发",
+    "sentence": "这是“发”字。"
+  },
+  {
+    "char": "放",
+    "pinyin": "fàng",
+    "meaning": "put; to place; to release; to free",
+    "level": 3,
+    "phrase": "放",
+    "sentence": "这是“放”字。"
+  },
+  {
+    "char": "分",
+    "pinyin": "fēn, fèn",
+    "meaning": "divide; part; minute; cent | component; share; ingredient",
+    "level": 3,
+    "phrase": "分",
+    "sentence": "这是“分”字。"
+  },
+  {
+    "char": "跟",
+    "pinyin": "gēn",
+    "meaning": "to follow; go with; heel",
+    "level": 3,
+    "phrase": "跟",
+    "sentence": "这是“跟”字。"
+  },
+  {
+    "char": "更",
+    "pinyin": "gèng",
+    "meaning": "more; even more",
+    "level": 3,
+    "phrase": "更",
+    "sentence": "这是“更”字。"
+  },
+  {
+    "char": "关",
+    "pinyin": "guān",
+    "meaning": "to close; shut; concern; relationship; turn off; mountain pass",
+    "level": 3,
+    "phrase": "关",
+    "sentence": "这是“关”字。"
+  },
+  {
+    "char": "花",
+    "pinyin": "huā",
+    "meaning": "flower; blossom; spend money; cost",
+    "level": 3,
+    "phrase": "花",
+    "sentence": "这是“花”字。"
+  },
+  {
+    "char": "画",
+    "pinyin": "huà",
+    "meaning": "draw; picture; painting",
+    "level": 3,
+    "phrase": "画",
+    "sentence": "这是“画”字。"
+  },
+  {
+    "char": "坏",
+    "pinyin": "huài",
+    "meaning": "bad; broken",
+    "level": 3,
+    "phrase": "坏",
+    "sentence": "这是“坏”字。"
+  },
+  {
+    "char": "换",
+    "pinyin": "huàn",
+    "meaning": "change; to exchange; to barter; to trade",
+    "level": 3,
+    "phrase": "换",
+    "sentence": "这是“换”字。"
+  },
+  {
+    "char": "极",
+    "pinyin": "jí",
+    "meaning": "an extreme; pole; very",
+    "level": 3,
+    "phrase": "极",
+    "sentence": "这是“极”字。"
+  },
+  {
+    "char": "讲",
+    "pinyin": "jiǎng",
+    "meaning": "to talk; to lecture; to explain; a speech",
+    "level": 3,
+    "phrase": "讲",
+    "sentence": "这是“讲”字。"
+  },
+  {
+    "char": "角",
+    "pinyin": "jiǎo, jué",
+    "meaning": "horn; angle; unit of money (1/10 yuan); corner (Kangxi radical 148) | role (theater)",
+    "level": 3,
+    "phrase": "角",
+    "sentence": "这是“角”字。"
+  },
+  {
+    "char": "脚",
+    "pinyin": "jiǎo",
+    "meaning": "foot (body part)",
+    "level": 3,
+    "phrase": "脚",
+    "sentence": "这是“脚”字。"
+  },
+  {
+    "char": "教",
+    "pinyin": "jiāo, jiào",
+    "meaning": "teach; instruct | religion; teaching",
+    "level": 3,
+    "phrase": "教",
+    "sentence": "这是“教”字。"
+  },
+  {
+    "char": "接",
+    "pinyin": "jiē",
+    "meaning": "connect; to meet; to pick up (somebody); to receive",
+    "level": 3,
+    "phrase": "接",
+    "sentence": "这是“接”字。"
+  },
+  {
+    "char": "借",
+    "pinyin": "jiè",
+    "meaning": "lend; borrow; excuse",
+    "level": 3,
+    "phrase": "借",
+    "sentence": "这是“借”字。"
+  },
+  {
+    "char": "久",
+    "pinyin": "jiǔ",
+    "meaning": "long (time)",
+    "level": 3,
+    "phrase": "久",
+    "sentence": "这是“久”字。"
+  },
+  {
+    "char": "旧",
+    "pinyin": "jiù",
+    "meaning": "old; past; used",
+    "level": 3,
+    "phrase": "旧",
+    "sentence": "这是“旧”字。"
+  },
+  {
+    "char": "渴",
+    "pinyin": "kě",
+    "meaning": "thirsty",
+    "level": 3,
+    "phrase": "渴",
+    "sentence": "这是“渴”字。"
+  },
+  {
+    "char": "刻",
+    "pinyin": "kè",
+    "meaning": "quarter (hour); (mw for short time intervals); carve; to cut",
+    "level": 3,
+    "phrase": "刻",
+    "sentence": "这是“刻”字。"
+  },
+  {
+    "char": "口",
+    "pinyin": "kǒu",
+    "meaning": "mouth (Kangxi radical 30)",
+    "level": 3,
+    "phrase": "口",
+    "sentence": "这是“口”字。"
+  },
+  {
+    "char": "哭",
+    "pinyin": "kū",
+    "meaning": "cry; weep",
+    "level": 3,
+    "phrase": "哭",
+    "sentence": "这是“哭”字。"
+  },
+  {
+    "char": "蓝",
+    "pinyin": "lán",
+    "meaning": "blue",
+    "level": 3,
+    "phrase": "蓝",
+    "sentence": "这是“蓝”字。"
+  },
+  {
+    "char": "老",
+    "pinyin": "lǎo",
+    "meaning": "old; aged; tough; often (Kangxi radical 125)",
+    "level": 3,
+    "phrase": "老",
+    "sentence": "这是“老”字。"
+  },
+  {
+    "char": "脸",
+    "pinyin": "liǎn",
+    "meaning": "face",
+    "level": 3,
+    "phrase": "脸",
+    "sentence": "这是“脸”字。"
+  },
+  {
+    "char": "辆",
+    "pinyin": "liàng",
+    "meaning": "(mw for vehicles)",
+    "level": 3,
+    "phrase": "辆",
+    "sentence": "这是“辆”字。"
+  },
+  {
+    "char": "楼",
+    "pinyin": "lóu",
+    "meaning": "story; floor; (multi-story) building",
+    "level": 3,
+    "phrase": "楼",
+    "sentence": "这是“楼”字。"
+  },
+  {
+    "char": "绿",
+    "pinyin": "lǜ",
+    "meaning": "green",
+    "level": 3,
+    "phrase": "绿",
+    "sentence": "这是“绿”字。"
+  },
+  {
+    "char": "马",
+    "pinyin": "mǎ",
+    "meaning": "horse (Kangxi radical 187)",
+    "level": 3,
+    "phrase": "马",
+    "sentence": "这是“马”字。"
+  },
+  {
+    "char": "米",
+    "pinyin": "mǐ",
+    "meaning": "rice; meter (Kangxi radical 119)",
+    "level": 3,
+    "phrase": "米",
+    "sentence": "这是“米”字。"
+  },
+  {
+    "char": "拿",
+    "pinyin": "ná",
+    "meaning": "carry in your hand; seize; to catch",
+    "level": 3,
+    "phrase": "拿",
+    "sentence": "这是“拿”字。"
+  },
+  {
+    "char": "南",
+    "pinyin": "nán",
+    "meaning": "South",
+    "level": 3,
+    "phrase": "南",
+    "sentence": "这是“南”字。"
+  },
+  {
+    "char": "难",
+    "pinyin": "nán",
+    "meaning": "difficult",
+    "level": 3,
+    "phrase": "难",
+    "sentence": "这是“难”字。"
+  },
+  {
+    "char": "鸟",
+    "pinyin": "niǎo",
+    "meaning": "bird (Kangxi radical 196)",
+    "level": 3,
+    "phrase": "鸟",
+    "sentence": "这是“鸟”字。"
+  },
+  {
+    "char": "胖",
+    "pinyin": "pàng",
+    "meaning": "fat; plump",
+    "level": 3,
+    "phrase": "胖",
+    "sentence": "这是“胖”字。"
+  },
+  {
+    "char": "骑",
+    "pinyin": "qí",
+    "meaning": "to ride (an animal or bike); to sit astride",
+    "level": 3,
+    "phrase": "骑",
+    "sentence": "这是“骑”字。"
+  },
+  {
+    "char": "秋",
+    "pinyin": "qiū",
+    "meaning": "autumn; fall; harvest time",
+    "level": 3,
+    "phrase": "秋",
+    "sentence": "这是“秋”字。"
+  },
+  {
+    "char": "伞",
+    "pinyin": "sǎn",
+    "meaning": "umbrella; parasol",
+    "level": 3,
+    "phrase": "伞",
+    "sentence": "这是“伞”字。"
+  },
+  {
+    "char": "试",
+    "pinyin": "shì",
+    "meaning": "to try; to test; examination",
+    "level": 3,
+    "phrase": "试",
+    "sentence": "这是“试”字。"
+  },
+  {
+    "char": "瘦",
+    "pinyin": "shòu",
+    "meaning": "thin; tight; lean",
+    "level": 3,
+    "phrase": "瘦",
+    "sentence": "这是“瘦”字。"
+  },
+  {
+    "char": "树",
+    "pinyin": "shù",
+    "meaning": "tree",
+    "level": 3,
+    "phrase": "树",
+    "sentence": "这是“树”字。"
+  },
+  {
+    "char": "双",
+    "pinyin": "shuāng",
+    "meaning": "two; double; (mw for pairs)",
+    "level": 3,
+    "phrase": "双",
+    "sentence": "这是“双”字。"
+  },
+  {
+    "char": "疼",
+    "pinyin": "téng",
+    "meaning": "ache; sore; (it) hurts; love fondly",
+    "level": 3,
+    "phrase": "疼",
+    "sentence": "这是“疼”字。"
+  },
+  {
+    "char": "甜",
+    "pinyin": "tián",
+    "meaning": "sweet",
+    "level": 3,
+    "phrase": "甜",
+    "sentence": "这是“甜”字。"
+  },
+  {
+    "char": "条",
+    "pinyin": "tiáo",
+    "meaning": "strip; (mw for long thin objects); item",
+    "level": 3,
+    "phrase": "条",
+    "sentence": "这是“条”字。"
+  },
+  {
+    "char": "腿",
+    "pinyin": "tuǐ",
+    "meaning": "leg",
+    "level": 3,
+    "phrase": "腿",
+    "sentence": "这是“腿”字。"
+  },
+  {
+    "char": "碗",
+    "pinyin": "wǎn",
+    "meaning": "bowl; cup",
+    "level": 3,
+    "phrase": "碗",
+    "sentence": "这是“碗”字。"
+  },
+  {
+    "char": "万",
+    "pinyin": "wàn",
+    "meaning": "ten thousand",
+    "level": 3,
+    "phrase": "万",
+    "sentence": "这是“万”字。"
+  },
+  {
+    "char": "为",
+    "pinyin": "wèi",
+    "meaning": "for; because of; to; for the sake of",
+    "level": 3,
+    "phrase": "为",
+    "sentence": "这是“为”字。"
+  },
+  {
+    "char": "位",
+    "pinyin": "wèi",
+    "meaning": "position; location; (polite mw for people)",
+    "level": 3,
+    "phrase": "位",
+    "sentence": "这是“位”字。"
+  },
+  {
+    "char": "西",
+    "pinyin": "xī",
+    "meaning": "West (Kangxi radical 146)",
+    "level": 3,
+    "phrase": "西",
+    "sentence": "这是“西”字。"
+  },
+  {
+    "char": "夏",
+    "pinyin": "xià",
+    "meaning": "summer",
+    "level": 3,
+    "phrase": "夏",
+    "sentence": "这是“夏”字。"
+  },
+  {
+    "char": "先",
+    "pinyin": "xiān",
+    "meaning": "first; early; before",
+    "level": 3,
+    "phrase": "先",
+    "sentence": "这是“先”字。"
+  },
+  {
+    "char": "向",
+    "pinyin": "xiàng",
+    "meaning": "direction; towards; to turn; to face",
+    "level": 3,
+    "phrase": "向",
+    "sentence": "这是“向”字。"
+  },
+  {
+    "char": "像",
+    "pinyin": "xiàng",
+    "meaning": "be like; resemble; appearance; appear",
+    "level": 3,
+    "phrase": "像",
+    "sentence": "这是“像”字。"
+  },
+  {
+    "char": "用",
+    "pinyin": "yòng",
+    "meaning": "to use (Kangxi radical 101)",
+    "level": 3,
+    "phrase": "用",
+    "sentence": "这是“用”字。"
+  },
+  {
+    "char": "又",
+    "pinyin": "yòu",
+    "meaning": "(once) again; also; both (Kangxi radical 29)",
+    "level": 3,
+    "phrase": "又",
+    "sentence": "这是“又”字。"
+  },
+  {
+    "char": "元",
+    "pinyin": "yuán",
+    "meaning": "Chinese monetary unit; dollar; first; principal",
+    "level": 3,
+    "phrase": "元",
+    "sentence": "这是“元”字。"
+  },
+  {
+    "char": "越",
+    "pinyin": "yuè",
+    "meaning": "even more; the more; exceed",
+    "level": 3,
+    "phrase": "越",
+    "sentence": "这是“越”字。"
+  },
+  {
+    "char": "站",
+    "pinyin": "zhàn",
+    "meaning": "stand; a station; be on one's feet; service center",
+    "level": 3,
+    "phrase": "站",
+    "sentence": "这是“站”字。"
+  },
+  {
+    "char": "张",
+    "pinyin": "zhāng",
+    "meaning": "(mw for flat objects); to spread out; (common surname)",
+    "level": 3,
+    "phrase": "张",
+    "sentence": "这是“张”字。"
+  },
+  {
+    "char": "只",
+    "pinyin": "zhī, zhǐ",
+    "meaning": "but; only; merely; just | (mw for birds and certain animals)",
+    "level": 3,
+    "phrase": "只",
+    "sentence": "这是“只”字。"
+  },
+  {
+    "char": "种",
+    "pinyin": "zhǒng",
+    "meaning": "type; breed; race; seed",
+    "level": 3,
+    "phrase": "种",
+    "sentence": "这是“种”字。"
+  },
+  {
+    "char": "嘴",
+    "pinyin": "zuǐ",
+    "meaning": "mouth",
+    "level": 3,
+    "phrase": "嘴",
+    "sentence": "这是“嘴”字。"
+  },
+  {
+    "char": "棒",
+    "pinyin": "bàng",
+    "meaning": "stick; club; good; excellent",
+    "level": 4,
+    "phrase": "棒",
+    "sentence": "这是“棒”字。"
+  },
+  {
+    "char": "抱",
+    "pinyin": "bào",
+    "meaning": "to hold; to hug; carry in one's arms; to cradle",
+    "level": 4,
+    "phrase": "抱",
+    "sentence": "这是“抱”字。"
+  },
+  {
+    "char": "倍",
+    "pinyin": "bèi",
+    "meaning": "(two, three, etc)-fold; times (multiplier)",
+    "level": 4,
+    "phrase": "倍",
+    "sentence": "这是“倍”字。"
+  },
+  {
+    "char": "笨",
+    "pinyin": "bèn",
+    "meaning": "stupid; foolish; silly; dumb; clumsy",
+    "level": 4,
+    "phrase": "笨",
+    "sentence": "这是“笨”字。"
+  },
+  {
+    "char": "遍",
+    "pinyin": "biàn",
+    "meaning": "a time; everywhere; turn; (mw for times or turns)",
+    "level": 4,
+    "phrase": "遍",
+    "sentence": "这是“遍”字。"
+  },
+  {
+    "char": "擦",
+    "pinyin": "cā",
+    "meaning": "to wipe; to rub; to polish",
+    "level": 4,
+    "phrase": "擦",
+    "sentence": "这是“擦”字。"
+  },
+  {
+    "char": "猜",
+    "pinyin": "cāi",
+    "meaning": "to guess",
+    "level": 4,
+    "phrase": "猜",
+    "sentence": "这是“猜”字。"
+  },
+  {
+    "char": "尝",
+    "pinyin": "cháng",
+    "meaning": "to taste; flavor; (past tense marker)",
+    "level": 4,
+    "phrase": "尝",
+    "sentence": "这是“尝”字。"
+  },
+  {
+    "char": "场",
+    "pinyin": "chǎng",
+    "meaning": "courtyard; place; field; (mw for games, performances, etc.)",
+    "level": 4,
+    "phrase": "场",
+    "sentence": "这是“场”字。"
+  },
+  {
+    "char": "存",
+    "pinyin": "cún",
+    "meaning": "exist; to deposit; to store",
+    "level": 4,
+    "phrase": "存",
+    "sentence": "这是“存”字。"
+  },
+  {
+    "char": "戴",
+    "pinyin": "dài",
+    "meaning": "put on; to wear; to respect",
+    "level": 4,
+    "phrase": "戴",
+    "sentence": "这是“戴”字。"
+  },
+  {
+    "char": "当",
+    "pinyin": "dāng",
+    "meaning": "should; act as; work as; manage; match; (sound of bells)",
+    "level": 4,
+    "phrase": "当",
+    "sentence": "这是“当”字。"
+  },
+  {
+    "char": "刀",
+    "pinyin": "dāo",
+    "meaning": "knife; blade (Kangxi radical 18)",
+    "level": 4,
+    "phrase": "刀",
+    "sentence": "这是“刀”字。"
+  },
+  {
+    "char": "倒",
+    "pinyin": "dǎo, dào",
+    "meaning": "to collapse; to fall; fail; to exchange | to pour; contrary to expectations",
+    "level": 4,
+    "phrase": "倒",
+    "sentence": "这是“倒”字。"
+  },
+  {
+    "char": "低",
+    "pinyin": "dī",
+    "meaning": "low; to lower (one's head); droop",
+    "level": 4,
+    "phrase": "低",
+    "sentence": "这是“低”字。"
+  },
+  {
+    "char": "底",
+    "pinyin": "dǐ",
+    "meaning": "bottom; background; base",
+    "level": 4,
+    "phrase": "底",
+    "sentence": "这是“底”字。"
+  },
+  {
+    "char": "掉",
+    "pinyin": "diào",
+    "meaning": "to drop; to fall",
+    "level": 4,
+    "phrase": "掉",
+    "sentence": "这是“掉”字。"
+  },
+  {
+    "char": "丢",
+    "pinyin": "diū",
+    "meaning": "lose (something); throw; put aside",
+    "level": 4,
+    "phrase": "丢",
+    "sentence": "这是“丢”字。"
+  },
+  {
+    "char": "而",
+    "pinyin": "ér",
+    "meaning": "and; but; yet; while (Kangxi radical 126)",
+    "level": 4,
+    "phrase": "而",
+    "sentence": "这是“而”字。"
+  },
+  {
+    "char": "份",
+    "pinyin": "fèn",
+    "meaning": "part; portion; (mw for documents, papers, jobs, etc.)",
+    "level": 4,
+    "phrase": "份",
+    "sentence": "这是“份”字。"
+  },
+  {
+    "char": "富",
+    "pinyin": "fù",
+    "meaning": "wealthy",
+    "level": 4,
+    "phrase": "富",
+    "sentence": "这是“富”字。"
+  },
+  {
+    "char": "赶",
+    "pinyin": "gǎn",
+    "meaning": "catch up; overtake; drive away",
+    "level": 4,
+    "phrase": "赶",
+    "sentence": "这是“赶”字。"
+  },
+  {
+    "char": "敢",
+    "pinyin": "gǎn",
+    "meaning": "to dare",
+    "level": 4,
+    "phrase": "敢",
+    "sentence": "这是“敢”字。"
+  },
+  {
+    "char": "干",
+    "pinyin": "gān",
+    "meaning": "to concern; shield; dry; clean (Kangxi radical 51)",
+    "level": 4,
+    "phrase": "干",
+    "sentence": "这是“干”字。"
+  },
+  {
+    "char": "刚",
+    "pinyin": "gāng",
+    "meaning": "just (indicating the immediate past); recently; firm",
+    "level": 4,
+    "phrase": "刚",
+    "sentence": "这是“刚”字。"
+  },
+  {
+    "char": "各",
+    "pinyin": "gè",
+    "meaning": "each; every",
+    "level": 4,
+    "phrase": "各",
+    "sentence": "这是“各”字。"
+  },
+  {
+    "char": "够",
+    "pinyin": "gòu",
+    "meaning": "enough; to reach",
+    "level": 4,
+    "phrase": "够",
+    "sentence": "这是“够”字。"
+  },
+  {
+    "char": "挂",
+    "pinyin": "guà",
+    "meaning": "hang; put up; suspend",
+    "level": 4,
+    "phrase": "挂",
+    "sentence": "这是“挂”字。"
+  },
+  {
+    "char": "光",
+    "pinyin": "guāng",
+    "meaning": "light; ray; bright; only; merely; used up",
+    "level": 4,
+    "phrase": "光",
+    "sentence": "这是“光”字。"
+  },
+  {
+    "char": "逛",
+    "pinyin": "guàng",
+    "meaning": "to stroll; to visit; go window shopping",
+    "level": 4,
+    "phrase": "逛",
+    "sentence": "这是“逛”字。"
+  },
+  {
+    "char": "汗",
+    "pinyin": "hàn",
+    "meaning": "sweat; perspiration; Khan",
+    "level": 4,
+    "phrase": "汗",
+    "sentence": "这是“汗”字。"
+  },
+  {
+    "char": "厚",
+    "pinyin": "hòu",
+    "meaning": "thick (for flat things); generous",
+    "level": 4,
+    "phrase": "厚",
+    "sentence": "这是“厚”字。"
+  },
+  {
+    "char": "火",
+    "pinyin": "huǒ",
+    "meaning": "fire (Kangxi radical 86)",
+    "level": 4,
+    "phrase": "火",
+    "sentence": "这是“火”字。"
+  },
+  {
+    "char": "寄",
+    "pinyin": "jì",
+    "meaning": "send by mail",
+    "level": 4,
+    "phrase": "寄",
+    "sentence": "这是“寄”字。"
+  },
+  {
+    "char": "假",
+    "pinyin": "jiǎ, jià",
+    "meaning": "fake; if; borrow | vacation; holiday",
+    "level": 4,
+    "phrase": "假",
+    "sentence": "这是“假”字。"
+  },
+  {
+    "char": "交",
+    "pinyin": "jiāo",
+    "meaning": "deliver; turn over; intersect; to pay (money); friendship",
+    "level": 4,
+    "phrase": "交",
+    "sentence": "这是“交”字。"
+  },
+  {
+    "char": "节",
+    "pinyin": "jié",
+    "meaning": "section; part; festival; moral integrity; save; (mw for class periods)",
+    "level": 4,
+    "phrase": "节",
+    "sentence": "这是“节”字。"
+  },
+  {
+    "char": "举",
+    "pinyin": "jǔ",
+    "meaning": "lift; raise; cite",
+    "level": 4,
+    "phrase": "举",
+    "sentence": "这是“举”字。"
+  },
+  {
+    "char": "棵",
+    "pinyin": "kē",
+    "meaning": "(mw for plants)",
+    "level": 4,
+    "phrase": "棵",
+    "sentence": "这是“棵”字。"
+  },
+  {
+    "char": "空",
+    "pinyin": "kōng, kòng",
+    "meaning": "empty; sky | leave blank; leisure",
+    "level": 4,
+    "phrase": "空",
+    "sentence": "这是“空”字。"
+  },
+  {
+    "char": "苦",
+    "pinyin": "kǔ",
+    "meaning": "bitter; miserable",
+    "level": 4,
+    "phrase": "苦",
+    "sentence": "这是“苦”字。"
+  },
+  {
+    "char": "困",
+    "pinyin": "kùn",
+    "meaning": "sleepy; surround; hard-pressed",
+    "level": 4,
+    "phrase": "困",
+    "sentence": "这是“困”字。"
+  },
+  {
+    "char": "拉",
+    "pinyin": "lā",
+    "meaning": "to pull; to play (string instruments); to drag",
+    "level": 4,
+    "phrase": "拉",
+    "sentence": "这是“拉”字。"
+  },
+  {
+    "char": "辣",
+    "pinyin": "là",
+    "meaning": "hot (spicy)",
+    "level": 4,
+    "phrase": "辣",
+    "sentence": "这是“辣”字。"
+  },
+  {
+    "char": "懒",
+    "pinyin": "lǎn",
+    "meaning": "lazy",
+    "level": 4,
+    "phrase": "懒",
+    "sentence": "这是“懒”字。"
+  },
+  {
+    "char": "俩",
+    "pinyin": "liǎng",
+    "meaning": "(colloquial) two (people)",
+    "level": 4,
+    "phrase": "俩",
+    "sentence": "这是“俩”字。"
+  },
+  {
+    "char": "连",
+    "pinyin": "lián",
+    "meaning": "even; including; join",
+    "level": 4,
+    "phrase": "连",
+    "sentence": "这是“连”字。"
+  },
+  {
+    "char": "留",
+    "pinyin": "liú",
+    "meaning": "to leave (behind, a message); to retain; to stay",
+    "level": 4,
+    "phrase": "留",
+    "sentence": "这是“留”字。"
+  },
+  {
+    "char": "乱",
+    "pinyin": "luàn",
+    "meaning": "disorder; confusion; arbitrarily",
+    "level": 4,
+    "phrase": "乱",
+    "sentence": "这是“乱”字。"
+  },
+  {
+    "char": "满",
+    "pinyin": "mǎn",
+    "meaning": "full; abbreviation for Manchurian",
+    "level": 4,
+    "phrase": "满",
+    "sentence": "这是“满”字。"
+  },
+  {
+    "char": "毛",
+    "pinyin": "máo",
+    "meaning": "hair; fur; feather; dime (Kangxi radical 82)",
+    "level": 4,
+    "phrase": "毛",
+    "sentence": "这是“毛”字。"
+  },
+  {
+    "char": "梦",
+    "pinyin": "mèng",
+    "meaning": "to dream",
+    "level": 4,
+    "phrase": "梦",
+    "sentence": "这是“梦”字。"
+  },
+  {
+    "char": "秒",
+    "pinyin": "miǎo",
+    "meaning": "second (unit of time or angle)",
+    "level": 4,
+    "phrase": "秒",
+    "sentence": "这是“秒”字。"
+  },
+  {
+    "char": "内",
+    "pinyin": "nèi",
+    "meaning": "inside; inner; internal; within",
+    "level": 4,
+    "phrase": "内",
+    "sentence": "这是“内”字。"
+  },
+  {
+    "char": "弄",
+    "pinyin": "nòng",
+    "meaning": "do; manage; to handle; make",
+    "level": 4,
+    "phrase": "弄",
+    "sentence": "这是“弄”字。"
+  },
+  {
+    "char": "陪",
+    "pinyin": "péi",
+    "meaning": "accompany; keep company",
+    "level": 4,
+    "phrase": "陪",
+    "sentence": "这是“陪”字。"
+  },
+  {
+    "char": "篇",
+    "pinyin": "piān",
+    "meaning": "sheet; (mw for articles); piece of writing",
+    "level": 4,
+    "phrase": "篇",
+    "sentence": "这是“篇”字。"
+  },
+  {
+    "char": "骗",
+    "pinyin": "piàn",
+    "meaning": "to cheat; to swindle; deceive",
+    "level": 4,
+    "phrase": "骗",
+    "sentence": "这是“骗”字。"
+  },
+  {
+    "char": "破",
+    "pinyin": "pò",
+    "meaning": "broken; damaged; to split",
+    "level": 4,
+    "phrase": "破",
+    "sentence": "这是“破”字。"
+  },
+  {
+    "char": "敲",
+    "pinyin": "qiāo",
+    "meaning": "knock; blackmail",
+    "level": 4,
+    "phrase": "敲",
+    "sentence": "这是“敲”字。"
+  },
+  {
+    "char": "桥",
+    "pinyin": "qiáo",
+    "meaning": "bridge",
+    "level": 4,
+    "phrase": "桥",
+    "sentence": "这是“桥”字。"
+  },
+  {
+    "char": "轻",
+    "pinyin": "qīng",
+    "meaning": "light; easy; gentle; soft",
+    "level": 4,
+    "phrase": "轻",
+    "sentence": "这是“轻”字。"
+  },
+  {
+    "char": "穷",
+    "pinyin": "qióng",
+    "meaning": "poor; exhausted",
+    "level": 4,
+    "phrase": "穷",
+    "sentence": "这是“穷”字。"
+  },
+  {
+    "char": "取",
+    "pinyin": "qǔ",
+    "meaning": "to take; get; choose",
+    "level": 4,
+    "phrase": "取",
+    "sentence": "这是“取”字。"
+  },
+  {
+    "char": "却",
+    "pinyin": "què",
+    "meaning": "but; yet; however",
+    "level": 4,
+    "phrase": "却",
+    "sentence": "这是“却”字。"
+  },
+  {
+    "char": "扔",
+    "pinyin": "rēng",
+    "meaning": "to throw; throw away",
+    "level": 4,
+    "phrase": "扔",
+    "sentence": "这是“扔”字。"
+  },
+  {
+    "char": "深",
+    "pinyin": "shēn",
+    "meaning": "deep; profound; dark (of colors)",
+    "level": 4,
+    "phrase": "深",
+    "sentence": "这是“深”字。"
+  },
+  {
+    "char": "省",
+    "pinyin": "shěng",
+    "meaning": "to save; economize; omit; province",
+    "level": 4,
+    "phrase": "省",
+    "sentence": "这是“省”字。"
+  },
+  {
+    "char": "剩",
+    "pinyin": "shèng",
+    "meaning": "have as remainder; be left over; surplus",
+    "level": 4,
+    "phrase": "剩",
+    "sentence": "这是“剩”字。"
+  },
+  {
+    "char": "使",
+    "pinyin": "shǐ",
+    "meaning": "to use; to make; to cause; enable; envoy; messenger",
+    "level": 4,
+    "phrase": "使",
+    "sentence": "这是“使”字。"
+  },
+  {
+    "char": "收",
+    "pinyin": "shōu",
+    "meaning": "receive; accept; collect; to harvest",
+    "level": 4,
+    "phrase": "收",
+    "sentence": "这是“收”字。"
+  },
+  {
+    "char": "输",
+    "pinyin": "shū",
+    "meaning": "to transport; to lose (a game, etc.)",
+    "level": 4,
+    "phrase": "输",
+    "sentence": "这是“输”字。"
+  },
+  {
+    "char": "帅",
+    "pinyin": "shuài",
+    "meaning": "handsome; graceful; commander-in-chief",
+    "level": 4,
+    "phrase": "帅",
+    "sentence": "这是“帅”字。"
+  },
+  {
+    "char": "死",
+    "pinyin": "sǐ",
+    "meaning": "to die; dead; fixed; impassible; extremely",
+    "level": 4,
+    "phrase": "死",
+    "sentence": "这是“死”字。"
+  },
+  {
+    "char": "酸",
+    "pinyin": "suān",
+    "meaning": "sour; sore; ache",
+    "level": 4,
+    "phrase": "酸",
+    "sentence": "这是“酸”字。"
+  },
+  {
+    "char": "台",
+    "pinyin": "tái",
+    "meaning": "platform; Taiwan (abbr.); desk; stage; typhoon; (mw for machines); (classical) you (in letters)",
+    "level": 4,
+    "phrase": "台",
+    "sentence": "这是“台”字。"
+  },
+  {
+    "char": "抬",
+    "pinyin": "tái",
+    "meaning": "to lift; to raise (with both palms up); carry (together)",
+    "level": 4,
+    "phrase": "抬",
+    "sentence": "这是“抬”字。"
+  },
+  {
+    "char": "谈",
+    "pinyin": "tán",
+    "meaning": "to talk; to chat; discuss",
+    "level": 4,
+    "phrase": "谈",
+    "sentence": "这是“谈”字。"
+  },
+  {
+    "char": "汤",
+    "pinyin": "tāng",
+    "meaning": "soup; broth",
+    "level": 4,
+    "phrase": "汤",
+    "sentence": "这是“汤”字。"
+  },
+  {
+    "char": "糖",
+    "pinyin": "táng",
+    "meaning": "sugar; candy; sweets",
+    "level": 4,
+    "phrase": "糖",
+    "sentence": "这是“糖”字。"
+  },
+  {
+    "char": "躺",
+    "pinyin": "tǎng",
+    "meaning": "recline; lie down (on back or side)",
+    "level": 4,
+    "phrase": "躺",
+    "sentence": "这是“躺”字。"
+  },
+  {
+    "char": "趟",
+    "pinyin": "tàng, tāng",
+    "meaning": "(mw for trips times) | to wade",
+    "level": 4,
+    "phrase": "趟",
+    "sentence": "这是“趟”字。"
+  },
+  {
+    "char": "提",
+    "pinyin": "tí",
+    "meaning": "to carry; to lift; to raise (an issue)",
+    "level": 4,
+    "phrase": "提",
+    "sentence": "这是“提”字。"
+  },
+  {
+    "char": "停",
+    "pinyin": "tíng",
+    "meaning": "to stop; to halt; to park (a car)",
+    "level": 4,
+    "phrase": "停",
+    "sentence": "这是“停”字。"
+  },
+  {
+    "char": "挺",
+    "pinyin": "tǐng",
+    "meaning": "straighten up; stick out; rather (good); very",
+    "level": 4,
+    "phrase": "挺",
+    "sentence": "这是“挺”字。"
+  },
+  {
+    "char": "推",
+    "pinyin": "tuī",
+    "meaning": "to push; to scrape; to decline; postpone; elect",
+    "level": 4,
+    "phrase": "推",
+    "sentence": "这是“推”字。"
+  },
+  {
+    "char": "脱",
+    "pinyin": "tuō",
+    "meaning": "to shed; take off; to escape",
+    "level": 4,
+    "phrase": "脱",
+    "sentence": "这是“脱”字。"
+  },
+  {
+    "char": "无",
+    "pinyin": "wú",
+    "meaning": "have not; without; not (Kangxi radical 71)",
+    "level": 4,
+    "phrase": "无",
+    "sentence": "这是“无”字。"
+  },
+  {
+    "char": "咸",
+    "pinyin": "xián",
+    "meaning": "salty; salted; all",
+    "level": 4,
+    "phrase": "咸",
+    "sentence": "这是“咸”字。"
+  },
+  {
+    "char": "香",
+    "pinyin": "xiāng",
+    "meaning": "fragrant; savory (Kangxi radical 186)",
+    "level": 4,
+    "phrase": "香",
+    "sentence": "这是“香”字。"
+  },
+  {
+    "char": "响",
+    "pinyin": "xiǎng",
+    "meaning": "make a sound; to ring; echo",
+    "level": 4,
+    "phrase": "响",
+    "sentence": "这是“响”字。"
+  },
+  {
+    "char": "行",
+    "pinyin": "xíng",
+    "meaning": "walk; be current; do; will do; okay",
+    "level": 4,
+    "phrase": "行",
+    "sentence": "这是“行”字。"
+  },
+  {
+    "char": "醒",
+    "pinyin": "xǐng",
+    "meaning": "wake up",
+    "level": 4,
+    "phrase": "醒",
+    "sentence": "这是“醒”字。"
+  },
+  {
+    "char": "呀",
+    "pinyin": "ya",
+    "meaning": "ah; oh; (used for 啊 after words ending with a, e, i, o, or ü)",
+    "level": 4,
+    "phrase": "呀",
+    "sentence": "这是“呀”字。"
+  },
+  {
+    "char": "盐",
+    "pinyin": "yán",
+    "meaning": "salt",
+    "level": 4,
+    "phrase": "盐",
+    "sentence": "这是“盐”字。"
+  },
+  {
+    "char": "页",
+    "pinyin": "yè",
+    "meaning": "page; leaf (Kangxi radical 181)",
+    "level": 4,
+    "phrase": "页",
+    "sentence": "这是“页”字。"
+  },
+  {
+    "char": "以",
+    "pinyin": "yǐ",
+    "meaning": "to use; according to; so as to; for; by",
+    "level": 4,
+    "phrase": "以",
+    "sentence": "这是“以”字。"
+  },
+  {
+    "char": "赢",
+    "pinyin": "yíng",
+    "meaning": "to win; to beat; to profit",
+    "level": 4,
+    "phrase": "赢",
+    "sentence": "这是“赢”字。"
+  },
+  {
+    "char": "由",
+    "pinyin": "yóu",
+    "meaning": "follow; from; by; through",
+    "level": 4,
+    "phrase": "由",
+    "sentence": "这是“由”字。"
+  },
+  {
+    "char": "与",
+    "pinyin": "yǔ",
+    "meaning": "(formal) and; to give; together with; participate; final particle expressing doubt or surprise",
+    "level": 4,
+    "phrase": "与",
+    "sentence": "这是“与”字。"
+  },
+  {
+    "char": "云",
+    "pinyin": "yún",
+    "meaning": "cloud; Yunnan province | say; speak",
+    "level": 4,
+    "phrase": "云",
+    "sentence": "这是“云”字。"
+  },
+  {
+    "char": "脏",
+    "pinyin": "zāng",
+    "meaning": "filthy; dirty",
+    "level": 4,
+    "phrase": "脏",
+    "sentence": "这是“脏”字。"
+  },
+  {
+    "char": "照",
+    "pinyin": "zhào",
+    "meaning": "to shine; illuminate; according to",
+    "level": 4,
+    "phrase": "照",
+    "sentence": "这是“照”字。"
+  },
+  {
+    "char": "之",
+    "pinyin": "zhī",
+    "meaning": "(literary equivalent to 的); (pronoun); of",
+    "level": 4,
+    "phrase": "之",
+    "sentence": "这是“之”字。"
+  },
+  {
+    "char": "指",
+    "pinyin": "zhǐ",
+    "meaning": "finger; to point (at, to, out); refer to",
+    "level": 4,
+    "phrase": "指",
+    "sentence": "这是“指”字。"
+  },
+  {
+    "char": "重",
+    "pinyin": "zhòng",
+    "meaning": "heavy; serious; important",
+    "level": 4,
+    "phrase": "重",
+    "sentence": "这是“重”字。"
+  },
+  {
+    "char": "转",
+    "pinyin": "zhuǎn, zhuàn",
+    "meaning": "to turn; to change; pass on | revolve; rotate",
+    "level": 4,
+    "phrase": "转",
+    "sentence": "这是“转”字。"
+  },
+  {
+    "char": "赚",
+    "pinyin": "zhuàn",
+    "meaning": "earn; make a profit",
+    "level": 4,
+    "phrase": "赚",
+    "sentence": "这是“赚”字。"
+  },
+  {
+    "char": "租",
+    "pinyin": "zū",
+    "meaning": "to rent",
+    "level": 4,
+    "phrase": "租",
+    "sentence": "这是“租”字。"
+  },
+  {
+    "char": "座",
+    "pinyin": "zuò",
+    "meaning": "(mw for mountains, bridges, tall buildings, etc.); | seat; base; stand; constellation",
+    "level": 4,
+    "phrase": "座",
+    "sentence": "这是“座”字。"
+  },
+  {
+    "char": "哎",
+    "pinyin": "āi",
+    "meaning": "hey!; (interjection of surprise or dissatisfaction)",
+    "level": 5,
+    "phrase": "哎",
+    "sentence": "这是“哎”字。"
+  },
+  {
+    "char": "唉",
+    "pinyin": "ài",
+    "meaning": "(an exclamation indicating resignation); oh well; oh; mm",
+    "level": 5,
+    "phrase": "唉",
+    "sentence": "这是“唉”字。"
+  },
+  {
+    "char": "岸",
+    "pinyin": "àn",
+    "meaning": "bank; shore; beach; coast",
+    "level": 5,
+    "phrase": "岸",
+    "sentence": "这是“岸”字。"
+  },
+  {
+    "char": "暗",
+    "pinyin": "àn",
+    "meaning": "dark; gloomy; hidden; secret",
+    "level": 5,
+    "phrase": "暗",
+    "sentence": "这是“暗”字。"
+  },
+  {
+    "char": "摆",
+    "pinyin": "bǎi",
+    "meaning": "to put (on); arrange; to sway; pendulum",
+    "level": 5,
+    "phrase": "摆",
+    "sentence": "这是“摆”字。"
+  },
+  {
+    "char": "薄",
+    "pinyin": "báo",
+    "meaning": "thin; flimsy; weak (first two pronunciations)",
+    "level": 5,
+    "phrase": "薄",
+    "sentence": "这是“薄”字。"
+  },
+  {
+    "char": "背",
+    "pinyin": "bēi",
+    "meaning": "carry on one's back; to bear",
+    "level": 5,
+    "phrase": "背",
+    "sentence": "这是“背”字。"
+  },
+  {
+    "char": "便",
+    "pinyin": "biàn, pián",
+    "meaning": "plain; convenient; excretion; formal equivalent to 就 | cheap",
+    "level": 5,
+    "phrase": "便",
+    "sentence": "这是“便”字。"
+  },
+  {
+    "char": "布",
+    "pinyin": "bù",
+    "meaning": "cloth; announce; to spread",
+    "level": 5,
+    "phrase": "布",
+    "sentence": "这是“布”字。"
+  },
+  {
+    "char": "踩",
+    "pinyin": "cǎi",
+    "meaning": "step upon; to tread; to stamp",
+    "level": 5,
+    "phrase": "踩",
+    "sentence": "这是“踩”字。"
+  },
+  {
+    "char": "册",
+    "pinyin": "cè",
+    "meaning": "book; (mw for books)",
+    "level": 5,
+    "phrase": "册",
+    "sentence": "这是“册”字。"
+  },
+  {
+    "char": "插",
+    "pinyin": "chā",
+    "meaning": "to insert; stick in; pierce",
+    "level": 5,
+    "phrase": "插",
+    "sentence": "这是“插”字。"
+  },
+  {
+    "char": "拆",
+    "pinyin": "chāi",
+    "meaning": "unravel; to tear; demolish",
+    "level": 5,
+    "phrase": "拆",
+    "sentence": "这是“拆”字。"
+  },
+  {
+    "char": "抄",
+    "pinyin": "chāo",
+    "meaning": "to copy; plagiarize; search and confiscate",
+    "level": 5,
+    "phrase": "抄",
+    "sentence": "这是“抄”字。"
+  },
+  {
+    "char": "朝",
+    "pinyin": "cháo",
+    "meaning": "to face; towards; dynasty",
+    "level": 5,
+    "phrase": "朝",
+    "sentence": "这是“朝”字。"
+  },
+  {
+    "char": "吵",
+    "pinyin": "chǎo",
+    "meaning": "to quarrel; make noise",
+    "level": 5,
+    "phrase": "吵",
+    "sentence": "这是“吵”字。"
+  },
+  {
+    "char": "炒",
+    "pinyin": "chǎo",
+    "meaning": "to stir-fry; saute",
+    "level": 5,
+    "phrase": "炒",
+    "sentence": "这是“炒”字。"
+  },
+  {
+    "char": "趁",
+    "pinyin": "chèn",
+    "meaning": "avail oneself of; take advantage of (an opportunity or situation)",
+    "level": 5,
+    "phrase": "趁",
+    "sentence": "这是“趁”字。"
+  },
+  {
+    "char": "称",
+    "pinyin": "chēng",
+    "meaning": "weigh; to call; be called",
+    "level": 5,
+    "phrase": "称",
+    "sentence": "这是“称”字。"
+  },
+  {
+    "char": "冲",
+    "pinyin": "chōng",
+    "meaning": "to rush; to clash; to rinse; thoroughfare",
+    "level": 5,
+    "phrase": "冲",
+    "sentence": "这是“冲”字。"
+  },
+  {
+    "char": "丑",
+    "pinyin": "chǒu",
+    "meaning": "ugly; disgraceful (2nd Earthly Branch)",
+    "level": 5,
+    "phrase": "丑",
+    "sentence": "这是“丑”字。"
+  },
+  {
+    "char": "臭",
+    "pinyin": "chòu",
+    "meaning": "stench; stink",
+    "level": 5,
+    "phrase": "臭",
+    "sentence": "这是“臭”字。"
+  },
+  {
+    "char": "闯",
+    "pinyin": "chuǎng",
+    "meaning": "rush; break through; to temper oneself (by battling difficulties)",
+    "level": 5,
+    "phrase": "闯",
+    "sentence": "这是“闯”字。"
+  },
+  {
+    "char": "吹",
+    "pinyin": "chuī",
+    "meaning": "to blow; to blast; to puff",
+    "level": 5,
+    "phrase": "吹",
+    "sentence": "这是“吹”字。"
+  },
+  {
+    "char": "醋",
+    "pinyin": "cù",
+    "meaning": "vinegar",
+    "level": 5,
+    "phrase": "醋",
+    "sentence": "这是“醋”字。"
+  },
+  {
+    "char": "催",
+    "pinyin": "cuī",
+    "meaning": "to press; to urge; to hurry",
+    "level": 5,
+    "phrase": "催",
+    "sentence": "这是“催”字。"
+  },
+  {
+    "char": "呆",
+    "pinyin": "dāi",
+    "meaning": "stupid; foolish; blank; dumbstruck; to stay",
+    "level": 5,
+    "phrase": "呆",
+    "sentence": "这是“呆”字。"
+  },
+  {
+    "char": "淡",
+    "pinyin": "dàn",
+    "meaning": "diluted; weak; thin",
+    "level": 5,
+    "phrase": "淡",
+    "sentence": "这是“淡”字。"
+  },
+  {
+    "char": "挡",
+    "pinyin": "dǎng",
+    "meaning": "to block; hinder; gear; equipment",
+    "level": 5,
+    "phrase": "挡",
+    "sentence": "这是“挡”字。"
+  },
+  {
+    "char": "滴",
+    "pinyin": "dī",
+    "meaning": "to drip; drop; (mw for drops of liquid)",
+    "level": 5,
+    "phrase": "滴",
+    "sentence": "这是“滴”字。"
+  },
+  {
+    "char": "递",
+    "pinyin": "dì",
+    "meaning": "hand over; to pass; to give",
+    "level": 5,
+    "phrase": "递",
+    "sentence": "这是“递”字。"
+  },
+  {
+    "char": "钓",
+    "pinyin": "diào",
+    "meaning": "to fish",
+    "level": 5,
+    "phrase": "钓",
+    "sentence": "这是“钓”字。"
+  },
+  {
+    "char": "顶",
+    "pinyin": "dǐng",
+    "meaning": "top; roof; carry on one's head; prop up; to butt; (mw for headwear, i.e. hats)",
+    "level": 5,
+    "phrase": "顶",
+    "sentence": "这是“顶”字。"
+  },
+  {
+    "char": "冻",
+    "pinyin": "dòng",
+    "meaning": "to freeze",
+    "level": 5,
+    "phrase": "冻",
+    "sentence": "这是“冻”字。"
+  },
+  {
+    "char": "洞",
+    "pinyin": "dòng",
+    "meaning": "cave; hole",
+    "level": 5,
+    "phrase": "洞",
+    "sentence": "这是“洞”字。"
+  },
+  {
+    "char": "逗",
+    "pinyin": "dòu",
+    "meaning": "to tease; amuse; to stay; to stop; funny",
+    "level": 5,
+    "phrase": "逗",
+    "sentence": "这是“逗”字。"
+  },
+  {
+    "char": "断",
+    "pinyin": "duàn",
+    "meaning": "to break; decide; absolutely (usually negative)",
+    "level": 5,
+    "phrase": "断",
+    "sentence": "这是“断”字。"
+  },
+  {
+    "char": "堆",
+    "pinyin": "duī",
+    "meaning": "pile; heap; stack; crowd",
+    "level": 5,
+    "phrase": "堆",
+    "sentence": "这是“堆”字。"
+  },
+  {
+    "char": "吨",
+    "pinyin": "dūn",
+    "meaning": "ton",
+    "level": 5,
+    "phrase": "吨",
+    "sentence": "这是“吨”字。"
+  },
+  {
+    "char": "蹲",
+    "pinyin": "dūn",
+    "meaning": "to crouch; to squat",
+    "level": 5,
+    "phrase": "蹲",
+    "sentence": "这是“蹲”字。"
+  },
+  {
+    "char": "顿",
+    "pinyin": "dùn",
+    "meaning": "pause; arrange; stamp feet; suddenly; (mw for meals)",
+    "level": 5,
+    "phrase": "顿",
+    "sentence": "这是“顿”字。"
+  },
+  {
+    "char": "朵",
+    "pinyin": "duǒ",
+    "meaning": "(mw for flowers and clouds)",
+    "level": 5,
+    "phrase": "朵",
+    "sentence": "这是“朵”字。"
+  },
+  {
+    "char": "翻",
+    "pinyin": "fān",
+    "meaning": "to turn over; capsize; translate",
+    "level": 5,
+    "phrase": "翻",
+    "sentence": "这是“翻”字。"
+  },
+  {
+    "char": "方",
+    "pinyin": "fāng",
+    "meaning": "square; direction; side (Kangxi radical 70)",
+    "level": 5,
+    "phrase": "方",
+    "sentence": "这是“方”字。"
+  },
+  {
+    "char": "非",
+    "pinyin": "fēi",
+    "meaning": "non-; un-; not be; wrongdoing; simply must (Kangxi radical 175)",
+    "level": 5,
+    "phrase": "非",
+    "sentence": "这是“非”字。"
+  },
+  {
+    "char": "扶",
+    "pinyin": "fú",
+    "meaning": "to support with hand; to help somebody up",
+    "level": 5,
+    "phrase": "扶",
+    "sentence": "这是“扶”字。"
+  },
+  {
+    "char": "幅",
+    "pinyin": "fú",
+    "meaning": "width of cloth; size; (mw for pictures, paintings, textiles)",
+    "level": 5,
+    "phrase": "幅",
+    "sentence": "这是“幅”字。"
+  },
+  {
+    "char": "盖",
+    "pinyin": "gài",
+    "meaning": "lid; top; cover; to build",
+    "level": 5,
+    "phrase": "盖",
+    "sentence": "这是“盖”字。"
+  },
+  {
+    "char": "搞",
+    "pinyin": "gǎo",
+    "meaning": "do; make; be engaged in",
+    "level": 5,
+    "phrase": "搞",
+    "sentence": "这是“搞”字。"
+  },
+  {
+    "char": "根",
+    "pinyin": "gēn",
+    "meaning": "root; base; (mw for long, slender objects)",
+    "level": 5,
+    "phrase": "根",
+    "sentence": "这是“根”字。"
+  },
+  {
+    "char": "乖",
+    "pinyin": "guāi",
+    "meaning": "(of a child) obedient; well-behaved; clever; perverse; contrary to reason",
+    "level": 5,
+    "phrase": "乖",
+    "sentence": "这是“乖”字。"
+  },
+  {
+    "char": "官",
+    "pinyin": "guān",
+    "meaning": "an official; organ; governmental",
+    "level": 5,
+    "phrase": "官",
+    "sentence": "这是“官”字。"
+  },
+  {
+    "char": "滚",
+    "pinyin": "gǔn",
+    "meaning": "to roll; get lost; to boil",
+    "level": 5,
+    "phrase": "滚",
+    "sentence": "这是“滚”字。"
+  },
+  {
+    "char": "锅",
+    "pinyin": "guō",
+    "meaning": "pot; pan; boiler",
+    "level": 5,
+    "phrase": "锅",
+    "sentence": "这是“锅”字。"
+  },
+  {
+    "char": "哈",
+    "pinyin": "hā",
+    "meaning": "exhale; sip; (sound of laughter)",
+    "level": 5,
+    "phrase": "哈",
+    "sentence": "这是“哈”字。"
+  },
+  {
+    "char": "喊",
+    "pinyin": "hǎn",
+    "meaning": "call; cry; shout",
+    "level": 5,
+    "phrase": "喊",
+    "sentence": "这是“喊”字。"
+  },
+  {
+    "char": "恨",
+    "pinyin": "hèn",
+    "meaning": "to hate",
+    "level": 5,
+    "phrase": "恨",
+    "sentence": "这是“恨”字。"
+  },
+  {
+    "char": "壶",
+    "pinyin": "hú",
+    "meaning": "pot; kettle; jug; (mw for bottled liquids)",
+    "level": 5,
+    "phrase": "壶",
+    "sentence": "这是“壶”字。"
+  },
+  {
+    "char": "滑",
+    "pinyin": "huá",
+    "meaning": "slippery; cunning; crafty",
+    "level": 5,
+    "phrase": "滑",
+    "sentence": "这是“滑”字。"
+  },
+  {
+    "char": "划",
+    "pinyin": "huà, huá",
+    "meaning": "delimit; to transfer; assign | to row; to paddle; to scratch",
+    "level": 5,
+    "phrase": "划",
+    "sentence": "这是“划”字。"
+  },
+  {
+    "char": "灰",
+    "pinyin": "huī",
+    "meaning": "ash; gray (grey); dust; lime",
+    "level": 5,
+    "phrase": "灰",
+    "sentence": "这是“灰”字。"
+  },
+  {
+    "char": "挥",
+    "pinyin": "huī",
+    "meaning": "to wave; brandish; wield; wipe away",
+    "level": 5,
+    "phrase": "挥",
+    "sentence": "这是“挥”字。"
+  },
+  {
+    "char": "甲",
+    "pinyin": "jiǎ",
+    "meaning": "one; armor (1st Heavenly Stem)",
+    "level": 5,
+    "phrase": "甲",
+    "sentence": "这是“甲”字。"
+  },
+  {
+    "char": "嫁",
+    "pinyin": "jià",
+    "meaning": "marry (a husband); take a husband",
+    "level": 5,
+    "phrase": "嫁",
+    "sentence": "这是“嫁”字。"
+  },
+  {
+    "char": "捡",
+    "pinyin": "jiǎn",
+    "meaning": "to pick up; collect; gather",
+    "level": 5,
+    "phrase": "捡",
+    "sentence": "这是“捡”字。"
+  },
+  {
+    "char": "浇",
+    "pinyin": "jiāo",
+    "meaning": "to water; irrigate; to pour; to sprinkle",
+    "level": 5,
+    "phrase": "浇",
+    "sentence": "这是“浇”字。"
+  },
+  {
+    "char": "戒",
+    "pinyin": "jiè",
+    "meaning": "warn against; swear off",
+    "level": 5,
+    "phrase": "戒",
+    "sentence": "这是“戒”字。"
+  },
+  {
+    "char": "届",
+    "pinyin": "jiè",
+    "meaning": "arrive at; period; session; (mw for events; meetings; etc.)",
+    "level": 5,
+    "phrase": "届",
+    "sentence": "这是“届”字。"
+  },
+  {
+    "char": "救",
+    "pinyin": "jiù",
+    "meaning": "to save (life); to assist; to rescue",
+    "level": 5,
+    "phrase": "救",
+    "sentence": "这是“救”字。"
+  },
+  {
+    "char": "捐",
+    "pinyin": "juān",
+    "meaning": "to contribute; to donate; to subsribe to; to abandon; to relinquish; contribution; tax",
+    "level": 5,
+    "phrase": "捐",
+    "sentence": "这是“捐”字。"
+  },
+  {
+    "char": "砍",
+    "pinyin": "kǎn",
+    "meaning": "to chop; cut down",
+    "level": 5,
+    "phrase": "砍",
+    "sentence": "这是“砍”字。"
+  },
+  {
+    "char": "靠",
+    "pinyin": "kào",
+    "meaning": "depend on; lean on; near; to trust",
+    "level": 5,
+    "phrase": "靠",
+    "sentence": "这是“靠”字。"
+  },
+  {
+    "char": "颗",
+    "pinyin": "kē",
+    "meaning": "(mw for hearts and small, round things like seeds, grains, beans, etc.)",
+    "level": 5,
+    "phrase": "颗",
+    "sentence": "这是“颗”字。"
+  },
+  {
+    "char": "克",
+    "pinyin": "kè",
+    "meaning": "gram; overcome; restrain",
+    "level": 5,
+    "phrase": "克",
+    "sentence": "这是“克”字。"
+  },
+  {
+    "char": "夸",
+    "pinyin": "kuā",
+    "meaning": "to boast; to praise; exaggerate",
+    "level": 5,
+    "phrase": "夸",
+    "sentence": "这是“夸”字。"
+  },
+  {
+    "char": "宽",
+    "pinyin": "kuān",
+    "meaning": "wide; broad; relaxed; lenient",
+    "level": 5,
+    "phrase": "宽",
+    "sentence": "这是“宽”字。"
+  },
+  {
+    "char": "拦",
+    "pinyin": "lán",
+    "meaning": "to block; to cut off; hinder",
+    "level": 5,
+    "phrase": "拦",
+    "sentence": "这是“拦”字。"
+  },
+  {
+    "char": "烂",
+    "pinyin": "làn",
+    "meaning": "overcooked; rotten; soft; mushy",
+    "level": 5,
+    "phrase": "烂",
+    "sentence": "这是“烂”字。"
+  },
+  {
+    "char": "雷",
+    "pinyin": "léi",
+    "meaning": "thunder",
+    "level": 5,
+    "phrase": "雷",
+    "sentence": "这是“雷”字。"
+  },
+  {
+    "char": "梨",
+    "pinyin": "lí",
+    "meaning": "pear",
+    "level": 5,
+    "phrase": "梨",
+    "sentence": "这是“梨”字。"
+  },
+  {
+    "char": "亮",
+    "pinyin": "liàng",
+    "meaning": "bright; light; shiny",
+    "level": 5,
+    "phrase": "亮",
+    "sentence": "这是“亮”字。"
+  },
+  {
+    "char": "铃",
+    "pinyin": "líng",
+    "meaning": "bell",
+    "level": 5,
+    "phrase": "铃",
+    "sentence": "这是“铃”字。"
+  },
+  {
+    "char": "龙",
+    "pinyin": "lóng",
+    "meaning": "dragon (Kangxi radical 212)",
+    "level": 5,
+    "phrase": "龙",
+    "sentence": "这是“龙”字。"
+  },
+  {
+    "char": "漏",
+    "pinyin": "lòu",
+    "meaning": "to leak; to funnel; to let out",
+    "level": 5,
+    "phrase": "漏",
+    "sentence": "这是“漏”字。"
+  },
+  {
+    "char": "骂",
+    "pinyin": "mà",
+    "meaning": "scold; curse; condemn; verbally abuse",
+    "level": 5,
+    "phrase": "骂",
+    "sentence": "这是“骂”字。"
+  },
+  {
+    "char": "摸",
+    "pinyin": "mō",
+    "meaning": "to touch; to stroke; fish out; feel out",
+    "level": 5,
+    "phrase": "摸",
+    "sentence": "这是“摸”字。"
+  },
+  {
+    "char": "某",
+    "pinyin": "mǒu",
+    "meaning": "a certain; some",
+    "level": 5,
+    "phrase": "某",
+    "sentence": "这是“某”字。"
+  },
+  {
+    "char": "嫩",
+    "pinyin": "nèn",
+    "meaning": "tender; inexperienced",
+    "level": 5,
+    "phrase": "嫩",
+    "sentence": "这是“嫩”字。"
+  },
+  {
+    "char": "嗯",
+    "pinyin": "ēn",
+    "meaning": "(interjection expressing what?, huh? hmm? why? ok, etc.)",
+    "level": 5,
+    "phrase": "嗯",
+    "sentence": "这是“嗯”字。"
+  },
+  {
+    "char": "念",
+    "pinyin": "niàn",
+    "meaning": "read aloud; to study; to miss or think of somebody",
+    "level": 5,
+    "phrase": "念",
+    "sentence": "这是“念”字。"
+  },
+  {
+    "char": "浓",
+    "pinyin": "nóng",
+    "meaning": "concentrated; dense",
+    "level": 5,
+    "phrase": "浓",
+    "sentence": "这是“浓”字。"
+  },
+  {
+    "char": "拍",
+    "pinyin": "pāi",
+    "meaning": "to clap; to pat; to shoot (pictures, a film); send (a telegram)",
+    "level": 5,
+    "phrase": "拍",
+    "sentence": "这是“拍”字。"
+  },
+  {
+    "char": "派",
+    "pinyin": "pài",
+    "meaning": "dispatch; (mw for political groups; schools of thought; etc.)",
+    "level": 5,
+    "phrase": "派",
+    "sentence": "这是“派”字。"
+  },
+  {
+    "char": "盆",
+    "pinyin": "pén",
+    "meaning": "basin; (flower) pot",
+    "level": 5,
+    "phrase": "盆",
+    "sentence": "这是“盆”字。"
+  },
+  {
+    "char": "碰",
+    "pinyin": "pèng",
+    "meaning": "to touch; to bump; to encounter",
+    "level": 5,
+    "phrase": "碰",
+    "sentence": "这是“碰”字。"
+  },
+  {
+    "char": "批",
+    "pinyin": "pī",
+    "meaning": "criticize; to comment; wholesale; (mw for batches, lots, etc.)",
+    "level": 5,
+    "phrase": "批",
+    "sentence": "这是“批”字。"
+  },
+  {
+    "char": "披",
+    "pinyin": "pī",
+    "meaning": "drape over one's shoulders; split open; open",
+    "level": 5,
+    "phrase": "披",
+    "sentence": "这是“披”字。"
+  },
+  {
+    "char": "匹",
+    "pinyin": "pǐ",
+    "meaning": "ordinary person; (mw for horses, bolt of cloth)",
+    "level": 5,
+    "phrase": "匹",
+    "sentence": "这是“匹”字。"
+  },
+  {
+    "char": "片",
+    "pinyin": "piàn, piān",
+    "meaning": "(mw for pieces of things); a slice; a flake (Kangxi radical 91) | film; photo",
+    "level": 5,
+    "phrase": "片",
+    "sentence": "这是“片”字。"
+  },
+  {
+    "char": "飘",
+    "pinyin": "piāo",
+    "meaning": "to float; flutter",
+    "level": 5,
+    "phrase": "飘",
+    "sentence": "这是“飘”字。"
+  },
+  {
+    "char": "平",
+    "pinyin": "píng",
+    "meaning": "flat; level; equal; ordinary",
+    "level": 5,
+    "phrase": "平",
+    "sentence": "这是“平”字。"
+  },
+  {
+    "char": "凭",
+    "pinyin": "píng",
+    "meaning": "lean against; evidence; proof; no matter (what/how/etc.)",
+    "level": 5,
+    "phrase": "凭",
+    "sentence": "这是“凭”字。"
+  },
+  {
+    "char": "签",
+    "pinyin": "qiān",
+    "meaning": "bamboo used for drawing lots; toothpick; to sign (one's name)",
+    "level": 5,
+    "phrase": "签",
+    "sentence": "这是“签”字。"
+  },
+  {
+    "char": "浅",
+    "pinyin": "qiǎn",
+    "meaning": "shallow; simple; superficial; light (of colors)",
+    "level": 5,
+    "phrase": "浅",
+    "sentence": "这是“浅”字。"
+  },
+  {
+    "char": "欠",
+    "pinyin": "qiàn",
+    "meaning": "yawn; to lack; owe (Kangxi radical 76)",
+    "level": 5,
+    "phrase": "欠",
+    "sentence": "这是“欠”字。"
+  },
+  {
+    "char": "枪",
+    "pinyin": "qiāng",
+    "meaning": "gun; spear",
+    "level": 5,
+    "phrase": "枪",
+    "sentence": "这是“枪”字。"
+  },
+  {
+    "char": "墙",
+    "pinyin": "qiáng",
+    "meaning": "wall",
+    "level": 5,
+    "phrase": "墙",
+    "sentence": "这是“墙”字。"
+  },
+  {
+    "char": "抢",
+    "pinyin": "qiǎng, qiāng",
+    "meaning": "fight over; vie for; grab; rush | bump against",
+    "level": 5,
+    "phrase": "抢",
+    "sentence": "这是“抢”字。"
+  },
+  {
+    "char": "瞧",
+    "pinyin": "qiáo",
+    "meaning": "look at; see (colloquial)",
+    "level": 5,
+    "phrase": "瞧",
+    "sentence": "这是“瞧”字。"
+  },
+  {
+    "char": "切",
+    "pinyin": "qiē, qiè",
+    "meaning": "to cut; to chop | correspond to; absolutely; ardently",
+    "level": 5,
+    "phrase": "切",
+    "sentence": "这是“切”字。"
+  },
+  {
+    "char": "青",
+    "pinyin": "qīng",
+    "meaning": "blue; green; young (Kangxi radical 174); Qinghai province (abbr.)",
+    "level": 5,
+    "phrase": "青",
+    "sentence": "这是“青”字。"
+  },
+  {
+    "char": "娶",
+    "pinyin": "qǔ",
+    "meaning": "marry (a wife); take a wife",
+    "level": 5,
+    "phrase": "娶",
+    "sentence": "这是“娶”字。"
+  },
+  {
+    "char": "圈",
+    "pinyin": "quān",
+    "meaning": "circle; ring; (mw for loops, orbits, etc.)",
+    "level": 5,
+    "phrase": "圈",
+    "sentence": "这是“圈”字。"
+  },
+  {
+    "char": "劝",
+    "pinyin": "quàn",
+    "meaning": "advise; to urge; persuade",
+    "level": 5,
+    "phrase": "劝",
+    "sentence": "这是“劝”字。"
+  },
+  {
+    "char": "群",
+    "pinyin": "qún",
+    "meaning": "crowd; group; (mw for groups, flocks, or swarms)",
+    "level": 5,
+    "phrase": "群",
+    "sentence": "这是“群”字。"
+  },
+  {
+    "char": "绕",
+    "pinyin": "rào",
+    "meaning": "to wind; to coil; move round",
+    "level": 5,
+    "phrase": "绕",
+    "sentence": "这是“绕”字。"
+  },
+  {
+    "char": "软",
+    "pinyin": "ruǎn",
+    "meaning": "soft",
+    "level": 5,
+    "phrase": "软",
+    "sentence": "这是“软”字。"
+  },
+  {
+    "char": "弱",
+    "pinyin": "ruò",
+    "meaning": "weak; feeble; young",
+    "level": 5,
+    "phrase": "弱",
+    "sentence": "这是“弱”字。"
+  },
+  {
+    "char": "洒",
+    "pinyin": "sǎ",
+    "meaning": "to sprinkle; to spray; to spill",
+    "level": 5,
+    "phrase": "洒",
+    "sentence": "这是“洒”字。"
+  },
+  {
+    "char": "杀",
+    "pinyin": "shā",
+    "meaning": "to kill; to murder",
+    "level": 5,
+    "phrase": "杀",
+    "sentence": "这是“杀”字。"
+  },
+  {
+    "char": "傻",
+    "pinyin": "shǎ",
+    "meaning": "foolish; fool",
+    "level": 5,
+    "phrase": "傻",
+    "sentence": "这是“傻”字。"
+  },
+  {
+    "char": "晒",
+    "pinyin": "shài",
+    "meaning": "to dry in the sun; shine upon; to sun; bask",
+    "level": 5,
+    "phrase": "晒",
+    "sentence": "这是“晒”字。"
+  },
+  {
+    "char": "蛇",
+    "pinyin": "shé",
+    "meaning": "snake; serpent",
+    "level": 5,
+    "phrase": "蛇",
+    "sentence": "这是“蛇”字。"
+  },
+  {
+    "char": "伸",
+    "pinyin": "shēn",
+    "meaning": "to stretch; extend",
+    "level": 5,
+    "phrase": "伸",
+    "sentence": "这是“伸”字。"
+  },
+  {
+    "char": "升",
+    "pinyin": "shēng",
+    "meaning": "rise; hoist; promote; liter",
+    "level": 5,
+    "phrase": "升",
+    "sentence": "这是“升”字。"
+  },
+  {
+    "char": "诗",
+    "pinyin": "shī",
+    "meaning": "poem; poetry; verse",
+    "level": 5,
+    "phrase": "诗",
+    "sentence": "这是“诗”字。"
+  },
+  {
+    "char": "首",
+    "pinyin": "shǒu",
+    "meaning": "head; chief; first; (mw for poems and songs) (Kangxi radical 185)",
+    "level": 5,
+    "phrase": "首",
+    "sentence": "这是“首”字。"
+  },
+  {
+    "char": "数",
+    "pinyin": "shù, shǔ",
+    "meaning": "number | to count; to rank",
+    "level": 5,
+    "phrase": "数",
+    "sentence": "这是“数”字。"
+  },
+  {
+    "char": "甩",
+    "pinyin": "shuǎi",
+    "meaning": "to throw; to fling; to swing; cast off",
+    "level": 5,
+    "phrase": "甩",
+    "sentence": "这是“甩”字。"
+  },
+  {
+    "char": "税",
+    "pinyin": "shuì",
+    "meaning": "tax",
+    "level": 5,
+    "phrase": "税",
+    "sentence": "这是“税”字。"
+  },
+  {
+    "char": "撕",
+    "pinyin": "sī",
+    "meaning": "to tear (something)",
+    "level": 5,
+    "phrase": "撕",
+    "sentence": "这是“撕”字。"
+  },
+  {
+    "char": "碎",
+    "pinyin": "suì",
+    "meaning": "broken; break into pieces",
+    "level": 5,
+    "phrase": "碎",
+    "sentence": "这是“碎”字。"
+  },
+  {
+    "char": "所",
+    "pinyin": "suǒ",
+    "meaning": "place; that which; (mw for houses, buildings)",
+    "level": 5,
+    "phrase": "所",
+    "sentence": "这是“所”字。"
+  },
+  {
+    "char": "锁",
+    "pinyin": "suǒ",
+    "meaning": "lock",
+    "level": 5,
+    "phrase": "锁",
+    "sentence": "这是“锁”字。"
+  },
+  {
+    "char": "烫",
+    "pinyin": "tàng",
+    "meaning": "to scald; to burn; scalding hot; to iron",
+    "level": 5,
+    "phrase": "烫",
+    "sentence": "这是“烫”字。"
+  },
+  {
+    "char": "逃",
+    "pinyin": "táo",
+    "meaning": "to escape; run away; flee",
+    "level": 5,
+    "phrase": "逃",
+    "sentence": "这是“逃”字。"
+  },
+  {
+    "char": "桃",
+    "pinyin": "táo",
+    "meaning": "peach",
+    "level": 5,
+    "phrase": "桃",
+    "sentence": "这是“桃”字。"
+  },
+  {
+    "char": "套",
+    "pinyin": "tào",
+    "meaning": "cover; (mw for sets of things); tie together",
+    "level": 5,
+    "phrase": "套",
+    "sentence": "这是“套”字。"
+  },
+  {
+    "char": "偷",
+    "pinyin": "tōu",
+    "meaning": "steal; pilfer",
+    "level": 5,
+    "phrase": "偷",
+    "sentence": "这是“偷”字。"
+  },
+  {
+    "char": "吐",
+    "pinyin": "tǔ, tù",
+    "meaning": "to spit | to vomit; throw up",
+    "level": 5,
+    "phrase": "吐",
+    "sentence": "这是“吐”字。"
+  },
+  {
+    "char": "团",
+    "pinyin": "tuán",
+    "meaning": "round; ball; group; unite; dumpling; (mw for ball-like things)",
+    "level": 5,
+    "phrase": "团",
+    "sentence": "这是“团”字。"
+  },
+  {
+    "char": "退",
+    "pinyin": "tuì",
+    "meaning": "to retreat; decline; withdraw",
+    "level": 5,
+    "phrase": "退",
+    "sentence": "这是“退”字。"
+  },
+  {
+    "char": "歪",
+    "pinyin": "wāi",
+    "meaning": "askew; crooked; devious; recline to take a rest (colloquial)",
+    "level": 5,
+    "phrase": "歪",
+    "sentence": "这是“歪”字。"
+  },
+  {
+    "char": "胃",
+    "pinyin": "wèi",
+    "meaning": "stomach",
+    "level": 5,
+    "phrase": "胃",
+    "sentence": "这是“胃”字。"
+  },
+  {
+    "char": "闻",
+    "pinyin": "wén",
+    "meaning": "hear; to smell; news; reputation",
+    "level": 5,
+    "phrase": "闻",
+    "sentence": "这是“闻”字。"
+  },
+  {
+    "char": "吻",
+    "pinyin": "wěn",
+    "meaning": "kiss; lips",
+    "level": 5,
+    "phrase": "吻",
+    "sentence": "这是“吻”字。"
+  },
+  {
+    "char": "勿",
+    "pinyin": "wù",
+    "meaning": "not; do not",
+    "level": 5,
+    "phrase": "勿",
+    "sentence": "这是“勿”字。"
+  },
+  {
+    "char": "雾",
+    "pinyin": "wù",
+    "meaning": "fog; mist",
+    "level": 5,
+    "phrase": "雾",
+    "sentence": "这是“雾”字。"
+  },
+  {
+    "char": "系",
+    "pinyin": "xì, jì",
+    "meaning": "be; relate to; system; fasten; department; faculty; connect | to tie",
+    "level": 5,
+    "phrase": "系",
+    "sentence": "这是“系”字。"
+  },
+  {
+    "char": "瞎",
+    "pinyin": "xiā",
+    "meaning": "blind",
+    "level": 5,
+    "phrase": "瞎",
+    "sentence": "这是“瞎”字。"
+  },
+  {
+    "char": "吓",
+    "pinyin": "xià",
+    "meaning": "frighten; to scare; intimidate",
+    "level": 5,
+    "phrase": "吓",
+    "sentence": "这是“吓”字。"
+  },
+  {
+    "char": "县",
+    "pinyin": "xiàn",
+    "meaning": "county; district",
+    "level": 5,
+    "phrase": "县",
+    "sentence": "这是“县”字。"
+  },
+  {
+    "char": "项",
+    "pinyin": "xiàng",
+    "meaning": "nape (of the neck); sum (of money); mw item",
+    "level": 5,
+    "phrase": "项",
+    "sentence": "这是“项”字。"
+  },
+  {
+    "char": "歇",
+    "pinyin": "xiē",
+    "meaning": "to rest; to go to bed; to take a break",
+    "level": 5,
+    "phrase": "歇",
+    "sentence": "这是“歇”字。"
+  },
+  {
+    "char": "斜",
+    "pinyin": "xié",
+    "meaning": "slanting; tilted",
+    "level": 5,
+    "phrase": "斜",
+    "sentence": "这是“斜”字。"
+  },
+  {
+    "char": "胸",
+    "pinyin": "xiōng",
+    "meaning": "chest; bosom; heart",
+    "level": 5,
+    "phrase": "胸",
+    "sentence": "这是“胸”字。"
+  },
+  {
+    "char": "血",
+    "pinyin": "xuè",
+    "meaning": "blood (Kangxi radical 143)",
+    "level": 5,
+    "phrase": "血",
+    "sentence": "这是“血”字。"
+  },
+  {
+    "char": "痒",
+    "pinyin": "yǎng",
+    "meaning": "to itch; itchy",
+    "level": 5,
+    "phrase": "痒",
+    "sentence": "这是“痒”字。"
+  },
+  {
+    "char": "腰",
+    "pinyin": "yāo",
+    "meaning": "waist; lower back; pocket",
+    "level": 5,
+    "phrase": "腰",
+    "sentence": "这是“腰”字。"
+  },
+  {
+    "char": "摇",
+    "pinyin": "yáo",
+    "meaning": "to shake; to rock",
+    "level": 5,
+    "phrase": "摇",
+    "sentence": "这是“摇”字。"
+  },
+  {
+    "char": "咬",
+    "pinyin": "yǎo",
+    "meaning": "to bite; to nip",
+    "level": 5,
+    "phrase": "咬",
+    "sentence": "这是“咬”字。"
+  },
+  {
+    "char": "夜",
+    "pinyin": "yè",
+    "meaning": "night; darkness",
+    "level": 5,
+    "phrase": "夜",
+    "sentence": "这是“夜”字。"
+  },
+  {
+    "char": "乙",
+    "pinyin": "yǐ",
+    "meaning": "two; twist (2nd Heavenly Stem) (Kangxi radical 5)",
+    "level": 5,
+    "phrase": "乙",
+    "sentence": "这是“乙”字。"
+  },
+  {
+    "char": "亿",
+    "pinyin": "yì",
+    "meaning": "one hundred million (100,000,000)",
+    "level": 5,
+    "phrase": "亿",
+    "sentence": "这是“亿”字。"
+  },
+  {
+    "char": "银",
+    "pinyin": "yín",
+    "meaning": "silver (the element)",
+    "level": 5,
+    "phrase": "银",
+    "sentence": "这是“银”字。"
+  },
+  {
+    "char": "硬",
+    "pinyin": "yìng",
+    "meaning": "hard; stiff; obstinately",
+    "level": 5,
+    "phrase": "硬",
+    "sentence": "这是“硬”字。"
+  },
+  {
+    "char": "圆",
+    "pinyin": "yuán",
+    "meaning": "round; circular; formal unit of Chinese currency",
+    "level": 5,
+    "phrase": "圆",
+    "sentence": "这是“圆”字。"
+  },
+  {
+    "char": "晕",
+    "pinyin": "yūn",
+    "meaning": "dizzy; to fain",
+    "level": 5,
+    "phrase": "晕",
+    "sentence": "这是“晕”字。"
+  },
+  {
+    "char": "则",
+    "pinyin": "zé",
+    "meaning": "standard; regulation; however; in that case",
+    "level": 5,
+    "phrase": "则",
+    "sentence": "这是“则”字。"
+  },
+  {
+    "char": "摘",
+    "pinyin": "zhāi",
+    "meaning": "to pick (flowers, fruit, etc.); to pluck; to take; to borrow",
+    "level": 5,
+    "phrase": "摘",
+    "sentence": "这是“摘”字。"
+  },
+  {
+    "char": "窄",
+    "pinyin": "zhǎi",
+    "meaning": "narrow; petty; hard-up",
+    "level": 5,
+    "phrase": "窄",
+    "sentence": "这是“窄”字。"
+  },
+  {
+    "char": "占",
+    "pinyin": "zhàn",
+    "meaning": "occupy; seize; to constitute",
+    "level": 5,
+    "phrase": "占",
+    "sentence": "这是“占”字。"
+  },
+  {
+    "char": "涨",
+    "pinyin": "zhǎng, zhàng",
+    "meaning": "to rise (of prices, rivers); to go up | to swell; to bloat",
+    "level": 5,
+    "phrase": "涨",
+    "sentence": "这是“涨”字。"
+  },
+  {
+    "char": "阵",
+    "pinyin": "zhèn",
+    "meaning": "short period; disposition of troops; wave",
+    "level": 5,
+    "phrase": "阵",
+    "sentence": "这是“阵”字。"
+  },
+  {
+    "char": "挣",
+    "pinyin": "zhèng, zhēng",
+    "meaning": "to earn | to struggle",
+    "level": 5,
+    "phrase": "挣",
+    "sentence": "这是“挣”字。"
+  },
+  {
+    "char": "睁",
+    "pinyin": "zhēng",
+    "meaning": "to open (eyes)",
+    "level": 5,
+    "phrase": "睁",
+    "sentence": "这是“睁”字。"
+  },
+  {
+    "char": "正",
+    "pinyin": "zhèng",
+    "meaning": "straight; currently; correct; just (right); pure; precisely",
+    "level": 5,
+    "phrase": "正",
+    "sentence": "这是“正”字。"
+  },
+  {
+    "char": "支",
+    "pinyin": "zhī",
+    "meaning": "branch; support; put up; (mw for long; narrow objects) (Kangxi radical 65)",
+    "level": 5,
+    "phrase": "支",
+    "sentence": "这是“支”字。"
+  },
+  {
+    "char": "直",
+    "pinyin": "zhí",
+    "meaning": "straight; vertical; frank; directly; continuously",
+    "level": 5,
+    "phrase": "直",
+    "sentence": "这是“直”字。"
+  },
+  {
+    "char": "猪",
+    "pinyin": "zhū",
+    "meaning": "pig",
+    "level": 5,
+    "phrase": "猪",
+    "sentence": "这是“猪”字。"
+  },
+  {
+    "char": "煮",
+    "pinyin": "zhǔ",
+    "meaning": "to boil; to cook",
+    "level": 5,
+    "phrase": "煮",
+    "sentence": "这是“煮”字。"
+  },
+  {
+    "char": "抓",
+    "pinyin": "zhuā",
+    "meaning": "to carry in your hand holding strongly; catch; arrest",
+    "level": 5,
+    "phrase": "抓",
+    "sentence": "这是“抓”字。"
+  },
+  {
+    "char": "装",
+    "pinyin": "zhuāng",
+    "meaning": "to load; dress up; pretend; clothing; to install",
+    "level": 5,
+    "phrase": "装",
+    "sentence": "这是“装”字。"
+  },
+  {
+    "char": "撞",
+    "pinyin": "zhuàng",
+    "meaning": "to hit; collide; run into",
+    "level": 5,
+    "phrase": "撞",
+    "sentence": "这是“撞”字。"
+  },
+  {
+    "char": "追",
+    "pinyin": "zhuī",
+    "meaning": "pursue; chase",
+    "level": 5,
+    "phrase": "追",
+    "sentence": "这是“追”字。"
+  },
+  {
+    "char": "紫",
+    "pinyin": "zǐ",
+    "meaning": "purple",
+    "level": 5,
+    "phrase": "紫",
+    "sentence": "这是“紫”字。"
+  },
+  {
+    "char": "组",
+    "pinyin": "zǔ",
+    "meaning": "compose; team up; group",
+    "level": 5,
+    "phrase": "组",
+    "sentence": "这是“组”字。"
+  },
+  {
+    "char": "醉",
+    "pinyin": "zuì",
+    "meaning": "intoxicated; become drunk",
+    "level": 5,
+    "phrase": "醉",
+    "sentence": "这是“醉”字。"
+  },
+  {
+    "char": "挨",
+    "pinyin": "āi",
+    "meaning": "get close to; in sequence",
+    "level": 6,
+    "phrase": "挨",
+    "sentence": "这是“挨”字。"
+  },
+  {
+    "char": "熬",
+    "pinyin": "áo",
+    "meaning": "endure; to boil",
+    "level": 6,
+    "phrase": "熬",
+    "sentence": "这是“熬”字。"
+  },
+  {
+    "char": "扒",
+    "pinyin": "bā",
+    "meaning": "dig up; pull down; take off",
+    "level": 6,
+    "phrase": "扒",
+    "sentence": "这是“扒”字。"
+  },
+  {
+    "char": "疤",
+    "pinyin": "bā",
+    "meaning": "scar",
+    "level": 6,
+    "phrase": "疤",
+    "sentence": "这是“疤”字。"
+  },
+  {
+    "char": "掰",
+    "pinyin": "bāi",
+    "meaning": "break with both hands",
+    "level": 6,
+    "phrase": "掰",
+    "sentence": "这是“掰”字。"
+  },
+  {
+    "char": "斑",
+    "pinyin": "bān",
+    "meaning": "variety; speckled; spot; colored patch; stripe",
+    "level": 6,
+    "phrase": "斑",
+    "sentence": "这是“斑”字。"
+  },
+  {
+    "char": "磅",
+    "pinyin": "bàng",
+    "meaning": "pound; weigh; scale",
+    "level": 6,
+    "phrase": "磅",
+    "sentence": "这是“磅”字。"
+  },
+  {
+    "char": "甭",
+    "pinyin": "béng",
+    "meaning": "need not; (contraction of 不 and 用)",
+    "level": 6,
+    "phrase": "甭",
+    "sentence": "这是“甭”字。"
+  },
+  {
+    "char": "蹦",
+    "pinyin": "bèng",
+    "meaning": "jump; bounce; hop",
+    "level": 6,
+    "phrase": "蹦",
+    "sentence": "这是“蹦”字。"
+  },
+  {
+    "char": "臂",
+    "pinyin": "bì",
+    "meaning": "arm",
+    "level": 6,
+    "phrase": "臂",
+    "sentence": "这是“臂”字。"
+  },
+  {
+    "char": "扁",
+    "pinyin": "biǎn",
+    "meaning": "flat",
+    "level": 6,
+    "phrase": "扁",
+    "sentence": "这是“扁”字。"
+  },
+  {
+    "char": "憋",
+    "pinyin": "biē",
+    "meaning": "hold in (urine); hold (breath); choke",
+    "level": 6,
+    "phrase": "憋",
+    "sentence": "这是“憋”字。"
+  },
+  {
+    "char": "丙",
+    "pinyin": "bǐng",
+    "meaning": "bright; fire (3rd Heavenly Stem)",
+    "level": 6,
+    "phrase": "丙",
+    "sentence": "这是“丙”字。"
+  },
+  {
+    "char": "拨",
+    "pinyin": "bō",
+    "meaning": "to dial; move with a hand/foot; stir; poke; allocate (money)",
+    "level": 6,
+    "phrase": "拨",
+    "sentence": "这是“拨”字。"
+  },
+  {
+    "char": "舱",
+    "pinyin": "cāng",
+    "meaning": "cabin; hold (of a ship or airplane)",
+    "level": 6,
+    "phrase": "舱",
+    "sentence": "这是“舱”字。"
+  },
+  {
+    "char": "岔",
+    "pinyin": "chà",
+    "meaning": "fork in the road; turn off; diverge",
+    "level": 6,
+    "phrase": "岔",
+    "sentence": "这是“岔”字。"
+  },
+  {
+    "char": "搀",
+    "pinyin": "chān",
+    "meaning": "assist by the arm; mix; support; sustain",
+    "level": 6,
+    "phrase": "搀",
+    "sentence": "这是“搀”字。"
+  },
+  {
+    "char": "馋",
+    "pinyin": "chán",
+    "meaning": "gluttonous; greedy",
+    "level": 6,
+    "phrase": "馋",
+    "sentence": "这是“馋”字。"
+  },
+  {
+    "char": "乘",
+    "pinyin": "chéng",
+    "meaning": "to ride; to mount; make use of; multiply",
+    "level": 6,
+    "phrase": "乘",
+    "sentence": "这是“乘”字。"
+  },
+  {
+    "char": "橙",
+    "pinyin": "chéng",
+    "meaning": "orange (color); orange (fruit, tree)",
+    "level": 6,
+    "phrase": "橙",
+    "sentence": "这是“橙”字。"
+  },
+  {
+    "char": "秤",
+    "pinyin": "chèng",
+    "meaning": "balance; scale; steelyard",
+    "level": 6,
+    "phrase": "秤",
+    "sentence": "这是“秤”字。"
+  },
+  {
+    "char": "除",
+    "pinyin": "chú",
+    "meaning": "besides; except; remove; to divide (mathematics)",
+    "level": 6,
+    "phrase": "除",
+    "sentence": "这是“除”字。"
+  },
+  {
+    "char": "串",
+    "pinyin": "chuàn",
+    "meaning": "string together; conspire; gang up; mix up; bunch",
+    "level": 6,
+    "phrase": "串",
+    "sentence": "这是“串”字。"
+  },
+  {
+    "char": "幢",
+    "pinyin": "zhuàng",
+    "meaning": "(mw for houses, buildings); tent",
+    "level": 6,
+    "phrase": "幢",
+    "sentence": "这是“幢”字。"
+  },
+  {
+    "char": "锤",
+    "pinyin": "chuí",
+    "meaning": "hammer; weight",
+    "level": 6,
+    "phrase": "锤",
+    "sentence": "这是“锤”字。"
+  },
+  {
+    "char": "刺",
+    "pinyin": "cì",
+    "meaning": "thorn; to sting; to prick; pierce; stab",
+    "level": 6,
+    "phrase": "刺",
+    "sentence": "这是“刺”字。"
+  },
+  {
+    "char": "丛",
+    "pinyin": "cóng",
+    "meaning": "crowd together; thicket; collection",
+    "level": 6,
+    "phrase": "丛",
+    "sentence": "这是“丛”字。"
+  },
+  {
+    "char": "窜",
+    "pinyin": "cuàn",
+    "meaning": "to flee; to escape; run away",
+    "level": 6,
+    "phrase": "窜",
+    "sentence": "这是“窜”字。"
+  },
+  {
+    "char": "搓",
+    "pinyin": "cuō",
+    "meaning": "rub or roll between the hands or fingers; to twist",
+    "level": 6,
+    "phrase": "搓",
+    "sentence": "这是“搓”字。"
+  },
+  {
+    "char": "搭",
+    "pinyin": "dā",
+    "meaning": "to erect; to build; travel by (car, plane, etc.); to hang; to join",
+    "level": 6,
+    "phrase": "搭",
+    "sentence": "这是“搭”字。"
+  },
+  {
+    "char": "党",
+    "pinyin": "dǎng",
+    "meaning": "party; club; association",
+    "level": 6,
+    "phrase": "党",
+    "sentence": "这是“党”字。"
+  },
+  {
+    "char": "蹬",
+    "pinyin": "dēng",
+    "meaning": "press down with the foot; step back or into something",
+    "level": 6,
+    "phrase": "蹬",
+    "sentence": "这是“蹬”字。"
+  },
+  {
+    "char": "瞪",
+    "pinyin": "dèng",
+    "meaning": "stare at; to glower",
+    "level": 6,
+    "phrase": "瞪",
+    "sentence": "这是“瞪”字。"
+  },
+  {
+    "char": "垫",
+    "pinyin": "diàn",
+    "meaning": "cushion; to pad; pay for somebody and expect to be repaid",
+    "level": 6,
+    "phrase": "垫",
+    "sentence": "这是“垫”字。"
+  },
+  {
+    "char": "叼",
+    "pinyin": "diāo",
+    "meaning": "hold sth. in the mouth",
+    "level": 6,
+    "phrase": "叼",
+    "sentence": "这是“叼”字。"
+  },
+  {
+    "char": "吊",
+    "pinyin": "diào",
+    "meaning": "hang; suspend",
+    "level": 6,
+    "phrase": "吊",
+    "sentence": "这是“吊”字。"
+  },
+  {
+    "char": "跌",
+    "pinyin": "diē",
+    "meaning": "to fall down; to drop",
+    "level": 6,
+    "phrase": "跌",
+    "sentence": "这是“跌”字。"
+  },
+  {
+    "char": "丁",
+    "pinyin": "dīng",
+    "meaning": "male adult; robust; cubes (of food); T-shaped (4th Heavenly Stem)",
+    "level": 6,
+    "phrase": "丁",
+    "sentence": "这是“丁”字。"
+  },
+  {
+    "char": "盯",
+    "pinyin": "dīng",
+    "meaning": "to stare; to gaze",
+    "level": 6,
+    "phrase": "盯",
+    "sentence": "这是“盯”字。"
+  },
+  {
+    "char": "栋",
+    "pinyin": "dòng",
+    "meaning": "roof beam; (mw for buildings)",
+    "level": 6,
+    "phrase": "栋",
+    "sentence": "这是“栋”字。"
+  },
+  {
+    "char": "兜",
+    "pinyin": "dōu",
+    "meaning": "pocket; bag; wrap up (in a piece of cloth); move around (in a circle); canvass (solicit); take responsibility",
+    "level": 6,
+    "phrase": "兜",
+    "sentence": "这是“兜”字。"
+  },
+  {
+    "char": "端",
+    "pinyin": "duān",
+    "meaning": "end; beginning; extremity; carry holding something from the sides",
+    "level": 6,
+    "phrase": "端",
+    "sentence": "这是“端”字。"
+  },
+  {
+    "char": "番",
+    "pinyin": "fān",
+    "meaning": "(mw for acts or deeds); foreign",
+    "level": 6,
+    "phrase": "番",
+    "sentence": "这是“番”字。"
+  },
+  {
+    "char": "肺",
+    "pinyin": "fèi",
+    "meaning": "lung",
+    "level": 6,
+    "phrase": "肺",
+    "sentence": "这是“肺”字。"
+  },
+  {
+    "char": "逢",
+    "pinyin": "féng",
+    "meaning": "to meet; come upon",
+    "level": 6,
+    "phrase": "逢",
+    "sentence": "这是“逢”字。"
+  },
+  {
+    "char": "副",
+    "pinyin": "fù",
+    "meaning": "vice-; secondary; auxiliary; deputy; assistant; classifier for pairs (i.e. glasses)",
+    "level": 6,
+    "phrase": "副",
+    "sentence": "这是“副”字。"
+  },
+  {
+    "char": "钙",
+    "pinyin": "gài",
+    "meaning": "calcium",
+    "level": 6,
+    "phrase": "钙",
+    "sentence": "这是“钙”字。"
+  },
+  {
+    "char": "割",
+    "pinyin": "gē",
+    "meaning": "to cut (apart/off)",
+    "level": 6,
+    "phrase": "割",
+    "sentence": "这是“割”字。"
+  },
+  {
+    "char": "搁",
+    "pinyin": "gē",
+    "meaning": "to place; put aside",
+    "level": 6,
+    "phrase": "搁",
+    "sentence": "这是“搁”字。"
+  },
+  {
+    "char": "罐",
+    "pinyin": "guàn",
+    "meaning": "can; jar; pot; pitcher; jug",
+    "level": 6,
+    "phrase": "罐",
+    "sentence": "这是“罐”字。"
+  },
+  {
+    "char": "跪",
+    "pinyin": "guì",
+    "meaning": "kneel",
+    "level": 6,
+    "phrase": "跪",
+    "sentence": "这是“跪”字。"
+  },
+  {
+    "char": "嗨",
+    "pinyin": "hāi",
+    "meaning": "hey/hi (loanword); oh; alas;",
+    "level": 6,
+    "phrase": "嗨",
+    "sentence": "这是“嗨”字。"
+  },
+  {
+    "char": "呵",
+    "pinyin": "hē",
+    "meaning": "breathe out; scold",
+    "level": 6,
+    "phrase": "呵",
+    "sentence": "这是“呵”字。"
+  },
+  {
+    "char": "嘿",
+    "pinyin": "hēi",
+    "meaning": "hey; interjection for calling attention",
+    "level": 6,
+    "phrase": "嘿",
+    "sentence": "这是“嘿”字。"
+  },
+  {
+    "char": "哼",
+    "pinyin": "hēng",
+    "meaning": "groan; snort; to hum; croon",
+    "level": 6,
+    "phrase": "哼",
+    "sentence": "这是“哼”字。"
+  },
+  {
+    "char": "横",
+    "pinyin": "héng",
+    "meaning": "horizontal; across; (horizontal character stroke)",
+    "level": 6,
+    "phrase": "横",
+    "sentence": "这是“横”字。"
+  },
+  {
+    "char": "哄",
+    "pinyin": "hǒng",
+    "meaning": "fool; coax; to amuse (a child)",
+    "level": 6,
+    "phrase": "哄",
+    "sentence": "这是“哄”字。"
+  },
+  {
+    "char": "烘",
+    "pinyin": "hōng",
+    "meaning": "to dry or warm by the fire; to bake; to heat by fire; to set off by contrast",
+    "level": 6,
+    "phrase": "烘",
+    "sentence": "这是“烘”字。"
+  },
+  {
+    "char": "吼",
+    "pinyin": "hǒu",
+    "meaning": "roar; howl",
+    "level": 6,
+    "phrase": "吼",
+    "sentence": "这是“吼”字。"
+  },
+  {
+    "char": "晃",
+    "pinyin": "huàng",
+    "meaning": "to sway; to shake",
+    "level": 6,
+    "phrase": "晃",
+    "sentence": "这是“晃”字。"
+  },
+  {
+    "char": "荤",
+    "pinyin": "hūn",
+    "meaning": "meat or fish dish; pungent vegetables forbidden to Buddhist vegetarians",
+    "level": 6,
+    "phrase": "荤",
+    "sentence": "这是“荤”字。"
+  },
+  {
+    "char": "煎",
+    "pinyin": "jiān",
+    "meaning": "pan-fry; fry in shallow oil",
+    "level": 6,
+    "phrase": "煎",
+    "sentence": "这是“煎”字。"
+  },
+  {
+    "char": "拣",
+    "pinyin": "jiǎn",
+    "meaning": "choose; select; sort out",
+    "level": 6,
+    "phrase": "拣",
+    "sentence": "这是“拣”字。"
+  },
+  {
+    "char": "剑",
+    "pinyin": "jiàn",
+    "meaning": "sword",
+    "level": 6,
+    "phrase": "剑",
+    "sentence": "这是“剑”字。"
+  },
+  {
+    "char": "溅",
+    "pinyin": "jiàn",
+    "meaning": "to splash",
+    "level": 6,
+    "phrase": "溅",
+    "sentence": "这是“溅”字。"
+  },
+  {
+    "char": "桨",
+    "pinyin": "jiǎng",
+    "meaning": "oar; paddle",
+    "level": 6,
+    "phrase": "桨",
+    "sentence": "这是“桨”字。"
+  },
+  {
+    "char": "皆",
+    "pinyin": "jiē",
+    "meaning": "all; each and every; in all cases",
+    "level": 6,
+    "phrase": "皆",
+    "sentence": "这是“皆”字。"
+  },
+  {
+    "char": "茎",
+    "pinyin": "jīng",
+    "meaning": "stalk; stem",
+    "level": 6,
+    "phrase": "茎",
+    "sentence": "这是“茎”字。"
+  },
+  {
+    "char": "井",
+    "pinyin": "jǐng",
+    "meaning": "a well",
+    "level": 6,
+    "phrase": "井",
+    "sentence": "这是“井”字。"
+  },
+  {
+    "char": "卷",
+    "pinyin": "juǎn",
+    "meaning": "to roll (up); to coil; (mw for tapes)",
+    "level": 6,
+    "phrase": "卷",
+    "sentence": "这是“卷”字。"
+  },
+  {
+    "char": "扛",
+    "pinyin": "káng",
+    "meaning": "to carry on one's shoulder",
+    "level": 6,
+    "phrase": "扛",
+    "sentence": "这是“扛”字。"
+  },
+  {
+    "char": "磕",
+    "pinyin": "kē",
+    "meaning": "knock; tap",
+    "level": 6,
+    "phrase": "磕",
+    "sentence": "这是“磕”字。"
+  },
+  {
+    "char": "啃",
+    "pinyin": "kěn",
+    "meaning": "gnaw; nibble; bite",
+    "level": 6,
+    "phrase": "啃",
+    "sentence": "这是“啃”字。"
+  },
+  {
+    "char": "坑",
+    "pinyin": "kēng",
+    "meaning": "pit; hole; defraud",
+    "level": 6,
+    "phrase": "坑",
+    "sentence": "这是“坑”字。"
+  },
+  {
+    "char": "孔",
+    "pinyin": "kǒng",
+    "meaning": "hole",
+    "level": 6,
+    "phrase": "孔",
+    "sentence": "这是“孔”字。"
+  },
+  {
+    "char": "扣",
+    "pinyin": "kòu",
+    "meaning": "to fasten; to button; button; buckle; knot; to arrest; to confiscate; to deduct (money); discount; to knock; put upside down; to smash or spike (a ball); to cover (with a bowl etc); fig. to tag a label on sb",
+    "level": 6,
+    "phrase": "扣",
+    "sentence": "这是“扣”字。"
+  },
+  {
+    "char": "挎",
+    "pinyin": "kuà",
+    "meaning": "carry over one's shoulder or slung on one's side",
+    "level": 6,
+    "phrase": "挎",
+    "sentence": "这是“挎”字。"
+  },
+  {
+    "char": "跨",
+    "pinyin": "kuà",
+    "meaning": "step across; stride; straddle; to cross",
+    "level": 6,
+    "phrase": "跨",
+    "sentence": "这是“跨”字。"
+  },
+  {
+    "char": "筐",
+    "pinyin": "kuāng",
+    "meaning": "basket",
+    "level": 6,
+    "phrase": "筐",
+    "sentence": "这是“筐”字。"
+  },
+  {
+    "char": "啦",
+    "pinyin": "la",
+    "meaning": "sentence-final particle: a contraction of 了 (le) and 啊 (a)",
+    "level": 6,
+    "phrase": "啦",
+    "sentence": "这是“啦”字。"
+  },
+  {
+    "char": "捞",
+    "pinyin": "lāo",
+    "meaning": "dredge up; fish up",
+    "level": 6,
+    "phrase": "捞",
+    "sentence": "这是“捞”字。"
+  },
+  {
+    "char": "愣",
+    "pinyin": "lèng",
+    "meaning": "dumbfounded; stupefied; distracted; (spoken) blunt; rash",
+    "level": 6,
+    "phrase": "愣",
+    "sentence": "这是“愣”字。"
+  },
+  {
+    "char": "粒",
+    "pinyin": "lì",
+    "meaning": "a grain; granule; (mw for grain-like things)",
+    "level": 6,
+    "phrase": "粒",
+    "sentence": "这是“粒”字。"
+  },
+  {
+    "char": "晾",
+    "pinyin": "liàng",
+    "meaning": "dry in the air/sun; (colloquial) snub or ignore",
+    "level": 6,
+    "phrase": "晾",
+    "sentence": "这是“晾”字。"
+  },
+  {
+    "char": "淋",
+    "pinyin": "lín",
+    "meaning": "to drain; to drip; drench",
+    "level": 6,
+    "phrase": "淋",
+    "sentence": "这是“淋”字。"
+  },
+  {
+    "char": "溜",
+    "pinyin": "liū",
+    "meaning": "slip away; to skate; to glide",
+    "level": 6,
+    "phrase": "溜",
+    "sentence": "这是“溜”字。"
+  },
+  {
+    "char": "搂",
+    "pinyin": "lǒu",
+    "meaning": "to hug; to embrace",
+    "level": 6,
+    "phrase": "搂",
+    "sentence": "这是“搂”字。"
+  },
+  {
+    "char": "嘛",
+    "pinyin": "ma, má",
+    "meaning": "(used to persuade somebody to do something); (particle indicating obviousness) | (colloqial) what?",
+    "level": 6,
+    "phrase": "嘛",
+    "sentence": "这是“嘛”字。"
+  },
+  {
+    "char": "迈",
+    "pinyin": "mài",
+    "meaning": "to step; stride",
+    "level": 6,
+    "phrase": "迈",
+    "sentence": "这是“迈”字。"
+  },
+  {
+    "char": "枚",
+    "pinyin": "méi",
+    "meaning": "(mw for coins, rings, medals)",
+    "level": 6,
+    "phrase": "枚",
+    "sentence": "这是“枚”字。"
+  },
+  {
+    "char": "眯",
+    "pinyin": "mī",
+    "meaning": "to squint; to take a nap",
+    "level": 6,
+    "phrase": "眯",
+    "sentence": "这是“眯”字。"
+  },
+  {
+    "char": "膜",
+    "pinyin": "mó",
+    "meaning": "membrane; film",
+    "level": 6,
+    "phrase": "膜",
+    "sentence": "这是“膜”字。"
+  },
+  {
+    "char": "捏",
+    "pinyin": "niē",
+    "meaning": "to pinch (with one's fingers); knead",
+    "level": 6,
+    "phrase": "捏",
+    "sentence": "这是“捏”字。"
+  },
+  {
+    "char": "拧",
+    "pinyin": "níng",
+    "meaning": "wring; to pinch",
+    "level": 6,
+    "phrase": "拧",
+    "sentence": "这是“拧”字。"
+  },
+  {
+    "char": "挪",
+    "pinyin": "nuó",
+    "meaning": "shift; move",
+    "level": 6,
+    "phrase": "挪",
+    "sentence": "这是“挪”字。"
+  },
+  {
+    "char": "哦",
+    "pinyin": "ò",
+    "meaning": "oh (indicates understanding)",
+    "level": 6,
+    "phrase": "哦",
+    "sentence": "这是“哦”字。"
+  },
+  {
+    "char": "趴",
+    "pinyin": "pā",
+    "meaning": "lie on one's stomach",
+    "level": 6,
+    "phrase": "趴",
+    "sentence": "这是“趴”字。"
+  },
+  {
+    "char": "畔",
+    "pinyin": "pàn",
+    "meaning": "riverbank; side; boundary",
+    "level": 6,
+    "phrase": "畔",
+    "sentence": "这是“畔”字。"
+  },
+  {
+    "char": "捧",
+    "pinyin": "pěng",
+    "meaning": "hold or carry with both hands facing up",
+    "level": 6,
+    "phrase": "捧",
+    "sentence": "这是“捧”字。"
+  },
+  {
+    "char": "劈",
+    "pinyin": "pī",
+    "meaning": "split in two; to divide",
+    "level": 6,
+    "phrase": "劈",
+    "sentence": "这是“劈”字。"
+  },
+  {
+    "char": "撇",
+    "pinyin": "piě",
+    "meaning": "left-curving stroke (丿); throw; fling",
+    "level": 6,
+    "phrase": "撇",
+    "sentence": "这是“撇”字。"
+  },
+  {
+    "char": "坡",
+    "pinyin": "pō",
+    "meaning": "slope",
+    "level": 6,
+    "phrase": "坡",
+    "sentence": "这是“坡”字。"
+  },
+  {
+    "char": "泼",
+    "pinyin": "pō",
+    "meaning": "to splash; to spill; rude and unreasonable; brutish",
+    "level": 6,
+    "phrase": "泼",
+    "sentence": "这是“泼”字。"
+  },
+  {
+    "char": "颇",
+    "pinyin": "pō",
+    "meaning": "rather; quite; inclined to one side",
+    "level": 6,
+    "phrase": "颇",
+    "sentence": "这是“颇”字。"
+  },
+  {
+    "char": "扑",
+    "pinyin": "pū",
+    "meaning": "to assault; rush at; throw oneself on",
+    "level": 6,
+    "phrase": "扑",
+    "sentence": "这是“扑”字。"
+  },
+  {
+    "char": "铺",
+    "pinyin": "pù, pū",
+    "meaning": "bed; store | to spread; to lay",
+    "level": 6,
+    "phrase": "铺",
+    "sentence": "这是“铺”字。"
+  },
+  {
+    "char": "掐",
+    "pinyin": "qiā",
+    "meaning": "pick (flowers); pinch; clutch",
+    "level": 6,
+    "phrase": "掐",
+    "sentence": "这是“掐”字。"
+  },
+  {
+    "char": "牵",
+    "pinyin": "qiān",
+    "meaning": "to lead along; to pull (an animal on a tether)",
+    "level": 6,
+    "phrase": "牵",
+    "sentence": "这是“牵”字。"
+  },
+  {
+    "char": "翘",
+    "pinyin": "qiào",
+    "meaning": "stick up; bend upwards",
+    "level": 6,
+    "phrase": "翘",
+    "sentence": "这是“翘”字。"
+  },
+  {
+    "char": "犬",
+    "pinyin": "quǎn",
+    "meaning": "dog (Kangxi radical 94)",
+    "level": 6,
+    "phrase": "犬",
+    "sentence": "这是“犬”字。"
+  },
+  {
+    "char": "瘸",
+    "pinyin": "qué",
+    "meaning": "lame",
+    "level": 6,
+    "phrase": "瘸",
+    "sentence": "这是“瘸”字。"
+  },
+  {
+    "char": "染",
+    "pinyin": "rǎn",
+    "meaning": "dye; to catch (a disease)",
+    "level": 6,
+    "phrase": "染",
+    "sentence": "这是“染”字。"
+  },
+  {
+    "char": "嚷",
+    "pinyin": "rǎng",
+    "meaning": "blurt out; shout",
+    "level": 6,
+    "phrase": "嚷",
+    "sentence": "这是“嚷”字。"
+  },
+  {
+    "char": "揉",
+    "pinyin": "róu",
+    "meaning": "knead; to massage; to rub",
+    "level": 6,
+    "phrase": "揉",
+    "sentence": "这是“揉”字。"
+  },
+  {
+    "char": "啥",
+    "pinyin": "shá",
+    "meaning": "(spoken) what",
+    "level": 6,
+    "phrase": "啥",
+    "sentence": "这是“啥”字。"
+  },
+  {
+    "char": "捎",
+    "pinyin": "shāo",
+    "meaning": "bring or take (along); deliver (a message)",
+    "level": 6,
+    "phrase": "捎",
+    "sentence": "这是“捎”字。"
+  },
+  {
+    "char": "梢",
+    "pinyin": "shāo",
+    "meaning": "tip of a branch",
+    "level": 6,
+    "phrase": "梢",
+    "sentence": "这是“梢”字。"
+  },
+  {
+    "char": "哨",
+    "pinyin": "shào",
+    "meaning": "a whistle; sentry post",
+    "level": 6,
+    "phrase": "哨",
+    "sentence": "这是“哨”字。"
+  },
+  {
+    "char": "盛",
+    "pinyin": "chéng, shèng",
+    "meaning": "contain; to ladle; to fill | flourishing; grand; abundant",
+    "level": 6,
+    "phrase": "盛",
+    "sentence": "这是“盛”字。"
+  },
+  {
+    "char": "拾",
+    "pinyin": "shí",
+    "meaning": "pick up; ten (banker's anti-fraud numeral)",
+    "level": 6,
+    "phrase": "拾",
+    "sentence": "这是“拾”字。"
+  },
+  {
+    "char": "束",
+    "pinyin": "shù",
+    "meaning": "to tie; to bind; restrain; (mw for bunches, bundles, bouquets, etc.)",
+    "level": 6,
+    "phrase": "束",
+    "sentence": "这是“束”字。"
+  },
+  {
+    "char": "竖",
+    "pinyin": "shù",
+    "meaning": "vertical; to erect; vertical stroke",
+    "level": 6,
+    "phrase": "竖",
+    "sentence": "这是“竖”字。"
+  },
+  {
+    "char": "耍",
+    "pinyin": "shuǎ",
+    "meaning": "play/mess around with; juggle",
+    "level": 6,
+    "phrase": "耍",
+    "sentence": "这是“耍”字。"
+  },
+  {
+    "char": "耸",
+    "pinyin": "sǒng",
+    "meaning": "shrug; towering; shock (alarm)",
+    "level": 6,
+    "phrase": "耸",
+    "sentence": "这是“耸”字。"
+  },
+  {
+    "char": "艘",
+    "pinyin": "sōu",
+    "meaning": "(mw for boats and ships)",
+    "level": 6,
+    "phrase": "艘",
+    "sentence": "这是“艘”字。"
+  },
+  {
+    "char": "塌",
+    "pinyin": "tā",
+    "meaning": "collapse; fall down; crumple",
+    "level": 6,
+    "phrase": "塌",
+    "sentence": "这是“塌”字。"
+  },
+  {
+    "char": "塔",
+    "pinyin": "tǎ",
+    "meaning": "pagoda; tower",
+    "level": 6,
+    "phrase": "塔",
+    "sentence": "这是“塔”字。"
+  },
+  {
+    "char": "摊",
+    "pinyin": "tān",
+    "meaning": "to spread out; vendor's stand; booth; fry; (mw for puddles)",
+    "level": 6,
+    "phrase": "摊",
+    "sentence": "这是“摊”字。"
+  },
+  {
+    "char": "掏",
+    "pinyin": "tāo",
+    "meaning": "fish out (from pocket)",
+    "level": 6,
+    "phrase": "掏",
+    "sentence": "这是“掏”字。"
+  },
+  {
+    "char": "舔",
+    "pinyin": "tiǎn",
+    "meaning": "to lick",
+    "level": 6,
+    "phrase": "舔",
+    "sentence": "这是“舔”字。"
+  },
+  {
+    "char": "铜",
+    "pinyin": "tóng",
+    "meaning": "copper",
+    "level": 6,
+    "phrase": "铜",
+    "sentence": "这是“铜”字。"
+  },
+  {
+    "char": "秃",
+    "pinyin": "tū",
+    "meaning": "bald; blunt",
+    "level": 6,
+    "phrase": "秃",
+    "sentence": "这是“秃”字。"
+  },
+  {
+    "char": "哇",
+    "pinyin": "wa",
+    "meaning": "wow; (sound of crying or surprise)",
+    "level": 6,
+    "phrase": "哇",
+    "sentence": "这是“哇”字。"
+  },
+  {
+    "char": "丸",
+    "pinyin": "wán",
+    "meaning": "pill; pellet",
+    "level": 6,
+    "phrase": "丸",
+    "sentence": "这是“丸”字。"
+  },
+  {
+    "char": "窝",
+    "pinyin": "wō",
+    "meaning": "nest; den",
+    "level": 6,
+    "phrase": "窝",
+    "sentence": "这是“窝”字。"
+  },
+  {
+    "char": "溪",
+    "pinyin": "xī",
+    "meaning": "creek",
+    "level": 6,
+    "phrase": "溪",
+    "sentence": "这是“溪”字。"
+  },
+  {
+    "char": "霞",
+    "pinyin": "xiá",
+    "meaning": "red clouds",
+    "level": 6,
+    "phrase": "霞",
+    "sentence": "这是“霞”字。"
+  },
+  {
+    "char": "弦",
+    "pinyin": "xián",
+    "meaning": "bow string; string of musical instruments",
+    "level": 6,
+    "phrase": "弦",
+    "sentence": "这是“弦”字。"
+  },
+  {
+    "char": "嫌",
+    "pinyin": "xián",
+    "meaning": "to dislike; suspicion; grudge",
+    "level": 6,
+    "phrase": "嫌",
+    "sentence": "这是“嫌”字。"
+  },
+  {
+    "char": "巷",
+    "pinyin": "xiàng",
+    "meaning": "lane; alley",
+    "level": 6,
+    "phrase": "巷",
+    "sentence": "这是“巷”字。"
+  },
+  {
+    "char": "屑",
+    "pinyin": "xiè",
+    "meaning": "crumbs; filings; worth while",
+    "level": 6,
+    "phrase": "屑",
+    "sentence": "这是“屑”字。"
+  },
+  {
+    "char": "腥",
+    "pinyin": "xīng",
+    "meaning": "fishy (smell)",
+    "level": 6,
+    "phrase": "腥",
+    "sentence": "这是“腥”字。"
+  },
+  {
+    "char": "绣",
+    "pinyin": "xiù",
+    "meaning": "embroider; embroidery",
+    "level": 6,
+    "phrase": "绣",
+    "sentence": "这是“绣”字。"
+  },
+  {
+    "char": "削",
+    "pinyin": "xuē",
+    "meaning": "to pare/peel with a knife; to cut; to chop",
+    "level": 6,
+    "phrase": "削",
+    "sentence": "这是“削”字。"
+  },
+  {
+    "char": "亦",
+    "pinyin": "yì",
+    "meaning": "also",
+    "level": 6,
+    "phrase": "亦",
+    "sentence": "这是“亦”字。"
+  },
+  {
+    "char": "翼",
+    "pinyin": "yì",
+    "meaning": "wings; fins on fish; shelter",
+    "level": 6,
+    "phrase": "翼",
+    "sentence": "这是“翼”字。"
+  },
+  {
+    "char": "玉",
+    "pinyin": "yù",
+    "meaning": "jade (Kangxi radical 96)",
+    "level": 6,
+    "phrase": "玉",
+    "sentence": "这是“玉”字。"
+  },
+  {
+    "char": "愈",
+    "pinyin": "yù",
+    "meaning": "recover; heal; the more ... the more",
+    "level": 6,
+    "phrase": "愈",
+    "sentence": "这是“愈”字。"
+  },
+  {
+    "char": "熨",
+    "pinyin": "yùn",
+    "meaning": "iron; press",
+    "level": 6,
+    "phrase": "熨",
+    "sentence": "这是“熨”字。"
+  },
+  {
+    "char": "砸",
+    "pinyin": "zá",
+    "meaning": "to smash; to pound; to break; fail",
+    "level": 6,
+    "phrase": "砸",
+    "sentence": "这是“砸”字。"
+  },
+  {
+    "char": "咋",
+    "pinyin": "zǎ",
+    "meaning": "how/why (contraction of 怎么)",
+    "level": 6,
+    "phrase": "咋",
+    "sentence": "这是“咋”字。"
+  },
+  {
+    "char": "宰",
+    "pinyin": "zǎi",
+    "meaning": "slaughter; butcher; govern; rule; imperial official in dynastic China",
+    "level": 6,
+    "phrase": "宰",
+    "sentence": "这是“宰”字。"
+  },
+  {
+    "char": "攒",
+    "pinyin": "zǎn",
+    "meaning": "save; hoard",
+    "level": 6,
+    "phrase": "攒",
+    "sentence": "这是“攒”字。"
+  },
+  {
+    "char": "贼",
+    "pinyin": "zéi",
+    "meaning": "thief",
+    "level": 6,
+    "phrase": "贼",
+    "sentence": "这是“贼”字。"
+  },
+  {
+    "char": "扎",
+    "pinyin": "zhā",
+    "meaning": "to prick; push a needle into; penetrating",
+    "level": 6,
+    "phrase": "扎",
+    "sentence": "这是“扎”字。"
+  },
+  {
+    "char": "渣",
+    "pinyin": "zhā",
+    "meaning": "dregs; slag",
+    "level": 6,
+    "phrase": "渣",
+    "sentence": "这是“渣”字。"
+  },
+  {
+    "char": "眨",
+    "pinyin": "zhǎ",
+    "meaning": "wink; blink",
+    "level": 6,
+    "phrase": "眨",
+    "sentence": "这是“眨”字。"
+  },
+  {
+    "char": "折",
+    "pinyin": "zhé",
+    "meaning": "to break; to fracture; convert into; to fold",
+    "level": 6,
+    "phrase": "折",
+    "sentence": "这是“折”字。"
+  },
+  {
+    "char": "枝",
+    "pinyin": "zhī",
+    "meaning": "branch; twig; (mw for sticks, rods, pencils)",
+    "level": 6,
+    "phrase": "枝",
+    "sentence": "这是“枝”字。"
+  },
+  {
+    "char": "州",
+    "pinyin": "zhōu",
+    "meaning": "province; sub-prefecture; (United States) state",
+    "level": 6,
+    "phrase": "州",
+    "sentence": "这是“州”字。"
+  },
+  {
+    "char": "舟",
+    "pinyin": "zhōu",
+    "meaning": "boat (Kangxi radical 137)",
+    "level": 6,
+    "phrase": "舟",
+    "sentence": "这是“舟”字。"
+  },
+  {
+    "char": "粥",
+    "pinyin": "zhōu",
+    "meaning": "porridge; congee; gruel",
+    "level": 6,
+    "phrase": "粥",
+    "sentence": "这是“粥”字。"
+  },
+  {
+    "char": "株",
+    "pinyin": "zhū",
+    "meaning": "stem; root; trunk; (mw for plants)",
+    "level": 6,
+    "phrase": "株",
+    "sentence": "这是“株”字。"
+  },
+  {
+    "char": "拄",
+    "pinyin": "zhǔ",
+    "meaning": "post; lean on a stick; prop",
+    "level": 6,
+    "phrase": "拄",
+    "sentence": "这是“拄”字。"
+  },
+  {
+    "char": "拽",
+    "pinyin": "zhuài",
+    "meaning": "drag; haul",
+    "level": 6,
+    "phrase": "拽",
+    "sentence": "这是“拽”字。"
+  },
+  {
+    "char": "砖",
+    "pinyin": "zhuān",
+    "meaning": "brick",
+    "level": 6,
+    "phrase": "砖",
+    "sentence": "这是“砖”字。"
+  },
+  {
+    "char": "坠",
+    "pinyin": "zhuì",
+    "meaning": "fall; drop",
+    "level": 6,
+    "phrase": "坠",
+    "sentence": "这是“坠”字。"
+  },
+  {
+    "char": "揍",
+    "pinyin": "zòu",
+    "meaning": "(informal) beat; hit; (regional) smash; break",
+    "level": 6,
+    "phrase": "揍",
+    "sentence": "这是“揍”字。"
+  }
+]

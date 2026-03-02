@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HSK 汉字学习与书写复习</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700&family=Space+Grotesk:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-shape shape-a"></div>
+    <div class="bg-shape shape-b"></div>
+
+    <section class="auth-screen" id="auth-screen">
+      <div class="auth-card">
+        <h2>用户登录</h2>
+        <div class="auth-switch">
+          <button id="auth-tab-login" class="good" type="button">登录</button>
+          <button id="auth-tab-register" class="ghost" type="button">注册</button>
+        </div>
+        <label>
+          用户名
+          <input id="auth-username" type="text" autocomplete="username" placeholder="请输入用户名" />
+        </label>
+        <label>
+          密码
+          <input id="auth-password" type="password" autocomplete="current-password" placeholder="请输入密码" />
+        </label>
+        <label id="auth-password-confirm-row" class="hidden">
+          确认密码
+          <input id="auth-password-confirm" type="password" autocomplete="new-password" placeholder="请再次输入密码" />
+        </label>
+        <button id="auth-login" class="good">登录</button>
+        <button id="auth-register" class="good hidden">注册账号</button>
+        <p id="auth-msg"></p>
+      </div>
+    </section>
+
+    <main class="app hidden" id="app-shell">
+      <header class="hero">
+        <p class="eyebrow">HSK Study Studio</p>
+        <h1>学汉字 · 练书写 · 智能复习</h1>
+        <p class="subtitle">按HSK分级学习常用汉字，随手写字练习，并用记忆节奏复习。</p>
+        <div class="actions">
+          <p id="user-badge">未登录</p>
+          <button id="logout-btn" class="ghost">退出登录</button>
+        </div>
+      </header>
+
+      <nav class="tabs" aria-label="主要功能">
+        <button class="tab is-active" data-tab="learn">学习</button>
+        <button class="tab" data-tab="write">写字</button>
+        <button class="tab" data-tab="review">默写测验</button>
+        <button class="tab" data-tab="wrong">错题本</button>
+        <button class="tab hidden" id="records-tab" data-tab="records">我的记录</button>
+        <button class="tab hidden" id="admin-tab" data-tab="admin">管理审核</button>
+      </nav>
+
+      <section class="panel is-active" id="learn-panel">
+        <div class="panel-head">
+          <h2>学习汉字</h2>
+          <label>
+            学习类型
+            <select id="learn-type-filter">
+              <option value="char">汉字</option>
+              <option value="word">词汇</option>
+            </select>
+          </label>
+          <label>
+            HSK等级
+            <select id="level-filter"></select>
+          </label>
+        </div>
+
+        <article class="card" id="learn-card">
+          <div class="char" id="learn-char">你</div>
+          <div class="meta">
+            <p id="learn-pinyin">nǐ</p>
+            <p id="learn-meaning">you</p>
+          </div>
+          <p id="learn-progress">学习进度：1/1</p>
+          <button id="toggle-detail" class="ghost">显示/隐藏拼音与释义</button>
+        </article>
+
+        <div class="actions">
+          <button id="prev-char">上一个</button>
+          <button id="next-char">下一个</button>
+          <button id="learn-play" class="ghost">听读音</button>
+          <button id="learn-mode-toggle" class="ghost">顺序学习</button>
+          <button id="learn-auto-speak" class="ghost">自动朗读：关</button>
+          <button id="mark-hard" class="warn">记不牢</button>
+          <button id="mark-easy" class="good">记住了</button>
+        </div>
+
+        <article class="card">
+          <div class="panel-head">
+            <h3>全部学习项列表</h3>
+            <label>
+              搜索
+              <input id="learn-char-search" type="text" placeholder="输入汉字或拼音" />
+            </label>
+            <label>
+              列表类型
+              <select id="learn-list-type-filter">
+                <option value="all">汉字+词汇</option>
+                <option value="char">仅汉字</option>
+                <option value="word">仅词汇</option>
+              </select>
+            </label>
+          </div>
+          <p id="learn-list-summary">共 0 个字</p>
+          <div class="actions">
+            <label>
+              每页
+              <select id="learn-char-page-size">
+                <option value="20">20</option>
+                <option value="50" selected>50</option>
+                <option value="100">100</option>
+              </select>
+            </label>
+            <button id="learn-char-prev" class="ghost">上一页</button>
+            <button id="learn-char-next" class="ghost">下一页</button>
+            <span id="learn-char-page-info">第 1 / 1 页</span>
+            <button id="learn-select-page" class="ghost">全选本页</button>
+            <button id="learn-clear-selected" class="ghost">清空选择</button>
+            <button id="learn-demo-selected" class="ghost">批量演示已选汉字</button>
+            <button id="learn-dictate-selected" class="good">开始选中默写</button>
+          </div>
+          <div class="char-list-wrap">
+            <table class="char-list-table">
+              <thead>
+                <tr>
+                  <th>选择</th>
+                  <th>内容</th>
+                  <th>类型</th>
+                  <th>拼音</th>
+                  <th>HSK</th>
+                  <th>已默写</th>
+                  <th>错题本</th>
+                </tr>
+              </thead>
+              <tbody id="learn-char-list"></tbody>
+            </table>
+          </div>
+        </article>
+      </section>
+
+      <section class="panel" id="write-panel">
+        <div class="panel-head">
+          <h2>写字练习</h2>
+        </div>
+        <select id="write-char-select" class="hidden" aria-hidden="true"></select>
+
+        <div class="write-wrap">
+          <div class="target">
+            <p>临摹目标</p>
+            <div id="target-char">你</div>
+            <small id="target-meta">nǐ · you</small>
+            <div class="actions">
+              <button id="stroke-demo-play" class="ghost">演示笔画</button>
+              <button id="stroke-demo-replay" class="ghost">重播笔画</button>
+            </div>
+            <div id="stroke-demo" class="stroke-demo-box" aria-label="汉字笔画演示区域"></div>
+            <p id="stroke-demo-msg"></p>
+            <p>手写练习</p>
+            <div class="canvas-wrap">
+            <canvas id="write-canvas" width="340" height="340" aria-label="汉字书写画布"></canvas>
+            </div>
+            <div class="actions write-canvas-actions">
+              <button id="undo-stroke">撤销一笔</button>
+              <button id="clear-canvas">清空</button>
+              <button id="write-check" class="good">智能判定</button>
+            </div>
+          </div>
+
+          <article class="card write-list-card">
+            <div class="panel-head">
+              <h3>汉字演示列表</h3>
+              <label>
+                搜索
+                <input id="write-list-search" type="text" placeholder="输入汉字或拼音" />
+              </label>
+            </div>
+            <p id="write-list-summary">已选 0 个</p>
+            <div class="actions">
+              <label>
+                每页
+                <select id="write-list-page-size">
+                  <option value="20">20</option>
+                  <option value="50" selected>50</option>
+                  <option value="100">100</option>
+                </select>
+              </label>
+              <button id="write-list-prev" class="ghost">上一页</button>
+              <button id="write-list-next" class="ghost">下一页</button>
+              <span id="write-list-page-info">第 1 / 1 页</span>
+              <button id="write-prev-char" class="ghost">上一个汉字</button>
+              <button id="write-next-char" class="ghost">下一个汉字</button>
+            </div>
+            <div class="actions">
+              <button id="write-list-select-page" class="ghost">全选本页</button>
+              <button id="write-list-clear-selected" class="ghost">清空选择</button>
+              <button id="write-list-play-selected" class="good">批量演示已选</button>
+              <button id="write-list-stop-play" class="warn" disabled>停止批量演示</button>
+            </div>
+            <div class="char-list-wrap">
+              <table class="char-list-table">
+                <thead>
+                  <tr>
+                    <th>选择</th>
+                    <th>汉字</th>
+                    <th>拼音</th>
+                    <th>HSK</th>
+                    <th>操作</th>
+                  </tr>
+                </thead>
+                <tbody id="write-char-list"></tbody>
+              </table>
+            </div>
+          </article>
+        </div>
+
+        <p id="write-feedback"></p>
+      </section>
+
+      <section class="panel" id="review-panel">
+        <div class="panel-head">
+          <h2>默写测验</h2>
+          <p id="due-count"></p>
+        </div>
+        <div class="review-config">
+          <label>
+            默写类型
+            <select id="review-type-filter">
+              <option value="char">汉字</option>
+              <option value="word">词汇</option>
+            </select>
+          </label>
+          <label>
+            HSK等级
+            <select id="review-level-filter"></select>
+          </label>
+          <label>
+            默写字数
+            <select id="review-count-filter">
+              <option value="5">5</option>
+              <option value="10" selected>10</option>
+              <option value="20">20</option>
+              <option value="all">全部</option>
+            </select>
+          </label>
+          <label>
+            错题混入比例
+            <select id="review-wrong-mix-filter">
+              <option value="0">0%</option>
+              <option value="10">10%</option>
+              <option value="20">20%</option>
+              <option value="30" selected>30%</option>
+              <option value="40">40%</option>
+              <option value="50">50%</option>
+              <option value="70">70%</option>
+              <option value="100">100%</option>
+            </select>
+          </label>
+          <label>
+            默写前预览
+            <select id="review-preview-filter">
+              <option value="0">不预览</option>
+              <option value="all">预览</option>
+            </select>
+          </label>
+          <button id="review-begin" class="good">开始默写</button>
+          <button id="review-restart" class="ghost" disabled>重新开始默写</button>
+        </div>
+
+        <article class="card review-dictation" id="review-card">
+          <p class="dictation-tip">听读音后，默写对应汉字</p>
+          <p id="review-preview" class="dictation-preview is-hidden"></p>
+          <div class="actions">
+            <button id="review-play">播放读音</button>
+            <button id="review-replay" class="ghost">再播一次</button>
+          </div>
+
+          <div class="meta" id="review-context">
+            <p id="review-pinyin">拼音：nǐ</p>
+            <p id="review-meaning">英语解释：you</p>
+          </div>
+
+          <div class="answer-row">
+            <p class="dictation-label">在下面手写汉字（鼠标/触屏）</p>
+          </div>
+          <div id="dictation-writer" class="dictation-writer" aria-label="默写手写检测区域"></div>
+          <div class="answer-row" id="word-answer-row">
+            <label for="word-review-input" class="dictation-label">输入你听到的词语</label>
+            <input id="word-review-input" class="dictation-input" type="text" autocomplete="off" placeholder="请输入词语" />
+            <button id="word-review-submit" class="good">提交词语</button>
+          </div>
+          <div class="actions">
+            <button id="review-start" class="good">完成并判定</button>
+            <button id="review-reset" class="ghost">重写本题</button>
+            <button id="review-show" class="ghost">显示答案</button>
+          </div>
+          <p id="review-feedback"></p>
+          <p id="review-answer" class="is-hidden"></p>
+        </article>
+      </section>
+
+      <section class="panel" id="wrong-panel">
+        <div class="panel-head">
+          <h2>错题本</h2>
+          <p id="wrong-count">错题本：0 个</p>
+        </div>
+        <div class="actions">
+          <label>
+            默写字数
+            <select id="wrong-dictation-count">
+              <option value="5">5</option>
+              <option value="10" selected>10</option>
+              <option value="20">20</option>
+              <option value="all">全部</option>
+            </select>
+          </label>
+          <button id="start-wrong-dictation" class="warn">错题默写</button>
+        </div>
+        <div id="wrong-level-filters" class="actions"></div>
+        <article class="card">
+          <div id="wrong-list" class="chip-list"></div>
+        </article>
+      </section>
+
+      <section class="panel" id="admin-panel">
+        <div class="panel-head">
+          <h2>管理员审核</h2>
+          <p id="admin-count">记录：0 条</p>
+        </div>
+        <div class="review-config">
+          <label>
+            用户名筛选
+            <input id="admin-user-filter" type="text" placeholder="输入用户名" />
+          </label>
+          <label>
+            时间范围
+            <select id="admin-time-filter">
+              <option value="all">全部</option>
+              <option value="7">最近7天</option>
+              <option value="30">最近30天</option>
+            </select>
+          </label>
+          <button id="admin-filter-apply" class="good">应用筛选</button>
+        </div>
+        <article class="card">
+          <div id="admin-list"></div>
+        </article>
+      </section>
+
+      <section class="panel" id="records-panel">
+        <div class="panel-head">
+          <h2>我的默写记录</h2>
+          <p id="records-count">记录：0 条</p>
+        </div>
+        <article class="card">
+          <div id="records-stats" class="records-stats"></div>
+        </article>
+        <article class="card">
+          <div id="records-list"></div>
+        </article>
+      </section>
+
+      <footer class="stats">
+        <p id="stats-text">进度统计加载中...</p>
+        <p id="reward-text">积分统计加载中...</p>
+      </footer>
+    </main>
+
+    <script src="data/hsk_words_1_6.js"></script>
+    <script src="https://unpkg.com/hanzi-writer@3.7/dist/hanzi-writer.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
