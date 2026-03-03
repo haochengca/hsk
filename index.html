@@ -353,10 +353,16 @@
           <div class="actions">
             <button id="review-start" class="good">完成并判定</button>
             <button id="review-reset" class="ghost">重写本题</button>
+            <button id="review-next" class="good hidden">下一个字</button>
             <button id="review-stop" class="warn" data-i18n="review.stop">停止默写</button>
           </div>
           <p id="review-feedback"></p>
           <p id="review-answer" class="is-hidden"></p>
+          <article id="review-summary-card" class="review-summary hidden" aria-live="polite">
+            <h3>本轮结算</h3>
+            <p id="review-summary-text"></p>
+            <p id="review-summary-actions" class="review-summary-actions"></p>
+          </article>
         </article>
       </section>
 
@@ -533,6 +539,7 @@
 
     <script src="data/hsk_words_1_6.js"></script>
     <script src="https://unpkg.com/hanzi-writer@3.7/dist/hanzi-writer.min.js"></script>
+    <script src="review-state.js"></script>
     <script src="app.js"></script>
   </body>
 </html>

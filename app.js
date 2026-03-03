@@ -5927,7 +5927,16 @@ const state = {
   reviewList: [],
   reviewIndex: 0,
   reviewActive: false,
+  reviewFlowState: "idle",
+  reviewAwaitingNext: false,
+  reviewLastResult: null,
   reviewSessionPointsEarned: 0,
+  reviewSessionStartedAt: 0,
+  reviewSessionFinishedAt: 0,
+  reviewSessionTotal: 0,
+  reviewSessionCorrect: 0,
+  reviewSessionWrong: 0,
+  reviewSessionWrongItems: [],
   reviewMessage: "请选择默写类型、等级和字数，然后点击“开始默写”。",
   progress: {},
   wrongBook: [],
@@ -6095,7 +6104,11 @@ const reviewFeedback = document.getElementById("review-feedback");
 const reviewAnswer = document.getElementById("review-answer");
 const reviewStartBtn = document.getElementById("review-start");
 const reviewResetBtn = document.getElementById("review-reset");
+const reviewNextBtn = document.getElementById("review-next");
 const reviewStopBtn = document.getElementById("review-stop");
+const reviewSummaryCard = document.getElementById("review-summary-card");
+const reviewSummaryText = document.getElementById("review-summary-text");
+const reviewSummaryActions = document.getElementById("review-summary-actions");
 const wordAnswerRow = document.getElementById("word-answer-row");
 const wordReviewInput = document.getElementById("word-review-input");
 const wordReviewSubmit = document.getElementById("word-review-submit");
@@ -6111,6 +6124,7 @@ const statsText = document.getElementById("stats-text");
 const rewardText = document.getElementById("reward-text");
 const pointsGainFx = document.getElementById("points-gain-fx");
 const pointsFireworks = document.getElementById("points-fireworks");
+const reviewStateModule = window.ReviewState || null;
 
 const LANG_KEY = "hsk_ui_lang";
 const SUPPORTED_LANGS = ["zh", "en", "fr", "es"];
@@ -7937,6 +7951,129 @@ function clearAdvanceTimer() {
   }
 }
 
+function getReviewFlowContext() {
+  const fallback = {
+    flow: state.reviewFlowState || "idle",
+    hasItem: state.reviewActive && Boolean(currentReviewItem()),
+    isLastItem: state.reviewActive && state.reviewIndex >= state.reviewList.length - 1,
+    canBegin: !state.reviewActive && !state.reviewPreviewRunning,
+    canRestart: state.reviewActive,
+    canJudge: state.reviewActive && !state.reviewAwaitingNext,
+    canReset: state.reviewActive && !state.reviewAwaitingNext,
+    canStop: state.reviewActive || state.reviewPreviewRunning,
+    canNext: state.reviewActive && state.reviewAwaitingNext && state.reviewIndex < state.reviewList.length - 1,
+    showStop: state.reviewActive && state.reviewIndex < state.reviewList.length - 1,
+    showNext: state.reviewActive && state.reviewAwaitingNext && state.reviewIndex < state.reviewList.length - 1
+  };
+  if (!reviewStateModule || typeof reviewStateModule.getReviewFlowContext !== "function") return fallback;
+  return reviewStateModule.getReviewFlowContext({
+    flow: state.reviewFlowState,
+    total: state.reviewList.length,
+    index: state.reviewIndex
+  });
+}
+
+function setReviewFlowState(nextState) {
+  if (!reviewStateModule || typeof reviewStateModule.toFlow !== "function") {
+    state.reviewFlowState = String(nextState || "idle");
+    return;
+  }
+  state.reviewFlowState = reviewStateModule.toFlow(nextState);
+}
+
+function resetReviewSessionStats() {
+  state.reviewSessionStartedAt = Date.now();
+  state.reviewSessionFinishedAt = 0;
+  state.reviewSessionTotal = Array.isArray(state.reviewList) ? state.reviewList.length : 0;
+  state.reviewSessionCorrect = 0;
+  state.reviewSessionWrong = 0;
+  state.reviewSessionWrongItems = [];
+  state.reviewLastResult = null;
+  state.reviewAwaitingNext = false;
+}
+
+function getCurrentSessionSummary() {
+  const total = state.reviewSessionCorrect + state.reviewSessionWrong;
+  const acc = total > 0 ? Math.round((state.reviewSessionCorrect / total) * 100) : 0;
+  const durationMs = Math.max(0, (state.reviewSessionFinishedAt || Date.now()) - (state.reviewSessionStartedAt || Date.now()));
+  const durationSec = Math.round(durationMs / 1000);
+  const weakItems = (state.reviewSessionWrongItems || []).slice(0, 3).join("、");
+  return { total, acc, durationSec, weakItems };
+}
+
+function renderReviewSummaryCard() {
+  if (!reviewSummaryCard || !reviewSummaryText || !reviewSummaryActions) return;
+  if (state.reviewFlowState !== "ended") {
+    reviewSummaryCard.classList.add("hidden");
+    reviewSummaryText.textContent = "";
+    reviewSummaryActions.textContent = "";
+    return;
+  }
+  const summary = getCurrentSessionSummary();
+  const lastResultText =
+    state.reviewLastResult && typeof state.reviewLastResult.isGood === "boolean"
+      ? `最后一题：${state.reviewLastResult.isGood ? "正确" : "错误"}。`
+      : "";
+  reviewSummaryCard.classList.remove("hidden");
+  reviewSummaryText.textContent =
+    `${lastResultText}共完成 ${summary.total} 题，正确 ${state.reviewSessionCorrect} 题，正确率 ${summary.acc}%，耗时 ${summary.durationSec} 秒。`;
+  reviewSummaryActions.textContent = summary.weakItems
+    ? `建议下一步：优先复习 ${summary.weakItems}，也可去错题本继续巩固。`
+    : "建议下一步：继续挑战更高等级，或返回学习页巩固新字词。";
+}
+
+function renderReviewButtons() {
+  const flow = getReviewFlowContext();
+  reviewBegin.disabled = !flow.canBegin;
+  reviewRestart.disabled = !flow.canRestart;
+  if (reviewStartBtn) reviewStartBtn.disabled = !flow.canJudge;
+  if (reviewResetBtn) reviewResetBtn.disabled = !flow.canReset;
+  if (reviewNextBtn) reviewNextBtn.disabled = !flow.canNext;
+  if (reviewStopBtn) reviewStopBtn.disabled = !flow.canStop;
+
+  if (reviewNextBtn) reviewNextBtn.classList.toggle("hidden", !flow.showNext);
+  if (reviewStopBtn) reviewStopBtn.classList.toggle("hidden", !flow.showStop);
+}
+
+function finishReviewSession(isWrongBookSinglePractice) {
+  const sessionPoints = Math.max(0, Number(state.reviewSessionPointsEarned) || 0);
+  state.reviewSessionPointsEarned = 0;
+  state.reviewSessionFinishedAt = Date.now();
+
+  if (!isWrongBookSinglePractice) {
+    commitReviewDraftSession().catch((err) => {
+      console.warn("commit review draft failed:", err && err.message ? err.message : err);
+    });
+  } else {
+    endReviewDraftSession();
+  }
+
+  state.reviewActive = false;
+  state.reviewAwaitingNext = false;
+  setReviewFlowState("ended");
+  state.reviewSessionSource = "normal";
+  state.reviewMessage = `本轮默写已结束，共完成 ${state.reviewSessionCorrect + state.reviewSessionWrong} 个${state.reviewType === "word" ? "词" : "字"}。`;
+  state.reviewList = [];
+  state.reviewIndex = 0;
+  renderReviewCard();
+  if (sessionPoints > 0) playPointsGainEffect(sessionPoints, "本轮默写");
+  rebuildWrongQueue();
+}
+
+function advanceToNextReviewItem() {
+  if (!state.reviewActive || !state.reviewAwaitingNext) return;
+  state.reviewIndex += 1;
+  if (state.reviewIndex >= state.reviewList.length) {
+    finishReviewSession(state.reviewSessionSource === "wrongbook-single");
+    return;
+  }
+  state.reviewAwaitingNext = false;
+  state.reviewLastResult = null;
+  setReviewFlowState("answering");
+  renderReviewCard();
+  rebuildWrongQueue();
+}
+
 function clearReviewPreviewTimer() {
   if (state.reviewPreviewTimer) {
     clearTimeout(state.reviewPreviewTimer);
@@ -8490,6 +8627,7 @@ async function runPreReviewPreviewAndStart() {
   if (!list.length) {
     state.reviewPreviewRunning = false;
     state.reviewActive = false;
+    setReviewFlowState("idle");
     renderReviewCard();
     return;
   }
@@ -8499,6 +8637,7 @@ async function runPreReviewPreviewAndStart() {
     state.reviewPreviewRunning = false;
     resetPreviewTimerUi();
     state.reviewActive = true;
+    setReviewFlowState("answering");
     renderReviewCard();
     return;
   }
@@ -8507,6 +8646,7 @@ async function runPreReviewPreviewAndStart() {
   state.reviewPreviewToken = token;
   state.reviewPreviewRunning = true;
   state.reviewActive = false;
+  setReviewFlowState("preview");
   cleanupAllDictationPads();
   reviewFeedback.textContent = "";
   reviewAnswer.textContent = "";
@@ -8548,6 +8688,7 @@ async function runPreReviewPreviewAndStart() {
     reviewPreview.classList.add("is-hidden");
   }
   state.reviewActive = true;
+  setReviewFlowState("answering");
   renderReviewCard();
 }
 
@@ -8561,6 +8702,8 @@ function startReviewSession(source, emptyMessage) {
   state.reviewActive = false;
   state.reviewSessionSource = "normal";
   state.reviewSessionPointsEarned = 0;
+  setReviewFlowState(filtered.length > 0 ? "preview" : "idle");
+  resetReviewSessionStats();
   state.reviewMessage = filtered.length > 0 ? "默写前预览中..." : emptyMessage;
   if (filtered.length > 0) beginReviewDraftSession();
   runPreReviewPreviewAndStart();
@@ -8592,6 +8735,8 @@ function startDirectReviewSession(items, emptyMessage, options = {}) {
   state.reviewActive = false;
   state.reviewSessionSource = options && options.source ? String(options.source) : "normal";
   state.reviewSessionPointsEarned = 0;
+  setReviewFlowState(unique.length > 0 ? "preview" : "idle");
+  resetReviewSessionStats();
   state.reviewMessage = unique.length > 0 ? "默写前预览中..." : emptyMessage;
   if (unique.length > 0) beginReviewDraftSession();
   runPreReviewPreviewAndStart();
@@ -8606,6 +8751,8 @@ function cancelReviewSessionWithoutSave() {
   state.reviewIndex = 0;
   state.reviewSessionSource = "normal";
   state.reviewSessionPointsEarned = 0;
+  setReviewFlowState("idle");
+  state.reviewAwaitingNext = false;
   state.reviewMessage = "已取消本轮默写，数据未保存。";
   renderReviewCard();
 }
@@ -8613,12 +8760,7 @@ function cancelReviewSessionWithoutSave() {
 function renderReviewCard() {
   clearAdvanceTimer();
   const item = state.reviewActive ? currentReviewItem() : null;
-  reviewBegin.disabled = Boolean(state.reviewActive) || state.reviewPreviewRunning;
-  reviewRestart.disabled = !state.reviewActive || state.reviewPreviewRunning;
-  if (reviewStopBtn) {
-    reviewStopBtn.disabled = !state.reviewActive || state.reviewPreviewRunning;
-    reviewStopBtn.title = state.reviewActive ? t("review.stop") : "";
-  }
+  renderReviewButtons();
   reviewBegin.title = state.reviewPreviewRunning
     ? "默写前预览进行中，当前不可点击开始。"
     : state.reviewActive
@@ -8629,17 +8771,20 @@ function renderReviewCard() {
     : state.reviewActive
       ? "点击后重新开始本轮默写。"
       : "当前没有进行中的默写，无法重启。";
-  const total = state.reviewList.length;
-  const current = state.reviewActive ? state.reviewIndex + 1 : 0;
+  const total = state.reviewFlowState === "ended" ? state.reviewSessionTotal : state.reviewList.length;
+  const current = state.reviewActive ? state.reviewIndex + 1 : state.reviewFlowState === "ended" ? total : 0;
   const levelText = state.reviewLevel === "all" ? "全部" : `HSK${state.reviewLevel}`;
   const countText = state.reviewCount === "all" ? "全部" : `${state.reviewCount}个`;
   const mixText = state.reviewType === "char" ? `，错题混入${state.reviewWrongMixRatio}%` : "";
   dueCount.textContent = `进度: ${current}/${total}（${state.reviewType === "word" ? "词汇" : "汉字"}，${levelText}，${countText}${mixText}）`;
 
-  reviewFeedback.textContent = "";
-  reviewAnswer.textContent = "";
-  reviewAnswer.classList.add("is-hidden");
+  if (!state.reviewAwaitingNext) {
+    reviewFeedback.textContent = "";
+    reviewAnswer.textContent = "";
+    reviewAnswer.classList.add("is-hidden");
+  }
   wordReviewInput.value = "";
+  renderReviewSummaryCard();
 
   if (!item) {
     cleanupAllDictationPads();
@@ -8653,6 +8798,7 @@ function renderReviewCard() {
     dictationWriterHost.innerHTML = `<span>${state.reviewMessage}</span>`;
     reviewStartBtn.classList.add("hidden");
     reviewResetBtn.classList.add("hidden");
+    if (reviewNextBtn) reviewNextBtn.classList.add("hidden");
     if (reviewStopBtn) reviewStopBtn.classList.add("hidden");
     wordAnswerRow.classList.add("hidden");
     return;
@@ -8665,22 +8811,26 @@ function renderReviewCard() {
     wordAnswerRow.classList.add("hidden");
     reviewStartBtn.classList.remove("hidden");
     reviewResetBtn.classList.remove("hidden");
-    if (reviewStopBtn) reviewStopBtn.classList.remove("hidden");
     initDictationPad();
   } else {
     initWordDictationPads(item);
     reviewStartBtn.classList.remove("hidden");
     reviewResetBtn.classList.remove("hidden");
-    if (reviewStopBtn) reviewStopBtn.classList.remove("hidden");
     wordAnswerRow.classList.add("hidden");
   }
-
-  speakPrompt(item);
+  renderReviewButtons();
+  if (!state.reviewAwaitingNext) speakPrompt(item);
 }
 
 function finalizeReviewResult(item, isGood, accuracyPercent, meta = {}) {
   const isWrongBookSinglePractice = state.reviewSessionSource === "wrongbook-single";
   const earnedPoints = 1;
+  state.reviewLastResult = { isGood, accuracyPercent, itemKey: makeItemKey(item) };
+  state.reviewAwaitingNext = true;
+  state.reviewSessionCorrect += isGood ? 1 : 0;
+  state.reviewSessionWrong += isGood ? 0 : 1;
+  if (!isGood) state.reviewSessionWrongItems.push(item.text);
+
   if (isGood) {
     reviewFeedback.textContent = `${item.type === "word" ? "词语" : "默写"}正确${isWrongBookSinglePractice ? "（练习模式）" : ""}`;
     if (!isWrongBookSinglePractice) {
@@ -8717,32 +8867,12 @@ function finalizeReviewResult(item, isGood, accuracyPercent, meta = {}) {
   renderAdminPanel();
   renderUserRecords();
 
-  clearAdvanceTimer();
-  state.advanceTimer = setTimeout(() => {
-    state.reviewIndex += 1;
-    if (state.reviewIndex >= state.reviewList.length) {
-      const sessionPoints = Math.max(0, Number(state.reviewSessionPointsEarned) || 0);
-      state.reviewSessionPointsEarned = 0;
-      if (!isWrongBookSinglePractice) {
-        commitReviewDraftSession().catch((err) => {
-          console.warn("commit review draft failed:", err && err.message ? err.message : err);
-        });
-      } else {
-        endReviewDraftSession();
-      }
-      state.reviewActive = false;
-      state.reviewSessionSource = "normal";
-      state.reviewMessage = `本轮默写已结束，共完成 ${state.reviewList.length} 个${state.reviewType === "word" ? "词" : "字"}。`;
-      state.reviewList = [];
-      state.reviewIndex = 0;
-      renderReviewCard();
-      if (sessionPoints > 0) playPointsGainEffect(sessionPoints, "本轮默写");
-      rebuildWrongQueue();
-      return;
-    }
-    renderReviewCard();
-    rebuildWrongQueue();
-  }, 1400);
+  if (state.reviewIndex >= state.reviewList.length - 1) {
+    finishReviewSession(isWrongBookSinglePractice);
+    return;
+  }
+  setReviewFlowState("reviewed");
+  renderReviewButtons();
 }
 
 function evaluateWordInput() {
@@ -9086,6 +9216,10 @@ function drawPadStrokesToCanvas(pad, size) {
 function evaluateDrawing() {
   const item = currentReviewItem();
   if (!item || item.type !== "char") return;
+  if (state.reviewAwaitingNext) {
+    reviewFeedback.textContent = "请点击“下一个字”继续。";
+    return;
+  }
   if (!state.dictationPad) {
     reviewFeedback.textContent = "画布未初始化，请点击重写本题。";
     return;
@@ -9144,6 +9278,10 @@ function createTemplateBitsForChar(char, size) {
 function evaluateWordDrawing() {
   const item = currentReviewItem();
   if (!item || item.type !== "word") return;
+  if (state.reviewAwaitingNext) {
+    reviewFeedback.textContent = "请点击“下一个字”继续。";
+    return;
+  }
   if (!Array.isArray(state.dictationPads) || state.dictationPads.length === 0) {
     reviewFeedback.textContent = "词汇手写框未初始化，请点击重写本题。";
     return;
@@ -9496,7 +9634,7 @@ function wireReview() {
   });
 
   reviewRestart.addEventListener("click", () => {
-    if (!state.reviewActive) {
+    if (!state.reviewActive && state.reviewFlowState !== "reviewed") {
       reviewFeedback.textContent = "当前没有进行中的默写。";
       return;
     }
@@ -9521,21 +9659,31 @@ function wireReview() {
   });
 
   reviewStartBtn.addEventListener("click", () => {
-    if (!state.reviewActive) return;
+    if (!state.reviewActive || state.reviewAwaitingNext) return;
     if (state.reviewType === "word") evaluateWordDrawing();
     else evaluateDrawing();
   });
 
   reviewResetBtn.addEventListener("click", () => {
-    if (!state.reviewActive) return;
+    if (!state.reviewActive || state.reviewAwaitingNext) return;
     if (state.reviewType === "word") initWordDictationPads(currentReviewItem());
     else initDictationPad();
     reviewFeedback.textContent = "已清空，请重新书写后再判定。";
     reviewAnswer.classList.add("is-hidden");
   });
 
+  if (reviewNextBtn) {
+    reviewNextBtn.addEventListener("click", () => {
+      if (!state.reviewAwaitingNext) {
+        reviewFeedback.textContent = "请先完成并判定。";
+        return;
+      }
+      advanceToNextReviewItem();
+    });
+  }
+
   wordReviewSubmit.addEventListener("click", () => {
-    if (!state.reviewActive || state.reviewType !== "word") return;
+    if (!state.reviewActive || state.reviewType !== "word" || state.reviewAwaitingNext) return;
     evaluateWordDrawing();
   });
 
@@ -9545,7 +9693,7 @@ function wireReview() {
 
   if (reviewStopBtn) {
     reviewStopBtn.addEventListener("click", () => {
-      if (!state.reviewActive && !state.reviewPreviewRunning) return;
+      if (!state.reviewActive && !state.reviewPreviewRunning && state.reviewFlowState !== "reviewed") return;
       const ok = window.confirm(t("review.stopConfirm"));
       if (!ok) return;
       cancelReviewSessionWithoutSave();
@@ -9559,6 +9707,9 @@ function wireReview() {
     state.reviewActive = false;
     state.reviewList = [];
     state.reviewIndex = 0;
+    state.reviewAwaitingNext = false;
+    state.reviewLastResult = null;
+    setReviewFlowState("idle");
     state.reviewMessage = "默写类型已切换，请点击“开始默写”。";
     rebuildWrongQueue();
     renderReviewCard();
@@ -9571,6 +9722,9 @@ function wireReview() {
     state.reviewActive = false;
     state.reviewList = [];
     state.reviewIndex = 0;
+    state.reviewAwaitingNext = false;
+    state.reviewLastResult = null;
+    setReviewFlowState("idle");
     state.reviewMessage = "设置已更新，请点击“开始默写”。";
     renderReviewCard();
   });
@@ -9582,6 +9736,9 @@ function wireReview() {
     state.reviewActive = false;
     state.reviewList = [];
     state.reviewIndex = 0;
+    state.reviewAwaitingNext = false;
+    state.reviewLastResult = null;
+    setReviewFlowState("idle");
     state.reviewMessage = "设置已更新，请点击“开始默写”。";
     renderReviewCard();
   });
@@ -9593,6 +9750,9 @@ function wireReview() {
     state.reviewActive = false;
     state.reviewList = [];
     state.reviewIndex = 0;
+    state.reviewAwaitingNext = false;
+    state.reviewLastResult = null;
+    setReviewFlowState("idle");
     state.reviewMessage = "设置已更新，请点击“开始默写”。";
     renderReviewCard();
   });
@@ -9605,6 +9765,9 @@ function wireReview() {
       state.reviewActive = false;
       state.reviewList = [];
       state.reviewIndex = 0;
+      state.reviewAwaitingNext = false;
+      state.reviewLastResult = null;
+      setReviewFlowState("idle");
       state.reviewMessage = "设置已更新，请点击“开始默写”。";
       renderReviewCard();
     });

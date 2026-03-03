@@ -764,6 +764,28 @@ select {
   color: #2a476c;
 }
 
+.review-summary {
+  margin-top: 0.8rem;
+  border: 1px solid rgba(15, 23, 42, 0.14);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 0.75rem;
+}
+
+.review-summary h3 {
+  margin: 0 0 0.4rem;
+  color: #1f3652;
+}
+
+.review-summary p {
+  margin: 0.25rem 0;
+  color: #3d5575;
+}
+
+.review-summary-actions {
+  font-weight: 600;
+}
+
 #write-feedback {
   min-height: 1.4em;
   margin: 0.7rem 0 0;
