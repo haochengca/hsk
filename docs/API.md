@@ -9,14 +9,25 @@ Base URL: `/api`
 ## 2. 认证
 
 ### `POST /register`
-- 请求：`{ username, password }`
+- 请求：`{ username, password, role, linkedParentUsername? }`
+  - `role`: `parent|child`
+  - 当 `role=child` 时必须传 `linkedParentUsername`，且该账号需已存在并且角色为 `parent`
 - 响应：`{ ok, message }`
 
 ### `POST /login`
 - 请求：`{ username, password }`
 - 响应：
 ```json
-{ "ok": true, "token": "...", "user": { "username": "...", "role": "user|admin" } }
+{
+  "ok": true,
+  "token": "...",
+  "user": {
+    "username": "...",
+    "role": "admin|parent|child",
+    "linkedParentUsername": "",
+    "linkedChildren": []
+  }
+}
 ```
 
 ### `POST /logout`
@@ -31,7 +42,12 @@ Base URL: `/api`
 ```json
 {
   "ok": true,
-  "user": { "username": "...", "role": "user|admin" },
+  "user": {
+    "username": "...",
+    "role": "admin|parent|child",
+    "linkedParentUsername": "",
+    "linkedChildren": []
+  },
   "data": {
     "progress": {},
     "wrongBook": [],
@@ -69,7 +85,7 @@ Base URL: `/api`
 ## 4. 默写提交
 
 ### `POST /submissions`
-- Header: `Authorization`（user）
+- Header: `Authorization`（parent|child）
 - 请求：
 ```json
 {
@@ -97,10 +113,10 @@ Base URL: `/api`
   - `handwritingImage` 对词汇可为多图拼接字符串（`||` 分隔），用于兼容旧数据展示。
 - 响应：`{ ok, submission }`
 
-## 5. 管理员复判
+## 5. 管理角色复判
 
 ### `PUT /submissions/:id/review`
-- Header: `Authorization`（admin）
+- Header: `Authorization`（parent）
 - 请求：
 ```json
 {
@@ -123,7 +139,38 @@ Base URL: `/api`
 ```
 - 服务端规则：
   - 若提交是词汇且传了 `wordCharResults`，最终 `finalResult` 以逐字结果自动汇总（全对=正确）。
-  - 复判后会同步更新该用户积分、词汇错题、相关单字错题。
+- 复判后会同步更新该用户积分、词汇错题、相关单字错题。
+
+## 6. 管理员用户管理
+
+### `GET /admin/users`
+- Header: `Authorization`（admin）
+- 响应：
+```json
+{
+  "ok": true,
+  "users": [
+    {
+      "username": "alice",
+      "role": "admin|parent|child",
+      "linkedParentUsername": "",
+      "linkedChildren": [],
+      "createdAt": 0
+    }
+  ]
+}
+```
+
+### `DELETE /admin/users/:username`
+- Header: `Authorization`（admin）
+- 说明：
+  - 不允许删除管理员账号
+  - 删除父母/孩子账号时会同步清理其学习数据、会话、提交记录，并维护亲子关联关系
+- 响应：`{ ok: true, deleted: username }`
+
+说明：
+- 父母账号可使用 `PUT /submissions/:id/review` 与错题本管理接口（`/api/admin/users/:username/wrong-book` 的查询/编辑）。
+- 管理员账号不可使用 `PUT /submissions/:id/review`，可使用用户管理接口（`GET/DELETE /api/admin/users...`）与学习项管理接口。
 - 响应：`{ ok, submission }`
 
 ## 6. 错误码（常见）

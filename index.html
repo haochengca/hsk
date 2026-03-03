@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700&family=Space+Grotesk:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;500;700&family=Outfit:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -45,6 +45,23 @@
         <label id="auth-password-confirm-row" class="auth-field hidden">
           <span data-i18n="auth.confirmPassword">确认密码</span>
           <input id="auth-password-confirm" type="password" autocomplete="new-password" placeholder="请再次输入密码" data-i18n-placeholder="auth.confirmPasswordPlaceholder" />
+        </label>
+        <label id="auth-role-row" class="auth-field hidden">
+          <span data-i18n="auth.role">账号角色</span>
+          <select id="auth-role-select">
+            <option value="child" data-i18n="auth.roleChild">孩子</option>
+            <option value="parent" data-i18n="auth.roleParent">父母</option>
+          </select>
+        </label>
+        <label id="auth-parent-username-row" class="auth-field hidden">
+          <span data-i18n="auth.parentUsername">关联父母账号</span>
+          <input
+            id="auth-parent-username"
+            type="text"
+            autocomplete="off"
+            placeholder="请输入已注册父母账号用户名"
+            data-i18n-placeholder="auth.parentUsernamePlaceholder"
+          />
         </label>
         <button id="auth-toggle-password" class="ghost auth-mini-btn" type="button" data-i18n="auth.showPassword">显示密码</button>
         <button id="auth-login" class="good auth-main-btn" data-i18n="auth.login">登录</button>
@@ -84,7 +101,8 @@
         <button class="tab" data-tab="review" data-i18n="nav.review">默写测验</button>
         <button class="tab" data-tab="wrong" data-i18n="nav.wrong">错题本</button>
         <button class="tab hidden" id="records-tab" data-tab="records" data-i18n="nav.records">我的记录</button>
-        <button class="tab hidden" id="admin-tab" data-tab="admin" data-i18n="nav.adminReview">管理审核</button>
+        <button class="tab hidden" id="admin-tab" data-tab="admin" data-i18n="nav.adminReview">默写判定审核</button>
+        <button class="tab hidden" id="admin-users-tab" data-tab="admin-users">用户管理</button>
         <button class="tab hidden" id="admin-wrong-tab" data-tab="admin-wrong" data-i18n="nav.adminWrong">题本管理</button>
         <button class="tab hidden" id="admin-items-tab" data-tab="admin-items">学习项管理</button>
       </nav>
@@ -368,7 +386,7 @@
 
       <section class="panel" id="admin-panel">
         <div class="panel-head">
-          <h2>管理员审核</h2>
+          <h2>默写判定审核</h2>
           <p id="admin-count">记录：0 条</p>
         </div>
         <div class="review-config">
@@ -388,6 +406,33 @@
         </div>
         <article class="card">
           <div id="admin-list"></div>
+        </article>
+      </section>
+
+      <section class="panel" id="admin-users-panel">
+        <div class="panel-head">
+          <h2>用户管理</h2>
+          <p id="admin-users-count">用户：0 个</p>
+        </div>
+        <div class="actions">
+          <button id="admin-users-refresh" class="good">刷新用户列表</button>
+        </div>
+        <p id="admin-users-msg"></p>
+        <article class="card">
+          <div class="char-list-wrap">
+            <table class="char-list-table">
+              <thead>
+                <tr>
+                  <th>用户名</th>
+                  <th>角色</th>
+                  <th>关联关系</th>
+                  <th>创建时间</th>
+                  <th>操作</th>
+                </tr>
+              </thead>
+              <tbody id="admin-users-list"></tbody>
+            </table>
+          </div>
         </article>
       </section>
 

@@ -83,6 +83,57 @@ function defaultUserData() {
   };
 }
 
+function normalizeRole(role) {
+  if (role === "admin" || role === "parent" || role === "child") return role;
+  if (role === "user") return "child";
+  return "child";
+}
+
+function isLearnerRole(role) {
+  return role === "parent" || role === "child";
+}
+
+function isManagerRole(role) {
+  return role === "admin" || role === "parent";
+}
+
+function normalizeUserRecord(input) {
+  const user = input && typeof input === "object" ? { ...input } : {};
+  user.username = String(user.username || "").trim();
+  user.role = normalizeRole(user.role);
+  user.passwordHash = String(user.passwordHash || "");
+  user.createdAt = Number(user.createdAt) || now();
+  user.linkedParentUsername = String(user.linkedParentUsername || "").trim();
+  user.linkedChildren = Array.isArray(user.linkedChildren)
+    ? [...new Set(user.linkedChildren.map((x) => String(x || "").trim()).filter(Boolean))]
+    : [];
+  if (user.role !== "child") user.linkedParentUsername = "";
+  if (user.role !== "parent") user.linkedChildren = [];
+  return user;
+}
+
+function ensureFamilyLinks(db) {
+  const userMap = new Map();
+  db.users.forEach((user) => userMap.set(user.username, user));
+  db.users.forEach((user) => {
+    if (user.role !== "child" || !user.linkedParentUsername) return;
+    const parent = userMap.get(user.linkedParentUsername);
+    if (!parent || parent.role !== "parent") {
+      user.linkedParentUsername = "";
+      return;
+    }
+    if (!Array.isArray(parent.linkedChildren)) parent.linkedChildren = [];
+    if (!parent.linkedChildren.includes(user.username)) parent.linkedChildren.push(user.username);
+  });
+  db.users.forEach((user) => {
+    if (user.role !== "parent") return;
+    user.linkedChildren = [...new Set((user.linkedChildren || []).filter((name) => {
+      const child = userMap.get(name);
+      return child && child.role === "child";
+    }))];
+  });
+}
+
 function ensureDbFile() {
   if (!fs.existsSync(path.dirname(DB_PATH))) fs.mkdirSync(path.dirname(DB_PATH), { recursive: true });
   if (fs.existsSync(DB_PATH)) return;
@@ -107,7 +158,8 @@ function loadDb() {
   ensureDbFile();
   try {
     const parsed = JSON.parse(fs.readFileSync(DB_PATH, "utf8"));
-    parsed.users = Array.isArray(parsed.users) ? parsed.users : [];
+    parsed.users = Array.isArray(parsed.users) ? parsed.users.map(normalizeUserRecord).filter((x) => x.username) : [];
+    ensureFamilyLinks(parsed);
     parsed.userData = parsed.userData && typeof parsed.userData === "object" ? parsed.userData : {};
     parsed.lexiconOverrides = parsed.lexiconOverrides && typeof parsed.lexiconOverrides === "object" ? parsed.lexiconOverrides : {};
     parsed.submissions = Array.isArray(parsed.submissions) ? parsed.submissions : [];
@@ -182,7 +234,7 @@ function sendJson(res, statusCode, payload) {
     "Content-Type": "application/json; charset=utf-8",
     "Access-Control-Allow-Origin": "*",
     "Access-Control-Allow-Headers": "Content-Type, Authorization",
-    "Access-Control-Allow-Methods": "GET, POST, PUT, OPTIONS"
+    "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS"
   });
   res.end(body);
 }
@@ -194,7 +246,15 @@ function getAuthContext(req, db) {
   cleanExpiredSessions(db);
   const session = db.sessions.find((x) => x.token === token);
   if (!session) return null;
-  return { token, username: session.username, role: session.role };
+  const user = db.users.find((x) => x && x.username === session.username);
+  if (!user) return null;
+  return {
+    token,
+    username: user.username,
+    role: normalizeRole(user.role),
+    linkedParentUsername: String(user.linkedParentUsername || ""),
+    linkedChildren: Array.isArray(user.linkedChildren) ? user.linkedChildren : []
+  };
 }
 
 function newToken() {
@@ -281,6 +341,31 @@ function normalizeLexiconOverride(input, fallbackType = "char", fallbackText = "
   return { type, text, pinyin, prompt1, prompt2 };
 }
 
+function removeUserDeep(db, username) {
+  const target = String(username || "").trim();
+  if (!target) return;
+  const user = db.users.find((x) => x && x.username === target);
+  if (!user) return;
+  const role = normalizeRole(user.role);
+
+  if (role === "parent") {
+    db.users.forEach((u) => {
+      if (u && normalizeRole(u.role) === "child" && u.linkedParentUsername === target) u.linkedParentUsername = "";
+    });
+  }
+  if (role === "child" && user.linkedParentUsername) {
+    const parent = db.users.find((x) => x && x.username === user.linkedParentUsername);
+    if (parent && Array.isArray(parent.linkedChildren)) {
+      parent.linkedChildren = parent.linkedChildren.filter((x) => x !== target);
+    }
+  }
+
+  db.users = db.users.filter((x) => x && x.username !== target);
+  delete db.userData[target];
+  db.submissions = (db.submissions || []).filter((x) => x && x.username !== target && x.reviewedBy !== target);
+  db.sessions = (db.sessions || []).filter((x) => x && x.username !== target);
+}
+
 async function handleApi(req, res, pathname) {
   const db = loadDb();
 
@@ -294,21 +379,42 @@ async function handleApi(req, res, pathname) {
     const body = await parseBody(req);
     const username = String(body.username || "").trim();
     const password = String(body.password || "");
+    const role = normalizeRole(body.role);
+    const linkedParentUsername = String(body.linkedParentUsername || "").trim();
     if (!validUsername(username)) {
       return sendJson(res, 400, { ok: false, message: "用户名需为3-32位字母/数字/下划线" });
     }
     if (!validPassword(password)) {
       return sendJson(res, 400, { ok: false, message: "密码长度需为6-64位" });
     }
+    if (role === "admin") {
+      return sendJson(res, 400, { ok: false, message: "不支持注册管理员账号" });
+    }
     if (db.users.some((x) => x.username === username)) {
       return sendJson(res, 409, { ok: false, message: "用户名已存在" });
+    }
+    let parent = null;
+    if (role === "child") {
+      if (!validUsername(linkedParentUsername)) {
+        return sendJson(res, 400, { ok: false, message: "孩子账号需填写已存在的父母账号用户名" });
+      }
+      parent = db.users.find((x) => x.username === linkedParentUsername);
+      if (!parent || normalizeRole(parent.role) !== "parent") {
+        return sendJson(res, 400, { ok: false, message: "关联父母账号不存在或角色不正确" });
+      }
     }
     db.users.push({
       username,
       passwordHash: createPasswordHash(password),
-      role: "user",
+      role,
+      linkedParentUsername: role === "child" ? linkedParentUsername : "",
+      linkedChildren: [],
       createdAt: now()
     });
+    if (role === "child" && parent) {
+      if (!Array.isArray(parent.linkedChildren)) parent.linkedChildren = [];
+      if (!parent.linkedChildren.includes(username)) parent.linkedChildren.push(username);
+    }
     ensureUserData(db, username);
     saveDb(db);
     return sendJson(res, 201, { ok: true, message: "注册成功，请登录" });
@@ -327,12 +433,21 @@ async function handleApi(req, res, pathname) {
     db.sessions.push({
       token,
       username: user.username,
-      role: user.role,
+      role: normalizeRole(user.role),
       createdAt: now(),
       expiresAt: now() + SESSION_EXPIRE_MS
     });
     saveDb(db);
-    return sendJson(res, 200, { ok: true, token, user: { username: user.username, role: user.role } });
+    return sendJson(res, 200, {
+      ok: true,
+      token,
+      user: {
+        username: user.username,
+        role: normalizeRole(user.role),
+        linkedParentUsername: String(user.linkedParentUsername || ""),
+        linkedChildren: Array.isArray(user.linkedChildren) ? user.linkedChildren : []
+      }
+    });
   }
 
   const auth = getAuthContext(req, db);
@@ -347,12 +462,17 @@ async function handleApi(req, res, pathname) {
   if (req.method === "GET" && pathname === "/api/bootstrap") {
     const data = ensureUserData(db, auth.username);
     const submissions =
-      auth.role === "admin"
+      isManagerRole(auth.role)
         ? db.submissions.slice().sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0))
         : db.submissions.filter((x) => x.username === auth.username).sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
     return sendJson(res, 200, {
       ok: true,
-      user: { username: auth.username, role: auth.role },
+      user: {
+        username: auth.username,
+        role: auth.role,
+        linkedParentUsername: String(auth.linkedParentUsername || ""),
+        linkedChildren: Array.isArray(auth.linkedChildren) ? auth.linkedChildren : []
+      },
       data,
       lexiconOverrides: db.lexiconOverrides || {},
       submissions
@@ -366,8 +486,40 @@ async function handleApi(req, res, pathname) {
     return sendJson(res, 200, { ok: true, savedAt: now() });
   }
 
+  if (req.method === "GET" && pathname === "/api/admin/users") {
+    if (auth.role !== "admin") return sendJson(res, 403, { ok: false, message: "仅管理员可查看" });
+    const users = (db.users || [])
+      .map((u) => ({
+        username: u.username,
+        role: normalizeRole(u.role),
+        linkedParentUsername: String(u.linkedParentUsername || ""),
+        linkedChildren: Array.isArray(u.linkedChildren) ? u.linkedChildren : [],
+        createdAt: Number(u.createdAt) || 0
+      }))
+      .sort((a, b) => {
+        if (a.role !== b.role) return a.role.localeCompare(b.role);
+        return a.username.localeCompare(b.username);
+      });
+    return sendJson(res, 200, { ok: true, users });
+  }
+
+  if (req.method === "DELETE" && pathname.startsWith("/api/admin/users/")) {
+    if (auth.role !== "admin") return sendJson(res, 403, { ok: false, message: "仅管理员可操作" });
+    const parts = pathname.split("/");
+    const username = decodeURIComponent(parts[4] || "").trim();
+    if (!username) return sendJson(res, 400, { ok: false, message: "用户名不能为空" });
+    const user = db.users.find((x) => x && x.username === username);
+    if (!user) return sendJson(res, 404, { ok: false, message: "用户不存在" });
+    if (normalizeRole(user.role) === "admin") return sendJson(res, 400, { ok: false, message: "不允许删除管理员账号" });
+    if (username === auth.username) return sendJson(res, 400, { ok: false, message: "不允许删除当前登录账号" });
+    removeUserDeep(db, username);
+    ensureFamilyLinks(db);
+    saveDb(db);
+    return sendJson(res, 200, { ok: true, deleted: username });
+  }
+
   if (req.method === "POST" && pathname === "/api/submissions") {
-    if (auth.role !== "user") return sendJson(res, 403, { ok: false, message: "仅普通用户可提交默写记录" });
+    if (!isLearnerRole(auth.role)) return sendJson(res, 403, { ok: false, message: "仅父母或孩子账号可提交默写记录" });
     const body = await parseBody(req);
     const wordCharResults = Array.isArray(body.wordCharResults)
       ? body.wordCharResults.map((x) => ({
@@ -400,7 +552,7 @@ async function handleApi(req, res, pathname) {
   }
 
   if (req.method === "PUT" && pathname.startsWith("/api/submissions/") && pathname.endsWith("/review")) {
-    if (auth.role !== "admin") return sendJson(res, 403, { ok: false, message: "仅管理员可复判" });
+    if (auth.role !== "parent") return sendJson(res, 403, { ok: false, message: "仅父母可复判" });
     const id = pathname.split("/")[3];
     const body = await parseBody(req);
     const submission = db.submissions.find((x) => x.id === id);
@@ -438,25 +590,25 @@ async function handleApi(req, res, pathname) {
   }
 
   if (req.method === "GET" && pathname.startsWith("/api/admin/users/") && pathname.endsWith("/wrong-book")) {
-    if (auth.role !== "admin") return sendJson(res, 403, { ok: false, message: "仅管理员可查看" });
+    if (!isManagerRole(auth.role)) return sendJson(res, 403, { ok: false, message: "仅管理员或父母可查看" });
     const parts = pathname.split("/");
     const username = decodeURIComponent(parts[4] || "").trim();
     if (!username) return sendJson(res, 400, { ok: false, message: "用户名不能为空" });
     const user = db.users.find((x) => x && x.username === username);
     if (!user) return sendJson(res, 404, { ok: false, message: "用户不存在" });
-    if (user.role !== "user") return sendJson(res, 400, { ok: false, message: "仅可查看普通用户错题本" });
+    if (!isLearnerRole(normalizeRole(user.role))) return sendJson(res, 400, { ok: false, message: "仅可查看父母/孩子账号错题本" });
     const data = ensureUserData(db, username);
     return sendJson(res, 200, { ok: true, wrongBook: Array.isArray(data.wrongBook) ? data.wrongBook : [] });
   }
 
   if (req.method === "PUT" && pathname.startsWith("/api/admin/users/") && pathname.endsWith("/wrong-book")) {
-    if (auth.role !== "admin") return sendJson(res, 403, { ok: false, message: "仅管理员可操作" });
+    if (!isManagerRole(auth.role)) return sendJson(res, 403, { ok: false, message: "仅管理员或父母可操作" });
     const parts = pathname.split("/");
     const username = decodeURIComponent(parts[4] || "").trim();
     if (!username) return sendJson(res, 400, { ok: false, message: "用户名不能为空" });
     const user = db.users.find((x) => x && x.username === username);
     if (!user) return sendJson(res, 404, { ok: false, message: "用户不存在" });
-    if (user.role !== "user") return sendJson(res, 400, { ok: false, message: "仅可操作普通用户错题本" });
+    if (!isLearnerRole(normalizeRole(user.role))) return sendJson(res, 400, { ok: false, message: "仅可操作父母/孩子账号错题本" });
 
     const body = await parseBody(req);
     const action = String(body.action || "").trim();

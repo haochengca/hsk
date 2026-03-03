@@ -5898,7 +5898,7 @@ function buildCharPhraseMap() {
 }
 
 const state = {
-  auth: { loggedIn: false, role: "", username: "", token: "" },
+  auth: { loggedIn: false, role: "", username: "", token: "", linkedParentUsername: "", linkedChildren: [] },
   lang: "zh",
   lexiconOverrides: {},
   tab: "learn",
@@ -5953,6 +5953,7 @@ const state = {
   adminWordReviewDrafts: {},
   adminWrongBookQueryUser: "",
   adminWrongBookItems: [],
+  adminUsers: [],
   adminItemsTypeFilter: "all",
   adminItemsLevelFilter: "all",
   adminItemsSearch: "",
@@ -5969,6 +5970,7 @@ const panels = {
   review: document.getElementById("review-panel"),
   wrong: document.getElementById("wrong-panel"),
   admin: document.getElementById("admin-panel"),
+  "admin-users": document.getElementById("admin-users-panel"),
   "admin-wrong": document.getElementById("admin-wrong-panel"),
   "admin-items": document.getElementById("admin-items-panel"),
   records: document.getElementById("records-panel")
@@ -5981,6 +5983,10 @@ const authUsername = document.getElementById("auth-username");
 const authPassword = document.getElementById("auth-password");
 const authPasswordConfirmRow = document.getElementById("auth-password-confirm-row");
 const authPasswordConfirm = document.getElementById("auth-password-confirm");
+const authRoleRow = document.getElementById("auth-role-row");
+const authRoleSelect = document.getElementById("auth-role-select");
+const authParentUsernameRow = document.getElementById("auth-parent-username-row");
+const authParentUsername = document.getElementById("auth-parent-username");
 const authTogglePassword = document.getElementById("auth-toggle-password");
 const authLangSelect = document.getElementById("auth-lang-select");
 const authLogin = document.getElementById("auth-login");
@@ -5990,6 +5996,7 @@ const logoutBtn = document.getElementById("logout-btn");
 const userBadge = document.getElementById("user-badge");
 const appLangSelect = document.getElementById("app-lang-select");
 const adminTab = document.getElementById("admin-tab");
+const adminUsersTab = document.getElementById("admin-users-tab");
 const adminWrongTab = document.getElementById("admin-wrong-tab");
 const adminItemsTab = document.getElementById("admin-items-tab");
 const recordsTab = document.getElementById("records-tab");
@@ -6003,6 +6010,10 @@ const adminWrongSearch = document.getElementById("admin-wrong-search");
 const adminWrongCount = document.getElementById("admin-wrong-count");
 const adminWrongList = document.getElementById("admin-wrong-list");
 const adminWrongMsg = document.getElementById("admin-wrong-msg");
+const adminUsersCount = document.getElementById("admin-users-count");
+const adminUsersRefresh = document.getElementById("admin-users-refresh");
+const adminUsersMsg = document.getElementById("admin-users-msg");
+const adminUsersList = document.getElementById("admin-users-list");
 const adminItemsCount = document.getElementById("admin-items-count");
 const adminItemsTypeFilter = document.getElementById("admin-items-type-filter");
 const adminItemsLevelFilter = document.getElementById("admin-items-level-filter");
@@ -6114,9 +6125,14 @@ const I18N = {
     "auth.username": "用户名",
     "auth.password": "密码",
     "auth.confirmPassword": "确认密码",
+    "auth.role": "账号角色",
+    "auth.roleParent": "父母",
+    "auth.roleChild": "孩子",
+    "auth.parentUsername": "关联父母账号",
     "auth.usernamePlaceholder": "请输入用户名",
     "auth.passwordPlaceholder": "请输入密码",
     "auth.confirmPasswordPlaceholder": "请再次输入密码",
+    "auth.parentUsernamePlaceholder": "请输入已注册父母账号用户名",
     "auth.showPassword": "显示密码",
     "auth.hidePassword": "隐藏密码",
     "auth.login": "登录",
@@ -6126,6 +6142,7 @@ const I18N = {
     "auth.enterUsernamePassword": "请输入用户名和密码。",
     "auth.fillAllFields": "请完整填写注册信息。",
     "auth.passwordNotMatch": "两次密码不一致。",
+    "auth.needParentUsername": "孩子账号必须填写关联父母账号用户名。",
     "auth.registerSuccess": "注册成功，请点击“登录”进入系统。",
     "auth.loginFailed": "登录失败",
     "auth.registerFailed": "注册失败",
@@ -6133,7 +6150,10 @@ const I18N = {
     "auth.needLogin": "请先登录后使用。",
     "top.logout": "退出登录",
     "top.roleAdmin": "管理员",
-    "top.roleUser": "普通用户",
+    "top.roleParent": "父母",
+    "top.roleChild": "孩子",
+    "top.linkedParent": "关联父母：{username}",
+    "top.linkedChildrenCount": "关联孩子：{count} 个",
     "top.currentUser": "当前用户：{username}（{role}）",
     "top.notLoggedIn": "未登录",
     "nav.learn": "学习",
@@ -6143,14 +6163,14 @@ const I18N = {
     "review.stop": "停止默写",
     "review.stopConfirm": "停止后将取消本轮默写且数据不保存，是否继续？",
     "nav.records": "我的记录",
-    "nav.adminReview": "管理审核",
+    "nav.adminReview": "默写判定审核",
     "nav.adminWrong": "题本管理",
     "adminWrong.title": "题本管理",
     "adminWrong.username": "用户名",
     "adminWrong.usernamePlaceholder": "输入用户名后查询",
     "adminWrong.search": "查询错题本",
     "adminWrong.count": "错题：{count} 条",
-    "adminWrong.onlyAdmin": "仅管理员可查看。",
+    "adminWrong.onlyAdmin": "仅管理员或父母可查看。",
     "adminWrong.promptQuery": "请输入用户名并点击“查询错题本”。",
     "adminWrong.empty": "该用户当前没有错题。",
     "adminWrong.delete": "删除",
@@ -6171,9 +6191,14 @@ const I18N = {
     "auth.username": "Username",
     "auth.password": "Password",
     "auth.confirmPassword": "Confirm Password",
+    "auth.role": "Account Role",
+    "auth.roleParent": "Parent",
+    "auth.roleChild": "Child",
+    "auth.parentUsername": "Linked Parent Account",
     "auth.usernamePlaceholder": "Enter username",
     "auth.passwordPlaceholder": "Enter password",
     "auth.confirmPasswordPlaceholder": "Enter password again",
+    "auth.parentUsernamePlaceholder": "Enter an existing parent username",
     "auth.showPassword": "Show Password",
     "auth.hidePassword": "Hide Password",
     "auth.login": "Login",
@@ -6183,6 +6208,7 @@ const I18N = {
     "auth.enterUsernamePassword": "Please enter username and password.",
     "auth.fillAllFields": "Please complete all registration fields.",
     "auth.passwordNotMatch": "Passwords do not match.",
+    "auth.needParentUsername": "Child account must provide a linked parent username.",
     "auth.registerSuccess": "Registration successful. Please click Login to continue.",
     "auth.loginFailed": "Login failed",
     "auth.registerFailed": "Registration failed",
@@ -6190,7 +6216,10 @@ const I18N = {
     "auth.needLogin": "Please log in first.",
     "top.logout": "Log out",
     "top.roleAdmin": "Admin",
-    "top.roleUser": "User",
+    "top.roleParent": "Parent",
+    "top.roleChild": "Child",
+    "top.linkedParent": "Linked parent: {username}",
+    "top.linkedChildrenCount": "Linked children: {count}",
     "top.currentUser": "Current user: {username} ({role})",
     "top.notLoggedIn": "Not logged in",
     "nav.learn": "Learn",
@@ -6200,14 +6229,14 @@ const I18N = {
     "review.stop": "Stop Dictation",
     "review.stopConfirm": "Stopping will cancel this dictation session and discard unsaved data. Continue?",
     "nav.records": "My Records",
-    "nav.adminReview": "Admin Review",
+    "nav.adminReview": "Dictation Review",
     "nav.adminWrong": "Wrong-Book Admin",
     "adminWrong.title": "Wrong-Book Management",
     "adminWrong.username": "Username",
     "adminWrong.usernamePlaceholder": "Enter username and query",
     "adminWrong.search": "Query Wrong Book",
     "adminWrong.count": "Wrong items: {count}",
-    "adminWrong.onlyAdmin": "Admin access only.",
+    "adminWrong.onlyAdmin": "Admin or parent access only.",
     "adminWrong.promptQuery": "Enter a username and click Query Wrong Book.",
     "adminWrong.empty": "This user has no wrong items.",
     "adminWrong.delete": "Delete",
@@ -6228,9 +6257,14 @@ const I18N = {
     "auth.username": "Nom d'utilisateur",
     "auth.password": "Mot de passe",
     "auth.confirmPassword": "Confirmer le mot de passe",
+    "auth.role": "Rôle du compte",
+    "auth.roleParent": "Parent",
+    "auth.roleChild": "Enfant",
+    "auth.parentUsername": "Compte parent lié",
     "auth.usernamePlaceholder": "Entrez le nom d'utilisateur",
     "auth.passwordPlaceholder": "Entrez le mot de passe",
     "auth.confirmPasswordPlaceholder": "Entrez encore le mot de passe",
+    "auth.parentUsernamePlaceholder": "Entrez un nom d'utilisateur parent existant",
     "auth.showPassword": "Afficher",
     "auth.hidePassword": "Masquer",
     "auth.login": "Se connecter",
@@ -6240,6 +6274,7 @@ const I18N = {
     "auth.enterUsernamePassword": "Veuillez entrer le nom d'utilisateur et le mot de passe.",
     "auth.fillAllFields": "Veuillez remplir tous les champs d'inscription.",
     "auth.passwordNotMatch": "Les mots de passe ne correspondent pas.",
+    "auth.needParentUsername": "Le compte enfant doit renseigner un compte parent lié.",
     "auth.registerSuccess": "Inscription réussie. Cliquez sur Connexion pour continuer.",
     "auth.loginFailed": "Échec de la connexion",
     "auth.registerFailed": "Échec de l'inscription",
@@ -6247,7 +6282,10 @@ const I18N = {
     "auth.needLogin": "Veuillez vous connecter d'abord.",
     "top.logout": "Déconnexion",
     "top.roleAdmin": "Administrateur",
-    "top.roleUser": "Utilisateur",
+    "top.roleParent": "Parent",
+    "top.roleChild": "Enfant",
+    "top.linkedParent": "Parent lié : {username}",
+    "top.linkedChildrenCount": "Enfants liés : {count}",
     "top.currentUser": "Utilisateur actuel : {username} ({role})",
     "top.notLoggedIn": "Non connecté",
     "nav.learn": "Apprendre",
@@ -6257,14 +6295,14 @@ const I18N = {
     "review.stop": "Arrêter la dictée",
     "review.stopConfirm": "Arrêter annulera cette session de dictée et les données non enregistrées seront perdues. Continuer ?",
     "nav.records": "Mes records",
-    "nav.adminReview": "Revue admin",
+    "nav.adminReview": "Revue de dictée",
     "nav.adminWrong": "Gestion du cahier",
     "adminWrong.title": "Gestion du cahier d'erreurs",
     "adminWrong.username": "Nom d'utilisateur",
     "adminWrong.usernamePlaceholder": "Entrez le nom et lancez la recherche",
     "adminWrong.search": "Rechercher",
     "adminWrong.count": "Erreurs : {count}",
-    "adminWrong.onlyAdmin": "Accès administrateur uniquement.",
+    "adminWrong.onlyAdmin": "Accès administrateur ou parent uniquement.",
     "adminWrong.promptQuery": "Entrez un nom d'utilisateur puis cliquez sur Rechercher.",
     "adminWrong.empty": "Cet utilisateur n'a aucune erreur.",
     "adminWrong.delete": "Supprimer",
@@ -6285,9 +6323,14 @@ const I18N = {
     "auth.username": "Usuario",
     "auth.password": "Contraseña",
     "auth.confirmPassword": "Confirmar contraseña",
+    "auth.role": "Rol de cuenta",
+    "auth.roleParent": "Padre/Madre",
+    "auth.roleChild": "Hijo/a",
+    "auth.parentUsername": "Cuenta de padre/madre vinculada",
     "auth.usernamePlaceholder": "Ingresa usuario",
     "auth.passwordPlaceholder": "Ingresa contraseña",
     "auth.confirmPasswordPlaceholder": "Ingresa la contraseña de nuevo",
+    "auth.parentUsernamePlaceholder": "Ingresa un usuario de padre/madre existente",
     "auth.showPassword": "Mostrar",
     "auth.hidePassword": "Ocultar",
     "auth.login": "Entrar",
@@ -6297,6 +6340,7 @@ const I18N = {
     "auth.enterUsernamePassword": "Ingresa usuario y contraseña.",
     "auth.fillAllFields": "Completa todos los campos de registro.",
     "auth.passwordNotMatch": "Las contraseñas no coinciden.",
+    "auth.needParentUsername": "La cuenta infantil debe indicar un usuario de padre/madre vinculado.",
     "auth.registerSuccess": "Registro exitoso. Haz clic en Iniciar sesión para continuar.",
     "auth.loginFailed": "Error de inicio de sesión",
     "auth.registerFailed": "Error de registro",
@@ -6304,7 +6348,10 @@ const I18N = {
     "auth.needLogin": "Inicia sesión primero.",
     "top.logout": "Cerrar sesión",
     "top.roleAdmin": "Administrador",
-    "top.roleUser": "Usuario",
+    "top.roleParent": "Padre/Madre",
+    "top.roleChild": "Hijo/a",
+    "top.linkedParent": "Padre/madre vinculado: {username}",
+    "top.linkedChildrenCount": "Hijos vinculados: {count}",
     "top.currentUser": "Usuario actual: {username} ({role})",
     "top.notLoggedIn": "Sin iniciar sesión",
     "nav.learn": "Aprender",
@@ -6314,14 +6361,14 @@ const I18N = {
     "review.stop": "Detener dictado",
     "review.stopConfirm": "Detener cancelará esta sesión de dictado y no se guardarán los datos. ¿Continuar?",
     "nav.records": "Mis registros",
-    "nav.adminReview": "Revisión admin",
+    "nav.adminReview": "Revisión de dictado",
     "nav.adminWrong": "Gestión de errores",
     "adminWrong.title": "Gestión del cuaderno de errores",
     "adminWrong.username": "Usuario",
     "adminWrong.usernamePlaceholder": "Ingresa usuario y consulta",
     "adminWrong.search": "Consultar",
     "adminWrong.count": "Errores: {count}",
-    "adminWrong.onlyAdmin": "Solo administradores.",
+    "adminWrong.onlyAdmin": "Solo administradores o padres/madres.",
     "adminWrong.promptQuery": "Ingresa un usuario y pulsa Consultar.",
     "adminWrong.empty": "Este usuario no tiene errores.",
     "adminWrong.delete": "Eliminar",
@@ -6336,6 +6383,22 @@ const I18N = {
 
 function normalizeLang(lang) {
   return SUPPORTED_LANGS.includes(lang) ? lang : "zh";
+}
+
+function isLearnerRole(role) {
+  return role === "parent" || role === "child" || role === "user";
+}
+
+function isManagerRole(role) {
+  return role === "admin" || role === "parent";
+}
+
+function isSuperAdmin(role) {
+  return role === "admin";
+}
+
+function canAccessReviewAudit(role) {
+  return role === "parent";
 }
 
 function t(key, vars = {}) {
@@ -6372,8 +6435,22 @@ function refreshUserBadgeText() {
     userBadge.textContent = t("top.notLoggedIn");
     return;
   }
-  const roleLabel = state.auth.role === "admin" ? t("top.roleAdmin") : t("top.roleUser");
-  userBadge.textContent = t("top.currentUser", { username: state.auth.username, role: roleLabel });
+  const roleLabel = getRoleLabel(state.auth.role);
+  const extras = [];
+  if (state.auth.role === "child" && state.auth.linkedParentUsername) {
+    extras.push(t("top.linkedParent", { username: state.auth.linkedParentUsername }));
+  }
+  if (state.auth.role === "parent" && Array.isArray(state.auth.linkedChildren) && state.auth.linkedChildren.length > 0) {
+    extras.push(t("top.linkedChildrenCount", { count: state.auth.linkedChildren.length }));
+  }
+  const suffix = extras.length ? ` · ${extras.join(" · ")}` : "";
+  userBadge.textContent = `${t("top.currentUser", { username: state.auth.username, role: roleLabel })}${suffix}`;
+}
+
+function getRoleLabel(role) {
+  if (role === "admin") return t("top.roleAdmin");
+  if (role === "parent") return t("top.roleParent");
+  return t("top.roleChild");
 }
 
 function setLanguage(lang, persist = true) {
@@ -6384,6 +6461,7 @@ function setLanguage(lang, persist = true) {
   translateStaticText();
   refreshUserBadgeText();
   renderAdminWrongBookPanel();
+  renderAdminUsersPanel();
 }
 
 function loadProgress(username = state.auth.username) {
@@ -6457,6 +6535,8 @@ function loadSession() {
   try {
     const parsed = JSON.parse(localStorage.getItem(SESSION_KEY) || "null");
     if (!parsed || !parsed.username || !parsed.role || !parsed.token) return null;
+    parsed.linkedParentUsername = String(parsed.linkedParentUsername || "");
+    parsed.linkedChildren = Array.isArray(parsed.linkedChildren) ? parsed.linkedChildren : [];
     return parsed;
   } catch {
     return null;
@@ -6466,7 +6546,14 @@ function loadSession() {
 function saveSession() {
   localStorage.setItem(
     SESSION_KEY,
-    JSON.stringify({ username: state.auth.username, role: state.auth.role, token: state.auth.token, loggedIn: state.auth.loggedIn })
+    JSON.stringify({
+      username: state.auth.username,
+      role: state.auth.role,
+      token: state.auth.token,
+      loggedIn: state.auth.loggedIn,
+      linkedParentUsername: state.auth.linkedParentUsername,
+      linkedChildren: state.auth.linkedChildren
+    })
   );
 }
 
@@ -6491,7 +6578,7 @@ async function apiRequest(path, options = {}) {
 }
 
 function queueUserDataSync() {
-  if (!state.auth.loggedIn || !state.auth.username || state.auth.role !== "user") return;
+  if (!state.auth.loggedIn || !state.auth.username || !isLearnerRole(state.auth.role)) return;
   if (state.syncTimer) clearTimeout(state.syncTimer);
   state.syncTimer = setTimeout(() => {
     state.syncTimer = null;
@@ -6557,7 +6644,7 @@ async function commitReviewDraftSession() {
 }
 
 async function syncUserDataToServer() {
-  if (!state.auth.loggedIn || !state.auth.username || state.auth.role !== "user") return;
+  if (!state.auth.loggedIn || !state.auth.username || !isLearnerRole(state.auth.role)) return;
   try {
     await apiRequest("/api/user-data", {
       method: "PUT",
@@ -6755,6 +6842,13 @@ function refreshRewards() {
 
 async function loadUserData() {
   const boot = await apiRequest("/api/bootstrap");
+  if (boot.user && typeof boot.user === "object") {
+    state.auth.role = boot.user.role || state.auth.role;
+    state.auth.linkedParentUsername = String(boot.user.linkedParentUsername || "");
+    state.auth.linkedChildren = Array.isArray(boot.user.linkedChildren) ? boot.user.linkedChildren : [];
+    refreshUserBadgeText();
+    saveSession();
+  }
   const data = boot.data || {};
   applyLexiconOverrides(boot.lexiconOverrides || {});
   state.adminWordReviewDrafts = {};
@@ -6788,8 +6882,10 @@ async function loadUserData() {
   refreshRewards();
   renderAdminPanel();
   renderAdminWrongBookPanel();
+  renderAdminUsersPanel();
   renderAdminItemsPanel();
   renderUserRecords();
+  if (isSuperAdmin(state.auth.role)) fetchAdminUsers();
   initWriteSelect();
   initLevelFilter();
   initReviewSettings();
@@ -6844,9 +6940,9 @@ function getWordCharResultsForRender(row) {
 }
 
 function renderAdminPanel() {
-  if (state.auth.role !== "admin") {
+  if (!canAccessReviewAudit(state.auth.role)) {
     adminCount.textContent = "记录：0 条";
-    adminList.innerHTML = "<p>仅管理员可查看。</p>";
+    adminList.innerHTML = "<p>仅父母可查看。</p>";
     return;
   }
   const keyword = (adminUserFilter?.value || "").trim().toLowerCase();
@@ -6902,7 +6998,7 @@ function renderAdminPanel() {
 }
 
 function renderAdminWrongBookPanel() {
-  if (state.auth.role !== "admin") {
+  if (!isManagerRole(state.auth.role)) {
     if (adminWrongCount) adminWrongCount.textContent = t("adminWrong.count", { count: 0 });
     if (adminWrongList) adminWrongList.innerHTML = `<p>${t("adminWrong.onlyAdmin")}</p>`;
     if (adminWrongMsg) adminWrongMsg.textContent = "";
@@ -6928,6 +7024,60 @@ function renderAdminWrongBookPanel() {
           <button class="warn" data-action="delete-wrong-item" data-type="${it.type || "char"}" data-text="${it.text || ""}">${t("adminWrong.delete")}</button>
         </div>
       </div>`;
+    })
+    .join("");
+}
+
+async function fetchAdminUsers() {
+  if (!isSuperAdmin(state.auth.role)) return;
+  try {
+    const resp = await apiRequest("/api/admin/users");
+    state.adminUsers = Array.isArray(resp.users) ? resp.users : [];
+    if (adminUsersMsg) adminUsersMsg.textContent = "";
+    renderAdminUsersPanel();
+  } catch (err) {
+    state.adminUsers = [];
+    if (adminUsersMsg) adminUsersMsg.textContent = err && err.message ? err.message : "加载用户列表失败";
+    renderAdminUsersPanel();
+  }
+}
+
+function renderAdminUsersPanel() {
+  if (!adminUsersList || !adminUsersCount) return;
+  if (!isSuperAdmin(state.auth.role)) {
+    adminUsersCount.textContent = "用户：0 个";
+    adminUsersList.innerHTML = "<tr><td colspan=\"5\">仅管理员可查看。</td></tr>";
+    if (adminUsersMsg) adminUsersMsg.textContent = "";
+    return;
+  }
+  const users = Array.isArray(state.adminUsers) ? state.adminUsers : [];
+  adminUsersCount.textContent = `用户：${users.length} 个`;
+  if (!users.length) {
+    adminUsersList.innerHTML = "<tr><td colspan=\"5\">暂无用户。</td></tr>";
+    return;
+  }
+  adminUsersList.innerHTML = users
+    .map((u) => {
+      const role = String(u.role || "");
+      const relation =
+        role === "child"
+          ? u.linkedParentUsername
+            ? `父母：${u.linkedParentUsername}`
+            : "-"
+          : role === "parent"
+            ? Array.isArray(u.linkedChildren) && u.linkedChildren.length > 0
+              ? `孩子：${u.linkedChildren.join("、")}`
+              : "-"
+            : "-";
+      const time = u.createdAt ? new Date(u.createdAt).toLocaleString() : "-";
+      const canDelete = role !== "admin" && u.username !== state.auth.username;
+      return `<tr>
+        <td>${escapeHtmlAttr(u.username || "-")}</td>
+        <td>${escapeHtmlAttr(getRoleLabel(role))}</td>
+        <td>${escapeHtmlAttr(relation)}</td>
+        <td>${escapeHtmlAttr(time)}</td>
+        <td><button class="${canDelete ? "warn" : "ghost"}" data-action="delete-user" data-username="${escapeHtmlAttr(u.username || "")}" ${canDelete ? "" : "disabled"}>删除</button></td>
+      </tr>`;
     })
     .join("");
 }
@@ -7136,10 +7286,10 @@ async function queryAdminWrongBook(username) {
 }
 
 function renderUserRecords() {
-  if (!state.auth.username || state.auth.role !== "user") {
+  if (!state.auth.username || !isLearnerRole(state.auth.role)) {
     recordsCount.textContent = "记录：0 条";
-    recordsStats.innerHTML = "<p>仅普通用户可查看自己的统计。</p>";
-    recordsList.innerHTML = "<p>仅普通用户可查看自己的记录。</p>";
+    recordsStats.innerHTML = "<p>仅父母或孩子可查看自己的统计。</p>";
+    recordsList.innerHTML = "<p>仅父母或孩子可查看自己的记录。</p>";
     return;
   }
   const rows = state.submissions
@@ -7156,7 +7306,7 @@ function renderUserRecords() {
       ensureSubmissionWordCharResults(it);
       const status = it.finalResult ? "正确" : "错误";
       const system = it.systemResult ? "正确" : "错误";
-      const reviewed = it.reviewedBy ? `（管理员 ${it.reviewedBy} 已复判）` : "";
+      const reviewed = it.reviewedBy ? `（审核人 ${it.reviewedBy} 已复判）` : "";
       const detail = it.type === "word" ? `逐字判定：${it.userAnswer || "-"}` : "";
       const img = it.type === "char" && it.handwritingImage ? `<img class=\"admin-img\" src=\"${it.handwritingImage}\" alt=\"手写图\" />` : "";
       const wordDetails = renderWordCharResultsHtml(it, false);
@@ -7218,35 +7368,49 @@ function updateUserWrongBookFromReview(username, row, isCorrect) {
   return { username, row, isCorrect };
 }
 
-async function setAuthState(username, role, token) {
+async function setAuthState(username, role, token, profile = {}) {
   state.auth.username = username;
   state.auth.role = role;
   state.auth.token = token;
+  state.auth.linkedParentUsername = String(profile.linkedParentUsername || "");
+  state.auth.linkedChildren = Array.isArray(profile.linkedChildren) ? profile.linkedChildren : [];
   state.auth.loggedIn = true;
   saveSession();
   authScreen.classList.add("hidden");
   appShell.classList.remove("hidden");
   refreshUserBadgeText();
-  const admin = role === "admin";
-  rewardText.classList.toggle("hidden", admin);
-  statsText.classList.toggle("hidden", admin);
-  learnTabBtn.classList.toggle("hidden", admin);
-  writeTabBtn.classList.toggle("hidden", admin);
-  reviewTabBtn.classList.toggle("hidden", admin);
-  wrongTabBtn.classList.toggle("hidden", admin);
-  recordsTab.classList.toggle("hidden", admin);
-  adminTab.classList.toggle("hidden", !admin);
-  if (adminWrongTab) adminWrongTab.classList.toggle("hidden", !admin);
-  if (adminItemsTab) adminItemsTab.classList.toggle("hidden", !admin);
-  if (!admin && (state.tab === "admin" || state.tab === "admin-wrong" || state.tab === "admin-items")) state.tab = "learn";
-  if (admin) switchTab("admin");
+  const manager = isManagerRole(role);
+  const superAdmin = isSuperAdmin(role);
+  const reviewAuditor = canAccessReviewAudit(role);
+  rewardText.classList.toggle("hidden", manager);
+  statsText.classList.toggle("hidden", manager);
+  learnTabBtn.classList.toggle("hidden", manager);
+  writeTabBtn.classList.toggle("hidden", manager);
+  reviewTabBtn.classList.toggle("hidden", manager);
+  wrongTabBtn.classList.toggle("hidden", manager);
+  recordsTab.classList.toggle("hidden", manager);
+  adminTab.classList.toggle("hidden", !reviewAuditor);
+  if (adminUsersTab) adminUsersTab.classList.toggle("hidden", !superAdmin);
+  if (adminWrongTab) adminWrongTab.classList.toggle("hidden", !manager);
+  if (adminItemsTab) adminItemsTab.classList.toggle("hidden", !superAdmin);
+  if (!manager && (state.tab === "admin" || state.tab === "admin-users" || state.tab === "admin-wrong" || state.tab === "admin-items")) {
+    state.tab = "learn";
+  }
+  if (!reviewAuditor && state.tab === "admin") {
+    state.tab = superAdmin ? "admin-users" : "admin-wrong";
+  }
+  if (reviewAuditor) switchTab("admin");
+  else if (superAdmin) switchTab("admin-users");
+  else if (manager) switchTab("admin-wrong");
   else switchTab("learn");
   await loadUserData();
   renderReviewCard();
   renderAdminPanel();
   renderAdminWrongBookPanel();
+  renderAdminUsersPanel();
   renderAdminItemsPanel();
   renderUserRecords();
+  if (superAdmin) fetchAdminUsers();
 }
 
 async function logout() {
@@ -7260,10 +7424,11 @@ async function logout() {
   } catch (err) {
     console.warn("logout failed:", err && err.message ? err.message : err);
   }
-  state.auth = { loggedIn: false, role: "", username: "", token: "" };
+  state.auth = { loggedIn: false, role: "", username: "", token: "", linkedParentUsername: "", linkedChildren: [] };
   state.adminWordReviewDrafts = {};
   state.adminWrongBookQueryUser = "";
   state.adminWrongBookItems = [];
+  state.adminUsers = [];
   clearSession();
   statsText.classList.remove("hidden");
   rewardText.classList.remove("hidden");
@@ -7280,12 +7445,23 @@ function switchAuthMode(mode) {
   authTabRegister.classList.toggle("good", !isLogin);
   authTabRegister.classList.toggle("ghost", isLogin);
   authPasswordConfirmRow.classList.toggle("hidden", isLogin);
+  if (authRoleRow) authRoleRow.classList.toggle("hidden", isLogin);
   authLogin.classList.toggle("hidden", !isLogin);
   authRegister.classList.toggle("hidden", isLogin);
   authPassword.type = "password";
   authPasswordConfirm.type = "password";
+  if (authRoleSelect && (!authRoleSelect.value || !["parent", "child"].includes(authRoleSelect.value))) authRoleSelect.value = "child";
+  refreshAuthRegisterRoleUi();
   updateAuthTogglePasswordLabel();
   authMsg.textContent = "";
+}
+
+function refreshAuthRegisterRoleUi() {
+  const isRegister = !authRegister.classList.contains("hidden");
+  const role = authRoleSelect ? authRoleSelect.value : "child";
+  const showParentRow = isRegister && role === "child";
+  if (authParentUsernameRow) authParentUsernameRow.classList.toggle("hidden", !showParentRow);
+  if (!showParentRow && authParentUsername) authParentUsername.value = "";
 }
 
 function setAuthPending(pending, mode = "login") {
@@ -7293,6 +7469,8 @@ function setAuthPending(pending, mode = "login") {
   authUsername.disabled = pending;
   authPassword.disabled = pending;
   authPasswordConfirm.disabled = pending;
+  if (authRoleSelect) authRoleSelect.disabled = pending;
+  if (authParentUsername) authParentUsername.disabled = pending;
   authTabLogin.disabled = pending;
   authTabRegister.disabled = pending;
   authTogglePassword.disabled = pending;
@@ -7317,7 +7495,7 @@ async function handleLogin() {
       body: JSON.stringify({ username, password })
     });
     authMsg.textContent = "";
-    await setAuthState(resp.user.username, resp.user.role, resp.token);
+    await setAuthState(resp.user.username, resp.user.role, resp.token, resp.user || {});
   } catch (err) {
     authMsg.textContent = err && err.message ? err.message : t("auth.loginFailed");
   } finally {
@@ -7330,7 +7508,13 @@ async function handleRegister() {
   const username = authUsername.value.trim();
   const password = authPassword.value;
   const confirm = authPasswordConfirm.value;
+  const role = authRoleSelect ? authRoleSelect.value : "child";
+  const linkedParentUsername = authParentUsername ? authParentUsername.value.trim() : "";
   if (!username || !password || !confirm) {
+    authMsg.textContent = t("auth.fillAllFields");
+    return;
+  }
+  if (!["parent", "child"].includes(role)) {
     authMsg.textContent = t("auth.fillAllFields");
     return;
   }
@@ -7338,15 +7522,21 @@ async function handleRegister() {
     authMsg.textContent = t("auth.passwordNotMatch");
     return;
   }
+  if (role === "child" && !linkedParentUsername) {
+    authMsg.textContent = t("auth.needParentUsername");
+    return;
+  }
   setAuthPending(true, "register");
   try {
     await apiRequest("/api/register", {
       method: "POST",
-      body: JSON.stringify({ username, password })
+      body: JSON.stringify({ username, password, role, linkedParentUsername })
     });
     authMsg.textContent = t("auth.registerSuccess");
     authPassword.value = "";
     authPasswordConfirm.value = "";
+    if (authParentUsername) authParentUsername.value = "";
+    if (authRoleSelect) authRoleSelect.value = "child";
     switchAuthMode("login");
   } catch (err) {
     authMsg.textContent = err && err.message ? err.message : t("auth.registerFailed");
@@ -7356,7 +7546,7 @@ async function handleRegister() {
 }
 
 function recordSubmission(item, isGood, accuracyPercent, meta = {}) {
-  if (state.auth.role !== "user" || !state.auth.username) return;
+  if (!isLearnerRole(state.auth.role) || !state.auth.username) return;
   const points = meta.points ?? (item.type === "word" ? 10 : 8);
   const payload = {
     username: state.auth.username,
@@ -9288,7 +9478,7 @@ function wireLearn() {
   });
 
   document.addEventListener("keydown", (event) => {
-    if (state.tab !== "learn" || state.auth.role !== "user") return;
+    if (state.tab !== "learn" || !isLearnerRole(state.auth.role)) return;
     if (event.target && ["INPUT", "TEXTAREA", "SELECT"].includes(event.target.tagName)) return;
     if (event.key === "ArrowLeft") moveLearn(-1);
     if (event.key === "ArrowRight") moveLearn(1);
@@ -9487,10 +9677,11 @@ function wireWrongBook() {
 function wireTabs() {
   tabs.forEach((btn) => {
     btn.addEventListener("click", () => {
-      if (state.auth.role === "admin" && !["admin", "admin-wrong", "admin-items"].includes(btn.dataset.tab)) return;
-      if (btn.dataset.tab === "admin" && state.auth.role !== "admin") return;
-      if (btn.dataset.tab === "admin-wrong" && state.auth.role !== "admin") return;
-      if (btn.dataset.tab === "admin-items" && state.auth.role !== "admin") return;
+      if (isManagerRole(state.auth.role) && !["admin", "admin-users", "admin-wrong", "admin-items"].includes(btn.dataset.tab)) return;
+      if (btn.dataset.tab === "admin" && !canAccessReviewAudit(state.auth.role)) return;
+      if (btn.dataset.tab === "admin-users" && !isSuperAdmin(state.auth.role)) return;
+      if (btn.dataset.tab === "admin-wrong" && !isManagerRole(state.auth.role)) return;
+      if (btn.dataset.tab === "admin-items" && !isSuperAdmin(state.auth.role)) return;
       if ((state.reviewActive || state.reviewPreviewRunning) && state.tab === "review" && btn.dataset.tab !== "review") {
         const ok = window.confirm("正在默写中。切换菜单将取消本轮默写且数据不保存，是否继续？");
         if (!ok) return;
@@ -9498,6 +9689,10 @@ function wireTabs() {
       }
       switchTab(btn.dataset.tab);
       if (btn.dataset.tab === "admin") renderAdminPanel();
+      if (btn.dataset.tab === "admin-users") {
+        renderAdminUsersPanel();
+        fetchAdminUsers();
+      }
       if (btn.dataset.tab === "admin-wrong") renderAdminWrongBookPanel();
       if (btn.dataset.tab === "admin-items") renderAdminItemsPanel();
       if (btn.dataset.tab === "records") renderUserRecords();
@@ -9510,6 +9705,9 @@ function wireAuth() {
   authTabRegister.addEventListener("click", () => switchAuthMode("register"));
   authLogin.addEventListener("click", handleLogin);
   authRegister.addEventListener("click", handleRegister);
+  if (authRoleSelect) {
+    authRoleSelect.addEventListener("change", () => refreshAuthRegisterRoleUi());
+  }
   if (authLangSelect) {
     authLangSelect.addEventListener("change", (event) => {
       setLanguage(event.target.value, true);
@@ -9534,6 +9732,11 @@ function wireAuth() {
   authPasswordConfirm.addEventListener("keydown", (event) => {
     if (event.key === "Enter") handleRegister();
   });
+  if (authParentUsername) {
+    authParentUsername.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") handleRegister();
+    });
+  }
   logoutBtn.addEventListener("click", logout);
 }
 
@@ -9543,6 +9746,38 @@ function wireAdmin() {
     if (event.key === "Enter") renderAdminPanel();
   });
   adminTimeFilter.addEventListener("change", renderAdminPanel);
+  if (adminUsersRefresh) {
+    adminUsersRefresh.addEventListener("click", () => {
+      fetchAdminUsers();
+    });
+  }
+  if (adminUsersList) {
+    adminUsersList.addEventListener("click", async (event) => {
+      const btn = event.target.closest("button[data-action='delete-user']");
+      if (!btn || state.auth.role !== "admin") return;
+      const username = String(btn.dataset.username || "").trim();
+      if (!username) return;
+      const ok = window.confirm(`确认删除用户「${username}」吗？该用户的学习数据和记录会被一并删除。`);
+      if (!ok) return;
+      try {
+        await apiRequest(`/api/admin/users/${encodeURIComponent(username)}`, {
+          method: "DELETE"
+        });
+        if (adminUsersMsg) adminUsersMsg.textContent = `已删除用户：${username}`;
+        if (state.adminWrongBookQueryUser === username) {
+          state.adminWrongBookQueryUser = "";
+          state.adminWrongBookItems = [];
+          renderAdminWrongBookPanel();
+        }
+        state.submissions = state.submissions.filter((x) => x && x.username !== username && x.reviewedBy !== username);
+        renderAdminPanel();
+        renderUserRecords();
+        await fetchAdminUsers();
+      } catch (err) {
+        if (adminUsersMsg) adminUsersMsg.textContent = err && err.message ? err.message : "删除用户失败";
+      }
+    });
+  }
   if (adminWrongSearch) {
     adminWrongSearch.addEventListener("click", () => {
       queryAdminWrongBook((adminWrongSearchUser && adminWrongSearchUser.value) || "");
@@ -9556,7 +9791,7 @@ function wireAdmin() {
   if (adminWrongList) {
     adminWrongList.addEventListener("click", async (event) => {
       const btn = event.target.closest("button[data-action='delete-wrong-item']");
-      if (!btn || state.auth.role !== "admin") return;
+      if (!btn || !isManagerRole(state.auth.role)) return;
       const username = String(state.adminWrongBookQueryUser || "").trim();
       const type = btn.dataset.type === "word" ? "word" : "char";
       const text = String(btn.dataset.text || "").trim();
@@ -9697,7 +9932,7 @@ function wireAdmin() {
   adminList.addEventListener("click", async (event) => {
     const btn = event.target.closest("button[data-action]");
     const card = event.target.closest(".admin-item");
-    if (!btn || !card || state.auth.role !== "admin") return;
+    if (!btn || !card || !canAccessReviewAudit(state.auth.role)) return;
     const id = card.dataset.id;
     const row = state.submissions.find((x) => x.id === id);
     if (!row) return;
@@ -9746,7 +9981,7 @@ function wireAdmin() {
       const changed = Boolean(resp && resp.submission && resp.submission.finalResult) !== beforeFinalResult;
       window.alert(changed ? "复判完成：已更新错题本和积分。" : "复判完成：已更新错题本/积分（如有变更）。");
     } catch (err) {
-      reviewFeedback.textContent = err && err.message ? err.message : "管理员复判失败";
+      reviewFeedback.textContent = err && err.message ? err.message : "复判失败";
     }
   });
 }
@@ -10048,11 +10283,11 @@ async function init() {
   const session = loadSession();
   if (session && session.loggedIn && session.username && session.role && session.token) {
     try {
-      await setAuthState(session.username, session.role, session.token);
+      await setAuthState(session.username, session.role, session.token, session);
       return;
     } catch (err) {
       clearSession();
-      state.auth = { loggedIn: false, role: "", username: "", token: "" };
+      state.auth = { loggedIn: false, role: "", username: "", token: "", linkedParentUsername: "", linkedChildren: [] };
     }
   }
   authScreen.classList.remove("hidden");

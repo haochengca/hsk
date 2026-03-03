@@ -3,7 +3,9 @@
 ## 1. users
 - `username` (PK)
 - `passwordHash`
-- `role` (`user|admin`)
+- `role` (`admin|parent|child`)
+- `linkedParentUsername`（仅 `child` 使用，FK -> users.username）
+- `linkedChildren`（仅 `parent` 使用，JSON array of usernames）
 - `createdAt`
 
 ## 2. sessions
