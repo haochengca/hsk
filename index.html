@@ -292,6 +292,7 @@
           <label>
             默写字数
             <select id="review-count-filter">
+              <option value="1">1</option>
               <option value="5">5</option>
               <option value="10" selected>10</option>
               <option value="20">20</option>
@@ -354,7 +355,6 @@
             <button id="review-start" class="good">完成并判定</button>
             <button id="review-reset" class="ghost">重写本题</button>
             <button id="review-next" class="good hidden">下一个字</button>
-            <button id="review-stop" class="warn" data-i18n="review.stop">停止默写</button>
           </div>
           <p id="review-feedback"></p>
           <p id="review-answer" class="is-hidden"></p>
@@ -362,6 +362,9 @@
             <h3>本轮结算</h3>
             <p id="review-summary-text"></p>
             <p id="review-summary-actions" class="review-summary-actions"></p>
+            <div class="actions">
+              <button id="review-settle-btn" class="good">本轮结算</button>
+            </div>
           </article>
         </article>
       </section>
@@ -375,6 +378,7 @@
           <label>
             默写字数
             <select id="wrong-dictation-count">
+              <option value="1">1</option>
               <option value="5">5</option>
               <option value="10" selected>10</option>
               <option value="20">20</option>

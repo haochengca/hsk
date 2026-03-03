@@ -5937,6 +5937,8 @@ const state = {
   reviewSessionCorrect: 0,
   reviewSessionWrong: 0,
   reviewSessionWrongItems: [],
+  reviewSettlementPoints: 0,
+  reviewSettlementAnimated: false,
   reviewMessage: "请选择默写类型、等级和字数，然后点击“开始默写”。",
   progress: {},
   wrongBook: [],
@@ -6109,6 +6111,7 @@ const reviewStopBtn = document.getElementById("review-stop");
 const reviewSummaryCard = document.getElementById("review-summary-card");
 const reviewSummaryText = document.getElementById("review-summary-text");
 const reviewSummaryActions = document.getElementById("review-summary-actions");
+const reviewSettleBtn = document.getElementById("review-settle-btn");
 const wordAnswerRow = document.getElementById("word-answer-row");
 const wordReviewInput = document.getElementById("word-review-input");
 const wordReviewSubmit = document.getElementById("word-review-submit");
@@ -6122,6 +6125,7 @@ const startWrongDictation = document.getElementById("start-wrong-dictation");
 
 const statsText = document.getElementById("stats-text");
 const rewardText = document.getElementById("reward-text");
+const rewardPanel = rewardText && typeof rewardText.closest === "function" ? rewardText.closest(".top-reward") : null;
 const pointsGainFx = document.getElementById("points-gain-fx");
 const pointsFireworks = document.getElementById("points-fireworks");
 const reviewStateModule = window.ReviewState || null;
@@ -6742,25 +6746,43 @@ function resizeFireworksCanvas() {
 }
 
 function spawnCenterBurst(centerX, centerY, nowMs, strength = 1) {
-  const colors = ["#8fd2ff", "#4aa3ff", "#c8e7ff", "#9f8bff", "#5be7ff", "#ffffff"];
-  const count = Math.round(48 + 24 * strength);
+  const colors = ["#8fd2ff", "#4aa3ff", "#c8e7ff", "#5be7ff", "#7cf7d4", "#ffd98a", "#ffffff"];
+  const count = Math.round(42 + 22 * strength);
   for (let i = 0; i < count; i += 1) {
-    const angle = (Math.PI * 2 * i) / count + Math.random() * 0.22;
-    const speed = (1.5 + Math.random() * 3.4) * (0.65 + strength * 0.6);
+    const angle = (Math.PI * 2 * i) / count + (Math.random() - 0.5) * 0.26;
+    const speed = (1.45 + Math.random() * 3.1) * (0.66 + strength * 0.58);
+    const life = 680 + Math.random() * 720;
     fireworksParticles.push({
       x: centerX,
       y: centerY,
       vx: Math.cos(angle) * speed,
       vy: Math.sin(angle) * speed,
-      life: 750 + Math.random() * 620,
+      prevX: centerX,
+      prevY: centerY,
+      life,
       bornAt: nowMs,
-      size: 1.2 + Math.random() * 2.8,
+      size: 1 + Math.random() * 2.5,
+      drag: 0.984 + Math.random() * 0.01,
+      gravity: 0.05 + Math.random() * 0.05,
+      twinkle: 0.7 + Math.random() * 0.7,
       color: colors[Math.floor(Math.random() * colors.length)]
     });
   }
 }
 
-function runPointsFireworks(durationMs) {
+function resolveEffectCenter(anchorEl, fallbackX, fallbackY) {
+  if (!anchorEl || typeof anchorEl.getBoundingClientRect !== "function") {
+    return { x: fallbackX, y: fallbackY };
+  }
+  const rect = anchorEl.getBoundingClientRect();
+  if (!rect || rect.width <= 0 || rect.height <= 0) return { x: fallbackX, y: fallbackY };
+  return {
+    x: rect.left + rect.width / 2,
+    y: rect.top + rect.height / 2
+  };
+}
+
+function runPointsFireworks(durationMs, anchorEl = null) {
   if (!pointsFireworks) return;
   stopPointsFireworks();
   pointsFireworks.classList.add("is-show");
@@ -6770,15 +6792,17 @@ function runPointsFireworks(durationMs) {
   if (!ctx) return;
   const startAt = performance.now();
   const token = ++fireworksToken;
-  const centerX = width / 2;
-  const centerY = height / 2;
+  const center = resolveEffectCenter(anchorEl, width / 2, height / 2);
+  const centerX = center.x;
+  const centerY = center.y;
+  const ringRadius = Math.max(32, Math.min(74, Math.min(width, height) * 0.06));
   const launchPlan = [
-    { t: 40, s: 0.95 },
-    { t: 280, s: 1.1 },
-    { t: 560, s: 1.2 },
-    { t: 860, s: 1.35 },
-    { t: 1220, s: 1.05 },
-    { t: 1620, s: 0.9 }
+    { t: 10, s: 0.9, a: 0 },
+    { t: 210, s: 1.05, a: 1.5 },
+    { t: 460, s: 1.2, a: 3.1 },
+    { t: 760, s: 1.3, a: 4.8 },
+    { t: 1080, s: 1.08, a: 0.8 },
+    { t: 1440, s: 0.92, a: 2.4 }
   ];
   let launchIdx = 0;
   let lastMs = startAt;
@@ -6790,7 +6814,10 @@ function runPointsFireworks(durationMs) {
     lastMs = nowMs;
 
     while (launchIdx < launchPlan.length && elapsed >= launchPlan[launchIdx].t) {
-      spawnCenterBurst(centerX, centerY, nowMs, launchPlan[launchIdx].s);
+      const plan = launchPlan[launchIdx];
+      const ox = Math.cos(plan.a) * ringRadius;
+      const oy = Math.sin(plan.a) * (ringRadius * 0.7);
+      spawnCenterBurst(centerX + ox, centerY + oy, nowMs, plan.s);
       launchIdx += 1;
     }
 
@@ -6800,15 +6827,25 @@ function runPointsFireworks(durationMs) {
       const age = nowMs - p.bornAt;
       const k = 1 - age / p.life;
       if (k <= 0) return false;
-      p.vx *= 0.988;
-      p.vy = p.vy * 0.988 + 0.07;
+      p.prevX = p.x;
+      p.prevY = p.y;
+      p.vx *= p.drag;
+      p.vy = p.vy * p.drag + p.gravity;
       p.x += p.vx * 60 * dt;
       p.y += p.vy * 60 * dt;
-      const alpha = Math.max(0, Math.min(1, k));
-      ctx.fillStyle = p.color;
-      ctx.globalAlpha = alpha * 0.9;
+      const twinkle = 0.82 + 0.18 * Math.sin((age / 120) * p.twinkle);
+      const alpha = Math.max(0, Math.min(1, k * twinkle));
+      ctx.strokeStyle = p.color;
+      ctx.globalAlpha = alpha * 0.2;
+      ctx.lineWidth = Math.max(0.8, p.size * 0.52);
       ctx.beginPath();
-      ctx.arc(p.x, p.y, p.size * (0.58 + k * 0.7), 0, Math.PI * 2);
+      ctx.moveTo(p.prevX, p.prevY);
+      ctx.lineTo(p.x, p.y);
+      ctx.stroke();
+      ctx.fillStyle = p.color;
+      ctx.globalAlpha = alpha * 0.86;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.size * (0.62 + k * 0.62), 0, Math.PI * 2);
       ctx.fill();
       return true;
     });
@@ -6825,9 +6862,12 @@ function runPointsFireworks(durationMs) {
   fireworksRaf = requestAnimationFrame(frame);
 }
 
-function playPointsGainEffect(amount, title = "本次") {
+function playPointsGainEffect(amount, title = "本次", anchorEl = null) {
   if (!pointsGainFx || !amount || amount <= 0) return;
-  runPointsFireworks(POINTS_FX_MS);
+  runPointsFireworks(POINTS_FX_MS, anchorEl);
+  const center = resolveEffectCenter(anchorEl, window.innerWidth / 2, window.innerHeight / 2);
+  pointsGainFx.style.left = `${center.x}px`;
+  pointsGainFx.style.top = `${Math.max(24, center.y - 56)}px`;
   pointsGainFx.textContent = `${title} +${amount} 分`;
   pointsGainFx.classList.remove("is-show");
   // Force reflow so repeated gains retrigger animation.
@@ -6838,20 +6878,25 @@ function playPointsGainEffect(amount, title = "本次") {
   }, POINTS_FX_MS);
 }
 
-function addPoints(amount) {
-  if (!amount || amount <= 0) return;
+function addRewardDelta(pointsDelta, correctDelta = 0) {
+  if ((!pointsDelta || pointsDelta <= 0) && (!correctDelta || correctDelta <= 0)) return;
   ensureWeeklyRewards();
-  state.rewards.totalPoints += amount;
-  state.rewards.weeklyPoints += amount;
-  state.rewards.weeklyCorrect += 1;
+  state.rewards.totalPoints += Math.max(0, Number(pointsDelta) || 0);
+  state.rewards.weeklyPoints += Math.max(0, Number(pointsDelta) || 0);
+  state.rewards.weeklyCorrect += Math.max(0, Number(correctDelta) || 0);
   state.rewards.lastUpdatedAt = Date.now();
   saveRewards();
   refreshRewards();
 }
 
+function addPoints(amount) {
+  if (!amount || amount <= 0) return;
+  addRewardDelta(amount, 1);
+}
+
 function refreshRewards() {
   ensureWeeklyRewards();
-  rewardText.textContent = `本周积分 ${state.rewards.weeklyPoints}（正确 ${state.rewards.weeklyCorrect} 次）｜总积分 ${state.rewards.totalPoints} ｜ 周期 ${getWeekRangeLabel(state.rewards.currentWeekKey)}`;
+  rewardText.textContent = `本周积分 ${state.rewards.weeklyPoints}｜总积分 ${state.rewards.totalPoints} ｜ 周期 ${getWeekRangeLabel(state.rewards.currentWeekKey)}`;
 }
 
 async function loadUserData() {
@@ -7988,6 +8033,8 @@ function resetReviewSessionStats() {
   state.reviewSessionCorrect = 0;
   state.reviewSessionWrong = 0;
   state.reviewSessionWrongItems = [];
+  state.reviewSettlementPoints = 0;
+  state.reviewSettlementAnimated = false;
   state.reviewLastResult = null;
   state.reviewAwaitingNext = false;
 }
@@ -8007,6 +8054,11 @@ function renderReviewSummaryCard() {
     reviewSummaryCard.classList.add("hidden");
     reviewSummaryText.textContent = "";
     reviewSummaryActions.textContent = "";
+    if (reviewSettleBtn) {
+      reviewSettleBtn.classList.add("hidden");
+      reviewSettleBtn.disabled = true;
+      reviewSettleBtn.textContent = "本轮结算";
+    }
     return;
   }
   const summary = getCurrentSessionSummary();
@@ -8020,11 +8072,19 @@ function renderReviewSummaryCard() {
   reviewSummaryActions.textContent = summary.weakItems
     ? `建议下一步：优先复习 ${summary.weakItems}，也可去错题本继续巩固。`
     : "建议下一步：继续挑战更高等级，或返回学习页巩固新字词。";
+  if (reviewSettleBtn) {
+    const points = Math.max(0, Number(state.reviewSettlementPoints) || 0);
+    const canSettle = points > 0 && !state.reviewSettlementAnimated;
+    reviewSettleBtn.classList.toggle("hidden", points <= 0);
+    reviewSettleBtn.disabled = !canSettle;
+    reviewSettleBtn.textContent = canSettle ? `本轮结算（+${points}分）` : "已结算";
+  }
 }
 
 function renderReviewButtons() {
   const flow = getReviewFlowContext();
-  reviewBegin.disabled = !flow.canBegin;
+  const beginAsStop = state.reviewPreviewRunning || state.reviewActive || state.reviewFlowState === "reviewed";
+  reviewBegin.disabled = beginAsStop ? false : !flow.canBegin;
   reviewRestart.disabled = !flow.canRestart;
   if (reviewStartBtn) reviewStartBtn.disabled = !flow.canJudge;
   if (reviewResetBtn) reviewResetBtn.disabled = !flow.canReset;
@@ -8033,14 +8093,31 @@ function renderReviewButtons() {
 
   if (reviewNextBtn) reviewNextBtn.classList.toggle("hidden", !flow.showNext);
   if (reviewStopBtn) reviewStopBtn.classList.toggle("hidden", !flow.showStop);
+
+  const lockReviewConfig = state.reviewPreviewRunning || state.reviewActive || state.reviewFlowState === "reviewed";
+  if (reviewTypeFilter) reviewTypeFilter.disabled = lockReviewConfig;
+  if (reviewLevelFilter) reviewLevelFilter.disabled = lockReviewConfig;
+  if (reviewCountFilter) reviewCountFilter.disabled = lockReviewConfig;
+  if (reviewWrongMixFilter) reviewWrongMixFilter.disabled = lockReviewConfig;
+  if (reviewPreviewFilter) reviewPreviewFilter.disabled = lockReviewConfig;
+
+  reviewBegin.textContent = beginAsStop ? t("review.stop") : "开始默写";
+  reviewBegin.classList.toggle("warn", beginAsStop);
+  reviewBegin.classList.toggle("good", !beginAsStop);
 }
 
 function finishReviewSession(isWrongBookSinglePractice) {
   const sessionPoints = Math.max(0, Number(state.reviewSessionPointsEarned) || 0);
   state.reviewSessionPointsEarned = 0;
   state.reviewSessionFinishedAt = Date.now();
+  const sessionCorrectForRewards = Math.max(0, Number(state.reviewSessionCorrect) || 0);
+  state.reviewSettlementPoints = sessionPoints;
+  state.reviewSettlementAnimated = false;
 
   if (!isWrongBookSinglePractice) {
+    if (sessionPoints > 0 || sessionCorrectForRewards > 0) {
+      addRewardDelta(sessionPoints, sessionCorrectForRewards);
+    }
     commitReviewDraftSession().catch((err) => {
       console.warn("commit review draft failed:", err && err.message ? err.message : err);
     });
@@ -8056,7 +8133,6 @@ function finishReviewSession(isWrongBookSinglePractice) {
   state.reviewList = [];
   state.reviewIndex = 0;
   renderReviewCard();
-  if (sessionPoints > 0) playPointsGainEffect(sessionPoints, "本轮默写");
   rebuildWrongQueue();
 }
 
@@ -8836,7 +8912,6 @@ function finalizeReviewResult(item, isGood, accuracyPercent, meta = {}) {
     if (!isWrongBookSinglePractice) {
       scheduleProgress(item, true);
       removeWrongItem(item);
-      addPoints(earnedPoints);
       state.reviewSessionPointsEarned += earnedPoints;
     }
   } else {
@@ -9629,6 +9704,12 @@ function wireLearn() {
 
 function wireReview() {
   reviewBegin.addEventListener("click", () => {
+    if (state.reviewPreviewRunning || state.reviewActive || state.reviewFlowState === "reviewed") {
+      const ok = window.confirm(t("review.stopConfirm"));
+      if (!ok) return;
+      cancelReviewSessionWithoutSave();
+      return;
+    }
     const source = getDataset(state.reviewType);
     startReviewSession(source, "当前筛选下没有可默写的项目。");
   });
@@ -9697,6 +9778,24 @@ function wireReview() {
       const ok = window.confirm(t("review.stopConfirm"));
       if (!ok) return;
       cancelReviewSessionWithoutSave();
+    });
+  }
+
+  if (reviewSettleBtn) {
+    reviewSettleBtn.addEventListener("click", () => {
+      if (state.reviewFlowState !== "ended") return;
+      if (state.reviewSettlementAnimated) return;
+      const points = Math.max(0, Number(state.reviewSettlementPoints) || 0);
+      if (points <= 0) return;
+      state.reviewSettlementAnimated = true;
+      renderReviewSummaryCard();
+      const target = rewardPanel || rewardText || null;
+      if (target && typeof target.scrollIntoView === "function") {
+        target.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
+      }
+      window.setTimeout(() => {
+        playPointsGainEffect(points, "本轮默写", target);
+      }, target ? 420 : 0);
     });
   }
 
