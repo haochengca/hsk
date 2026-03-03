@@ -2,13 +2,17 @@ const http = require("http");
 const fs = require("fs");
 const path = require("path");
 const crypto = require("crypto");
+const { DatabaseSync } = require("node:sqlite");
 const { URL } = require("url");
 
 const HOST = process.env.HOST || "0.0.0.0";
 const PORT = Number(process.env.PORT || 8787);
 const ROOT = __dirname;
-const DB_PATH = path.join(ROOT, "data", "server_db.json");
+const DB_PATH = path.join(ROOT, "data", "server_db.sqlite");
+const LEGACY_JSON_DB_PATH = path.join(ROOT, "data", "server_db.json");
+const DB_STATE_KEY = "state";
 const SESSION_EXPIRE_MS = 30 * 24 * 60 * 60 * 1000;
+let sqliteDb = null;
 
 const MIME = {
   ".html": "text/html; charset=utf-8",
@@ -134,10 +138,8 @@ function ensureFamilyLinks(db) {
   });
 }
 
-function ensureDbFile() {
-  if (!fs.existsSync(path.dirname(DB_PATH))) fs.mkdirSync(path.dirname(DB_PATH), { recursive: true });
-  if (fs.existsSync(DB_PATH)) return;
-  const db = {
+function defaultDbState() {
+  return {
     users: [
       {
         username: "admin",
@@ -151,27 +153,79 @@ function ensureDbFile() {
     submissions: [],
     sessions: []
   };
-  fs.writeFileSync(DB_PATH, JSON.stringify(db, null, 2), "utf8");
+}
+
+function normalizeDbState(input) {
+  const parsed = input && typeof input === "object" ? { ...input } : {};
+  parsed.users = Array.isArray(parsed.users) ? parsed.users.map(normalizeUserRecord).filter((x) => x.username) : [];
+  ensureFamilyLinks(parsed);
+  parsed.userData = parsed.userData && typeof parsed.userData === "object" ? parsed.userData : {};
+  parsed.lexiconOverrides = parsed.lexiconOverrides && typeof parsed.lexiconOverrides === "object" ? parsed.lexiconOverrides : {};
+  parsed.submissions = Array.isArray(parsed.submissions) ? parsed.submissions : [];
+  parsed.sessions = Array.isArray(parsed.sessions) ? parsed.sessions : [];
+  if (!parsed.users.some((x) => x && x.username === "admin")) {
+    parsed.users.unshift(
+      normalizeUserRecord({
+        username: "admin",
+        passwordHash: createPasswordHash("admin123"),
+        role: "admin",
+        createdAt: now()
+      })
+    );
+  }
+  return parsed;
+}
+
+function getSqliteDb() {
+  if (sqliteDb) return sqliteDb;
+  if (!fs.existsSync(path.dirname(DB_PATH))) fs.mkdirSync(path.dirname(DB_PATH), { recursive: true });
+  sqliteDb = new DatabaseSync(DB_PATH);
+  sqliteDb.exec(`
+    CREATE TABLE IF NOT EXISTS kv_store (
+      key TEXT PRIMARY KEY,
+      value TEXT NOT NULL
+    );
+  `);
+  return sqliteDb;
+}
+
+function readLegacyJsonDb() {
+  if (!fs.existsSync(LEGACY_JSON_DB_PATH)) return null;
+  try {
+    const parsed = JSON.parse(fs.readFileSync(LEGACY_JSON_DB_PATH, "utf8"));
+    return normalizeDbState(parsed);
+  } catch {
+    return null;
+  }
+}
+
+function ensureDbFile() {
+  const db = getSqliteDb();
+  const row = db.prepare("SELECT value FROM kv_store WHERE key = ?").get(DB_STATE_KEY);
+  if (row && row.value) return;
+
+  const initial = readLegacyJsonDb() || defaultDbState();
+  const normalized = normalizeDbState(initial);
+  db.prepare("INSERT OR REPLACE INTO kv_store(key, value) VALUES(?, ?)").run(DB_STATE_KEY, JSON.stringify(normalized));
 }
 
 function loadDb() {
   ensureDbFile();
+  const db = getSqliteDb();
   try {
-    const parsed = JSON.parse(fs.readFileSync(DB_PATH, "utf8"));
-    parsed.users = Array.isArray(parsed.users) ? parsed.users.map(normalizeUserRecord).filter((x) => x.username) : [];
-    ensureFamilyLinks(parsed);
-    parsed.userData = parsed.userData && typeof parsed.userData === "object" ? parsed.userData : {};
-    parsed.lexiconOverrides = parsed.lexiconOverrides && typeof parsed.lexiconOverrides === "object" ? parsed.lexiconOverrides : {};
-    parsed.submissions = Array.isArray(parsed.submissions) ? parsed.submissions : [];
-    parsed.sessions = Array.isArray(parsed.sessions) ? parsed.sessions : [];
-    return parsed;
+    const row = db.prepare("SELECT value FROM kv_store WHERE key = ?").get(DB_STATE_KEY);
+    if (!row || !row.value) return normalizeDbState(defaultDbState());
+    const parsed = JSON.parse(String(row.value));
+    return normalizeDbState(parsed);
   } catch {
-    return { users: [], userData: {}, lexiconOverrides: {}, submissions: [], sessions: [] };
+    return normalizeDbState(defaultDbState());
   }
 }
 
 function saveDb(db) {
-  fs.writeFileSync(DB_PATH, JSON.stringify(db, null, 2), "utf8");
+  const conn = getSqliteDb();
+  const normalized = normalizeDbState(db);
+  conn.prepare("INSERT OR REPLACE INTO kv_store(key, value) VALUES(?, ?)").run(DB_STATE_KEY, JSON.stringify(normalized));
 }
 
 function ensureUserData(db, username) {

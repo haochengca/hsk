@@ -5999,13 +5999,11 @@ const authRoleSelect = document.getElementById("auth-role-select");
 const authParentUsernameRow = document.getElementById("auth-parent-username-row");
 const authParentUsername = document.getElementById("auth-parent-username");
 const authTogglePassword = document.getElementById("auth-toggle-password");
-const authLangSelect = document.getElementById("auth-lang-select");
 const authLogin = document.getElementById("auth-login");
 const authRegister = document.getElementById("auth-register");
 const authMsg = document.getElementById("auth-msg");
 const logoutBtn = document.getElementById("logout-btn");
 const userBadge = document.getElementById("user-badge");
-const appLangSelect = document.getElementById("app-lang-select");
 const adminTab = document.getElementById("admin-tab");
 const adminUsersTab = document.getElementById("admin-users-tab");
 const adminWrongTab = document.getElementById("admin-wrong-tab");
@@ -6130,8 +6128,7 @@ const pointsGainFx = document.getElementById("points-gain-fx");
 const pointsFireworks = document.getElementById("points-fireworks");
 const reviewStateModule = window.ReviewState || null;
 
-const LANG_KEY = "hsk_ui_lang";
-const SUPPORTED_LANGS = ["zh", "en", "fr", "es"];
+const SUPPORTED_LANGS = ["zh"];
 const I18N = {
   zh: {
     "app.title": "HSK 汉字学习与书写复习",
@@ -6473,9 +6470,6 @@ function getRoleLabel(role) {
 
 function setLanguage(lang, persist = true) {
   state.lang = normalizeLang(lang);
-  if (persist) localStorage.setItem(LANG_KEY, state.lang);
-  if (authLangSelect) authLangSelect.value = state.lang;
-  if (appLangSelect) appLangSelect.value = state.lang;
   translateStaticText();
   refreshUserBadgeText();
   renderAdminWrongBookPanel();
@@ -9961,16 +9955,6 @@ function wireAuth() {
   if (authRoleSelect) {
     authRoleSelect.addEventListener("change", () => refreshAuthRegisterRoleUi());
   }
-  if (authLangSelect) {
-    authLangSelect.addEventListener("change", (event) => {
-      setLanguage(event.target.value, true);
-    });
-  }
-  if (appLangSelect) {
-    appLangSelect.addEventListener("change", (event) => {
-      setLanguage(event.target.value, true);
-    });
-  }
   authTogglePassword.addEventListener("click", () => {
     const show = authPassword.type === "password";
     authPassword.type = show ? "text" : "password";
@@ -10512,9 +10496,8 @@ function setupCanvas() {
 }
 
 async function init() {
-  const storedLang = normalizeLang(localStorage.getItem(LANG_KEY) || "");
-  state.lang = storedLang;
-  setLanguage(state.lang, false);
+  state.lang = "zh";
+  setLanguage("zh", false);
   initSpeechEngine();
   initLevelFilter();
   initWriteSelect();

@@ -1,4 +1,7 @@
 data/server_db.json
+data/server_db.sqlite
+data/server_db.sqlite-shm
+data/server_db.sqlite-wal
 .DS_Store
 
 # local runtime/deps
