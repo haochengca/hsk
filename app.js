@@ -9543,15 +9543,6 @@ function wireReview() {
     if (event.key === "Enter") evaluateWordDrawing();
   });
 
-  document.getElementById("review-show").addEventListener("click", () => {
-    const item = currentReviewItem();
-    if (!item) return;
-    reviewAnswer.textContent = `答案：${item.text} (${item.pinyin || "-"})`;
-    reviewAnswer.classList.remove("is-hidden");
-    addWrongItem(item);
-    refreshStats();
-  });
-
   if (reviewStopBtn) {
     reviewStopBtn.addEventListener("click", () => {
       if (!state.reviewActive && !state.reviewPreviewRunning) return;

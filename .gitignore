@@ -1,2 +1,10 @@
 data/server_db.json
 .DS_Store
+
+# local runtime/deps
+.tools/
+node_modules/
+
+# e2e artifacts
+test-results/
+playwright-report/
