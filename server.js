@@ -507,6 +507,31 @@ async function handleApi(req, res, pathname) {
   const auth = getAuthContext(req, db);
   if (!auth) return sendJson(res, 401, { ok: false, message: "未登录或会话已过期" });
 
+  if (req.method === "POST" && pathname === "/api/change-password") {
+    const body = await parseBody(req);
+    const currentPassword = String(body.currentPassword || "");
+    const newPassword = String(body.newPassword || "");
+    if (!currentPassword || !newPassword) {
+      return sendJson(res, 400, { ok: false, message: "请填写当前密码和新密码" });
+    }
+    if (!validPassword(newPassword)) {
+      return sendJson(res, 400, { ok: false, message: "新密码长度需为6-64位" });
+    }
+    const user = db.users.find((x) => x && x.username === auth.username);
+    if (!user) return sendJson(res, 404, { ok: false, message: "用户不存在" });
+    if (!verifyPassword(currentPassword, user.passwordHash)) {
+      return sendJson(res, 401, { ok: false, message: "当前密码错误" });
+    }
+    if (verifyPassword(newPassword, user.passwordHash)) {
+      return sendJson(res, 400, { ok: false, message: "新密码不能与当前密码相同" });
+    }
+    user.passwordHash = createPasswordHash(newPassword);
+    // 修改密码后，仅保留当前会话，避免历史会话继续可用。
+    db.sessions = (db.sessions || []).filter((x) => x && (x.username !== auth.username || x.token === auth.token));
+    saveDb(db);
+    return sendJson(res, 200, { ok: true, message: "密码修改成功" });
+  }
+
   if (req.method === "POST" && pathname === "/api/logout") {
     db.sessions = db.sessions.filter((x) => x.token !== auth.token);
     saveDb(db);

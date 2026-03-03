@@ -6002,6 +6002,10 @@ const authTogglePassword = document.getElementById("auth-toggle-password");
 const authLogin = document.getElementById("auth-login");
 const authRegister = document.getElementById("auth-register");
 const authMsg = document.getElementById("auth-msg");
+const userMenu = document.getElementById("user-menu");
+const userMenuToggle = document.getElementById("user-menu-toggle");
+const userMenuList = document.getElementById("user-menu-list");
+const changePasswordBtn = document.getElementById("change-password-btn");
 const logoutBtn = document.getElementById("logout-btn");
 const userBadge = document.getElementById("user-badge");
 const adminTab = document.getElementById("admin-tab");
@@ -6163,6 +6167,7 @@ const I18N = {
     "auth.registerFailed": "注册失败",
     "auth.loggedOut": "已退出登录。",
     "auth.needLogin": "请先登录后使用。",
+    "top.changePassword": "修改密码",
     "top.logout": "退出登录",
     "top.roleAdmin": "管理员",
     "top.roleParent": "父母",
@@ -6229,6 +6234,7 @@ const I18N = {
     "auth.registerFailed": "Registration failed",
     "auth.loggedOut": "Logged out.",
     "auth.needLogin": "Please log in first.",
+    "top.changePassword": "Change Password",
     "top.logout": "Log out",
     "top.roleAdmin": "Admin",
     "top.roleParent": "Parent",
@@ -6295,6 +6301,7 @@ const I18N = {
     "auth.registerFailed": "Échec de l'inscription",
     "auth.loggedOut": "Déconnecté.",
     "auth.needLogin": "Veuillez vous connecter d'abord.",
+    "top.changePassword": "Changer le mot de passe",
     "top.logout": "Déconnexion",
     "top.roleAdmin": "Administrateur",
     "top.roleParent": "Parent",
@@ -6361,6 +6368,7 @@ const I18N = {
     "auth.registerFailed": "Error de registro",
     "auth.loggedOut": "Sesión cerrada.",
     "auth.needLogin": "Inicia sesión primero.",
+    "top.changePassword": "Cambiar contraseña",
     "top.logout": "Cerrar sesión",
     "top.roleAdmin": "Administrador",
     "top.roleParent": "Padre/Madre",
@@ -6460,6 +6468,18 @@ function refreshUserBadgeText() {
   }
   const suffix = extras.length ? ` · ${extras.join(" · ")}` : "";
   userBadge.textContent = `${t("top.currentUser", { username: state.auth.username, role: roleLabel })}${suffix}`;
+}
+
+function setUserMenuOpen(open) {
+  const isOpen = Boolean(open);
+  if (userMenuList) userMenuList.classList.toggle("hidden", !isOpen);
+  if (userMenuToggle) userMenuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+}
+
+function toggleUserMenu() {
+  if (!state.auth.loggedIn) return;
+  const open = userMenuList ? userMenuList.classList.contains("hidden") : false;
+  setUserMenuOpen(open);
 }
 
 function getRoleLabel(role) {
@@ -7466,6 +7486,36 @@ async function setAuthState(username, role, token, profile = {}) {
   if (superAdmin) fetchAdminUsers();
 }
 
+async function handleChangePassword() {
+  if (!state.auth.loggedIn) return;
+  const currentPassword = window.prompt("请输入当前密码");
+  if (currentPassword == null) return;
+  const newPassword = window.prompt("请输入新密码（6-64位）");
+  if (newPassword == null) return;
+  const confirmPassword = window.prompt("请再次输入新密码");
+  if (confirmPassword == null) return;
+  if (newPassword !== confirmPassword) {
+    window.alert("两次输入的新密码不一致");
+    return;
+  }
+  if (newPassword.length < 6 || newPassword.length > 64) {
+    window.alert("新密码长度需为6-64位");
+    return;
+  }
+  if (changePasswordBtn) changePasswordBtn.disabled = true;
+  try {
+    const resp = await apiRequest("/api/change-password", {
+      method: "POST",
+      body: JSON.stringify({ currentPassword, newPassword })
+    });
+    window.alert((resp && resp.message) || "密码修改成功");
+  } catch (err) {
+    window.alert(err && err.message ? err.message : "修改密码失败");
+  } finally {
+    if (changePasswordBtn) changePasswordBtn.disabled = false;
+  }
+}
+
 async function logout() {
   if (state.reviewActive || state.reviewPreviewRunning) {
     const ok = window.confirm("正在默写中。退出登录将取消本轮默写且数据不保存，是否继续？");
@@ -7488,6 +7538,7 @@ async function logout() {
   appShell.classList.add("hidden");
   authScreen.classList.remove("hidden");
   authMsg.textContent = t("auth.loggedOut");
+  setUserMenuOpen(false);
   refreshUserBadgeText();
 }
 
@@ -9974,7 +10025,34 @@ function wireAuth() {
       if (event.key === "Enter") handleRegister();
     });
   }
-  logoutBtn.addEventListener("click", logout);
+  if (userMenuToggle) {
+    userMenuToggle.addEventListener("click", (event) => {
+      event.stopPropagation();
+      toggleUserMenu();
+    });
+  }
+  if (userMenuList) {
+    userMenuList.addEventListener("click", (event) => {
+      event.stopPropagation();
+    });
+  }
+  document.addEventListener("click", (event) => {
+    if (!userMenu || !userMenuList) return;
+    if (!userMenu.contains(event.target)) setUserMenuOpen(false);
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") setUserMenuOpen(false);
+  });
+  if (changePasswordBtn) {
+    changePasswordBtn.addEventListener("click", async () => {
+      setUserMenuOpen(false);
+      await handleChangePassword();
+    });
+  }
+  logoutBtn.addEventListener("click", async () => {
+    setUserMenuOpen(false);
+    await logout();
+  });
 }
 
 function wireAdmin() {

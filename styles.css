@@ -89,6 +89,38 @@ body {
   margin: 0;
 }
 
+.user-menu {
+  position: relative;
+}
+
+.user-menu-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.user-menu-list {
+  position: absolute;
+  top: calc(100% + 0.4rem);
+  right: 0;
+  min-width: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.32rem;
+  padding: 0.45rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: var(--shadow-tiny);
+  z-index: 30;
+}
+
+.user-menu-item {
+  width: 100%;
+  text-align: left;
+  box-shadow: none;
+}
+
 .lang-picker {
   display: inline-flex;
   align-items: center;
@@ -1039,6 +1071,11 @@ select {
     position: static;
     justify-content: flex-start;
     margin-top: 0.7rem;
+  }
+
+  .user-menu-list {
+    left: 0;
+    right: auto;
   }
 
   .auth-lang-picker {

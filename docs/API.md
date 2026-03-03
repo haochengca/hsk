@@ -34,6 +34,14 @@ Base URL: `/api`
 - Header: `Authorization: Bearer <token>`
 - 响应：`{ ok }`
 
+### `POST /change-password`
+- Header: `Authorization: Bearer <token>`
+- 请求：`{ currentPassword, newPassword }`
+- 规则：
+  - 所有已登录角色（admin/parent/child）均可调用
+  - `newPassword` 长度需为 6-64 位，且不能与当前密码相同
+- 响应：`{ ok: true, message: "密码修改成功" }`
+
 ## 3. 用户初始化与保存
 
 ### `GET /bootstrap`
