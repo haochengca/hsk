@@ -96,6 +96,7 @@ function ensureDbFile() {
       }
     ],
     userData: {},
+    lexiconOverrides: {},
     submissions: [],
     sessions: []
   };
@@ -108,11 +109,12 @@ function loadDb() {
     const parsed = JSON.parse(fs.readFileSync(DB_PATH, "utf8"));
     parsed.users = Array.isArray(parsed.users) ? parsed.users : [];
     parsed.userData = parsed.userData && typeof parsed.userData === "object" ? parsed.userData : {};
+    parsed.lexiconOverrides = parsed.lexiconOverrides && typeof parsed.lexiconOverrides === "object" ? parsed.lexiconOverrides : {};
     parsed.submissions = Array.isArray(parsed.submissions) ? parsed.submissions : [];
     parsed.sessions = Array.isArray(parsed.sessions) ? parsed.sessions : [];
     return parsed;
   } catch {
-    return { users: [], userData: {}, submissions: [], sessions: [] };
+    return { users: [], userData: {}, lexiconOverrides: {}, submissions: [], sessions: [] };
   }
 }
 
@@ -270,6 +272,15 @@ function updateWrongBookForUser(db, username, submission, isCorrect) {
   else upsertWrong(submission.type, submission.target);
 }
 
+function normalizeLexiconOverride(input, fallbackType = "char", fallbackText = "") {
+  const type = input && input.type === "word" ? "word" : fallbackType === "word" ? "word" : "char";
+  const text = String((input && input.text) || fallbackText || "").trim();
+  const pinyin = String((input && input.pinyin) || "").trim();
+  const prompt1 = String((input && input.prompt1) || "").trim();
+  const prompt2 = String((input && input.prompt2) || "").trim();
+  return { type, text, pinyin, prompt1, prompt2 };
+}
+
 async function handleApi(req, res, pathname) {
   const db = loadDb();
 
@@ -343,6 +354,7 @@ async function handleApi(req, res, pathname) {
       ok: true,
       user: { username: auth.username, role: auth.role },
       data,
+      lexiconOverrides: db.lexiconOverrides || {},
       submissions
     });
   }
@@ -466,6 +478,34 @@ async function handleApi(req, res, pathname) {
 
     saveDb(db);
     return sendJson(res, 200, { ok: true, wrongBook: data.wrongBook });
+  }
+
+  if (req.method === "PUT" && pathname === "/api/admin/learning-item-override") {
+    if (auth.role !== "admin") return sendJson(res, 403, { ok: false, message: "仅管理员可操作" });
+    const body = await parseBody(req);
+    const type = body.type === "word" ? "word" : "char";
+    const text = String(body.text || "").trim();
+    if (!text) return sendJson(res, 400, { ok: false, message: "学习项内容不能为空" });
+    const normalized = normalizeLexiconOverride(body, type, text);
+    const key = `${normalized.type}:${normalized.text}`;
+    const allEmpty = !normalized.pinyin && !normalized.prompt1 && !normalized.prompt2;
+    if (!db.lexiconOverrides || typeof db.lexiconOverrides !== "object") db.lexiconOverrides = {};
+    if (allEmpty) {
+      delete db.lexiconOverrides[key];
+    } else {
+      db.lexiconOverrides[key] = {
+        ...normalized,
+        updatedAt: now(),
+        updatedBy: auth.username
+      };
+    }
+    saveDb(db);
+    return sendJson(res, 200, {
+      ok: true,
+      key,
+      override: db.lexiconOverrides[key] || null,
+      lexiconOverrides: db.lexiconOverrides
+    });
   }
 
   return sendJson(res, 404, { ok: false, message: "API不存在" });

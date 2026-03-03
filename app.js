@@ -5862,6 +5862,13 @@ const WORD_ITEMS = SOURCE_WORDS.map((it) => ({
 const CHAR_MAP = new Map(CHAR_ITEMS.map((it) => [it.text, it]));
 const WORD_MAP = new Map(WORD_ITEMS.map((it) => [it.text, it]));
 const CHAR_PHRASE_MAP = buildCharPhraseMap();
+const BASE_ITEM_SNAPSHOT = new Map();
+CHAR_ITEMS.forEach((it) => {
+  BASE_ITEM_SNAPSHOT.set(`char:${it.text}`, { pinyin: it.pinyin || "", prompt1: "", prompt2: "" });
+});
+WORD_ITEMS.forEach((it) => {
+  BASE_ITEM_SNAPSHOT.set(`word:${it.text}`, { pinyin: it.pinyin || "", prompt1: "", prompt2: "" });
+});
 
 function buildCharPhraseMap() {
   const map = new Map();
@@ -5893,6 +5900,7 @@ function buildCharPhraseMap() {
 const state = {
   auth: { loggedIn: false, role: "", username: "", token: "" },
   lang: "zh",
+  lexiconOverrides: {},
   tab: "learn",
   level: "all",
   learnType: "char",
@@ -5915,6 +5923,7 @@ const state = {
   reviewCount: "10",
   reviewWrongMixRatio: "30",
   reviewPreviewMode: "0",
+  reviewSessionSource: "normal",
   reviewList: [],
   reviewIndex: 0,
   reviewActive: false,
@@ -5930,6 +5939,7 @@ const state = {
   dictationPad: null,
   dictationPads: [],
   reviewPreviewTimer: null,
+  reviewPreviewCountdownTimer: null,
   reviewPreviewToken: 0,
   reviewPreviewRunning: false,
   strokeWriter: null,
@@ -5942,7 +5952,14 @@ const state = {
   pendingSubmissionPayloads: [],
   adminWordReviewDrafts: {},
   adminWrongBookQueryUser: "",
-  adminWrongBookItems: []
+  adminWrongBookItems: [],
+  adminItemsTypeFilter: "all",
+  adminItemsLevelFilter: "all",
+  adminItemsSearch: "",
+  adminItemsPage: 1,
+  adminItemsPageSize: 50,
+  adminItemsDrafts: {},
+  adminItemsSaving: false
 };
 
 const tabs = Array.from(document.querySelectorAll(".tab"));
@@ -5953,6 +5970,7 @@ const panels = {
   wrong: document.getElementById("wrong-panel"),
   admin: document.getElementById("admin-panel"),
   "admin-wrong": document.getElementById("admin-wrong-panel"),
+  "admin-items": document.getElementById("admin-items-panel"),
   records: document.getElementById("records-panel")
 };
 const authScreen = document.getElementById("auth-screen");
@@ -5973,6 +5991,7 @@ const userBadge = document.getElementById("user-badge");
 const appLangSelect = document.getElementById("app-lang-select");
 const adminTab = document.getElementById("admin-tab");
 const adminWrongTab = document.getElementById("admin-wrong-tab");
+const adminItemsTab = document.getElementById("admin-items-tab");
 const recordsTab = document.getElementById("records-tab");
 const adminCount = document.getElementById("admin-count");
 const adminList = document.getElementById("admin-list");
@@ -5984,6 +6003,17 @@ const adminWrongSearch = document.getElementById("admin-wrong-search");
 const adminWrongCount = document.getElementById("admin-wrong-count");
 const adminWrongList = document.getElementById("admin-wrong-list");
 const adminWrongMsg = document.getElementById("admin-wrong-msg");
+const adminItemsCount = document.getElementById("admin-items-count");
+const adminItemsTypeFilter = document.getElementById("admin-items-type-filter");
+const adminItemsLevelFilter = document.getElementById("admin-items-level-filter");
+const adminItemsSearch = document.getElementById("admin-items-search");
+const adminItemsPageSize = document.getElementById("admin-items-page-size");
+const adminItemsSaveAll = document.getElementById("admin-items-save-all");
+const adminItemsPrev = document.getElementById("admin-items-prev");
+const adminItemsNext = document.getElementById("admin-items-next");
+const adminItemsPageInfo = document.getElementById("admin-items-page-info");
+const adminItemsMsg = document.getElementById("admin-items-msg");
+const adminItemsList = document.getElementById("admin-items-list");
 const recordsCount = document.getElementById("records-count");
 const recordsList = document.getElementById("records-list");
 const recordsStats = document.getElementById("records-stats");
@@ -6046,11 +6076,15 @@ const reviewRestart = document.getElementById("review-restart");
 const reviewPinyin = document.getElementById("review-pinyin");
 const reviewMeaning = document.getElementById("review-meaning");
 const reviewPreview = document.getElementById("review-preview");
+const reviewPreviewTimer = document.getElementById("review-preview-timer");
+const reviewPreviewTimeText = document.getElementById("review-preview-time-text");
+const reviewPreviewProgressBar = document.getElementById("review-preview-progress-bar");
 const dictationWriterHost = document.getElementById("dictation-writer");
 const reviewFeedback = document.getElementById("review-feedback");
 const reviewAnswer = document.getElementById("review-answer");
 const reviewStartBtn = document.getElementById("review-start");
 const reviewResetBtn = document.getElementById("review-reset");
+const reviewStopBtn = document.getElementById("review-stop");
 const wordAnswerRow = document.getElementById("word-answer-row");
 const wordReviewInput = document.getElementById("word-review-input");
 const wordReviewSubmit = document.getElementById("word-review-submit");
@@ -6065,6 +6099,7 @@ const startWrongDictation = document.getElementById("start-wrong-dictation");
 const statsText = document.getElementById("stats-text");
 const rewardText = document.getElementById("reward-text");
 const pointsGainFx = document.getElementById("points-gain-fx");
+const pointsFireworks = document.getElementById("points-fireworks");
 
 const LANG_KEY = "hsk_ui_lang";
 const SUPPORTED_LANGS = ["zh", "en", "fr", "es"];
@@ -6105,6 +6140,8 @@ const I18N = {
     "nav.write": "写字",
     "nav.review": "默写测验",
     "nav.wrong": "错题本",
+    "review.stop": "停止默写",
+    "review.stopConfirm": "停止后将取消本轮默写且数据不保存，是否继续？",
     "nav.records": "我的记录",
     "nav.adminReview": "管理审核",
     "nav.adminWrong": "题本管理",
@@ -6160,6 +6197,8 @@ const I18N = {
     "nav.write": "Write",
     "nav.review": "Dictation",
     "nav.wrong": "Wrong Book",
+    "review.stop": "Stop Dictation",
+    "review.stopConfirm": "Stopping will cancel this dictation session and discard unsaved data. Continue?",
     "nav.records": "My Records",
     "nav.adminReview": "Admin Review",
     "nav.adminWrong": "Wrong-Book Admin",
@@ -6215,6 +6254,8 @@ const I18N = {
     "nav.write": "Écrire",
     "nav.review": "Dictée",
     "nav.wrong": "Cahier d'erreurs",
+    "review.stop": "Arrêter la dictée",
+    "review.stopConfirm": "Arrêter annulera cette session de dictée et les données non enregistrées seront perdues. Continuer ?",
     "nav.records": "Mes records",
     "nav.adminReview": "Revue admin",
     "nav.adminWrong": "Gestion du cahier",
@@ -6270,6 +6311,8 @@ const I18N = {
     "nav.write": "Escribir",
     "nav.review": "Dictado",
     "nav.wrong": "Cuaderno de errores",
+    "review.stop": "Detener dictado",
+    "review.stopConfirm": "Detener cancelará esta sesión de dictado y no se guardarán los datos. ¿Continuar?",
     "nav.records": "Mis registros",
     "nav.adminReview": "Revisión admin",
     "nav.adminWrong": "Gestión de errores",
@@ -6566,8 +6609,124 @@ function ensureWeeklyRewards() {
   saveRewards();
 }
 
+let fireworksRaf = 0;
+let fireworksToken = 0;
+let fireworksParticles = [];
+
+function stopPointsFireworks() {
+  fireworksToken += 1;
+  if (fireworksRaf) {
+    cancelAnimationFrame(fireworksRaf);
+    fireworksRaf = 0;
+  }
+  fireworksParticles = [];
+  if (!pointsFireworks) return;
+  const ctx = pointsFireworks.getContext("2d");
+  if (ctx) ctx.clearRect(0, 0, pointsFireworks.width, pointsFireworks.height);
+  pointsFireworks.classList.remove("is-show");
+}
+
+function resizeFireworksCanvas() {
+  if (!pointsFireworks) return { width: 0, height: 0 };
+  const dpr = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
+  const width = Math.max(1, Math.floor(window.innerWidth));
+  const height = Math.max(1, Math.floor(window.innerHeight));
+  pointsFireworks.width = Math.floor(width * dpr);
+  pointsFireworks.height = Math.floor(height * dpr);
+  pointsFireworks.style.width = `${width}px`;
+  pointsFireworks.style.height = `${height}px`;
+  const ctx = pointsFireworks.getContext("2d");
+  if (ctx) ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  return { width, height };
+}
+
+function spawnCenterBurst(centerX, centerY, nowMs, strength = 1) {
+  const colors = ["#8fd2ff", "#4aa3ff", "#c8e7ff", "#9f8bff", "#5be7ff", "#ffffff"];
+  const count = Math.round(48 + 24 * strength);
+  for (let i = 0; i < count; i += 1) {
+    const angle = (Math.PI * 2 * i) / count + Math.random() * 0.22;
+    const speed = (1.5 + Math.random() * 3.4) * (0.65 + strength * 0.6);
+    fireworksParticles.push({
+      x: centerX,
+      y: centerY,
+      vx: Math.cos(angle) * speed,
+      vy: Math.sin(angle) * speed,
+      life: 750 + Math.random() * 620,
+      bornAt: nowMs,
+      size: 1.2 + Math.random() * 2.8,
+      color: colors[Math.floor(Math.random() * colors.length)]
+    });
+  }
+}
+
+function runPointsFireworks(durationMs) {
+  if (!pointsFireworks) return;
+  stopPointsFireworks();
+  pointsFireworks.classList.add("is-show");
+  const { width, height } = resizeFireworksCanvas();
+  if (!width || !height) return;
+  const ctx = pointsFireworks.getContext("2d");
+  if (!ctx) return;
+  const startAt = performance.now();
+  const token = ++fireworksToken;
+  const centerX = width / 2;
+  const centerY = height / 2;
+  const launchPlan = [
+    { t: 40, s: 0.95 },
+    { t: 280, s: 1.1 },
+    { t: 560, s: 1.2 },
+    { t: 860, s: 1.35 },
+    { t: 1220, s: 1.05 },
+    { t: 1620, s: 0.9 }
+  ];
+  let launchIdx = 0;
+  let lastMs = startAt;
+
+  const frame = (nowMs) => {
+    if (token !== fireworksToken) return;
+    const elapsed = nowMs - startAt;
+    const dt = Math.max(0.008, Math.min(0.033, (nowMs - lastMs) / 1000));
+    lastMs = nowMs;
+
+    while (launchIdx < launchPlan.length && elapsed >= launchPlan[launchIdx].t) {
+      spawnCenterBurst(centerX, centerY, nowMs, launchPlan[launchIdx].s);
+      launchIdx += 1;
+    }
+
+    ctx.clearRect(0, 0, width, height);
+    ctx.globalCompositeOperation = "lighter";
+    fireworksParticles = fireworksParticles.filter((p) => {
+      const age = nowMs - p.bornAt;
+      const k = 1 - age / p.life;
+      if (k <= 0) return false;
+      p.vx *= 0.988;
+      p.vy = p.vy * 0.988 + 0.07;
+      p.x += p.vx * 60 * dt;
+      p.y += p.vy * 60 * dt;
+      const alpha = Math.max(0, Math.min(1, k));
+      ctx.fillStyle = p.color;
+      ctx.globalAlpha = alpha * 0.9;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.size * (0.58 + k * 0.7), 0, Math.PI * 2);
+      ctx.fill();
+      return true;
+    });
+    ctx.globalAlpha = 1;
+    ctx.globalCompositeOperation = "source-over";
+
+    if (elapsed < durationMs || fireworksParticles.length > 0) {
+      fireworksRaf = requestAnimationFrame(frame);
+      return;
+    }
+    stopPointsFireworks();
+  };
+
+  fireworksRaf = requestAnimationFrame(frame);
+}
+
 function playPointsGainEffect(amount, title = "本次") {
   if (!pointsGainFx || !amount || amount <= 0) return;
+  runPointsFireworks(POINTS_FX_MS);
   pointsGainFx.textContent = `${title} +${amount} 分`;
   pointsGainFx.classList.remove("is-show");
   // Force reflow so repeated gains retrigger animation.
@@ -6575,7 +6734,7 @@ function playPointsGainEffect(amount, title = "本次") {
   pointsGainFx.classList.add("is-show");
   setTimeout(() => {
     pointsGainFx.classList.remove("is-show");
-  }, 1150);
+  }, POINTS_FX_MS);
 }
 
 function addPoints(amount) {
@@ -6597,6 +6756,7 @@ function refreshRewards() {
 async function loadUserData() {
   const boot = await apiRequest("/api/bootstrap");
   const data = boot.data || {};
+  applyLexiconOverrides(boot.lexiconOverrides || {});
   state.adminWordReviewDrafts = {};
   state.submissions = Array.isArray(boot.submissions)
     ? boot.submissions.map((row) => ({
@@ -6624,12 +6784,15 @@ async function loadUserData() {
   state.reviewWrongMixRatio = String(prefs.reviewWrongMixRatio || "30");
   state.reviewPreviewMode = String(prefs.reviewPreviewMode || "0");
   rebuildWrongQueue();
-  initReviewSettings();
   refreshStats();
   refreshRewards();
   renderAdminPanel();
   renderAdminWrongBookPanel();
+  renderAdminItemsPanel();
   renderUserRecords();
+  initWriteSelect();
+  initLevelFilter();
+  initReviewSettings();
   renderLearnCharList();
 }
 
@@ -6769,6 +6932,189 @@ function renderAdminWrongBookPanel() {
     .join("");
 }
 
+function getAdminEditableItems() {
+  const merged = [...CHAR_ITEMS, ...WORD_ITEMS];
+  const typeFilter = state.adminItemsTypeFilter || "all";
+  const levelFilter = state.adminItemsLevelFilter || "all";
+  const keyword = String(state.adminItemsSearch || "").trim().toLowerCase();
+  return merged.filter((it) => {
+    if (typeFilter !== "all" && it.type !== typeFilter) return false;
+    if (levelFilter !== "all" && String(it.level) !== String(levelFilter)) return false;
+    if (!keyword) return true;
+    return (
+      String(it.text || "").includes(keyword) ||
+      String(it.pinyin || "").toLowerCase().includes(keyword) ||
+      String(it.meaning || "").toLowerCase().includes(keyword)
+    );
+  });
+}
+
+function parseAdminItemKey(key) {
+  const raw = String(key || "");
+  if (!raw.includes(":")) return null;
+  const [typeRaw, ...rest] = raw.split(":");
+  return {
+    key: raw,
+    type: typeRaw === "word" ? "word" : "char",
+    text: rest.join(":")
+  };
+}
+
+function getAdminItemByKey(key) {
+  const parsed = parseAdminItemKey(key);
+  if (!parsed || !parsed.text) return null;
+  const item = parsed.type === "word" ? WORD_MAP.get(parsed.text) : CHAR_MAP.get(parsed.text);
+  return item && item.type === parsed.type ? item : null;
+}
+
+function getAdminDraftValue(key, field, fallback) {
+  const draft = state.adminItemsDrafts && state.adminItemsDrafts[key];
+  if (draft && Object.prototype.hasOwnProperty.call(draft, field)) return String(draft[field] || "");
+  return String(fallback || "");
+}
+
+function isAdminItemDirty(key, item) {
+  if (!key || !item) return false;
+  const [prompt1, prompt2] = getPromptPhrases(item);
+  const pinyinValue = getAdminDraftValue(key, "pinyin", item.pinyin || "").trim();
+  const prompt1Value = getAdminDraftValue(key, "prompt1", prompt1 || "").trim();
+  const prompt2Value = getAdminDraftValue(key, "prompt2", prompt2 || "").trim();
+  return pinyinValue !== String(item.pinyin || "").trim() || prompt1Value !== String(prompt1 || "").trim() || prompt2Value !== String(prompt2 || "").trim();
+}
+
+function setAdminDraftField(key, field, value) {
+  if (!key || !["pinyin", "prompt1", "prompt2"].includes(field)) return;
+  const item = getAdminItemByKey(key);
+  if (!item) return;
+  const nextDraft = { ...(state.adminItemsDrafts[key] || {}) };
+  nextDraft[field] = String(value || "");
+  state.adminItemsDrafts[key] = nextDraft;
+}
+
+function clearAdminDraft(key) {
+  if (!key || !state.adminItemsDrafts[key]) return;
+  const next = { ...state.adminItemsDrafts };
+  delete next[key];
+  state.adminItemsDrafts = next;
+}
+
+function buildAdminOverridePayload(key) {
+  const parsed = parseAdminItemKey(key);
+  const item = getAdminItemByKey(key);
+  if (!parsed || !item) return null;
+  const [prompt1, prompt2] = getPromptPhrases(item);
+  return {
+    type: parsed.type,
+    text: parsed.text,
+    pinyin: getAdminDraftValue(key, "pinyin", item.pinyin || "").trim(),
+    prompt1: getAdminDraftValue(key, "prompt1", prompt1 || "").trim(),
+    prompt2: getAdminDraftValue(key, "prompt2", prompt2 || "").trim()
+  };
+}
+
+function getDirtyAdminItemKeys() {
+  return Object.keys(state.adminItemsDrafts || {}).filter((key) => isAdminItemDirty(key, getAdminItemByKey(key)));
+}
+
+function refreshAdminItemsDirtyUi() {
+  const dirtyKeys = getDirtyAdminItemKeys();
+  const dirtySet = new Set(dirtyKeys);
+  const dirtyCount = dirtyKeys.length;
+  if (adminItemsSaveAll) {
+    adminItemsSaveAll.disabled = state.adminItemsSaving || dirtyCount === 0;
+    adminItemsSaveAll.textContent = dirtyCount > 0 ? `批量保存（${dirtyCount}）` : "批量保存";
+  }
+  if (!adminItemsList) return;
+  const rows = adminItemsList.querySelectorAll("tr[data-admin-key]");
+  rows.forEach((row) => {
+    const key = String(row.getAttribute("data-admin-key") || "");
+    const dirty = dirtySet.has(key);
+    row.classList.toggle("is-dirty", dirty);
+    const rowSaveBtn = row.querySelector("button[data-action='save-admin-item']");
+    if (rowSaveBtn) rowSaveBtn.disabled = state.adminItemsSaving || !dirty;
+  });
+  if (adminItemsMsg && !state.adminItemsSaving) {
+    adminItemsMsg.textContent = dirtyCount > 0 ? `当前有 ${dirtyCount} 项未保存修改` : "";
+  }
+}
+
+async function saveAdminItemOverrideByKey(key) {
+  const payload = buildAdminOverridePayload(key);
+  if (!payload || !payload.text) throw new Error("无效学习项");
+  const resp = await apiRequest("/api/admin/learning-item-override", {
+    method: "PUT",
+    body: JSON.stringify(payload)
+  });
+  clearAdminDraft(key);
+  return resp;
+}
+
+function escapeHtmlAttr(value) {
+  return String(value || "")
+    .replace(/&/g, "&amp;")
+    .replace(/"/g, "&quot;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+}
+
+function renderAdminItemsPanel() {
+  if (!adminItemsList || !adminItemsCount) return;
+  if (state.auth.role !== "admin") {
+    adminItemsCount.textContent = "项目：0 条";
+    adminItemsList.innerHTML = "<tr><td colspan=\"7\">仅管理员可查看。</td></tr>";
+    if (adminItemsMsg) adminItemsMsg.textContent = "";
+    return;
+  }
+
+  const levels = [...new Set([...CHAR_ITEMS, ...WORD_ITEMS].map((it) => Number(it.level) || 1))].sort((a, b) => a - b);
+  if (adminItemsLevelFilter) {
+    const levelOptions = [`<option value="all">全部</option>`, ...levels.map((lv) => `<option value="${lv}">HSK ${lv}</option>`)].join("");
+    if (adminItemsLevelFilter.innerHTML !== levelOptions) adminItemsLevelFilter.innerHTML = levelOptions;
+    adminItemsLevelFilter.value = state.adminItemsLevelFilter || "all";
+  }
+  if (adminItemsTypeFilter) adminItemsTypeFilter.value = state.adminItemsTypeFilter || "all";
+  if (adminItemsSearch) adminItemsSearch.value = state.adminItemsSearch || "";
+
+  const all = getAdminEditableItems();
+  const pageSize = Math.max(1, Number(state.adminItemsPageSize) || 50);
+  const totalPages = Math.max(1, Math.ceil(all.length / pageSize));
+  state.adminItemsPage = Math.max(1, Math.min(state.adminItemsPage, totalPages));
+  const start = (state.adminItemsPage - 1) * pageSize;
+  const pageItems = all.slice(start, start + pageSize);
+  adminItemsCount.textContent = `项目：${all.length} 条`;
+  if (adminItemsPageSize) adminItemsPageSize.value = String(pageSize);
+  if (adminItemsPageInfo) adminItemsPageInfo.textContent = `第 ${state.adminItemsPage} / ${totalPages} 页`;
+  if (adminItemsPrev) adminItemsPrev.disabled = state.adminItemsPage <= 1;
+  if (adminItemsNext) adminItemsNext.disabled = state.adminItemsPage >= totalPages;
+
+  if (!pageItems.length) {
+    adminItemsList.innerHTML = "<tr><td colspan=\"7\">没有匹配项目。</td></tr>";
+    refreshAdminItemsDirtyUi();
+    return;
+  }
+
+  adminItemsList.innerHTML = pageItems
+    .map((it) => {
+      const [prompt1, prompt2] = getPromptPhrases(it);
+      const key = `${it.type}:${it.text}`;
+      const dirty = isAdminItemDirty(key, it);
+      const pinyinValue = getAdminDraftValue(key, "pinyin", it.pinyin || "");
+      const prompt1Value = getAdminDraftValue(key, "prompt1", prompt1 || "");
+      const prompt2Value = getAdminDraftValue(key, "prompt2", prompt2 || "");
+      return `<tr data-admin-key="${escapeHtmlAttr(key)}" class="${dirty ? "is-dirty" : ""}">
+        <td class="${it.type === "char" ? "char-cell" : ""}">${it.text}</td>
+        <td>${it.type === "word" ? "词汇" : "汉字"}</td>
+        <td>${it.level}</td>
+        <td><input data-admin-item="pinyin" data-key="${key}" value="${escapeHtmlAttr(pinyinValue)}" /></td>
+        <td><input data-admin-item="prompt1" data-key="${key}" value="${escapeHtmlAttr(prompt1Value)}" /></td>
+        <td><input data-admin-item="prompt2" data-key="${key}" value="${escapeHtmlAttr(prompt2Value)}" /></td>
+        <td><button class="good" data-action="save-admin-item" data-key="${key}" ${state.adminItemsSaving || !dirty ? "disabled" : ""}>保存</button></td>
+      </tr>`;
+    })
+    .join("");
+  refreshAdminItemsDirtyUi();
+}
+
 async function queryAdminWrongBook(username) {
   const name = String(username || "").trim();
   if (!name) {
@@ -6891,13 +7237,15 @@ async function setAuthState(username, role, token) {
   recordsTab.classList.toggle("hidden", admin);
   adminTab.classList.toggle("hidden", !admin);
   if (adminWrongTab) adminWrongTab.classList.toggle("hidden", !admin);
-  if (!admin && (state.tab === "admin" || state.tab === "admin-wrong")) state.tab = "learn";
+  if (adminItemsTab) adminItemsTab.classList.toggle("hidden", !admin);
+  if (!admin && (state.tab === "admin" || state.tab === "admin-wrong" || state.tab === "admin-items")) state.tab = "learn";
   if (admin) switchTab("admin");
   else switchTab("learn");
   await loadUserData();
   renderReviewCard();
   renderAdminPanel();
   renderAdminWrongBookPanel();
+  renderAdminItemsPanel();
   renderUserRecords();
 }
 
@@ -7118,14 +7466,152 @@ function moveLearn(step) {
   renderLearnCard();
 }
 
+let cachedZhVoice = null;
+let speechSeqToken = 0;
+const POINTS_FX_MS = 2400;
+
+function getChineseVoice() {
+  if (!("speechSynthesis" in window)) return null;
+  const voices = window.speechSynthesis.getVoices() || [];
+  if (!voices.length) return null;
+  if (cachedZhVoice && voices.some((v) => v.voiceURI === cachedZhVoice.voiceURI)) return cachedZhVoice;
+  const zhVoices = voices.filter((v) => /^zh\b/i.test(String(v.lang || "")));
+  if (!zhVoices.length) return null;
+  const preferKeywords = [
+    "xiaoxiao",
+    "xiaoyi",
+    "xiaomo",
+    "yunxi",
+    "tingting",
+    "huihui",
+    "kangkang",
+    "sin-ji",
+    "mei-jia",
+    "hanhan"
+  ];
+  const scoreVoice = (v) => {
+    const name = String(v.name || "").toLowerCase();
+    const lang = String(v.lang || "").toLowerCase();
+    let score = 0;
+    if (lang.includes("zh-cn")) score += 45;
+    else if (lang.includes("zh-hans")) score += 36;
+    else if (lang.includes("zh")) score += 28;
+    if (v.localService) score += 12;
+    const idx = preferKeywords.findIndex((x) => name.includes(x));
+    if (idx !== -1) score += 30 - idx;
+    return score;
+  };
+  cachedZhVoice = zhVoices
+    .slice()
+    .sort((a, b) => scoreVoice(b) - scoreVoice(a))[0];
+  return cachedZhVoice || null;
+}
+
+function buildChineseUtterance(text, { rate = 0.88, pitch = 1, volume = 1 } = {}) {
+  const utter = new SpeechSynthesisUtterance(String(text || ""));
+  const voice = getChineseVoice();
+  utter.lang = voice && voice.lang ? voice.lang : "zh-CN";
+  if (voice) utter.voice = voice;
+  utter.rate = rate;
+  utter.pitch = pitch;
+  utter.volume = volume;
+  return utter;
+}
+
+function clampNumber(num, min, max) {
+  return Math.max(min, Math.min(max, num));
+}
+
+function humanizeValue(base, jitter, min, max) {
+  const rand = (Math.random() * 2 - 1) * Math.max(0, jitter || 0);
+  return clampNumber(base + rand, min, max);
+}
+
+function splitSpeechText(text) {
+  const value = String(text || "").trim();
+  if (!value) return [];
+  return value
+    .split(/[，,、；;。！？!?\s]+/)
+    .map((x) => x.trim())
+    .filter(Boolean);
+}
+
+function speakChineseSegments(segments, { cancel = true } = {}) {
+  if (!("speechSynthesis" in window)) return;
+  const rawItems = (Array.isArray(segments) ? segments : [])
+    .map((it) => ({
+      text: String((it && it.text) || "").trim(),
+      rate: Number(it && it.rate),
+      pitch: Number(it && it.pitch),
+      volume: Number(it && it.volume),
+      pauseMs: Number(it && it.pauseMs),
+      split: Boolean(it && it.split)
+    }))
+    .filter((it) => it.text);
+  const items = [];
+  rawItems.forEach((it) => {
+    if (!it.split) {
+      items.push(it);
+      return;
+    }
+    const parts = splitSpeechText(it.text);
+    if (!parts.length) return;
+    parts.forEach((part, idx) => {
+      items.push({
+        ...it,
+        text: part,
+        pauseMs: idx < parts.length - 1 ? Math.max(90, Number(it.pauseMs) || 140) : Number(it.pauseMs)
+      });
+    });
+  });
+  if (!items.length) return;
+  if (cancel) window.speechSynthesis.cancel();
+  const token = ++speechSeqToken;
+  const speakNext = (idx) => {
+    if (token !== speechSeqToken || idx >= items.length) return;
+    const cur = items[idx];
+    const baseRate = Number.isFinite(cur.rate) ? cur.rate : 0.88;
+    const basePitch = Number.isFinite(cur.pitch) ? cur.pitch : 1;
+    const baseVolume = Number.isFinite(cur.volume) ? cur.volume : 1;
+    const utter = buildChineseUtterance(cur.text, {
+      // slight random variation makes TTS sound less mechanical.
+      rate: humanizeValue(baseRate, 0.02, 0.72, 1.02),
+      pitch: humanizeValue(basePitch, 0.04, 0.86, 1.18),
+      volume: humanizeValue(baseVolume, 0.03, 0.85, 1)
+    });
+    utter.onend = () => {
+      if (token !== speechSeqToken) return;
+      const delay = Number.isFinite(cur.pauseMs) ? Math.max(0, cur.pauseMs) : 120;
+      window.setTimeout(() => speakNext(idx + 1), delay);
+    };
+    window.speechSynthesis.speak(utter);
+  };
+  speakNext(0);
+}
+
+function initSpeechEngine() {
+  if (!("speechSynthesis" in window)) return;
+  getChineseVoice();
+  window.speechSynthesis.onvoiceschanged = () => {
+    cachedZhVoice = null;
+    getChineseVoice();
+  };
+}
+
 function speakLearnItem(item) {
   if (!("speechSynthesis" in window) || !item) return;
-  const utter = new SpeechSynthesisUtterance(`${item.text}`);
-  utter.lang = "zh-CN";
-  utter.rate = 0.88;
-  utter.pitch = 1;
-  window.speechSynthesis.cancel();
-  window.speechSynthesis.speak(utter);
+  speakChineseSegments(
+    [
+      {
+        text: String(item.text || ""),
+        rate: 0.78,
+        pitch: 1.04,
+        pauseMs: 170,
+        split: true
+      }
+    ],
+    { cancel: true }
+  );
 }
 
 function applyReviewSettings(list) {
@@ -7268,24 +7754,75 @@ function clearReviewPreviewTimer() {
   }
 }
 
+function clearReviewPreviewCountdownTimer() {
+  if (state.reviewPreviewCountdownTimer) {
+    clearInterval(state.reviewPreviewCountdownTimer);
+    state.reviewPreviewCountdownTimer = null;
+  }
+}
+
+function resetPreviewTimerUi() {
+  if (reviewPreviewTimer) reviewPreviewTimer.classList.add("is-hidden");
+  if (reviewPreviewTimeText) reviewPreviewTimeText.textContent = "倒计时 0.0 秒";
+  if (reviewPreviewProgressBar) reviewPreviewProgressBar.style.width = "100%";
+}
+
 function stopReviewPreviewSequence() {
   state.reviewPreviewToken += 1;
   state.reviewPreviewRunning = false;
   clearReviewPreviewTimer();
+  clearReviewPreviewCountdownTimer();
+  resetPreviewTimerUi();
   if (reviewPreview) {
     reviewPreview.textContent = "";
     reviewPreview.classList.add("is-hidden");
   }
 }
 
-function getPromptPhrases(item) {
+function getDefaultPromptPair(item) {
+  if (!item) return ["", ""];
   if (item.type === "word") {
-    return [item.text, item.meaning || item.text];
+    const a = item.text || "";
+    const b = item.meaning || item.text || "";
+    return [a, b];
   }
   const list = CHAR_PHRASE_MAP.get(item.text) || [];
-  const first = list[0] || item.phrase || item.text;
-  const second = list[1] || item.phrase || `${item.text}${item.text}`;
+  const first = list[0] || item.phrase || item.text || "";
+  const second = list[1] || item.phrase || `${item.text || ""}${item.text || ""}`;
   return [first, second];
+}
+
+function applyLexiconOverrides(overrides) {
+  const map = overrides && typeof overrides === "object" ? overrides : {};
+  state.lexiconOverrides = map;
+
+  CHAR_ITEMS.forEach((item) => {
+    const base = BASE_ITEM_SNAPSHOT.get(`char:${item.text}`) || { pinyin: item.pinyin || "", prompt1: "", prompt2: "" };
+    item.pinyin = base.pinyin || item.pinyin || "-";
+    item.prompt1 = base.prompt1 || "";
+    item.prompt2 = base.prompt2 || "";
+  });
+  WORD_ITEMS.forEach((item) => {
+    const base = BASE_ITEM_SNAPSHOT.get(`word:${item.text}`) || { pinyin: item.pinyin || "", prompt1: "", prompt2: "" };
+    item.pinyin = base.pinyin || item.pinyin || "-";
+    item.prompt1 = base.prompt1 || "";
+    item.prompt2 = base.prompt2 || "";
+  });
+
+  Object.values(map).forEach((x) => {
+    if (!x || !x.text) return;
+    const type = x.type === "word" ? "word" : "char";
+    const item = type === "word" ? WORD_MAP.get(x.text) : CHAR_MAP.get(x.text);
+    if (!item) return;
+    if (typeof x.pinyin === "string" && x.pinyin.trim()) item.pinyin = x.pinyin.trim();
+    if (typeof x.prompt1 === "string") item.prompt1 = x.prompt1.trim();
+    if (typeof x.prompt2 === "string") item.prompt2 = x.prompt2.trim();
+  });
+}
+
+function getPromptPhrases(item) {
+  const [base1, base2] = getDefaultPromptPair(item);
+  return [item && item.prompt1 ? item.prompt1 : base1, item && item.prompt2 ? item.prompt2 : base2];
 }
 
 function refreshStats() {
@@ -7637,7 +8174,8 @@ function normalizeWrongItem(x) {
     level: item.level,
     pinyin: item.pinyin,
     meaning: item.meaning,
-    wordCorrectHits: item.type === "word" ? Math.max(0, wordCorrectHits) : 0
+    // keep legacy field name, now used for both char and word wrong-book hit count.
+    wordCorrectHits: Math.max(0, wordCorrectHits)
   };
 }
 
@@ -7656,14 +8194,12 @@ function addWrongItem(item) {
   const key = makeItemKey(item);
   const existIdx = state.wrongBook.findIndex((x) => x.key === key);
   if (existIdx >= 0) {
-    // 词汇再次写错，重置“连续写对次数”。
-    if (item.type === "word") {
-      const prev = state.wrongBook[existIdx];
-      if ((prev.wordCorrectHits || 0) !== 0) {
-        state.wrongBook[existIdx] = { ...prev, wordCorrectHits: 0 };
-        saveWrongBook();
-        rebuildWrongQueue();
-      }
+    // 错题再次写错，重置“连续写对次数”。
+    const prev = state.wrongBook[existIdx];
+    if ((prev.wordCorrectHits || 0) !== 0) {
+      state.wrongBook[existIdx] = { ...prev, wordCorrectHits: 0 };
+      saveWrongBook();
+      rebuildWrongQueue();
     }
     return;
   }
@@ -7686,15 +8222,12 @@ function removeWrongItem(item) {
   if (idx < 0) return;
 
   const current = state.wrongBook[idx];
-  if (item.type === "word") {
-    const hits = (Number(current.wordCorrectHits) || 0) + 1;
-    if (hits > 5) {
-      state.wrongBook = state.wrongBook.filter((x) => x.key !== key);
-    } else {
-      state.wrongBook[idx] = { ...current, wordCorrectHits: hits };
-    }
-  } else {
+  const hits = (Number(current.wordCorrectHits) || 0) + 1;
+  // 全部错题（汉字/词汇）都需连续写对 5 次才从错题本移除。
+  if (hits >= 5) {
     state.wrongBook = state.wrongBook.filter((x) => x.key !== key);
+  } else {
+    state.wrongBook[idx] = { ...current, wordCorrectHits: hits };
   }
   saveWrongBook();
   rebuildWrongQueue();
@@ -7742,14 +8275,14 @@ function switchTab(tab) {
 function speakPrompt(item) {
   if (!("speechSynthesis" in window) || !item) return;
   const [p1, p2] = getPromptPhrases(item);
-  let speakText = `${item.text}。${p1}。${p2}。`;
-  if (item.type === "word") speakText = `默写词语：${item.text}。${p1}。${p2}。`;
-  const utter = new SpeechSynthesisUtterance(speakText);
-  utter.lang = "zh-CN";
-  utter.rate = 0.86;
-  utter.pitch = 1;
-  window.speechSynthesis.cancel();
-  window.speechSynthesis.speak(utter);
+  speakChineseSegments(
+    [
+      { text: String(item.text || ""), rate: 0.77, pitch: 1.05, pauseMs: 260, split: true },
+      { text: String(p1 || ""), rate: 0.84, pitch: 1.01, pauseMs: 220, split: true },
+      { text: String(p2 || ""), rate: 0.84, pitch: 1.01, pauseMs: 150, split: true }
+    ],
+    { cancel: true }
+  );
 }
 
 function waitPreviewTick(ms) {
@@ -7774,6 +8307,7 @@ async function runPreReviewPreviewAndStart() {
   const enablePreview = state.reviewPreviewMode === "all";
   if (!enablePreview) {
     state.reviewPreviewRunning = false;
+    resetPreviewTimerUi();
     state.reviewActive = true;
     renderReviewCard();
     return;
@@ -7793,12 +8327,29 @@ async function runPreReviewPreviewAndStart() {
   const totalChars = list.reduce((sum, it) => sum + [...String((it && it.text) || "")].length, 0);
   const totalMs = Math.max(0, totalChars) * 500;
   const totalSec = totalMs / 1000;
-  dueCount.textContent = `预览中：共 ${totalChars} 字（总时长 ${totalSec.toFixed(1)} 秒）`;
+  if (reviewPreviewTimer) reviewPreviewTimer.classList.remove("is-hidden");
+  const updatePreviewCountdownText = () => {
+    const remainMs = Math.max(0, totalMs - (Date.now() - previewStartAt));
+    const remainSec = remainMs / 1000;
+    const ratio = totalMs > 0 ? Math.max(0, Math.min(1, remainMs / totalMs)) : 0;
+    dueCount.textContent = `预览中：共 ${totalChars} 字（总时长 ${totalSec.toFixed(1)} 秒）`;
+    if (reviewPreviewTimeText) reviewPreviewTimeText.textContent = `倒计时 ${remainSec.toFixed(1)} 秒`;
+    if (reviewPreviewProgressBar) reviewPreviewProgressBar.style.width = `${(ratio * 100).toFixed(1)}%`;
+  };
+  const previewStartAt = Date.now();
+  updatePreviewCountdownText();
+  clearReviewPreviewCountdownTimer();
+  state.reviewPreviewCountdownTimer = setInterval(() => {
+    if (state.reviewPreviewToken !== token) return;
+    updatePreviewCountdownText();
+  }, 100);
   if (reviewPreview) {
-    reviewPreview.textContent = `预览：${list.map((it) => it.text).join(" ")}`;
+    reviewPreview.textContent = list.map((it) => it.text).join(" ");
     reviewPreview.classList.remove("is-hidden");
   }
   await waitPreviewTick(totalMs);
+  clearReviewPreviewCountdownTimer();
+  resetPreviewTimerUi();
 
   if (state.reviewPreviewToken !== token) return;
   state.reviewPreviewRunning = false;
@@ -7818,6 +8369,7 @@ function startReviewSession(source, emptyMessage) {
   state.reviewList = filtered;
   state.reviewIndex = 0;
   state.reviewActive = false;
+  state.reviewSessionSource = "normal";
   state.reviewSessionPointsEarned = 0;
   state.reviewMessage = filtered.length > 0 ? "默写前预览中..." : emptyMessage;
   if (filtered.length > 0) beginReviewDraftSession();
@@ -7832,7 +8384,7 @@ function resolveItemByKey(key) {
   return CHAR_MAP.get(text) || null;
 }
 
-function startDirectReviewSession(items, emptyMessage) {
+function startDirectReviewSession(items, emptyMessage, options = {}) {
   clearAdvanceTimer();
   stopReviewPreviewSequence();
   if (state.reviewDraftActive) rollbackReviewDraftSession();
@@ -7848,6 +8400,7 @@ function startDirectReviewSession(items, emptyMessage) {
   state.reviewList = unique;
   state.reviewIndex = 0;
   state.reviewActive = false;
+  state.reviewSessionSource = options && options.source ? String(options.source) : "normal";
   state.reviewSessionPointsEarned = 0;
   state.reviewMessage = unique.length > 0 ? "默写前预览中..." : emptyMessage;
   if (unique.length > 0) beginReviewDraftSession();
@@ -7861,6 +8414,7 @@ function cancelReviewSessionWithoutSave() {
   state.reviewActive = false;
   state.reviewList = [];
   state.reviewIndex = 0;
+  state.reviewSessionSource = "normal";
   state.reviewSessionPointsEarned = 0;
   state.reviewMessage = "已取消本轮默写，数据未保存。";
   renderReviewCard();
@@ -7871,6 +8425,10 @@ function renderReviewCard() {
   const item = state.reviewActive ? currentReviewItem() : null;
   reviewBegin.disabled = Boolean(state.reviewActive) || state.reviewPreviewRunning;
   reviewRestart.disabled = !state.reviewActive || state.reviewPreviewRunning;
+  if (reviewStopBtn) {
+    reviewStopBtn.disabled = !state.reviewActive || state.reviewPreviewRunning;
+    reviewStopBtn.title = state.reviewActive ? t("review.stop") : "";
+  }
   reviewBegin.title = state.reviewPreviewRunning
     ? "默写前预览进行中，当前不可点击开始。"
     : state.reviewActive
@@ -7895,6 +8453,7 @@ function renderReviewCard() {
 
   if (!item) {
     cleanupAllDictationPads();
+    resetPreviewTimerUi();
     reviewPinyin.textContent = "拼音：-";
     reviewMeaning.textContent = "英语解释：-";
     if (reviewPreview && !state.reviewPreviewRunning) {
@@ -7904,21 +8463,25 @@ function renderReviewCard() {
     dictationWriterHost.innerHTML = `<span>${state.reviewMessage}</span>`;
     reviewStartBtn.classList.add("hidden");
     reviewResetBtn.classList.add("hidden");
+    if (reviewStopBtn) reviewStopBtn.classList.add("hidden");
     wordAnswerRow.classList.add("hidden");
     return;
   }
 
   reviewPinyin.textContent = `拼音：${item.pinyin || "-"}`;
   reviewMeaning.textContent = `英语解释：${item.meaning || "-"}`;
+  if (!state.reviewPreviewRunning) resetPreviewTimerUi();
   if (item.type === "char") {
     wordAnswerRow.classList.add("hidden");
     reviewStartBtn.classList.remove("hidden");
     reviewResetBtn.classList.remove("hidden");
+    if (reviewStopBtn) reviewStopBtn.classList.remove("hidden");
     initDictationPad();
   } else {
     initWordDictationPads(item);
     reviewStartBtn.classList.remove("hidden");
     reviewResetBtn.classList.remove("hidden");
+    if (reviewStopBtn) reviewStopBtn.classList.remove("hidden");
     wordAnswerRow.classList.add("hidden");
   }
 
@@ -7926,34 +8489,41 @@ function renderReviewCard() {
 }
 
 function finalizeReviewResult(item, isGood, accuracyPercent, meta = {}) {
+  const isWrongBookSinglePractice = state.reviewSessionSource === "wrongbook-single";
   const earnedPoints = 1;
   if (isGood) {
-    reviewFeedback.textContent = `${item.type === "word" ? "词语" : "默写"}正确`;
-    scheduleProgress(item, true);
-    removeWrongItem(item);
-    addPoints(earnedPoints);
-    state.reviewSessionPointsEarned += earnedPoints;
+    reviewFeedback.textContent = `${item.type === "word" ? "词语" : "默写"}正确${isWrongBookSinglePractice ? "（练习模式）" : ""}`;
+    if (!isWrongBookSinglePractice) {
+      scheduleProgress(item, true);
+      removeWrongItem(item);
+      addPoints(earnedPoints);
+      state.reviewSessionPointsEarned += earnedPoints;
+    }
   } else {
     reviewFeedback.textContent = `${item.type === "word" ? "词语" : "默写"}不正确`;
     reviewAnswer.textContent = `正确答案：${item.text}（${item.meaning || ""}）`;
     reviewAnswer.classList.remove("is-hidden");
-    scheduleProgress(item, false);
-    addWrongItem(item);
+    if (!isWrongBookSinglePractice) {
+      scheduleProgress(item, false);
+      addWrongItem(item);
+    }
   }
 
-  if (item.type === "char" && isGood && Array.isArray(meta.mlFeature)) {
+  if (!isWrongBookSinglePractice && item.type === "char" && isGood && Array.isArray(meta.mlFeature)) {
     updateCharMlPrototype(item.text, meta.mlFeature);
   }
-  if (item.type === "word" && Array.isArray(meta.mlUpdates)) {
+  if (!isWrongBookSinglePractice && item.type === "word" && Array.isArray(meta.mlUpdates)) {
     meta.mlUpdates.forEach((x) => {
       if (!x || !x.isGood || !x.char || !Array.isArray(x.feature)) return;
       updateCharMlPrototype(x.char, x.feature);
     });
   }
 
-  saveProgress();
+  if (!isWrongBookSinglePractice) saveProgress();
   refreshStats();
-  recordSubmission(item, isGood, accuracyPercent, { ...meta, points: earnedPoints });
+  if (!isWrongBookSinglePractice) {
+    recordSubmission(item, isGood, accuracyPercent, { ...meta, points: earnedPoints });
+  }
   renderAdminPanel();
   renderUserRecords();
 
@@ -7963,10 +8533,15 @@ function finalizeReviewResult(item, isGood, accuracyPercent, meta = {}) {
     if (state.reviewIndex >= state.reviewList.length) {
       const sessionPoints = Math.max(0, Number(state.reviewSessionPointsEarned) || 0);
       state.reviewSessionPointsEarned = 0;
-      commitReviewDraftSession().catch((err) => {
-        console.warn("commit review draft failed:", err && err.message ? err.message : err);
-      });
+      if (!isWrongBookSinglePractice) {
+        commitReviewDraftSession().catch((err) => {
+          console.warn("commit review draft failed:", err && err.message ? err.message : err);
+        });
+      } else {
+        endReviewDraftSession();
+      }
       state.reviewActive = false;
+      state.reviewSessionSource = "normal";
       state.reviewMessage = `本轮默写已结束，共完成 ${state.reviewList.length} 个${state.reviewType === "word" ? "词" : "字"}。`;
       state.reviewList = [];
       state.reviewIndex = 0;
@@ -8610,24 +9185,6 @@ function wireLearn() {
     learnCard.querySelector(".meta").classList.toggle("is-hidden");
   });
 
-  document.getElementById("mark-hard").addEventListener("click", () => {
-    const item = currentLearnList()[state.learnIndex];
-    if (!item) return;
-    scheduleProgress(item, false);
-    addWrongItem(item);
-    refreshStats();
-    rebuildWrongQueue();
-  });
-
-  document.getElementById("mark-easy").addEventListener("click", () => {
-    const item = currentLearnList()[state.learnIndex];
-    if (!item) return;
-    scheduleProgress(item, true);
-    removeWrongItem(item);
-    refreshStats();
-    rebuildWrongQueue();
-  });
-
   learnTypeFilter.addEventListener("change", (e) => {
     state.learnType = e.target.value;
     state.learnIndex = 0;
@@ -8805,6 +9362,15 @@ function wireReview() {
     refreshStats();
   });
 
+  if (reviewStopBtn) {
+    reviewStopBtn.addEventListener("click", () => {
+      if (!state.reviewActive && !state.reviewPreviewRunning) return;
+      const ok = window.confirm(t("review.stopConfirm"));
+      if (!ok) return;
+      cancelReviewSessionWithoutSave();
+    });
+  }
+
   reviewTypeFilter.addEventListener("change", (event) => {
     if (state.reviewDraftActive) rollbackReviewDraftSession();
     state.reviewType = event.target.value;
@@ -8914,16 +9480,17 @@ function wireWrongBook() {
     state.reviewType = item.type;
     reviewTypeFilter.value = item.type;
     switchTab("review");
-    startReviewSession([item], "该项目不存在。" );
+    startDirectReviewSession([item], "该项目不存在。", { source: "wrongbook-single" });
   });
 }
 
 function wireTabs() {
   tabs.forEach((btn) => {
     btn.addEventListener("click", () => {
-      if (state.auth.role === "admin" && !["admin", "admin-wrong"].includes(btn.dataset.tab)) return;
+      if (state.auth.role === "admin" && !["admin", "admin-wrong", "admin-items"].includes(btn.dataset.tab)) return;
       if (btn.dataset.tab === "admin" && state.auth.role !== "admin") return;
       if (btn.dataset.tab === "admin-wrong" && state.auth.role !== "admin") return;
+      if (btn.dataset.tab === "admin-items" && state.auth.role !== "admin") return;
       if ((state.reviewActive || state.reviewPreviewRunning) && state.tab === "review" && btn.dataset.tab !== "review") {
         const ok = window.confirm("正在默写中。切换菜单将取消本轮默写且数据不保存，是否继续？");
         if (!ok) return;
@@ -8932,6 +9499,7 @@ function wireTabs() {
       switchTab(btn.dataset.tab);
       if (btn.dataset.tab === "admin") renderAdminPanel();
       if (btn.dataset.tab === "admin-wrong") renderAdminWrongBookPanel();
+      if (btn.dataset.tab === "admin-items") renderAdminItemsPanel();
       if (btn.dataset.tab === "records") renderUserRecords();
     });
   });
@@ -9005,6 +9573,123 @@ function wireAdmin() {
         renderAdminWrongBookPanel();
       } catch (err) {
         if (adminWrongMsg) adminWrongMsg.textContent = err && err.message ? err.message : t("adminWrong.deleteFailed");
+      }
+    });
+  }
+
+  if (adminItemsTypeFilter) {
+    adminItemsTypeFilter.addEventListener("change", (event) => {
+      state.adminItemsTypeFilter = event.target.value || "all";
+      state.adminItemsPage = 1;
+      renderAdminItemsPanel();
+    });
+  }
+  if (adminItemsLevelFilter) {
+    adminItemsLevelFilter.addEventListener("change", (event) => {
+      state.adminItemsLevelFilter = event.target.value || "all";
+      state.adminItemsPage = 1;
+      renderAdminItemsPanel();
+    });
+  }
+  if (adminItemsSearch) {
+    adminItemsSearch.addEventListener("input", (event) => {
+      state.adminItemsSearch = event.target.value || "";
+      state.adminItemsPage = 1;
+      renderAdminItemsPanel();
+    });
+  }
+  if (adminItemsPageSize) {
+    adminItemsPageSize.addEventListener("change", (event) => {
+      state.adminItemsPageSize = Number(event.target.value) || 50;
+      state.adminItemsPage = 1;
+      renderAdminItemsPanel();
+    });
+  }
+  if (adminItemsPrev) {
+    adminItemsPrev.addEventListener("click", () => {
+      state.adminItemsPage = Math.max(1, state.adminItemsPage - 1);
+      renderAdminItemsPanel();
+    });
+  }
+  if (adminItemsNext) {
+    adminItemsNext.addEventListener("click", () => {
+      state.adminItemsPage += 1;
+      renderAdminItemsPanel();
+    });
+  }
+  if (adminItemsSaveAll) {
+    adminItemsSaveAll.addEventListener("click", async () => {
+      if (state.auth.role !== "admin" || state.adminItemsSaving) return;
+      const keys = getDirtyAdminItemKeys();
+      if (!keys.length) {
+        if (adminItemsMsg) adminItemsMsg.textContent = "没有需要保存的修改";
+        return;
+      }
+      state.adminItemsSaving = true;
+      if (adminItemsMsg) adminItemsMsg.textContent = `正在保存 ${keys.length} 项...`;
+      renderAdminItemsPanel();
+      let okCount = 0;
+      const failed = [];
+      let latestOverrides = state.lexiconOverrides;
+      for (const key of keys) {
+        try {
+          const resp = await saveAdminItemOverrideByKey(key);
+          latestOverrides = (resp && resp.lexiconOverrides) || latestOverrides;
+          okCount += 1;
+        } catch (err) {
+          const parsed = parseAdminItemKey(key);
+          failed.push((parsed && parsed.text) || key);
+        }
+      }
+      applyLexiconOverrides(latestOverrides || state.lexiconOverrides);
+      initWriteSelect();
+      renderLearnCard();
+      renderLearnCharList();
+      state.adminItemsSaving = false;
+      renderAdminItemsPanel();
+      if (adminItemsMsg) {
+        adminItemsMsg.textContent =
+          failed.length > 0
+            ? `已保存 ${okCount} 项，失败 ${failed.length} 项：${failed.slice(0, 3).join("、")}${failed.length > 3 ? "..." : ""}`
+            : `批量保存完成：${okCount} 项`;
+      }
+    });
+  }
+  if (adminItemsList) {
+    adminItemsList.addEventListener("input", (event) => {
+      const input = event.target.closest("input[data-admin-item]");
+      if (!input || state.auth.role !== "admin") return;
+      const key = String(input.dataset.key || "");
+      const field = String(input.dataset.adminItem || "");
+      setAdminDraftField(key, field, input.value || "");
+      refreshAdminItemsDirtyUi();
+    });
+
+    adminItemsList.addEventListener("click", async (event) => {
+      const btn = event.target.closest("button[data-action='save-admin-item']");
+      if (!btn || state.auth.role !== "admin" || state.adminItemsSaving) return;
+      const key = String(btn.dataset.key || "");
+      const parsed = parseAdminItemKey(key);
+      if (!parsed || !parsed.text) return;
+      if (!isAdminItemDirty(key, getAdminItemByKey(key))) {
+        if (adminItemsMsg) adminItemsMsg.textContent = `无修改：${parsed.text}`;
+        return;
+      }
+      try {
+        state.adminItemsSaving = true;
+        renderAdminItemsPanel();
+        const resp = await saveAdminItemOverrideByKey(key);
+        applyLexiconOverrides((resp && resp.lexiconOverrides) || state.lexiconOverrides);
+        initWriteSelect();
+        renderLearnCard();
+        renderLearnCharList();
+        state.adminItemsSaving = false;
+        renderAdminItemsPanel();
+        if (adminItemsMsg) adminItemsMsg.textContent = `已保存：${parsed.text}`;
+      } catch (err) {
+        state.adminItemsSaving = false;
+        renderAdminItemsPanel();
+        if (adminItemsMsg) adminItemsMsg.textContent = err && err.message ? err.message : "保存失败";
       }
     });
   }
@@ -9342,6 +10027,7 @@ async function init() {
   const storedLang = normalizeLang(localStorage.getItem(LANG_KEY) || "");
   state.lang = storedLang;
   setLanguage(state.lang, false);
+  initSpeechEngine();
   initLevelFilter();
   initWriteSelect();
   syncWriteListFromLearnSelection({ resetPage: true });

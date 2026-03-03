@@ -61,6 +61,7 @@
         <div class="top-reward">
           <p id="reward-text">积分统计加载中...</p>
           <p id="points-gain-fx" aria-live="polite"></p>
+          <canvas id="points-fireworks" aria-hidden="true"></canvas>
         </div>
         <div class="actions header-user-actions">
           <label class="lang-picker">
@@ -85,6 +86,7 @@
         <button class="tab hidden" id="records-tab" data-tab="records" data-i18n="nav.records">我的记录</button>
         <button class="tab hidden" id="admin-tab" data-tab="admin" data-i18n="nav.adminReview">管理审核</button>
         <button class="tab hidden" id="admin-wrong-tab" data-tab="admin-wrong" data-i18n="nav.adminWrong">题本管理</button>
+        <button class="tab hidden" id="admin-items-tab" data-tab="admin-items">学习项管理</button>
       </nav>
 
       <section class="panel is-active" id="learn-panel">
@@ -119,8 +121,6 @@
           <button id="learn-play" class="ghost">听读音</button>
           <button id="learn-mode-toggle" class="ghost">顺序学习</button>
           <button id="learn-auto-speak" class="ghost">自动朗读：关</button>
-          <button id="mark-hard" class="warn">记不牢</button>
-          <button id="mark-easy" class="good">记住了</button>
         </div>
 
         <article class="card">
@@ -307,6 +307,12 @@
         <article class="card review-dictation" id="review-card">
           <p class="dictation-tip">听读音后，默写对应汉字</p>
           <p id="review-preview" class="dictation-preview is-hidden"></p>
+          <div id="review-preview-timer" class="preview-timer is-hidden" aria-live="polite">
+            <p id="review-preview-time-text">倒计时 0.0 秒</p>
+            <div class="preview-progress-track">
+              <div id="review-preview-progress-bar" class="preview-progress-bar"></div>
+            </div>
+          </div>
           <div class="actions">
             <button id="review-play">播放读音</button>
             <button id="review-replay" class="ghost">再播一次</button>
@@ -330,6 +336,7 @@
             <button id="review-start" class="good">完成并判定</button>
             <button id="review-reset" class="ghost">重写本题</button>
             <button id="review-show" class="ghost">显示答案</button>
+            <button id="review-stop" class="warn" data-i18n="review.stop">停止默写</button>
           </div>
           <p id="review-feedback"></p>
           <p id="review-answer" class="is-hidden"></p>
@@ -399,6 +406,66 @@
         <p id="admin-wrong-msg"></p>
         <article class="card">
           <div id="admin-wrong-list"></div>
+        </article>
+      </section>
+
+      <section class="panel" id="admin-items-panel">
+        <div class="panel-head">
+          <h2>全部学习项列表</h2>
+          <p id="admin-items-count">项目：0 条</p>
+        </div>
+        <div class="review-config">
+          <label>
+            类型
+            <select id="admin-items-type-filter">
+              <option value="all">全部</option>
+              <option value="char">汉字</option>
+              <option value="word">词汇</option>
+            </select>
+          </label>
+          <label>
+            HSK等级
+            <select id="admin-items-level-filter">
+              <option value="all">全部</option>
+            </select>
+          </label>
+          <label>
+            搜索
+            <input id="admin-items-search" type="text" placeholder="输入汉字/词汇/拼音" />
+          </label>
+        </div>
+        <div class="actions">
+          <label>
+            每页
+            <select id="admin-items-page-size">
+              <option value="20">20</option>
+              <option value="50" selected>50</option>
+              <option value="100">100</option>
+            </select>
+          </label>
+          <button id="admin-items-save-all" class="good" disabled>批量保存</button>
+          <button id="admin-items-prev" class="ghost">上一页</button>
+          <button id="admin-items-next" class="ghost">下一页</button>
+          <span id="admin-items-page-info">第 1 / 1 页</span>
+        </div>
+        <p id="admin-items-msg"></p>
+        <article class="card">
+          <div class="char-list-wrap">
+            <table class="char-list-table">
+              <thead>
+                <tr>
+                  <th>内容</th>
+                  <th>类型</th>
+                  <th>HSK</th>
+                  <th>拼音</th>
+                  <th>提示词1</th>
+                  <th>提示词2</th>
+                  <th>操作</th>
+                </tr>
+              </thead>
+              <tbody id="admin-items-list"></tbody>
+            </table>
+          </div>
         </article>
       </section>
 
