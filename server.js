@@ -3,16 +3,23 @@ const fs = require("fs");
 const path = require("path");
 const crypto = require("crypto");
 const { DatabaseSync } = require("node:sqlite");
+const { Pool } = require("pg");
 const { URL } = require("url");
 
 const HOST = process.env.HOST || "0.0.0.0";
 const PORT = Number(process.env.PORT || 8787);
 const ROOT = __dirname;
-const DB_PATH = path.join(ROOT, "data", "server_db.sqlite");
+const DB_PATH = process.env.DB_PATH
+  ? path.resolve(String(process.env.DB_PATH))
+  : path.join(ROOT, "data", "server_db.sqlite");
+const DATABASE_URL = String(process.env.DATABASE_URL || "").trim();
+const USE_POSTGRES = Boolean(DATABASE_URL);
 const LEGACY_JSON_DB_PATH = path.join(ROOT, "data", "server_db.json");
+const LEGACY_SQLITE_DB_PATH = path.join(ROOT, "data", "server_db.sqlite");
 const DB_STATE_KEY = "state";
 const SESSION_EXPIRE_MS = 30 * 24 * 60 * 60 * 1000;
 let sqliteDb = null;
+let pgPool = null;
 
 const MIME = {
   ".html": "text/html; charset=utf-8",
@@ -189,6 +196,17 @@ function getSqliteDb() {
   return sqliteDb;
 }
 
+function getPgPool() {
+  if (!USE_POSTGRES) return null;
+  if (pgPool) return pgPool;
+  const disableSsl = String(process.env.PGSSL || "").toLowerCase() === "disable";
+  pgPool = new Pool({
+    connectionString: DATABASE_URL,
+    ssl: disableSsl ? false : { rejectUnauthorized: false }
+  });
+  return pgPool;
+}
+
 function readLegacyJsonDb() {
   if (!fs.existsSync(LEGACY_JSON_DB_PATH)) return null;
   try {
@@ -199,7 +217,76 @@ function readLegacyJsonDb() {
   }
 }
 
-function ensureDbFile() {
+function readSqliteStateFromFile(filePath) {
+  const abs = path.resolve(filePath);
+  if (!fs.existsSync(abs)) return null;
+  let tempDb = null;
+  try {
+    tempDb = new DatabaseSync(abs);
+    tempDb.exec(`
+      CREATE TABLE IF NOT EXISTS kv_store (
+        key TEXT PRIMARY KEY,
+        value TEXT NOT NULL
+      );
+    `);
+    const row = tempDb.prepare("SELECT value FROM kv_store WHERE key = ?").get(DB_STATE_KEY);
+    if (!row || !row.value) return null;
+    return normalizeDbState(JSON.parse(String(row.value)));
+  } catch {
+    return null;
+  } finally {
+    try {
+      if (tempDb && typeof tempDb.close === "function") tempDb.close();
+    } catch {}
+  }
+}
+
+async function ensurePostgresStore() {
+  const pool = getPgPool();
+  await pool.query(`
+    CREATE TABLE IF NOT EXISTS kv_store (
+      key TEXT PRIMARY KEY,
+      value TEXT NOT NULL,
+      updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+    );
+  `);
+}
+
+async function readPostgresState() {
+  const pool = getPgPool();
+  const result = await pool.query("SELECT value FROM kv_store WHERE key = $1 LIMIT 1", [DB_STATE_KEY]);
+  if (!result.rows[0] || !result.rows[0].value) return null;
+  return normalizeDbState(JSON.parse(String(result.rows[0].value)));
+}
+
+async function writePostgresState(dbState) {
+  const pool = getPgPool();
+  const normalized = normalizeDbState(dbState);
+  await pool.query(
+    `
+      INSERT INTO kv_store(key, value, updated_at)
+      VALUES ($1, $2, NOW())
+      ON CONFLICT(key)
+      DO UPDATE SET value = EXCLUDED.value, updated_at = NOW()
+    `,
+    [DB_STATE_KEY, JSON.stringify(normalized)]
+  );
+}
+
+async function ensureDbFile() {
+  if (USE_POSTGRES) {
+    await ensurePostgresStore();
+    const existing = await readPostgresState();
+    if (existing) return;
+    const initial =
+      readSqliteStateFromFile(DB_PATH) ||
+      readSqliteStateFromFile(LEGACY_SQLITE_DB_PATH) ||
+      readLegacyJsonDb() ||
+      defaultDbState();
+    await writePostgresState(initial);
+    return;
+  }
+
   const db = getSqliteDb();
   const row = db.prepare("SELECT value FROM kv_store WHERE key = ?").get(DB_STATE_KEY);
   if (row && row.value) return;
@@ -209,8 +296,16 @@ function ensureDbFile() {
   db.prepare("INSERT OR REPLACE INTO kv_store(key, value) VALUES(?, ?)").run(DB_STATE_KEY, JSON.stringify(normalized));
 }
 
-function loadDb() {
-  ensureDbFile();
+async function loadDb() {
+  await ensureDbFile();
+  if (USE_POSTGRES) {
+    try {
+      const state = await readPostgresState();
+      return state || normalizeDbState(defaultDbState());
+    } catch {
+      return normalizeDbState(defaultDbState());
+    }
+  }
   const db = getSqliteDb();
   try {
     const row = db.prepare("SELECT value FROM kv_store WHERE key = ?").get(DB_STATE_KEY);
@@ -222,7 +317,11 @@ function loadDb() {
   }
 }
 
-function saveDb(db) {
+async function saveDb(db) {
+  if (USE_POSTGRES) {
+    await writePostgresState(db);
+    return;
+  }
   const conn = getSqliteDb();
   const normalized = normalizeDbState(db);
   conn.prepare("INSERT OR REPLACE INTO kv_store(key, value) VALUES(?, ?)").run(DB_STATE_KEY, JSON.stringify(normalized));
@@ -421,7 +520,7 @@ function removeUserDeep(db, username) {
 }
 
 async function handleApi(req, res, pathname) {
-  const db = loadDb();
+  const db = await loadDb();
 
   if (req.method === "OPTIONS") return sendJson(res, 200, { ok: true });
 
@@ -470,7 +569,7 @@ async function handleApi(req, res, pathname) {
       if (!parent.linkedChildren.includes(username)) parent.linkedChildren.push(username);
     }
     ensureUserData(db, username);
-    saveDb(db);
+    await saveDb(db);
     return sendJson(res, 201, { ok: true, message: "注册成功，请登录" });
   }
 
@@ -491,7 +590,7 @@ async function handleApi(req, res, pathname) {
       createdAt: now(),
       expiresAt: now() + SESSION_EXPIRE_MS
     });
-    saveDb(db);
+    await saveDb(db);
     return sendJson(res, 200, {
       ok: true,
       token,
@@ -528,13 +627,13 @@ async function handleApi(req, res, pathname) {
     user.passwordHash = createPasswordHash(newPassword);
     // 修改密码后，仅保留当前会话，避免历史会话继续可用。
     db.sessions = (db.sessions || []).filter((x) => x && (x.username !== auth.username || x.token === auth.token));
-    saveDb(db);
+    await saveDb(db);
     return sendJson(res, 200, { ok: true, message: "密码修改成功" });
   }
 
   if (req.method === "POST" && pathname === "/api/logout") {
     db.sessions = db.sessions.filter((x) => x.token !== auth.token);
-    saveDb(db);
+    await saveDb(db);
     return sendJson(res, 200, { ok: true });
   }
 
@@ -561,7 +660,7 @@ async function handleApi(req, res, pathname) {
   if (req.method === "PUT" && pathname === "/api/user-data") {
     const body = await parseBody(req);
     db.userData[auth.username] = normalizeUserData(body);
-    saveDb(db);
+    await saveDb(db);
     return sendJson(res, 200, { ok: true, savedAt: now() });
   }
 
@@ -593,7 +692,7 @@ async function handleApi(req, res, pathname) {
     if (username === auth.username) return sendJson(res, 400, { ok: false, message: "不允许删除当前登录账号" });
     removeUserDeep(db, username);
     ensureFamilyLinks(db);
-    saveDb(db);
+    await saveDb(db);
     return sendJson(res, 200, { ok: true, deleted: username });
   }
 
@@ -626,7 +725,7 @@ async function handleApi(req, res, pathname) {
       createdAt: Number(body.createdAt) || now()
     };
     db.submissions.push(row);
-    saveDb(db);
+    await saveDb(db);
     return sendJson(res, 201, { ok: true, submission: row });
   }
 
@@ -664,7 +763,7 @@ async function handleApi(req, res, pathname) {
         updateWrongBookForUser(db, submission.username, submission, after);
       }
     }
-    saveDb(db);
+    await saveDb(db);
     return sendJson(res, 200, { ok: true, submission });
   }
 
@@ -707,7 +806,7 @@ async function handleApi(req, res, pathname) {
       data.wrongBook.splice(idx, 1);
     }
 
-    saveDb(db);
+    await saveDb(db);
     return sendJson(res, 200, { ok: true, wrongBook: data.wrongBook });
   }
 
@@ -730,7 +829,7 @@ async function handleApi(req, res, pathname) {
         updatedBy: auth.username
       };
     }
-    saveDb(db);
+    await saveDb(db);
     return sendJson(res, 200, {
       ok: true,
       key,
@@ -786,6 +885,12 @@ const server = http.createServer(async (req, res) => {
 });
 
 server.listen(PORT, HOST, () => {
-  ensureDbFile();
-  console.log(`HSK server running on http://${HOST}:${PORT}`);
+  ensureDbFile()
+    .then(() => {
+      console.log(`HSK server running on http://${HOST}:${PORT}`);
+    })
+    .catch((err) => {
+      console.error("failed to initialize db:", err && err.message ? err.message : err);
+      process.exit(1);
+    });
 });
