@@ -519,6 +519,20 @@ function removeUserDeep(db, username) {
   db.sessions = (db.sessions || []).filter((x) => x && x.username !== target);
 }
 
+function resetUserDataDeep(db, username) {
+  const target = String(username || "").trim();
+  if (!target) return { submissionsCleared: 0, sessionsCleared: 0 };
+  const beforeSubmissions = Array.isArray(db.submissions) ? db.submissions.length : 0;
+  const beforeSessions = Array.isArray(db.sessions) ? db.sessions.length : 0;
+  db.userData[target] = defaultUserData();
+  db.submissions = (db.submissions || []).filter((x) => x && x.username !== target);
+  db.sessions = (db.sessions || []).filter((x) => x && x.username !== target);
+  return {
+    submissionsCleared: Math.max(0, beforeSubmissions - db.submissions.length),
+    sessionsCleared: Math.max(0, beforeSessions - db.sessions.length)
+  };
+}
+
 async function handleApi(req, res, pathname) {
   const db = await loadDb();
 
@@ -679,6 +693,23 @@ async function handleApi(req, res, pathname) {
         return a.username.localeCompare(b.username);
       });
     return sendJson(res, 200, { ok: true, users });
+  }
+
+  if (req.method === "POST" && pathname.startsWith("/api/admin/users/") && pathname.endsWith("/reset-data")) {
+    if (auth.role !== "admin") return sendJson(res, 403, { ok: false, message: "仅管理员可操作" });
+    const parts = pathname.split("/");
+    const username = decodeURIComponent(parts[4] || "").trim();
+    if (!username) return sendJson(res, 400, { ok: false, message: "用户名不能为空" });
+    const user = db.users.find((x) => x && x.username === username);
+    if (!user) return sendJson(res, 404, { ok: false, message: "用户不存在" });
+    if (normalizeRole(user.role) === "admin") return sendJson(res, 400, { ok: false, message: "不允许清空管理员账号数据" });
+    const result = resetUserDataDeep(db, username);
+    await saveDb(db);
+    return sendJson(res, 200, {
+      ok: true,
+      username,
+      ...result
+    });
   }
 
   if (req.method === "DELETE" && pathname.startsWith("/api/admin/users/")) {

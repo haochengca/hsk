@@ -7144,12 +7144,16 @@ function renderAdminUsersPanel() {
             : "-";
       const time = u.createdAt ? new Date(u.createdAt).toLocaleString() : "-";
       const canDelete = role !== "admin" && u.username !== state.auth.username;
+      const canResetData = role !== "admin";
       return `<tr>
         <td>${escapeHtmlAttr(u.username || "-")}</td>
         <td>${escapeHtmlAttr(getRoleLabel(role))}</td>
         <td>${escapeHtmlAttr(relation)}</td>
         <td>${escapeHtmlAttr(time)}</td>
-        <td><button class="${canDelete ? "warn" : "ghost"}" data-action="delete-user" data-username="${escapeHtmlAttr(u.username || "")}" ${canDelete ? "" : "disabled"}>删除</button></td>
+        <td>
+          <button class="ghost" data-action="reset-user-data" data-username="${escapeHtmlAttr(u.username || "")}" ${canResetData ? "" : "disabled"}>清空数据</button>
+          <button class="${canDelete ? "warn" : "ghost"}" data-action="delete-user" data-username="${escapeHtmlAttr(u.username || "")}" ${canDelete ? "" : "disabled"}>删除</button>
+        </td>
       </tr>`;
     })
     .join("");
@@ -10068,9 +10072,39 @@ function wireAdmin() {
   }
   if (adminUsersList) {
     adminUsersList.addEventListener("click", async (event) => {
-      const btn = event.target.closest("button[data-action='delete-user']");
-      if (!btn || state.auth.role !== "admin") return;
-      const username = String(btn.dataset.username || "").trim();
+      if (state.auth.role !== "admin") return;
+
+      const resetBtn = event.target.closest("button[data-action='reset-user-data']");
+      if (resetBtn) {
+        const username = String(resetBtn.dataset.username || "").trim();
+        if (!username) return;
+        const ok = window.confirm(`确认清空用户「${username}」的数据吗？将清空学习进度、错题本、积分、默写记录，并让该用户会话失效。`);
+        if (!ok) return;
+        try {
+          const resp = await apiRequest(`/api/admin/users/${encodeURIComponent(username)}/reset-data`, {
+            method: "POST"
+          });
+          if (adminUsersMsg) {
+            const count = Number(resp && resp.submissionsCleared) || 0;
+            adminUsersMsg.textContent = `已清空用户数据：${username}（清理记录 ${count} 条）`;
+          }
+          if (state.adminWrongBookQueryUser === username) {
+            state.adminWrongBookItems = [];
+            renderAdminWrongBookPanel();
+          }
+          state.submissions = state.submissions.filter((x) => x && x.username !== username);
+          renderAdminPanel();
+          renderUserRecords();
+          await fetchAdminUsers();
+        } catch (err) {
+          if (adminUsersMsg) adminUsersMsg.textContent = err && err.message ? err.message : "清空用户数据失败";
+        }
+        return;
+      }
+
+      const deleteBtn = event.target.closest("button[data-action='delete-user']");
+      if (!deleteBtn) return;
+      const username = String(deleteBtn.dataset.username || "").trim();
       if (!username) return;
       const ok = window.confirm(`确认删除用户「${username}」吗？该用户的学习数据和记录会被一并删除。`);
       if (!ok) return;

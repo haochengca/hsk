@@ -176,6 +176,21 @@ Base URL: `/api`
   - 删除父母/孩子账号时会同步清理其学习数据、会话、提交记录，并维护亲子关联关系
 - 响应：`{ ok: true, deleted: username }`
 
+### `POST /admin/users/:username/reset-data`
+- Header: `Authorization`（admin）
+- 说明：
+  - 不删除账号本身，仅清空该用户学习数据（`userData`）、该用户默写记录（`submissions.username`）与该用户会话（`sessions.username`）
+  - 不允许清空管理员账号数据
+- 响应：
+```json
+{
+  "ok": true,
+  "username": "alice",
+  "submissionsCleared": 12,
+  "sessionsCleared": 1
+}
+```
+
 说明：
 - 父母账号可使用 `PUT /submissions/:id/review` 与错题本管理接口（`/api/admin/users/:username/wrong-book` 的查询/编辑）。
 - 管理员账号不可使用 `PUT /submissions/:id/review`，可使用用户管理接口（`GET/DELETE /api/admin/users...`）与学习项管理接口。
