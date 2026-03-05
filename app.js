@@ -5909,6 +5909,8 @@ const state = {
   learnCharPage: 1,
   learnCharPageSize: 50,
   learnListTypeFilter: "all",
+  learnDictationCountFilter: "all",
+  learnAccuracyFilter: "all",
   learnSelectedKeys: [],
   writeListSearch: "",
   writeListPage: 1,
@@ -6055,8 +6057,12 @@ const learnMeaning = document.getElementById("learn-meaning");
 const learnProgress = document.getElementById("learn-progress");
 const learnCharSearch = document.getElementById("learn-char-search");
 const learnListTypeFilter = document.getElementById("learn-list-type-filter");
+const learnDictationCountFilter = document.getElementById("learn-dictation-count-filter");
+const learnAccuracyFilter = document.getElementById("learn-accuracy-filter");
+const learnResetFilters = document.getElementById("learn-reset-filters");
 const learnCharList = document.getElementById("learn-char-list");
 const learnListSummary = document.getElementById("learn-list-summary");
+const learnMetricStrip = document.getElementById("learn-metric-strip");
 const learnCharPageSize = document.getElementById("learn-char-page-size");
 const learnCharPrev = document.getElementById("learn-char-prev");
 const learnCharNext = document.getElementById("learn-char-next");
@@ -7018,7 +7024,7 @@ function renderAdminPanel() {
     adminList.innerHTML = "<p>仅父母可查看。</p>";
     return;
   }
-  const keyword = (adminUserFilter?.value || "").trim().toLowerCase();
+  const keyword = "";
   const range = adminTimeFilter?.value || "all";
   const now = Date.now();
   const rangeMs = range === "7" ? 7 * 24 * 60 * 60 * 1000 : range === "30" ? 30 * 24 * 60 * 60 * 1000 : 0;
@@ -7163,7 +7169,7 @@ function getAdminEditableItems() {
   const merged = [...CHAR_ITEMS, ...WORD_ITEMS];
   const typeFilter = state.adminItemsTypeFilter || "all";
   const levelFilter = state.adminItemsLevelFilter || "all";
-  const keyword = String(state.adminItemsSearch || "").trim().toLowerCase();
+  const keyword = "";
   return merged.filter((it) => {
     if (typeFilter !== "all" && it.type !== typeFilter) return false;
     if (levelFilter !== "all" && String(it.level) !== String(levelFilter)) return false;
@@ -8551,10 +8557,36 @@ function renderLearnCard() {
   if (state.learnAutoSpeak && list.length) speakLearnItem(item);
 }
 
-function getUserDictatedCharSet() {
-  if (!state.auth.username) return new Set();
-  const rows = state.submissions.filter((x) => x && x.username === state.auth.username);
-  return new Set(rows.map((x) => `${x.type}:${x.target}`));
+function getUserDictationStatsMap() {
+  const map = new Map();
+  if (!state.auth.username) return map;
+  const rows = state.submissions.filter((x) => x && x.username === state.auth.username && x.type && x.target);
+  rows.forEach((row) => {
+    const key = `${row.type}:${row.target}`;
+    const prev = map.get(key) || { total: 0, correct: 0, accuracy: 0 };
+    const total = prev.total + 1;
+    const correct = prev.correct + (row.finalResult ? 1 : 0);
+    const accuracy = total > 0 ? Math.round((correct / total) * 100) : 0;
+    map.set(key, { total, correct, accuracy });
+  });
+  return map;
+}
+
+function matchLearnDictationCountFilter(total, filterValue) {
+  if (filterValue === "0") return total === 0;
+  if (filterValue === "1-4") return total >= 1 && total <= 4;
+  if (filterValue === "5+") return total >= 5;
+  return true;
+}
+
+function matchLearnAccuracyFilter(total, accuracy, filterValue) {
+  if (filterValue === "unattempted") return total === 0;
+  if (total <= 0) return filterValue === "all";
+  if (filterValue === "lt60") return accuracy < 60;
+  if (filterValue === "60-79") return accuracy >= 60 && accuracy < 80;
+  if (filterValue === "80-99") return accuracy >= 80 && accuracy < 100;
+  if (filterValue === "100") return accuracy === 100;
+  return true;
 }
 
 function renderLearnCharList() {
@@ -8562,9 +8594,16 @@ function renderLearnCharList() {
   const keyword = String(state.learnCharSearch || "").trim().toLowerCase();
   const merged = [...CHAR_ITEMS, ...WORD_ITEMS];
   const typeFilter = state.learnListTypeFilter || "all";
+  const countFilter = state.learnDictationCountFilter || "all";
+  const accuracyFilter = state.learnAccuracyFilter || "all";
   const selectedSet = new Set(state.learnSelectedKeys || []);
+  const statsMap = getUserDictationStatsMap();
   const allItems = merged.filter((it) => {
+    const key = `${it.type}:${it.text}`;
+    const stats = statsMap.get(key) || { total: 0, correct: 0, accuracy: 0 };
     if (typeFilter !== "all" && it.type !== typeFilter) return false;
+    if (!matchLearnDictationCountFilter(stats.total, countFilter)) return false;
+    if (!matchLearnAccuracyFilter(stats.total, stats.accuracy, accuracyFilter)) return false;
     if (!keyword) return true;
     return (
       String(it.text || "").includes(keyword) ||
@@ -8577,11 +8616,34 @@ function renderLearnCharList() {
   state.learnCharPage = Math.max(1, Math.min(state.learnCharPage, totalPages));
   const start = (state.learnCharPage - 1) * pageSize;
   const pageItems = allItems.slice(start, start + pageSize);
-  const dictatedSet = getUserDictatedCharSet();
   const wrongSet = new Set(state.wrongBook.filter((x) => x && x.key).map((x) => x.key));
-  learnListSummary.textContent = `共 ${allItems.length} 项（汉字 ${CHAR_ITEMS.length}，词汇 ${WORD_ITEMS.length}，已选 ${selectedSet.size}）`;
+  const attemptedCount = allItems.filter((it) => {
+    const key = `${it.type}:${it.text}`;
+    const stats = statsMap.get(key);
+    return stats && stats.total > 0;
+  }).length;
+  const attemptedStats = allItems
+    .map((it) => statsMap.get(`${it.type}:${it.text}`) || { total: 0, accuracy: 0 })
+    .filter((x) => x.total > 0);
+  const weakCount = attemptedStats.filter((x) => x.accuracy < 80).length;
+  const avgAccuracy = attemptedStats.length
+    ? Math.round(attemptedStats.reduce((sum, x) => sum + x.accuracy, 0) / attemptedStats.length)
+    : 0;
+  learnListSummary.textContent = `共 ${allItems.length} 项（已默写 ${attemptedCount} 项，已选 ${selectedSet.size}）`;
+  if (learnMetricStrip) {
+    learnMetricStrip.innerHTML = [
+      { label: "总项", value: `${allItems.length}` },
+      { label: "已默写", value: `${attemptedCount}` },
+      { label: "平均准确率", value: attemptedStats.length ? `${avgAccuracy}%` : "-" },
+      { label: "薄弱项(<80%)", value: `${weakCount}` }
+    ]
+      .map((x) => `<div class="learn-metric"><p class="label">${x.label}</p><p class="value">${x.value}</p></div>`)
+      .join("");
+  }
   if (learnCharPageSize) learnCharPageSize.value = String(pageSize);
   if (learnListTypeFilter) learnListTypeFilter.value = typeFilter;
+  if (learnDictationCountFilter) learnDictationCountFilter.value = countFilter;
+  if (learnAccuracyFilter) learnAccuracyFilter.value = accuracyFilter;
   learnCharPageInfo.textContent = `第 ${state.learnCharPage} / ${totalPages} 页`;
   learnCharPrev.disabled = state.learnCharPage <= 1;
   learnCharNext.disabled = state.learnCharPage >= totalPages;
@@ -8593,19 +8655,22 @@ function renderLearnCharList() {
   learnCharList.innerHTML = pageItems
     .map((it) => {
       const key = `${it.type}:${it.text}`;
-      const dictated = dictatedSet.has(key);
+      const stats = statsMap.get(key) || { total: 0, correct: 0, accuracy: 0 };
       const inWrong = wrongSet.has(key);
       const checked = selectedSet.has(key) ? "checked" : "";
       const charCellClass = it.type === "char" ? "char-cell demo-char-cell" : "char-cell";
       const charCellAttrs =
         it.type === "char" ? `data-action="show-stroke-demo" data-char="${it.text}" title="点击演示笔画"` : "";
+      const accuracyText = stats.total > 0 ? `${stats.accuracy}%` : "-";
+      const accuracyClass = stats.total <= 0 ? "" : stats.accuracy >= 80 ? "status-yes" : "status-no";
       return `<tr>
         <td><input type="checkbox" data-action="select-item" data-key="${key}" ${checked} /></td>
         <td class="${charCellClass}" ${charCellAttrs}>${it.text}</td>
         <td>${it.type === "word" ? "词汇" : "汉字"}</td>
         <td>${it.pinyin || "-"}</td>
         <td>${it.level}</td>
-        <td class="${dictated ? "status-yes" : "status-no"}">${dictated ? "是" : "否"}</td>
+        <td>${stats.total}</td>
+        <td class="${accuracyClass}">${accuracyText}</td>
         <td class="${inWrong ? "status-no" : "status-yes"}">${inWrong ? "是" : "否"}</td>
       </tr>`;
     })
@@ -9665,17 +9730,50 @@ function wireLearn() {
     renderLearnCharList();
   });
 
-  learnCharSearch.addEventListener("input", (event) => {
-    state.learnCharSearch = event.target.value || "";
-    state.learnCharPage = 1;
-    renderLearnCharList();
-  });
+  if (learnCharSearch) {
+    learnCharSearch.addEventListener("input", (event) => {
+      state.learnCharSearch = event.target.value || "";
+      state.learnCharPage = 1;
+      renderLearnCharList();
+    });
+  }
 
   learnListTypeFilter.addEventListener("change", (event) => {
     state.learnListTypeFilter = event.target.value || "all";
     state.learnCharPage = 1;
     renderLearnCharList();
   });
+
+  if (learnDictationCountFilter) {
+    learnDictationCountFilter.addEventListener("change", (event) => {
+      state.learnDictationCountFilter = event.target.value || "all";
+      state.learnCharPage = 1;
+      renderLearnCharList();
+    });
+  }
+
+  if (learnAccuracyFilter) {
+    learnAccuracyFilter.addEventListener("change", (event) => {
+      state.learnAccuracyFilter = event.target.value || "all";
+      state.learnCharPage = 1;
+      renderLearnCharList();
+    });
+  }
+
+  if (learnResetFilters) {
+    learnResetFilters.addEventListener("click", () => {
+      state.learnCharSearch = "";
+      state.learnListTypeFilter = "all";
+      state.learnDictationCountFilter = "all";
+      state.learnAccuracyFilter = "all";
+      state.learnCharPage = 1;
+      if (learnCharSearch) learnCharSearch.value = "";
+      if (learnListTypeFilter) learnListTypeFilter.value = "all";
+      if (learnDictationCountFilter) learnDictationCountFilter.value = "all";
+      if (learnAccuracyFilter) learnAccuracyFilter.value = "all";
+      renderLearnCharList();
+    });
+  }
 
   learnCharPageSize.addEventListener("change", (event) => {
     state.learnCharPageSize = Number(event.target.value) || 50;
@@ -10089,9 +10187,11 @@ function wireAuth() {
 
 function wireAdmin() {
   adminFilterApply.addEventListener("click", renderAdminPanel);
-  adminUserFilter.addEventListener("keydown", (event) => {
-    if (event.key === "Enter") renderAdminPanel();
-  });
+  if (adminUserFilter) {
+    adminUserFilter.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") renderAdminPanel();
+    });
+  }
   adminTimeFilter.addEventListener("change", renderAdminPanel);
   if (adminUsersRefresh) {
     adminUsersRefresh.addEventListener("click", () => {
@@ -10157,7 +10257,10 @@ function wireAdmin() {
   }
   if (adminWrongSearch) {
     adminWrongSearch.addEventListener("click", () => {
-      queryAdminWrongBook((adminWrongSearchUser && adminWrongSearchUser.value) || "");
+      const fallback = String(state.adminWrongBookQueryUser || "").trim();
+      const name = String(window.prompt("请输入用户名以查询错题本：", fallback) || "").trim();
+      if (!name) return;
+      queryAdminWrongBook(name);
     });
   }
   if (adminWrongSearchUser) {

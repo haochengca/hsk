@@ -131,24 +131,44 @@
           <button id="learn-auto-speak" class="ghost">自动朗读：关</button>
         </div>
 
-        <article class="card">
-          <div class="panel-head">
+        <article class="card learn-list-card">
+          <div class="panel-head learn-list-head">
             <h3>全部学习项列表</h3>
-            <label>
-              搜索
-              <input id="learn-char-search" type="text" placeholder="输入汉字或拼音" />
-            </label>
-            <label>
-              列表类型
-              <select id="learn-list-type-filter">
-                <option value="all">汉字+词汇</option>
-                <option value="char">仅汉字</option>
-                <option value="word">仅词汇</option>
-              </select>
-            </label>
+            <div class="learn-filter-grid">
+              <label>
+                列表类型
+                <select id="learn-list-type-filter">
+                  <option value="all">汉字+词汇</option>
+                  <option value="char">仅汉字</option>
+                  <option value="word">仅词汇</option>
+                </select>
+              </label>
+              <label>
+                默写次数
+                <select id="learn-dictation-count-filter">
+                  <option value="all">全部</option>
+                  <option value="0">0次</option>
+                  <option value="1-4">1-4次</option>
+                  <option value="5+">5次及以上</option>
+                </select>
+              </label>
+              <label>
+                准确率
+                <select id="learn-accuracy-filter">
+                  <option value="all">全部</option>
+                  <option value="unattempted">未默写</option>
+                  <option value="lt60">低于60%</option>
+                  <option value="60-79">60%-79%</option>
+                  <option value="80-99">80%-99%</option>
+                  <option value="100">100%</option>
+                </select>
+              </label>
+              <button id="learn-reset-filters" class="ghost" type="button">重置筛选</button>
+            </div>
           </div>
           <p id="learn-list-summary">共 0 个字</p>
-          <div class="actions">
+          <div id="learn-metric-strip" class="learn-metric-strip" aria-live="polite"></div>
+          <div class="actions learn-list-toolbar">
             <label>
               每页
               <select id="learn-char-page-size">
@@ -174,7 +194,8 @@
                   <th>类型</th>
                   <th>拼音</th>
                   <th>HSK</th>
-                  <th>已默写</th>
+                  <th>默写次数</th>
+                  <th>准确率</th>
                   <th>错题本</th>
                 </tr>
               </thead>
@@ -215,10 +236,6 @@
           <article class="card write-list-card">
             <div class="panel-head">
               <h3>汉字演示列表</h3>
-              <label>
-                搜索
-                <input id="write-list-search" type="text" placeholder="输入汉字或拼音" />
-              </label>
             </div>
             <p id="write-list-summary">已选 0 个</p>
             <div class="actions">
@@ -402,10 +419,6 @@
         </div>
         <div class="review-config">
           <label>
-            用户名筛选
-            <input id="admin-user-filter" type="text" placeholder="输入用户名" />
-          </label>
-          <label>
             时间范围
             <select id="admin-time-filter">
               <option value="all">全部</option>
@@ -453,10 +466,6 @@
           <p id="admin-wrong-count">错题：0 条</p>
         </div>
         <div class="review-config">
-          <label>
-            <span data-i18n="adminWrong.username">用户名</span>
-            <input id="admin-wrong-search-user" type="text" placeholder="输入用户名后查询" data-i18n-placeholder="adminWrong.usernamePlaceholder" />
-          </label>
           <button id="admin-wrong-search" class="good" data-i18n="adminWrong.search">查询错题本</button>
         </div>
         <p id="admin-wrong-msg"></p>
@@ -484,10 +493,6 @@
             <select id="admin-items-level-filter">
               <option value="all">全部</option>
             </select>
-          </label>
-          <label>
-            搜索
-            <input id="admin-items-search" type="text" placeholder="输入汉字/词汇/拼音" />
           </label>
         </div>
         <div class="actions">

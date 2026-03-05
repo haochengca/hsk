@@ -401,6 +401,79 @@ select {
   box-shadow: 0 14px 26px rgba(20, 40, 70, 0.12);
 }
 
+.learn-list-card {
+  text-align: left;
+}
+
+.learn-list-head {
+  align-items: flex-start;
+  gap: 0.7rem;
+}
+
+.learn-list-head h3 {
+  margin: 0;
+}
+
+.learn-filter-grid {
+  flex: 1;
+  min-width: min(100%, 640px);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 0.5rem;
+  align-items: end;
+}
+
+.learn-filter-grid label {
+  display: grid;
+  gap: 0.25rem;
+  align-items: stretch;
+  color: #2f4d71;
+  font-size: 0.9rem;
+}
+
+.learn-filter-grid input,
+.learn-filter-grid select {
+  width: 100%;
+  min-width: 0;
+}
+
+.learn-filter-grid button {
+  width: 100%;
+}
+
+.learn-metric-strip {
+  margin-top: 0.6rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.45rem;
+}
+
+.learn-metric {
+  border: 1px solid rgba(15, 23, 42, 0.11);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 0.5rem 0.55rem;
+}
+
+.learn-metric .label {
+  margin: 0;
+  color: #667085;
+  font-size: 0.82rem;
+}
+
+.learn-metric .value {
+  margin: 0.15rem 0 0;
+  color: #1f3652;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.learn-list-toolbar {
+  margin-top: 0.65rem;
+  padding-top: 0.55rem;
+  border-top: 1px dashed rgba(15, 23, 42, 0.14);
+}
+
 .char {
   font-size: clamp(4rem, 10vw, 5.2rem);
   line-height: 1;
@@ -746,7 +819,7 @@ select {
 .char-list-table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 620px;
+  min-width: 760px;
   text-align: left;
 }
 
@@ -1314,6 +1387,10 @@ select {
 
   .write-list-card {
     grid-template-rows: auto;
+  }
+
+  .learn-filter-grid {
+    grid-template-columns: 1fr 1fr;
   }
 
   .review-workbench {
