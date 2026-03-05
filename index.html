@@ -342,6 +342,23 @@
               <button id="review-begin" class="good">开始默写</button>
               <button id="review-restart" class="ghost" disabled>重新开始默写</button>
             </div>
+            <div class="review-judge-pane">
+              <div class="answer-row" id="word-answer-row">
+                <label for="word-review-input" class="dictation-label">输入你听到的词语</label>
+                <input id="word-review-input" class="dictation-input" type="text" autocomplete="off" placeholder="请输入词语" />
+                <button id="word-review-submit" class="good">提交词语</button>
+              </div>
+              <p id="review-feedback"></p>
+              <p id="review-answer" class="is-hidden"></p>
+              <article id="review-summary-card" class="review-summary hidden" aria-live="polite">
+                <h3>本轮结算</h3>
+                <p id="review-summary-text"></p>
+                <p id="review-summary-actions" class="review-summary-actions"></p>
+                <div class="actions">
+                  <button id="review-settle-btn" class="good">本轮结算</button>
+                </div>
+              </article>
+            </div>
           </aside>
 
           <article class="card review-dictation" id="review-card">
@@ -356,35 +373,18 @@
               <p id="review-meaning">英语解释：you</p>
             </div>
 
+            <div class="answer-row">
+              <p class="dictation-label">在下面手写汉字（鼠标/触屏）</p>
+            </div>
+            <div id="dictation-writer" class="dictation-writer" aria-label="默写手写检测区域"></div>
+
             <div class="actions review-main-actions">
               <button id="review-start" class="good">完成并判定</button>
               <button id="review-reset" class="ghost">重写本题</button>
               <button id="review-next" class="good hidden">下一个字</button>
             </div>
-
-            <div class="answer-row">
-              <p class="dictation-label">在下面手写汉字（鼠标/触屏）</p>
-            </div>
-            <div id="dictation-writer" class="dictation-writer" aria-label="默写手写检测区域"></div>
           </article>
 
-          <aside class="review-pane review-judge-pane">
-            <div class="answer-row" id="word-answer-row">
-              <label for="word-review-input" class="dictation-label">输入你听到的词语</label>
-              <input id="word-review-input" class="dictation-input" type="text" autocomplete="off" placeholder="请输入词语" />
-              <button id="word-review-submit" class="good">提交词语</button>
-            </div>
-            <p id="review-feedback"></p>
-            <p id="review-answer" class="is-hidden"></p>
-            <article id="review-summary-card" class="review-summary hidden" aria-live="polite">
-              <h3>本轮结算</h3>
-              <p id="review-summary-text"></p>
-              <p id="review-summary-actions" class="review-summary-actions"></p>
-              <div class="actions">
-                <button id="review-settle-btn" class="good">本轮结算</button>
-              </div>
-            </article>
-          </aside>
         </div>
       </section>
 

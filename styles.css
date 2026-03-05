@@ -329,7 +329,7 @@ button:disabled,
 .review-workbench {
   margin-top: 0.75rem;
   display: grid;
-  grid-template-columns: minmax(220px, 0.9fr) minmax(360px, 1.6fr) minmax(240px, 1fr);
+  grid-template-columns: minmax(280px, 0.95fr) minmax(420px, 1.55fr);
   gap: 0.75rem;
   min-height: 0;
 }
@@ -348,6 +348,30 @@ button:disabled,
   box-shadow: var(--shadow-tiny);
   min-height: 0;
   overflow: auto;
+}
+
+.review-setup-pane {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  overflow: hidden;
+}
+
+.review-setup-pane .review-judge-pane {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  margin-top: 0.2rem;
+  padding-top: 0.7rem;
+  border-top: 1px dashed rgba(19, 35, 63, 0.16);
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.96) 35%, rgba(255, 255, 255, 0)) center top,
+    linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.96) 65%) center bottom,
+    radial-gradient(farthest-side at 50% 0, rgba(19, 35, 63, 0.18), rgba(19, 35, 63, 0)) center top,
+    radial-gradient(farthest-side at 50% 100%, rgba(19, 35, 63, 0.18), rgba(19, 35, 63, 0)) center bottom;
+  background-repeat: no-repeat;
+  background-size: 100% 18px, 100% 18px, 100% 10px, 100% 10px;
+  background-attachment: local, local, scroll, scroll;
 }
 
 #review-panel .review-config {
@@ -503,6 +527,7 @@ select {
   margin-top: 0;
   text-align: left;
   min-width: 0;
+  height: 100%;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -574,8 +599,9 @@ select {
 .dictation-writer {
   position: relative;
   z-index: 0;
-  width: min(100%, 320px);
-  height: 320px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  height: auto;
   margin-top: 0.8rem;
   border: 1px dashed rgba(0, 168, 168, 0.48);
   border-radius: 14px;
@@ -583,12 +609,13 @@ select {
   touch-action: none;
   display: grid;
   place-items: center;
+  overflow: hidden;
 }
 
 #review-panel #dictation-writer {
   width: 100%;
   max-width: 100%;
-  min-height: 320px;
+  min-height: 0;
   overflow: hidden;
 }
 
@@ -627,11 +654,13 @@ select {
 }
 
 .dictation-canvas {
-  position: relative;
+  position: absolute;
+  inset: 0;
   z-index: 0;
   width: 100%;
   max-width: 100%;
   height: 100%;
+  display: block;
   border-radius: 12px;
   touch-action: none;
   cursor: crosshair;
@@ -1295,7 +1324,7 @@ select {
     flex: 1;
     min-height: 0;
     margin-top: 0;
-    grid-template-columns: minmax(220px, 0.9fr) minmax(300px, 1.4fr) minmax(220px, 1fr);
+    grid-template-columns: minmax(260px, 0.95fr) minmax(320px, 1.45fr);
     overflow: hidden;
   }
 
@@ -1324,39 +1353,15 @@ select {
 
 @media (min-width: 768px) and (max-width: 1366px) and (orientation: portrait) {
   .app.ipad-layout #review-panel .review-workbench {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    grid-template-rows: auto auto;
-  }
-
-  .app.ipad-layout #review-panel .review-setup-pane {
-    grid-column: 1 / 3;
-  }
-
-  .app.ipad-layout #review-panel #review-card {
-    grid-column: 1;
-  }
-
-  .app.ipad-layout #review-panel .review-judge-pane {
-    grid-column: 2;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto;
   }
 }
 
 @media (max-width: 1160px) {
   .review-workbench {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    grid-template-rows: auto auto;
-  }
-
-  .review-setup-pane {
-    grid-column: 1 / 3;
-  }
-
-  #review-card {
-    grid-column: 1;
-  }
-
-  .review-judge-pane {
-    grid-column: 2;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto;
   }
 }
 
@@ -1407,8 +1412,7 @@ select {
   }
 
   .review-setup-pane,
-  #review-card,
-  .review-judge-pane {
+  #review-card {
     grid-column: auto;
   }
 
