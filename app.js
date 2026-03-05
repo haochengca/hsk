@@ -8812,14 +8812,17 @@ function waitPreviewTick(ms) {
   });
 }
 
-function scrollToDictationWriter() {
-  const host = dictationWriterHost || document.getElementById("dictation-writer");
-  if (!host || typeof host.scrollIntoView !== "function") return;
+function scrollToPageBottom() {
   const prefersReducedMotion =
     typeof window.matchMedia === "function" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const behavior = prefersReducedMotion ? "auto" : "smooth";
   window.setTimeout(() => {
-    host.scrollIntoView({ behavior, block: "center", inline: "nearest" });
+    const maxTop = Math.max(
+      0,
+      (document.documentElement && document.documentElement.scrollHeight) || 0,
+      (document.body && document.body.scrollHeight) || 0
+    );
+    window.scrollTo({ top: maxTop, behavior });
   }, 60);
 }
 
@@ -8840,6 +8843,7 @@ async function runPreReviewPreviewAndStart() {
     state.reviewActive = true;
     setReviewFlowState("answering");
     renderReviewCard();
+    scrollToPageBottom();
     return;
   }
 
@@ -8891,7 +8895,7 @@ async function runPreReviewPreviewAndStart() {
   state.reviewActive = true;
   setReviewFlowState("answering");
   renderReviewCard();
-  scrollToDictationWriter();
+  scrollToPageBottom();
 }
 
 function startReviewSession(source, emptyMessage) {
@@ -9046,7 +9050,7 @@ function finalizeReviewResult(item, isGood, accuracyPercent, meta = {}) {
     reviewAnswer.classList.remove("is-hidden");
     if (!isWrongBookSinglePractice) {
       scheduleProgress(item, false);
-      addWrongItem(item);
+      if (item.type !== "word") addWrongItem(item);
     }
   }
 
@@ -9057,6 +9061,18 @@ function finalizeReviewResult(item, isGood, accuracyPercent, meta = {}) {
     meta.mlUpdates.forEach((x) => {
       if (!x || !x.isGood || !x.char || !Array.isArray(x.feature)) return;
       updateCharMlPrototype(x.char, x.feature);
+    });
+  }
+
+  // 词汇默写按单字判定：把写错的字加入错题本。
+  if (!isWrongBookSinglePractice && item.type === "word" && Array.isArray(meta.wordCharResults)) {
+    meta.wordCharResults.forEach((x) => {
+      if (!x || x.isGood) return;
+      const ch = String(x.char || "").trim();
+      if (!ch) return;
+      const charItem = CHAR_MAP.get(ch);
+      if (!charItem) return;
+      addWrongItem(charItem);
     });
   }
 
