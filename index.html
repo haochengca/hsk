@@ -263,58 +263,12 @@
       </section>
 
       <section class="panel" id="review-panel">
-        <div class="panel-head">
+        <div class="panel-head review-panel-head">
           <h2>默写测验</h2>
           <p id="due-count"></p>
         </div>
-        <div class="review-config">
-          <label>
-            默写类型
-            <select id="review-type-filter">
-              <option value="char">汉字</option>
-              <option value="word">词汇</option>
-            </select>
-          </label>
-          <label>
-            HSK等级
-            <select id="review-level-filter"></select>
-          </label>
-          <label>
-            默写字数
-            <select id="review-count-filter">
-              <option value="1">1</option>
-              <option value="5">5</option>
-              <option value="10" selected>10</option>
-              <option value="20">20</option>
-              <option value="all">全部</option>
-            </select>
-          </label>
-          <label>
-            错题混入比例
-            <select id="review-wrong-mix-filter">
-              <option value="0">0%</option>
-              <option value="10">10%</option>
-              <option value="20">20%</option>
-              <option value="30" selected>30%</option>
-              <option value="40">40%</option>
-              <option value="50">50%</option>
-              <option value="70">70%</option>
-              <option value="100">100%</option>
-            </select>
-          </label>
-          <label>
-            默写前预览
-            <select id="review-preview-filter">
-              <option value="0">不预览</option>
-              <option value="all">预览</option>
-            </select>
-          </label>
-          <button id="review-begin" class="good">开始默写</button>
-          <button id="review-restart" class="ghost" disabled>重新开始默写</button>
-        </div>
 
-        <article class="card review-dictation" id="review-card">
-          <p class="dictation-tip">听读音后，默写对应汉字</p>
+        <div class="review-preview-stage">
           <p id="review-preview" class="dictation-preview is-hidden"></p>
           <div id="review-preview-timer" class="preview-timer is-hidden" aria-live="polite">
             <p id="review-preview-time-text">倒计时 0.0 秒</p>
@@ -322,41 +276,99 @@
               <div id="review-preview-progress-bar" class="preview-progress-bar"></div>
             </div>
           </div>
-          <div class="actions">
-            <button id="review-play">播放读音</button>
-            <button id="review-replay" class="ghost">再播一次</button>
-          </div>
+        </div>
 
-          <div class="meta" id="review-context">
-            <p id="review-pinyin">拼音：nǐ</p>
-            <p id="review-meaning">英语解释：you</p>
-          </div>
-
-          <div class="answer-row">
-            <p class="dictation-label">在下面手写汉字（鼠标/触屏）</p>
-          </div>
-          <div id="dictation-writer" class="dictation-writer" aria-label="默写手写检测区域"></div>
-          <div class="answer-row" id="word-answer-row">
-            <label for="word-review-input" class="dictation-label">输入你听到的词语</label>
-            <input id="word-review-input" class="dictation-input" type="text" autocomplete="off" placeholder="请输入词语" />
-            <button id="word-review-submit" class="good">提交词语</button>
-          </div>
-          <div class="actions">
-            <button id="review-start" class="good">完成并判定</button>
-            <button id="review-reset" class="ghost">重写本题</button>
-            <button id="review-next" class="good hidden">下一个字</button>
-          </div>
-          <p id="review-feedback"></p>
-          <p id="review-answer" class="is-hidden"></p>
-          <article id="review-summary-card" class="review-summary hidden" aria-live="polite">
-            <h3>本轮结算</h3>
-            <p id="review-summary-text"></p>
-            <p id="review-summary-actions" class="review-summary-actions"></p>
-            <div class="actions">
-              <button id="review-settle-btn" class="good">本轮结算</button>
+        <div class="review-workbench">
+          <aside class="review-pane review-setup-pane">
+            <div class="review-config">
+              <label>
+                默写类型
+                <select id="review-type-filter">
+                  <option value="char">汉字</option>
+                  <option value="word">词汇</option>
+                </select>
+              </label>
+              <label>
+                HSK等级
+                <select id="review-level-filter"></select>
+              </label>
+              <label>
+                默写字数
+                <select id="review-count-filter">
+                  <option value="1">1</option>
+                  <option value="5">5</option>
+                  <option value="10" selected>10</option>
+                  <option value="20">20</option>
+                  <option value="all">全部</option>
+                </select>
+              </label>
+              <label>
+                错题混入比例
+                <select id="review-wrong-mix-filter">
+                  <option value="0">0%</option>
+                  <option value="10">10%</option>
+                  <option value="20">20%</option>
+                  <option value="30" selected>30%</option>
+                  <option value="40">40%</option>
+                  <option value="50">50%</option>
+                  <option value="70">70%</option>
+                  <option value="100">100%</option>
+                </select>
+              </label>
+              <label>
+                默写前预览
+                <select id="review-preview-filter">
+                  <option value="0">不预览</option>
+                  <option value="all">预览</option>
+                </select>
+              </label>
+              <button id="review-begin" class="good">开始默写</button>
+              <button id="review-restart" class="ghost" disabled>重新开始默写</button>
             </div>
+          </aside>
+
+          <article class="card review-dictation" id="review-card">
+            <p class="dictation-tip">听读音后，默写对应汉字</p>
+            <div class="actions">
+              <button id="review-play">播放读音</button>
+              <button id="review-replay" class="ghost">再播一次</button>
+            </div>
+
+            <div class="meta" id="review-context">
+              <p id="review-pinyin">拼音：nǐ</p>
+              <p id="review-meaning">英语解释：you</p>
+            </div>
+
+            <div class="actions review-main-actions">
+              <button id="review-start" class="good">完成并判定</button>
+              <button id="review-reset" class="ghost">重写本题</button>
+              <button id="review-next" class="good hidden">下一个字</button>
+            </div>
+
+            <div class="answer-row">
+              <p class="dictation-label">在下面手写汉字（鼠标/触屏）</p>
+            </div>
+            <div id="dictation-writer" class="dictation-writer" aria-label="默写手写检测区域"></div>
           </article>
-        </article>
+
+          <aside class="review-pane review-judge-pane">
+            <div class="answer-row" id="word-answer-row">
+              <label for="word-review-input" class="dictation-label">输入你听到的词语</label>
+              <input id="word-review-input" class="dictation-input" type="text" autocomplete="off" placeholder="请输入词语" />
+              <button id="word-review-submit" class="good">提交词语</button>
+            </div>
+            <p id="review-feedback"></p>
+            <p id="review-answer" class="is-hidden"></p>
+            <article id="review-summary-card" class="review-summary hidden" aria-live="polite">
+              <h3>本轮结算</h3>
+              <p id="review-summary-text"></p>
+              <p id="review-summary-actions" class="review-summary-actions"></p>
+              <div class="actions">
+                <button id="review-settle-btn" class="good">本轮结算</button>
+              </div>
+            </article>
+          </aside>
+        </div>
       </section>
 
       <section class="panel" id="wrong-panel">

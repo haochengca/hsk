@@ -8747,6 +8747,17 @@ function waitPreviewTick(ms) {
   });
 }
 
+function scrollToDictationWriter() {
+  const host = dictationWriterHost || document.getElementById("dictation-writer");
+  if (!host || typeof host.scrollIntoView !== "function") return;
+  const prefersReducedMotion =
+    typeof window.matchMedia === "function" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const behavior = prefersReducedMotion ? "auto" : "smooth";
+  window.setTimeout(() => {
+    host.scrollIntoView({ behavior, block: "center", inline: "nearest" });
+  }, 60);
+}
+
 async function runPreReviewPreviewAndStart() {
   const list = Array.isArray(state.reviewList) ? state.reviewList : [];
   if (!list.length) {
@@ -8815,6 +8826,7 @@ async function runPreReviewPreviewAndStart() {
   state.reviewActive = true;
   setReviewFlowState("answering");
   renderReviewCard();
+  scrollToDictationWriter();
 }
 
 function startReviewSession(source, emptyMessage) {
@@ -9752,6 +9764,21 @@ function wireLearn() {
 }
 
 function wireReview() {
+  const alignReviewPanelToTop = () => {
+    const panel = panels.review;
+    if (!panel) return;
+    const anchor = panel.querySelector(".review-panel-head") || panel;
+    const prefersReducedMotion =
+      typeof window.matchMedia === "function" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const behavior = prefersReducedMotion ? "auto" : "smooth";
+    if (anchor && typeof anchor.scrollIntoView === "function") {
+      anchor.scrollIntoView({ behavior, block: "start", inline: "nearest" });
+      return;
+    }
+    const top = Math.max(0, window.scrollY + panel.getBoundingClientRect().top - 12);
+    window.scrollTo({ top, behavior });
+  };
+
   reviewBegin.addEventListener("click", () => {
     if (state.reviewPreviewRunning || state.reviewActive || state.reviewFlowState === "reviewed") {
       const ok = window.confirm(t("review.stopConfirm"));
@@ -9761,6 +9788,7 @@ function wireReview() {
     }
     const source = getDataset(state.reviewType);
     startReviewSession(source, "当前筛选下没有可默写的项目。");
+    alignReviewPanelToTop();
   });
 
   reviewRestart.addEventListener("click", () => {
