@@ -5872,27 +5872,156 @@ WORD_ITEMS.forEach((it) => {
 
 function buildCharPhraseMap() {
   const map = new Map();
-  const words = WORD_ITEMS.filter((w) => [...w.text].length >= 2);
-  for (const c of CHAR_ITEMS) map.set(c.text, []);
+  const candidateMap = new Map();
+  const words = WORD_ITEMS.filter((w) => [...String(w.text || "")].length >= 2);
+  for (const c of CHAR_ITEMS) {
+    map.set(c.text, []);
+    candidateMap.set(c.text, []);
+  }
 
-  words
-    .slice()
-    .sort((a, b) => a.level - b.level || [...a.text].length - [...b.text].length || a.text.localeCompare(b.text, "zh-Hans-CN"))
-    .forEach((w) => {
-      const chars = [...new Set([...w.text])];
-      for (const ch of chars) {
-        if (!map.has(ch)) continue;
-        const list = map.get(ch);
-        if (!list.includes(w.text)) list.push(w.text);
-      }
+  const resolveCharPosition = (ch, wordText) => {
+    const chars = [...wordText];
+    const idx = chars.indexOf(ch);
+    if (idx < 0) return "none";
+    if (idx === 0) return "start";
+    if (idx === chars.length - 1) return "end";
+    return "middle";
+  };
+
+  const scorePromptCandidate = (ch, word) => {
+    const text = String(word && word.text ? word.text : "");
+    const chars = [...text];
+    const len = chars.length;
+    if (!len) return -999;
+    const level = Math.max(1, Number(word && word.level) || 6);
+    const uniqueCount = new Set(chars).size;
+    const repeats = len - uniqueCount;
+    let score = 0;
+    score += Math.max(0, 8 - level) * 20;
+    if (len === 2) score += 40;
+    else if (len === 3) score += 26;
+    else if (len === 4) score += 12;
+    else score -= (len - 4) * 6;
+    const pos = resolveCharPosition(ch, text);
+    if (pos === "start") score += 14;
+    else if (pos === "end") score += 10;
+    else if (pos === "middle") score += 8;
+    if (uniqueCount === len) score += 6;
+    if (uniqueCount === 1) score -= 30;
+    score -= repeats * 6;
+    if (chars[0] === chars[len - 1]) score -= 4;
+    return score;
+  };
+
+  const scorePromptDiversity = (ch, firstText, candidateText) => {
+    if (!firstText || !candidateText) return 0;
+    const first = String(firstText);
+    const candidate = String(candidateText);
+    if (first === candidate) return -999;
+    const firstChars = [...first];
+    const candidateChars = [...candidate];
+    const overlap = candidateChars.reduce((sum, c) => (firstChars.includes(c) ? sum + 1 : sum), 0);
+    let score = -overlap * 3;
+    if (firstChars.length !== candidateChars.length) score += 2;
+    const posA = resolveCharPosition(ch, first);
+    const posB = resolveCharPosition(ch, candidate);
+    if (posA !== "none" && posB !== "none" && posA !== posB) score += 8;
+    return score;
+  };
+
+  const fallbackPromptMap = {
+    一: ["一个", "一起"],
+    二: ["二月", "二十"],
+    三: ["三个", "三天"],
+    四: ["四个", "四季"],
+    五: ["五个", "五月"],
+    六: ["六个", "六月"],
+    七: ["七天", "七个"],
+    八: ["八个", "八月"],
+    九: ["九个", "九月"],
+    十: ["十个", "十天"],
+    吗: ["是吗", "好吗"],
+    呢: ["你呢", "在哪儿呢"],
+    吧: ["好吧", "走吧"],
+    啊: ["好啊", "啊？"],
+    呀: ["对呀", "是呀"],
+    嘛: ["干嘛", "好嘛"],
+    了: ["好了", "来了"],
+    的: ["我的", "你的"],
+    地: ["地方", "地铁"],
+    得: ["记得", "得到"],
+    些: ["一些", "这些"],
+    这: ["这里", "这个"],
+    那: ["那里", "那个"],
+    哪: ["哪里", "哪个"],
+    每: ["每天", "每次"],
+    很: ["很好", "很多"],
+    太: ["太好了", "太大了"],
+    不: ["不是", "不对"],
+    有: ["有的", "有人"],
+    在: ["在家", "在学校"],
+    和: ["我和你", "你和他"],
+    给: ["给你", "送给"],
+    从: ["从前", "从来"],
+    向: ["向前", "向上"]
+  };
+
+  const getDefaultFallbackPrompts = (ch) => {
+    const pair = fallbackPromptMap[ch];
+    if (Array.isArray(pair) && pair.length >= 2) return [pair[0], pair[1]];
+    return [`${ch}字`, `写${ch}字`];
+  };
+
+  words.forEach((w) => {
+    const chars = [...new Set([...String(w.text || "")])];
+    for (const ch of chars) {
+      if (!candidateMap.has(ch)) continue;
+      candidateMap.get(ch).push(w);
+    }
+  });
+
+  for (const [ch, list] of candidateMap.entries()) {
+    const seen = new Set();
+    const candidates = [];
+    list.forEach((w) => {
+      const text = String(w && w.text ? w.text : "").trim();
+      if (!text || seen.has(text)) return;
+      seen.add(text);
+      candidates.push(w);
     });
+    const ranked = candidates
+      .map((w) => ({
+        text: w.text,
+        level: Number(w.level) || 0,
+        len: [...w.text].length,
+        score: scorePromptCandidate(ch, w)
+      }))
+      .sort((a, b) => b.score - a.score || a.level - b.level || a.len - b.len || a.text.localeCompare(b.text, "zh-Hans-CN"));
 
-  for (const [ch, list] of map.entries()) {
-    if (list.length >= 2) continue;
-    const fallback = CHAR_MAP.get(ch)?.phrase || ch;
-    if (!list.includes(fallback)) list.unshift(fallback);
-    if (list.length < 2) list.push(`${ch}${ch}`);
-    map.set(ch, list.slice(0, 2));
+    const selected = [];
+    const first = ranked[0];
+    if (first && first.text) selected.push(first.text);
+
+    if (ranked.length > 1) {
+      let bestSecond = null;
+      ranked.slice(1).forEach((item) => {
+        const bonus = scorePromptDiversity(ch, selected[0], item.text);
+        const mergedScore = item.score + bonus;
+        if (!bestSecond || mergedScore > bestSecond.mergedScore) {
+          bestSecond = { text: item.text, mergedScore, level: item.level, len: item.len };
+        }
+      });
+      if (bestSecond && bestSecond.text && !selected.includes(bestSecond.text)) selected.push(bestSecond.text);
+    }
+
+    const [fallbackA, fallbackB] = getDefaultFallbackPrompts(ch);
+    if (selected.length < 1 && fallbackA && !selected.includes(fallbackA)) selected.push(fallbackA);
+    if (selected.length < 2 && fallbackB && !selected.includes(fallbackB)) selected.push(fallbackB);
+    if (selected.length < 2) {
+      const fallback = (CHAR_MAP.get(ch) && CHAR_MAP.get(ch).phrase) || `${ch}字`;
+      if (!selected.includes(fallback)) selected.push(fallback);
+    }
+    map.set(ch, selected.slice(0, 2));
   }
   return map;
 }
