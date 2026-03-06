@@ -5934,6 +5934,7 @@ const state = {
   reviewAwaitingNext: false,
   reviewRetryState: { itemKey: "", attempt: 0, pendingIndexes: [], frozenWordResults: [] },
   reviewLastResult: null,
+  reviewLastJudgeDisplay: { feedback: "", answer: "" },
   reviewSessionPointsEarned: 0,
   reviewSessionStartedAt: 0,
   reviewSessionFinishedAt: 0,
@@ -8194,6 +8195,7 @@ function resetReviewSessionStats() {
   state.reviewSettlementPoints = 0;
   state.reviewSettlementAnimated = false;
   state.reviewLastResult = null;
+  state.reviewLastJudgeDisplay = { feedback: "", answer: "" };
   state.reviewAwaitingNext = false;
 }
 
@@ -8220,8 +8222,13 @@ function renderReviewSummaryCard() {
     return;
   }
   const summary = getCurrentSessionSummary();
-  const lastResultText =
-    state.reviewLastResult && typeof state.reviewLastResult.isGood === "boolean"
+  const lastJudge = state.reviewLastJudgeDisplay || { feedback: "", answer: "" };
+  const judgeParts = [];
+  if (lastJudge.feedback) judgeParts.push(`最后判定：${lastJudge.feedback}`);
+  if (lastJudge.answer) judgeParts.push(lastJudge.answer);
+  const lastResultText = judgeParts.length > 0
+    ? `${judgeParts.join("；")}。`
+    : state.reviewLastResult && typeof state.reviewLastResult.isGood === "boolean"
       ? `最后一题：${state.reviewLastResult.isGood ? "正确" : "错误"}。`
       : "";
   reviewSummaryCard.classList.remove("hidden");
@@ -8304,6 +8311,7 @@ function advanceToNextReviewItem() {
   }
   state.reviewAwaitingNext = false;
   state.reviewLastResult = null;
+  state.reviewLastJudgeDisplay = { feedback: "", answer: "" };
   resetReviewRetryState();
   setReviewFlowState("answering");
   renderReviewCard();
@@ -9093,7 +9101,11 @@ function renderReviewCard() {
   const mixText = state.reviewType === "char" ? `，错题混入${state.reviewWrongMixRatio}%` : "";
   dueCount.textContent = `进度: ${current}/${total}（${state.reviewType === "word" ? "词汇" : "汉字"}，${levelText}，${countText}${mixText}）`;
 
-  if (!state.reviewAwaitingNext) {
+  const keepLastJudgeResult =
+    state.reviewFlowState === "ended" &&
+    state.reviewLastResult &&
+    typeof state.reviewLastResult.isGood === "boolean";
+  if (!state.reviewAwaitingNext && !keepLastJudgeResult) {
     reviewFeedback.textContent = "";
     reviewAnswer.textContent = "";
     reviewAnswer.classList.add("is-hidden");
@@ -9162,6 +9174,10 @@ function finalizeReviewResult(item, isGood, accuracyPercent, meta = {}) {
       if (item.type !== "word") addWrongItem(item);
     }
   }
+  state.reviewLastJudgeDisplay = {
+    feedback: String(reviewFeedback.textContent || ""),
+    answer: reviewAnswer.classList.contains("is-hidden") ? "" : String(reviewAnswer.textContent || "")
+  };
 
   if (!isWrongBookSinglePractice && item.type === "char" && isGood && meta.mlFeatureAccepted && Array.isArray(meta.mlFeature)) {
     updateCharMlPrototype(item.text, meta.mlFeature);
@@ -10304,6 +10320,7 @@ function wireReview() {
     state.reviewIndex = 0;
     state.reviewAwaitingNext = false;
     state.reviewLastResult = null;
+    state.reviewLastJudgeDisplay = { feedback: "", answer: "" };
     setReviewFlowState("idle");
     state.reviewMessage = "默写类型已切换，请点击“开始默写”。";
     rebuildWrongQueue();
@@ -10319,6 +10336,7 @@ function wireReview() {
     state.reviewIndex = 0;
     state.reviewAwaitingNext = false;
     state.reviewLastResult = null;
+    state.reviewLastJudgeDisplay = { feedback: "", answer: "" };
     setReviewFlowState("idle");
     state.reviewMessage = "设置已更新，请点击“开始默写”。";
     renderReviewCard();
@@ -10333,6 +10351,7 @@ function wireReview() {
     state.reviewIndex = 0;
     state.reviewAwaitingNext = false;
     state.reviewLastResult = null;
+    state.reviewLastJudgeDisplay = { feedback: "", answer: "" };
     setReviewFlowState("idle");
     state.reviewMessage = "设置已更新，请点击“开始默写”。";
     renderReviewCard();
@@ -10347,6 +10366,7 @@ function wireReview() {
     state.reviewIndex = 0;
     state.reviewAwaitingNext = false;
     state.reviewLastResult = null;
+    state.reviewLastJudgeDisplay = { feedback: "", answer: "" };
     setReviewFlowState("idle");
     state.reviewMessage = "设置已更新，请点击“开始默写”。";
     renderReviewCard();
@@ -10362,6 +10382,7 @@ function wireReview() {
       state.reviewIndex = 0;
       state.reviewAwaitingNext = false;
       state.reviewLastResult = null;
+      state.reviewLastJudgeDisplay = { feedback: "", answer: "" };
       setReviewFlowState("idle");
       state.reviewMessage = "设置已更新，请点击“开始默写”。";
       renderReviewCard();
