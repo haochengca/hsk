@@ -51,6 +51,7 @@
 - `accuracyPercent`
 - `systemResult`
 - `finalResult`
+- `judgeDetail` (JSON, optional)
 - `pointsAwarded`
 - `wordCharResults` (JSON array)
 - `reviewedBy`
@@ -62,6 +63,7 @@
 - `isGood`
 - `accuracyPercent`
 - `handwritingImage`
+- `judgeDetail` (JSON, optional)
 
 ## 5. 关系
 - 一个 `users` 可有多条 `sessions`。

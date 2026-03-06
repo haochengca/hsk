@@ -426,6 +426,15 @@
               <option value="30">最近30天</option>
             </select>
           </label>
+          <label>
+            结果筛选
+            <select id="admin-outcome-filter">
+              <option value="all">全部</option>
+              <option value="overturned">仅被复判推翻</option>
+              <option value="false-reject">仅误拒推翻</option>
+              <option value="false-accept">仅误收推翻</option>
+            </select>
+          </label>
           <button id="admin-filter-apply" class="good">应用筛选</button>
         </div>
         <article class="card">
@@ -551,6 +560,7 @@
     <script src="data/hsk_words_1_6.js"></script>
     <script src="https://unpkg.com/hanzi-writer@3.7/dist/hanzi-writer.min.js"></script>
     <script src="review-state.js"></script>
+    <script src="recognition-core.js"></script>
     <script src="app.js"></script>
   </body>
 </html>

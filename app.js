@@ -5899,6 +5899,7 @@ function buildCharPhraseMap() {
 
 const state = {
   auth: { loggedIn: false, role: "", username: "", token: "", linkedParentUsername: "", linkedChildren: [] },
+  flags: { recognitionV2Enabled: true },
   lang: "zh",
   lexiconOverrides: {},
   tab: "learn",
@@ -5931,6 +5932,7 @@ const state = {
   reviewActive: false,
   reviewFlowState: "idle",
   reviewAwaitingNext: false,
+  reviewRetryState: { itemKey: "", attempt: 0, pendingIndexes: [], frozenWordResults: [] },
   reviewLastResult: null,
   reviewSessionPointsEarned: 0,
   reviewSessionStartedAt: 0,
@@ -5951,6 +5953,7 @@ const state = {
   wrongQueue: [],
   dictationPad: null,
   dictationPads: [],
+  writeRetryState: { itemKey: "", attempt: 0 },
   reviewPreviewTimer: null,
   reviewPreviewCountdownTimer: null,
   reviewPreviewToken: 0,
@@ -5964,6 +5967,7 @@ const state = {
   reviewSessionSnapshot: null,
   pendingSubmissionPayloads: [],
   adminWordReviewDrafts: {},
+  adminOutcomeFilter: "all",
   adminWrongBookQueryUser: "",
   adminWrongBookItems: [],
   adminUsers: [],
@@ -6019,6 +6023,7 @@ const adminCount = document.getElementById("admin-count");
 const adminList = document.getElementById("admin-list");
 const adminUserFilter = document.getElementById("admin-user-filter");
 const adminTimeFilter = document.getElementById("admin-time-filter");
+const adminOutcomeFilter = document.getElementById("admin-outcome-filter");
 const adminFilterApply = document.getElementById("admin-filter-apply");
 const adminWrongSearchUser = document.getElementById("admin-wrong-search-user");
 const adminWrongSearch = document.getElementById("admin-wrong-search");
@@ -6137,6 +6142,7 @@ const rewardPanel = rewardText && typeof rewardText.closest === "function" ? rew
 const pointsGainFx = document.getElementById("points-gain-fx");
 const pointsFireworks = document.getElementById("points-fireworks");
 const reviewStateModule = window.ReviewState || null;
+const recognitionCore = window.RecognitionCore || null;
 
 const SUPPORTED_LANGS = ["zh"];
 const I18N = {
@@ -6546,6 +6552,52 @@ function normalizeAccuracyPercent(value) {
   return Math.max(0, Math.min(100, Math.round(num)));
 }
 
+function normalizeJudgeDetail(detail) {
+  if (!detail || typeof detail !== "object") return null;
+  const thresholds = detail.thresholds && typeof detail.thresholds === "object"
+    ? {
+        pass: Math.max(0, Math.min(1, Number(detail.thresholds.pass) || 0)),
+        retryLow: Math.max(0, Math.min(1, Number(detail.thresholds.retryLow) || 0))
+      }
+    : null;
+  const engines = detail.engines && typeof detail.engines === "object"
+    ? {
+        overlap: Math.max(0, Math.min(1, Number(detail.engines.overlap) || 0)),
+        projection: Math.max(0, Math.min(1, Number(detail.engines.projection) || 0)),
+        grid: Math.max(0, Math.min(1, Number(detail.engines.grid) || 0))
+      }
+    : null;
+  return {
+    version: String(detail.version || "v2"),
+    decision: ["pass", "fail", "retry"].includes(String(detail.decision)) ? String(detail.decision) : "fail",
+    decisionScore: Math.max(0, Math.min(1, Number(detail.decisionScore) || 0)),
+    baseScore: Math.max(0, Math.min(1, Number(detail.baseScore) || 0)),
+    mlScore: Number.isFinite(detail.mlScore) ? Math.max(0, Math.min(1, Number(detail.mlScore))) : null,
+    blendedScore: Math.max(0, Math.min(1, Number(detail.blendedScore) || 0)),
+    tier: ["simple", "medium", "complex"].includes(String(detail.tier)) ? String(detail.tier) : "medium",
+    thresholds,
+    engines,
+    retryAttempt: Math.max(0, Number(detail.retryAttempt) || 0),
+    reason: String(detail.reason || "unknown")
+  };
+}
+
+function normalizeSubmissionRow(row) {
+  if (!row || typeof row !== "object") return row;
+  return {
+    ...row,
+    accuracyPercent: normalizeAccuracyPercent(row.accuracyPercent),
+    judgeDetail: normalizeJudgeDetail(row.judgeDetail),
+    wordCharResults: Array.isArray(row.wordCharResults)
+      ? row.wordCharResults.map((x) => ({
+          ...x,
+          accuracyPercent: normalizeAccuracyPercent(x && x.accuracyPercent),
+          judgeDetail: normalizeJudgeDetail(x && x.judgeDetail)
+        }))
+      : row.wordCharResults
+  };
+}
+
 function saveProgress() {
   if (state.reviewDraftActive) return;
   queueUserDataSync();
@@ -6660,7 +6712,7 @@ async function postSubmissionPayload(payload) {
     method: "POST",
     body: JSON.stringify(payload)
   });
-  if (resp && resp.submission) state.submissions.unshift(resp.submission);
+  if (resp && resp.submission) state.submissions.unshift(normalizeSubmissionRow(resp.submission));
   renderLearnCharList();
 }
 
@@ -6921,6 +6973,8 @@ function refreshRewards() {
 
 async function loadUserData() {
   const boot = await apiRequest("/api/bootstrap");
+  const flags = boot && boot.flags && typeof boot.flags === "object" ? boot.flags : {};
+  state.flags.recognitionV2Enabled = flags.recognitionV2Enabled !== false;
   if (boot.user && typeof boot.user === "object") {
     state.auth.role = boot.user.role || state.auth.role;
     state.auth.linkedParentUsername = String(boot.user.linkedParentUsername || "");
@@ -6932,16 +6986,7 @@ async function loadUserData() {
   applyLexiconOverrides(boot.lexiconOverrides || {});
   state.adminWordReviewDrafts = {};
   state.submissions = Array.isArray(boot.submissions)
-    ? boot.submissions.map((row) => ({
-        ...row,
-        accuracyPercent: normalizeAccuracyPercent(row.accuracyPercent),
-        wordCharResults: Array.isArray(row.wordCharResults)
-          ? row.wordCharResults.map((x) => ({
-              ...x,
-              accuracyPercent: normalizeAccuracyPercent(x && x.accuracyPercent)
-            }))
-          : row.wordCharResults
-      }))
+    ? boot.submissions.map((row) => normalizeSubmissionRow(row))
     : [];
   state.progress = data.progress && typeof data.progress === "object" ? data.progress : {};
   state.wrongBook = Array.isArray(data.wrongBook) ? data.wrongBook : [];
@@ -7006,7 +7051,8 @@ function ensureSubmissionWordCharResults(row) {
     char: ch,
     isGood: Boolean(row.finalResult),
     accuracyPercent: 0,
-    handwritingImage: legacyImages[idx] || ""
+    handwritingImage: legacyImages[idx] || "",
+    judgeDetail: null
   }));
 }
 
@@ -7018,6 +7064,36 @@ function getWordCharResultsForRender(row) {
   return row.wordCharResults || [];
 }
 
+function computeReviewOverrideMetrics(rows, nowTs = Date.now()) {
+  const windowMs = 14 * 24 * 60 * 60 * 1000;
+  const within14d = rows.filter((x) => nowTs - Number(x.createdAt || 0) <= windowMs);
+  const reviewed = within14d.filter((x) => x && x.reviewedBy);
+  const sample = reviewed.length;
+  const flipped = reviewed.filter((x) => Boolean(x.systemResult) !== Boolean(x.finalResult)).length;
+  const falseRejectOverride = reviewed.filter((x) => !x.systemResult && x.finalResult).length;
+  const falseAcceptOverride = reviewed.filter((x) => x.systemResult && !x.finalResult).length;
+  const toRate = (count) => (sample > 0 ? `${Math.round((count / sample) * 100)}%` : "-");
+  return {
+    sample,
+    flipped,
+    falseRejectOverride,
+    falseAcceptOverride,
+    flippedRateText: toRate(flipped),
+    falseRejectRateText: toRate(falseRejectOverride),
+    falseAcceptRateText: toRate(falseAcceptOverride)
+  };
+}
+
+function matchesAdminOutcomeFilter(row, filterValue) {
+  const system = Boolean(row && row.systemResult);
+  const final = Boolean(row && row.finalResult);
+  const filter = String(filterValue || "all");
+  if (filter === "overturned") return system !== final;
+  if (filter === "false-reject") return !system && final;
+  if (filter === "false-accept") return system && !final;
+  return true;
+}
+
 function renderAdminPanel() {
   if (!canAccessReviewAudit(state.auth.role)) {
     adminCount.textContent = "记录：0 条";
@@ -7026,6 +7102,9 @@ function renderAdminPanel() {
   }
   const keyword = "";
   const range = adminTimeFilter?.value || "all";
+  const outcomeFilter = (adminOutcomeFilter && adminOutcomeFilter.value) || state.adminOutcomeFilter || "all";
+  state.adminOutcomeFilter = outcomeFilter;
+  if (adminOutcomeFilter) adminOutcomeFilter.value = outcomeFilter;
   const now = Date.now();
   const rangeMs = range === "7" ? 7 * 24 * 60 * 60 * 1000 : range === "30" ? 30 * 24 * 60 * 60 * 1000 : 0;
 
@@ -7033,13 +7112,30 @@ function renderAdminPanel() {
     .filter((x) => x && x.username)
     .filter((x) => (keyword ? String(x.username).toLowerCase().includes(keyword) : true))
     .filter((x) => (rangeMs ? now - Number(x.createdAt || 0) <= rangeMs : true))
+    .filter((x) => matchesAdminOutcomeFilter(x, outcomeFilter))
     .sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
-  adminCount.textContent = `记录：${rows.length} 条`;
+  const metrics = computeReviewOverrideMetrics(state.submissions, now);
+  const outcomeLabel =
+    outcomeFilter === "overturned"
+      ? "仅被复判推翻"
+      : outcomeFilter === "false-reject"
+        ? "仅误拒推翻"
+        : outcomeFilter === "false-accept"
+          ? "仅误收推翻"
+          : "全部";
+  adminCount.textContent =
+    `记录：${rows.length} 条（${outcomeLabel}）｜ 近14天复判推翻率 ${metrics.flippedRateText}（样本 ${metrics.sample}）`;
   if (rows.length === 0) {
     adminList.innerHTML = "<p>暂无用户默写记录。</p>";
     return;
   }
-  adminList.innerHTML = rows
+  const metricsPanel = `<div class="admin-item">
+      <p><strong>近14天复判统计</strong></p>
+      <p>复判推翻率：${metrics.flippedRateText}（${metrics.flipped}/${metrics.sample || 0}）</p>
+      <p>误拒推翻率（系统错判拒绝）：${metrics.falseRejectRateText}（${metrics.falseRejectOverride}/${metrics.sample || 0}）</p>
+      <p>误收推翻率（系统错判通过）：${metrics.falseAcceptRateText}（${metrics.falseAcceptOverride}/${metrics.sample || 0}）</p>
+    </div>`;
+  adminList.innerHTML = metricsPanel + rows
     .map((it) => {
       ensureSubmissionWordCharResults(it);
       const displayWordResults = getWordCharResultsForRender(it);
@@ -7670,10 +7766,17 @@ function recordSubmission(item, isGood, accuracyPercent, meta = {}) {
     userAnswer: meta.userAnswer || "",
     handwritingImage: meta.handwritingImage || "",
     accuracyPercent: normalizeAccuracyPercent(accuracyPercent),
-    systemResult: Boolean(isGood),
+    systemResult: typeof meta.systemResult === "boolean" ? meta.systemResult : Boolean(isGood),
     finalResult: Boolean(isGood),
     pointsAwarded: points,
-    wordCharResults: Array.isArray(meta.wordCharResults) ? meta.wordCharResults : []
+    judgeDetail: normalizeJudgeDetail(meta.judgeDetail),
+    wordCharResults: Array.isArray(meta.wordCharResults)
+      ? meta.wordCharResults.map((x) => ({
+          ...x,
+          accuracyPercent: normalizeAccuracyPercent(x && x.accuracyPercent),
+          judgeDetail: normalizeJudgeDetail(x && x.judgeDetail)
+        }))
+      : []
   };
   if (state.reviewDraftActive) {
     state.pendingSubmissionPayloads.push(payload);
@@ -8162,6 +8265,7 @@ function renderReviewButtons() {
 }
 
 function finishReviewSession(isWrongBookSinglePractice) {
+  resetReviewRetryState();
   const sessionPoints = Math.max(0, Number(state.reviewSessionPointsEarned) || 0);
   state.reviewSessionPointsEarned = 0;
   state.reviewSessionFinishedAt = Date.now();
@@ -8200,6 +8304,7 @@ function advanceToNextReviewItem() {
   }
   state.reviewAwaitingNext = false;
   state.reviewLastResult = null;
+  resetReviewRetryState();
   setReviewFlowState("answering");
   renderReviewCard();
   rebuildWrongQueue();
@@ -8536,6 +8641,7 @@ function updateWriteTarget(text) {
   targetChar.textContent = item.text;
   targetMeta.textContent = `${item.pinyin} · ${item.meaning}`;
   initStrokeWriter(item.text);
+  resetWriteRetryState(makeItemKey(item));
   if (typeof state.refreshWriteCanvas === "function") state.refreshWriteCanvas({ clear: true });
   updateWriteNavButtons();
 }
@@ -8901,6 +9007,7 @@ async function runPreReviewPreviewAndStart() {
 function startReviewSession(source, emptyMessage) {
   clearAdvanceTimer();
   stopReviewPreviewSequence();
+  resetReviewRetryState();
   if (state.reviewDraftActive) rollbackReviewDraftSession();
   const filtered = buildReviewSessionList(source);
   state.reviewList = filtered;
@@ -8926,6 +9033,7 @@ function resolveItemByKey(key) {
 function startDirectReviewSession(items, emptyMessage, options = {}) {
   clearAdvanceTimer();
   stopReviewPreviewSequence();
+  resetReviewRetryState();
   if (state.reviewDraftActive) rollbackReviewDraftSession();
   const unique = [];
   const seen = new Set();
@@ -8951,6 +9059,7 @@ function startDirectReviewSession(items, emptyMessage, options = {}) {
 function cancelReviewSessionWithoutSave() {
   clearAdvanceTimer();
   stopReviewPreviewSequence();
+  resetReviewRetryState();
   rollbackReviewDraftSession();
   state.reviewActive = false;
   state.reviewList = [];
@@ -9054,12 +9163,12 @@ function finalizeReviewResult(item, isGood, accuracyPercent, meta = {}) {
     }
   }
 
-  if (!isWrongBookSinglePractice && item.type === "char" && isGood && Array.isArray(meta.mlFeature)) {
+  if (!isWrongBookSinglePractice && item.type === "char" && isGood && meta.mlFeatureAccepted && Array.isArray(meta.mlFeature)) {
     updateCharMlPrototype(item.text, meta.mlFeature);
   }
-  if (!isWrongBookSinglePractice && item.type === "word" && Array.isArray(meta.mlUpdates)) {
+  if (!isWrongBookSinglePractice && item.type === "word" && isGood && Array.isArray(meta.mlUpdates)) {
     meta.mlUpdates.forEach((x) => {
-      if (!x || !x.isGood || !x.char || !Array.isArray(x.feature)) return;
+      if (!x || !x.isGood || !x.accepted || !x.char || !Array.isArray(x.feature)) return;
       updateCharMlPrototype(x.char, x.feature);
     });
   }
@@ -9369,28 +9478,29 @@ function scorePersonalMlForChar(char, userBits, size) {
   return Math.max(0, Math.min(1, sim));
 }
 
-function scoreWriting(userBits, templateBits, size) {
+function scoreWritingWithWeights(userBits, templateBits, size, weights) {
   const cleanUser = denoiseBits(userBits, size);
   const cleanTemplate = denoiseBits(templateBits, size);
   const minInk = 20;
   if (countActiveBits(cleanUser) < minInk) {
-    return { pass: false, score: 0, engines: { overlap: 0, projection: 0, grid: 0 } };
+    return { score: 0, engines: { overlap: 0, projection: 0, grid: 0 } };
   }
 
   let best = { score: 0, overlap: 0, projection: 0, grid: 0 };
+  const overlapW = Number(weights && weights.overlap) || 0;
+  const projectionW = Number(weights && weights.projection) || 0;
+  const gridW = Number(weights && weights.grid) || 0;
   for (let dy = -2; dy <= 2; dy += 1) {
     for (let dx = -2; dx <= 2; dx += 1) {
       const shifted = dx === 0 && dy === 0 ? cleanUser : shiftBits(cleanUser, size, dx, dy);
       const overlap = scoreWritingBase(shifted, cleanTemplate, size).score;
       const projection = scoreProjectionEngine(shifted, cleanTemplate, size);
       const grid = scoreGridEngine(shifted, cleanTemplate, size);
-      const combined = 0.52 * overlap + 0.28 * projection + 0.2 * grid;
+      const combined = overlapW * overlap + projectionW * projection + gridW * grid;
       if (combined > best.score) best = { score: combined, overlap, projection, grid };
     }
   }
-  const pass = best.score >= 0.62;
   return {
-    pass,
     score: Math.max(0, Math.min(1, best.score)),
     engines: {
       overlap: Math.max(0, Math.min(1, best.overlap)),
@@ -9398,6 +9508,103 @@ function scoreWriting(userBits, templateBits, size) {
       grid: Math.max(0, Math.min(1, best.grid))
     }
   };
+}
+
+function scoreWriting(userBits, templateBits, size) {
+  const scored = scoreWritingWithWeights(userBits, templateBits, size, { overlap: 0.52, projection: 0.28, grid: 0.2 });
+  return {
+    pass: scored.score >= 0.62,
+    score: scored.score,
+    engines: scored.engines
+  };
+}
+
+let recognitionTierThresholdsCache = null;
+
+function isRecognitionV2Enabled() {
+  return state.flags.recognitionV2Enabled !== false;
+}
+
+function getRecognitionTierThresholds() {
+  if (recognitionTierThresholdsCache) return recognitionTierThresholdsCache;
+  if (!recognitionCore || typeof recognitionCore.computeQuantileThresholds !== "function") {
+    recognitionTierThresholdsCache = { low: 0, high: 0, sampleSize: 0 };
+    return recognitionTierThresholdsCache;
+  }
+  const size = 96;
+  const counts = CHAR_ITEMS.map((item) => countActiveBits(createTemplateBitsForChar(item.text, size))).filter((x) => x > 0);
+  recognitionTierThresholdsCache = recognitionCore.computeQuantileThresholds(counts, 0.33, 0.66);
+  return recognitionTierThresholdsCache;
+}
+
+function resolveCharJudgeOutcome(char, userBits, templateBits, retryAttempt) {
+  const mlScore = scorePersonalMlForChar(char, userBits, 96);
+  if (!isRecognitionV2Enabled() || !recognitionCore || typeof recognitionCore.decideRecognition !== "function") {
+    const legacy = scoreWriting(userBits, templateBits, 96);
+    const blendedScore = typeof mlScore === "number" ? 0.78 * legacy.score + 0.22 * mlScore : legacy.score;
+    const pass = typeof mlScore === "number" ? blendedScore >= 0.61 || (mlScore >= 0.93 && legacy.score >= 0.5) : legacy.pass;
+    return {
+      finalDecision: pass ? "pass" : "fail",
+      detail: normalizeJudgeDetail({
+        version: "v1",
+        decision: pass ? "pass" : "fail",
+        decisionScore: blendedScore,
+        baseScore: legacy.score,
+        mlScore: typeof mlScore === "number" ? mlScore : null,
+        blendedScore,
+        tier: "medium",
+        thresholds: { pass: 0.61, retryLow: 0.56 },
+        engines: legacy.engines,
+        retryAttempt: Math.max(0, Number(retryAttempt) || 0),
+        reason: pass ? "pass_threshold" : "below_threshold"
+      }),
+      score: Math.max(0, Math.min(1, blendedScore)),
+      mlScore,
+      mlAccepted: pass
+    };
+  }
+
+  const quantiles = getRecognitionTierThresholds();
+  const tier = recognitionCore.resolveTier(countActiveBits(templateBits), quantiles);
+  const profile = recognitionCore.resolveTierProfile(tier);
+  const scored = scoreWritingWithWeights(userBits, templateBits, 96, profile.weights);
+  const detail = normalizeJudgeDetail(
+    recognitionCore.decideRecognition({
+      tier,
+      engines: scored.engines,
+      mlScore,
+      retryAttempt: Math.max(0, Number(retryAttempt) || 0)
+    })
+  );
+
+  return {
+    finalDecision: detail.decision,
+    detail,
+    score: Math.max(0, Math.min(1, Number(detail.decisionScore) || 0)),
+    mlScore,
+    mlAccepted: typeof recognitionCore.isMlUpdateEligible === "function" ? recognitionCore.isMlUpdateEligible(detail) : false
+  };
+}
+
+function createReviewRetryState() {
+  return { itemKey: "", attempt: 0, pendingIndexes: [], frozenWordResults: [] };
+}
+
+function getReviewRetryState(item) {
+  const key = makeItemKey(item);
+  if (!state.reviewRetryState || state.reviewRetryState.itemKey !== key) {
+    state.reviewRetryState = createReviewRetryState();
+    state.reviewRetryState.itemKey = key;
+  }
+  return state.reviewRetryState;
+}
+
+function resetReviewRetryState() {
+  state.reviewRetryState = createReviewRetryState();
+}
+
+function resetWriteRetryState(itemKey = "") {
+  state.writeRetryState = { itemKey, attempt: 0 };
 }
 
 function drawStrokesToCanvas(strokes, sourceSize, size) {
@@ -9464,17 +9671,27 @@ function evaluateDrawing() {
 
   const userBits = normalizeBits(getBinaryData(userCtx, size), size, size, 10);
   const templateBits = normalizeBits(getBinaryData(templateCtx, size), size, size, 10);
-  const result = scoreWriting(userBits, templateBits, size);
-  const mlScore = scorePersonalMlForChar(item.text, userBits, size);
-  const blendedScore =
-    typeof mlScore === "number" ? 0.78 * result.score + 0.22 * mlScore : result.score;
-  const finalPass = typeof mlScore === "number" ? blendedScore >= 0.61 || (mlScore >= 0.93 && result.score >= 0.5) : result.pass;
-  const accuracy = Math.max(0, Math.min(100, Math.round(blendedScore * 100)));
+  const retryState = getReviewRetryState(item);
+  const outcome = resolveCharJudgeOutcome(item.text, userBits, templateBits, retryState.attempt);
+  if (outcome.finalDecision === "retry" && retryState.attempt < 1) {
+    retryState.attempt = 1;
+    if (state.dictationPad && typeof state.dictationPad.reset === "function") state.dictationPad.reset();
+    reviewFeedback.textContent = "接近正确，请再写一次。";
+    reviewAnswer.textContent = "";
+    reviewAnswer.classList.add("is-hidden");
+    return;
+  }
+
+  const finalPass = outcome.finalDecision === "pass";
+  const accuracy = Math.max(0, Math.min(100, Math.round(outcome.score * 100)));
   const handwritingImage = userCanvas.toDataURL("image/png");
   finalizeReviewResult(item, finalPass, accuracy, {
     handwritingImage,
-    mlFeature: extractMlFeature(userBits, size)
+    mlFeature: extractMlFeature(userBits, size),
+    mlFeatureAccepted: finalPass && outcome.mlAccepted,
+    judgeDetail: outcome.detail
   });
+  resetReviewRetryState();
 }
 
 function createTemplateBitsForChar(char, size) {
@@ -9511,9 +9728,17 @@ function evaluateWordDrawing() {
     return;
   }
 
-  const charResults = [];
-  const mlUpdates = [];
+  const retryState = getReviewRetryState(item);
+  const retryAttempt = Math.max(0, Number(retryState.attempt) || 0);
+  const retryMode = retryAttempt > 0 && Array.isArray(retryState.pendingIndexes) && retryState.pendingIndexes.length > 0;
+  const pendingSet = new Set(retryMode ? retryState.pendingIndexes : []);
+  const charResults = retryMode
+    ? (Array.isArray(retryState.frozenWordResults) ? retryState.frozenWordResults.map((x) => (x ? { ...x } : x)) : new Array(chars.length).fill(null))
+    : new Array(chars.length).fill(null);
+  const nextPendingIndexes = [];
+
   for (let i = 0; i < chars.length; i += 1) {
+    if (retryMode && !pendingSet.has(i)) continue;
     const pad = state.dictationPads[i];
     if (!pad || pad.strokeCount === 0) {
       reviewFeedback.textContent = `请先完成第 ${i + 1} 个字的书写。`;
@@ -9523,31 +9748,103 @@ function evaluateWordDrawing() {
     const userCtx = userCanvas.getContext("2d");
     const userBits = normalizeBits(getBinaryData(userCtx, size), size, size, 10);
     const templateBits = createTemplateBitsForChar(chars[i], size);
-    const result = scoreWriting(userBits, templateBits, size);
-    const mlScore = scorePersonalMlForChar(chars[i], userBits, size);
-    const blendedScore =
-      typeof mlScore === "number" ? 0.78 * result.score + 0.22 * mlScore : result.score;
-    const isGood =
-      typeof mlScore === "number" ? blendedScore >= 0.61 || (mlScore >= 0.93 && result.score >= 0.5) : result.pass;
-    const accuracy = Math.max(0, Math.min(100, Math.round(blendedScore * 100)));
-    mlUpdates.push({ char: chars[i], feature: extractMlFeature(userBits, size), isGood });
-    charResults.push({
+    const outcome = resolveCharJudgeOutcome(chars[i], userBits, templateBits, retryAttempt);
+    if (!retryMode && outcome.finalDecision === "retry") {
+      nextPendingIndexes.push(i);
+      continue;
+    }
+
+    const isGood = outcome.finalDecision === "pass";
+    const accuracy = Math.max(0, Math.min(100, Math.round(outcome.score * 100)));
+    charResults[i] = {
       char: chars[i],
       isGood,
       accuracyPercent: accuracy,
-      handwritingImage: userCanvas.toDataURL("image/png")
-    });
+      handwritingImage: userCanvas.toDataURL("image/png"),
+      judgeDetail: outcome.detail,
+      mlFeature: extractMlFeature(userBits, size),
+      mlFeatureAccepted: isGood && outcome.mlAccepted
+    };
   }
 
-  const isGood = charResults.every((x) => x.isGood);
-  const accuracyPercent = Math.round(charResults.reduce((sum, x) => sum + x.accuracyPercent, 0) / Math.max(1, charResults.length));
-  const detailText = charResults.map((x, idx) => `第${idx + 1}字${x.isGood ? "正确" : "错误"}(${x.accuracyPercent}%)`).join("，");
+  if (!retryMode && nextPendingIndexes.length > 0) {
+    retryState.attempt = 1;
+    retryState.pendingIndexes = nextPendingIndexes;
+    retryState.frozenWordResults = charResults;
+    nextPendingIndexes.forEach((index) => {
+      const pad = state.dictationPads[index];
+      if (pad && typeof pad.reset === "function") pad.reset();
+    });
+    const pendingText = nextPendingIndexes.map((x) => x + 1).join("、");
+    reviewFeedback.textContent = `第 ${pendingText} 字接近正确，请重写这些字后再判定。`;
+    reviewAnswer.textContent = "";
+    reviewAnswer.classList.add("is-hidden");
+    return;
+  }
+
+  const normalizedCharResults = charResults.map((x, idx) => {
+    if (x) return x;
+    return {
+      char: chars[idx],
+      isGood: false,
+      accuracyPercent: 0,
+      handwritingImage: "",
+      judgeDetail: normalizeJudgeDetail({
+        version: "v2",
+        decision: "fail",
+        decisionScore: 0,
+        baseScore: 0,
+        mlScore: null,
+        blendedScore: 0,
+        tier: "medium",
+        thresholds: { pass: 0.61, retryLow: 0.56 },
+        engines: { overlap: 0, projection: 0, grid: 0 },
+        retryAttempt,
+        reason: "missing_result"
+      }),
+      mlFeature: [],
+      mlFeatureAccepted: false
+    };
+  });
+  const isGood = normalizedCharResults.every((x) => x.isGood);
+  const accuracyPercent = Math.round(
+    normalizedCharResults.reduce((sum, x) => sum + x.accuracyPercent, 0) / Math.max(1, normalizedCharResults.length)
+  );
+  const detailText = normalizedCharResults
+    .map((x, idx) => `第${idx + 1}字${x.isGood ? "正确" : "错误"}(${x.accuracyPercent}%)`)
+    .join("，");
+  const itemJudgeDetail = normalizeJudgeDetail({
+    version: "v2",
+    decision: isGood ? "pass" : "fail",
+    decisionScore: accuracyPercent / 100,
+    baseScore: accuracyPercent / 100,
+    mlScore: null,
+    blendedScore: accuracyPercent / 100,
+    tier: "medium",
+    thresholds: { pass: 0.61, retryLow: 0.56 },
+    engines: { overlap: 0, projection: 0, grid: 0 },
+    retryAttempt,
+    reason: isGood ? "word_all_pass" : "word_partial_fail"
+  });
   finalizeReviewResult(item, isGood, accuracyPercent, {
     userAnswer: detailText,
-    wordCharResults: charResults,
-    mlUpdates,
-    handwritingImage: charResults.map((x) => x.handwritingImage).join("||")
+    wordCharResults: normalizedCharResults.map((x) => ({
+      char: x.char,
+      isGood: x.isGood,
+      accuracyPercent: x.accuracyPercent,
+      handwritingImage: x.handwritingImage,
+      judgeDetail: x.judgeDetail
+    })),
+    mlUpdates: normalizedCharResults.map((x) => ({
+      char: x.char,
+      isGood: x.isGood,
+      feature: x.mlFeature,
+      accepted: Boolean(x.mlFeatureAccepted)
+    })),
+    handwritingImage: normalizedCharResults.map((x) => x.handwritingImage).join("||"),
+    judgeDetail: itemJudgeDetail
   });
+  resetReviewRetryState();
 }
 
 function cleanupDictationPad() {
@@ -9577,7 +9874,7 @@ function createHandwritingPad(container, canvasSize = 320) {
   container.appendChild(canvas);
 
   const ctx = canvas.getContext("2d");
-  const pad = { canvas, ctx, drawing: false, currentStroke: [], strokes: [], strokeCount: 0, cleanup: null };
+  const pad = { canvas, ctx, drawing: false, currentStroke: [], strokes: [], strokeCount: 0, cleanup: null, reset: null };
 
   function drawPad() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -9655,6 +9952,14 @@ function createHandwritingPad(container, canvasSize = 320) {
   canvas.addEventListener("touchstart", start, { passive: false });
   canvas.addEventListener("touchmove", move, { passive: false });
   window.addEventListener("touchend", end);
+
+  pad.reset = () => {
+    pad.drawing = false;
+    pad.currentStroke = [];
+    pad.strokes = [];
+    pad.strokeCount = 0;
+    drawPad();
+  };
 
   pad.cleanup = () => {
     canvas.removeEventListener("mousedown", start);
@@ -10209,6 +10514,12 @@ function wireAdmin() {
     });
   }
   adminTimeFilter.addEventListener("change", renderAdminPanel);
+  if (adminOutcomeFilter) {
+    adminOutcomeFilter.addEventListener("change", (event) => {
+      state.adminOutcomeFilter = event.target.value || "all";
+      renderAdminPanel();
+    });
+  }
   if (adminUsersRefresh) {
     adminUsersRefresh.addEventListener("click", () => {
       fetchAdminUsers();
@@ -10453,7 +10764,8 @@ function wireAdmin() {
             char: x.char || "",
             isGood: Boolean(x.isGood),
             accuracyPercent: normalizeAccuracyPercent(x.accuracyPercent),
-            handwritingImage: x.handwritingImage || ""
+            handwritingImage: x.handwritingImage || "",
+            judgeDetail: normalizeJudgeDetail(x.judgeDetail)
           }))
         : null;
     const after = action === "apply-char-review"
@@ -10470,7 +10782,7 @@ function wireAdmin() {
         })
       });
       const idx = state.submissions.findIndex((x) => x.id === id);
-      if (idx !== -1 && resp.submission) state.submissions[idx] = resp.submission;
+      if (idx !== -1 && resp.submission) state.submissions[idx] = normalizeSubmissionRow(resp.submission);
       delete state.adminWordReviewDrafts[id];
       renderAdminPanel();
       renderUserRecords();
@@ -10732,19 +11044,26 @@ function setupCanvas() {
 
       const userBits = normalizeBits(getBinaryData(userCtx, size), size, size, 10);
       const templateBits = normalizeBits(getBinaryData(templateCtx, size), size, size, 10);
-      const result = scoreWriting(userBits, templateBits, size);
-      const mlScore = scorePersonalMlForChar(item.text, userBits, size);
-      const blendedScore =
-        typeof mlScore === "number" ? 0.78 * result.score + 0.22 * mlScore : result.score;
-      const pass =
-        typeof mlScore === "number" ? blendedScore >= 0.61 || (mlScore >= 0.93 && result.score >= 0.5) : result.pass;
+      if (!state.writeRetryState || state.writeRetryState.itemKey !== makeItemKey(item)) {
+        resetWriteRetryState(makeItemKey(item));
+      }
+      const retryAttempt = Math.max(0, Number(state.writeRetryState.attempt) || 0);
+      const outcome = resolveCharJudgeOutcome(item.text, userBits, templateBits, retryAttempt);
+      if (outcome.finalDecision === "retry" && retryAttempt < 1) {
+        state.writeRetryState.attempt = 1;
+        if (typeof state.refreshWriteCanvas === "function") state.refreshWriteCanvas({ clear: true });
+        writeFeedback.textContent = "接近正确，请再写一次。";
+        return;
+      }
+      const pass = outcome.finalDecision === "pass";
       writeFeedback.textContent = pass ? "判定通过" : "判定未通过";
+      resetWriteRetryState(makeItemKey(item));
 
       scheduleProgress(item, pass);
       if (pass) {
         removeWrongItem(item);
         addPoints(1);
-        updateCharMlPrototype(item.text, extractMlFeature(userBits, size));
+        if (outcome.mlAccepted) updateCharMlPrototype(item.text, extractMlFeature(userBits, size));
       } else addWrongItem(item);
       refreshStats();
       rebuildWrongQueue();

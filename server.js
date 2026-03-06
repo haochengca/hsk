@@ -14,6 +14,7 @@ const DB_PATH = process.env.DB_PATH
   : path.join(ROOT, "data", "server_db.sqlite");
 const DATABASE_URL = String(process.env.DATABASE_URL || "").trim();
 const USE_POSTGRES = Boolean(DATABASE_URL);
+const RECOGNITION_V2_ENABLED = !["0", "false", "off"].includes(String(process.env.RECOGNITION_V2_ENABLED || "1").trim().toLowerCase());
 const LEGACY_JSON_DB_PATH = path.join(ROOT, "data", "server_db.json");
 const LEGACY_SQLITE_DB_PATH = path.join(ROOT, "data", "server_db.sqlite");
 const DB_STATE_KEY = "state";
@@ -443,6 +444,41 @@ function normalizeAccuracyPercent(value) {
   return Math.max(0, Math.min(100, Math.round(num)));
 }
 
+function normalizeUnitScore(value) {
+  if (!Number.isFinite(value)) return 0;
+  return Math.max(0, Math.min(1, Number(value)));
+}
+
+function normalizeJudgeDetail(detail) {
+  if (!detail || typeof detail !== "object") return null;
+  const thresholds = detail.thresholds && typeof detail.thresholds === "object"
+    ? {
+        pass: normalizeUnitScore(Number(detail.thresholds.pass)),
+        retryLow: normalizeUnitScore(Number(detail.thresholds.retryLow))
+      }
+    : null;
+  const engines = detail.engines && typeof detail.engines === "object"
+    ? {
+        overlap: normalizeUnitScore(Number(detail.engines.overlap)),
+        projection: normalizeUnitScore(Number(detail.engines.projection)),
+        grid: normalizeUnitScore(Number(detail.engines.grid))
+      }
+    : null;
+  return {
+    version: String(detail.version || "v2"),
+    decision: ["pass", "fail", "retry"].includes(String(detail.decision)) ? String(detail.decision) : "fail",
+    decisionScore: normalizeUnitScore(Number(detail.decisionScore)),
+    baseScore: normalizeUnitScore(Number(detail.baseScore)),
+    mlScore: Number.isFinite(detail.mlScore) ? normalizeUnitScore(Number(detail.mlScore)) : null,
+    blendedScore: normalizeUnitScore(Number(detail.blendedScore)),
+    tier: ["simple", "medium", "complex"].includes(String(detail.tier)) ? String(detail.tier) : "medium",
+    thresholds,
+    engines,
+    retryAttempt: Math.max(0, Number(detail.retryAttempt) || 0),
+    reason: String(detail.reason || "unknown")
+  };
+}
+
 function addPointsForUser(db, username, pointsDelta, correctDelta) {
   const data = ensureUserData(db, username);
   const rewards = data.rewards;
@@ -666,6 +702,9 @@ async function handleApi(req, res, pathname) {
         linkedChildren: Array.isArray(auth.linkedChildren) ? auth.linkedChildren : []
       },
       data,
+      flags: {
+        recognitionV2Enabled: RECOGNITION_V2_ENABLED
+      },
       lexiconOverrides: db.lexiconOverrides || {},
       submissions
     });
@@ -735,7 +774,8 @@ async function handleApi(req, res, pathname) {
           char: String((x && x.char) || ""),
           isGood: Boolean(x && x.isGood),
           accuracyPercent: normalizeAccuracyPercent(x && x.accuracyPercent),
-          handwritingImage: String((x && x.handwritingImage) || "")
+          handwritingImage: String((x && x.handwritingImage) || ""),
+          judgeDetail: normalizeJudgeDetail(x && x.judgeDetail)
         }))
       : [];
     const row = {
@@ -749,6 +789,7 @@ async function handleApi(req, res, pathname) {
       accuracyPercent: normalizeAccuracyPercent(body.accuracyPercent),
       systemResult: Boolean(body.systemResult),
       finalResult: Boolean(body.finalResult),
+      judgeDetail: normalizeJudgeDetail(body.judgeDetail),
       pointsAwarded: Number(body.pointsAwarded) || 0,
       wordCharResults,
       reviewedBy: String(body.reviewedBy || ""),
@@ -772,7 +813,8 @@ async function handleApi(req, res, pathname) {
           char: String((x && x.char) || ""),
           isGood: Boolean(x && x.isGood),
           accuracyPercent: normalizeAccuracyPercent(x && x.accuracyPercent),
-          handwritingImage: String((x && x.handwritingImage) || "")
+          handwritingImage: String((x && x.handwritingImage) || ""),
+          judgeDetail: normalizeJudgeDetail(x && x.judgeDetail)
         }))
       : null;
     if (submission.type === "word" && reviewedWordCharResults) submission.wordCharResults = reviewedWordCharResults;

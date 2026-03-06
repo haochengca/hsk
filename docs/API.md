@@ -73,6 +73,9 @@ Base URL: `/api`
       "reviewWrongMixRatio": "0|10|20|30|40|50|70|100"
     }
   },
+  "flags": {
+    "recognitionV2Enabled": true
+  },
   "submissions": []
 }
 ```
@@ -105,19 +108,38 @@ Base URL: `/api`
   "accuracyPercent": 0,
   "systemResult": true,
   "finalResult": true,
+  "judgeDetail": {
+    "version": "v2",
+    "decision": "pass|fail|retry",
+    "decisionScore": 0.72,
+    "baseScore": 0.69,
+    "mlScore": 0.81,
+    "blendedScore": 0.72,
+    "tier": "simple|medium|complex",
+    "thresholds": { "pass": 0.61, "retryLow": 0.56 },
+    "engines": { "overlap": 0.71, "projection": 0.66, "grid": 0.67 },
+    "retryAttempt": 0,
+    "reason": "pass_threshold"
+  },
   "pointsAwarded": 1,
   "wordCharResults": [
     {
       "char": "你",
       "isGood": true,
       "accuracyPercent": 90,
-      "handwritingImage": "data:image/..."
+      "handwritingImage": "data:image/...",
+      "judgeDetail": {
+        "version": "v2",
+        "decision": "pass",
+        "decisionScore": 0.74
+      }
     }
   ]
 }
 ```
 - 说明：
   - 词汇提交可包含 `wordCharResults`，用于逐字追踪。
+  - `judgeDetail` 与 `wordCharResults[].judgeDetail` 均为可选字段，旧请求体保持兼容。
   - `handwritingImage` 对词汇可为多图拼接字符串（`||` 分隔），用于兼容旧数据展示。
 - 响应：`{ ok, submission }`
 
@@ -134,7 +156,12 @@ Base URL: `/api`
       "char": "你",
       "isGood": true,
       "accuracyPercent": 90,
-      "handwritingImage": "data:image/..."
+      "handwritingImage": "data:image/...",
+      "judgeDetail": {
+        "version": "v2",
+        "decision": "pass",
+        "decisionScore": 0.74
+      }
     },
     {
       "char": "好",
