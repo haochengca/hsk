@@ -8949,7 +8949,6 @@ async function runPreReviewPreviewAndStart() {
     renderReviewCard();
     return;
   }
-
   const enablePreview = state.reviewPreviewMode === "all";
   if (!enablePreview) {
     state.reviewPreviewRunning = false;
@@ -9536,21 +9535,71 @@ function scoreWriting(userBits, templateBits, size) {
 }
 
 let recognitionTierThresholdsCache = null;
+const templateBitsCache = new Map();
+let recognitionTierWarmupStarted = false;
+let recognitionTierWarmupTimer = null;
 
 function isRecognitionV2Enabled() {
   return state.flags.recognitionV2Enabled !== false;
 }
 
+function scheduleRecognitionTierWarmup(delayMs = 0) {
+  if (recognitionTierThresholdsCache || recognitionTierWarmupStarted) return;
+  if (!recognitionCore || typeof recognitionCore.computeQuantileThresholds !== "function") return;
+  recognitionTierWarmupStarted = true;
+  const size = 96;
+  const counts = [];
+  let index = 0;
+  const chunkSize = 8;
+  const executeSlice = (budgetMs = 8) => {
+    const deadline = performance.now() + Math.max(2, Number(budgetMs) || 8);
+    while (index < CHAR_ITEMS.length && performance.now() < deadline) {
+      const end = Math.min(index + chunkSize, CHAR_ITEMS.length);
+      for (; index < end; index += 1) {
+        const item = CHAR_ITEMS[index];
+        const count = countActiveBits(createTemplateBitsForCharRaw(item.text, size));
+        if (count > 0) counts.push(count);
+      }
+    }
+  };
+  const scheduleNext = (ms = 0) => {
+    recognitionTierWarmupTimer = window.setTimeout(runChunk, Math.max(0, Number(ms) || 0));
+  };
+  const runChunk = (idleDeadline) => {
+    if (state.reviewActive && state.reviewFlowState === "answering") {
+      scheduleNext(250);
+      return;
+    }
+    if (idleDeadline && typeof idleDeadline.timeRemaining === "function") {
+      executeSlice(idleDeadline.timeRemaining());
+    } else {
+      executeSlice(6);
+    }
+    if (index < CHAR_ITEMS.length) {
+      if (typeof window.requestIdleCallback === "function") {
+        recognitionTierWarmupTimer = window.requestIdleCallback(runChunk, { timeout: 500 });
+      } else {
+        scheduleNext(16);
+      }
+      return;
+    }
+    recognitionTierThresholdsCache = recognitionCore.computeQuantileThresholds(counts, 0.33, 0.66);
+    recognitionTierWarmupStarted = false;
+    recognitionTierWarmupTimer = null;
+  };
+  if (typeof window.requestIdleCallback === "function") {
+    recognitionTierWarmupTimer = window.setTimeout(() => {
+      recognitionTierWarmupTimer = window.requestIdleCallback(runChunk, { timeout: 800 });
+    }, Math.max(0, Number(delayMs) || 0));
+  } else {
+    scheduleNext(delayMs);
+  }
+}
+
 function getRecognitionTierThresholds() {
   if (recognitionTierThresholdsCache) return recognitionTierThresholdsCache;
-  if (!recognitionCore || typeof recognitionCore.computeQuantileThresholds !== "function") {
-    recognitionTierThresholdsCache = { low: 0, high: 0, sampleSize: 0 };
-    return recognitionTierThresholdsCache;
-  }
-  const size = 96;
-  const counts = CHAR_ITEMS.map((item) => countActiveBits(createTemplateBitsForChar(item.text, size))).filter((x) => x > 0);
-  recognitionTierThresholdsCache = recognitionCore.computeQuantileThresholds(counts, 0.33, 0.66);
-  return recognitionTierThresholdsCache;
+  scheduleRecognitionTierWarmup();
+  return null;
 }
 
 function resolveCharJudgeOutcome(char, userBits, templateBits, retryAttempt) {
@@ -9581,7 +9630,8 @@ function resolveCharJudgeOutcome(char, userBits, templateBits, retryAttempt) {
   }
 
   const quantiles = getRecognitionTierThresholds();
-  const tier = recognitionCore.resolveTier(countActiveBits(templateBits), quantiles);
+  const hasTierQuantiles = !!(quantiles && Number(quantiles.sampleSize) > 0);
+  const tier = hasTierQuantiles ? recognitionCore.resolveTier(countActiveBits(templateBits), quantiles) : "medium";
   const profile = recognitionCore.resolveTierProfile(tier);
   const scored = scoreWritingWithWeights(userBits, templateBits, 96, profile.weights);
   const detail = normalizeJudgeDetail(
@@ -9673,20 +9723,8 @@ function evaluateDrawing() {
   const userCanvas = drawPadStrokesToCanvas(state.dictationPad, size);
   const userCtx = userCanvas.getContext("2d");
 
-  const templateCanvas = document.createElement("canvas");
-  templateCanvas.width = size;
-  templateCanvas.height = size;
-  const templateCtx = templateCanvas.getContext("2d");
-  templateCtx.fillStyle = "#fff";
-  templateCtx.fillRect(0, 0, size, size);
-  templateCtx.fillStyle = "#000";
-  templateCtx.font = "76px 'Noto Serif SC'";
-  templateCtx.textAlign = "center";
-  templateCtx.textBaseline = "middle";
-  templateCtx.fillText(item.text, size / 2, size / 2 + 2);
-
   const userBits = normalizeBits(getBinaryData(userCtx, size), size, size, 10);
-  const templateBits = normalizeBits(getBinaryData(templateCtx, size), size, size, 10);
+  const templateBits = createTemplateBitsForChar(item.text, size);
   const retryState = getReviewRetryState(item);
   const outcome = resolveCharJudgeOutcome(item.text, userBits, templateBits, retryState.attempt);
   if (outcome.finalDecision === "retry" && retryState.attempt < 1) {
@@ -9710,7 +9748,7 @@ function evaluateDrawing() {
   resetReviewRetryState();
 }
 
-function createTemplateBitsForChar(char, size) {
+function createTemplateBitsForCharRaw(char, size) {
   const templateCanvas = document.createElement("canvas");
   templateCanvas.width = size;
   templateCanvas.height = size;
@@ -9723,6 +9761,14 @@ function createTemplateBitsForChar(char, size) {
   templateCtx.textBaseline = "middle";
   templateCtx.fillText(char, size / 2, size / 2 + 2);
   return normalizeBits(getBinaryData(templateCtx, size), size, size, 10);
+}
+
+function createTemplateBitsForChar(char, size) {
+  const key = `${size}:${char}`;
+  if (templateBitsCache.has(key)) return templateBitsCache.get(key);
+  const bits = createTemplateBitsForCharRaw(char, size);
+  templateBitsCache.set(key, bits);
+  return bits;
 }
 
 function evaluateWordDrawing() {
@@ -11051,20 +11097,8 @@ function setupCanvas() {
       const userCanvas = drawStrokesToCanvas(strokes, 340, size);
       const userCtx = userCanvas.getContext("2d");
 
-      const templateCanvas = document.createElement("canvas");
-      templateCanvas.width = size;
-      templateCanvas.height = size;
-      const templateCtx = templateCanvas.getContext("2d");
-      templateCtx.fillStyle = "#fff";
-      templateCtx.fillRect(0, 0, size, size);
-      templateCtx.fillStyle = "#000";
-      templateCtx.font = "76px 'Noto Serif SC'";
-      templateCtx.textAlign = "center";
-      templateCtx.textBaseline = "middle";
-      templateCtx.fillText(item.text, size / 2, size / 2 + 2);
-
       const userBits = normalizeBits(getBinaryData(userCtx, size), size, size, 10);
-      const templateBits = normalizeBits(getBinaryData(templateCtx, size), size, size, 10);
+      const templateBits = createTemplateBitsForChar(item.text, size);
       if (!state.writeRetryState || state.writeRetryState.itemKey !== makeItemKey(item)) {
         resetWriteRetryState(makeItemKey(item));
       }
@@ -11111,6 +11145,7 @@ async function init() {
   wireWrongBook();
   wireAdmin();
   setupCanvas();
+  scheduleRecognitionTierWarmup(300);
   renderLearnCard();
   renderLearnCharList();
   switchAuthMode("login");
