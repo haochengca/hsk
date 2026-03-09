@@ -357,6 +357,142 @@ button:disabled,
   overflow: hidden;
 }
 
+.task-card {
+  margin-top: 0;
+  text-align: left;
+  border-radius: 18px;
+  padding: 0.85rem;
+}
+
+.task-card-head {
+  align-items: start;
+}
+
+.task-card-head h3,
+.task-card-head p {
+  margin: 0;
+}
+
+.task-builder {
+  display: grid;
+  gap: 0.65rem;
+  margin-top: 0.65rem;
+}
+
+.task-level-picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.task-level-picker label {
+  padding: 0.32rem 0.58rem;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 168, 168, 0.22);
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 0.92rem;
+}
+
+.task-list {
+  display: grid;
+  gap: 0.65rem;
+  margin-top: 0.7rem;
+}
+
+.task-section + .task-section {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(19, 35, 63, 0.1);
+}
+
+.task-item {
+  border: 1px solid rgba(19, 35, 63, 0.1);
+  border-radius: 16px;
+  background: rgba(245, 250, 255, 0.92);
+  padding: 0.72rem;
+}
+
+.task-item h4,
+.task-item p {
+  margin: 0;
+}
+
+.task-item-meta {
+  margin-top: 0.28rem;
+  color: #3e5777;
+  font-size: 0.9rem;
+}
+
+.task-item-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.48rem;
+}
+
+.task-tag {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0.18rem 0.48rem;
+  background: rgba(0, 168, 168, 0.12);
+  color: #18696c;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.task-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.62rem;
+}
+
+.task-actions button {
+  flex: 1;
+}
+
+.task-detail {
+  margin-top: 0.62rem;
+  padding-top: 0.62rem;
+  border-top: 1px dashed rgba(19, 35, 63, 0.14);
+}
+
+.task-detail p {
+  margin-top: 0.28rem;
+  font-size: 0.9rem;
+  color: #314b6a;
+}
+
+.task-level-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 0.42rem;
+  margin-top: 0.52rem;
+}
+
+.task-level-stat {
+  padding: 0.46rem 0.54rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.84);
+  border: 1px solid rgba(19, 35, 63, 0.08);
+}
+
+.task-level-stat .label,
+.task-level-stat .value {
+  margin: 0;
+}
+
+.task-level-stat .label {
+  font-size: 0.78rem;
+  color: #5e748f;
+}
+
+.task-level-stat .value {
+  margin-top: 0.16rem;
+  font-weight: 700;
+  color: #1a3958;
+}
+
 .review-setup-pane .review-judge-pane {
   flex: 1;
   min-height: 0;
