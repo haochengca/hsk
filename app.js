@@ -6074,6 +6074,15 @@ const state = {
   reviewSettlementPoints: 0,
   reviewSettlementAnimated: false,
   reviewMessage: "请选择默写类型、等级和字数，然后点击“开始默写”。",
+  tasks: [],
+  taskDraftLevels: [1],
+  taskPracticeCount: "20",
+  taskDraftAssigneeId: "",
+  activeTaskId: "",
+  activeTaskSessionId: "",
+  taskSessionCompletedItems: [],
+  taskCheckpointSeq: 0,
+  taskDetailOpenId: "",
   progress: {},
   wrongBook: [],
   wrongLevelFilter: "all",
@@ -6115,6 +6124,7 @@ const panels = {
   learn: document.getElementById("learn-panel"),
   write: document.getElementById("write-panel"),
   review: document.getElementById("review-panel"),
+  tasks: document.getElementById("tasks-panel"),
   wrong: document.getElementById("wrong-panel"),
   admin: document.getElementById("admin-panel"),
   "admin-users": document.getElementById("admin-users-panel"),
@@ -6178,10 +6188,24 @@ const adminItemsList = document.getElementById("admin-items-list");
 const recordsCount = document.getElementById("records-count");
 const recordsList = document.getElementById("records-list");
 const recordsStats = document.getElementById("records-stats");
+const taskRecordsSummary = document.getElementById("task-records-summary");
+const taskRecordsList = document.getElementById("task-records-list");
+const currentTaskCard = document.getElementById("current-task-card");
+const taskGoPageBtn = document.getElementById("task-go-page-btn");
+const tasksPageSummary = document.getElementById("tasks-page-summary");
+const tasksCreateHint = document.getElementById("tasks-create-hint");
+const tasksCreateFeedback = document.getElementById("tasks-create-feedback");
+const taskHistorySummary = document.getElementById("task-history-summary");
+const taskActiveSummary = document.getElementById("task-active-summary");
+const taskHistoryArchiveSummary = document.getElementById("task-history-archive-summary");
+const taskActiveList = document.getElementById("task-active-list");
+const taskAssigneeRow = document.getElementById("task-assignee-row");
+const taskAssigneeSelect = document.getElementById("task-assignee-select");
 
 const learnTabBtn = document.querySelector('.tab[data-tab="learn"]');
 const writeTabBtn = document.querySelector('.tab[data-tab="write"]');
 const reviewTabBtn = document.querySelector('.tab[data-tab="review"]');
+const tasksTabBtn = document.querySelector('.tab[data-tab="tasks"]');
 const wrongTabBtn = document.querySelector('.tab[data-tab="wrong"]');
 
 const levelFilter = document.getElementById("level-filter");
@@ -6236,6 +6260,12 @@ const reviewLevelFilter = document.getElementById("review-level-filter");
 const reviewCountFilter = document.getElementById("review-count-filter");
 const reviewWrongMixFilter = document.getElementById("review-wrong-mix-filter");
 const reviewPreviewFilter = document.getElementById("review-preview-filter");
+const taskLevelPicker = document.getElementById("task-level-picker");
+const taskPracticeCount = document.getElementById("task-practice-count");
+const taskCreateBtn = document.getElementById("task-create-btn");
+const taskSummaryText = document.getElementById("task-summary-text");
+const taskFeedback = document.getElementById("task-feedback");
+const taskList = document.getElementById("task-list");
 const reviewBegin = document.getElementById("review-begin");
 const reviewRestart = document.getElementById("review-restart");
 const reviewPinyin = document.getElementById("review-pinyin");
@@ -6886,6 +6916,479 @@ async function syncUserDataToServer() {
   }
 }
 
+function normalizeTaskCompletedItem(item) {
+  const row = item && typeof item === "object" ? item : {};
+  return {
+    seq: Number(row.seq) || 0,
+    itemId: String(row.itemId || row.text || ""),
+    text: String(row.text || ""),
+    isCorrect: Boolean(row.isCorrect),
+    accuracyPercent: Math.max(0, Math.min(100, Number(row.accuracyPercent) || 0)),
+    answeredAt: Math.max(0, Number(row.answeredAt) || 0)
+  };
+}
+
+function setTaskUiFeedback(message, options = {}) {
+  const text = String(message || "");
+  if (!options.currentOnly && tasksCreateFeedback) tasksCreateFeedback.textContent = text;
+  if (!options.historyOnly && taskFeedback) taskFeedback.textContent = text;
+}
+
+function normalizeTaskRow(task) {
+  const row = task && typeof task === "object" ? task : {};
+  const progress = row.progress && typeof row.progress === "object" ? row.progress : {};
+  const summary = row.summary && typeof row.summary === "object" ? row.summary : {};
+  return {
+    ...row,
+    selectedLevels: Array.isArray(row.selectedLevels) ? row.selectedLevels.map((item) => Number(item)).filter(Boolean) : [],
+    items: Array.isArray(row.items)
+      ? row.items.map((item, index) => ({
+          seq: Number.isInteger(Number(item && item.seq)) ? Number(item.seq) : index,
+          type: "char",
+          itemId: String((item && item.itemId) || (item && item.text) || ""),
+          text: String((item && item.text) || ""),
+          pinyin: String((item && item.pinyin) || ""),
+          meaning: String((item && item.meaning) || ""),
+          phrase: String((item && item.phrase) || ""),
+          sentence: String((item && item.sentence) || ""),
+          sourceLevel: Number(item && item.sourceLevel) || 1
+        }))
+      : [],
+    progress: {
+      sessionId: String(progress.sessionId || ""),
+      currentIndex: Math.max(0, Number(progress.currentIndex) || 0),
+      completedCount: Math.max(0, Number(progress.completedCount) || 0),
+      correctCount: Math.max(0, Number(progress.correctCount) || 0),
+      wrongItems: Array.isArray(progress.wrongItems) ? progress.wrongItems.map((item) => String(item || "")).filter(Boolean) : [],
+      completedItems: Array.isArray(progress.completedItems) ? progress.completedItems.map(normalizeTaskCompletedItem) : []
+    },
+    summary: {
+      totalCount: Math.max(0, Number(summary.totalCount) || 0),
+      completedCount: Math.max(0, Number(summary.completedCount) || 0),
+      correctCount: Math.max(0, Number(summary.correctCount) || 0),
+      wrongCount: Math.max(0, Number(summary.wrongCount) || 0),
+      accuracyPercent: Math.max(0, Math.min(100, Number(summary.accuracyPercent) || 0)),
+      wrongItems: Array.isArray(summary.wrongItems) ? summary.wrongItems.map((item) => String(item || "")).filter(Boolean) : [],
+      levelStats: summary.levelStats && typeof summary.levelStats === "object" ? summary.levelStats : {}
+    }
+  };
+}
+
+function setTasks(tasks) {
+  state.tasks = Array.isArray(tasks) ? tasks.map(normalizeTaskRow) : [];
+  renderTaskPanel();
+  renderTaskHistory();
+}
+
+function getTaskById(taskId = state.activeTaskId) {
+  if (!taskId) return null;
+  return (state.tasks || []).find((task) => task && task.id === taskId) || null;
+}
+
+function upsertTask(task) {
+  const next = normalizeTaskRow(task);
+  const index = state.tasks.findIndex((item) => item && item.id === next.id);
+  if (index >= 0) state.tasks.splice(index, 1, next);
+  else state.tasks.unshift(next);
+  state.tasks.sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
+  renderTaskPanel();
+  renderTaskHistory();
+  return next;
+}
+
+function getSelectedTaskLevels() {
+  if (!taskLevelPicker) return [];
+  return Array.from(taskLevelPicker.querySelectorAll("input[type='checkbox']"))
+    .filter((input) => input.checked)
+    .map((input) => Number(input.value))
+    .filter((value) => Number.isInteger(value) && value >= 1 && value <= 6)
+    .sort((a, b) => a - b);
+}
+
+function getTaskDraftAssigneeId() {
+  if (state.auth.role !== "parent") return state.auth.username;
+  if (taskAssigneeSelect && taskAssigneeSelect.value) return taskAssigneeSelect.value;
+  if (state.taskDraftAssigneeId) return state.taskDraftAssigneeId;
+  if (Array.isArray(state.auth.linkedChildren) && state.auth.linkedChildren.length > 0) return state.auth.linkedChildren[0];
+  return state.auth.username;
+}
+
+function applyTaskDraftToControls() {
+  if (taskLevelPicker) {
+    const selected = new Set((state.taskDraftLevels || []).map((item) => Number(item)));
+    Array.from(taskLevelPicker.querySelectorAll("input[type='checkbox']")).forEach((input) => {
+      input.checked = selected.has(Number(input.value));
+    });
+  }
+  if (taskPracticeCount) taskPracticeCount.value = state.taskPracticeCount || "20";
+  if (taskAssigneeRow && taskAssigneeSelect) {
+    const isParent = state.auth.role === "parent";
+    taskAssigneeRow.classList.toggle("hidden", !isParent);
+    if (isParent) {
+      const options = [];
+      const linkedChildren = Array.isArray(state.auth.linkedChildren) ? state.auth.linkedChildren : [];
+      linkedChildren.forEach((username) => {
+        options.push(`<option value="${username}">${username}</option>`);
+      });
+      if (!options.length) options.push(`<option value="${state.auth.username}">${state.auth.username}</option>`);
+      taskAssigneeSelect.innerHTML = options.join("");
+      const selected = getTaskDraftAssigneeId();
+      taskAssigneeSelect.value = selected;
+      state.taskDraftAssigneeId = taskAssigneeSelect.value || selected;
+    }
+  }
+}
+
+function getTaskItemsAsReviewItems(task) {
+  return (task && Array.isArray(task.items) ? task.items : []).map((item) => ({
+    type: "char",
+    text: item.text,
+    pinyin: item.pinyin,
+    meaning: item.meaning,
+    level: item.sourceLevel,
+    phrase: item.phrase,
+    sentence: item.sentence
+  }));
+}
+
+function getTaskSessionStatsFromTask(task) {
+  const progress = task && task.progress ? task.progress : {};
+  const wrongItems = Array.isArray(progress.completedItems)
+    ? progress.completedItems.filter((item) => !item.isCorrect).map((item) => item.text)
+    : [];
+  return {
+    reviewSessionCorrect: Math.max(0, Number(progress.correctCount) || 0),
+    reviewSessionWrong: Math.max(0, Number(progress.completedCount) - Number(progress.correctCount || 0)),
+    reviewSessionWrongItems: wrongItems
+  };
+}
+
+function buildTaskProgressPayload(statusOverride = "in_progress") {
+  const task = getTaskById();
+  if (!task) return null;
+  state.taskCheckpointSeq += 1;
+  return {
+    status: statusOverride,
+    sessionId: state.activeTaskSessionId || (task.progress && task.progress.sessionId) || "",
+    checkpointId: `${task.id}_${state.taskCheckpointSeq}`,
+    currentIndex: Math.max(0, Math.min((task.items || []).length, state.reviewIndex + (state.reviewAwaitingNext ? 1 : 0))),
+    completedItems: (state.taskSessionCompletedItems || []).map((item) => ({
+      seq: item.seq,
+      itemId: item.itemId,
+      text: item.text,
+      isCorrect: item.isCorrect,
+      accuracyPercent: item.accuracyPercent,
+      answeredAt: item.answeredAt
+    }))
+  };
+}
+
+async function syncActiveTaskProgress(statusOverride = "in_progress") {
+  const task = getTaskById();
+  if (!task || !state.auth.loggedIn) return null;
+  const payload = buildTaskProgressPayload(statusOverride);
+  if (!payload) return null;
+  const response = await apiRequest(`/api/tasks/${encodeURIComponent(task.id)}/progress`, {
+    method: "POST",
+    body: JSON.stringify(payload)
+  });
+  if (response && response.task) {
+    const nextTask = upsertTask(response.task);
+    if (statusOverride === "paused") {
+      state.activeTaskSessionId = "";
+      state.activeTaskId = "";
+    } else {
+      state.activeTaskId = nextTask.id;
+      state.activeTaskSessionId = nextTask.progress && nextTask.progress.sessionId ? nextTask.progress.sessionId : state.activeTaskSessionId;
+    }
+    return nextTask;
+  }
+  return null;
+}
+
+async function completeActiveTaskSession() {
+  const task = getTaskById();
+  if (!task || !state.auth.loggedIn) return null;
+  const payload = buildTaskProgressPayload("completed");
+  const response = await apiRequest(`/api/tasks/${encodeURIComponent(task.id)}/complete`, {
+    method: "POST",
+    body: JSON.stringify(payload)
+  });
+  if (response && response.task) {
+    const nextTask = upsertTask(response.task);
+    state.activeTaskId = "";
+    state.activeTaskSessionId = "";
+    state.taskSessionCompletedItems = [];
+    renderReviewCard();
+    const summary = response.summary || nextTask.summary || {};
+    setTaskUiFeedback(`任务完成：${summary.completedCount || 0}/${summary.totalCount || 0}，正确率 ${summary.accuracyPercent || 0}%。`);
+    return nextTask;
+  }
+  return null;
+}
+
+function resetActiveTaskSessionState(task = null) {
+  state.activeTaskId = task && task.id ? task.id : "";
+  state.activeTaskSessionId = task && task.progress && task.progress.sessionId ? task.progress.sessionId : "";
+  state.taskSessionCompletedItems =
+    task && task.progress && Array.isArray(task.progress.completedItems) ? task.progress.completedItems.map(normalizeTaskCompletedItem) : [];
+  state.taskCheckpointSeq = 0;
+}
+
+function renderTaskPanel() {
+  if (!taskList || !taskSummaryText || !currentTaskCard || !taskActiveList) return;
+  const tasks = Array.isArray(state.tasks) ? state.tasks : [];
+  const visibleCurrentTask =
+    state.auth.role === "parent"
+      ? null
+      : tasks.find((task) => task.assigneeId === state.auth.username && (task.status === "in_progress" || task.status === "paused" || task.status === "pending")) ||
+        null;
+
+  taskSummaryText.textContent = visibleCurrentTask
+    ? `当前任务：${visibleCurrentTask.title}，进度 ${visibleCurrentTask.summary.completedCount || 0}/${visibleCurrentTask.summary.totalCount || 0}`
+    : "当前没有进行中的任务。";
+  currentTaskCard.innerHTML = visibleCurrentTask
+    ? renderSingleTaskCard(visibleCurrentTask, true)
+    : "<p>当前没有任务。去任务页创建一个新任务。</p>";
+
+  const draftAssigneeId = getTaskDraftAssigneeId();
+  const activeTaskForDraft =
+    tasks.find(
+      (task) =>
+        task.assigneeId === draftAssigneeId &&
+        (task.status === "in_progress" || task.status === "paused" || task.status === "pending")
+    ) || null;
+  if (tasksPageSummary) {
+    const activeCount = tasks.filter(
+      (task) => task.status === "in_progress" || task.status === "paused" || task.status === "pending"
+    ).length;
+    tasksPageSummary.textContent = `共 ${tasks.length} 个任务，其中 ${activeCount} 个未完成。`;
+  }
+  if (tasksCreateHint) {
+    tasksCreateHint.textContent = activeTaskForDraft
+      ? `当前分配对象 ${draftAssigneeId} 已有未完成任务，需先完成或停止后才能创建新任务。`
+      : `当前可为 ${draftAssigneeId} 创建新任务。`;
+  }
+  if (taskCreateBtn) taskCreateBtn.disabled = Boolean(activeTaskForDraft);
+  if (taskHistorySummary) taskHistorySummary.textContent = `任务：${tasks.length} 个`;
+
+  const activeTasks = tasks.filter(
+    (task) => task.status === "in_progress" || task.status === "paused" || task.status === "pending"
+  );
+  const archivedTasks = tasks.filter((task) => task.status === "completed" || task.status === "archived");
+
+  if (taskActiveSummary) taskActiveSummary.textContent = `${activeTasks.length} 个`;
+  if (taskHistoryArchiveSummary) taskHistoryArchiveSummary.textContent = `${archivedTasks.length} 个`;
+
+  if (!tasks.length) {
+    taskActiveList.innerHTML = "<p>暂无进行中的任务。</p>";
+    taskList.innerHTML = "<p>暂无已完成或已停止任务。</p>";
+    return;
+  }
+
+  taskActiveList.innerHTML = activeTasks.length
+    ? activeTasks.map((task) => renderSingleTaskCard(task, false)).join("")
+    : "<p>暂无进行中的任务。</p>";
+  taskList.innerHTML = archivedTasks.length
+    ? archivedTasks.map((task) => renderSingleTaskCard(task, false)).join("")
+    : "<p>暂无已完成或已停止任务。</p>";
+}
+
+function renderSingleTaskCard(task, isCurrentTask) {
+  const active = state.activeTaskId && state.activeTaskId === task.id;
+  const expanded = state.taskDetailOpenId === task.id || isCurrentTask;
+  const levels = (task.selectedLevels || []).map((level) => `HSK${level}`).join(" + ");
+  const summary = task.summary || {};
+  const statusMap = {
+    pending: "未开始",
+    in_progress: "进行中",
+    paused: "已暂停",
+    completed: "已完成",
+    archived: "已归档"
+  };
+  const assigneeText = task.assigneeId && task.assigneeId !== task.ownerId ? ` ｜ 学习者 ${task.assigneeId}` : "";
+  const primaryLabel =
+    task.status === "completed" ? "再次挑战" : task.status === "pending" ? "开始任务" : "继续任务";
+  const canStop =
+    state.auth.role === "parent" && (task.status === "pending" || task.status === "in_progress" || task.status === "paused");
+  return `<article class="task-item ${active ? "is-active" : ""}">
+    <h4>${task.title || "HSK 任务"}</h4>
+    <p class="task-item-meta">状态：${statusMap[task.status] || task.status}${assigneeText} ｜ 进度 ${summary.completedCount || 0}/${summary.totalCount || 0} ｜ 正确率 ${summary.accuracyPercent || 0}%</p>
+    <div class="task-item-tags">
+      <span class="task-tag">${levels || "HSK"}</span>
+      <span class="task-tag">${(summary.wrongCount || 0) > 0 ? `错字 ${summary.wrongCount}` : "错字 0"}</span>
+    </div>
+    <div class="task-actions">
+      <button class="good" data-action="task-open" data-task-id="${task.id}">${primaryLabel}</button>
+      ${canStop ? `<button class="warn" data-action="task-stop" data-task-id="${task.id}">停止任务</button>` : ""}
+      ${isCurrentTask ? "" : `<button class="ghost" data-action="task-detail" data-task-id="${task.id}">${expanded ? "收起详情" : "查看详情"}</button>`}
+    </div>
+    ${expanded ? renderTaskDetailHtml(task) : ""}
+  </article>`;
+}
+
+function renderTaskLevelStatsHtml(levelStats) {
+  const entries = Object.entries(levelStats || {}).sort((a, b) => Number(a[0]) - Number(b[0]));
+  if (!entries.length) return "<p>暂无等级统计。</p>";
+  return `<div class="task-level-stats">${entries
+    .map(
+      ([level, stats]) => `<div class="task-level-stat">
+        <p class="label">HSK ${level}</p>
+        <p class="value">${stats.correct || 0}/${stats.completed || 0}/${stats.total || 0}</p>
+      </div>`
+    )
+    .join("")}</div>`;
+}
+
+function renderTaskDetailHtml(task) {
+  const summary = task && task.summary ? task.summary : {};
+  const wrongItems = Array.isArray(summary.wrongItems) ? summary.wrongItems : [];
+  const updatedAt =
+    task && task.progress && task.progress.lastSnapshotAt ? new Date(task.progress.lastSnapshotAt).toLocaleString() : "尚未开始";
+  return `<div class="task-detail">
+    <p>上次进度保存：${updatedAt}</p>
+    <p>正确 ${summary.correctCount || 0} 题，错误 ${summary.wrongCount || 0} 题。</p>
+    <p>错字：${wrongItems.length ? wrongItems.join("、") : "暂无"}</p>
+    ${renderTaskLevelStatsHtml(summary.levelStats)}
+  </div>`;
+}
+
+function renderTaskHistory() {
+  if (!taskRecordsSummary || !taskRecordsList) return;
+  const tasks = Array.isArray(state.tasks) ? state.tasks : [];
+  const completed = tasks.filter((task) => task.status === "completed");
+  taskRecordsSummary.textContent = `任务：${tasks.length} 个，已完成 ${completed.length} 个`;
+  if (!tasks.length) {
+    taskRecordsList.innerHTML = "<p>还没有任务记录。</p>";
+    return;
+  }
+  taskRecordsList.innerHTML = tasks
+    .map((task) => {
+      const summary = task.summary || {};
+      const doneAt =
+        task && task.progress && task.progress.completedAt ? new Date(task.progress.completedAt).toLocaleString() : "未完成";
+      return `<div class="admin-item">
+        <p>${task.title || "HSK 任务"} ｜ 状态：${task.status}</p>
+        <p>完成度：${summary.completedCount || 0}/${summary.totalCount || 0} ｜ 正确率：${summary.accuracyPercent || 0}%</p>
+        <p>完成时间：${doneAt}</p>
+        <p>错字：${summary.wrongItems && summary.wrongItems.length ? summary.wrongItems.join("、") : "暂无"}</p>
+      </div>`;
+    })
+    .join("");
+}
+
+async function fetchTasks() {
+  if (!state.auth.loggedIn || !isLearnerRole(state.auth.role)) return;
+  try {
+    const response = await apiRequest("/api/tasks");
+    setTasks(response.tasks || []);
+  } catch (err) {
+    console.warn("load tasks failed:", err && err.message ? err.message : err);
+  }
+}
+
+async function createTaskFromDraft() {
+  const levels = getSelectedTaskLevels();
+  if (!levels.length) {
+    setTaskUiFeedback("请至少选择一个 HSK 等级。");
+    return;
+  }
+  state.taskDraftLevels = levels;
+  state.taskPracticeCount = taskPracticeCount ? taskPracticeCount.value || "20" : "20";
+  try {
+    const response = await apiRequest("/api/tasks", {
+      method: "POST",
+      body: JSON.stringify({
+        templateType: "HSK_LEVEL_CHARS",
+        selectedLevels: levels,
+        practiceCount: state.taskPracticeCount,
+        assigneeId: getTaskDraftAssigneeId()
+      })
+    });
+    const task = upsertTask(response.task);
+    setTaskUiFeedback(`任务已创建：${task.title}。`);
+  } catch (err) {
+    setTaskUiFeedback(err && err.message ? err.message : "任务创建失败");
+  }
+}
+
+async function stopTask(taskId) {
+  try {
+    const response = await apiRequest(`/api/tasks/${encodeURIComponent(taskId)}/stop`, {
+      method: "POST"
+    });
+    if (response && response.task) {
+      const task = upsertTask(response.task);
+      if (state.activeTaskId === task.id) resetActiveTaskSessionState(null);
+      setTaskUiFeedback(`任务已停止：${task.title}`);
+      renderReviewCard();
+    }
+  } catch (err) {
+    setTaskUiFeedback(err && err.message ? err.message : "停止任务失败");
+  }
+}
+
+async function loadTaskDetail(taskId) {
+  if (!taskId) return null;
+  const response = await apiRequest(`/api/tasks/${encodeURIComponent(taskId)}`);
+  if (response && response.task) return upsertTask(response.task);
+  return null;
+}
+
+function startTaskReviewSession(task) {
+  if (!task) return;
+  state.reviewType = "char";
+  if (reviewTypeFilter) reviewTypeFilter.value = "char";
+  resetActiveTaskSessionState(task);
+  startDirectReviewSession(
+    getTaskItemsAsReviewItems(task),
+    "当前任务没有可默写项目。",
+    {
+      source: "task",
+      startIndex: task.progress && Number.isFinite(task.progress.currentIndex) ? task.progress.currentIndex : 0,
+      initialStats: getTaskSessionStatsFromTask(task),
+      useDraftSession: false
+    }
+  );
+  switchTab("review");
+}
+
+async function openTask(taskId) {
+  const freshTask = await loadTaskDetail(taskId);
+  if (!freshTask) return;
+  try {
+    const action = freshTask.status === "pending" || freshTask.status === "completed" ? "start" : "resume";
+    const response = await apiRequest(`/api/tasks/${encodeURIComponent(taskId)}/${action}`, {
+      method: "POST"
+    });
+    const task = upsertTask(response.task);
+    setTaskUiFeedback(action === "resume" ? "已恢复任务。" : "任务已开始。");
+    startTaskReviewSession(task);
+  } catch (err) {
+    setTaskUiFeedback(err && err.message ? err.message : "任务打开失败");
+  }
+}
+
+async function pauseActiveTaskSession() {
+  const task = getTaskById();
+  if (!task) return;
+  try {
+    await syncActiveTaskProgress("paused");
+    resetActiveTaskSessionState(null);
+    state.reviewActive = false;
+    state.reviewList = [];
+    state.reviewIndex = 0;
+    state.reviewAwaitingNext = false;
+    state.reviewSessionSource = "normal";
+    setReviewFlowState("idle");
+    state.reviewMessage = "任务已暂停，可稍后继续。";
+    renderReviewCard();
+    setTaskUiFeedback("任务进度已保存。", { currentOnly: true });
+  } catch (err) {
+    setTaskUiFeedback(err && err.message ? err.message : "任务暂停失败", { currentOnly: true });
+  }
+}
+
 function getWeekKey(d = new Date()) {
   const date = new Date(d);
   const day = date.getDay() || 7;
@@ -7118,6 +7621,7 @@ async function loadUserData() {
   state.submissions = Array.isArray(boot.submissions)
     ? boot.submissions.map((row) => normalizeSubmissionRow(row))
     : [];
+  setTasks(boot.tasks || []);
   state.progress = data.progress && typeof data.progress === "object" ? data.progress : {};
   state.wrongBook = Array.isArray(data.wrongBook) ? data.wrongBook : [];
   state.rewards =
@@ -7131,6 +7635,7 @@ async function loadUserData() {
   state.reviewCount = prefs.reviewCount === "all" ? "all" : String(prefs.reviewCount || "10");
   state.reviewWrongMixRatio = String(prefs.reviewWrongMixRatio || "30");
   state.reviewPreviewMode = String(prefs.reviewPreviewMode || "0");
+  applyTaskDraftToControls();
   rebuildWrongQueue();
   refreshStats();
   refreshRewards();
@@ -7598,12 +8103,15 @@ function renderUserRecords() {
   if (!state.auth.username || !isLearnerRole(state.auth.role)) {
     recordsCount.textContent = "记录：0 条";
     recordsStats.innerHTML = "<p>仅父母或孩子可查看自己的统计。</p>";
+    if (taskRecordsSummary) taskRecordsSummary.textContent = "任务：0 个";
+    if (taskRecordsList) taskRecordsList.innerHTML = "<p>仅父母或孩子可查看自己的任务记录。</p>";
     recordsList.innerHTML = "<p>仅父母或孩子可查看自己的记录。</p>";
     return;
   }
   const rows = state.submissions
     .filter((x) => x && x.username === state.auth.username)
     .sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
+  renderTaskHistory();
   renderUserRecordStats(rows);
   recordsCount.textContent = `记录：${rows.length} 条`;
   if (rows.length === 0) {
@@ -7696,6 +8204,7 @@ async function setAuthState(username, role, token, profile = {}) {
   learnTabBtn.classList.toggle("hidden", manager);
   writeTabBtn.classList.toggle("hidden", manager);
   reviewTabBtn.classList.toggle("hidden", manager);
+  if (tasksTabBtn) tasksTabBtn.classList.toggle("hidden", role === "admin");
   wrongTabBtn.classList.toggle("hidden", manager);
   recordsTab.classList.toggle("hidden", manager);
   adminTab.classList.toggle("hidden", !reviewAuditor);
@@ -7708,7 +8217,8 @@ async function setAuthState(username, role, token, profile = {}) {
   if (!reviewAuditor && state.tab === "admin") {
     state.tab = superAdmin ? "admin-users" : "admin-wrong";
   }
-  if (reviewAuditor) switchTab("admin");
+  if (role === "parent") switchTab("tasks");
+  else if (reviewAuditor) switchTab("admin");
   else if (superAdmin) switchTab("admin-users");
   else if (manager) switchTab("admin-wrong");
   else switchTab("learn");
@@ -8314,13 +8824,13 @@ function setReviewFlowState(nextState) {
   state.reviewFlowState = reviewStateModule.toFlow(nextState);
 }
 
-function resetReviewSessionStats() {
+function resetReviewSessionStats(initialStats = {}) {
   state.reviewSessionStartedAt = Date.now();
   state.reviewSessionFinishedAt = 0;
   state.reviewSessionTotal = Array.isArray(state.reviewList) ? state.reviewList.length : 0;
-  state.reviewSessionCorrect = 0;
-  state.reviewSessionWrong = 0;
-  state.reviewSessionWrongItems = [];
+  state.reviewSessionCorrect = Math.max(0, Number(initialStats.reviewSessionCorrect) || 0);
+  state.reviewSessionWrong = Math.max(0, Number(initialStats.reviewSessionWrong) || 0);
+  state.reviewSessionWrongItems = Array.isArray(initialStats.reviewSessionWrongItems) ? [...initialStats.reviewSessionWrongItems] : [];
   state.reviewSettlementPoints = 0;
   state.reviewSettlementAnimated = false;
   state.reviewLastResult = null;
@@ -8402,6 +8912,7 @@ function renderReviewButtons() {
 
 function finishReviewSession(isWrongBookSinglePractice) {
   resetReviewRetryState();
+  const activeTask = getTaskById();
   const sessionPoints = Math.max(0, Number(state.reviewSessionPointsEarned) || 0);
   state.reviewSessionPointsEarned = 0;
   state.reviewSessionFinishedAt = Date.now();
@@ -8429,11 +8940,21 @@ function finishReviewSession(isWrongBookSinglePractice) {
   state.reviewIndex = 0;
   renderReviewCard();
   rebuildWrongQueue();
+  if (activeTask) {
+    completeActiveTaskSession().catch((err) => {
+      console.warn("complete task failed:", err && err.message ? err.message : err);
+    });
+  }
 }
 
 function advanceToNextReviewItem() {
   if (!state.reviewActive || !state.reviewAwaitingNext) return;
   state.reviewIndex += 1;
+  if (getTaskById()) {
+    syncActiveTaskProgress("in_progress").catch((err) => {
+      console.warn("sync task progress failed:", err && err.message ? err.message : err);
+    });
+  }
   if (state.reviewIndex >= state.reviewList.length) {
     finishReviewSession(state.reviewSessionSource === "wrongbook-single");
     return;
@@ -9181,14 +9702,14 @@ function startDirectReviewSession(items, emptyMessage, options = {}) {
     unique.push(it);
   });
   state.reviewList = unique;
-  state.reviewIndex = 0;
+  state.reviewIndex = Math.max(0, Math.min(unique.length > 0 ? unique.length - 1 : 0, Number(options.startIndex) || 0));
   state.reviewActive = false;
   state.reviewSessionSource = options && options.source ? String(options.source) : "normal";
   state.reviewSessionPointsEarned = 0;
   setReviewFlowState(unique.length > 0 ? "preview" : "idle");
-  resetReviewSessionStats();
+  resetReviewSessionStats(options.initialStats || {});
   state.reviewMessage = unique.length > 0 ? "默写前预览中..." : emptyMessage;
-  if (unique.length > 0) beginReviewDraftSession();
+  if (unique.length > 0 && options.useDraftSession !== false) beginReviewDraftSession();
   runPreReviewPreviewAndStart();
 }
 
@@ -9224,10 +9745,16 @@ function renderReviewCard() {
       : "当前没有进行中的默写，无法重启。";
   const total = state.reviewFlowState === "ended" ? state.reviewSessionTotal : state.reviewList.length;
   const current = state.reviewActive ? state.reviewIndex + 1 : state.reviewFlowState === "ended" ? total : 0;
-  const levelText = state.reviewLevel === "all" ? "全部" : `HSK${state.reviewLevel}`;
-  const countText = state.reviewCount === "all" ? "全部" : `${state.reviewCount}个`;
-  const mixText = state.reviewType === "char" ? `，错题混入${state.reviewWrongMixRatio}%` : "";
-  dueCount.textContent = `进度: ${current}/${total}（${state.reviewType === "word" ? "词汇" : "汉字"}，${levelText}，${countText}${mixText}）`;
+  const activeTask = getTaskById();
+  if (activeTask) {
+    const levelText = (activeTask.selectedLevels || []).map((level) => `HSK${level}`).join("+") || "HSK";
+    dueCount.textContent = `任务进度: ${current}/${total}（${levelText}，错字 ${activeTask.summary && activeTask.summary.wrongCount ? activeTask.summary.wrongCount : 0}）`;
+  } else {
+    const levelText = state.reviewLevel === "all" ? "全部" : `HSK${state.reviewLevel}`;
+    const countText = state.reviewCount === "all" ? "全部" : `${state.reviewCount}个`;
+    const mixText = state.reviewType === "char" ? `，错题混入${state.reviewWrongMixRatio}%` : "";
+    dueCount.textContent = `进度: ${current}/${total}（${state.reviewType === "word" ? "词汇" : "汉字"}，${levelText}，${countText}${mixText}）`;
+  }
 
   const keepLastJudgeResult =
     state.reviewFlowState === "ended" &&
@@ -9279,6 +9806,7 @@ function renderReviewCard() {
 
 function finalizeReviewResult(item, isGood, accuracyPercent, meta = {}) {
   const isWrongBookSinglePractice = state.reviewSessionSource === "wrongbook-single";
+  const activeTask = getTaskById();
   const earnedPoints = 1;
   state.reviewLastResult = { isGood, accuracyPercent, itemKey: makeItemKey(item) };
   state.reviewAwaitingNext = true;
@@ -9333,6 +9861,24 @@ function finalizeReviewResult(item, isGood, accuracyPercent, meta = {}) {
   refreshStats();
   if (!isWrongBookSinglePractice) {
     recordSubmission(item, isGood, accuracyPercent, { ...meta, points: earnedPoints });
+  }
+  if (activeTask) {
+    const seq = Math.max(0, Number(state.reviewIndex) || 0);
+    const completedItem = {
+      seq,
+      itemId: item.text,
+      text: item.text,
+      isCorrect: Boolean(isGood),
+      accuracyPercent: normalizeAccuracyPercent(accuracyPercent),
+      answeredAt: Date.now()
+    };
+    const index = state.taskSessionCompletedItems.findIndex((row) => Number(row.seq) === seq);
+    if (index >= 0) state.taskSessionCompletedItems.splice(index, 1, completedItem);
+    else state.taskSessionCompletedItems.push(completedItem);
+    state.taskSessionCompletedItems.sort((a, b) => a.seq - b.seq);
+    syncActiveTaskProgress("in_progress").catch((err) => {
+      console.warn("sync task progress failed:", err && err.message ? err.message : err);
+    });
   }
   renderAdminPanel();
   renderUserRecords();
@@ -10389,10 +10935,78 @@ function wireReview() {
     window.scrollTo({ top, behavior });
   };
 
+  if (taskLevelPicker) {
+    taskLevelPicker.addEventListener("change", () => {
+      state.taskDraftLevels = getSelectedTaskLevels();
+    });
+  }
+
+  if (taskPracticeCount) {
+    taskPracticeCount.addEventListener("change", (event) => {
+      state.taskPracticeCount = event.target.value || "20";
+    });
+  }
+
+  if (taskAssigneeSelect) {
+    taskAssigneeSelect.addEventListener("change", (event) => {
+      state.taskDraftAssigneeId = event.target.value || "";
+      renderTaskPanel();
+    });
+  }
+
+  if (taskCreateBtn) {
+    taskCreateBtn.addEventListener("click", () => {
+      createTaskFromDraft();
+    });
+  }
+
+  if (taskGoPageBtn) {
+    taskGoPageBtn.addEventListener("click", () => {
+      switchTab("tasks");
+    });
+  }
+
+  const bindTaskActions = (container) => {
+    if (!container) return;
+    container.addEventListener("click", (event) => {
+      const button = event.target.closest("button[data-action]");
+      if (!button) return;
+      const taskId = button.dataset.taskId;
+      if (!taskId) return;
+      if (button.dataset.action === "task-open") {
+        openTask(taskId);
+        return;
+      }
+      if (button.dataset.action === "task-stop") {
+        const ok = window.confirm("停止后该任务将结束，之后可创建新任务，是否继续？");
+        if (!ok) return;
+        stopTask(taskId);
+        return;
+      }
+      if (button.dataset.action === "task-detail") {
+        state.taskDetailOpenId = state.taskDetailOpenId === taskId ? "" : taskId;
+        renderTaskPanel();
+        if (state.taskDetailOpenId) {
+          loadTaskDetail(taskId).catch((err) => {
+            if (taskFeedback) taskFeedback.textContent = err && err.message ? err.message : "任务详情刷新失败";
+          });
+        }
+      }
+    });
+  };
+
+  bindTaskActions(taskList);
+  bindTaskActions(taskActiveList);
+  bindTaskActions(currentTaskCard);
+
   reviewBegin.addEventListener("click", () => {
     if (state.reviewPreviewRunning || state.reviewActive || state.reviewFlowState === "reviewed") {
-      const ok = window.confirm(t("review.stopConfirm"));
+      const ok = window.confirm(getTaskById() ? "暂停后可从当前进度继续，是否暂停任务？" : t("review.stopConfirm"));
       if (!ok) return;
+      if (getTaskById()) {
+        pauseActiveTaskSession();
+        return;
+      }
       cancelReviewSessionWithoutSave();
       return;
     }
@@ -10404,6 +11018,12 @@ function wireReview() {
   reviewRestart.addEventListener("click", () => {
     if (!state.reviewActive && state.reviewFlowState !== "reviewed") {
       reviewFeedback.textContent = "当前没有进行中的默写。";
+      return;
+    }
+    if (getTaskById()) {
+      const ok = window.confirm("重新开始将重置该任务当前进度，是否继续？");
+      if (!ok) return;
+      openTask(state.activeTaskId);
       return;
     }
     const ok = window.confirm("重新开始将取消当前默写进度，且本轮数据不保存，是否继续？");
@@ -10462,8 +11082,12 @@ function wireReview() {
   if (reviewStopBtn) {
     reviewStopBtn.addEventListener("click", () => {
       if (!state.reviewActive && !state.reviewPreviewRunning && state.reviewFlowState !== "reviewed") return;
-      const ok = window.confirm(t("review.stopConfirm"));
+      const ok = window.confirm(getTaskById() ? "暂停后可从当前进度继续，是否暂停任务？" : t("review.stopConfirm"));
       if (!ok) return;
+      if (getTaskById()) {
+        pauseActiveTaskSession();
+        return;
+      }
       cancelReviewSessionWithoutSave();
     });
   }
@@ -10622,7 +11246,8 @@ function wireWrongBook() {
 function wireTabs() {
   tabs.forEach((btn) => {
     btn.addEventListener("click", () => {
-      if (isManagerRole(state.auth.role) && !["admin", "admin-users", "admin-wrong", "admin-items"].includes(btn.dataset.tab)) return;
+      if (state.auth.role === "admin" && !["admin", "admin-users", "admin-wrong", "admin-items"].includes(btn.dataset.tab)) return;
+      if (state.auth.role === "parent" && !["tasks", "admin", "admin-wrong"].includes(btn.dataset.tab)) return;
       if (btn.dataset.tab === "admin" && !canAccessReviewAudit(state.auth.role)) return;
       if (btn.dataset.tab === "admin-users" && !isSuperAdmin(state.auth.role)) return;
       if (btn.dataset.tab === "admin-wrong" && !isManagerRole(state.auth.role)) return;

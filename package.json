@@ -13,6 +13,7 @@
     "agents:plan": "node scripts/agent-coordinator.js",
     "test:agents": "node --test tests/agent-coordinator.spec.js",
     "test:recognition": "node --test tests/recognition-core.spec.js",
-    "test:submissions": "node --test tests/submissions-judge-detail.spec.js"
+    "test:submissions": "node --test tests/submissions-judge-detail.spec.js",
+    "test:tasks": "node --test tests/task-service.spec.js tests/tasks-api.spec.js"
   }
 }
