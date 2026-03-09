@@ -6286,6 +6286,7 @@ const reviewSummaryCard = document.getElementById("review-summary-card");
 const reviewSummaryText = document.getElementById("review-summary-text");
 const reviewSummaryActions = document.getElementById("review-summary-actions");
 const reviewSettleBtn = document.getElementById("review-settle-btn");
+const reviewCard = document.getElementById("review-card");
 const wordAnswerRow = document.getElementById("word-answer-row");
 const wordReviewInput = document.getElementById("word-review-input");
 const wordReviewSubmit = document.getElementById("word-review-submit");
@@ -7349,6 +7350,7 @@ function startTaskReviewSession(task) {
     }
   );
   switchTab("review");
+  scrollReviewCardToTopIfNeeded();
 }
 
 async function openTask(taskId) {
@@ -7443,6 +7445,21 @@ function syncIpadLandscapeReviewScale() {
     const offset = Math.min(0, Math.round(visualHeight - naturalHeight));
     reviewStageShell.style.setProperty("--review-stage-scale-offset", `${offset}px`);
   });
+}
+
+function scrollReviewCardToTopIfNeeded() {
+  if (!reviewCard || !isIpadLandscape()) return;
+  const prefersReducedMotion =
+    typeof window.matchMedia === "function" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const behavior = prefersReducedMotion ? "auto" : "smooth";
+  const scrollToCard = () => {
+    const top = Math.max(0, window.scrollY + reviewCard.getBoundingClientRect().top);
+    window.scrollTo({ top, behavior });
+  };
+  window.requestAnimationFrame(() => {
+    window.requestAnimationFrame(scrollToCard);
+  });
+  window.setTimeout(scrollToCard, 120);
 }
 
 function stopPointsFireworks() {
@@ -9702,6 +9719,7 @@ function startReviewSession(source, emptyMessage) {
   state.reviewMessage = filtered.length > 0 ? "默写前预览中..." : emptyMessage;
   if (filtered.length > 0) beginReviewDraftSession();
   runPreReviewPreviewAndStart();
+  scrollReviewCardToTopIfNeeded();
 }
 
 function resolveItemByKey(key) {
@@ -11040,6 +11058,7 @@ function wireReview() {
     const source = getDataset(state.reviewType);
     startReviewSession(source, "当前筛选下没有可默写的项目。");
     alignReviewPanelToTop();
+    scrollReviewCardToTopIfNeeded();
   });
 
   reviewRestart.addEventListener("click", () => {

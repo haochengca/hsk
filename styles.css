@@ -762,6 +762,15 @@ select {
 
 .review-main-actions {
   margin-top: 0.65rem;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.review-main-actions #review-feedback {
+  flex: 1 1 220px;
+  min-width: 0;
+  margin: 0 auto 0 0;
+  text-align: left;
 }
 
 .review-judge-pane .answer-row {
@@ -771,10 +780,6 @@ select {
 .review-judge-pane .dictation-input {
   min-width: 0;
   width: 100%;
-}
-
-.review-judge-pane #review-feedback {
-  margin-top: 1.5rem;
 }
 
 .review-judge-pane .review-summary {
@@ -1142,7 +1147,7 @@ select {
 
 #review-feedback {
   min-height: 1.4em;
-  margin: 0.7rem 0 0;
+  margin: 0;
   color: #2a476c;
 }
 
@@ -1474,6 +1479,7 @@ body.ipad-landscape-review-scale #review-panel .review-stage-shell {
   transform: scale(0.8);
   transform-origin: top left;
   margin-bottom: var(--review-stage-scale-offset);
+  font-size: 120%;
 }
 
 body.ipad-landscape-review-scale #review-panel #dictation-writer:not(.word-mode) {
