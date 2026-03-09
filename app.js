@@ -7144,9 +7144,7 @@ function renderTaskPanel() {
       : tasks.find((task) => task.assigneeId === state.auth.username && (task.status === "in_progress" || task.status === "paused" || task.status === "pending")) ||
         null;
 
-  taskSummaryText.textContent = visibleCurrentTask
-    ? `当前任务：${visibleCurrentTask.title}，进度 ${visibleCurrentTask.summary.completedCount || 0}/${visibleCurrentTask.summary.totalCount || 0}`
-    : "当前没有进行中的任务。";
+  taskSummaryText.textContent = "";
   currentTaskCard.innerHTML = visibleCurrentTask
     ? renderSingleTaskCard(visibleCurrentTask, true)
     : "<p>当前没有任务。去任务页创建一个新任务。</p>";
@@ -7216,7 +7214,7 @@ function renderSingleTaskCard(task, isCurrentTask) {
     <p class="task-item-meta">状态：${statusMap[task.status] || task.status}${assigneeText} ｜ 进度 ${summary.completedCount || 0}/${summary.totalCount || 0} ｜ 正确率 ${summary.accuracyPercent || 0}%</p>
     <div class="task-item-tags">
       <span class="task-tag">${levels || "HSK"}</span>
-      <span class="task-tag">${(summary.wrongCount || 0) > 0 ? `错字 ${summary.wrongCount}` : "错字 0"}</span>
+      ${(summary.wrongCount || 0) > 0 ? `<span class="task-tag">错字 ${summary.wrongCount}</span>` : ""}
     </div>
     <div class="task-actions">
       <button class="good" data-action="task-open" data-task-id="${task.id}">${primaryLabel}</button>
@@ -7243,12 +7241,11 @@ function renderTaskLevelStatsHtml(levelStats) {
 function renderTaskDetailHtml(task) {
   const summary = task && task.summary ? task.summary : {};
   const wrongItems = Array.isArray(summary.wrongItems) ? summary.wrongItems : [];
-  const updatedAt =
-    task && task.progress && task.progress.lastSnapshotAt ? new Date(task.progress.lastSnapshotAt).toLocaleString() : "尚未开始";
+  const updatedAt = task && task.progress && task.progress.lastSnapshotAt ? new Date(task.progress.lastSnapshotAt).toLocaleString() : "";
   return `<div class="task-detail">
-    <p>上次进度保存：${updatedAt}</p>
+    ${updatedAt ? `<p>上次进度保存：${updatedAt}</p>` : ""}
     <p>正确 ${summary.correctCount || 0} 题，错误 ${summary.wrongCount || 0} 题。</p>
-    <p>错字：${wrongItems.length ? wrongItems.join("、") : "暂无"}</p>
+    ${wrongItems.length ? `<p>错字：${wrongItems.join("、")}</p>` : ""}
     ${renderTaskLevelStatsHtml(summary.levelStats)}
   </div>`;
 }
@@ -8887,6 +8884,7 @@ function renderReviewSummaryCard() {
 
 function renderReviewButtons() {
   const flow = getReviewFlowContext();
+  const isTaskSession = Boolean(getTaskById()) || state.reviewSessionSource === "task";
   const beginAsStop = state.reviewPreviewRunning || state.reviewActive || state.reviewFlowState === "reviewed";
   reviewBegin.disabled = beginAsStop ? false : !flow.canBegin;
   reviewRestart.disabled = !flow.canRestart;
@@ -8897,6 +8895,7 @@ function renderReviewButtons() {
 
   if (reviewNextBtn) reviewNextBtn.classList.toggle("hidden", !flow.showNext);
   if (reviewStopBtn) reviewStopBtn.classList.toggle("hidden", !flow.showStop);
+  reviewRestart.classList.toggle("hidden", isTaskSession);
 
   const lockReviewConfig = state.reviewPreviewRunning || state.reviewActive || state.reviewFlowState === "reviewed";
   if (reviewTypeFilter) reviewTypeFilter.disabled = lockReviewConfig;
