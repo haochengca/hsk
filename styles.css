@@ -326,6 +326,11 @@ button:disabled,
   padding: 0.55rem 0.72rem;
 }
 
+.review-stage-shell {
+  --review-stage-scale-offset: 0px;
+  min-height: 0;
+}
+
 .review-workbench {
   margin-top: 0.75rem;
   display: grid;
@@ -1462,6 +1467,20 @@ select {
   #review-panel #dictation-writer {
     min-height: 260px;
   }
+}
+
+body.ipad-landscape-review-scale #review-panel .review-stage-shell {
+  width: 125%;
+  transform: scale(0.8);
+  transform-origin: top left;
+  margin-bottom: var(--review-stage-scale-offset);
+}
+
+body.ipad-landscape-review-scale #review-panel #dictation-writer:not(.word-mode) {
+  width: 80%;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -6274,6 +6274,7 @@ const reviewPreview = document.getElementById("review-preview");
 const reviewPreviewTimer = document.getElementById("review-preview-timer");
 const reviewPreviewTimeText = document.getElementById("review-preview-time-text");
 const reviewPreviewProgressBar = document.getElementById("review-preview-progress-bar");
+const reviewStageShell = document.getElementById("review-stage-shell");
 const dictationWriterHost = document.getElementById("dictation-writer");
 const reviewFeedback = document.getElementById("review-feedback");
 const reviewAnswer = document.getElementById("review-answer");
@@ -7419,6 +7420,30 @@ function ensureWeeklyRewards() {
 let fireworksRaf = 0;
 let fireworksToken = 0;
 let fireworksParticles = [];
+
+function isIpadLandscape() {
+  const ua = String(navigator.userAgent || "");
+  const platform = String(navigator.platform || "");
+  const touchPoints = Number(navigator.maxTouchPoints || 0);
+  const isiPad = /iPad/i.test(ua) || (platform === "MacIntel" && touchPoints > 1);
+  return isiPad && window.matchMedia("(orientation: landscape)").matches;
+}
+
+function syncIpadLandscapeReviewScale() {
+  if (!reviewStageShell || !document.body) return;
+  const enabled = isIpadLandscape();
+  document.body.classList.toggle("ipad-landscape-review-scale", enabled);
+  if (!enabled) {
+    reviewStageShell.style.setProperty("--review-stage-scale-offset", "0px");
+    return;
+  }
+  window.requestAnimationFrame(() => {
+    const naturalHeight = reviewStageShell.offsetHeight || 0;
+    const visualHeight = reviewStageShell.getBoundingClientRect().height || 0;
+    const offset = Math.min(0, Math.round(visualHeight - naturalHeight));
+    reviewStageShell.style.setProperty("--review-stage-scale-offset", `${offset}px`);
+  });
+}
 
 function stopPointsFireworks() {
   fireworksToken += 1;
@@ -9783,6 +9808,7 @@ function renderReviewCard() {
     if (reviewNextBtn) reviewNextBtn.classList.add("hidden");
     if (reviewStopBtn) reviewStopBtn.classList.add("hidden");
     wordAnswerRow.classList.add("hidden");
+    syncIpadLandscapeReviewScale();
     return;
   }
 
@@ -9801,6 +9827,7 @@ function renderReviewCard() {
     wordAnswerRow.classList.add("hidden");
   }
   renderReviewButtons();
+  syncIpadLandscapeReviewScale();
   if (!state.reviewAwaitingNext) speakPrompt(item);
 }
 
@@ -11902,6 +11929,11 @@ async function init() {
   scheduleRecognitionTierWarmup(300);
   renderLearnCard();
   renderLearnCharList();
+  syncIpadLandscapeReviewScale();
+  window.addEventListener("resize", syncIpadLandscapeReviewScale);
+  window.addEventListener("orientationchange", () => {
+    window.setTimeout(syncIpadLandscapeReviewScale, 120);
+  });
   switchAuthMode("login");
 
   const session = loadSession();
