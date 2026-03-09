@@ -6869,6 +6869,15 @@ function endReviewDraftSession() {
   state.pendingSubmissionPayloads = [];
 }
 
+function refreshReviewDraftSnapshotToCurrent() {
+  if (!state.reviewDraftActive) return;
+  state.reviewSessionSnapshot = {
+    progress: JSON.parse(JSON.stringify(state.progress || {})),
+    wrongBook: JSON.parse(JSON.stringify(state.wrongBook || [])),
+    rewards: JSON.parse(JSON.stringify(state.rewards || {}))
+  };
+}
+
 async function postSubmissionPayload(payload) {
   const resp = await apiRequest("/api/submissions", {
     method: "POST",
@@ -6880,16 +6889,8 @@ async function postSubmissionPayload(payload) {
 
 async function commitReviewDraftSession() {
   if (!state.reviewDraftActive) return;
-  const pending = [...state.pendingSubmissionPayloads];
   endReviewDraftSession();
   await syncUserDataToServer();
-  for (const payload of pending) {
-    try {
-      await postSubmissionPayload(payload);
-    } catch (err) {
-      console.warn("record submission failed:", err && err.message ? err.message : err);
-    }
-  }
   renderAdminPanel();
   renderUserRecords();
   renderLearnCharList();
@@ -8457,12 +8458,9 @@ function recordSubmission(item, isGood, accuracyPercent, meta = {}) {
         }))
       : []
   };
-  if (state.reviewDraftActive) {
-    state.pendingSubmissionPayloads.push(payload);
-    return;
-  }
   postSubmissionPayload(payload)
     .then(() => {
+      refreshReviewDraftSnapshotToCurrent();
       renderUserRecords();
       renderAdminPanel();
     })
@@ -9902,7 +9900,17 @@ function finalizeReviewResult(item, isGood, accuracyPercent, meta = {}) {
     });
   }
 
-  if (!isWrongBookSinglePractice) saveProgress();
+  if (!isWrongBookSinglePractice) {
+    saveProgress();
+    refreshReviewDraftSnapshotToCurrent();
+    syncUserDataToServer()
+      .then(() => {
+        refreshReviewDraftSnapshotToCurrent();
+      })
+      .catch((err) => {
+        console.warn("sync user data failed:", err && err.message ? err.message : err);
+      });
+  }
   refreshStats();
   if (!isWrongBookSinglePractice) {
     recordSubmission(item, isGood, accuracyPercent, { ...meta, points: earnedPoints });
