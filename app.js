@@ -9599,7 +9599,8 @@ async function runPreReviewPreviewAndStart() {
     renderReviewCard();
     return;
   }
-  const enablePreview = state.reviewPreviewMode === "all";
+  const isTaskSession = state.reviewSessionSource === "task";
+  const enablePreview = !isTaskSession && state.reviewPreviewMode === "all";
   if (!enablePreview) {
     state.reviewPreviewRunning = false;
     resetPreviewTimerUi();
