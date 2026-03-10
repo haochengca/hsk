@@ -35,6 +35,22 @@ async function createUser(payload) {
   }
 }
 
+async function drawScribble(page, selector) {
+  const canvas = page.locator(selector).first();
+  await expect(canvas).toBeVisible();
+  const box = await canvas.boundingBox();
+  if (!box) throw new Error(`canvas not visible for ${selector}`);
+  const startX = box.x + box.width * 0.25;
+  const startY = box.y + box.height * 0.25;
+  await page.mouse.move(startX, startY);
+  await page.mouse.down();
+  await page.mouse.move(box.x + box.width * 0.75, box.y + box.height * 0.28, { steps: 12 });
+  await page.mouse.move(box.x + box.width * 0.35, box.y + box.height * 0.55, { steps: 12 });
+  await page.mouse.move(box.x + box.width * 0.72, box.y + box.height * 0.78, { steps: 12 });
+  await page.mouse.move(box.x + box.width * 0.28, box.y + box.height * 0.82, { steps: 12 });
+  await page.mouse.up();
+}
+
 test.beforeAll(async () => {
   tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "hsk-e2e-"));
   serverProcess = spawn("node", ["server.js"], {
@@ -127,4 +143,30 @@ test("child user can navigate learn, write and review flows", async ({ page }) =
   await expect(page.locator("#review-panel")).toHaveClass(/is-active/);
   await expect(page.locator("#review-card")).toBeVisible();
   await expect(page.locator("#review-start")).toBeVisible();
+
+  const selectedText = await page.locator("#learn-char-list tr td:nth-child(2)").first().textContent();
+  const submissionResponses = [];
+  page.on("response", (response) => {
+    if (response.url().includes("/api/submissions") && response.request().method() === "POST") {
+      submissionResponses.push(response);
+    }
+  });
+
+  for (let attempt = 0; attempt < 3 && submissionResponses.length === 0; attempt += 1) {
+    await drawScribble(page, "#dictation-writer canvas");
+    await page.click("#review-start");
+    await page.waitForTimeout(700);
+    const feedback = await page.locator("#review-feedback").textContent();
+    if (submissionResponses.length > 0) break;
+    if (!String(feedback || "").includes("接近正确")) break;
+  }
+
+  expect(submissionResponses.length).toBeGreaterThan(0);
+  expect(submissionResponses[0].ok()).toBeTruthy();
+  await expect(page.locator("#review-summary-card")).toBeVisible();
+
+  await page.click("#records-tab");
+  await expect(page.locator("#records-panel")).toHaveClass(/is-active/);
+  await expect(page.locator("#records-count")).toContainText("1 条");
+  await expect(page.locator("#records-list")).toContainText(String(selectedText || "").trim());
 });
