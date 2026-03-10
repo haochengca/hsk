@@ -77,8 +77,7 @@ Base URL: `/api`
     "recognitionV2Enabled": true
   },
   "lexiconOverrides": {},
-  "submissions": [],
-  "tasks": []
+  "submissions": []
 }
 ```
 - 说明：
@@ -148,83 +147,7 @@ Base URL: `/api`
   - `handwritingImage` 对词汇可为多图拼接字符串（`||` 分隔），用于兼容旧数据展示。
 - 响应：`{ ok, submission }`
 
-## 5. HSK 分级任务
-
-### `GET /tasks`
-- Header: `Authorization`（parent|child）
-- 响应：`{ ok: true, tasks: [...] }`
-
-### `POST /tasks`
-- Header: `Authorization`（parent|child）
-- 请求：
-```json
-{
-  "templateType": "HSK_LEVEL_CHARS",
-  "selectedLevels": [1, 2],
-  "practiceCount": 20,
-  "dueAt": 0,
-  "assigneeId": "child001"
-}
-```
-- 说明：
-  - 当前模板固定为 `HSK_LEVEL_CHARS`
-  - `selectedLevels` 支持单选或多选，范围 `1..6`
-  - 父母账号可通过 `assigneeId` 为已关联孩子创建任务；孩子账号会忽略该字段并始终创建到自己名下
-  - 同一学习者同一时间只允许存在一个未完成任务；若要新建，需要先完成或停止当前任务
-  - 服务端会在创建时快照任务项，后续恢复不依赖实时数据源
-
-### `GET /tasks/:id`
-- Header: `Authorization`（parent|child）
-- 响应：`{ ok: true, task }`
-
-### `POST /tasks/:id/start`
-- Header: `Authorization`（parent|child）
-- 说明：
-  - 从头开始任务，并重置旧进度
-- 响应：`{ ok: true, task }`
-
-### `POST /tasks/:id/progress`
-- Header: `Authorization`（parent|child）
-- 请求：
-```json
-{
-  "status": "in_progress|paused",
-  "sessionId": "session_xxx",
-  "checkpointId": "task_1_3",
-  "currentIndex": 5,
-  "completedItems": [
-    {
-      "seq": 0,
-      "itemId": "爱",
-      "text": "爱",
-      "isCorrect": true,
-      "accuracyPercent": 96,
-      "answeredAt": 0
-    }
-  ]
-}
-```
-- 说明：
-  - `checkpointId` 用于幂等保护；重复提交同一 checkpoint 不会重复推进进度
-- 响应：`{ ok: true, task, idempotent }`
-
-### `POST /tasks/:id/resume`
-- Header: `Authorization`（parent|child）
-- 响应：`{ ok: true, task, currentIndex }`
-
-### `POST /tasks/:id/complete`
-- Header: `Authorization`（parent|child）
-- 请求体与 `/tasks/:id/progress` 相同
-- 响应：`{ ok: true, task, summary }`
-
-### `POST /tasks/:id/stop`
-- Header: `Authorization`（parent|child）
-- 说明：
-  - 将未完成任务停止并归档，之后该学习者可创建新任务
-  - 父母账号可停止自己或已关联孩子的任务
-- 响应：`{ ok: true, task }`
-
-## 6. 管理角色复判
+## 5. 管理角色复判
 
 ### `PUT /submissions/:id/review`
 - Header: `Authorization`（parent）

@@ -1182,6 +1182,9 @@ function normalizeSubmissionRow(row) {
   if (!row || typeof row !== "object") return row;
   return {
     ...row,
+    taskId: String(row.taskId || ""),
+    taskSessionId: String(row.taskSessionId || ""),
+    taskItemSeq: Number.isInteger(Number(row.taskItemSeq)) ? Number(row.taskItemSeq) : -1,
     accuracyPercent: normalizeAccuracyPercent(row.accuracyPercent),
     judgeDetail: normalizeJudgeDetail(row.judgeDetail),
     wordCharResults: Array.isArray(row.wordCharResults)
@@ -1715,6 +1718,44 @@ function renderTaskLevelStatsHtml(levelStats) {
     .join("")}</div>`;
 }
 
+function getSubmissionForTaskItem(task, item) {
+  if (!task || !item || !Array.isArray(state.submissions)) return null;
+  const seq = Number(item.seq);
+  const rows = state.submissions.filter((row) => {
+    if (!row || String(row.taskId || "") !== String(task.id || "")) return false;
+    if (Number(row.taskItemSeq) !== seq) return false;
+    if (task.assigneeId && row.username && row.username !== task.assigneeId) return false;
+    return true;
+  });
+  if (!rows.length) return null;
+  rows.sort((a, b) => {
+    const reviewedGap = Number(Boolean(b.reviewedBy)) - Number(Boolean(a.reviewedBy));
+    if (reviewedGap !== 0) return reviewedGap;
+    return Number(b.createdAt || 0) - Number(a.createdAt || 0);
+  });
+  return rows[0];
+}
+
+function renderTaskCompletedItemsHtml(task) {
+  const completedItems = task && task.progress && Array.isArray(task.progress.completedItems) ? task.progress.completedItems : [];
+  if (!completedItems.length) return "<p>暂无题级明细。</p>";
+  return `<div class="task-completed-items">${completedItems
+    .map((item) => {
+      const submission = getSubmissionForTaskItem(task, item);
+      const reviewed = submission && submission.reviewedBy ? ` ｜ 已复判：${submission.reviewedBy}` : "";
+      const reviewedAt =
+        submission && submission.reviewedAt ? ` ｜ 复判时间：${new Date(submission.reviewedAt).toLocaleString()}` : "";
+      const wordDetail =
+        submission && Array.isArray(submission.wordCharResults) && submission.wordCharResults.length > 0
+          ? ` ｜ 逐字：${submission.wordCharResults.map((x, idx) => `第${idx + 1}字${x.isGood ? "对" : "错"}`).join("、")}`
+          : "";
+      return `<div class="task-completed-item">
+        <p><strong>第 ${Number(item.seq) + 1} 题</strong>：${item.text} ｜ ${item.isCorrect ? "正确" : "错误"} ｜ 准确率 ${item.accuracyPercent || 0}%${reviewed}${reviewedAt}${wordDetail}</p>
+      </div>`;
+    })
+    .join("")}</div>`;
+}
+
 function renderTaskDetailHtml(task) {
   const summary = task && task.summary ? task.summary : {};
   const wrongItems = Array.isArray(summary.wrongItems) ? summary.wrongItems : [];
@@ -1724,6 +1765,7 @@ function renderTaskDetailHtml(task) {
     <p>正确 ${summary.correctCount || 0} 题，错误 ${summary.wrongCount || 0} 题。</p>
     ${wrongItems.length ? `<p>错字：${wrongItems.join("、")}</p>` : ""}
     ${renderTaskLevelStatsHtml(summary.levelStats)}
+    ${renderTaskCompletedItemsHtml(task)}
   </div>`;
 }
 
@@ -2135,7 +2177,7 @@ async function loadUserData() {
   state.submissions = Array.isArray(boot.submissions)
     ? boot.submissions.map((row) => normalizeSubmissionRow(row))
     : [];
-  setTasks(boot.tasks || []);
+  state.tasks = [];
   state.progress = data.progress && typeof data.progress === "object" ? data.progress : {};
   state.wrongBook = Array.isArray(data.wrongBook) ? data.wrongBook : [];
   state.rewards =
@@ -2625,15 +2667,12 @@ function renderUserRecords() {
   if (!state.auth.username || !isLearnerRole(state.auth.role)) {
     recordsCount.textContent = "记录：0 条";
     recordsStats.innerHTML = "<p>仅父母或孩子可查看自己的统计。</p>";
-    if (taskRecordsSummary) taskRecordsSummary.textContent = "任务：0 个";
-    if (taskRecordsList) taskRecordsList.innerHTML = "<p>仅父母或孩子可查看自己的任务记录。</p>";
     recordsList.innerHTML = "<p>仅父母或孩子可查看自己的记录。</p>";
     return;
   }
   const rows = state.submissions
     .filter((x) => x && x.username === state.auth.username)
     .sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
-  renderTaskHistory();
   renderUserRecordStats(rows);
   recordsCount.textContent = `记录：${rows.length} 条`;
   if (rows.length === 0) {
@@ -2727,7 +2766,6 @@ async function setAuthState(username, role, token, profile = {}) {
   learnTabBtn.classList.toggle("hidden", manager);
   writeTabBtn.classList.toggle("hidden", manager);
   reviewTabBtn.classList.toggle("hidden", manager);
-  if (tasksTabBtn) tasksTabBtn.classList.toggle("hidden", role === "admin");
   wrongTabBtn.classList.toggle("hidden", manager);
   recordsTab.classList.toggle("hidden", manager);
   adminTab.classList.toggle("hidden", !reviewAuditor);
@@ -2740,8 +2778,7 @@ async function setAuthState(username, role, token, profile = {}) {
   if (!reviewAuditor && state.tab === "admin") {
     state.tab = superAdmin ? "admin-users" : "admin-wrong";
   }
-  if (role === "parent") switchTab("tasks");
-  else if (reviewAuditor) switchTab("admin");
+  if (reviewAuditor) switchTab("admin");
   else if (superAdmin) switchTab("admin-users");
   else if (manager) switchTab("admin-wrong");
   else switchTab("learn");
@@ -2916,6 +2953,7 @@ async function handleRegister() {
 function recordSubmission(item, isGood, accuracyPercent, meta = {}) {
   if (!isLearnerRole(state.auth.role) || !state.auth.username) return;
   const points = meta.points ?? (item.type === "word" ? 10 : 8);
+  const activeTask = getTaskById();
   const payload = {
     username: state.auth.username,
     type: item.type,
@@ -2927,6 +2965,9 @@ function recordSubmission(item, isGood, accuracyPercent, meta = {}) {
     systemResult: typeof meta.systemResult === "boolean" ? meta.systemResult : Boolean(isGood),
     finalResult: Boolean(isGood),
     pointsAwarded: points,
+    taskId: activeTask && activeTask.id ? activeTask.id : "",
+    taskSessionId: activeTask && activeTask.progress && activeTask.progress.sessionId ? activeTask.progress.sessionId : "",
+    taskItemSeq: Number.isInteger(Number(meta.taskItemSeq)) ? Number(meta.taskItemSeq) : -1,
     judgeDetail: normalizeJudgeDetail(meta.judgeDetail),
     wordCharResults: Array.isArray(meta.wordCharResults)
       ? meta.wordCharResults.map((x) => ({
@@ -4091,7 +4132,10 @@ function renderWrongBook() {
 function switchTab(tab) {
   state.tab = tab;
   tabs.forEach((el) => el.classList.toggle("is-active", el.dataset.tab === tab));
-  Object.entries(panels).forEach(([key, node]) => node.classList.toggle("is-active", key === tab));
+  Object.entries(panels).forEach(([key, node]) => {
+    if (!node) return;
+    node.classList.toggle("is-active", key === tab);
+  });
   renderTabContent(tab, { force: true });
 }
 
@@ -4416,7 +4460,11 @@ function finalizeReviewResult(item, isGood, accuracyPercent, meta = {}) {
   }
   refreshStats();
   if (!isWrongBookSinglePractice) {
-    recordSubmission(item, isGood, accuracyPercent, { ...meta, points: earnedPoints });
+    recordSubmission(item, isGood, accuracyPercent, {
+      ...meta,
+      points: earnedPoints,
+      taskItemSeq: activeTask ? Math.max(0, Number(state.reviewIndex) || 0) : -1
+    });
   }
   if (activeTask) {
     const seq = Math.max(0, Number(state.reviewIndex) || 0);
@@ -5816,7 +5864,7 @@ function wireTabs() {
   tabs.forEach((btn) => {
     btn.addEventListener("click", () => {
       if (state.auth.role === "admin" && !["admin", "admin-users", "admin-wrong", "admin-items"].includes(btn.dataset.tab)) return;
-      if (state.auth.role === "parent" && !["tasks", "admin", "admin-wrong"].includes(btn.dataset.tab)) return;
+      if (state.auth.role === "parent" && !["admin", "admin-wrong"].includes(btn.dataset.tab)) return;
       if (btn.dataset.tab === "admin" && !canAccessReviewAudit(state.auth.role)) return;
       if (btn.dataset.tab === "admin-users" && !isSuperAdmin(state.auth.role)) return;
       if (btn.dataset.tab === "admin-wrong" && !isManagerRole(state.auth.role)) return;

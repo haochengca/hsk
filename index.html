@@ -89,7 +89,6 @@
         <button class="tab is-active" data-tab="learn" data-i18n="nav.learn">学习</button>
         <button class="tab" data-tab="write" data-i18n="nav.write">写字</button>
         <button class="tab" data-tab="review" data-i18n="nav.review">默写测验</button>
-        <button class="tab" data-tab="tasks">任务</button>
         <button class="tab" data-tab="wrong" data-i18n="nav.wrong">错题本</button>
         <button class="tab hidden" id="records-tab" data-tab="records" data-i18n="nav.records">我的记录</button>
         <button class="tab hidden" id="admin-tab" data-tab="admin" data-i18n="nav.adminReview">默写判定审核</button>
@@ -307,18 +306,6 @@
 
           <div class="review-workbench">
             <aside class="review-pane review-setup-pane">
-              <article class="card task-card">
-                <div class="panel-head task-card-head">
-                  <h3>当前任务</h3>
-                  <p id="task-summary-text">当前没有进行中的任务。</p>
-                </div>
-                <p id="task-feedback"></p>
-                <div id="current-task-card" class="task-list"></div>
-                <div class="task-actions">
-                  <button id="task-go-page-btn" class="ghost" type="button">打开任务页</button>
-                </div>
-              </article>
-
               <div class="review-config">
                 <label>
                   默写类型
@@ -405,64 +392,6 @@
             </article>
           </div>
         </div>
-      </section>
-
-      <section class="panel" id="tasks-panel">
-        <div class="panel-head">
-          <h2>任务</h2>
-          <p id="tasks-page-summary">可创建新任务并查看历史任务。</p>
-        </div>
-        <article class="card task-card">
-          <div class="panel-head task-card-head">
-            <h3>创建任务</h3>
-            <p id="tasks-create-hint">只有当前任务完成后，才可以创建新任务。</p>
-          </div>
-          <div class="task-builder">
-            <label id="task-assignee-row" class="hidden">
-              分配给
-              <select id="task-assignee-select"></select>
-            </label>
-            <div class="task-level-picker" id="task-level-picker">
-              <label><input type="checkbox" value="1" /> HSK1</label>
-              <label><input type="checkbox" value="2" /> HSK2</label>
-              <label><input type="checkbox" value="3" /> HSK3</label>
-              <label><input type="checkbox" value="4" /> HSK4</label>
-              <label><input type="checkbox" value="5" /> HSK5</label>
-              <label><input type="checkbox" value="6" /> HSK6</label>
-            </div>
-            <label>
-              每次题量
-              <select id="task-practice-count">
-                <option value="10">10</option>
-                <option value="20" selected>20</option>
-                <option value="50">50</option>
-                <option value="all">全部</option>
-              </select>
-            </label>
-            <button id="task-create-btn" class="good" type="button">创建任务</button>
-          </div>
-          <p id="tasks-create-feedback"></p>
-        </article>
-        <article class="card">
-          <div class="panel-head">
-            <h3>任务列表</h3>
-            <p id="task-history-summary">任务：0 个</p>
-          </div>
-          <div class="task-section">
-            <div class="panel-head">
-              <h4>进行中</h4>
-              <p id="task-active-summary">0 个</p>
-            </div>
-            <div id="task-active-list" class="task-list"></div>
-          </div>
-          <div class="task-section">
-            <div class="panel-head">
-              <h4>已完成 / 已停止</h4>
-              <p id="task-history-archive-summary">0 个</p>
-            </div>
-            <div id="task-list" class="task-list"></div>
-          </div>
-        </article>
       </section>
 
       <section class="panel" id="wrong-panel">
@@ -625,13 +554,6 @@
         </div>
         <article class="card">
           <div id="records-stats" class="records-stats"></div>
-        </article>
-        <article class="card">
-          <div class="panel-head">
-            <h3>任务记录</h3>
-            <p id="task-records-summary">任务：0 个</p>
-          </div>
-          <div id="task-records-list"></div>
         </article>
         <article class="card">
           <div id="records-list"></div>

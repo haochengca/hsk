@@ -10,6 +10,7 @@ const {
   TEMPLATE_TYPE_HSK_LEVEL_CHARS,
   TASK_STATUS,
   createTaskRecord,
+  summarizeTask,
   startTask,
   resumeTask,
   applyTaskProgressSnapshot,
@@ -254,6 +255,29 @@ function readSqliteStateFromFile(filePath) {
       if (tempDb && typeof tempDb.close === "function") tempDb.close();
     } catch {}
   }
+}
+
+function syncTaskProgressFromSubmissionReview(db, submission) {
+  if (!submission || !submission.taskId || !Number.isInteger(Number(submission.taskItemSeq)) || Number(submission.taskItemSeq) < 0) return;
+  const task = (db.tasks || []).find((item) => item && item.id === submission.taskId);
+  if (!task || !task.progress || !Array.isArray(task.progress.completedItems)) return;
+  const seq = Number(submission.taskItemSeq);
+  const completedIndex = task.progress.completedItems.findIndex((item) => Number(item && item.seq) === seq);
+  if (completedIndex < 0) return;
+  const current = task.progress.completedItems[completedIndex];
+  task.progress.completedItems.splice(completedIndex, 1, {
+    ...current,
+    text: String(current && current.text ? current.text : submission.target || ""),
+    itemId: String(current && current.itemId ? current.itemId : submission.target || ""),
+    isCorrect: Boolean(submission.finalResult),
+    accuracyPercent: normalizeAccuracyPercent(submission.accuracyPercent),
+    answeredAt: Math.max(Number(current && current.answeredAt) || 0, Number(submission.createdAt) || 0)
+  });
+  task.progress.correctCount = task.progress.completedItems.filter((item) => item && item.isCorrect).length;
+  task.progress.completedCount = task.progress.completedItems.length;
+  task.progress.wrongItems = [...new Set(task.progress.completedItems.filter((item) => item && !item.isCorrect).map((item) => item.text))];
+  task.progress.lastSnapshotAt = now();
+  task.summary = summarizeTask(task);
 }
 
 async function ensurePostgresStore() {
@@ -763,9 +787,12 @@ async function handleApi(req, res, pathname) {
         recognitionV2Enabled: RECOGNITION_V2_ENABLED
       },
       lexiconOverrides: db.lexiconOverrides || {},
-      submissions,
-      tasks: getAccessibleTasksForAuth(db, auth)
+      submissions
     });
+  }
+
+  if (pathname === "/api/tasks" || pathname.startsWith("/api/tasks/")) {
+    return sendJson(res, 404, { ok: false, message: "任务功能已下线" });
   }
 
   if (req.method === "PUT" && pathname === "/api/user-data") {
@@ -840,6 +867,9 @@ async function handleApi(req, res, pathname) {
       id: `${now()}_${crypto.randomBytes(4).toString("hex")}`,
       username: auth.username,
       type: body.type === "word" ? "word" : "char",
+      taskId: String(body.taskId || ""),
+      taskSessionId: String(body.taskSessionId || ""),
+      taskItemSeq: Number.isInteger(Number(body.taskItemSeq)) ? Number(body.taskItemSeq) : -1,
       target: String(body.target || ""),
       pinyin: String(body.pinyin || ""),
       userAnswer: String(body.userAnswer || ""),
@@ -1035,6 +1065,7 @@ async function handleApi(req, res, pathname) {
         updateWrongBookForUser(db, submission.username, submission, after);
       }
     }
+    syncTaskProgressFromSubmissionReview(db, submission);
     await saveDb(db);
     return sendJson(res, 200, { ok: true, submission });
   }
