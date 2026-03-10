@@ -100,7 +100,21 @@
 - 后端：Node.js
 - 数据支持 HSK1-6
 
+## 开发辅助能力
+- 项目内置多 Agent 协作规划脚本，可用于复杂任务拆解和协作流程规划
+- 支持：
+  - 自动识别任务意图
+  - 自动匹配协作工作流
+  - 输出文本或 JSON 协作计划
+  - 检测与进行中任务的上下文重叠
+
+示例命令：
+```bash
+npm run agents:plan -- --title "优化手写识别正确率" --details "调整阈值与融合策略"
+```
+
 如需开发或接口说明，请查看：
 - [产品需求文档](./docs/PRD.md)
 - [接口文档](./docs/API.md)
 - [项目进度](./docs/PROGRESS.md)
+- [多 Agent 协作文档](./docs/MULTI_AGENT_COLLAB.md)
