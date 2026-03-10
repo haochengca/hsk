@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 
 
@@ -12,7 +13,18 @@ JS_OUTPUT_FILE = ROOT / "data" / "hsk_words_1_6.js"
 
 def normalize_meaning(columns: list[str]) -> str:
     parts = [part.strip() for part in columns[4:] if part.strip()]
-    return " ".join(parts)
+    return sanitize_meaning(" ".join(parts))
+
+
+def sanitize_meaning(text: str) -> str:
+    value = str(text or "").strip()
+    if not value:
+        return "-"
+    value = re.sub(r"[\u3400-\u4dbf\u4e00-\u9fff]+", "", value)
+    value = re.sub(r"[，。；：、“”‘’（）《》【】〈〉「」『』]", " ", value)
+    value = re.sub(r"\s+", " ", value).strip()
+    value = re.sub(r"\s+([,.;:!?])", r"\1", value)
+    return value or "-"
 
 
 def build_items() -> list[dict[str, object]]:
