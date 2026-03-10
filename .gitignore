@@ -8,6 +8,8 @@ data/HSK词汇/
 # local runtime/deps
 .tools/
 node_modules/
+__pycache__/
+*.pyc
 
 # e2e artifacts
 test-results/
