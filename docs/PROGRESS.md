@@ -1,5 +1,15 @@
 # 项目进度（执行与验证）
 
+## 本轮任务执行状态（2026-03-10）
+| 任务 | 状态 | 实现文件 | 验证结果 |
+|---|---|---|---|
+| 前端主包去大数据内嵌、改为运行时加载词库 JSON | 已完成 | `app.js` `index.html` | 通过：`app.js` 不再内嵌 HSK 数据，E2E 验证资源请求命中 `data/hsk_chars_1_6.json` 与 `data/hsk_words_1_6.json` |
+| 静态资源缓存策略优化 | 已完成 | `server.js` | 通过：词库 JSON 返回长期缓存头，普通静态资源返回短时缓存头 |
+| 登录后隐藏面板延迟渲染 | 已完成 | `app.js` | 通过：后台/记录页改为当前 tab 首次进入渲染，隐藏 tab 使用空闲时预热 |
+| 学习页 / 写字页 / 管理页高频列表渲染收敛 | 已完成 | `app.js` | 通过：列表改为按帧合并渲染，HTML 未变化时不重复写入 DOM |
+| 新增管理员前端冒烟 E2E | 已完成 | `tests/e2e/frontend-smoke.spec.js` `package.json` `package-lock.json` | 通过：校验 JSON 资源加载、管理员登录与后台默认落点 |
+| 新增孩子账号学习主流程 E2E | 已完成 | `tests/e2e/frontend-smoke.spec.js` | 通过：覆盖 child 登录、学习页勾选、进入写字页、从学习页发起默写 |
+
 ## 本轮任务执行状态（2026-03-09）
 | 任务 | 状态 | 实现文件 | 验证结果 |
 |---|---|---|---|
@@ -27,7 +37,10 @@
 ## 验证命令记录
 ```bash
 node --check app.js
+node --check server.js
+node --check tests/e2e/frontend-smoke.spec.js
 npm run data:hsk
 node --check app.js
 node tests/e2e/review-state-machine.spec.js
+npm run test:e2e
 ```

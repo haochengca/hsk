@@ -1135,9 +1135,16 @@ function serveStatic(req, res, pathname) {
       return;
     }
     const ext = path.extname(abs).toLowerCase();
+    const isDataJson = ext === ".json" && abs.includes(`${path.sep}data${path.sep}`);
+    const cacheControl = isDataJson
+      ? "public, max-age=31536000, immutable"
+      : [".css", ".js", ".svg", ".png", ".jpg", ".jpeg", ".ico"].includes(ext)
+        ? "public, max-age=3600"
+        : "no-cache";
     res.writeHead(200, {
       "Content-Type": MIME[ext] || "application/octet-stream",
-      "Access-Control-Allow-Origin": "*"
+      "Access-Control-Allow-Origin": "*",
+      "Cache-Control": cacheControl
     });
     res.end(data);
   });
