@@ -1,4 +1,4 @@
-[
+window.HSK_CHARS = [
   {
     "char": "一",
     "pinyin": "yī",
@@ -21303,4 +21303,4 @@
     "phrase": "黎明",
     "sentence": "这是“黎”字。"
   }
-]
+];

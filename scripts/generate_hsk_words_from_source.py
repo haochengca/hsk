@@ -6,7 +6,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 SOURCE_DIR = ROOT / "data" / "hsk_source"
-OUTPUT_FILE = ROOT / "data" / "hsk_words_1_6.js"
+OUTPUT_FILE = ROOT / "data" / "hsk_words_1_6.json"
+JS_OUTPUT_FILE = ROOT / "data" / "hsk_words_1_6.js"
 
 
 def normalize_meaning(columns: list[str]) -> str:
@@ -27,7 +28,7 @@ def build_items() -> list[dict[str, object]]:
             word = columns[0] if len(columns) > 0 else ""
             pinyin = columns[3] if len(columns) > 3 else (columns[2] if len(columns) > 2 else "")
             meaning = normalize_meaning(columns)
-            if not word or word in seen:
+            if not word or len(word) <= 1 or word in seen:
                 continue
             seen.add(word)
             items.append(
@@ -46,12 +47,14 @@ def build_items() -> list[dict[str, object]]:
 def main() -> None:
     items = build_items()
     payload = json.dumps(items, ensure_ascii=False, indent=2)
-    OUTPUT_FILE.write_text(f"window.HSK_WORDS = {payload};\n", encoding="utf-8")
+    OUTPUT_FILE.write_text(payload + "\n", encoding="utf-8")
+    JS_OUTPUT_FILE.write_text(f"window.HSK_WORDS = {payload};\n", encoding="utf-8")
     counts: dict[int, int] = {}
     for item in items:
         level = int(item["level"])
         counts[level] = counts.get(level, 0) + 1
     print(f"Generated {len(items)} items -> {OUTPUT_FILE}")
+    print(f"Generated browser bundle -> {JS_OUTPUT_FILE}")
     print("Level counts:", counts)
 
 

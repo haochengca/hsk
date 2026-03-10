@@ -10,6 +10,7 @@
   },
   "scripts": {
     "start": "node server.js",
+    "data:hsk": "python3 scripts/generate_hsk_data.py",
     "agents:plan": "node scripts/agent-coordinator.js",
     "test:agents": "node --test tests/agent-coordinator.spec.js",
     "test:recognition": "node --test tests/recognition-core.spec.js",

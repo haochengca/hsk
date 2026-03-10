@@ -134,8 +134,16 @@
 
         <article class="card learn-list-card">
           <div class="panel-head learn-list-head">
-            <h3>全部学习项列表</h3>
+            <div class="learn-list-title-row">
+              <h3>全部学习项列表</h3>
+            </div>
             <div class="learn-filter-grid">
+              <label>
+                HSK等级
+                <select id="learn-list-level-filter">
+                  <option value="all">全部</option>
+                </select>
+              </label>
               <label>
                 列表类型
                 <select id="learn-list-type-filter">
@@ -553,11 +561,13 @@
       </section>
 
       <section class="panel" id="admin-items-panel">
-        <div class="panel-head">
-          <h2>全部学习项列表</h2>
-          <p id="admin-items-count">项目：0 条</p>
+        <div class="panel-head admin-items-head">
+          <div class="admin-items-title-row">
+            <h2>全部学习项列表</h2>
+            <p id="admin-items-count">项目：0 条</p>
+          </div>
         </div>
-        <div class="review-config">
+        <div class="review-config admin-items-filters">
           <label>
             类型
             <select id="admin-items-type-filter">
@@ -633,6 +643,7 @@
       </footer>
     </main>
 
+    <script src="data/hsk_chars_1_6.js"></script>
     <script src="data/hsk_words_1_6.js"></script>
     <script src="https://unpkg.com/hanzi-writer@3.7/dist/hanzi-writer.min.js"></script>
     <script src="review-state.js"></script>

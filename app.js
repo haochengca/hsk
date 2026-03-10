@@ -1,4 +1,4 @@
-const HSK_CHARS = [
+const HSK_CHARS = Array.isArray(window.HSK_CHARS) ? window.HSK_CHARS : [
   {
     "char": "爱",
     "pinyin": "ài",
@@ -6038,6 +6038,7 @@ const state = {
   learnCharSearch: "",
   learnCharPage: 1,
   learnCharPageSize: 50,
+  learnListLevelFilter: "all",
   learnListTypeFilter: "all",
   learnDictationCountFilter: "all",
   learnAccuracyFilter: "all",
@@ -6215,6 +6216,7 @@ const learnPinyin = document.getElementById("learn-pinyin");
 const learnMeaning = document.getElementById("learn-meaning");
 const learnProgress = document.getElementById("learn-progress");
 const learnCharSearch = document.getElementById("learn-char-search");
+const learnListLevelFilter = document.getElementById("learn-list-level-filter");
 const learnListTypeFilter = document.getElementById("learn-list-type-filter");
 const learnDictationCountFilter = document.getElementById("learn-dictation-count-filter");
 const learnAccuracyFilter = document.getElementById("learn-accuracy-filter");
@@ -9443,14 +9445,22 @@ function renderLearnCharList() {
   if (!learnCharList || !learnListSummary) return;
   const keyword = String(state.learnCharSearch || "").trim().toLowerCase();
   const merged = [...CHAR_ITEMS, ...WORD_ITEMS];
+  const levelFilterValue = state.learnListLevelFilter || "all";
   const typeFilter = state.learnListTypeFilter || "all";
   const countFilter = state.learnDictationCountFilter || "all";
   const accuracyFilter = state.learnAccuracyFilter || "all";
   const selectedSet = new Set(state.learnSelectedKeys || []);
   const statsMap = getUserDictationStatsMap();
+  const levels = [...new Set(merged.map((it) => Number(it.level) || 1))].sort((a, b) => a - b);
+  if (learnListLevelFilter) {
+    const levelOptions = [`<option value="all">全部</option>`, ...levels.map((lv) => `<option value="${lv}">HSK ${lv}</option>`)].join("");
+    if (learnListLevelFilter.innerHTML !== levelOptions) learnListLevelFilter.innerHTML = levelOptions;
+    learnListLevelFilter.value = levelFilterValue;
+  }
   const allItems = merged.filter((it) => {
     const key = `${it.type}:${it.text}`;
     const stats = statsMap.get(key) || { total: 0, correct: 0, accuracy: 0 };
+    if (levelFilterValue !== "all" && String(it.level) !== String(levelFilterValue)) return false;
     if (typeFilter !== "all" && it.type !== typeFilter) return false;
     if (!matchLearnDictationCountFilter(stats.total, countFilter)) return false;
     if (!matchLearnAccuracyFilter(stats.total, stats.accuracy, accuracyFilter)) return false;
@@ -9491,6 +9501,7 @@ function renderLearnCharList() {
       .join("");
   }
   if (learnCharPageSize) learnCharPageSize.value = String(pageSize);
+  if (learnListLevelFilter) learnListLevelFilter.value = levelFilterValue;
   if (learnListTypeFilter) learnListTypeFilter.value = typeFilter;
   if (learnDictationCountFilter) learnDictationCountFilter.value = countFilter;
   if (learnAccuracyFilter) learnAccuracyFilter.value = accuracyFilter;
@@ -10896,6 +10907,14 @@ function wireLearn() {
     });
   }
 
+  if (learnListLevelFilter) {
+    learnListLevelFilter.addEventListener("change", (event) => {
+      state.learnListLevelFilter = event.target.value || "all";
+      state.learnCharPage = 1;
+      renderLearnCharList();
+    });
+  }
+
   learnListTypeFilter.addEventListener("change", (event) => {
     state.learnListTypeFilter = event.target.value || "all";
     state.learnCharPage = 1;
@@ -10921,11 +10940,13 @@ function wireLearn() {
   if (learnResetFilters) {
     learnResetFilters.addEventListener("click", () => {
       state.learnCharSearch = "";
+      state.learnListLevelFilter = "all";
       state.learnListTypeFilter = "all";
       state.learnDictationCountFilter = "all";
       state.learnAccuracyFilter = "all";
       state.learnCharPage = 1;
       if (learnCharSearch) learnCharSearch.value = "";
+      if (learnListLevelFilter) learnListLevelFilter.value = "all";
       if (learnListTypeFilter) learnListTypeFilter.value = "all";
       if (learnDictationCountFilter) learnDictationCountFilter.value = "all";
       if (learnAccuracyFilter) learnAccuracyFilter.value = "all";

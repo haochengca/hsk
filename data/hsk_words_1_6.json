@@ -1,4 +1,4 @@
-window.HSK_WORDS = [
+[
   {
     "word": "爸爸",
     "pinyin": "bàba",
@@ -34295,4 +34295,4 @@ window.HSK_WORDS = [
     "phrase": "做主",
     "sentence": "我正在学习“做主”。"
   }
-];
+]
