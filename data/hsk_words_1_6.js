@@ -1,5 +1,21 @@
 window.HSK_WORDS = [
   {
+    "word": "爱",
+    "pinyin": "ài",
+    "meaning": "love",
+    "level": 1,
+    "phrase": "爱",
+    "sentence": "我正在学习“爱”。"
+  },
+  {
+    "word": "八",
+    "pinyin": "bā",
+    "meaning": "eight",
+    "level": 1,
+    "phrase": "八",
+    "sentence": "我正在学习“八”。"
+  },
+  {
     "word": "爸爸",
     "pinyin": "bàba",
     "meaning": "Dad",
@@ -24,12 +40,52 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“北京”。"
   },
   {
+    "word": "本",
+    "pinyin": "běn",
+    "meaning": "measure word for books",
+    "level": 1,
+    "phrase": "本",
+    "sentence": "我正在学习“本”。"
+  },
+  {
     "word": "不客气",
     "pinyin": "bú kèqi",
     "meaning": "you're welcome; don't be polite",
     "level": 1,
     "phrase": "不客气",
     "sentence": "我正在学习“不客气”。"
+  },
+  {
+    "word": "不",
+    "pinyin": "bù",
+    "meaning": "no; not",
+    "level": 1,
+    "phrase": "不",
+    "sentence": "我正在学习“不”。"
+  },
+  {
+    "word": "菜",
+    "pinyin": "cài",
+    "meaning": "dish (type of food); vegetables",
+    "level": 1,
+    "phrase": "菜",
+    "sentence": "我正在学习“菜”。"
+  },
+  {
+    "word": "茶",
+    "pinyin": "chá",
+    "meaning": "tea",
+    "level": 1,
+    "phrase": "茶",
+    "sentence": "我正在学习“茶”。"
+  },
+  {
+    "word": "吃",
+    "pinyin": "chī",
+    "meaning": "eat",
+    "level": 1,
+    "phrase": "吃",
+    "sentence": "我正在学习“吃”。"
   },
   {
     "word": "出租车",
@@ -46,6 +102,30 @@ window.HSK_WORDS = [
     "level": 1,
     "phrase": "打电话",
     "sentence": "我正在学习“打电话”。"
+  },
+  {
+    "word": "大",
+    "pinyin": "dà",
+    "meaning": "big; large",
+    "level": 1,
+    "phrase": "大",
+    "sentence": "我正在学习“大”。"
+  },
+  {
+    "word": "的",
+    "pinyin": "de",
+    "meaning": "indicates possession, like adding 's to a noun",
+    "level": 1,
+    "phrase": "的",
+    "sentence": "我正在学习“的”。"
+  },
+  {
+    "word": "点",
+    "pinyin": "diǎn",
+    "meaning": "a dot; a little; o'clock",
+    "level": 1,
+    "phrase": "点",
+    "sentence": "我正在学习“点”。"
   },
   {
     "word": "电脑",
@@ -80,12 +160,36 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“东西”。"
   },
   {
+    "word": "都",
+    "pinyin": "dōu",
+    "meaning": "all; both",
+    "level": 1,
+    "phrase": "都",
+    "sentence": "我正在学习“都”。"
+  },
+  {
+    "word": "读",
+    "pinyin": "dú",
+    "meaning": "to read; to study",
+    "level": 1,
+    "phrase": "读",
+    "sentence": "我正在学习“读”。"
+  },
+  {
     "word": "对不起",
     "pinyin": "duìbuqǐ",
     "meaning": "sorry",
     "level": 1,
     "phrase": "对不起",
     "sentence": "我正在学习“对不起”。"
+  },
+  {
+    "word": "多",
+    "pinyin": "duō",
+    "meaning": "many",
+    "level": 1,
+    "phrase": "多",
+    "sentence": "我正在学习“多”。"
   },
   {
     "word": "多少",
@@ -102,6 +206,14 @@ window.HSK_WORDS = [
     "level": 1,
     "phrase": "儿子",
     "sentence": "我正在学习“儿子”。"
+  },
+  {
+    "word": "二",
+    "pinyin": "èr",
+    "meaning": "two",
+    "level": 1,
+    "phrase": "二",
+    "sentence": "我正在学习“二”。"
   },
   {
     "word": "饭店",
@@ -136,12 +248,28 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“高兴”。"
   },
   {
+    "word": "个",
+    "pinyin": "ge",
+    "meaning": "general measure word",
+    "level": 1,
+    "phrase": "个",
+    "sentence": "我正在学习“个”。"
+  },
+  {
     "word": "工作",
     "pinyin": "gōngzuò",
     "meaning": "work; a job",
     "level": 1,
     "phrase": "工作",
     "sentence": "我正在学习“工作”。"
+  },
+  {
+    "word": "狗",
+    "pinyin": "gǒu",
+    "meaning": "dog",
+    "level": 1,
+    "phrase": "狗",
+    "sentence": "我正在学习“狗”。"
   },
   {
     "word": "汉语",
@@ -152,12 +280,92 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“汉语”。"
   },
   {
+    "word": "好",
+    "pinyin": "hǎo",
+    "meaning": "good",
+    "level": 1,
+    "phrase": "好",
+    "sentence": "我正在学习“好”。"
+  },
+  {
+    "word": "号",
+    "pinyin": "hào",
+    "meaning": "number; day of a month",
+    "level": 1,
+    "phrase": "号",
+    "sentence": "我正在学习“号”。"
+  },
+  {
+    "word": "喝",
+    "pinyin": "hē",
+    "meaning": "to drink",
+    "level": 1,
+    "phrase": "喝",
+    "sentence": "我正在学习“喝”。"
+  },
+  {
+    "word": "和",
+    "pinyin": "hé",
+    "meaning": "and; with",
+    "level": 1,
+    "phrase": "和",
+    "sentence": "我正在学习“和”。"
+  },
+  {
+    "word": "很",
+    "pinyin": "hěn",
+    "meaning": "very; quite",
+    "level": 1,
+    "phrase": "很",
+    "sentence": "我正在学习“很”。"
+  },
+  {
     "word": "后面",
     "pinyin": "hòumian",
     "meaning": "back; behind",
     "level": 1,
     "phrase": "后面",
     "sentence": "我正在学习“后面”。"
+  },
+  {
+    "word": "回",
+    "pinyin": "huí",
+    "meaning": "to return; to reply; to go back",
+    "level": 1,
+    "phrase": "回",
+    "sentence": "我正在学习“回”。"
+  },
+  {
+    "word": "会",
+    "pinyin": "huì",
+    "meaning": "know how to",
+    "level": 1,
+    "phrase": "会",
+    "sentence": "我正在学习“会”。"
+  },
+  {
+    "word": "几",
+    "pinyin": "jǐ",
+    "meaning": "how many; several; a few",
+    "level": 1,
+    "phrase": "几",
+    "sentence": "我正在学习“几”。"
+  },
+  {
+    "word": "家",
+    "pinyin": "jiā",
+    "meaning": "family; home",
+    "level": 1,
+    "phrase": "家",
+    "sentence": "我正在学习“家”。"
+  },
+  {
+    "word": "叫",
+    "pinyin": "jiào",
+    "meaning": "to be called",
+    "level": 1,
+    "phrase": "叫",
+    "sentence": "我正在学习“叫”。"
   },
   {
     "word": "今天",
@@ -168,12 +376,52 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“今天”。"
   },
   {
+    "word": "九",
+    "pinyin": "jiǔ",
+    "meaning": "nine",
+    "level": 1,
+    "phrase": "九",
+    "sentence": "我正在学习“九”。"
+  },
+  {
+    "word": "开",
+    "pinyin": "kāi",
+    "meaning": "to open; to start; to operate (a vehicle)",
+    "level": 1,
+    "phrase": "开",
+    "sentence": "我正在学习“开”。"
+  },
+  {
+    "word": "看",
+    "pinyin": "kàn",
+    "meaning": "see; look at; to watch",
+    "level": 1,
+    "phrase": "看",
+    "sentence": "我正在学习“看”。"
+  },
+  {
     "word": "看见",
     "pinyin": "kànjiàn",
     "meaning": "see; catch sight of",
     "level": 1,
     "phrase": "看见",
     "sentence": "我正在学习“看见”。"
+  },
+  {
+    "word": "块",
+    "pinyin": "kuài",
+    "meaning": "lump; piece; sum of money",
+    "level": 1,
+    "phrase": "块",
+    "sentence": "我正在学习“块”。"
+  },
+  {
+    "word": "来",
+    "pinyin": "lái",
+    "meaning": "come; arrive; ever since; next",
+    "level": 1,
+    "phrase": "来",
+    "sentence": "我正在学习“来”。"
   },
   {
     "word": "老师",
@@ -184,12 +432,68 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“老师”。"
   },
   {
+    "word": "了",
+    "pinyin": "le",
+    "meaning": "indicates a completed or finished action",
+    "level": 1,
+    "phrase": "了",
+    "sentence": "我正在学习“了”。"
+  },
+  {
+    "word": "冷",
+    "pinyin": "lěng",
+    "meaning": "cold",
+    "level": 1,
+    "phrase": "冷",
+    "sentence": "我正在学习“冷”。"
+  },
+  {
+    "word": "里",
+    "pinyin": "lǐ",
+    "meaning": "inside; Chinese mile (~.5 km)",
+    "level": 1,
+    "phrase": "里",
+    "sentence": "我正在学习“里”。"
+  },
+  {
+    "word": "六",
+    "pinyin": "liù",
+    "meaning": "six",
+    "level": 1,
+    "phrase": "六",
+    "sentence": "我正在学习“六”。"
+  },
+  {
     "word": "妈妈",
     "pinyin": "māma",
     "meaning": "mom; mum",
     "level": 1,
     "phrase": "妈妈",
     "sentence": "我正在学习“妈妈”。"
+  },
+  {
+    "word": "吗",
+    "pinyin": "ma",
+    "meaning": "indicates a yes/no question (added to a statement)",
+    "level": 1,
+    "phrase": "吗",
+    "sentence": "我正在学习“吗”。"
+  },
+  {
+    "word": "买",
+    "pinyin": "mǎi",
+    "meaning": "to buy",
+    "level": 1,
+    "phrase": "买",
+    "sentence": "我正在学习“买”。"
+  },
+  {
+    "word": "猫",
+    "pinyin": "māo",
+    "meaning": "cat",
+    "level": 1,
+    "phrase": "猫",
+    "sentence": "我正在学习“猫”。"
   },
   {
     "word": "没关系",
@@ -216,14 +520,6 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“米饭”。"
   },
   {
-    "word": "名字",
-    "pinyin": "míngzi",
-    "meaning": "name",
-    "level": 1,
-    "phrase": "名字",
-    "sentence": "我正在学习“名字”。"
-  },
-  {
     "word": "明天",
     "pinyin": "míngtiān",
     "meaning": "tomorrow",
@@ -232,12 +528,68 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“明天”。"
   },
   {
+    "word": "名字",
+    "pinyin": "míngzi",
+    "meaning": "name",
+    "level": 1,
+    "phrase": "名字",
+    "sentence": "我正在学习“名字”。"
+  },
+  {
+    "word": "哪",
+    "pinyin": "nǎa",
+    "meaning": "which; how",
+    "level": 1,
+    "phrase": "哪",
+    "sentence": "我正在学习“哪”。"
+  },
+  {
     "word": "哪儿",
     "pinyin": "nǎr",
     "meaning": "where? (Beijing accent)",
     "level": 1,
     "phrase": "哪儿",
     "sentence": "我正在学习“哪儿”。"
+  },
+  {
+    "word": "那",
+    "pinyin": "nà",
+    "meaning": "that; then",
+    "level": 1,
+    "phrase": "那",
+    "sentence": "我正在学习“那”。"
+  },
+  {
+    "word": "呢",
+    "pinyin": "ne",
+    "meaning": "indicates a question; how about...?;",
+    "level": 1,
+    "phrase": "呢",
+    "sentence": "我正在学习“呢”。"
+  },
+  {
+    "word": "能",
+    "pinyin": "néng",
+    "meaning": "can; be able",
+    "level": 1,
+    "phrase": "能",
+    "sentence": "我正在学习“能”。"
+  },
+  {
+    "word": "你",
+    "pinyin": "nǐ",
+    "meaning": "you (singular)",
+    "level": 1,
+    "phrase": "你",
+    "sentence": "我正在学习“你”。"
+  },
+  {
+    "word": "年",
+    "pinyin": "nián",
+    "meaning": "year",
+    "level": 1,
+    "phrase": "年",
+    "sentence": "我正在学习“年”。"
   },
   {
     "word": "女儿",
@@ -272,12 +624,60 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“苹果”。"
   },
   {
+    "word": "七",
+    "pinyin": "qī",
+    "meaning": "seven",
+    "level": 1,
+    "phrase": "七",
+    "sentence": "我正在学习“七”。"
+  },
+  {
+    "word": "钱",
+    "pinyin": "qián",
+    "meaning": "money; coin",
+    "level": 1,
+    "phrase": "钱",
+    "sentence": "我正在学习“钱”。"
+  },
+  {
     "word": "前面",
     "pinyin": "qiánmiàn",
     "meaning": "in front",
     "level": 1,
     "phrase": "前面",
     "sentence": "我正在学习“前面”。"
+  },
+  {
+    "word": "请",
+    "pinyin": "qǐng",
+    "meaning": "please; invite; to treat someone to something",
+    "level": 1,
+    "phrase": "请",
+    "sentence": "我正在学习“请”。"
+  },
+  {
+    "word": "去",
+    "pinyin": "qù",
+    "meaning": "go; to leave",
+    "level": 1,
+    "phrase": "去",
+    "sentence": "我正在学习“去”。"
+  },
+  {
+    "word": "热",
+    "pinyin": "rè",
+    "meaning": "heat; hot",
+    "level": 1,
+    "phrase": "热",
+    "sentence": "我正在学习“热”。"
+  },
+  {
+    "word": "人",
+    "pinyin": "rén",
+    "meaning": "person; man; people",
+    "level": 1,
+    "phrase": "人",
+    "sentence": "我正在学习“人”。"
   },
   {
     "word": "认识",
@@ -288,12 +688,28 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“认识”。"
   },
   {
+    "word": "三",
+    "pinyin": "sān",
+    "meaning": "three",
+    "level": 1,
+    "phrase": "三",
+    "sentence": "我正在学习“三”。"
+  },
+  {
     "word": "商店",
     "pinyin": "shāngdiàn",
     "meaning": "shop; store",
     "level": 1,
     "phrase": "商店",
     "sentence": "我正在学习“商店”。"
+  },
+  {
+    "word": "上",
+    "pinyin": "shàng",
+    "meaning": "above; up",
+    "level": 1,
+    "phrase": "上",
+    "sentence": "我正在学习“上”。"
   },
   {
     "word": "上午",
@@ -304,6 +720,22 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“上午”。"
   },
   {
+    "word": "少",
+    "pinyin": "shǎo",
+    "meaning": "few; little",
+    "level": 1,
+    "phrase": "少",
+    "sentence": "我正在学习“少”。"
+  },
+  {
+    "word": "谁",
+    "pinyin": "shéi",
+    "meaning": "who",
+    "level": 1,
+    "phrase": "谁",
+    "sentence": "我正在学习“谁”。"
+  },
+  {
     "word": "什么",
     "pinyin": "shénme",
     "meaning": "what? (replaces the noun to turn a statement into a question)",
@@ -312,12 +744,44 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“什么”。"
   },
   {
+    "word": "十",
+    "pinyin": "shí",
+    "meaning": "ten",
+    "level": 1,
+    "phrase": "十",
+    "sentence": "我正在学习“十”。"
+  },
+  {
     "word": "时候",
     "pinyin": "shíhou",
     "meaning": "time",
     "level": 1,
     "phrase": "时候",
     "sentence": "我正在学习“时候”。"
+  },
+  {
+    "word": "是",
+    "pinyin": "shì",
+    "meaning": "be; is; are; am",
+    "level": 1,
+    "phrase": "是",
+    "sentence": "我正在学习“是”。"
+  },
+  {
+    "word": "书",
+    "pinyin": "shū",
+    "meaning": "book; letter",
+    "level": 1,
+    "phrase": "书",
+    "sentence": "我正在学习“书”。"
+  },
+  {
+    "word": "水",
+    "pinyin": "shuǐ",
+    "meaning": "water",
+    "level": 1,
+    "phrase": "水",
+    "sentence": "我正在学习“水”。"
   },
   {
     "word": "水果",
@@ -336,12 +800,68 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“睡觉”。"
   },
   {
+    "word": "说",
+    "pinyin": "shuō",
+    "meaning": "speak",
+    "level": 1,
+    "phrase": "说",
+    "sentence": "我正在学习“说”。"
+  },
+  {
+    "word": "四",
+    "pinyin": "sì",
+    "meaning": "four",
+    "level": 1,
+    "phrase": "四",
+    "sentence": "我正在学习“四”。"
+  },
+  {
+    "word": "岁",
+    "pinyin": "suì",
+    "meaning": "years old; age",
+    "level": 1,
+    "phrase": "岁",
+    "sentence": "我正在学习“岁”。"
+  },
+  {
+    "word": "他",
+    "pinyin": "tā",
+    "meaning": "he; him",
+    "level": 1,
+    "phrase": "他",
+    "sentence": "我正在学习“他”。"
+  },
+  {
+    "word": "她",
+    "pinyin": "tā",
+    "meaning": "she",
+    "level": 1,
+    "phrase": "她",
+    "sentence": "我正在学习“她”。"
+  },
+  {
+    "word": "太",
+    "pinyin": "tài",
+    "meaning": "too (much)",
+    "level": 1,
+    "phrase": "太",
+    "sentence": "我正在学习“太”。"
+  },
+  {
     "word": "天气",
     "pinyin": "tiānqì",
     "meaning": "weather",
     "level": 1,
     "phrase": "天气",
     "sentence": "我正在学习“天气”。"
+  },
+  {
+    "word": "听",
+    "pinyin": "tīng",
+    "meaning": "listen; hear",
+    "level": 1,
+    "phrase": "听",
+    "sentence": "我正在学习“听”。"
   },
   {
     "word": "同学",
@@ -352,6 +872,22 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“同学”。"
   },
   {
+    "word": "喂",
+    "pinyin": "wèi",
+    "meaning": "hello (on the phone)",
+    "level": 1,
+    "phrase": "喂",
+    "sentence": "我正在学习“喂”。"
+  },
+  {
+    "word": "我",
+    "pinyin": "wǒ",
+    "meaning": "I; me",
+    "level": 1,
+    "phrase": "我",
+    "sentence": "我正在学习“我”。"
+  },
+  {
     "word": "我们",
     "pinyin": "wǒmen",
     "meaning": "we; us",
@@ -360,12 +896,28 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“我们”。"
   },
   {
+    "word": "五",
+    "pinyin": "wǔ",
+    "meaning": "five",
+    "level": 1,
+    "phrase": "五",
+    "sentence": "我正在学习“五”。"
+  },
+  {
     "word": "喜欢",
     "pinyin": "xǐhuan",
     "meaning": "to like",
     "level": 1,
     "phrase": "喜欢",
     "sentence": "我正在学习“喜欢”。"
+  },
+  {
+    "word": "下",
+    "pinyin": "xià",
+    "meaning": "fall; below",
+    "level": 1,
+    "phrase": "下",
+    "sentence": "我正在学习“下”。"
   },
   {
     "word": "下午",
@@ -400,12 +952,44 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“现在”。"
   },
   {
+    "word": "想",
+    "pinyin": "xiǎng",
+    "meaning": "think; believe; suppose; would like to",
+    "level": 1,
+    "phrase": "想",
+    "sentence": "我正在学习“想”。"
+  },
+  {
+    "word": "小",
+    "pinyin": "xiǎo",
+    "meaning": "small; young",
+    "level": 1,
+    "phrase": "小",
+    "sentence": "我正在学习“小”。"
+  },
+  {
     "word": "小姐",
     "pinyin": "xiǎojie",
     "meaning": "young lady; miss; Ms.",
     "level": 1,
     "phrase": "小姐",
     "sentence": "我正在学习“小姐”。"
+  },
+  {
+    "word": "些",
+    "pinyin": "xiē",
+    "meaning": "some; few; several",
+    "level": 1,
+    "phrase": "些",
+    "sentence": "我正在学习“些”。"
+  },
+  {
+    "word": "写",
+    "pinyin": "xiě",
+    "meaning": "to write; to compose",
+    "level": 1,
+    "phrase": "写",
+    "sentence": "我正在学习“写”。"
   },
   {
     "word": "谢谢",
@@ -448,12 +1032,12 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“学校”。"
   },
   {
-    "word": "一点儿",
-    "pinyin": "yìdiǎnr",
-    "meaning": "a bit; a few",
+    "word": "一",
+    "pinyin": "yī",
+    "meaning": "one; once; a",
     "level": 1,
-    "phrase": "一点儿",
-    "sentence": "我正在学习“一点儿”。"
+    "phrase": "一",
+    "sentence": "我正在学习“一”。"
   },
   {
     "word": "衣服",
@@ -488,6 +1072,38 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“椅子”。"
   },
   {
+    "word": "一点儿",
+    "pinyin": "yìdiǎnr",
+    "meaning": "a bit; a few",
+    "level": 1,
+    "phrase": "一点儿",
+    "sentence": "我正在学习“一点儿”。"
+  },
+  {
+    "word": "有",
+    "pinyin": "yǒu",
+    "meaning": "have",
+    "level": 1,
+    "phrase": "有",
+    "sentence": "我正在学习“有”。"
+  },
+  {
+    "word": "月",
+    "pinyin": "yuè",
+    "meaning": "moon; month",
+    "level": 1,
+    "phrase": "月",
+    "sentence": "我正在学习“月”。"
+  },
+  {
+    "word": "在",
+    "pinyin": "zài",
+    "meaning": "at; on; in; indicates an action in progress",
+    "level": 1,
+    "phrase": "在",
+    "sentence": "我正在学习“在”。"
+  },
+  {
     "word": "再见",
     "pinyin": "zàijiàn",
     "meaning": "goodbye; see you later",
@@ -512,6 +1128,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“怎么样”。"
   },
   {
+    "word": "这",
+    "pinyin": "zhè",
+    "meaning": "this",
+    "level": 1,
+    "phrase": "这",
+    "sentence": "我正在学习“这”。"
+  },
+  {
     "word": "中国",
     "pinyin": "Zhōngguó",
     "meaning": "China",
@@ -528,6 +1152,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“中午”。"
   },
   {
+    "word": "住",
+    "pinyin": "zhù",
+    "meaning": "to live; reside; to stop",
+    "level": 1,
+    "phrase": "住",
+    "sentence": "我正在学习“住”。"
+  },
+  {
     "word": "桌子",
     "pinyin": "zhuōzi",
     "meaning": "table; desk",
@@ -536,12 +1168,60 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“桌子”。"
   },
   {
+    "word": "字",
+    "pinyin": "zì",
+    "meaning": "letter; character",
+    "level": 1,
+    "phrase": "字",
+    "sentence": "我正在学习“字”。"
+  },
+  {
     "word": "昨天",
     "pinyin": "zuótiān",
     "meaning": "yesterday",
     "level": 1,
     "phrase": "昨天",
     "sentence": "我正在学习“昨天”。"
+  },
+  {
+    "word": "做",
+    "pinyin": "zuò",
+    "meaning": "do; make",
+    "level": 1,
+    "phrase": "做",
+    "sentence": "我正在学习“做”。"
+  },
+  {
+    "word": "坐",
+    "pinyin": "zuò",
+    "meaning": "sit",
+    "level": 1,
+    "phrase": "坐",
+    "sentence": "我正在学习“坐”。"
+  },
+  {
+    "word": "吧",
+    "pinyin": "ba",
+    "meaning": "particle indicating polite suggestion; | onomatopoeia | bar (serving drinks, providing internet access, etc.)",
+    "level": 2,
+    "phrase": "吧",
+    "sentence": "我正在学习“吧”。"
+  },
+  {
+    "word": "白",
+    "pinyin": "bái",
+    "meaning": "white; snowy; pure; bright; empty (Kangxi radical 106)",
+    "level": 2,
+    "phrase": "白",
+    "sentence": "我正在学习“白”。"
+  },
+  {
+    "word": "百",
+    "pinyin": "bǎi",
+    "meaning": "hundred",
+    "level": 2,
+    "phrase": "百",
+    "sentence": "我正在学习“百”。"
   },
   {
     "word": "帮助",
@@ -560,12 +1240,20 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“报纸”。"
   },
   {
-    "word": "便宜",
-    "pinyin": "piányi",
-    "meaning": "cheap",
+    "word": "比",
+    "pinyin": "bǐ",
+    "meaning": "compare; (indicates comparison) (Kangxi radical 81); to gesticulate as one talks",
     "level": 2,
-    "phrase": "便宜",
-    "sentence": "我正在学习“便宜”。"
+    "phrase": "比",
+    "sentence": "我正在学习“比”。"
+  },
+  {
+    "word": "别",
+    "pinyin": "bié",
+    "meaning": "don't do something; don't | depart; | other; difference; distinguish",
+    "level": 2,
+    "phrase": "别",
+    "sentence": "我正在学习“别”。"
   },
   {
     "word": "宾馆",
@@ -576,12 +1264,60 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“宾馆”。"
   },
   {
+    "word": "长",
+    "pinyin": "cháng, zhǎng",
+    "meaning": "long; length | grow; chief (Kangxi radical 168)",
+    "level": 2,
+    "phrase": "长",
+    "sentence": "我正在学习“长”。"
+  },
+  {
     "word": "唱歌",
     "pinyin": "chànggē",
     "meaning": "sing (a song)",
     "level": 2,
     "phrase": "唱歌",
     "sentence": "我正在学习“唱歌”。"
+  },
+  {
+    "word": "出",
+    "pinyin": "chū",
+    "meaning": "go out; occur",
+    "level": 2,
+    "phrase": "出",
+    "sentence": "我正在学习“出”。"
+  },
+  {
+    "word": "穿",
+    "pinyin": "chuān",
+    "meaning": "to wear; put on; penetrate",
+    "level": 2,
+    "phrase": "穿",
+    "sentence": "我正在学习“穿”。"
+  },
+  {
+    "word": "次",
+    "pinyin": "cì",
+    "meaning": "(mw for number of times of occurrence); nth; order",
+    "level": 2,
+    "phrase": "次",
+    "sentence": "我正在学习“次”。"
+  },
+  {
+    "word": "从",
+    "pinyin": "cóng",
+    "meaning": "from; obey; observe",
+    "level": 2,
+    "phrase": "从",
+    "sentence": "我正在学习“从”。"
+  },
+  {
+    "word": "错",
+    "pinyin": "cuò",
+    "meaning": "mistake; error; blunder; miss an opportunity",
+    "level": 2,
+    "phrase": "错",
+    "sentence": "我正在学习“错”。"
   },
   {
     "word": "打篮球",
@@ -600,12 +1336,28 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“大家”。"
   },
   {
-    "word": "但是",
-    "pinyin": "dànshì",
-    "meaning": "but; however",
+    "word": "到",
+    "pinyin": "dào",
+    "meaning": "arrive (at a place); until (a time)",
     "level": 2,
-    "phrase": "但是",
-    "sentence": "我正在学习“但是”。"
+    "phrase": "到",
+    "sentence": "我正在学习“到”。"
+  },
+  {
+    "word": "得",
+    "pinyin": "de",
+    "meaning": "(complement particle)",
+    "level": 2,
+    "phrase": "得",
+    "sentence": "我正在学习“得”。"
+  },
+  {
+    "word": "等",
+    "pinyin": "děng",
+    "meaning": "to wait; rank; equal; etc.",
+    "level": 2,
+    "phrase": "等",
+    "sentence": "我正在学习“等”。"
   },
   {
     "word": "弟弟",
@@ -622,6 +1374,22 @@ window.HSK_WORDS = [
     "level": 2,
     "phrase": "第一",
     "sentence": "我正在学习“第一”。"
+  },
+  {
+    "word": "懂",
+    "pinyin": "dǒng",
+    "meaning": "understand; know",
+    "level": 2,
+    "phrase": "懂",
+    "sentence": "我正在学习“懂”。"
+  },
+  {
+    "word": "对",
+    "pinyin": "duì",
+    "meaning": "correct; a pair; to face; be opposite; to; towards",
+    "level": 2,
+    "phrase": "对",
+    "sentence": "我正在学习“对”。"
   },
   {
     "word": "房间",
@@ -648,6 +1416,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“服务员”。"
   },
   {
+    "word": "高",
+    "pinyin": "gāo",
+    "meaning": "high; tall (Kangxi radical 189)",
+    "level": 2,
+    "phrase": "高",
+    "sentence": "我正在学习“高”。"
+  },
+  {
     "word": "告诉",
     "pinyin": "gàosu",
     "meaning": "to tell; inform",
@@ -662,6 +1438,14 @@ window.HSK_WORDS = [
     "level": 2,
     "phrase": "哥哥",
     "sentence": "我正在学习“哥哥”。"
+  },
+  {
+    "word": "给",
+    "pinyin": "gěi",
+    "meaning": "to give; to grant; (passive particle)",
+    "level": 2,
+    "phrase": "给",
+    "sentence": "我正在学习“给”。"
   },
   {
     "word": "公共汽车",
@@ -680,6 +1464,30 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“公司”。"
   },
   {
+    "word": "贵",
+    "pinyin": "guì",
+    "meaning": "expensive; noble; honorable; Guizhou province (abbreviation)",
+    "level": 2,
+    "phrase": "贵",
+    "sentence": "我正在学习“贵”。"
+  },
+  {
+    "word": "过",
+    "pinyin": "guò",
+    "meaning": "to pass; to cross; go over; (indicates a past experience)",
+    "level": 2,
+    "phrase": "过",
+    "sentence": "我正在学习“过”。"
+  },
+  {
+    "word": "还",
+    "pinyin": "hái",
+    "meaning": "still; yet; in addition; even",
+    "level": 2,
+    "phrase": "还",
+    "sentence": "我正在学习“还”。"
+  },
+  {
     "word": "孩子",
     "pinyin": "háizi",
     "meaning": "child; children; son or daughter",
@@ -694,6 +1502,22 @@ window.HSK_WORDS = [
     "level": 2,
     "phrase": "好吃",
     "sentence": "我正在学习“好吃”。"
+  },
+  {
+    "word": "黑",
+    "pinyin": "hēi",
+    "meaning": "black; dark (Kangxi radical 203); Heilongjiang province (abbreviation)",
+    "level": 2,
+    "phrase": "黑",
+    "sentence": "我正在学习“黑”。"
+  },
+  {
+    "word": "红",
+    "pinyin": "hóng",
+    "meaning": "red; symbol of success; bonus; popular",
+    "level": 2,
+    "phrase": "红",
+    "sentence": "我正在学习“红”。"
   },
   {
     "word": "火车站",
@@ -720,6 +1544,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“鸡蛋”。"
   },
   {
+    "word": "件",
+    "pinyin": "jiàn",
+    "meaning": "(mw for things, clothes, and items)",
+    "level": 2,
+    "phrase": "件",
+    "sentence": "我正在学习“件”。"
+  },
+  {
     "word": "教室",
     "pinyin": "jiàoshì",
     "meaning": "classroom",
@@ -742,6 +1574,30 @@ window.HSK_WORDS = [
     "level": 2,
     "phrase": "介绍",
     "sentence": "我正在学习“介绍”。"
+  },
+  {
+    "word": "进",
+    "pinyin": "jìn",
+    "meaning": "enter; come in",
+    "level": 2,
+    "phrase": "进",
+    "sentence": "我正在学习“进”。"
+  },
+  {
+    "word": "近",
+    "pinyin": "jìn",
+    "meaning": "near; close (to)",
+    "level": 2,
+    "phrase": "近",
+    "sentence": "我正在学习“近”。"
+  },
+  {
+    "word": "就",
+    "pinyin": "jiù",
+    "meaning": "then; at once; just; only; with regard to",
+    "level": 2,
+    "phrase": "就",
+    "sentence": "我正在学习“就”。"
   },
   {
     "word": "觉得",
@@ -792,12 +1648,68 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“可以”。"
   },
   {
+    "word": "课",
+    "pinyin": "kè",
+    "meaning": "class; subject; lesson; course",
+    "level": 2,
+    "phrase": "课",
+    "sentence": "我正在学习“课”。"
+  },
+  {
+    "word": "快",
+    "pinyin": "kuài",
+    "meaning": "fast; quick; swift",
+    "level": 2,
+    "phrase": "快",
+    "sentence": "我正在学习“快”。"
+  },
+  {
     "word": "快乐",
     "pinyin": "kuàilè",
     "meaning": "happy",
     "level": 2,
     "phrase": "快乐",
     "sentence": "我正在学习“快乐”。"
+  },
+  {
+    "word": "累",
+    "pinyin": "lèi",
+    "meaning": "tired",
+    "level": 2,
+    "phrase": "累",
+    "sentence": "我正在学习“累”。"
+  },
+  {
+    "word": "离",
+    "pinyin": "lí",
+    "meaning": "leave; depart; go away; apart from",
+    "level": 2,
+    "phrase": "离",
+    "sentence": "我正在学习“离”。"
+  },
+  {
+    "word": "两",
+    "pinyin": "liǎng",
+    "meaning": "two; 2; both; (unit of weight equal to 50 grams)",
+    "level": 2,
+    "phrase": "两",
+    "sentence": "我正在学习“两”。"
+  },
+  {
+    "word": "零",
+    "pinyin": "líng",
+    "meaning": "zero; remnant",
+    "level": 2,
+    "phrase": "零",
+    "sentence": "我正在学习“零”。"
+  },
+  {
+    "word": "路",
+    "pinyin": "lù",
+    "meaning": "road; path; journey; route",
+    "level": 2,
+    "phrase": "路",
+    "sentence": "我正在学习“路”。"
   },
   {
     "word": "旅游",
@@ -808,12 +1720,52 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“旅游”。"
   },
   {
+    "word": "卖",
+    "pinyin": "mài",
+    "meaning": "to sell",
+    "level": 2,
+    "phrase": "卖",
+    "sentence": "我正在学习“卖”。"
+  },
+  {
+    "word": "慢",
+    "pinyin": "màn",
+    "meaning": "slow",
+    "level": 2,
+    "phrase": "慢",
+    "sentence": "我正在学习“慢”。"
+  },
+  {
+    "word": "忙",
+    "pinyin": "máng",
+    "meaning": "busy",
+    "level": 2,
+    "phrase": "忙",
+    "sentence": "我正在学习“忙”。"
+  },
+  {
+    "word": "每",
+    "pinyin": "měi",
+    "meaning": "each; every",
+    "level": 2,
+    "phrase": "每",
+    "sentence": "我正在学习“每”。"
+  },
+  {
     "word": "妹妹",
     "pinyin": "mèimei",
     "meaning": "younger sister",
     "level": 2,
     "phrase": "妹妹",
     "sentence": "我正在学习“妹妹”。"
+  },
+  {
+    "word": "门",
+    "pinyin": "mén",
+    "meaning": "door; opening; gate (Kangxi radical 169)",
+    "level": 2,
+    "phrase": "门",
+    "sentence": "我正在学习“门”。"
   },
   {
     "word": "面条",
@@ -824,12 +1776,36 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“面条”。"
   },
   {
+    "word": "男",
+    "pinyin": "nán",
+    "meaning": "male",
+    "level": 2,
+    "phrase": "男",
+    "sentence": "我正在学习“男”。"
+  },
+  {
+    "word": "您",
+    "pinyin": "nín",
+    "meaning": "you (polite)",
+    "level": 2,
+    "phrase": "您",
+    "sentence": "我正在学习“您”。"
+  },
+  {
     "word": "牛奶",
     "pinyin": "niúnǎi",
     "meaning": "cow's milk",
     "level": 2,
     "phrase": "牛奶",
     "sentence": "我正在学习“牛奶”。"
+  },
+  {
+    "word": "女",
+    "pinyin": "nǚ",
+    "meaning": "woman; female (Kangxi radical 38)",
+    "level": 2,
+    "phrase": "女",
+    "sentence": "我正在学习“女”。"
   },
   {
     "word": "旁边",
@@ -848,6 +1824,22 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“跑步”。"
   },
   {
+    "word": "便宜",
+    "pinyin": "piányi",
+    "meaning": "cheap",
+    "level": 2,
+    "phrase": "便宜",
+    "sentence": "我正在学习“便宜”。"
+  },
+  {
+    "word": "票",
+    "pinyin": "piào",
+    "meaning": "ticket; bank note; a vote",
+    "level": 2,
+    "phrase": "票",
+    "sentence": "我正在学习“票”。"
+  },
+  {
     "word": "妻子",
     "pinyin": "qīzi",
     "meaning": "wife",
@@ -864,6 +1856,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“起床”。"
   },
   {
+    "word": "千",
+    "pinyin": "qiān",
+    "meaning": "one thousand",
+    "level": 2,
+    "phrase": "千",
+    "sentence": "我正在学习“千”。"
+  },
+  {
     "word": "铅笔",
     "pinyin": "qiānbǐ",
     "meaning": "pencil",
@@ -872,12 +1872,36 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“铅笔”。"
   },
   {
+    "word": "晴",
+    "pinyin": "qíng",
+    "meaning": "clear; fine (as of weather)",
+    "level": 2,
+    "phrase": "晴",
+    "sentence": "我正在学习“晴”。"
+  },
+  {
     "word": "去年",
     "pinyin": "qùnián",
     "meaning": "last year",
     "level": 2,
     "phrase": "去年",
     "sentence": "我正在学习“去年”。"
+  },
+  {
+    "word": "让",
+    "pinyin": "ràng",
+    "meaning": "ask; let; yield",
+    "level": 2,
+    "phrase": "让",
+    "sentence": "我正在学习“让”。"
+  },
+  {
+    "word": "日",
+    "pinyin": "rì",
+    "meaning": "sun; day; date; time (Kangxi radical 72)",
+    "level": 2,
+    "phrase": "日",
+    "sentence": "我正在学习“日”。"
   },
   {
     "word": "上班",
@@ -952,6 +1976,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“说话”。"
   },
   {
+    "word": "送",
+    "pinyin": "sòng",
+    "meaning": "deliver; to carry; to give; send",
+    "level": 2,
+    "phrase": "送",
+    "sentence": "我正在学习“送”。"
+  },
+  {
     "word": "虽然",
     "pinyin": "suīrán",
     "meaning": "although; even though",
@@ -960,12 +1992,20 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“虽然”。"
   },
   {
-    "word": "所以",
-    "pinyin": "suǒyǐ",
-    "meaning": "so; therefore; as a result",
+    "word": "但是",
+    "pinyin": "dànshì",
+    "meaning": "but; however",
     "level": 2,
-    "phrase": "所以",
-    "sentence": "我正在学习“所以”。"
+    "phrase": "但是",
+    "sentence": "我正在学习“但是”。"
+  },
+  {
+    "word": "它",
+    "pinyin": "tā",
+    "meaning": "it",
+    "level": 2,
+    "phrase": "它",
+    "sentence": "我正在学习“它”。"
   },
   {
     "word": "踢足球",
@@ -976,12 +2016,44 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“踢足球”。"
   },
   {
+    "word": "题",
+    "pinyin": "tí",
+    "meaning": "topic; subject; question on a test or assignment",
+    "level": 2,
+    "phrase": "题",
+    "sentence": "我正在学习“题”。"
+  },
+  {
     "word": "跳舞",
     "pinyin": "tiàowǔ",
     "meaning": "to dance",
     "level": 2,
     "phrase": "跳舞",
     "sentence": "我正在学习“跳舞”。"
+  },
+  {
+    "word": "外",
+    "pinyin": "wài",
+    "meaning": "outer; outside; in addition; foreign",
+    "level": 2,
+    "phrase": "外",
+    "sentence": "我正在学习“外”。"
+  },
+  {
+    "word": "完",
+    "pinyin": "wán",
+    "meaning": "to finish; be over; complete",
+    "level": 2,
+    "phrase": "完",
+    "sentence": "我正在学习“完”。"
+  },
+  {
+    "word": "玩",
+    "pinyin": "wán",
+    "meaning": "to play; have a good time; visit; enjoy",
+    "level": 2,
+    "phrase": "玩",
+    "sentence": "我正在学习“玩”。"
   },
   {
     "word": "晚上",
@@ -992,12 +2064,28 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“晚上”。"
   },
   {
+    "word": "往",
+    "pinyin": "wǎng",
+    "meaning": "to go (in a direction); towards; in the past",
+    "level": 2,
+    "phrase": "往",
+    "sentence": "我正在学习“往”。"
+  },
+  {
     "word": "为什么",
     "pinyin": "wèishénme",
     "meaning": "why?; for what reason?",
     "level": 2,
     "phrase": "为什么",
     "sentence": "我正在学习“为什么”。"
+  },
+  {
+    "word": "问",
+    "pinyin": "wèn",
+    "meaning": "ask; inquire",
+    "level": 2,
+    "phrase": "问",
+    "sentence": "我正在学习“问”。"
   },
   {
     "word": "问题",
@@ -1024,6 +2112,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“希望”。"
   },
   {
+    "word": "洗",
+    "pinyin": "xǐ",
+    "meaning": "to wash; bathe",
+    "level": 2,
+    "phrase": "洗",
+    "sentence": "我正在学习“洗”。"
+  },
+  {
     "word": "小时",
     "pinyin": "xiǎoshí",
     "meaning": "hour",
@@ -1032,12 +2128,44 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“小时”。"
   },
   {
+    "word": "笑",
+    "pinyin": "xiào",
+    "meaning": "to laugh; to smile",
+    "level": 2,
+    "phrase": "笑",
+    "sentence": "我正在学习“笑”。"
+  },
+  {
+    "word": "新",
+    "pinyin": "xīn",
+    "meaning": "new; Xinjiang autonomous region (abbreviation)",
+    "level": 2,
+    "phrase": "新",
+    "sentence": "我正在学习“新”。"
+  },
+  {
+    "word": "姓",
+    "pinyin": "xìng",
+    "meaning": "surname; family name",
+    "level": 2,
+    "phrase": "姓",
+    "sentence": "我正在学习“姓”。"
+  },
+  {
     "word": "休息",
     "pinyin": "xiūxi",
     "meaning": "to rest; take a break",
     "level": 2,
     "phrase": "休息",
     "sentence": "我正在学习“休息”。"
+  },
+  {
+    "word": "雪",
+    "pinyin": "xuě",
+    "meaning": "snow",
+    "level": 2,
+    "phrase": "雪",
+    "sentence": "我正在学习“雪”。"
   },
   {
     "word": "颜色",
@@ -1062,6 +2190,30 @@ window.HSK_WORDS = [
     "level": 2,
     "phrase": "羊肉",
     "sentence": "我正在学习“羊肉”。"
+  },
+  {
+    "word": "药",
+    "pinyin": "yào",
+    "meaning": "medicine; drug; cure; chemical",
+    "level": 2,
+    "phrase": "药",
+    "sentence": "我正在学习“药”。"
+  },
+  {
+    "word": "要",
+    "pinyin": "yào",
+    "meaning": "to want; to need; will/shall; important",
+    "level": 2,
+    "phrase": "要",
+    "sentence": "我正在学习“要”。"
+  },
+  {
+    "word": "也",
+    "pinyin": "yě",
+    "meaning": "also; too",
+    "level": 2,
+    "phrase": "也",
+    "sentence": "我正在学习“也”。"
   },
   {
     "word": "一起",
@@ -1104,6 +2256,22 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“因为”。"
   },
   {
+    "word": "所以",
+    "pinyin": "suǒyǐ",
+    "meaning": "so; therefore; as a result",
+    "level": 2,
+    "phrase": "所以",
+    "sentence": "我正在学习“所以”。"
+  },
+  {
+    "word": "阴",
+    "pinyin": "yīn",
+    "meaning": "cloudy (weather); yin (the negative principle of Yin and Yang); secret; the moon; negative; shade",
+    "level": 2,
+    "phrase": "阴",
+    "sentence": "我正在学习“阴”。"
+  },
+  {
     "word": "游泳",
     "pinyin": "yóuyǒng",
     "meaning": "to swim",
@@ -1120,12 +2288,36 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“右边”。"
   },
   {
+    "word": "鱼",
+    "pinyin": "yú",
+    "meaning": "fish (Kangxi radical 195)",
+    "level": 2,
+    "phrase": "鱼",
+    "sentence": "我正在学习“鱼”。"
+  },
+  {
+    "word": "远",
+    "pinyin": "yuǎn",
+    "meaning": "far; distant; remote",
+    "level": 2,
+    "phrase": "远",
+    "sentence": "我正在学习“远”。"
+  },
+  {
     "word": "运动",
     "pinyin": "yùndòng",
     "meaning": "(physical) exercise; movement; sports; campaign",
     "level": 2,
     "phrase": "运动",
     "sentence": "我正在学习“运动”。"
+  },
+  {
+    "word": "再",
+    "pinyin": "zài",
+    "meaning": "again; once more",
+    "level": 2,
+    "phrase": "再",
+    "sentence": "我正在学习“再”。"
   },
   {
     "word": "早上",
@@ -1142,6 +2334,30 @@ window.HSK_WORDS = [
     "level": 2,
     "phrase": "丈夫",
     "sentence": "我正在学习“丈夫”。"
+  },
+  {
+    "word": "找",
+    "pinyin": "zhǎo",
+    "meaning": "try to find; look for; seek; to give change",
+    "level": 2,
+    "phrase": "找",
+    "sentence": "我正在学习“找”。"
+  },
+  {
+    "word": "着",
+    "pinyin": "zhe",
+    "meaning": "-ing (indicating action in progress)",
+    "level": 2,
+    "phrase": "着",
+    "sentence": "我正在学习“着”。"
+  },
+  {
+    "word": "真",
+    "pinyin": "zhēn",
+    "meaning": "real; true; genuine",
+    "level": 2,
+    "phrase": "真",
+    "sentence": "我正在学习“真”。"
   },
   {
     "word": "正在",
@@ -1168,6 +2384,22 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“准备”。"
   },
   {
+    "word": "走",
+    "pinyin": "zǒu",
+    "meaning": "to walk; to go; to move (Kangxi radical 156)",
+    "level": 2,
+    "phrase": "走",
+    "sentence": "我正在学习“走”。"
+  },
+  {
+    "word": "最",
+    "pinyin": "zuì",
+    "meaning": "the most; -est; (indicator for superlative)",
+    "level": 2,
+    "phrase": "最",
+    "sentence": "我正在学习“最”。"
+  },
+  {
     "word": "左边",
     "pinyin": "zuǒbian",
     "meaning": "the left side; the left",
@@ -1182,6 +2414,22 @@ window.HSK_WORDS = [
     "level": 3,
     "phrase": "阿姨",
     "sentence": "我正在学习“阿姨”。"
+  },
+  {
+    "word": "啊",
+    "pinyin": "a",
+    "meaning": "ah; (particle showing elation, doubt, puzzled surprise, or approval)",
+    "level": 3,
+    "phrase": "啊",
+    "sentence": "我正在学习“啊”。"
+  },
+  {
+    "word": "矮",
+    "pinyin": "ǎi",
+    "meaning": "short; low",
+    "level": 3,
+    "phrase": "矮",
+    "sentence": "我正在学习“矮”。"
   },
   {
     "word": "爱好",
@@ -1200,6 +2448,30 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“安静”。"
   },
   {
+    "word": "把",
+    "pinyin": "bǎ",
+    "meaning": "(mw for things with handles); (pretransitive particle); to hold",
+    "level": 3,
+    "phrase": "把",
+    "sentence": "我正在学习“把”。"
+  },
+  {
+    "word": "班",
+    "pinyin": "bān",
+    "meaning": "team; class; squad",
+    "level": 3,
+    "phrase": "班",
+    "sentence": "我正在学习“班”。"
+  },
+  {
+    "word": "搬",
+    "pinyin": "bān",
+    "meaning": "to move; to transport",
+    "level": 3,
+    "phrase": "搬",
+    "sentence": "我正在学习“搬”。"
+  },
+  {
     "word": "办法",
     "pinyin": "bànfǎ",
     "meaning": "method; way (of doing something)",
@@ -1216,6 +2488,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“办公室”。"
   },
   {
+    "word": "半",
+    "pinyin": "bàn",
+    "meaning": "half; semi-; incomplete",
+    "level": 3,
+    "phrase": "半",
+    "sentence": "我正在学习“半”。"
+  },
+  {
     "word": "帮忙",
     "pinyin": "bāngmáng",
     "meaning": "to help",
@@ -1224,12 +2504,36 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“帮忙”。"
   },
   {
+    "word": "包",
+    "pinyin": "bāo",
+    "meaning": "to cover; to wrap; to hold; include; (mw for containers, packages, etc.)",
+    "level": 3,
+    "phrase": "包",
+    "sentence": "我正在学习“包”。"
+  },
+  {
+    "word": "饱",
+    "pinyin": "bǎo",
+    "meaning": "eat until full; satisfied",
+    "level": 3,
+    "phrase": "饱",
+    "sentence": "我正在学习“饱”。"
+  },
+  {
     "word": "北方",
     "pinyin": "běifāng",
     "meaning": "north; the northern part of the country",
     "level": 3,
     "phrase": "北方",
     "sentence": "我正在学习“北方”。"
+  },
+  {
+    "word": "被",
+    "pinyin": "bèi",
+    "meaning": "by (indicates passive voice sentences); a quilt/blanket",
+    "level": 3,
+    "phrase": "被",
+    "sentence": "我正在学习“被”。"
   },
   {
     "word": "鼻子",
@@ -1304,6 +2608,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“不但”。"
   },
   {
+    "word": "而且",
+    "pinyin": "érqiě",
+    "meaning": "moreover; in addition; as well as",
+    "level": 3,
+    "phrase": "而且",
+    "sentence": "我正在学习“而且”。"
+  },
+  {
     "word": "菜单",
     "pinyin": "càidān",
     "meaning": "menu",
@@ -1318,6 +2630,30 @@ window.HSK_WORDS = [
     "level": 3,
     "phrase": "参加",
     "sentence": "我正在学习“参加”。"
+  },
+  {
+    "word": "草",
+    "pinyin": "cǎo",
+    "meaning": "grass; straw; draft (of a document)",
+    "level": 3,
+    "phrase": "草",
+    "sentence": "我正在学习“草”。"
+  },
+  {
+    "word": "层",
+    "pinyin": "céng",
+    "meaning": "(mw for layers, floors of buildings)",
+    "level": 3,
+    "phrase": "层",
+    "sentence": "我正在学习“层”。"
+  },
+  {
+    "word": "差",
+    "pinyin": "chà",
+    "meaning": "differ from; fall short of; poor; inferior",
+    "level": 3,
+    "phrase": "差",
+    "sentence": "我正在学习“差”。"
   },
   {
     "word": "超市",
@@ -1368,6 +2704,22 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“除了”。"
   },
   {
+    "word": "船",
+    "pinyin": "chuán",
+    "meaning": "a boat; vessel; ship",
+    "level": 3,
+    "phrase": "船",
+    "sentence": "我正在学习“船”。"
+  },
+  {
+    "word": "春",
+    "pinyin": "chūn",
+    "meaning": "spring (season); joyful",
+    "level": 3,
+    "phrase": "春",
+    "sentence": "我正在学习“春”。"
+  },
+  {
     "word": "词典",
     "pinyin": "cídiǎn",
     "meaning": "dictionary",
@@ -1400,6 +2752,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“打算”。"
   },
   {
+    "word": "带",
+    "pinyin": "dài",
+    "meaning": "band; belt; ribbon; carry; bring; take along; bring up (kids)",
+    "level": 3,
+    "phrase": "带",
+    "sentence": "我正在学习“带”。"
+  },
+  {
     "word": "担心",
     "pinyin": "dānxīn",
     "meaning": "to worry; feel anxious",
@@ -1422,6 +2782,22 @@ window.HSK_WORDS = [
     "level": 3,
     "phrase": "当然",
     "sentence": "我正在学习“当然”。"
+  },
+  {
+    "word": "地",
+    "pinyin": "dì, de",
+    "meaning": "earth; ground | (adverbial particle)",
+    "level": 3,
+    "phrase": "地",
+    "sentence": "我正在学习“地”。"
+  },
+  {
+    "word": "灯",
+    "pinyin": "dēng",
+    "meaning": "lamp; light",
+    "level": 3,
+    "phrase": "灯",
+    "sentence": "我正在学习“灯”。"
   },
   {
     "word": "地方",
@@ -1464,12 +2840,44 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“电子邮件”。"
   },
   {
+    "word": "东",
+    "pinyin": "dōng",
+    "meaning": "East",
+    "level": 3,
+    "phrase": "东",
+    "sentence": "我正在学习“东”。"
+  },
+  {
+    "word": "冬",
+    "pinyin": "dōng",
+    "meaning": "winter",
+    "level": 3,
+    "phrase": "冬",
+    "sentence": "我正在学习“冬”。"
+  },
+  {
     "word": "动物",
     "pinyin": "dòngwù",
     "meaning": "animal",
     "level": 3,
     "phrase": "动物",
     "sentence": "我正在学习“动物”。"
+  },
+  {
+    "word": "短",
+    "pinyin": "duǎn",
+    "meaning": "short (in length, duration, or height); lack",
+    "level": 3,
+    "phrase": "短",
+    "sentence": "我正在学习“短”。"
+  },
+  {
+    "word": "段",
+    "pinyin": "duàn",
+    "meaning": "paragraph; segment; section",
+    "level": 3,
+    "phrase": "段",
+    "sentence": "我正在学习“段”。"
   },
   {
     "word": "锻炼",
@@ -1488,12 +2896,12 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“多么”。"
   },
   {
-    "word": "而且",
-    "pinyin": "érqiě",
-    "meaning": "moreover; in addition; as well as",
+    "word": "饿",
+    "pinyin": "è",
+    "meaning": "hungry",
     "level": 3,
-    "phrase": "而且",
-    "sentence": "我正在学习“而且”。"
+    "phrase": "饿",
+    "sentence": "我正在学习“饿”。"
   },
   {
     "word": "耳朵",
@@ -1502,6 +2910,14 @@ window.HSK_WORDS = [
     "level": 3,
     "phrase": "耳朵",
     "sentence": "我正在学习“耳朵”。"
+  },
+  {
+    "word": "发",
+    "pinyin": "fā, fà",
+    "meaning": "send out; to issue; to show (one's feelings) | hair",
+    "level": 3,
+    "phrase": "发",
+    "sentence": "我正在学习“发”。"
   },
   {
     "word": "发烧",
@@ -1528,12 +2944,28 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“方便”。"
   },
   {
+    "word": "放",
+    "pinyin": "fàng",
+    "meaning": "put; to place; to release; to free",
+    "level": 3,
+    "phrase": "放",
+    "sentence": "我正在学习“放”。"
+  },
+  {
     "word": "放心",
     "pinyin": "fàngxīn",
     "meaning": "relax; feel relieved; rest assured",
     "level": 3,
     "phrase": "放心",
     "sentence": "我正在学习“放心”。"
+  },
+  {
+    "word": "分",
+    "pinyin": "fēn, fèn",
+    "meaning": "divide; part; minute; cent | component; share; ingredient",
+    "level": 3,
+    "phrase": "分",
+    "sentence": "我正在学习“分”。"
   },
   {
     "word": "附近",
@@ -1552,6 +2984,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“复习”。"
   },
   {
+    "word": "干净",
+    "pinyin": "gānjìng",
+    "meaning": "clean; neat and tidy",
+    "level": 3,
+    "phrase": "干净",
+    "sentence": "我正在学习“干净”。"
+  },
+  {
     "word": "感冒",
     "pinyin": "gǎnmào",
     "meaning": "catch cold; (common) cold",
@@ -1566,14 +3006,6 @@ window.HSK_WORDS = [
     "level": 3,
     "phrase": "感兴趣",
     "sentence": "我正在学习“感兴趣”。"
-  },
-  {
-    "word": "干净",
-    "pinyin": "gānjìng",
-    "meaning": "clean; neat and tidy",
-    "level": 3,
-    "phrase": "干净",
-    "sentence": "我正在学习“干净”。"
   },
   {
     "word": "刚才",
@@ -1598,6 +3030,22 @@ window.HSK_WORDS = [
     "level": 3,
     "phrase": "根据",
     "sentence": "我正在学习“根据”。"
+  },
+  {
+    "word": "跟",
+    "pinyin": "gēn",
+    "meaning": "to follow; go with; heel",
+    "level": 3,
+    "phrase": "跟",
+    "sentence": "我正在学习“跟”。"
+  },
+  {
+    "word": "更",
+    "pinyin": "gèng",
+    "meaning": "more; even more",
+    "level": 3,
+    "phrase": "更",
+    "sentence": "我正在学习“更”。"
   },
   {
     "word": "公斤",
@@ -1630,6 +3078,14 @@ window.HSK_WORDS = [
     "level": 3,
     "phrase": "刮风",
     "sentence": "我正在学习“刮风”。"
+  },
+  {
+    "word": "关",
+    "pinyin": "guān",
+    "meaning": "to close; shut; concern; relationship; turn off; mountain pass",
+    "level": 3,
+    "phrase": "关",
+    "sentence": "我正在学习“关”。"
   },
   {
     "word": "关系",
@@ -1712,6 +3168,30 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“护照”。"
   },
   {
+    "word": "花",
+    "pinyin": "huā",
+    "meaning": "flower; blossom; spend money; cost",
+    "level": 3,
+    "phrase": "花",
+    "sentence": "我正在学习“花”。"
+  },
+  {
+    "word": "画",
+    "pinyin": "huà",
+    "meaning": "draw; picture; painting",
+    "level": 3,
+    "phrase": "画",
+    "sentence": "我正在学习“画”。"
+  },
+  {
+    "word": "坏",
+    "pinyin": "huài",
+    "meaning": "bad; broken",
+    "level": 3,
+    "phrase": "坏",
+    "sentence": "我正在学习“坏”。"
+  },
+  {
     "word": "欢迎",
     "pinyin": "huānyíng",
     "meaning": "to welcome; greet",
@@ -1726,6 +3206,14 @@ window.HSK_WORDS = [
     "level": 3,
     "phrase": "环境",
     "sentence": "我正在学习“环境”。"
+  },
+  {
+    "word": "换",
+    "pinyin": "huàn",
+    "meaning": "change; to exchange; to barter; to trade",
+    "level": 3,
+    "phrase": "换",
+    "sentence": "我正在学习“换”。"
   },
   {
     "word": "黄河",
@@ -1760,6 +3248,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“或者”。"
   },
   {
+    "word": "几乎",
+    "pinyin": "jīhū",
+    "meaning": "almost",
+    "level": 3,
+    "phrase": "几乎",
+    "sentence": "我正在学习“几乎”。"
+  },
+  {
     "word": "机会",
     "pinyin": "jīhuì",
     "meaning": "opportunity; chance; occasion",
@@ -1768,12 +3264,12 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“机会”。"
   },
   {
-    "word": "几乎",
-    "pinyin": "jīhū",
-    "meaning": "almost",
+    "word": "极",
+    "pinyin": "jí",
+    "meaning": "an extreme; pole; very",
     "level": 3,
-    "phrase": "几乎",
-    "sentence": "我正在学习“几乎”。"
+    "phrase": "极",
+    "sentence": "我正在学习“极”。"
   },
   {
     "word": "记得",
@@ -1824,6 +3320,46 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“健康”。"
   },
   {
+    "word": "讲",
+    "pinyin": "jiǎng",
+    "meaning": "to talk; to lecture; to explain; a speech",
+    "level": 3,
+    "phrase": "讲",
+    "sentence": "我正在学习“讲”。"
+  },
+  {
+    "word": "教",
+    "pinyin": "jiāo, jiào",
+    "meaning": "teach; instruct | religion; teaching",
+    "level": 3,
+    "phrase": "教",
+    "sentence": "我正在学习“教”。"
+  },
+  {
+    "word": "角",
+    "pinyin": "jiǎo, jué",
+    "meaning": "horn; angle; unit of money (1/10 yuan); corner (Kangxi radical 148) | role (theater)",
+    "level": 3,
+    "phrase": "角",
+    "sentence": "我正在学习“角”。"
+  },
+  {
+    "word": "脚",
+    "pinyin": "jiǎo",
+    "meaning": "foot (body part)",
+    "level": 3,
+    "phrase": "脚",
+    "sentence": "我正在学习“脚”。"
+  },
+  {
+    "word": "接",
+    "pinyin": "jiē",
+    "meaning": "connect; to meet; to pick up (somebody); to receive",
+    "level": 3,
+    "phrase": "接",
+    "sentence": "我正在学习“接”。"
+  },
+  {
     "word": "街道",
     "pinyin": "jiēdào",
     "meaning": "street",
@@ -1872,6 +3408,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“解决”。"
   },
   {
+    "word": "借",
+    "pinyin": "jiè",
+    "meaning": "lend; borrow; excuse",
+    "level": 3,
+    "phrase": "借",
+    "sentence": "我正在学习“借”。"
+  },
+  {
     "word": "经常",
     "pinyin": "jīngcháng",
     "meaning": "often; frequently; daily",
@@ -1894,6 +3438,22 @@ window.HSK_WORDS = [
     "level": 3,
     "phrase": "经理",
     "sentence": "我正在学习“经理”。"
+  },
+  {
+    "word": "久",
+    "pinyin": "jiǔ",
+    "meaning": "long (time)",
+    "level": 3,
+    "phrase": "久",
+    "sentence": "我正在学习“久”。"
+  },
+  {
+    "word": "旧",
+    "pinyin": "jiù",
+    "meaning": "old; past; used",
+    "level": 3,
+    "phrase": "旧",
+    "sentence": "我正在学习“旧”。"
   },
   {
     "word": "句子",
@@ -1920,6 +3480,22 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“可爱”。"
   },
   {
+    "word": "渴",
+    "pinyin": "kě",
+    "meaning": "thirsty",
+    "level": 3,
+    "phrase": "渴",
+    "sentence": "我正在学习“渴”。"
+  },
+  {
+    "word": "刻",
+    "pinyin": "kè",
+    "meaning": "quarter (hour); (mw for short time intervals); carve; to cut",
+    "level": 3,
+    "phrase": "刻",
+    "sentence": "我正在学习“刻”。"
+  },
+  {
     "word": "客人",
     "pinyin": "kèrén",
     "meaning": "guest; customer",
@@ -1934,6 +3510,22 @@ window.HSK_WORDS = [
     "level": 3,
     "phrase": "空调",
     "sentence": "我正在学习“空调”。"
+  },
+  {
+    "word": "口",
+    "pinyin": "kǒu",
+    "meaning": "mouth (Kangxi radical 30)",
+    "level": 3,
+    "phrase": "口",
+    "sentence": "我正在学习“口”。"
+  },
+  {
+    "word": "哭",
+    "pinyin": "kū",
+    "meaning": "cry; weep",
+    "level": 3,
+    "phrase": "哭",
+    "sentence": "我正在学习“哭”。"
   },
   {
     "word": "裤子",
@@ -1952,12 +3544,20 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“筷子”。"
   },
   {
-    "word": "了解",
-    "pinyin": "liǎojiě",
-    "meaning": "comprehend; understand; know; find out",
+    "word": "蓝",
+    "pinyin": "lán",
+    "meaning": "blue",
     "level": 3,
-    "phrase": "了解",
-    "sentence": "我正在学习“了解”。"
+    "phrase": "蓝",
+    "sentence": "我正在学习“蓝”。"
+  },
+  {
+    "word": "老",
+    "pinyin": "lǎo",
+    "meaning": "old; aged; tough; often (Kangxi radical 125)",
+    "level": 3,
+    "phrase": "老",
+    "sentence": "我正在学习“老”。"
   },
   {
     "word": "离开",
@@ -1984,6 +3584,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“历史”。"
   },
   {
+    "word": "脸",
+    "pinyin": "liǎn",
+    "meaning": "face",
+    "level": 3,
+    "phrase": "脸",
+    "sentence": "我正在学习“脸”。"
+  },
+  {
     "word": "练习",
     "pinyin": "liànxí",
     "meaning": "practice; exercise",
@@ -1992,12 +3600,28 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“练习”。"
   },
   {
+    "word": "辆",
+    "pinyin": "liàng",
+    "meaning": "(mw for vehicles)",
+    "level": 3,
+    "phrase": "辆",
+    "sentence": "我正在学习“辆”。"
+  },
+  {
     "word": "聊天",
     "pinyin": "liáotiān",
     "meaning": "to chat",
     "level": 3,
     "phrase": "聊天",
     "sentence": "我正在学习“聊天”。"
+  },
+  {
+    "word": "了解",
+    "pinyin": "liǎojiě",
+    "meaning": "comprehend; understand; know; find out",
+    "level": 3,
+    "phrase": "了解",
+    "sentence": "我正在学习“了解”。"
   },
   {
     "word": "邻居",
@@ -2014,6 +3638,30 @@ window.HSK_WORDS = [
     "level": 3,
     "phrase": "留学",
     "sentence": "我正在学习“留学”。"
+  },
+  {
+    "word": "楼",
+    "pinyin": "lóu",
+    "meaning": "story; floor; (multi-story) building",
+    "level": 3,
+    "phrase": "楼",
+    "sentence": "我正在学习“楼”。"
+  },
+  {
+    "word": "绿",
+    "pinyin": "lǜ",
+    "meaning": "green",
+    "level": 3,
+    "phrase": "绿",
+    "sentence": "我正在学习“绿”。"
+  },
+  {
+    "word": "马",
+    "pinyin": "mǎ",
+    "meaning": "horse (Kangxi radical 187)",
+    "level": 3,
+    "phrase": "马",
+    "sentence": "我正在学习“马”。"
   },
   {
     "word": "马上",
@@ -2040,6 +3688,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“帽子”。"
   },
   {
+    "word": "米",
+    "pinyin": "mǐ",
+    "meaning": "rice; meter (Kangxi radical 119)",
+    "level": 3,
+    "phrase": "米",
+    "sentence": "我正在学习“米”。"
+  },
+  {
     "word": "面包",
     "pinyin": "miànbāo",
     "meaning": "bread",
@@ -2056,12 +3712,36 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“明白”。"
   },
   {
+    "word": "拿",
+    "pinyin": "ná",
+    "meaning": "carry in your hand; seize; to catch",
+    "level": 3,
+    "phrase": "拿",
+    "sentence": "我正在学习“拿”。"
+  },
+  {
     "word": "奶奶",
     "pinyin": "nǎinai",
     "meaning": "grandma; (informal) paternal grandmother",
     "level": 3,
     "phrase": "奶奶",
     "sentence": "我正在学习“奶奶”。"
+  },
+  {
+    "word": "南",
+    "pinyin": "nán",
+    "meaning": "South",
+    "level": 3,
+    "phrase": "南",
+    "sentence": "我正在学习“南”。"
+  },
+  {
+    "word": "难",
+    "pinyin": "nán",
+    "meaning": "difficult",
+    "level": 3,
+    "phrase": "难",
+    "sentence": "我正在学习“难”。"
   },
   {
     "word": "难过",
@@ -2088,6 +3768,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“年轻”。"
   },
   {
+    "word": "鸟",
+    "pinyin": "niǎo",
+    "meaning": "bird (Kangxi radical 196)",
+    "level": 3,
+    "phrase": "鸟",
+    "sentence": "我正在学习“鸟”。"
+  },
+  {
     "word": "努力",
     "pinyin": "nǔlì",
     "meaning": "to work hard; to strive",
@@ -2110,6 +3798,14 @@ window.HSK_WORDS = [
     "level": 3,
     "phrase": "盘子",
     "sentence": "我正在学习“盘子”。"
+  },
+  {
+    "word": "胖",
+    "pinyin": "pàng",
+    "meaning": "fat; plump",
+    "level": 3,
+    "phrase": "胖",
+    "sentence": "我正在学习“胖”。"
   },
   {
     "word": "皮鞋",
@@ -2160,6 +3856,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“奇怪”。"
   },
   {
+    "word": "骑",
+    "pinyin": "qí",
+    "meaning": "to ride (an animal or bike); to sit astride",
+    "level": 3,
+    "phrase": "骑",
+    "sentence": "我正在学习“骑”。"
+  },
+  {
     "word": "起飞",
     "pinyin": "qǐfēi",
     "meaning": "take off (in an airplane); liftoff",
@@ -2190,6 +3894,14 @@ window.HSK_WORDS = [
     "level": 3,
     "phrase": "请假",
     "sentence": "我正在学习“请假”。"
+  },
+  {
+    "word": "秋",
+    "pinyin": "qiū",
+    "meaning": "autumn; fall; harvest time",
+    "level": 3,
+    "phrase": "秋",
+    "sentence": "我正在学习“秋”。"
   },
   {
     "word": "裙子",
@@ -2248,6 +3960,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“如果”。"
   },
   {
+    "word": "伞",
+    "pinyin": "sǎn",
+    "meaning": "umbrella; parasol",
+    "level": 3,
+    "phrase": "伞",
+    "sentence": "我正在学习“伞”。"
+  },
+  {
     "word": "上网",
     "pinyin": "shàngwǎng",
     "meaning": "to surf the web; to go online",
@@ -2280,6 +4000,22 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“世界”。"
   },
   {
+    "word": "试",
+    "pinyin": "shì",
+    "meaning": "to try; to test; examination",
+    "level": 3,
+    "phrase": "试",
+    "sentence": "我正在学习“试”。"
+  },
+  {
+    "word": "瘦",
+    "pinyin": "shòu",
+    "meaning": "thin; tight; lean",
+    "level": 3,
+    "phrase": "瘦",
+    "sentence": "我正在学习“瘦”。"
+  },
+  {
     "word": "叔叔",
     "pinyin": "shūshu",
     "meaning": "(informal) father's younger brother; uncle",
@@ -2296,6 +4032,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“舒服”。"
   },
   {
+    "word": "树",
+    "pinyin": "shù",
+    "meaning": "tree",
+    "level": 3,
+    "phrase": "树",
+    "sentence": "我正在学习“树”。"
+  },
+  {
     "word": "数学",
     "pinyin": "shùxué",
     "meaning": "mathematics",
@@ -2310,6 +4054,14 @@ window.HSK_WORDS = [
     "level": 3,
     "phrase": "刷牙",
     "sentence": "我正在学习“刷牙”。"
+  },
+  {
+    "word": "双",
+    "pinyin": "shuāng",
+    "meaning": "two; double; (mw for pairs)",
+    "level": 3,
+    "phrase": "双",
+    "sentence": "我正在学习“双”。"
   },
   {
     "word": "水平",
@@ -2344,6 +4096,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“特别”。"
   },
   {
+    "word": "疼",
+    "pinyin": "téng",
+    "meaning": "ache; sore; (it) hurts; love fondly",
+    "level": 3,
+    "phrase": "疼",
+    "sentence": "我正在学习“疼”。"
+  },
+  {
     "word": "提高",
     "pinyin": "tígāo",
     "meaning": "to raise; heighten; improve",
@@ -2358,6 +4118,22 @@ window.HSK_WORDS = [
     "level": 3,
     "phrase": "体育",
     "sentence": "我正在学习“体育”。"
+  },
+  {
+    "word": "甜",
+    "pinyin": "tián",
+    "meaning": "sweet",
+    "level": 3,
+    "phrase": "甜",
+    "sentence": "我正在学习“甜”。"
+  },
+  {
+    "word": "条",
+    "pinyin": "tiáo",
+    "meaning": "strip; (mw for long thin objects); item",
+    "level": 3,
+    "phrase": "条",
+    "sentence": "我正在学习“条”。"
   },
   {
     "word": "同事",
@@ -2400,12 +4176,36 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“图书馆”。"
   },
   {
+    "word": "腿",
+    "pinyin": "tuǐ",
+    "meaning": "leg",
+    "level": 3,
+    "phrase": "腿",
+    "sentence": "我正在学习“腿”。"
+  },
+  {
     "word": "完成",
     "pinyin": "wánchéng",
     "meaning": "to complete; accomplish; to fulfill",
     "level": 3,
     "phrase": "完成",
     "sentence": "我正在学习“完成”。"
+  },
+  {
+    "word": "碗",
+    "pinyin": "wǎn",
+    "meaning": "bowl; cup",
+    "level": 3,
+    "phrase": "碗",
+    "sentence": "我正在学习“碗”。"
+  },
+  {
+    "word": "万",
+    "pinyin": "wàn",
+    "meaning": "ten thousand",
+    "level": 3,
+    "phrase": "万",
+    "sentence": "我正在学习“万”。"
   },
   {
     "word": "忘记",
@@ -2416,6 +4216,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“忘记”。"
   },
   {
+    "word": "为",
+    "pinyin": "wèi",
+    "meaning": "for; because of; to; for the sake of",
+    "level": 3,
+    "phrase": "为",
+    "sentence": "我正在学习“为”。"
+  },
+  {
     "word": "为了",
     "pinyin": "wèile",
     "meaning": "in order to; for the sake of; for the purpose of",
@@ -2424,12 +4232,28 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“为了”。"
   },
   {
+    "word": "位",
+    "pinyin": "wèi",
+    "meaning": "position; location; (polite mw for people)",
+    "level": 3,
+    "phrase": "位",
+    "sentence": "我正在学习“位”。"
+  },
+  {
     "word": "文化",
     "pinyin": "wénhuà",
     "meaning": "culture; civilization",
     "level": 3,
     "phrase": "文化",
     "sentence": "我正在学习“文化”。"
+  },
+  {
+    "word": "西",
+    "pinyin": "xī",
+    "meaning": "West (Kangxi radical 146)",
+    "level": 3,
+    "phrase": "西",
+    "sentence": "我正在学习“西”。"
   },
   {
     "word": "习惯",
@@ -2456,6 +4280,22 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“洗澡”。"
   },
   {
+    "word": "夏",
+    "pinyin": "xià",
+    "meaning": "summer",
+    "level": 3,
+    "phrase": "夏",
+    "sentence": "我正在学习“夏”。"
+  },
+  {
+    "word": "先",
+    "pinyin": "xiān",
+    "meaning": "first; early; before",
+    "level": 3,
+    "phrase": "先",
+    "sentence": "我正在学习“先”。"
+  },
+  {
     "word": "相信",
     "pinyin": "xiāngxìn",
     "meaning": "believe (sb.); be convinced of",
@@ -2470,6 +4310,22 @@ window.HSK_WORDS = [
     "level": 3,
     "phrase": "香蕉",
     "sentence": "我正在学习“香蕉”。"
+  },
+  {
+    "word": "向",
+    "pinyin": "xiàng",
+    "meaning": "direction; towards; to turn; to face",
+    "level": 3,
+    "phrase": "向",
+    "sentence": "我正在学习“向”。"
+  },
+  {
+    "word": "像",
+    "pinyin": "xiàng",
+    "meaning": "be like; resemble; appearance; appear",
+    "level": 3,
+    "phrase": "像",
+    "sentence": "我正在学习“像”。"
   },
   {
     "word": "小心",
@@ -2664,6 +4520,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“影响”。"
   },
   {
+    "word": "用",
+    "pinyin": "yòng",
+    "meaning": "to use (Kangxi radical 101)",
+    "level": 3,
+    "phrase": "用",
+    "sentence": "我正在学习“用”。"
+  },
+  {
     "word": "游戏",
     "pinyin": "yóuxì",
     "meaning": "game; play; recreation",
@@ -2680,12 +4544,28 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“有名”。"
   },
   {
+    "word": "又",
+    "pinyin": "yòu",
+    "meaning": "(once) again; also; both (Kangxi radical 29)",
+    "level": 3,
+    "phrase": "又",
+    "sentence": "我正在学习“又”。"
+  },
+  {
     "word": "遇到",
     "pinyin": "yùdào",
     "meaning": "to meet; run into; come across",
     "level": 3,
     "phrase": "遇到",
     "sentence": "我正在学习“遇到”。"
+  },
+  {
+    "word": "元",
+    "pinyin": "yuán",
+    "meaning": "Chinese monetary unit; dollar; first; principal",
+    "level": 3,
+    "phrase": "元",
+    "sentence": "我正在学习“元”。"
   },
   {
     "word": "愿意",
@@ -2702,6 +4582,38 @@ window.HSK_WORDS = [
     "level": 3,
     "phrase": "月亮",
     "sentence": "我正在学习“月亮”。"
+  },
+  {
+    "word": "越",
+    "pinyin": "yuè",
+    "meaning": "even more; the more; exceed",
+    "level": 3,
+    "phrase": "越",
+    "sentence": "我正在学习“越”。"
+  },
+  {
+    "word": "站",
+    "pinyin": "zhàn",
+    "meaning": "stand; a station; be on one's feet; service center",
+    "level": 3,
+    "phrase": "站",
+    "sentence": "我正在学习“站”。"
+  },
+  {
+    "word": "张",
+    "pinyin": "zhāng",
+    "meaning": "(mw for flat objects); to spread out; (common surname)",
+    "level": 3,
+    "phrase": "张",
+    "sentence": "我正在学习“张”。"
+  },
+  {
+    "word": "着急",
+    "pinyin": "zháojí",
+    "meaning": "to worry; feel anxious",
+    "level": 3,
+    "phrase": "着急",
+    "sentence": "我正在学习“着急”。"
   },
   {
     "word": "照顾",
@@ -2728,12 +4640,12 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“照相机”。"
   },
   {
-    "word": "着急",
-    "pinyin": "zháojí",
-    "meaning": "to worry; feel anxious",
+    "word": "只",
+    "pinyin": "zhī, zhǐ",
+    "meaning": "but; only; merely; just | (mw for birds and certain animals)",
     "level": 3,
-    "phrase": "着急",
-    "sentence": "我正在学习“着急”。"
+    "phrase": "只",
+    "sentence": "我正在学习“只”。"
   },
   {
     "word": "只有",
@@ -2742,6 +4654,14 @@ window.HSK_WORDS = [
     "level": 3,
     "phrase": "只有",
     "sentence": "我正在学习“只有”。"
+  },
+  {
+    "word": "才",
+    "pinyin": "cái",
+    "meaning": "ability; talent; just now; not until",
+    "level": 3,
+    "phrase": "才",
+    "sentence": "我正在学习“才”。"
   },
   {
     "word": "中间",
@@ -2766,6 +4686,14 @@ window.HSK_WORDS = [
     "level": 3,
     "phrase": "终于",
     "sentence": "我正在学习“终于”。"
+  },
+  {
+    "word": "种",
+    "pinyin": "zhǒng",
+    "meaning": "type; breed; race; seed",
+    "level": 3,
+    "phrase": "种",
+    "sentence": "我正在学习“种”。"
   },
   {
     "word": "重要",
@@ -2822,6 +4750,14 @@ window.HSK_WORDS = [
     "level": 3,
     "phrase": "总是",
     "sentence": "我正在学习“总是”。"
+  },
+  {
+    "word": "嘴",
+    "pinyin": "zuǐ",
+    "meaning": "mouth",
+    "level": 3,
+    "phrase": "嘴",
+    "sentence": "我正在学习“嘴”。"
   },
   {
     "word": "最后",
@@ -2896,6 +4832,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“百分之”。"
   },
   {
+    "word": "棒",
+    "pinyin": "bàng",
+    "meaning": "stick; club; good; excellent",
+    "level": 4,
+    "phrase": "棒",
+    "sentence": "我正在学习“棒”。"
+  },
+  {
     "word": "包子",
     "pinyin": "bāozi",
     "meaning": "steamed stuffed bun",
@@ -2928,6 +4872,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“报名”。"
   },
   {
+    "word": "抱",
+    "pinyin": "bào",
+    "meaning": "to hold; to hug; carry in one's arms; to cradle",
+    "level": 4,
+    "phrase": "抱",
+    "sentence": "我正在学习“抱”。"
+  },
+  {
     "word": "抱歉",
     "pinyin": "bàoqiàn",
     "meaning": "be sorry; feel apologetic; to regret",
@@ -2936,12 +4888,28 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“抱歉”。"
   },
   {
+    "word": "倍",
+    "pinyin": "bèi",
+    "meaning": "(two, three, etc)-fold; times (multiplier)",
+    "level": 4,
+    "phrase": "倍",
+    "sentence": "我正在学习“倍”。"
+  },
+  {
     "word": "本来",
     "pinyin": "běnlái",
     "meaning": "originally; at first",
     "level": 4,
     "phrase": "本来",
     "sentence": "我正在学习“本来”。"
+  },
+  {
+    "word": "笨",
+    "pinyin": "bèn",
+    "meaning": "stupid; foolish; silly; dumb; clumsy",
+    "level": 4,
+    "phrase": "笨",
+    "sentence": "我正在学习“笨”。"
   },
   {
     "word": "比如",
@@ -2958,6 +4926,14 @@ window.HSK_WORDS = [
     "level": 4,
     "phrase": "毕业",
     "sentence": "我正在学习“毕业”。"
+  },
+  {
+    "word": "遍",
+    "pinyin": "biàn",
+    "meaning": "a time; everywhere; turn; (mw for times or turns)",
+    "level": 4,
+    "phrase": "遍",
+    "sentence": "我正在学习“遍”。"
   },
   {
     "word": "标准",
@@ -3064,6 +5040,22 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“部分”。"
   },
   {
+    "word": "擦",
+    "pinyin": "cā",
+    "meaning": "to wipe; to rub; to polish",
+    "level": 4,
+    "phrase": "擦",
+    "sentence": "我正在学习“擦”。"
+  },
+  {
+    "word": "猜",
+    "pinyin": "cāi",
+    "meaning": "to guess",
+    "level": 4,
+    "phrase": "猜",
+    "sentence": "我正在学习“猜”。"
+  },
+  {
     "word": "材料",
     "pinyin": "cáiliào",
     "meaning": "material",
@@ -3102,6 +5094,38 @@ window.HSK_WORDS = [
     "level": 4,
     "phrase": "差不多",
     "sentence": "我正在学习“差不多”。"
+  },
+  {
+    "word": "长城",
+    "pinyin": "chángchéng",
+    "meaning": "the Great Wall",
+    "level": 4,
+    "phrase": "长城",
+    "sentence": "我正在学习“长城”。"
+  },
+  {
+    "word": "长江",
+    "pinyin": "Chángjiāng",
+    "meaning": "the Yangtze River; the Changjiang River",
+    "level": 4,
+    "phrase": "长江",
+    "sentence": "我正在学习“长江”。"
+  },
+  {
+    "word": "尝",
+    "pinyin": "cháng",
+    "meaning": "to taste; flavor; (past tense marker)",
+    "level": 4,
+    "phrase": "尝",
+    "sentence": "我正在学习“尝”。"
+  },
+  {
+    "word": "场",
+    "pinyin": "chǎng",
+    "meaning": "courtyard; place; field; (mw for games, performances, etc.)",
+    "level": 4,
+    "phrase": "场",
+    "sentence": "我正在学习“场”。"
   },
   {
     "word": "超过",
@@ -3150,6 +5174,14 @@ window.HSK_WORDS = [
     "level": 4,
     "phrase": "吃惊",
     "sentence": "我正在学习“吃惊”。"
+  },
+  {
+    "word": "重新",
+    "pinyin": "chóngxīn",
+    "meaning": "again; anew; once more",
+    "level": 4,
+    "phrase": "重新",
+    "sentence": "我正在学习“重新”。"
   },
   {
     "word": "抽烟",
@@ -3240,6 +5272,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“粗心”。"
   },
   {
+    "word": "存",
+    "pinyin": "cún",
+    "meaning": "exist; to deposit; to store",
+    "level": 4,
+    "phrase": "存",
+    "sentence": "我正在学习“存”。"
+  },
+  {
     "word": "错误",
     "pinyin": "cuòwù",
     "meaning": "error; mistake; mistaken",
@@ -3304,14 +5344,6 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“打针”。"
   },
   {
-    "word": "大夫",
-    "pinyin": "dàifu",
-    "meaning": "doctor; physician",
-    "level": 4,
-    "phrase": "大夫",
-    "sentence": "我正在学习“大夫”。"
-  },
-  {
     "word": "大概",
     "pinyin": "dàgài",
     "meaning": "probably; roughly; approximate",
@@ -3336,12 +5368,28 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“大约”。"
   },
   {
-    "word": "弹钢琴",
-    "pinyin": "tán gāngqín",
-    "meaning": "play the piano",
+    "word": "大夫",
+    "pinyin": "dàifu",
+    "meaning": "doctor; physician",
     "level": 4,
-    "phrase": "弹钢琴",
-    "sentence": "我正在学习“弹钢琴”。"
+    "phrase": "大夫",
+    "sentence": "我正在学习“大夫”。"
+  },
+  {
+    "word": "戴",
+    "pinyin": "dài",
+    "meaning": "put on; to wear; to respect",
+    "level": 4,
+    "phrase": "戴",
+    "sentence": "我正在学习“戴”。"
+  },
+  {
+    "word": "当",
+    "pinyin": "dāng",
+    "meaning": "should; act as; work as; manage; match; (sound of bells)",
+    "level": 4,
+    "phrase": "当",
+    "sentence": "我正在学习“当”。"
   },
   {
     "word": "当时",
@@ -3350,6 +5398,14 @@ window.HSK_WORDS = [
     "level": 4,
     "phrase": "当时",
     "sentence": "我正在学习“当时”。"
+  },
+  {
+    "word": "刀",
+    "pinyin": "dāo",
+    "meaning": "knife; blade (Kangxi radical 18)",
+    "level": 4,
+    "phrase": "刀",
+    "sentence": "我正在学习“刀”。"
   },
   {
     "word": "导游",
@@ -3376,6 +5432,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“到底”。"
   },
   {
+    "word": "倒",
+    "pinyin": "dǎo, dào",
+    "meaning": "to collapse; to fall; fail; to exchange | to pour; contrary to expectations",
+    "level": 4,
+    "phrase": "倒",
+    "sentence": "我正在学习“倒”。"
+  },
+  {
     "word": "道歉",
     "pinyin": "dàoqiàn",
     "meaning": "apologize; make an apology",
@@ -3390,6 +5454,30 @@ window.HSK_WORDS = [
     "level": 4,
     "phrase": "得意",
     "sentence": "我正在学习“得意”。"
+  },
+  {
+    "word": "登机牌",
+    "pinyin": "dēngjīpái",
+    "meaning": "boarding pass",
+    "level": 4,
+    "phrase": "登机牌",
+    "sentence": "我正在学习“登机牌”。"
+  },
+  {
+    "word": "低",
+    "pinyin": "dī",
+    "meaning": "low; to lower (one's head); droop",
+    "level": 4,
+    "phrase": "低",
+    "sentence": "我正在学习“低”。"
+  },
+  {
+    "word": "底",
+    "pinyin": "dǐ",
+    "meaning": "bottom; background; base",
+    "level": 4,
+    "phrase": "底",
+    "sentence": "我正在学习“底”。"
   },
   {
     "word": "地点",
@@ -3416,20 +5504,28 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“地址”。"
   },
   {
-    "word": "登机牌",
-    "pinyin": "dēngjīpái",
-    "meaning": "boarding pass",
-    "level": 4,
-    "phrase": "登机牌",
-    "sentence": "我正在学习“登机牌”。"
-  },
-  {
     "word": "调查",
     "pinyin": "diàochá",
     "meaning": "investigate; survey; inquiry",
     "level": 4,
     "phrase": "调查",
     "sentence": "我正在学习“调查”。"
+  },
+  {
+    "word": "掉",
+    "pinyin": "diào",
+    "meaning": "to drop; to fall",
+    "level": 4,
+    "phrase": "掉",
+    "sentence": "我正在学习“掉”。"
+  },
+  {
+    "word": "丢",
+    "pinyin": "diū",
+    "meaning": "lose (something); throw; put aside",
+    "level": 4,
+    "phrase": "丢",
+    "sentence": "我正在学习“丢”。"
   },
   {
     "word": "动作",
@@ -3494,6 +5590,14 @@ window.HSK_WORDS = [
     "level": 4,
     "phrase": "儿童",
     "sentence": "我正在学习“儿童”。"
+  },
+  {
+    "word": "而",
+    "pinyin": "ér",
+    "meaning": "and; but; yet; while (Kangxi radical 126)",
+    "level": 4,
+    "phrase": "而",
+    "sentence": "我正在学习“而”。"
   },
   {
     "word": "发生",
@@ -3600,6 +5704,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“放松”。"
   },
   {
+    "word": "份",
+    "pinyin": "fèn",
+    "meaning": "part; portion; (mw for documents, papers, jobs, etc.)",
+    "level": 4,
+    "phrase": "份",
+    "sentence": "我正在学习“份”。"
+  },
+  {
     "word": "丰富",
     "pinyin": "fēngfù",
     "meaning": "rich; enrich; abundant; plentiful",
@@ -3664,12 +5776,44 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“复杂”。"
   },
   {
+    "word": "富",
+    "pinyin": "fù",
+    "meaning": "wealthy",
+    "level": 4,
+    "phrase": "富",
+    "sentence": "我正在学习“富”。"
+  },
+  {
     "word": "改变",
     "pinyin": "gǎibiàn",
     "meaning": "to change; alter; to transform",
     "level": 4,
     "phrase": "改变",
     "sentence": "我正在学习“改变”。"
+  },
+  {
+    "word": "干杯",
+    "pinyin": "gān bēi",
+    "meaning": "to drink a toast; cheers!; bottoms up!",
+    "level": 4,
+    "phrase": "干杯",
+    "sentence": "我正在学习“干杯”。"
+  },
+  {
+    "word": "赶",
+    "pinyin": "gǎn",
+    "meaning": "catch up; overtake; drive away",
+    "level": 4,
+    "phrase": "赶",
+    "sentence": "我正在学习“赶”。"
+  },
+  {
+    "word": "敢",
+    "pinyin": "gǎn",
+    "meaning": "to dare",
+    "level": 4,
+    "phrase": "敢",
+    "sentence": "我正在学习“敢”。"
   },
   {
     "word": "感动",
@@ -3704,12 +5848,20 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“感谢”。"
   },
   {
-    "word": "干杯",
-    "pinyin": "gān bēi",
-    "meaning": "to drink a toast; cheers!; bottoms up!",
+    "word": "干",
+    "pinyin": "gān",
+    "meaning": "to concern; shield; dry; clean (Kangxi radical 51)",
     "level": 4,
-    "phrase": "干杯",
-    "sentence": "我正在学习“干杯”。"
+    "phrase": "干",
+    "sentence": "我正在学习“干”。"
+  },
+  {
+    "word": "刚",
+    "pinyin": "gāng",
+    "meaning": "just (indicating the immediate past); recently; firm",
+    "level": 4,
+    "phrase": "刚",
+    "sentence": "我正在学习“刚”。"
   },
   {
     "word": "高速公路",
@@ -3726,6 +5878,14 @@ window.HSK_WORDS = [
     "level": 4,
     "phrase": "胳膊",
     "sentence": "我正在学习“胳膊”。"
+  },
+  {
+    "word": "各",
+    "pinyin": "gè",
+    "meaning": "each; every",
+    "level": 4,
+    "phrase": "各",
+    "sentence": "我正在学习“各”。"
   },
   {
     "word": "工资",
@@ -3768,6 +5928,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“购物”。"
   },
   {
+    "word": "够",
+    "pinyin": "gòu",
+    "meaning": "enough; to reach",
+    "level": 4,
+    "phrase": "够",
+    "sentence": "我正在学习“够”。"
+  },
+  {
     "word": "估计",
     "pinyin": "gūjì",
     "meaning": "appraise; estimate",
@@ -3800,6 +5968,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“顾客”。"
   },
   {
+    "word": "挂",
+    "pinyin": "guà",
+    "meaning": "hang; put up; suspend",
+    "level": 4,
+    "phrase": "挂",
+    "sentence": "我正在学习“挂”。"
+  },
+  {
     "word": "关键",
     "pinyin": "guānjiàn",
     "meaning": "crucial; key; pivotal",
@@ -3824,6 +6000,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“管理”。"
   },
   {
+    "word": "光",
+    "pinyin": "guāng",
+    "meaning": "light; ray; bright; only; merely; used up",
+    "level": 4,
+    "phrase": "光",
+    "sentence": "我正在学习“光”。"
+  },
+  {
     "word": "广播",
     "pinyin": "guǎngbō",
     "meaning": "broadcast; on the air",
@@ -3838,6 +6022,14 @@ window.HSK_WORDS = [
     "level": 4,
     "phrase": "广告",
     "sentence": "我正在学习“广告”。"
+  },
+  {
+    "word": "逛",
+    "pinyin": "guàng",
+    "meaning": "to stroll; to visit; go window shopping",
+    "level": 4,
+    "phrase": "逛",
+    "sentence": "我正在学习“逛”。"
   },
   {
     "word": "规定",
@@ -3880,14 +6072,6 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“过程”。"
   },
   {
-    "word": "咳嗽",
-    "pinyin": "késou",
-    "meaning": "to cough",
-    "level": 4,
-    "phrase": "咳嗽",
-    "sentence": "我正在学习“咳嗽”。"
-  },
-  {
     "word": "海洋",
     "pinyin": "hǎiyáng",
     "meaning": "ocean",
@@ -3910,6 +6094,14 @@ window.HSK_WORDS = [
     "level": 4,
     "phrase": "寒假",
     "sentence": "我正在学习“寒假”。"
+  },
+  {
+    "word": "汗",
+    "pinyin": "hàn",
+    "meaning": "sweat; perspiration; Khan",
+    "level": 4,
+    "phrase": "汗",
+    "sentence": "我正在学习“汗”。"
   },
   {
     "word": "航班",
@@ -3976,6 +6168,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“后悔”。"
   },
   {
+    "word": "厚",
+    "pinyin": "hòu",
+    "meaning": "thick (for flat things); generous",
+    "level": 4,
+    "phrase": "厚",
+    "sentence": "我正在学习“厚”。"
+  },
+  {
     "word": "互联网",
     "pinyin": "Hùliánwǎng",
     "meaning": "Internet",
@@ -4030,6 +6230,14 @@ window.HSK_WORDS = [
     "level": 4,
     "phrase": "活泼",
     "sentence": "我正在学习“活泼”。"
+  },
+  {
+    "word": "火",
+    "pinyin": "huǒ",
+    "meaning": "fire (Kangxi radical 86)",
+    "level": 4,
+    "phrase": "火",
+    "sentence": "我正在学习“火”。"
   },
   {
     "word": "获得",
@@ -4128,6 +6336,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“继续”。"
   },
   {
+    "word": "寄",
+    "pinyin": "jì",
+    "meaning": "send by mail",
+    "level": 4,
+    "phrase": "寄",
+    "sentence": "我正在学习“寄”。"
+  },
+  {
     "word": "加班",
     "pinyin": "jiā bān",
     "meaning": "work overtime",
@@ -4150,6 +6366,14 @@ window.HSK_WORDS = [
     "level": 4,
     "phrase": "家具",
     "sentence": "我正在学习“家具”。"
+  },
+  {
+    "word": "假",
+    "pinyin": "jiǎ, jià",
+    "meaning": "fake; if; borrow | vacation; holiday",
+    "level": 4,
+    "phrase": "假",
+    "sentence": "我正在学习“假”。"
   },
   {
     "word": "价格",
@@ -4224,6 +6448,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“降落”。"
   },
   {
+    "word": "交",
+    "pinyin": "jiāo",
+    "meaning": "deliver; turn over; intersect; to pay (money); friendship",
+    "level": 4,
+    "phrase": "交",
+    "sentence": "我正在学习“交”。"
+  },
+  {
     "word": "交流",
     "pinyin": "jiāoliú",
     "meaning": "communicate; exchange; give and take; interaction; to alternate",
@@ -4294,6 +6526,14 @@ window.HSK_WORDS = [
     "level": 4,
     "phrase": "接着",
     "sentence": "我正在学习“接着”。"
+  },
+  {
+    "word": "节",
+    "pinyin": "jié",
+    "meaning": "section; part; festival; moral integrity; save; (mw for class periods)",
+    "level": 4,
+    "phrase": "节",
+    "sentence": "我正在学习“节”。"
   },
   {
     "word": "节约",
@@ -4440,6 +6680,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“究竟”。"
   },
   {
+    "word": "举",
+    "pinyin": "jǔ",
+    "meaning": "lift; raise; cite",
+    "level": 4,
+    "phrase": "举",
+    "sentence": "我正在学习“举”。"
+  },
+  {
     "word": "举办",
     "pinyin": "jǔbàn",
     "meaning": "to conduct; to hold",
@@ -4528,6 +6776,22 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“科学”。"
   },
   {
+    "word": "棵",
+    "pinyin": "kē",
+    "meaning": "(mw for plants)",
+    "level": 4,
+    "phrase": "棵",
+    "sentence": "我正在学习“棵”。"
+  },
+  {
+    "word": "咳嗽",
+    "pinyin": "késou",
+    "meaning": "to cough",
+    "level": 4,
+    "phrase": "咳嗽",
+    "sentence": "我正在学习“咳嗽”。"
+  },
+  {
     "word": "可怜",
     "pinyin": "kělián",
     "meaning": "pitiful; poor; pathetic",
@@ -4568,6 +6832,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“肯定”。"
   },
   {
+    "word": "空",
+    "pinyin": "kōng, kòng",
+    "meaning": "empty; sky | leave blank; leisure",
+    "level": 4,
+    "phrase": "空",
+    "sentence": "我正在学习“空”。"
+  },
+  {
     "word": "空气",
     "pinyin": "kōngqì",
     "meaning": "air",
@@ -4584,12 +6856,28 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“恐怕”。"
   },
   {
+    "word": "苦",
+    "pinyin": "kǔ",
+    "meaning": "bitter; miserable",
+    "level": 4,
+    "phrase": "苦",
+    "sentence": "我正在学习“苦”。"
+  },
+  {
     "word": "矿泉水",
     "pinyin": "kuàngquánshuǐ",
     "meaning": "mineral water",
     "level": 4,
     "phrase": "矿泉水",
     "sentence": "我正在学习“矿泉水”。"
+  },
+  {
+    "word": "困",
+    "pinyin": "kùn",
+    "meaning": "sleepy; surround; hard-pressed",
+    "level": 4,
+    "phrase": "困",
+    "sentence": "我正在学习“困”。"
   },
   {
     "word": "困难",
@@ -4606,6 +6894,22 @@ window.HSK_WORDS = [
     "level": 4,
     "phrase": "垃圾桶",
     "sentence": "我正在学习“垃圾桶”。"
+  },
+  {
+    "word": "拉",
+    "pinyin": "lā",
+    "meaning": "to pull; to play (string instruments); to drag",
+    "level": 4,
+    "phrase": "拉",
+    "sentence": "我正在学习“拉”。"
+  },
+  {
+    "word": "辣",
+    "pinyin": "là",
+    "meaning": "hot (spicy)",
+    "level": 4,
+    "phrase": "辣",
+    "sentence": "我正在学习“辣”。"
   },
   {
     "word": "来不及",
@@ -4630,6 +6934,14 @@ window.HSK_WORDS = [
     "level": 4,
     "phrase": "来自",
     "sentence": "我正在学习“来自”。"
+  },
+  {
+    "word": "懒",
+    "pinyin": "lǎn",
+    "meaning": "lazy",
+    "level": 4,
+    "phrase": "懒",
+    "sentence": "我正在学习“懒”。"
   },
   {
     "word": "浪费",
@@ -4728,6 +7040,22 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“例如”。"
   },
   {
+    "word": "俩",
+    "pinyin": "liǎng",
+    "meaning": "(colloquial) two (people)",
+    "level": 4,
+    "phrase": "俩",
+    "sentence": "我正在学习“俩”。"
+  },
+  {
+    "word": "连",
+    "pinyin": "lián",
+    "meaning": "even; including; join",
+    "level": 4,
+    "phrase": "连",
+    "sentence": "我正在学习“连”。"
+  },
+  {
     "word": "联系",
     "pinyin": "liánxì",
     "meaning": "integrate; link; connection; contact",
@@ -4758,6 +7086,14 @@ window.HSK_WORDS = [
     "level": 4,
     "phrase": "另外",
     "sentence": "我正在学习“另外”。"
+  },
+  {
+    "word": "留",
+    "pinyin": "liú",
+    "meaning": "to leave (behind, a message); to retain; to stay",
+    "level": 4,
+    "phrase": "留",
+    "sentence": "我正在学习“留”。"
   },
   {
     "word": "流利",
@@ -4792,6 +7128,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“律师”。"
   },
   {
+    "word": "乱",
+    "pinyin": "luàn",
+    "meaning": "disorder; confusion; arbitrarily",
+    "level": 4,
+    "phrase": "乱",
+    "sentence": "我正在学习“乱”。"
+  },
+  {
     "word": "麻烦",
     "pinyin": "máfan",
     "meaning": "trouble (someone); troubling; bothersome",
@@ -4808,6 +7152,22 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“马虎”。"
   },
   {
+    "word": "满",
+    "pinyin": "mǎn",
+    "meaning": "full; abbreviation for Manchurian",
+    "level": 4,
+    "phrase": "满",
+    "sentence": "我正在学习“满”。"
+  },
+  {
+    "word": "毛",
+    "pinyin": "máo",
+    "meaning": "hair; fur; feather; dime (Kangxi radical 82)",
+    "level": 4,
+    "phrase": "毛",
+    "sentence": "我正在学习“毛”。"
+  },
+  {
     "word": "毛巾",
     "pinyin": "máojīn",
     "meaning": "towel; washcloth",
@@ -4822,6 +7182,14 @@ window.HSK_WORDS = [
     "level": 4,
     "phrase": "美丽",
     "sentence": "我正在学习“美丽”。"
+  },
+  {
+    "word": "梦",
+    "pinyin": "mèng",
+    "meaning": "to dream",
+    "level": 4,
+    "phrase": "梦",
+    "sentence": "我正在学习“梦”。"
   },
   {
     "word": "迷路",
@@ -4846,6 +7214,14 @@ window.HSK_WORDS = [
     "level": 4,
     "phrase": "免费",
     "sentence": "我正在学习“免费”。"
+  },
+  {
+    "word": "秒",
+    "pinyin": "miǎo",
+    "meaning": "second (unit of time or angle)",
+    "level": 4,
+    "phrase": "秒",
+    "sentence": "我正在学习“秒”。"
   },
   {
     "word": "民族",
@@ -4896,6 +7272,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“难受”。"
   },
   {
+    "word": "内",
+    "pinyin": "nèi",
+    "meaning": "inside; inner; internal; within",
+    "level": 4,
+    "phrase": "内",
+    "sentence": "我正在学习“内”。"
+  },
+  {
     "word": "内容",
     "pinyin": "nèiróng",
     "meaning": "content; substance; details",
@@ -4918,6 +7302,14 @@ window.HSK_WORDS = [
     "level": 4,
     "phrase": "年龄",
     "sentence": "我正在学习“年龄”。"
+  },
+  {
+    "word": "弄",
+    "pinyin": "nòng",
+    "meaning": "do; manage; to handle; make",
+    "level": 4,
+    "phrase": "弄",
+    "sentence": "我正在学习“弄”。"
   },
   {
     "word": "暖和",
@@ -4960,6 +7352,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“判断”。"
   },
   {
+    "word": "陪",
+    "pinyin": "péi",
+    "meaning": "accompany; keep company",
+    "level": 4,
+    "phrase": "陪",
+    "sentence": "我正在学习“陪”。"
+  },
+  {
     "word": "批评",
     "pinyin": "pīpíng",
     "meaning": "criticize",
@@ -4984,6 +7384,22 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“脾气”。"
   },
   {
+    "word": "篇",
+    "pinyin": "piān",
+    "meaning": "sheet; (mw for articles); piece of writing",
+    "level": 4,
+    "phrase": "篇",
+    "sentence": "我正在学习“篇”。"
+  },
+  {
+    "word": "骗",
+    "pinyin": "piàn",
+    "meaning": "to cheat; to swindle; deceive",
+    "level": 4,
+    "phrase": "骗",
+    "sentence": "我正在学习“骗”。"
+  },
+  {
     "word": "乒乓球",
     "pinyin": "pīngpāngqiú",
     "meaning": "ping pong; table tennis",
@@ -4998,6 +7414,14 @@ window.HSK_WORDS = [
     "level": 4,
     "phrase": "平时",
     "sentence": "我正在学习“平时”。"
+  },
+  {
+    "word": "破",
+    "pinyin": "pò",
+    "meaning": "broken; damaged; to split",
+    "level": 4,
+    "phrase": "破",
+    "sentence": "我正在学习“破”。"
   },
   {
     "word": "葡萄",
@@ -5064,6 +7488,22 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“签证”。"
   },
   {
+    "word": "敲",
+    "pinyin": "qiāo",
+    "meaning": "knock; blackmail",
+    "level": 4,
+    "phrase": "敲",
+    "sentence": "我正在学习“敲”。"
+  },
+  {
+    "word": "桥",
+    "pinyin": "qiáo",
+    "meaning": "bridge",
+    "level": 4,
+    "phrase": "桥",
+    "sentence": "我正在学习“桥”。"
+  },
+  {
     "word": "巧克力",
     "pinyin": "qiǎokèlì",
     "meaning": "chocolate",
@@ -5078,6 +7518,14 @@ window.HSK_WORDS = [
     "level": 4,
     "phrase": "亲戚",
     "sentence": "我正在学习“亲戚”。"
+  },
+  {
+    "word": "轻",
+    "pinyin": "qīng",
+    "meaning": "light; easy; gentle; soft",
+    "level": 4,
+    "phrase": "轻",
+    "sentence": "我正在学习“轻”。"
   },
   {
     "word": "轻松",
@@ -5096,12 +7544,28 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“情况”。"
   },
   {
+    "word": "穷",
+    "pinyin": "qióng",
+    "meaning": "poor; exhausted",
+    "level": 4,
+    "phrase": "穷",
+    "sentence": "我正在学习“穷”。"
+  },
+  {
     "word": "区别",
     "pinyin": "qūbié",
     "meaning": "difference; distinguish",
     "level": 4,
     "phrase": "区别",
     "sentence": "我正在学习“区别”。"
+  },
+  {
+    "word": "取",
+    "pinyin": "qǔ",
+    "meaning": "to take; get; choose",
+    "level": 4,
+    "phrase": "取",
+    "sentence": "我正在学习“取”。"
   },
   {
     "word": "全部",
@@ -5126,6 +7590,14 @@ window.HSK_WORDS = [
     "level": 4,
     "phrase": "缺少",
     "sentence": "我正在学习“缺少”。"
+  },
+  {
+    "word": "却",
+    "pinyin": "què",
+    "meaning": "but; yet; however",
+    "level": 4,
+    "phrase": "却",
+    "sentence": "我正在学习“却”。"
   },
   {
     "word": "确实",
@@ -5166,6 +7638,14 @@ window.HSK_WORDS = [
     "level": 4,
     "phrase": "任务",
     "sentence": "我正在学习“任务”。"
+  },
+  {
+    "word": "扔",
+    "pinyin": "rēng",
+    "meaning": "to throw; throw away",
+    "level": 4,
+    "phrase": "扔",
+    "sentence": "我正在学习“扔”。"
   },
   {
     "word": "仍然",
@@ -5264,6 +7744,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“申请”。"
   },
   {
+    "word": "深",
+    "pinyin": "shēn",
+    "meaning": "deep; profound; dark (of colors)",
+    "level": 4,
+    "phrase": "深",
+    "sentence": "我正在学习“深”。"
+  },
+  {
     "word": "甚至",
     "pinyin": "shènzhì",
     "meaning": "even (to the point of); so much so that",
@@ -5294,6 +7782,22 @@ window.HSK_WORDS = [
     "level": 4,
     "phrase": "生意",
     "sentence": "我正在学习“生意”。"
+  },
+  {
+    "word": "省",
+    "pinyin": "shěng",
+    "meaning": "to save; economize; omit; province",
+    "level": 4,
+    "phrase": "省",
+    "sentence": "我正在学习“省”。"
+  },
+  {
+    "word": "剩",
+    "pinyin": "shèng",
+    "meaning": "have as remainder; be left over; surplus",
+    "level": 4,
+    "phrase": "剩",
+    "sentence": "我正在学习“剩”。"
   },
   {
     "word": "失败",
@@ -5344,6 +7848,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“实在”。"
   },
   {
+    "word": "使",
+    "pinyin": "shǐ",
+    "meaning": "to use; to make; to cause; enable; envoy; messenger",
+    "level": 4,
+    "phrase": "使",
+    "sentence": "我正在学习“使”。"
+  },
+  {
     "word": "使用",
     "pinyin": "shǐyòng",
     "meaning": "to use; employ; apply; administer; manipulate",
@@ -5382,6 +7894,14 @@ window.HSK_WORDS = [
     "level": 4,
     "phrase": "适应",
     "sentence": "我正在学习“适应”。"
+  },
+  {
+    "word": "收",
+    "pinyin": "shōu",
+    "meaning": "receive; accept; collect; to harvest",
+    "level": 4,
+    "phrase": "收",
+    "sentence": "我正在学习“收”。"
   },
   {
     "word": "收入",
@@ -5440,6 +7960,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“售货员”。"
   },
   {
+    "word": "输",
+    "pinyin": "shū",
+    "meaning": "to transport; to lose (a game, etc.)",
+    "level": 4,
+    "phrase": "输",
+    "sentence": "我正在学习“输”。"
+  },
+  {
     "word": "熟悉",
     "pinyin": "shúxī",
     "meaning": "familiar with; know well",
@@ -5462,6 +7990,14 @@ window.HSK_WORDS = [
     "level": 4,
     "phrase": "数字",
     "sentence": "我正在学习“数字”。"
+  },
+  {
+    "word": "帅",
+    "pinyin": "shuài",
+    "meaning": "handsome; graceful; commander-in-chief",
+    "level": 4,
+    "phrase": "帅",
+    "sentence": "我正在学习“帅”。"
   },
   {
     "word": "顺便",
@@ -5504,6 +8040,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“硕士”。"
   },
   {
+    "word": "死",
+    "pinyin": "sǐ",
+    "meaning": "to die; dead; fixed; impassible; extremely",
+    "level": 4,
+    "phrase": "死",
+    "sentence": "我正在学习“死”。"
+  },
+  {
     "word": "速度",
     "pinyin": "sùdù",
     "meaning": "speed; rate; velocity",
@@ -5518,6 +8062,14 @@ window.HSK_WORDS = [
     "level": 4,
     "phrase": "塑料袋",
     "sentence": "我正在学习“塑料袋”。"
+  },
+  {
+    "word": "酸",
+    "pinyin": "suān",
+    "meaning": "sour; sore; ache",
+    "level": 4,
+    "phrase": "酸",
+    "sentence": "我正在学习“酸”。"
   },
   {
     "word": "随便",
@@ -5552,12 +8104,76 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“所有”。"
   },
   {
+    "word": "台",
+    "pinyin": "tái",
+    "meaning": "platform; Taiwan (abbr.); desk; stage; typhoon; (mw for machines); (classical) you (in letters)",
+    "level": 4,
+    "phrase": "台",
+    "sentence": "我正在学习“台”。"
+  },
+  {
+    "word": "抬",
+    "pinyin": "tái",
+    "meaning": "to lift; to raise (with both palms up); carry (together)",
+    "level": 4,
+    "phrase": "抬",
+    "sentence": "我正在学习“抬”。"
+  },
+  {
     "word": "态度",
     "pinyin": "tàidu",
     "meaning": "manner; bearing; attitude",
     "level": 4,
     "phrase": "态度",
     "sentence": "我正在学习“态度”。"
+  },
+  {
+    "word": "谈",
+    "pinyin": "tán",
+    "meaning": "to talk; to chat; discuss",
+    "level": 4,
+    "phrase": "谈",
+    "sentence": "我正在学习“谈”。"
+  },
+  {
+    "word": "弹钢琴",
+    "pinyin": "tán gāngqín",
+    "meaning": "play the piano",
+    "level": 4,
+    "phrase": "弹钢琴",
+    "sentence": "我正在学习“弹钢琴”。"
+  },
+  {
+    "word": "汤",
+    "pinyin": "tāng",
+    "meaning": "soup; broth",
+    "level": 4,
+    "phrase": "汤",
+    "sentence": "我正在学习“汤”。"
+  },
+  {
+    "word": "糖",
+    "pinyin": "táng",
+    "meaning": "sugar; candy; sweets",
+    "level": 4,
+    "phrase": "糖",
+    "sentence": "我正在学习“糖”。"
+  },
+  {
+    "word": "躺",
+    "pinyin": "tǎng",
+    "meaning": "recline; lie down (on back or side)",
+    "level": 4,
+    "phrase": "躺",
+    "sentence": "我正在学习“躺”。"
+  },
+  {
+    "word": "趟",
+    "pinyin": "tàng, tāng",
+    "meaning": "(mw for trips times) | to wade",
+    "level": 4,
+    "phrase": "趟",
+    "sentence": "我正在学习“趟”。"
   },
   {
     "word": "讨论",
@@ -5582,6 +8198,14 @@ window.HSK_WORDS = [
     "level": 4,
     "phrase": "特点",
     "sentence": "我正在学习“特点”。"
+  },
+  {
+    "word": "提",
+    "pinyin": "tí",
+    "meaning": "to carry; to lift; to raise (an issue)",
+    "level": 4,
+    "phrase": "提",
+    "sentence": "我正在学习“提”。"
   },
   {
     "word": "提供",
@@ -5624,6 +8248,22 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“条件”。"
   },
   {
+    "word": "停",
+    "pinyin": "tíng",
+    "meaning": "to stop; to halt; to park (a car)",
+    "level": 4,
+    "phrase": "停",
+    "sentence": "我正在学习“停”。"
+  },
+  {
+    "word": "挺",
+    "pinyin": "tǐng",
+    "meaning": "straighten up; stick out; rather (good); very",
+    "level": 4,
+    "phrase": "挺",
+    "sentence": "我正在学习“挺”。"
+  },
+  {
     "word": "通过",
     "pinyin": "tōngguò",
     "meaning": "by means of; through (a method); pass through; via",
@@ -5656,12 +8296,28 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“同时”。"
   },
   {
+    "word": "推",
+    "pinyin": "tuī",
+    "meaning": "to push; to scrape; to decline; postpone; elect",
+    "level": 4,
+    "phrase": "推",
+    "sentence": "我正在学习“推”。"
+  },
+  {
     "word": "推迟",
     "pinyin": "tuīchí",
     "meaning": "postpone; defer",
     "level": 4,
     "phrase": "推迟",
     "sentence": "我正在学习“推迟”。"
+  },
+  {
+    "word": "脱",
+    "pinyin": "tuō",
+    "meaning": "to shed; take off; to escape",
+    "level": 4,
+    "phrase": "脱",
+    "sentence": "我正在学习“脱”。"
   },
   {
     "word": "袜子",
@@ -5752,6 +8408,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“污染”。"
   },
   {
+    "word": "无",
+    "pinyin": "wú",
+    "meaning": "have not; without; not (Kangxi radical 71)",
+    "level": 4,
+    "phrase": "无",
+    "sentence": "我正在学习“无”。"
+  },
+  {
     "word": "无聊",
     "pinyin": "wúliáo",
     "meaning": "nonsense; bored; silly; stupid",
@@ -5776,6 +8440,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“误会”。"
   },
   {
+    "word": "西红柿",
+    "pinyin": "xīhóngshì",
+    "meaning": "tomato",
+    "level": 4,
+    "phrase": "西红柿",
+    "sentence": "我正在学习“西红柿”。"
+  },
+  {
     "word": "吸引",
     "pinyin": "xīyǐn",
     "meaning": "attract (interest, investment, etc.)",
@@ -5784,12 +8456,12 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“吸引”。"
   },
   {
-    "word": "西红柿",
-    "pinyin": "xīhóngshì",
-    "meaning": "tomato",
+    "word": "咸",
+    "pinyin": "xián",
+    "meaning": "salty; salted; all",
     "level": 4,
-    "phrase": "西红柿",
-    "sentence": "我正在学习“西红柿”。"
+    "phrase": "咸",
+    "sentence": "我正在学习“咸”。"
   },
   {
     "word": "现金",
@@ -5824,12 +8496,28 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“相同”。"
   },
   {
+    "word": "香",
+    "pinyin": "xiāng",
+    "meaning": "fragrant; savory (Kangxi radical 186)",
+    "level": 4,
+    "phrase": "香",
+    "sentence": "我正在学习“香”。"
+  },
+  {
     "word": "详细",
     "pinyin": "xiángxì",
     "meaning": "detailed; in detail; minute",
     "level": 4,
     "phrase": "详细",
     "sentence": "我正在学习“详细”。"
+  },
+  {
+    "word": "响",
+    "pinyin": "xiǎng",
+    "meaning": "make a sound; to ring; echo",
+    "level": 4,
+    "phrase": "响",
+    "sentence": "我正在学习“响”。"
   },
   {
     "word": "橡皮",
@@ -5872,20 +8560,20 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“小说”。"
   },
   {
-    "word": "效果",
-    "pinyin": "xiàoguǒ",
-    "meaning": "effect; result",
-    "level": 4,
-    "phrase": "效果",
-    "sentence": "我正在学习“效果”。"
-  },
-  {
     "word": "笑话",
     "pinyin": "xiàohua",
     "meaning": "joke; laugh at",
     "level": 4,
     "phrase": "笑话",
     "sentence": "我正在学习“笑话”。"
+  },
+  {
+    "word": "效果",
+    "pinyin": "xiàoguǒ",
+    "meaning": "effect; result",
+    "level": 4,
+    "phrase": "效果",
+    "sentence": "我正在学习“效果”。"
   },
   {
     "word": "心情",
@@ -5934,6 +8622,22 @@ window.HSK_WORDS = [
     "level": 4,
     "phrase": "兴奋",
     "sentence": "我正在学习“兴奋”。"
+  },
+  {
+    "word": "行",
+    "pinyin": "xíng",
+    "meaning": "walk; be current; do; will do; okay",
+    "level": 4,
+    "phrase": "行",
+    "sentence": "我正在学习“行”。"
+  },
+  {
+    "word": "醒",
+    "pinyin": "xǐng",
+    "meaning": "wake up",
+    "level": 4,
+    "phrase": "醒",
+    "sentence": "我正在学习“醒”。"
   },
   {
     "word": "幸福",
@@ -5992,6 +8696,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“压力”。"
   },
   {
+    "word": "呀",
+    "pinyin": "ya",
+    "meaning": "ah; oh; (used for 啊 after words ending with a, e, i, o, or ü)",
+    "level": 4,
+    "phrase": "呀",
+    "sentence": "我正在学习“呀”。"
+  },
+  {
     "word": "牙膏",
     "pinyin": "yágāo",
     "meaning": "toothpaste",
@@ -6030,6 +8742,14 @@ window.HSK_WORDS = [
     "level": 4,
     "phrase": "研究",
     "sentence": "我正在学习“研究”。"
+  },
+  {
+    "word": "盐",
+    "pinyin": "yán",
+    "meaning": "salt",
+    "level": 4,
+    "phrase": "盐",
+    "sentence": "我正在学习“盐”。"
   },
   {
     "word": "眼镜",
@@ -6120,12 +8840,28 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“叶子”。"
   },
   {
+    "word": "页",
+    "pinyin": "yè",
+    "meaning": "page; leaf (Kangxi radical 181)",
+    "level": 4,
+    "phrase": "页",
+    "sentence": "我正在学习“页”。"
+  },
+  {
     "word": "一切",
     "pinyin": "yíqiè",
     "meaning": "all; every; everything",
     "level": 4,
     "phrase": "一切",
     "sentence": "我正在学习“一切”。"
+  },
+  {
+    "word": "以",
+    "pinyin": "yǐ",
+    "meaning": "to use; according to; so as to; for; by",
+    "level": 4,
+    "phrase": "以",
+    "sentence": "我正在学习“以”。"
   },
   {
     "word": "以为",
@@ -6174,6 +8910,14 @@ window.HSK_WORDS = [
     "level": 4,
     "phrase": "印象",
     "sentence": "我正在学习“印象”。"
+  },
+  {
+    "word": "赢",
+    "pinyin": "yíng",
+    "meaning": "to win; to beat; to profit",
+    "level": 4,
+    "phrase": "赢",
+    "sentence": "我正在学习“赢”。"
   },
   {
     "word": "应聘",
@@ -6232,6 +8976,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“尤其”。"
   },
   {
+    "word": "由",
+    "pinyin": "yóu",
+    "meaning": "follow; from; by; through",
+    "level": 4,
+    "phrase": "由",
+    "sentence": "我正在学习“由”。"
+  },
+  {
     "word": "由于",
     "pinyin": "yóuyú",
     "meaning": "due to; owing to; as a result of; thanks to",
@@ -6286,6 +9038,14 @@ window.HSK_WORDS = [
     "level": 4,
     "phrase": "愉快",
     "sentence": "我正在学习“愉快”。"
+  },
+  {
+    "word": "与",
+    "pinyin": "yǔ",
+    "meaning": "(formal) and; to give; together with; participate; final particle expressing doubt or surprise",
+    "level": 4,
+    "phrase": "与",
+    "sentence": "我正在学习“与”。"
   },
   {
     "word": "羽毛球",
@@ -6360,6 +9120,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“阅读”。"
   },
   {
+    "word": "云",
+    "pinyin": "yún",
+    "meaning": "cloud; Yunnan province | say; speak",
+    "level": 4,
+    "phrase": "云",
+    "sentence": "我正在学习“云”。"
+  },
+  {
     "word": "允许",
     "pinyin": "yǔnxǔ",
     "meaning": "to permit; allow",
@@ -6392,6 +9160,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“暂时”。"
   },
   {
+    "word": "脏",
+    "pinyin": "zāng",
+    "meaning": "filthy; dirty",
+    "level": 4,
+    "phrase": "脏",
+    "sentence": "我正在学习“脏”。"
+  },
+  {
     "word": "责任",
     "pinyin": "zérèn",
     "meaning": "responsibility; blame; duty",
@@ -6416,28 +9192,20 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“占线”。"
   },
   {
-    "word": "长城",
-    "pinyin": "chángchéng",
-    "meaning": "the Great Wall",
-    "level": 4,
-    "phrase": "长城",
-    "sentence": "我正在学习“长城”。"
-  },
-  {
-    "word": "长江",
-    "pinyin": "Chángjiāng",
-    "meaning": "the Yangtze River; the Changjiang River",
-    "level": 4,
-    "phrase": "长江",
-    "sentence": "我正在学习“长江”。"
-  },
-  {
     "word": "招聘",
     "pinyin": "zhāopìn",
     "meaning": "recruitment; take job applications for a job",
     "level": 4,
     "phrase": "招聘",
     "sentence": "我正在学习“招聘”。"
+  },
+  {
+    "word": "照",
+    "pinyin": "zhào",
+    "meaning": "to shine; illuminate; according to",
+    "level": 4,
+    "phrase": "照",
+    "sentence": "我正在学习“照”。"
   },
   {
     "word": "真正",
@@ -6494,6 +9262,14 @@ window.HSK_WORDS = [
     "level": 4,
     "phrase": "证明",
     "sentence": "我正在学习“证明”。"
+  },
+  {
+    "word": "之",
+    "pinyin": "zhī",
+    "meaning": "(literary equivalent to 的); (pronoun); of",
+    "level": 4,
+    "phrase": "之",
+    "sentence": "我正在学习“之”。"
   },
   {
     "word": "支持",
@@ -6560,6 +9336,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“只要”。"
   },
   {
+    "word": "指",
+    "pinyin": "zhǐ",
+    "meaning": "finger; to point (at, to, out); refer to",
+    "level": 4,
+    "phrase": "指",
+    "sentence": "我正在学习“指”。"
+  },
+  {
     "word": "至少",
     "pinyin": "zhìshǎo",
     "meaning": "at least; (to say the) least",
@@ -6576,6 +9360,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“质量”。"
   },
   {
+    "word": "重",
+    "pinyin": "zhòng",
+    "meaning": "heavy; serious; important",
+    "level": 4,
+    "phrase": "重",
+    "sentence": "我正在学习“重”。"
+  },
+  {
     "word": "重点",
     "pinyin": "zhòngdiǎn",
     "meaning": "emphasis; main point",
@@ -6590,14 +9382,6 @@ window.HSK_WORDS = [
     "level": 4,
     "phrase": "重视",
     "sentence": "我正在学习“重视”。"
-  },
-  {
-    "word": "重新",
-    "pinyin": "chóngxīn",
-    "meaning": "again; anew; once more",
-    "level": 4,
-    "phrase": "重新",
-    "sentence": "我正在学习“重新”。"
   },
   {
     "word": "周围",
@@ -6648,6 +9432,22 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“专业”。"
   },
   {
+    "word": "转",
+    "pinyin": "zhuǎn, zhuàn",
+    "meaning": "to turn; to change; pass on | revolve; rotate",
+    "level": 4,
+    "phrase": "转",
+    "sentence": "我正在学习“转”。"
+  },
+  {
+    "word": "赚",
+    "pinyin": "zhuàn",
+    "meaning": "earn; make a profit",
+    "level": 4,
+    "phrase": "赚",
+    "sentence": "我正在学习“赚”。"
+  },
+  {
     "word": "准确",
     "pinyin": "zhǔnquè",
     "meaning": "accurate; precise",
@@ -6694,6 +9494,14 @@ window.HSK_WORDS = [
     "level": 4,
     "phrase": "总结",
     "sentence": "我正在学习“总结”。"
+  },
+  {
+    "word": "租",
+    "pinyin": "zū",
+    "meaning": "to rent",
+    "level": 4,
+    "phrase": "租",
+    "sentence": "我正在学习“租”。"
   },
   {
     "word": "最好",
@@ -6744,12 +9552,36 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“作者”。"
   },
   {
+    "word": "座",
+    "pinyin": "zuò",
+    "meaning": "(mw for mountains, bridges, tall buildings, etc.); | seat; base; stand; constellation",
+    "level": 4,
+    "phrase": "座",
+    "sentence": "我正在学习“座”。"
+  },
+  {
     "word": "座位",
     "pinyin": "zuòwèi",
     "meaning": "seat; place",
     "level": 4,
     "phrase": "座位",
     "sentence": "我正在学习“座位”。"
+  },
+  {
+    "word": "哎",
+    "pinyin": "āi",
+    "meaning": "hey!; (interjection of surprise or dissatisfaction)",
+    "level": 5,
+    "phrase": "哎",
+    "sentence": "我正在学习“哎”。"
+  },
+  {
+    "word": "唉",
+    "pinyin": "ài",
+    "meaning": "(an exclamation indicating resignation); oh well; oh; mm",
+    "level": 5,
+    "phrase": "唉",
+    "sentence": "我正在学习“唉”。"
   },
   {
     "word": "爱护",
@@ -6792,6 +9624,22 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“安装”。"
   },
   {
+    "word": "岸",
+    "pinyin": "àn",
+    "meaning": "bank; shore; beach; coast",
+    "level": 5,
+    "phrase": "岸",
+    "sentence": "我正在学习“岸”。"
+  },
+  {
+    "word": "暗",
+    "pinyin": "àn",
+    "meaning": "dark; gloomy; hidden; secret",
+    "level": 5,
+    "phrase": "暗",
+    "sentence": "我正在学习“暗”。"
+  },
+  {
     "word": "熬夜",
     "pinyin": "áoyè",
     "meaning": "stay up very late or all night",
@@ -6806,6 +9654,14 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "把握",
     "sentence": "我正在学习“把握”。"
+  },
+  {
+    "word": "摆",
+    "pinyin": "bǎi",
+    "meaning": "to put (on); arrange; to sway; pendulum",
+    "level": 5,
+    "phrase": "摆",
+    "sentence": "我正在学习“摆”。"
   },
   {
     "word": "办理",
@@ -6846,6 +9702,14 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "包括",
     "sentence": "我正在学习“包括”。"
+  },
+  {
+    "word": "薄",
+    "pinyin": "báo",
+    "meaning": "thin; flimsy; weak (first two pronunciations)",
+    "level": 5,
+    "phrase": "薄",
+    "sentence": "我正在学习“薄”。"
   },
   {
     "word": "宝贝",
@@ -6934,6 +9798,14 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "抱怨",
     "sentence": "我正在学习“抱怨”。"
+  },
+  {
+    "word": "背",
+    "pinyin": "bēi",
+    "meaning": "carry on one's back; to bear",
+    "level": 5,
+    "phrase": "背",
+    "sentence": "我正在学习“背”。"
   },
   {
     "word": "悲观",
@@ -7046,6 +9918,14 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "鞭炮",
     "sentence": "我正在学习“鞭炮”。"
+  },
+  {
+    "word": "便",
+    "pinyin": "biàn, pián",
+    "meaning": "plain; convenient; excretion; formal equivalent to 就 | cheap",
+    "level": 5,
+    "phrase": "便",
+    "sentence": "我正在学习“便”。"
   },
   {
     "word": "辩论",
@@ -7240,6 +10120,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“不足”。"
   },
   {
+    "word": "布",
+    "pinyin": "bù",
+    "meaning": "cloth; announce; to spread",
+    "level": 5,
+    "phrase": "布",
+    "sentence": "我正在学习“布”。"
+  },
+  {
     "word": "步骤",
     "pinyin": "bùzhòu",
     "meaning": "step; move; measure; procedure",
@@ -7288,6 +10176,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“彩虹”。"
   },
   {
+    "word": "踩",
+    "pinyin": "cǎi",
+    "meaning": "step upon; to tread; to stamp",
+    "level": 5,
+    "phrase": "踩",
+    "sentence": "我正在学习“踩”。"
+  },
+  {
     "word": "参考",
     "pinyin": "cānkǎo",
     "meaning": "reference; consult",
@@ -7328,6 +10224,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“操心”。"
   },
   {
+    "word": "册",
+    "pinyin": "cè",
+    "meaning": "book; (mw for books)",
+    "level": 5,
+    "phrase": "册",
+    "sentence": "我正在学习“册”。"
+  },
+  {
     "word": "测验",
     "pinyin": "cèyàn",
     "meaning": "test; exam; to test",
@@ -7360,6 +10264,22 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“差距”。"
   },
   {
+    "word": "插",
+    "pinyin": "chā",
+    "meaning": "to insert; stick in; pierce",
+    "level": 5,
+    "phrase": "插",
+    "sentence": "我正在学习“插”。"
+  },
+  {
+    "word": "拆",
+    "pinyin": "chāi",
+    "meaning": "unravel; to tear; demolish",
+    "level": 5,
+    "phrase": "拆",
+    "sentence": "我正在学习“拆”。"
+  },
+  {
     "word": "产品",
     "pinyin": "chǎnpǐn",
     "meaning": "product; goods; merchandise",
@@ -7376,12 +10296,28 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“产生”。"
   },
   {
+    "word": "长途",
+    "pinyin": "chángtú",
+    "meaning": "long distance",
+    "level": 5,
+    "phrase": "长途",
+    "sentence": "我正在学习“长途”。"
+  },
+  {
     "word": "常识",
     "pinyin": "chángshí",
     "meaning": "common sense; general knowledge",
     "level": 5,
     "phrase": "常识",
     "sentence": "我正在学习“常识”。"
+  },
+  {
+    "word": "抄",
+    "pinyin": "chāo",
+    "meaning": "to copy; plagiarize; search and confiscate",
+    "level": 5,
+    "phrase": "抄",
+    "sentence": "我正在学习“抄”。"
   },
   {
     "word": "超级",
@@ -7392,6 +10328,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“超级”。"
   },
   {
+    "word": "朝",
+    "pinyin": "cháo",
+    "meaning": "to face; towards; dynasty",
+    "level": 5,
+    "phrase": "朝",
+    "sentence": "我正在学习“朝”。"
+  },
+  {
     "word": "潮湿",
     "pinyin": "cháoshī",
     "meaning": "damp; moist; humid",
@@ -7400,12 +10344,28 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“潮湿”。"
   },
   {
+    "word": "吵",
+    "pinyin": "chǎo",
+    "meaning": "to quarrel; make noise",
+    "level": 5,
+    "phrase": "吵",
+    "sentence": "我正在学习“吵”。"
+  },
+  {
     "word": "吵架",
     "pinyin": "chǎo jià",
     "meaning": "to quarrel; to squabble; bicker",
     "level": 5,
     "phrase": "吵架",
     "sentence": "我正在学习“吵架”。"
+  },
+  {
+    "word": "炒",
+    "pinyin": "chǎo",
+    "meaning": "to stir-fry; saute",
+    "level": 5,
+    "phrase": "炒",
+    "sentence": "我正在学习“炒”。"
   },
   {
     "word": "车库",
@@ -7438,6 +10398,22 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "沉默",
     "sentence": "我正在学习“沉默”。"
+  },
+  {
+    "word": "趁",
+    "pinyin": "chèn",
+    "meaning": "avail oneself of; take advantage of (an opportunity or situation)",
+    "level": 5,
+    "phrase": "趁",
+    "sentence": "我正在学习“趁”。"
+  },
+  {
+    "word": "称",
+    "pinyin": "chēng",
+    "meaning": "weigh; to call; be called",
+    "level": 5,
+    "phrase": "称",
+    "sentence": "我正在学习“称”。"
   },
   {
     "word": "称呼",
@@ -7520,6 +10496,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“成长”。"
   },
   {
+    "word": "诚恳",
+    "pinyin": "chéngkěn",
+    "meaning": "honest; sincere",
+    "level": 5,
+    "phrase": "诚恳",
+    "sentence": "我正在学习“诚恳”。"
+  },
+  {
     "word": "承担",
     "pinyin": "chéngdān",
     "meaning": "undertake; assume (responsibility)",
@@ -7542,14 +10526,6 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "承受",
     "sentence": "我正在学习“承受”。"
-  },
-  {
-    "word": "诚恳",
-    "pinyin": "chéngkěn",
-    "meaning": "honest; sincere",
-    "level": 5,
-    "phrase": "诚恳",
-    "sentence": "我正在学习“诚恳”。"
   },
   {
     "word": "程度",
@@ -7616,6 +10592,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“翅膀”。"
   },
   {
+    "word": "冲",
+    "pinyin": "chōng",
+    "meaning": "to rush; to clash; to rinse; thoroughfare",
+    "level": 5,
+    "phrase": "冲",
+    "sentence": "我正在学习“冲”。"
+  },
+  {
     "word": "充电器",
     "pinyin": "chōngdiànqì",
     "meaning": "battery charger",
@@ -7640,6 +10624,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“充满”。"
   },
   {
+    "word": "重复",
+    "pinyin": "chóngfù",
+    "meaning": "to repeat; to duplicate",
+    "level": 5,
+    "phrase": "重复",
+    "sentence": "我正在学习“重复”。"
+  },
+  {
     "word": "宠物",
     "pinyin": "chǒngwù",
     "meaning": "a pet",
@@ -7662,6 +10654,22 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "抽象",
     "sentence": "我正在学习“抽象”。"
+  },
+  {
+    "word": "丑",
+    "pinyin": "chǒu",
+    "meaning": "ugly; disgraceful (2nd Earthly Branch)",
+    "level": 5,
+    "phrase": "丑",
+    "sentence": "我正在学习“丑”。"
+  },
+  {
+    "word": "臭",
+    "pinyin": "chòu",
+    "meaning": "stench; stink",
+    "level": 5,
+    "phrase": "臭",
+    "sentence": "我正在学习“臭”。"
   },
   {
     "word": "出版",
@@ -7776,12 +10784,28 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“窗帘”。"
   },
   {
+    "word": "闯",
+    "pinyin": "chuǎng",
+    "meaning": "rush; break through; to temper oneself (by battling difficulties)",
+    "level": 5,
+    "phrase": "闯",
+    "sentence": "我正在学习“闯”。"
+  },
+  {
     "word": "创造",
     "pinyin": "chuàngzào",
     "meaning": "create; bring about; creativity",
     "level": 5,
     "phrase": "创造",
     "sentence": "我正在学习“创造”。"
+  },
+  {
+    "word": "吹",
+    "pinyin": "chuī",
+    "meaning": "to blow; to blast; to puff",
+    "level": 5,
+    "phrase": "吹",
+    "sentence": "我正在学习“吹”。"
   },
   {
     "word": "词汇",
@@ -7888,6 +10912,22 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“促使”。"
   },
   {
+    "word": "醋",
+    "pinyin": "cù",
+    "meaning": "vinegar",
+    "level": 5,
+    "phrase": "醋",
+    "sentence": "我正在学习“醋”。"
+  },
+  {
+    "word": "催",
+    "pinyin": "cuī",
+    "meaning": "to press; to urge; to hurry",
+    "level": 5,
+    "phrase": "催",
+    "sentence": "我正在学习“催”。"
+  },
+  {
     "word": "存在",
     "pinyin": "cúnzài",
     "meaning": "to exist; to be",
@@ -7904,20 +10944,20 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“措施”。"
   },
   {
-    "word": "达到",
-    "pinyin": "dá dào",
-    "meaning": "achieve; attain; to reach",
-    "level": 5,
-    "phrase": "达到",
-    "sentence": "我正在学习“达到”。"
-  },
-  {
     "word": "答应",
     "pinyin": "dāying",
     "meaning": "to respond; to promise; to answer; agree",
     "level": 5,
     "phrase": "答应",
     "sentence": "我正在学习“答应”。"
+  },
+  {
+    "word": "达到",
+    "pinyin": "dá dào",
+    "meaning": "achieve; attain; to reach",
+    "level": 5,
+    "phrase": "达到",
+    "sentence": "我正在学习“达到”。"
   },
   {
     "word": "打工",
@@ -7984,6 +11024,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“大型”。"
   },
   {
+    "word": "呆",
+    "pinyin": "dāi",
+    "meaning": "stupid; foolish; blank; dumbstruck; to stay",
+    "level": 5,
+    "phrase": "呆",
+    "sentence": "我正在学习“呆”。"
+  },
+  {
     "word": "代表",
     "pinyin": "dàibiǎo",
     "meaning": "represent; to delegate",
@@ -8000,6 +11048,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“代替”。"
   },
   {
+    "word": "贷款",
+    "pinyin": "dài kuǎn",
+    "meaning": "(bank) loan; provide a loan",
+    "level": 5,
+    "phrase": "贷款",
+    "sentence": "我正在学习“贷款”。"
+  },
+  {
     "word": "待遇",
     "pinyin": "dàiyù",
     "meaning": "treatment; pay; wage; salary",
@@ -8008,12 +11064,12 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“待遇”。"
   },
   {
-    "word": "贷款",
-    "pinyin": "dài kuǎn",
-    "meaning": "(bank) loan; provide a loan",
+    "word": "担任",
+    "pinyin": "dānrèn",
+    "meaning": "hold the post of; serve as",
     "level": 5,
-    "phrase": "贷款",
-    "sentence": "我正在学习“贷款”。"
+    "phrase": "担任",
+    "sentence": "我正在学习“担任”。"
   },
   {
     "word": "单纯",
@@ -8056,14 +11112,6 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“单元”。"
   },
   {
-    "word": "担任",
-    "pinyin": "dānrèn",
-    "meaning": "hold the post of; serve as",
-    "level": 5,
-    "phrase": "担任",
-    "sentence": "我正在学习“担任”。"
-  },
-  {
     "word": "耽误",
     "pinyin": "dānwu",
     "meaning": "to delay; waste time",
@@ -8080,6 +11128,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“胆小鬼”。"
   },
   {
+    "word": "淡",
+    "pinyin": "dàn",
+    "meaning": "diluted; weak; thin",
+    "level": 5,
+    "phrase": "淡",
+    "sentence": "我正在学习“淡”。"
+  },
+  {
     "word": "当地",
     "pinyin": "dāngdì",
     "meaning": "local",
@@ -8094,6 +11150,14 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "当心",
     "sentence": "我正在学习“当心”。"
+  },
+  {
+    "word": "挡",
+    "pinyin": "dǎng",
+    "meaning": "to block; hinder; gear; equipment",
+    "level": 5,
+    "phrase": "挡",
+    "sentence": "我正在学习“挡”。"
   },
   {
     "word": "导演",
@@ -8120,20 +11184,20 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“岛屿”。"
   },
   {
-    "word": "到达",
-    "pinyin": "dàodá",
-    "meaning": "to reach; arrive",
-    "level": 5,
-    "phrase": "到达",
-    "sentence": "我正在学习“到达”。"
-  },
-  {
     "word": "倒霉",
     "pinyin": "dǎoméi",
     "meaning": "have bad luck; be out of luck",
     "level": 5,
     "phrase": "倒霉",
     "sentence": "我正在学习“倒霉”。"
+  },
+  {
+    "word": "到达",
+    "pinyin": "dàodá",
+    "meaning": "to reach; arrive",
+    "level": 5,
+    "phrase": "到达",
+    "sentence": "我正在学习“到达”。"
   },
   {
     "word": "道德",
@@ -8150,6 +11214,54 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "道理",
     "sentence": "我正在学习“道理”。"
+  },
+  {
+    "word": "登记",
+    "pinyin": "dēngjì",
+    "meaning": "register (one's name); check in; enroll",
+    "level": 5,
+    "phrase": "登记",
+    "sentence": "我正在学习“登记”。"
+  },
+  {
+    "word": "等待",
+    "pinyin": "děngdài",
+    "meaning": "to wait (for); expect",
+    "level": 5,
+    "phrase": "等待",
+    "sentence": "我正在学习“等待”。"
+  },
+  {
+    "word": "等于",
+    "pinyin": "děngyú",
+    "meaning": "(Mathematics) equal to",
+    "level": 5,
+    "phrase": "等于",
+    "sentence": "我正在学习“等于”。"
+  },
+  {
+    "word": "滴",
+    "pinyin": "dī",
+    "meaning": "to drip; drop; (mw for drops of liquid)",
+    "level": 5,
+    "phrase": "滴",
+    "sentence": "我正在学习“滴”。"
+  },
+  {
+    "word": "的确",
+    "pinyin": "díquè",
+    "meaning": "really; indeed",
+    "level": 5,
+    "phrase": "的确",
+    "sentence": "我正在学习“的确”。"
+  },
+  {
+    "word": "敌人",
+    "pinyin": "dírén",
+    "meaning": "enemy",
+    "level": 5,
+    "phrase": "敌人",
+    "sentence": "我正在学习“敌人”。"
   },
   {
     "word": "地道",
@@ -8200,44 +11312,12 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“地震”。"
   },
   {
-    "word": "的确",
-    "pinyin": "díquè",
-    "meaning": "really; indeed",
+    "word": "递",
+    "pinyin": "dì",
+    "meaning": "hand over; to pass; to give",
     "level": 5,
-    "phrase": "的确",
-    "sentence": "我正在学习“的确”。"
-  },
-  {
-    "word": "登记",
-    "pinyin": "dēngjì",
-    "meaning": "register (one's name); check in; enroll",
-    "level": 5,
-    "phrase": "登记",
-    "sentence": "我正在学习“登记”。"
-  },
-  {
-    "word": "等待",
-    "pinyin": "děngdài",
-    "meaning": "to wait (for); expect",
-    "level": 5,
-    "phrase": "等待",
-    "sentence": "我正在学习“等待”。"
-  },
-  {
-    "word": "等于",
-    "pinyin": "děngyú",
-    "meaning": "(Mathematics) equal to",
-    "level": 5,
-    "phrase": "等于",
-    "sentence": "我正在学习“等于”。"
-  },
-  {
-    "word": "敌人",
-    "pinyin": "dírén",
-    "meaning": "enemy",
-    "level": 5,
-    "phrase": "敌人",
-    "sentence": "我正在学习“敌人”。"
+    "phrase": "递",
+    "sentence": "我正在学习“递”。"
   },
   {
     "word": "点心",
@@ -8264,20 +11344,20 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“电台”。"
   },
   {
-    "word": "调皮",
-    "pinyin": "tiáopí",
-    "meaning": "naughty; mischievous; unruly",
+    "word": "钓",
+    "pinyin": "diào",
+    "meaning": "to fish",
     "level": 5,
-    "phrase": "调皮",
-    "sentence": "我正在学习“调皮”。"
+    "phrase": "钓",
+    "sentence": "我正在学习“钓”。"
   },
   {
-    "word": "调整",
-    "pinyin": "tiáozhěng",
-    "meaning": "adjustment; revision",
+    "word": "顶",
+    "pinyin": "dǐng",
+    "meaning": "top; roof; carry on one's head; prop up; to butt; (mw for headwear, i.e. hats)",
     "level": 5,
-    "phrase": "调整",
-    "sentence": "我正在学习“调整”。"
+    "phrase": "顶",
+    "sentence": "我正在学习“顶”。"
   },
   {
     "word": "动画片",
@@ -8288,12 +11368,36 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“动画片”。"
   },
   {
+    "word": "冻",
+    "pinyin": "dòng",
+    "meaning": "to freeze",
+    "level": 5,
+    "phrase": "冻",
+    "sentence": "我正在学习“冻”。"
+  },
+  {
+    "word": "洞",
+    "pinyin": "dòng",
+    "meaning": "cave; hole",
+    "level": 5,
+    "phrase": "洞",
+    "sentence": "我正在学习“洞”。"
+  },
+  {
     "word": "豆腐",
     "pinyin": "dòufu",
     "meaning": "tofu; bean curd",
     "level": 5,
     "phrase": "豆腐",
     "sentence": "我正在学习“豆腐”。"
+  },
+  {
+    "word": "逗",
+    "pinyin": "dòu",
+    "meaning": "to tease; amuse; to stay; to stop; funny",
+    "level": 5,
+    "phrase": "逗",
+    "sentence": "我正在学习“逗”。"
   },
   {
     "word": "独立",
@@ -8318,6 +11422,22 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "度过",
     "sentence": "我正在学习“度过”。"
+  },
+  {
+    "word": "断",
+    "pinyin": "duàn",
+    "meaning": "to break; decide; absolutely (usually negative)",
+    "level": 5,
+    "phrase": "断",
+    "sentence": "我正在学习“断”。"
+  },
+  {
+    "word": "堆",
+    "pinyin": "duī",
+    "meaning": "pile; heap; stack; crowd",
+    "level": 5,
+    "phrase": "堆",
+    "sentence": "我正在学习“堆”。"
   },
   {
     "word": "对比",
@@ -8368,6 +11488,30 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“兑换”。"
   },
   {
+    "word": "吨",
+    "pinyin": "dūn",
+    "meaning": "ton",
+    "level": 5,
+    "phrase": "吨",
+    "sentence": "我正在学习“吨”。"
+  },
+  {
+    "word": "蹲",
+    "pinyin": "dūn",
+    "meaning": "to crouch; to squat",
+    "level": 5,
+    "phrase": "蹲",
+    "sentence": "我正在学习“蹲”。"
+  },
+  {
+    "word": "顿",
+    "pinyin": "dùn",
+    "meaning": "pause; arrange; stamp feet; suddenly; (mw for meals)",
+    "level": 5,
+    "phrase": "顿",
+    "sentence": "我正在学习“顿”。"
+  },
+  {
     "word": "多亏",
     "pinyin": "duōkuī",
     "meaning": "thanks to; luckily",
@@ -8382,6 +11526,14 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "多余",
     "sentence": "我正在学习“多余”。"
+  },
+  {
+    "word": "朵",
+    "pinyin": "duǒ",
+    "meaning": "(mw for flowers and clouds)",
+    "level": 5,
+    "phrase": "朵",
+    "sentence": "我正在学习“朵”。"
   },
   {
     "word": "躲藏",
@@ -8488,6 +11640,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“法院”。"
   },
   {
+    "word": "翻",
+    "pinyin": "fān",
+    "meaning": "to turn over; capsize; translate",
+    "level": 5,
+    "phrase": "翻",
+    "sentence": "我正在学习“翻”。"
+  },
+  {
     "word": "繁荣",
     "pinyin": "fánróng",
     "meaning": "prosperous; prosperity; booming (economy)",
@@ -8544,6 +11704,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“范围”。"
   },
   {
+    "word": "方",
+    "pinyin": "fāng",
+    "meaning": "square; direction; side (Kangxi radical 70)",
+    "level": 5,
+    "phrase": "方",
+    "sentence": "我正在学习“方”。"
+  },
+  {
     "word": "方案",
     "pinyin": "fāng'àn",
     "meaning": "plan; program (for action, etc.); proposal",
@@ -8574,6 +11742,14 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "仿佛",
     "sentence": "我正在学习“仿佛”。"
+  },
+  {
+    "word": "非",
+    "pinyin": "fēi",
+    "meaning": "non-; un-; not be; wrongdoing; simply must (Kangxi radical 175)",
+    "level": 5,
+    "phrase": "非",
+    "sentence": "我正在学习“非”。"
   },
   {
     "word": "肥皂",
@@ -8712,12 +11888,28 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“否认”。"
   },
   {
+    "word": "扶",
+    "pinyin": "fú",
+    "meaning": "to support with hand; to help somebody up",
+    "level": 5,
+    "phrase": "扶",
+    "sentence": "我正在学习“扶”。"
+  },
+  {
     "word": "服装",
     "pinyin": "fúzhuāng",
     "meaning": "(formal) clothing; costume; dress",
     "level": 5,
     "phrase": "服装",
     "sentence": "我正在学习“服装”。"
+  },
+  {
+    "word": "幅",
+    "pinyin": "fú",
+    "meaning": "width of cloth; size; (mw for pictures, paintings, textiles)",
+    "level": 5,
+    "phrase": "幅",
+    "sentence": "我正在学习“幅”。"
   },
   {
     "word": "辅导",
@@ -8776,6 +11968,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“改正”。"
   },
   {
+    "word": "盖",
+    "pinyin": "gài",
+    "meaning": "lid; top; cover; to build",
+    "level": 5,
+    "phrase": "盖",
+    "sentence": "我正在学习“盖”。"
+  },
+  {
     "word": "概括",
     "pinyin": "gàikuò",
     "meaning": "summarize; generalize",
@@ -8790,6 +11990,22 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "概念",
     "sentence": "我正在学习“概念”。"
+  },
+  {
+    "word": "干脆",
+    "pinyin": "gāncuì",
+    "meaning": "straightforward; clear-cut; blunt",
+    "level": 5,
+    "phrase": "干脆",
+    "sentence": "我正在学习“干脆”。"
+  },
+  {
+    "word": "干燥",
+    "pinyin": "gānzào",
+    "meaning": "to dry (of paint, cement, etc.); dry; dryness",
+    "level": 5,
+    "phrase": "干燥",
+    "sentence": "我正在学习“干燥”。"
   },
   {
     "word": "赶紧",
@@ -8832,28 +12048,12 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“感想”。"
   },
   {
-    "word": "干脆",
-    "pinyin": "gāncuì",
-    "meaning": "straightforward; clear-cut; blunt",
-    "level": 5,
-    "phrase": "干脆",
-    "sentence": "我正在学习“干脆”。"
-  },
-  {
     "word": "干活儿",
     "pinyin": "gàn huór",
     "meaning": "do manual labor; to work",
     "level": 5,
     "phrase": "干活儿",
     "sentence": "我正在学习“干活儿”。"
-  },
-  {
-    "word": "干燥",
-    "pinyin": "gānzào",
-    "meaning": "to dry (of paint, cement, etc.); dry; dryness",
-    "level": 5,
-    "phrase": "干燥",
-    "sentence": "我正在学习“干燥”。"
   },
   {
     "word": "钢铁",
@@ -8878,6 +12078,14 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "高级",
     "sentence": "我正在学习“高级”。"
+  },
+  {
+    "word": "搞",
+    "pinyin": "gǎo",
+    "meaning": "do; make; be engaged in",
+    "level": 5,
+    "phrase": "搞",
+    "sentence": "我正在学习“搞”。"
   },
   {
     "word": "告别",
@@ -8934,6 +12142,14 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "各自",
     "sentence": "我正在学习“各自”。"
+  },
+  {
+    "word": "根",
+    "pinyin": "gēn",
+    "meaning": "root; base; (mw for long, slender objects)",
+    "level": 5,
+    "phrase": "根",
+    "sentence": "我正在学习“根”。"
   },
   {
     "word": "根本",
@@ -9152,6 +12368,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“挂号”。"
   },
   {
+    "word": "乖",
+    "pinyin": "guāi",
+    "meaning": "(of a child) obedient; well-behaved; clever; perverse; contrary to reason",
+    "level": 5,
+    "phrase": "乖",
+    "sentence": "我正在学习“乖”。"
+  },
+  {
     "word": "拐弯",
     "pinyin": "guǎi wān",
     "meaning": "turn a corner; make a turn",
@@ -9200,12 +12424,12 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“观念”。"
   },
   {
-    "word": "冠军",
-    "pinyin": "guànjūn",
-    "meaning": "champion",
+    "word": "官",
+    "pinyin": "guān",
+    "meaning": "an official; organ; governmental",
     "level": 5,
-    "phrase": "冠军",
-    "sentence": "我正在学习“冠军”。"
+    "phrase": "官",
+    "sentence": "我正在学习“官”。"
   },
   {
     "word": "管子",
@@ -9214,6 +12438,14 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "管子",
     "sentence": "我正在学习“管子”。"
+  },
+  {
+    "word": "冠军",
+    "pinyin": "guànjūn",
+    "meaning": "champion",
+    "level": 5,
+    "phrase": "冠军",
+    "sentence": "我正在学习“冠军”。"
   },
   {
     "word": "光滑",
@@ -9320,6 +12552,22 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“柜台”。"
   },
   {
+    "word": "滚",
+    "pinyin": "gǔn",
+    "meaning": "to roll; get lost; to boil",
+    "level": 5,
+    "phrase": "滚",
+    "sentence": "我正在学习“滚”。"
+  },
+  {
+    "word": "锅",
+    "pinyin": "guō",
+    "meaning": "pot; pan; boiler",
+    "level": 5,
+    "phrase": "锅",
+    "sentence": "我正在学习“锅”。"
+  },
+  {
     "word": "国庆节",
     "pinyin": "Guóqìng Jié",
     "meaning": "National Day",
@@ -9376,6 +12624,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“过期”。"
   },
   {
+    "word": "哈",
+    "pinyin": "hā",
+    "meaning": "exhale; sip; (sound of laughter)",
+    "level": 5,
+    "phrase": "哈",
+    "sentence": "我正在学习“哈”。"
+  },
+  {
     "word": "海关",
     "pinyin": "hǎiguān",
     "meaning": "customs (i.e. border inspection)",
@@ -9390,6 +12646,22 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "海鲜",
     "sentence": "我正在学习“海鲜”。"
+  },
+  {
+    "word": "喊",
+    "pinyin": "hǎn",
+    "meaning": "call; cry; shout",
+    "level": 5,
+    "phrase": "喊",
+    "sentence": "我正在学习“喊”。"
+  },
+  {
+    "word": "行业",
+    "pinyin": "hángyè",
+    "meaning": "industry; business",
+    "level": 5,
+    "phrase": "行业",
+    "sentence": "我正在学习“行业”。"
   },
   {
     "word": "豪华",
@@ -9488,6 +12760,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“核心”。"
   },
   {
+    "word": "恨",
+    "pinyin": "hèn",
+    "meaning": "to hate",
+    "level": 5,
+    "phrase": "恨",
+    "sentence": "我正在学习“恨”。"
+  },
+  {
     "word": "猴子",
     "pinyin": "hóuzi",
     "meaning": "monkey",
@@ -9552,12 +12832,12 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“胡同”。"
   },
   {
-    "word": "糊涂",
-    "pinyin": "hútu",
-    "meaning": "confused; bewildered; muddled",
+    "word": "壶",
+    "pinyin": "hú",
+    "meaning": "pot; kettle; jug; (mw for bottled liquids)",
     "level": 5,
-    "phrase": "糊涂",
-    "sentence": "我正在学习“糊涂”。"
+    "phrase": "壶",
+    "sentence": "我正在学习“壶”。"
   },
   {
     "word": "蝴蝶",
@@ -9568,6 +12848,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“蝴蝶”。"
   },
   {
+    "word": "糊涂",
+    "pinyin": "hútu",
+    "meaning": "confused; bewildered; muddled",
+    "level": 5,
+    "phrase": "糊涂",
+    "sentence": "我正在学习“糊涂”。"
+  },
+  {
     "word": "花生",
     "pinyin": "huāshēng",
     "meaning": "peanut",
@@ -9576,12 +12864,28 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“花生”。"
   },
   {
+    "word": "划",
+    "pinyin": "huà, huá",
+    "meaning": "delimit; to transfer; assign | to row; to paddle; to scratch",
+    "level": 5,
+    "phrase": "划",
+    "sentence": "我正在学习“划”。"
+  },
+  {
     "word": "华裔",
     "pinyin": "Huáyì",
     "meaning": "person of Chinese descent",
     "level": 5,
     "phrase": "华裔",
     "sentence": "我正在学习“华裔”。"
+  },
+  {
+    "word": "滑",
+    "pinyin": "huá",
+    "meaning": "slippery; cunning; crafty",
+    "level": 5,
+    "phrase": "滑",
+    "sentence": "我正在学习“滑”。"
   },
   {
     "word": "化学",
@@ -9648,6 +12952,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“黄金”。"
   },
   {
+    "word": "灰",
+    "pinyin": "huī",
+    "meaning": "ash; gray (grey); dust; lime",
+    "level": 5,
+    "phrase": "灰",
+    "sentence": "我正在学习“灰”。"
+  },
+  {
     "word": "灰尘",
     "pinyin": "huīchén",
     "meaning": "dust; dirt",
@@ -9664,6 +12976,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“灰心”。"
   },
   {
+    "word": "挥",
+    "pinyin": "huī",
+    "meaning": "to wave; brandish; wield; wipe away",
+    "level": 5,
+    "phrase": "挥",
+    "sentence": "我正在学习“挥”。"
+  },
+  {
     "word": "恢复",
     "pinyin": "huīfù",
     "meaning": "reinstate; resume; recover",
@@ -9678,14 +12998,6 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "汇率",
     "sentence": "我正在学习“汇率”。"
-  },
-  {
-    "word": "会计",
-    "pinyin": "kuàijì",
-    "meaning": "accountant; accounting",
-    "level": 5,
-    "phrase": "会计",
-    "sentence": "我正在学习“会计”。"
   },
   {
     "word": "婚礼",
@@ -9872,6 +13184,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“纪念”。"
   },
   {
+    "word": "系领带",
+    "pinyin": "jìlǐngdài",
+    "meaning": "tie a neck tie",
+    "level": 5,
+    "phrase": "系领带",
+    "sentence": "我正在学习“系领带”。"
+  },
+  {
     "word": "寂寞",
     "pinyin": "jìmò",
     "meaning": "lonely; lonesome",
@@ -9920,6 +13240,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“嘉宾”。"
   },
   {
+    "word": "甲",
+    "pinyin": "jiǎ",
+    "meaning": "one; armor (1st Heavenly Stem)",
+    "level": 5,
+    "phrase": "甲",
+    "sentence": "我正在学习“甲”。"
+  },
+  {
     "word": "假如",
     "pinyin": "jiǎrú",
     "meaning": "if; supposing; in case",
@@ -9958,6 +13286,14 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "驾驶",
     "sentence": "我正在学习“驾驶”。"
+  },
+  {
+    "word": "嫁",
+    "pinyin": "jià",
+    "meaning": "marry (a husband); take a husband",
+    "level": 5,
+    "phrase": "嫁",
+    "sentence": "我正在学习“嫁”。"
   },
   {
     "word": "坚决",
@@ -10006,6 +13342,14 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "兼职",
     "sentence": "我正在学习“兼职”。"
+  },
+  {
+    "word": "捡",
+    "pinyin": "jiǎn",
+    "meaning": "to pick up; collect; gather",
+    "level": 5,
+    "phrase": "捡",
+    "sentence": "我正在学习“捡”。"
   },
   {
     "word": "剪刀",
@@ -10120,6 +13464,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“交往”。"
   },
   {
+    "word": "浇",
+    "pinyin": "jiāo",
+    "meaning": "to water; irrigate; to pour; to sprinkle",
+    "level": 5,
+    "phrase": "浇",
+    "sentence": "我正在学习“浇”。"
+  },
+  {
     "word": "胶水",
     "pinyin": "jiāoshuǐ",
     "meaning": "(watery) glue; gum",
@@ -10134,14 +13486,6 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "角度",
     "sentence": "我正在学习“角度”。"
-  },
-  {
-    "word": "角色",
-    "pinyin": "juésè",
-    "meaning": "role; part",
-    "level": 5,
-    "phrase": "角色",
-    "sentence": "我正在学习“角色”。"
   },
   {
     "word": "狡猾",
@@ -10182,6 +13526,14 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "阶段",
     "sentence": "我正在学习“阶段”。"
+  },
+  {
+    "word": "结实",
+    "pinyin": "jiēshi",
+    "meaning": "sturdy; (also -shí: bear fruit)",
+    "level": 5,
+    "phrase": "结实",
+    "sentence": "我正在学习“结实”。"
   },
   {
     "word": "接触",
@@ -10240,14 +13592,6 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“结论”。"
   },
   {
-    "word": "结实",
-    "pinyin": "jiēshi",
-    "meaning": "sturdy; (also -shí: bear fruit)",
-    "level": 5,
-    "phrase": "结实",
-    "sentence": "我正在学习“结实”。"
-  },
-  {
     "word": "结账",
     "pinyin": "jiézhàng",
     "meaning": "pay the bill; settle accounts",
@@ -10256,12 +13600,12 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“结账”。"
   },
   {
-    "word": "桔子",
-    "pinyin": "júzi",
-    "meaning": "tangerine",
+    "word": "戒",
+    "pinyin": "jiè",
+    "meaning": "warn against; swear off",
     "level": 5,
-    "phrase": "桔子",
-    "sentence": "我正在学习“桔子”。"
+    "phrase": "戒",
+    "sentence": "我正在学习“戒”。"
   },
   {
     "word": "戒指",
@@ -10270,6 +13614,14 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "戒指",
     "sentence": "我正在学习“戒指”。"
+  },
+  {
+    "word": "届",
+    "pinyin": "jiè",
+    "meaning": "arrive at; period; session; (mw for events; meetings; etc.)",
+    "level": 5,
+    "phrase": "届",
+    "sentence": "我正在学习“届”。"
   },
   {
     "word": "借口",
@@ -10296,14 +13648,6 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“尽快”。"
   },
   {
-    "word": "尽力",
-    "pinyin": "jìn lì",
-    "meaning": "do one's best; to strive as much as possible",
-    "level": 5,
-    "phrase": "尽力",
-    "sentence": "我正在学习“尽力”。"
-  },
-  {
     "word": "尽量",
     "pinyin": "jǐnliàng",
     "meaning": "as much as possible; to the best of one's ability (jìn-: eat or drink to one's fill)",
@@ -10328,12 +13672,12 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“谨慎”。"
   },
   {
-    "word": "近代",
-    "pinyin": "jìndài",
-    "meaning": "modern times; latest generation",
+    "word": "尽力",
+    "pinyin": "jìn lì",
+    "meaning": "do one's best; to strive as much as possible",
     "level": 5,
-    "phrase": "近代",
-    "sentence": "我正在学习“近代”。"
+    "phrase": "尽力",
+    "sentence": "我正在学习“尽力”。"
   },
   {
     "word": "进步",
@@ -10350,6 +13694,14 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "进口",
     "sentence": "我正在学习“进口”。"
+  },
+  {
+    "word": "近代",
+    "pinyin": "jìndài",
+    "meaning": "modern times; latest generation",
+    "level": 5,
+    "phrase": "近代",
+    "sentence": "我正在学习“近代”。"
   },
   {
     "word": "经典",
@@ -10400,6 +13752,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“酒吧”。"
   },
   {
+    "word": "救",
+    "pinyin": "jiù",
+    "meaning": "to save (life); to assist; to rescue",
+    "level": 5,
+    "phrase": "救",
+    "sentence": "我正在学习“救”。"
+  },
+  {
     "word": "救护车",
     "pinyin": "jiùhùchē",
     "meaning": "ambulance",
@@ -10422,6 +13782,14 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "居然",
     "sentence": "我正在学习“居然”。"
+  },
+  {
+    "word": "桔子",
+    "pinyin": "júzi",
+    "meaning": "tangerine",
+    "level": 5,
+    "phrase": "桔子",
+    "sentence": "我正在学习“桔子”。"
   },
   {
     "word": "巨大",
@@ -10464,6 +13832,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“据说”。"
   },
   {
+    "word": "捐",
+    "pinyin": "juān",
+    "meaning": "to contribute; to donate; to subsribe to; to abandon; to relinquish; contribution; tax",
+    "level": 5,
+    "phrase": "捐",
+    "sentence": "我正在学习“捐”。"
+  },
+  {
     "word": "决赛",
     "pinyin": "juésài",
     "meaning": "finals (of a competition); final match",
@@ -10478,6 +13854,14 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "决心",
     "sentence": "我正在学习“决心”。"
+  },
+  {
+    "word": "角色",
+    "pinyin": "juésè",
+    "meaning": "role; part",
+    "level": 5,
+    "phrase": "角色",
+    "sentence": "我正在学习“角色”。"
   },
   {
     "word": "绝对",
@@ -10544,6 +13928,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“开水”。"
   },
   {
+    "word": "砍",
+    "pinyin": "kǎn",
+    "meaning": "to chop; cut down",
+    "level": 5,
+    "phrase": "砍",
+    "sentence": "我正在学习“砍”。"
+  },
+  {
     "word": "看不起",
     "pinyin": "kàn bu qǐ",
     "meaning": "look down upon; despise",
@@ -10558,6 +13950,22 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "看望",
     "sentence": "我正在学习“看望”。"
+  },
+  {
+    "word": "靠",
+    "pinyin": "kào",
+    "meaning": "depend on; lean on; near; to trust",
+    "level": 5,
+    "phrase": "靠",
+    "sentence": "我正在学习“靠”。"
+  },
+  {
+    "word": "颗",
+    "pinyin": "kē",
+    "meaning": "(mw for hearts and small, round things like seeds, grains, beans, etc.)",
+    "level": 5,
+    "phrase": "颗",
+    "sentence": "我正在学习“颗”。"
   },
   {
     "word": "可见",
@@ -10582,6 +13990,14 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "可怕",
     "sentence": "我正在学习“可怕”。"
+  },
+  {
+    "word": "克",
+    "pinyin": "kè",
+    "meaning": "gram; overcome; restrain",
+    "level": 5,
+    "phrase": "克",
+    "sentence": "我正在学习“克”。"
   },
   {
     "word": "克服",
@@ -10648,12 +14064,36 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“口味”。"
   },
   {
+    "word": "夸",
+    "pinyin": "kuā",
+    "meaning": "to boast; to praise; exaggerate",
+    "level": 5,
+    "phrase": "夸",
+    "sentence": "我正在学习“夸”。"
+  },
+  {
     "word": "夸张",
     "pinyin": "kuāzhāng",
     "meaning": "exaggerate; overstate; exaggerated; overstated; vaunted; hyperbole",
     "level": 5,
     "phrase": "夸张",
     "sentence": "我正在学习“夸张”。"
+  },
+  {
+    "word": "会计",
+    "pinyin": "kuàijì",
+    "meaning": "accountant; accounting",
+    "level": 5,
+    "phrase": "会计",
+    "sentence": "我正在学习“会计”。"
+  },
+  {
+    "word": "宽",
+    "pinyin": "kuān",
+    "meaning": "wide; broad; relaxed; lenient",
+    "level": 5,
+    "phrase": "宽",
+    "sentence": "我正在学习“宽”。"
   },
   {
     "word": "昆虫",
@@ -10678,6 +14118,22 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "辣椒",
     "sentence": "我正在学习“辣椒”。"
+  },
+  {
+    "word": "拦",
+    "pinyin": "lán",
+    "meaning": "to block; to cut off; hinder",
+    "level": 5,
+    "phrase": "拦",
+    "sentence": "我正在学习“拦”。"
+  },
+  {
+    "word": "烂",
+    "pinyin": "làn",
+    "meaning": "overcooked; rotten; soft; mushy",
+    "level": 5,
+    "phrase": "烂",
+    "sentence": "我正在学习“烂”。"
   },
   {
     "word": "朗读",
@@ -10760,20 +14216,12 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“乐观”。"
   },
   {
-    "word": "乐器",
-    "pinyin": "yuèqì",
-    "meaning": "musical instrument",
+    "word": "雷",
+    "pinyin": "léi",
+    "meaning": "thunder",
     "level": 5,
-    "phrase": "乐器",
-    "sentence": "我正在学习“乐器”。"
-  },
-  {
-    "word": "了不起",
-    "pinyin": "liǎobuqǐ",
-    "meaning": "incredible; extraordinary; great; amazing",
-    "level": 5,
-    "phrase": "了不起",
-    "sentence": "我正在学习“了不起”。"
+    "phrase": "雷",
+    "sentence": "我正在学习“雷”。"
   },
   {
     "word": "类型",
@@ -10806,6 +14254,14 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "离婚",
     "sentence": "我正在学习“离婚”。"
+  },
+  {
+    "word": "梨",
+    "pinyin": "lí",
+    "meaning": "pear",
+    "level": 5,
+    "phrase": "梨",
+    "sentence": "我正在学习“梨”。"
   },
   {
     "word": "理论",
@@ -10928,6 +14384,22 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“粮食”。"
   },
   {
+    "word": "亮",
+    "pinyin": "liàng",
+    "meaning": "bright; light; shiny",
+    "level": 5,
+    "phrase": "亮",
+    "sentence": "我正在学习“亮”。"
+  },
+  {
+    "word": "了不起",
+    "pinyin": "liǎobuqǐ",
+    "meaning": "incredible; extraordinary; great; amazing",
+    "level": 5,
+    "phrase": "了不起",
+    "sentence": "我正在学习“了不起”。"
+  },
+  {
     "word": "列车",
     "pinyin": "lièchē",
     "meaning": "train (railway term)",
@@ -10950,6 +14422,14 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "灵活",
     "sentence": "我正在学习“灵活”。"
+  },
+  {
+    "word": "铃",
+    "pinyin": "líng",
+    "meaning": "bell",
+    "level": 5,
+    "phrase": "铃",
+    "sentence": "我正在学习“铃”。"
   },
   {
     "word": "零件",
@@ -11006,6 +14486,22 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "流泪",
     "sentence": "我正在学习“流泪”。"
+  },
+  {
+    "word": "龙",
+    "pinyin": "lóng",
+    "meaning": "dragon (Kangxi radical 212)",
+    "level": 5,
+    "phrase": "龙",
+    "sentence": "我正在学习“龙”。"
+  },
+  {
+    "word": "漏",
+    "pinyin": "lòu",
+    "meaning": "to leak; to funnel; to let out",
+    "level": 5,
+    "phrase": "漏",
+    "sentence": "我正在学习“漏”。"
   },
   {
     "word": "陆地",
@@ -11070,6 +14566,14 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "落后",
     "sentence": "我正在学习“落后”。"
+  },
+  {
+    "word": "骂",
+    "pinyin": "mà",
+    "meaning": "scold; curse; condemn; verbally abuse",
+    "level": 5,
+    "phrase": "骂",
+    "sentence": "我正在学习“骂”。"
   },
   {
     "word": "麦克风",
@@ -11320,6 +14824,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“命运”。"
   },
   {
+    "word": "摸",
+    "pinyin": "mō",
+    "meaning": "to touch; to stroke; fish out; feel out",
+    "level": 5,
+    "phrase": "摸",
+    "sentence": "我正在学习“摸”。"
+  },
+  {
     "word": "模仿",
     "pinyin": "mófǎng",
     "meaning": "imitate; to copy",
@@ -11358,6 +14870,14 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "陌生",
     "sentence": "我正在学习“陌生”。"
+  },
+  {
+    "word": "某",
+    "pinyin": "mǒu",
+    "meaning": "a certain; some",
+    "level": 5,
+    "phrase": "某",
+    "sentence": "我正在学习“某”。"
   },
   {
     "word": "木头",
@@ -11440,6 +14960,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“内科”。"
   },
   {
+    "word": "嫩",
+    "pinyin": "nèn",
+    "meaning": "tender; inexperienced",
+    "level": 5,
+    "phrase": "嫩",
+    "sentence": "我正在学习“嫩”。"
+  },
+  {
     "word": "能干",
     "pinyin": "nénggàn",
     "meaning": "capable; competent",
@@ -11456,6 +14984,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“能源”。"
   },
   {
+    "word": "嗯",
+    "pinyin": "ēn",
+    "meaning": "(interjection expressing what?, huh? hmm? why? ok, etc.)",
+    "level": 5,
+    "phrase": "嗯",
+    "sentence": "我正在学习“嗯”。"
+  },
+  {
     "word": "年代",
     "pinyin": "niándài",
     "meaning": "decade; era",
@@ -11470,6 +15006,14 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "年纪",
     "sentence": "我正在学习“年纪”。"
+  },
+  {
+    "word": "念",
+    "pinyin": "niàn",
+    "meaning": "read aloud; to study; to miss or think of somebody",
+    "level": 5,
+    "phrase": "念",
+    "sentence": "我正在学习“念”。"
   },
   {
     "word": "宁可",
@@ -11512,6 +15056,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“农业”。"
   },
   {
+    "word": "浓",
+    "pinyin": "nóng",
+    "meaning": "concentrated; dense",
+    "level": 5,
+    "phrase": "浓",
+    "sentence": "我正在学习“浓”。"
+  },
+  {
     "word": "女士",
     "pinyin": "nǚshì",
     "meaning": "lady; madam",
@@ -11534,6 +15086,22 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "偶然",
     "sentence": "我正在学习“偶然”。"
+  },
+  {
+    "word": "拍",
+    "pinyin": "pāi",
+    "meaning": "to clap; to pat; to shoot (pictures, a film); send (a telegram)",
+    "level": 5,
+    "phrase": "拍",
+    "sentence": "我正在学习“拍”。"
+  },
+  {
+    "word": "派",
+    "pinyin": "pài",
+    "meaning": "dispatch; (mw for political groups; schools of thought; etc.)",
+    "level": 5,
+    "phrase": "派",
+    "sentence": "我正在学习“派”。"
   },
   {
     "word": "盼望",
@@ -11584,12 +15152,44 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“配合”。"
   },
   {
+    "word": "盆",
+    "pinyin": "pén",
+    "meaning": "basin; (flower) pot",
+    "level": 5,
+    "phrase": "盆",
+    "sentence": "我正在学习“盆”。"
+  },
+  {
+    "word": "碰",
+    "pinyin": "pèng",
+    "meaning": "to touch; to bump; to encounter",
+    "level": 5,
+    "phrase": "碰",
+    "sentence": "我正在学习“碰”。"
+  },
+  {
+    "word": "批",
+    "pinyin": "pī",
+    "meaning": "criticize; to comment; wholesale; (mw for batches, lots, etc.)",
+    "level": 5,
+    "phrase": "批",
+    "sentence": "我正在学习“批”。"
+  },
+  {
     "word": "批准",
     "pinyin": "pīzhǔn",
     "meaning": "approve; ratify",
     "level": 5,
     "phrase": "批准",
     "sentence": "我正在学习“批准”。"
+  },
+  {
+    "word": "披",
+    "pinyin": "pī",
+    "meaning": "drape over one's shoulders; split open; open",
+    "level": 5,
+    "phrase": "披",
+    "sentence": "我正在学习“披”。"
   },
   {
     "word": "疲劳",
@@ -11600,12 +15200,36 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“疲劳”。"
   },
   {
+    "word": "匹",
+    "pinyin": "pǐ",
+    "meaning": "ordinary person; (mw for horses, bolt of cloth)",
+    "level": 5,
+    "phrase": "匹",
+    "sentence": "我正在学习“匹”。"
+  },
+  {
+    "word": "片",
+    "pinyin": "piàn, piān",
+    "meaning": "(mw for pieces of things); a slice; a flake (Kangxi radical 91) | film; photo",
+    "level": 5,
+    "phrase": "片",
+    "sentence": "我正在学习“片”。"
+  },
+  {
     "word": "片面",
     "pinyin": "piànmiàn",
     "meaning": "one-sided; unilateral",
     "level": 5,
     "phrase": "片面",
     "sentence": "我正在学习“片面”。"
+  },
+  {
+    "word": "飘",
+    "pinyin": "piāo",
+    "meaning": "to float; flutter",
+    "level": 5,
+    "phrase": "飘",
+    "sentence": "我正在学习“飘”。"
   },
   {
     "word": "拼音",
@@ -11622,6 +15246,14 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "频道",
     "sentence": "我正在学习“频道”。"
+  },
+  {
+    "word": "平",
+    "pinyin": "píng",
+    "meaning": "flat; level; equal; ordinary",
+    "level": 5,
+    "phrase": "平",
+    "sentence": "我正在学习“平”。"
   },
   {
     "word": "平安",
@@ -11686,6 +15318,14 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "评价",
     "sentence": "我正在学习“评价”。"
+  },
+  {
+    "word": "凭",
+    "pinyin": "píng",
+    "meaning": "lean against; evidence; proof; no matter (what/how/etc.)",
+    "level": 5,
+    "phrase": "凭",
+    "sentence": "我正在学习“凭”。"
   },
   {
     "word": "迫切",
@@ -11784,12 +15424,44 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“谦虚”。"
   },
   {
+    "word": "签",
+    "pinyin": "qiān",
+    "meaning": "bamboo used for drawing lots; toothpick; to sign (one's name)",
+    "level": 5,
+    "phrase": "签",
+    "sentence": "我正在学习“签”。"
+  },
+  {
     "word": "前途",
     "pinyin": "qiántú",
     "meaning": "future; prospects; outlook (for the future)",
     "level": 5,
     "phrase": "前途",
     "sentence": "我正在学习“前途”。"
+  },
+  {
+    "word": "浅",
+    "pinyin": "qiǎn",
+    "meaning": "shallow; simple; superficial; light (of colors)",
+    "level": 5,
+    "phrase": "浅",
+    "sentence": "我正在学习“浅”。"
+  },
+  {
+    "word": "欠",
+    "pinyin": "qiàn",
+    "meaning": "yawn; to lack; owe (Kangxi radical 76)",
+    "level": 5,
+    "phrase": "欠",
+    "sentence": "我正在学习“欠”。"
+  },
+  {
+    "word": "枪",
+    "pinyin": "qiāng",
+    "meaning": "gun; spear",
+    "level": 5,
+    "phrase": "枪",
+    "sentence": "我正在学习“枪”。"
   },
   {
     "word": "强调",
@@ -11808,6 +15480,22 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“强烈”。"
   },
   {
+    "word": "墙",
+    "pinyin": "qiáng",
+    "meaning": "wall",
+    "level": 5,
+    "phrase": "墙",
+    "sentence": "我正在学习“墙”。"
+  },
+  {
+    "word": "抢",
+    "pinyin": "qiǎng, qiāng",
+    "meaning": "fight over; vie for; grab; rush | bump against",
+    "level": 5,
+    "phrase": "抢",
+    "sentence": "我正在学习“抢”。"
+  },
+  {
     "word": "悄悄",
     "pinyin": "qiāoqiāo",
     "meaning": "quietly",
@@ -11816,12 +15504,28 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“悄悄”。"
   },
   {
+    "word": "瞧",
+    "pinyin": "qiáo",
+    "meaning": "look at; see (colloquial)",
+    "level": 5,
+    "phrase": "瞧",
+    "sentence": "我正在学习“瞧”。"
+  },
+  {
     "word": "巧妙",
     "pinyin": "qiǎomiào",
     "meaning": "ingenious; clever",
     "level": 5,
     "phrase": "巧妙",
     "sentence": "我正在学习“巧妙”。"
+  },
+  {
+    "word": "切",
+    "pinyin": "qiē, qiè",
+    "meaning": "to cut; to chop | correspond to; absolutely; ardently",
+    "level": 5,
+    "phrase": "切",
+    "sentence": "我正在学习“切”。"
   },
   {
     "word": "亲爱",
@@ -11854,6 +15558,14 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "勤奋",
     "sentence": "我正在学习“勤奋”。"
+  },
+  {
+    "word": "青",
+    "pinyin": "qīng",
+    "meaning": "blue; green; young (Kangxi radical 174); Qinghai province (abbr.)",
+    "level": 5,
+    "phrase": "青",
+    "sentence": "我正在学习“青”。"
   },
   {
     "word": "青春",
@@ -11952,6 +15664,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“取消”。"
   },
   {
+    "word": "娶",
+    "pinyin": "qǔ",
+    "meaning": "marry (a wife); take a wife",
+    "level": 5,
+    "phrase": "娶",
+    "sentence": "我正在学习“娶”。"
+  },
+  {
     "word": "去世",
     "pinyin": "qùshì",
     "meaning": "pass away; die",
@@ -11960,12 +15680,12 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“去世”。"
   },
   {
-    "word": "全面",
-    "pinyin": "quánmiàn",
-    "meaning": "all-around; comprehensive; fully",
+    "word": "圈",
+    "pinyin": "quān",
+    "meaning": "circle; ring; (mw for loops, orbits, etc.)",
     "level": 5,
-    "phrase": "全面",
-    "sentence": "我正在学习“全面”。"
+    "phrase": "圈",
+    "sentence": "我正在学习“圈”。"
   },
   {
     "word": "权力",
@@ -11982,6 +15702,22 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "权利",
     "sentence": "我正在学习“权利”。"
+  },
+  {
+    "word": "全面",
+    "pinyin": "quánmiàn",
+    "meaning": "all-around; comprehensive; fully",
+    "level": 5,
+    "phrase": "全面",
+    "sentence": "我正在学习“全面”。"
+  },
+  {
+    "word": "劝",
+    "pinyin": "quàn",
+    "meaning": "advise; to urge; persuade",
+    "level": 5,
+    "phrase": "劝",
+    "sentence": "我正在学习“劝”。"
   },
   {
     "word": "缺乏",
@@ -12008,12 +15744,28 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“确认”。"
   },
   {
+    "word": "群",
+    "pinyin": "qún",
+    "meaning": "crowd; group; (mw for groups, flocks, or swarms)",
+    "level": 5,
+    "phrase": "群",
+    "sentence": "我正在学习“群”。"
+  },
+  {
     "word": "燃烧",
     "pinyin": "ránshāo",
     "meaning": "combustion; burn; kindle",
     "level": 5,
     "phrase": "燃烧",
     "sentence": "我正在学习“燃烧”。"
+  },
+  {
+    "word": "绕",
+    "pinyin": "rào",
+    "meaning": "to wind; to coil; move round",
+    "level": 5,
+    "phrase": "绕",
+    "sentence": "我正在学习“绕”。"
   },
   {
     "word": "热爱",
@@ -12176,12 +15928,36 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“如今”。"
   },
   {
+    "word": "软",
+    "pinyin": "ruǎn",
+    "meaning": "soft",
+    "level": 5,
+    "phrase": "软",
+    "sentence": "我正在学习“软”。"
+  },
+  {
     "word": "软件",
     "pinyin": "ruǎnjiàn",
     "meaning": "(computer) software",
     "level": 5,
     "phrase": "软件",
     "sentence": "我正在学习“软件”。"
+  },
+  {
+    "word": "弱",
+    "pinyin": "ruò",
+    "meaning": "weak; feeble; young",
+    "level": 5,
+    "phrase": "弱",
+    "sentence": "我正在学习“弱”。"
+  },
+  {
+    "word": "洒",
+    "pinyin": "sǎ",
+    "meaning": "to sprinkle; to spray; to spill",
+    "level": 5,
+    "phrase": "洒",
+    "sentence": "我正在学习“洒”。"
   },
   {
     "word": "嗓子",
@@ -12200,6 +15976,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“色彩”。"
   },
   {
+    "word": "杀",
+    "pinyin": "shā",
+    "meaning": "to kill; to murder",
+    "level": 5,
+    "phrase": "杀",
+    "sentence": "我正在学习“杀”。"
+  },
+  {
     "word": "沙漠",
     "pinyin": "shāmò",
     "meaning": "desert",
@@ -12214,6 +15998,22 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "沙滩",
     "sentence": "我正在学习“沙滩”。"
+  },
+  {
+    "word": "傻",
+    "pinyin": "shǎ",
+    "meaning": "foolish; fool",
+    "level": 5,
+    "phrase": "傻",
+    "sentence": "我正在学习“傻”。"
+  },
+  {
+    "word": "晒",
+    "pinyin": "shài",
+    "meaning": "to dry in the sun; shine upon; to sun; bask",
+    "level": 5,
+    "phrase": "晒",
+    "sentence": "我正在学习“晒”。"
   },
   {
     "word": "删除",
@@ -12296,6 +16096,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“上当”。"
   },
   {
+    "word": "蛇",
+    "pinyin": "shé",
+    "meaning": "snake; serpent",
+    "level": 5,
+    "phrase": "蛇",
+    "sentence": "我正在学习“蛇”。"
+  },
+  {
     "word": "舍不得",
     "pinyin": "shěbude",
     "meaning": "hate to part with; begrudge doing something",
@@ -12344,6 +16152,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“摄影”。"
   },
   {
+    "word": "伸",
+    "pinyin": "shēn",
+    "meaning": "to stretch; extend",
+    "level": 5,
+    "phrase": "伸",
+    "sentence": "我正在学习“伸”。"
+  },
+  {
     "word": "身材",
     "pinyin": "shēncái",
     "meaning": "stature; figure; build",
@@ -12382,6 +16198,14 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "神秘",
     "sentence": "我正在学习“神秘”。"
+  },
+  {
+    "word": "升",
+    "pinyin": "shēng",
+    "meaning": "rise; hoist; promote; liter",
+    "level": 5,
+    "phrase": "升",
+    "sentence": "我正在学习“升”。"
   },
   {
     "word": "生产",
@@ -12462,6 +16286,14 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "失业",
     "sentence": "我正在学习“失业”。"
+  },
+  {
+    "word": "诗",
+    "pinyin": "shī",
+    "meaning": "poem; poetry; verse",
+    "level": 5,
+    "phrase": "诗",
+    "sentence": "我正在学习“诗”。"
   },
   {
     "word": "狮子",
@@ -12624,6 +16456,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“市场”。"
   },
   {
+    "word": "似的",
+    "pinyin": "shìde",
+    "meaning": "seems as if; rather like",
+    "level": 5,
+    "phrase": "似的",
+    "sentence": "我正在学习“似的”。"
+  },
+  {
     "word": "事实",
     "pinyin": "shìshí",
     "meaning": "fact; in fact",
@@ -12712,6 +16552,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“手指”。"
   },
   {
+    "word": "首",
+    "pinyin": "shǒu",
+    "meaning": "head; chief; first; (mw for poems and songs) (Kangxi radical 185)",
+    "level": 5,
+    "phrase": "首",
+    "sentence": "我正在学习“首”。"
+  },
+  {
     "word": "寿命",
     "pinyin": "shòumìng",
     "meaning": "life span; life expectancy",
@@ -12792,6 +16640,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“鼠标”。"
   },
   {
+    "word": "数",
+    "pinyin": "shù, shǔ",
+    "meaning": "number | to count; to rank",
+    "level": 5,
+    "phrase": "数",
+    "sentence": "我正在学习“数”。"
+  },
+  {
     "word": "数据",
     "pinyin": "shùjù",
     "meaning": "data; numbers; digital",
@@ -12816,12 +16672,28 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“摔倒”。"
   },
   {
+    "word": "甩",
+    "pinyin": "shuǎi",
+    "meaning": "to throw; to fling; to swing; cast off",
+    "level": 5,
+    "phrase": "甩",
+    "sentence": "我正在学习“甩”。"
+  },
+  {
     "word": "双方",
     "pinyin": "shuāngfāng",
     "meaning": "bilateral; both sides; both parties involved",
     "level": 5,
     "phrase": "双方",
     "sentence": "我正在学习“双方”。"
+  },
+  {
+    "word": "税",
+    "pinyin": "shuì",
+    "meaning": "tax",
+    "level": 5,
+    "phrase": "税",
+    "sentence": "我正在学习“税”。"
   },
   {
     "word": "说不定",
@@ -12880,12 +16752,12 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“思想”。"
   },
   {
-    "word": "似的",
-    "pinyin": "shìde",
-    "meaning": "seems as if; rather like",
+    "word": "撕",
+    "pinyin": "sī",
+    "meaning": "to tear (something)",
     "level": 5,
-    "phrase": "似的",
-    "sentence": "我正在学习“似的”。"
+    "phrase": "撕",
+    "sentence": "我正在学习“撕”。"
   },
   {
     "word": "似乎",
@@ -12936,6 +16808,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“随手”。"
   },
   {
+    "word": "碎",
+    "pinyin": "suì",
+    "meaning": "broken; break into pieces",
+    "level": 5,
+    "phrase": "碎",
+    "sentence": "我正在学习“碎”。"
+  },
+  {
     "word": "损失",
     "pinyin": "sǔnshī",
     "meaning": "loss (financial); lose",
@@ -12950,6 +16830,22 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "缩短",
     "sentence": "我正在学习“缩短”。"
+  },
+  {
+    "word": "所",
+    "pinyin": "suǒ",
+    "meaning": "place; that which; (mw for houses, buildings)",
+    "level": 5,
+    "phrase": "所",
+    "sentence": "我正在学习“所”。"
+  },
+  {
+    "word": "锁",
+    "pinyin": "suǒ",
+    "meaning": "lock",
+    "level": 5,
+    "phrase": "锁",
+    "sentence": "我正在学习“锁”。"
   },
   {
     "word": "台阶",
@@ -12992,12 +16888,36 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“坦率”。"
   },
   {
+    "word": "烫",
+    "pinyin": "tàng",
+    "meaning": "to scald; to burn; scalding hot; to iron",
+    "level": 5,
+    "phrase": "烫",
+    "sentence": "我正在学习“烫”。"
+  },
+  {
+    "word": "逃",
+    "pinyin": "táo",
+    "meaning": "to escape; run away; flee",
+    "level": 5,
+    "phrase": "逃",
+    "sentence": "我正在学习“逃”。"
+  },
+  {
     "word": "逃避",
     "pinyin": "táobì",
     "meaning": "to escape; evade; shirk",
     "level": 5,
     "phrase": "逃避",
     "sentence": "我正在学习“逃避”。"
+  },
+  {
+    "word": "桃",
+    "pinyin": "táo",
+    "meaning": "peach",
+    "level": 5,
+    "phrase": "桃",
+    "sentence": "我正在学习“桃”。"
   },
   {
     "word": "淘气",
@@ -13014,6 +16934,14 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "讨价还价",
     "sentence": "我正在学习“讨价还价”。"
+  },
+  {
+    "word": "套",
+    "pinyin": "tào",
+    "meaning": "cover; (mw for sets of things); tie together",
+    "level": 5,
+    "phrase": "套",
+    "sentence": "我正在学习“套”。"
   },
   {
     "word": "特色",
@@ -13128,6 +17056,22 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“天真”。"
   },
   {
+    "word": "调皮",
+    "pinyin": "tiáopí",
+    "meaning": "naughty; mischievous; unruly",
+    "level": 5,
+    "phrase": "调皮",
+    "sentence": "我正在学习“调皮”。"
+  },
+  {
+    "word": "调整",
+    "pinyin": "tiáozhěng",
+    "meaning": "adjustment; revision",
+    "level": 5,
+    "phrase": "调整",
+    "sentence": "我正在学习“调整”。"
+  },
+  {
     "word": "挑战",
     "pinyin": "tiǎozhàn",
     "meaning": "challenge",
@@ -13166,6 +17110,14 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "痛快",
     "sentence": "我正在学习“痛快”。"
+  },
+  {
+    "word": "偷",
+    "pinyin": "tōu",
+    "meaning": "steal; pilfer",
+    "level": 5,
+    "phrase": "偷",
+    "sentence": "我正在学习“偷”。"
   },
   {
     "word": "投入",
@@ -13216,12 +17168,28 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“土豆”。"
   },
   {
+    "word": "吐",
+    "pinyin": "tǔ, tù",
+    "meaning": "to spit | to vomit; throw up",
+    "level": 5,
+    "phrase": "吐",
+    "sentence": "我正在学习“吐”。"
+  },
+  {
     "word": "兔子",
     "pinyin": "tùzi",
     "meaning": "rabbit; hare",
     "level": 5,
     "phrase": "兔子",
     "sentence": "我正在学习“兔子”。"
+  },
+  {
+    "word": "团",
+    "pinyin": "tuán",
+    "meaning": "round; ball; group; unite; dumpling; (mw for ball-like things)",
+    "level": 5,
+    "phrase": "团",
+    "sentence": "我正在学习“团”。"
   },
   {
     "word": "推辞",
@@ -13248,6 +17216,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“推荐”。"
   },
   {
+    "word": "退",
+    "pinyin": "tuì",
+    "meaning": "to retreat; decline; withdraw",
+    "level": 5,
+    "phrase": "退",
+    "sentence": "我正在学习“退”。"
+  },
+  {
     "word": "退步",
     "pinyin": "tuìbù",
     "meaning": "to degenerate; to regress",
@@ -13262,6 +17238,14 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "退休",
     "sentence": "我正在学习“退休”。"
+  },
+  {
+    "word": "歪",
+    "pinyin": "wāi",
+    "meaning": "askew; crooked; devious; recline to take a rest (colloquial)",
+    "level": 5,
+    "phrase": "歪",
+    "sentence": "我正在学习“歪”。"
   },
   {
     "word": "外公",
@@ -13368,6 +17352,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“微笑”。"
   },
   {
+    "word": "违反",
+    "pinyin": "wéifǎn",
+    "meaning": "violate (a law)",
+    "level": 5,
+    "phrase": "违反",
+    "sentence": "我正在学习“违反”。"
+  },
+  {
     "word": "围巾",
     "pinyin": "wéijīn",
     "meaning": "scarf; shawl",
@@ -13382,14 +17374,6 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "围绕",
     "sentence": "我正在学习“围绕”。"
-  },
-  {
-    "word": "违反",
-    "pinyin": "wéifǎn",
-    "meaning": "violate (a law)",
-    "level": 5,
-    "phrase": "违反",
-    "sentence": "我正在学习“违反”。"
   },
   {
     "word": "唯一",
@@ -13464,6 +17448,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“位置”。"
   },
   {
+    "word": "胃",
+    "pinyin": "wèi",
+    "meaning": "stomach",
+    "level": 5,
+    "phrase": "胃",
+    "sentence": "我正在学习“胃”。"
+  },
+  {
     "word": "胃口",
     "pinyin": "wèikǒu",
     "meaning": "appetite",
@@ -13526,6 +17518,22 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "文字",
     "sentence": "我正在学习“文字”。"
+  },
+  {
+    "word": "闻",
+    "pinyin": "wén",
+    "meaning": "hear; to smell; news; reputation",
+    "level": 5,
+    "phrase": "闻",
+    "sentence": "我正在学习“闻”。"
+  },
+  {
+    "word": "吻",
+    "pinyin": "wěn",
+    "meaning": "kiss; lips",
+    "level": 5,
+    "phrase": "吻",
+    "sentence": "我正在学习“吻”。"
   },
   {
     "word": "稳定",
@@ -13600,6 +17608,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“武术”。"
   },
   {
+    "word": "勿",
+    "pinyin": "wù",
+    "meaning": "not; do not",
+    "level": 5,
+    "phrase": "勿",
+    "sentence": "我正在学习“勿”。"
+  },
+  {
     "word": "物理",
     "pinyin": "wùlǐ",
     "meaning": "physics; physical",
@@ -13614,6 +17630,14 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "物质",
     "sentence": "我正在学习“物质”。"
+  },
+  {
+    "word": "雾",
+    "pinyin": "wù",
+    "meaning": "fog; mist",
+    "level": 5,
+    "phrase": "雾",
+    "sentence": "我正在学习“雾”。"
   },
   {
     "word": "吸取",
@@ -13640,12 +17664,12 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“戏剧”。"
   },
   {
-    "word": "系领带",
-    "pinyin": "jìlǐngdài",
-    "meaning": "tie a neck tie",
+    "word": "系",
+    "pinyin": "xì, jì",
+    "meaning": "be; relate to; system; fasten; department; faculty; connect | to tie",
     "level": 5,
-    "phrase": "系领带",
-    "sentence": "我正在学习“系领带”。"
+    "phrase": "系",
+    "sentence": "我正在学习“系”。"
   },
   {
     "word": "系统",
@@ -13664,12 +17688,28 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“细节”。"
   },
   {
+    "word": "瞎",
+    "pinyin": "xiā",
+    "meaning": "blind",
+    "level": 5,
+    "phrase": "瞎",
+    "sentence": "我正在学习“瞎”。"
+  },
+  {
     "word": "下载",
     "pinyin": "xiàzǎi",
     "meaning": "to download",
     "level": 5,
     "phrase": "下载",
     "sentence": "我正在学习“下载”。"
+  },
+  {
+    "word": "吓",
+    "pinyin": "xià",
+    "meaning": "frighten; to scare; intimidate",
+    "level": 5,
+    "phrase": "吓",
+    "sentence": "我正在学习“吓”。"
   },
   {
     "word": "夏令营",
@@ -13710,6 +17750,14 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "显示",
     "sentence": "我正在学习“显示”。"
+  },
+  {
+    "word": "县",
+    "pinyin": "xiàn",
+    "meaning": "county; district",
+    "level": 5,
+    "phrase": "县",
+    "sentence": "我正在学习“县”。"
   },
   {
     "word": "现代",
@@ -13816,6 +17864,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“想象”。"
   },
   {
+    "word": "项",
+    "pinyin": "xiàng",
+    "meaning": "nape (of the neck); sum (of money); mw item",
+    "level": 5,
+    "phrase": "项",
+    "sentence": "我正在学习“项”。"
+  },
+  {
     "word": "项链",
     "pinyin": "xiàngliàn",
     "meaning": "necklace",
@@ -13920,12 +17976,36 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“效率”。"
   },
   {
+    "word": "歇",
+    "pinyin": "xiē",
+    "meaning": "to rest; to go to bed; to take a break",
+    "level": 5,
+    "phrase": "歇",
+    "sentence": "我正在学习“歇”。"
+  },
+  {
+    "word": "斜",
+    "pinyin": "xié",
+    "meaning": "slanting; tilted",
+    "level": 5,
+    "phrase": "斜",
+    "sentence": "我正在学习“斜”。"
+  },
+  {
     "word": "写作",
     "pinyin": "xiězuò",
     "meaning": "writing; composition; written works",
     "level": 5,
     "phrase": "写作",
     "sentence": "我正在学习“写作”。"
+  },
+  {
+    "word": "血",
+    "pinyin": "xuè",
+    "meaning": "blood (Kangxi radical 143)",
+    "level": 5,
+    "phrase": "血",
+    "sentence": "我正在学习“血”。"
   },
   {
     "word": "心理",
@@ -13990,14 +18070,6 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "行为",
     "sentence": "我正在学习“行为”。"
-  },
-  {
-    "word": "行业",
-    "pinyin": "hángyè",
-    "meaning": "industry; business",
-    "level": 5,
-    "phrase": "行业",
-    "sentence": "我正在学习“行业”。"
   },
   {
     "word": "形成",
@@ -14078,6 +18150,14 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "兄弟",
     "sentence": "我正在学习“兄弟”。"
+  },
+  {
+    "word": "胸",
+    "pinyin": "xiōng",
+    "meaning": "chest; bosom; heart",
+    "level": 5,
+    "phrase": "胸",
+    "sentence": "我正在学习“胸”。"
   },
   {
     "word": "休闲",
@@ -14240,12 +18320,44 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“阳台”。"
   },
   {
+    "word": "痒",
+    "pinyin": "yǎng",
+    "meaning": "to itch; itchy",
+    "level": 5,
+    "phrase": "痒",
+    "sentence": "我正在学习“痒”。"
+  },
+  {
     "word": "样式",
     "pinyin": "yàngshì",
     "meaning": "type; style; form",
     "level": 5,
     "phrase": "样式",
     "sentence": "我正在学习“样式”。"
+  },
+  {
+    "word": "腰",
+    "pinyin": "yāo",
+    "meaning": "waist; lower back; pocket",
+    "level": 5,
+    "phrase": "腰",
+    "sentence": "我正在学习“腰”。"
+  },
+  {
+    "word": "摇",
+    "pinyin": "yáo",
+    "meaning": "to shake; to rock",
+    "level": 5,
+    "phrase": "摇",
+    "sentence": "我正在学习“摇”。"
+  },
+  {
+    "word": "咬",
+    "pinyin": "yǎo",
+    "meaning": "to bite; to nip",
+    "level": 5,
+    "phrase": "咬",
+    "sentence": "我正在学习“咬”。"
   },
   {
     "word": "要不",
@@ -14270,6 +18382,14 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "业余",
     "sentence": "我正在学习“业余”。"
+  },
+  {
+    "word": "夜",
+    "pinyin": "yè",
+    "meaning": "night; darkness",
+    "level": 5,
+    "phrase": "夜",
+    "sentence": "我正在学习“夜”。"
   },
   {
     "word": "一辈子",
@@ -14352,6 +18472,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“疑问”。"
   },
   {
+    "word": "乙",
+    "pinyin": "yǐ",
+    "meaning": "two; twist (2nd Heavenly Stem) (Kangxi radical 5)",
+    "level": 5,
+    "phrase": "乙",
+    "sentence": "我正在学习“乙”。"
+  },
+  {
     "word": "以及",
     "pinyin": "yǐjí",
     "meaning": "as well as; too; (formal) and",
@@ -14366,6 +18494,14 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "以来",
     "sentence": "我正在学习“以来”。"
+  },
+  {
+    "word": "亿",
+    "pinyin": "yì",
+    "meaning": "one hundred million (100,000,000)",
+    "level": 5,
+    "phrase": "亿",
+    "sentence": "我正在学习“亿”。"
   },
   {
     "word": "义务",
@@ -14416,28 +18552,20 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“因素”。"
   },
   {
+    "word": "银",
+    "pinyin": "yín",
+    "meaning": "silver (the element)",
+    "level": 5,
+    "phrase": "银",
+    "sentence": "我正在学习“银”。"
+  },
+  {
     "word": "印刷",
     "pinyin": "yìnshuā",
     "meaning": "print",
     "level": 5,
     "phrase": "印刷",
     "sentence": "我正在学习“印刷”。"
-  },
-  {
-    "word": "应付",
-    "pinyin": "yìngfu",
-    "meaning": "to cope with; deal with; handle; do sth. perfunctorily; do sth. after a fashion; make do",
-    "level": 5,
-    "phrase": "应付",
-    "sentence": "我正在学习“应付”。"
-  },
-  {
-    "word": "应用",
-    "pinyin": "yìngyòng",
-    "meaning": "to apply; to use; application",
-    "level": 5,
-    "phrase": "应用",
-    "sentence": "我正在学习“应用”。"
   },
   {
     "word": "英俊",
@@ -14486,6 +18614,30 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "影子",
     "sentence": "我正在学习“影子”。"
+  },
+  {
+    "word": "应付",
+    "pinyin": "yìngfu",
+    "meaning": "to cope with; deal with; handle; do sth. perfunctorily; do sth. after a fashion; make do",
+    "level": 5,
+    "phrase": "应付",
+    "sentence": "我正在学习“应付”。"
+  },
+  {
+    "word": "应用",
+    "pinyin": "yìngyòng",
+    "meaning": "to apply; to use; application",
+    "level": 5,
+    "phrase": "应用",
+    "sentence": "我正在学习“应用”。"
+  },
+  {
+    "word": "硬",
+    "pinyin": "yìng",
+    "meaning": "hard; stiff; obstinately",
+    "level": 5,
+    "phrase": "硬",
+    "sentence": "我正在学习“硬”。"
   },
   {
     "word": "硬件",
@@ -14696,12 +18848,36 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“原则”。"
   },
   {
+    "word": "圆",
+    "pinyin": "yuán",
+    "meaning": "round; circular; formal unit of Chinese currency",
+    "level": 5,
+    "phrase": "圆",
+    "sentence": "我正在学习“圆”。"
+  },
+  {
     "word": "愿望",
     "pinyin": "yuànwàng",
     "meaning": "desire; wish; aspiration",
     "level": 5,
     "phrase": "愿望",
     "sentence": "我正在学习“愿望”。"
+  },
+  {
+    "word": "乐器",
+    "pinyin": "yuèqì",
+    "meaning": "musical instrument",
+    "level": 5,
+    "phrase": "乐器",
+    "sentence": "我正在学习“乐器”。"
+  },
+  {
+    "word": "晕",
+    "pinyin": "yūn",
+    "meaning": "dizzy; to fain",
+    "level": 5,
+    "phrase": "晕",
+    "sentence": "我正在学习“晕”。"
   },
   {
     "word": "运气",
@@ -14792,12 +18968,36 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“造成”。"
   },
   {
+    "word": "则",
+    "pinyin": "zé",
+    "meaning": "standard; regulation; however; in that case",
+    "level": 5,
+    "phrase": "则",
+    "sentence": "我正在学习“则”。"
+  },
+  {
     "word": "责备",
     "pinyin": "zébèi",
     "meaning": "to blame; criticize (sb.); accuse",
     "level": 5,
     "phrase": "责备",
     "sentence": "我正在学习“责备”。"
+  },
+  {
+    "word": "摘",
+    "pinyin": "zhāi",
+    "meaning": "to pick (flowers, fruit, etc.); to pluck; to take; to borrow",
+    "level": 5,
+    "phrase": "摘",
+    "sentence": "我正在学习“摘”。"
+  },
+  {
+    "word": "窄",
+    "pinyin": "zhǎi",
+    "meaning": "narrow; petty; hard-up",
+    "level": 5,
+    "phrase": "窄",
+    "sentence": "我正在学习“窄”。"
   },
   {
     "word": "粘贴",
@@ -14824,6 +19024,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“展览”。"
   },
   {
+    "word": "占",
+    "pinyin": "zhàn",
+    "meaning": "occupy; seize; to constitute",
+    "level": 5,
+    "phrase": "占",
+    "sentence": "我正在学习“占”。"
+  },
+  {
     "word": "战争",
     "pinyin": "zhànzhēng",
     "meaning": "war; conflict",
@@ -14840,12 +19048,12 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“长辈”。"
   },
   {
-    "word": "长途",
-    "pinyin": "chángtú",
-    "meaning": "long distance",
+    "word": "涨",
+    "pinyin": "zhǎng, zhàng",
+    "meaning": "to rise (of prices, rivers); to go up | to swell; to bloat",
     "level": 5,
-    "phrase": "长途",
-    "sentence": "我正在学习“长途”。"
+    "phrase": "涨",
+    "sentence": "我正在学习“涨”。"
   },
   {
     "word": "掌握",
@@ -14872,6 +19080,22 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“招待”。"
   },
   {
+    "word": "着火",
+    "pinyin": "zháohuǒ",
+    "meaning": "catch fire; ignite",
+    "level": 5,
+    "phrase": "着火",
+    "sentence": "我正在学习“着火”。"
+  },
+  {
+    "word": "着凉",
+    "pinyin": "zháo liáng",
+    "meaning": "catch a cold",
+    "level": 5,
+    "phrase": "着凉",
+    "sentence": "我正在学习“着凉”。"
+  },
+  {
     "word": "召开",
     "pinyin": "zhàokāi",
     "meaning": "convene (a conference or meeting); call together",
@@ -14894,22 +19118,6 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "哲学",
     "sentence": "我正在学习“哲学”。"
-  },
-  {
-    "word": "着火",
-    "pinyin": "zháohuǒ",
-    "meaning": "catch fire; ignite",
-    "level": 5,
-    "phrase": "着火",
-    "sentence": "我正在学习“着火”。"
-  },
-  {
-    "word": "着凉",
-    "pinyin": "zháo liáng",
-    "meaning": "catch a cold",
-    "level": 5,
-    "phrase": "着凉",
-    "sentence": "我正在学习“着凉”。"
   },
   {
     "word": "针对",
@@ -14944,6 +19152,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“诊断”。"
   },
   {
+    "word": "阵",
+    "pinyin": "zhèn",
+    "meaning": "short period; disposition of troops; wave",
+    "level": 5,
+    "phrase": "阵",
+    "sentence": "我正在学习“阵”。"
+  },
+  {
     "word": "振动",
     "pinyin": "zhèndòng",
     "meaning": "vibrate; vibration",
@@ -14976,6 +19192,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“征求”。"
   },
   {
+    "word": "睁",
+    "pinyin": "zhēng",
+    "meaning": "to open (eyes)",
+    "level": 5,
+    "phrase": "睁",
+    "sentence": "我正在学习“睁”。"
+  },
+  {
     "word": "整个",
     "pinyin": "zhěnggè",
     "meaning": "whole; entire; total",
@@ -14998,6 +19222,14 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "整体",
     "sentence": "我正在学习“整体”。"
+  },
+  {
+    "word": "正",
+    "pinyin": "zhèng",
+    "meaning": "straight; currently; correct; just (right); pure; precisely",
+    "level": 5,
+    "phrase": "正",
+    "sentence": "我正在学习“正”。"
   },
   {
     "word": "证件",
@@ -15032,6 +19264,22 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“政治”。"
   },
   {
+    "word": "挣",
+    "pinyin": "zhèng, zhēng",
+    "meaning": "to earn | to struggle",
+    "level": 5,
+    "phrase": "挣",
+    "sentence": "我正在学习“挣”。"
+  },
+  {
+    "word": "支",
+    "pinyin": "zhī",
+    "meaning": "branch; support; put up; (mw for long; narrow objects) (Kangxi radical 65)",
+    "level": 5,
+    "phrase": "支",
+    "sentence": "我正在学习“支”。"
+  },
+  {
     "word": "支票",
     "pinyin": "zhīpiào",
     "meaning": "(bank) check",
@@ -15046,6 +19294,14 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "执照",
     "sentence": "我正在学习“执照”。"
+  },
+  {
+    "word": "直",
+    "pinyin": "zhí",
+    "meaning": "straight; vertical; frank; directly; continuously",
+    "level": 5,
+    "phrase": "直",
+    "sentence": "我正在学习“直”。"
   },
   {
     "word": "指导",
@@ -15184,14 +19440,6 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“重大”。"
   },
   {
-    "word": "重复",
-    "pinyin": "chóngfù",
-    "meaning": "to repeat; to duplicate",
-    "level": 5,
-    "phrase": "重复",
-    "sentence": "我正在学习“重复”。"
-  },
-  {
     "word": "重量",
     "pinyin": "zhòngliàng",
     "meaning": "weight",
@@ -15206,6 +19454,14 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "周到",
     "sentence": "我正在学习“周到”。"
+  },
+  {
+    "word": "猪",
+    "pinyin": "zhū",
+    "meaning": "pig",
+    "level": 5,
+    "phrase": "猪",
+    "sentence": "我正在学习“猪”。"
   },
   {
     "word": "竹子",
@@ -15296,6 +19552,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“主张”。"
   },
   {
+    "word": "煮",
+    "pinyin": "zhǔ",
+    "meaning": "to boil; to cook",
+    "level": 5,
+    "phrase": "煮",
+    "sentence": "我正在学习“煮”。"
+  },
+  {
     "word": "注册",
     "pinyin": "zhùcè",
     "meaning": "register; registration; enroll",
@@ -15310,6 +19574,14 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "祝福",
     "sentence": "我正在学习“祝福”。"
+  },
+  {
+    "word": "抓",
+    "pinyin": "zhuā",
+    "meaning": "to carry in your hand holding strongly; catch; arrest",
+    "level": 5,
+    "phrase": "抓",
+    "sentence": "我正在学习“抓”。"
   },
   {
     "word": "抓紧",
@@ -15352,6 +19624,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“转告”。"
   },
   {
+    "word": "装",
+    "pinyin": "zhuāng",
+    "meaning": "to load; dress up; pretend; clothing; to install",
+    "level": 5,
+    "phrase": "装",
+    "sentence": "我正在学习“装”。"
+  },
+  {
     "word": "装饰",
     "pinyin": "zhuāngshì",
     "meaning": "decorate",
@@ -15382,6 +19662,22 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "状态",
     "sentence": "我正在学习“状态”。"
+  },
+  {
+    "word": "撞",
+    "pinyin": "zhuàng",
+    "meaning": "to hit; collide; run into",
+    "level": 5,
+    "phrase": "撞",
+    "sentence": "我正在学习“撞”。"
+  },
+  {
+    "word": "追",
+    "pinyin": "zhuī",
+    "meaning": "pursue; chase",
+    "level": 5,
+    "phrase": "追",
+    "sentence": "我正在学习“追”。"
   },
   {
     "word": "追求",
@@ -15440,20 +19736,12 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“资源”。"
   },
   {
-    "word": "字母",
-    "pinyin": "zìmǔ",
-    "meaning": "letter (of the alphabet)",
+    "word": "紫",
+    "pinyin": "zǐ",
+    "meaning": "purple",
     "level": 5,
-    "phrase": "字母",
-    "sentence": "我正在学习“字母”。"
-  },
-  {
-    "word": "字幕",
-    "pinyin": "zìmù",
-    "meaning": "subtitles; captions",
-    "level": 5,
-    "phrase": "字幕",
-    "sentence": "我正在学习“字幕”。"
+    "phrase": "紫",
+    "sentence": "我正在学习“紫”。"
   },
   {
     "word": "自从",
@@ -15510,6 +19798,22 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "自愿",
     "sentence": "我正在学习“自愿”。"
+  },
+  {
+    "word": "字母",
+    "pinyin": "zìmǔ",
+    "meaning": "letter (of the alphabet)",
+    "level": 5,
+    "phrase": "字母",
+    "sentence": "我正在学习“字母”。"
+  },
+  {
+    "word": "字幕",
+    "pinyin": "zìmù",
+    "meaning": "subtitles; captions",
+    "level": 5,
+    "phrase": "字幕",
+    "sentence": "我正在学习“字幕”。"
   },
   {
     "word": "综合",
@@ -15576,6 +19880,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“阻止”。"
   },
   {
+    "word": "组",
+    "pinyin": "zǔ",
+    "meaning": "compose; team up; group",
+    "level": 5,
+    "phrase": "组",
+    "sentence": "我正在学习“组”。"
+  },
+  {
     "word": "组成",
     "pinyin": "zǔchéng",
     "meaning": "to form; part; element; constitute",
@@ -15606,6 +19918,14 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "最初",
     "sentence": "我正在学习“最初”。"
+  },
+  {
+    "word": "醉",
+    "pinyin": "zuì",
+    "meaning": "intoxicated; become drunk",
+    "level": 5,
+    "phrase": "醉",
+    "sentence": "我正在学习“醉”。"
   },
   {
     "word": "尊敬",
@@ -15646,6 +19966,14 @@ window.HSK_WORDS = [
     "level": 5,
     "phrase": "作文",
     "sentence": "我正在学习“作文”。"
+  },
+  {
+    "word": "挨",
+    "pinyin": "āi",
+    "meaning": "get close to; in sequence",
+    "level": 6,
+    "phrase": "挨",
+    "sentence": "我正在学习“挨”。"
   },
   {
     "word": "癌症",
@@ -15752,6 +20080,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“凹凸”。"
   },
   {
+    "word": "熬",
+    "pinyin": "áo",
+    "meaning": "endure; to boil",
+    "level": 6,
+    "phrase": "熬",
+    "sentence": "我正在学习“熬”。"
+  },
+  {
     "word": "奥秘",
     "pinyin": "àomì",
     "meaning": "mystery; enigma; profound; deep",
@@ -15774,6 +20110,22 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "巴结",
     "sentence": "我正在学习“巴结”。"
+  },
+  {
+    "word": "扒",
+    "pinyin": "bā",
+    "meaning": "dig up; pull down; take off",
+    "level": 6,
+    "phrase": "扒",
+    "sentence": "我正在学习“扒”。"
+  },
+  {
+    "word": "疤",
+    "pinyin": "bā",
+    "meaning": "scar",
+    "level": 6,
+    "phrase": "疤",
+    "sentence": "我正在学习“疤”。"
   },
   {
     "word": "拔苗助长",
@@ -15814,6 +20166,14 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "霸道",
     "sentence": "我正在学习“霸道”。"
+  },
+  {
+    "word": "掰",
+    "pinyin": "bāi",
+    "meaning": "break with both hands",
+    "level": 6,
+    "phrase": "掰",
+    "sentence": "我正在学习“掰”。"
   },
   {
     "word": "摆脱",
@@ -15872,6 +20232,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“颁发”。"
   },
   {
+    "word": "斑",
+    "pinyin": "bān",
+    "meaning": "variety; speckled; spot; colored patch; stripe",
+    "level": 6,
+    "phrase": "斑",
+    "sentence": "我正在学习“斑”。"
+  },
+  {
     "word": "版本",
     "pinyin": "bǎnběn",
     "meaning": "edition",
@@ -15886,6 +20254,14 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "半途而废",
     "sentence": "我正在学习“半途而废”。"
+  },
+  {
+    "word": "扮演",
+    "pinyin": "bànyǎn",
+    "meaning": "play the part of; act",
+    "level": 6,
+    "phrase": "扮演",
+    "sentence": "我正在学习“扮演”。"
   },
   {
     "word": "伴侣",
@@ -15904,14 +20280,6 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“伴随”。"
   },
   {
-    "word": "扮演",
-    "pinyin": "bànyǎn",
-    "meaning": "play the part of; act",
-    "level": 6,
-    "phrase": "扮演",
-    "sentence": "我正在学习“扮演”。"
-  },
-  {
     "word": "绑架",
     "pinyin": "bǎngjià",
     "meaning": "kidnap; staking",
@@ -15926,6 +20294,14 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "榜样",
     "sentence": "我正在学习“榜样”。"
+  },
+  {
+    "word": "磅",
+    "pinyin": "bàng",
+    "meaning": "pound; weigh; scale",
+    "level": 6,
+    "phrase": "磅",
+    "sentence": "我正在学习“磅”。"
   },
   {
     "word": "包庇",
@@ -15958,14 +20334,6 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "包装",
     "sentence": "我正在学习“包装”。"
-  },
-  {
-    "word": "薄弱",
-    "pinyin": "bóruò",
-    "meaning": "weak; frail",
-    "level": 6,
-    "phrase": "薄弱",
-    "sentence": "我正在学习“薄弱”。"
   },
   {
     "word": "饱和",
@@ -16118,6 +20486,14 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "暴露",
     "sentence": "我正在学习“暴露”。"
+  },
+  {
+    "word": "曝光",
+    "pinyin": "bàoguāng",
+    "meaning": "to expose; to make public",
+    "level": 6,
+    "phrase": "曝光",
+    "sentence": "我正在学习“曝光”。"
   },
   {
     "word": "爆发",
@@ -16296,12 +20672,28 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“崩溃”。"
   },
   {
+    "word": "甭",
+    "pinyin": "béng",
+    "meaning": "need not; (contraction of 不 and 用)",
+    "level": 6,
+    "phrase": "甭",
+    "sentence": "我正在学习“甭”。"
+  },
+  {
     "word": "迸发",
     "pinyin": "bèngfā",
     "meaning": "burst forth; burst out",
     "level": 6,
     "phrase": "迸发",
     "sentence": "我正在学习“迸发”。"
+  },
+  {
+    "word": "蹦",
+    "pinyin": "bèng",
+    "meaning": "jump; bounce; hop",
+    "level": 6,
+    "phrase": "蹦",
+    "sentence": "我正在学习“蹦”。"
   },
   {
     "word": "逼迫",
@@ -16376,6 +20768,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“弊端”。"
   },
   {
+    "word": "臂",
+    "pinyin": "bì",
+    "meaning": "arm",
+    "level": 6,
+    "phrase": "臂",
+    "sentence": "我正在学习“臂”。"
+  },
+  {
     "word": "边疆",
     "pinyin": "biānjiāng",
     "meaning": "border area; borderland; frontier; frontier region",
@@ -16438,6 +20838,14 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "贬义",
     "sentence": "我正在学习“贬义”。"
+  },
+  {
+    "word": "扁",
+    "pinyin": "biǎn",
+    "meaning": "flat",
+    "level": 6,
+    "phrase": "扁",
+    "sentence": "我正在学习“扁”。"
   },
   {
     "word": "变故",
@@ -16584,12 +20992,12 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“表彰”。"
   },
   {
-    "word": "别扭",
-    "pinyin": "bièniu",
-    "meaning": "awkward; unnatural",
+    "word": "憋",
+    "pinyin": "biē",
+    "meaning": "hold in (urine); hold (breath); choke",
     "level": 6,
-    "phrase": "别扭",
-    "sentence": "我正在学习“别扭”。"
+    "phrase": "憋",
+    "sentence": "我正在学习“憋”。"
   },
   {
     "word": "别墅",
@@ -16608,6 +21016,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“别致”。"
   },
   {
+    "word": "别扭",
+    "pinyin": "bièniu",
+    "meaning": "awkward; unnatural",
+    "level": 6,
+    "phrase": "别扭",
+    "sentence": "我正在学习“别扭”。"
+  },
+  {
     "word": "濒临",
     "pinyin": "bīnlín",
     "meaning": "on the verge of",
@@ -16624,6 +21040,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“冰雹”。"
   },
   {
+    "word": "丙",
+    "pinyin": "bǐng",
+    "meaning": "bright; fire (3rd Heavenly Stem)",
+    "level": 6,
+    "phrase": "丙",
+    "sentence": "我正在学习“丙”。"
+  },
+  {
     "word": "并非",
     "pinyin": "bìngfēi",
     "meaning": "really isn't",
@@ -16638,6 +21062,14 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "并列",
     "sentence": "我正在学习“并列”。"
+  },
+  {
+    "word": "拨",
+    "pinyin": "bō",
+    "meaning": "to dial; move with a hand/foot; stir; poke; allocate (money)",
+    "level": 6,
+    "phrase": "拨",
+    "sentence": "我正在学习“拨”。"
   },
   {
     "word": "波浪",
@@ -16704,6 +21136,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“搏斗”。"
   },
   {
+    "word": "薄弱",
+    "pinyin": "bóruò",
+    "meaning": "weak; frail",
+    "level": 6,
+    "phrase": "薄弱",
+    "sentence": "我正在学习“薄弱”。"
+  },
+  {
     "word": "补偿",
     "pinyin": "bǔcháng",
     "meaning": "compensation; make up",
@@ -16728,20 +21168,20 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“补贴”。"
   },
   {
-    "word": "哺乳",
-    "pinyin": "bǔrǔ",
-    "meaning": "breast-feeding; to suckle",
-    "level": 6,
-    "phrase": "哺乳",
-    "sentence": "我正在学习“哺乳”。"
-  },
-  {
     "word": "捕捉",
     "pinyin": "bǔzhuō",
     "meaning": "catch; to seize",
     "level": 6,
     "phrase": "捕捉",
     "sentence": "我正在学习“捕捉”。"
+  },
+  {
+    "word": "哺乳",
+    "pinyin": "bǔrǔ",
+    "meaning": "breast-feeding; to suckle",
+    "level": 6,
+    "phrase": "哺乳",
+    "sentence": "我正在学习“哺乳”。"
   },
   {
     "word": "不得已",
@@ -17112,6 +21552,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“苍白”。"
   },
   {
+    "word": "舱",
+    "pinyin": "cāng",
+    "meaning": "cabin; hold (of a ship or airplane)",
+    "level": 6,
+    "phrase": "舱",
+    "sentence": "我正在学习“舱”。"
+  },
+  {
     "word": "操劳",
     "pinyin": "cāoláo",
     "meaning": "work hard; look after",
@@ -17216,6 +21664,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“层次”。"
   },
   {
+    "word": "差别",
+    "pinyin": "chābié",
+    "meaning": "difference; disparity",
+    "level": 6,
+    "phrase": "差别",
+    "sentence": "我正在学习“差别”。"
+  },
+  {
     "word": "插座",
     "pinyin": "chāzuò",
     "meaning": "power socket",
@@ -17232,6 +21688,22 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“查获”。"
   },
   {
+    "word": "岔",
+    "pinyin": "chà",
+    "meaning": "fork in the road; turn off; diverge",
+    "level": 6,
+    "phrase": "岔",
+    "sentence": "我正在学习“岔”。"
+  },
+  {
+    "word": "刹那",
+    "pinyin": "chànà",
+    "meaning": "an instant (Sanskrit: ksana); split second",
+    "level": 6,
+    "phrase": "刹那",
+    "sentence": "我正在学习“刹那”。"
+  },
+  {
     "word": "诧异",
     "pinyin": "chàyì",
     "meaning": "flabbergasted; astonished",
@@ -17240,20 +21712,28 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“诧异”。"
   },
   {
-    "word": "差别",
-    "pinyin": "chābié",
-    "meaning": "difference; disparity",
-    "level": 6,
-    "phrase": "差别",
-    "sentence": "我正在学习“差别”。"
-  },
-  {
     "word": "柴油",
     "pinyin": "cháiyóu",
     "meaning": "diesel fuel; kerosene",
     "level": 6,
     "phrase": "柴油",
     "sentence": "我正在学习“柴油”。"
+  },
+  {
+    "word": "搀",
+    "pinyin": "chān",
+    "meaning": "assist by the arm; mix; support; sustain",
+    "level": 6,
+    "phrase": "搀",
+    "sentence": "我正在学习“搀”。"
+  },
+  {
+    "word": "馋",
+    "pinyin": "chán",
+    "meaning": "gluttonous; greedy",
+    "level": 6,
+    "phrase": "馋",
+    "sentence": "我正在学习“馋”。"
   },
   {
     "word": "缠绕",
@@ -17408,14 +21888,6 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“朝代”。"
   },
   {
-    "word": "朝气蓬勃",
-    "pinyin": "zhāo qì péng bó",
-    "meaning": "full of youthful energy (idiom); full of vigour and vitality; energetic; spirited; a bright spark",
-    "level": 6,
-    "phrase": "朝气蓬勃",
-    "sentence": "我正在学习“朝气蓬勃”。"
-  },
-  {
     "word": "嘲笑",
     "pinyin": "cháoxiào",
     "meaning": "jeer; mock; scoff",
@@ -17472,20 +21944,20 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“沉思”。"
   },
   {
-    "word": "沉着",
-    "pinyin": "chénzhuó",
-    "meaning": "calm and collected; not nervous",
-    "level": 6,
-    "phrase": "沉着",
-    "sentence": "我正在学习“沉着”。"
-  },
-  {
     "word": "沉重",
     "pinyin": "chénzhòng",
     "meaning": "heavy; hard; serious",
     "level": 6,
     "phrase": "沉重",
     "sentence": "我正在学习“沉重”。"
+  },
+  {
+    "word": "沉着",
+    "pinyin": "chénzhuó",
+    "meaning": "calm and collected; not nervous",
+    "level": 6,
+    "phrase": "沉着",
+    "sentence": "我正在学习“沉着”。"
   },
   {
     "word": "陈旧",
@@ -17520,20 +21992,20 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“衬托”。"
   },
   {
-    "word": "称号",
-    "pinyin": "chēnghào",
-    "meaning": "title; term of address",
-    "level": 6,
-    "phrase": "称号",
-    "sentence": "我正在学习“称号”。"
-  },
-  {
     "word": "称心如意",
     "pinyin": "chènxīnrúyì",
     "meaning": "find sth. satisfactory",
     "level": 6,
     "phrase": "称心如意",
     "sentence": "我正在学习“称心如意”。"
+  },
+  {
+    "word": "称号",
+    "pinyin": "chēnghào",
+    "meaning": "title; term of address",
+    "level": 6,
+    "phrase": "称号",
+    "sentence": "我正在学习“称号”。"
   },
   {
     "word": "成本",
@@ -17592,6 +22064,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“呈现”。"
   },
   {
+    "word": "诚挚",
+    "pinyin": "chéngzhì",
+    "meaning": "sincere; cordial; earnest",
+    "level": 6,
+    "phrase": "诚挚",
+    "sentence": "我正在学习“诚挚”。"
+  },
+  {
     "word": "承办",
     "pinyin": "chéngbàn",
     "meaning": "undertake; accept an assignment",
@@ -17616,20 +22096,28 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“承诺”。"
   },
   {
-    "word": "诚挚",
-    "pinyin": "chéngzhì",
-    "meaning": "sincere; cordial; earnest",
-    "level": 6,
-    "phrase": "诚挚",
-    "sentence": "我正在学习“诚挚”。"
-  },
-  {
     "word": "城堡",
     "pinyin": "chéngbǎo",
     "meaning": "castle",
     "level": 6,
     "phrase": "城堡",
     "sentence": "我正在学习“城堡”。"
+  },
+  {
+    "word": "乘",
+    "pinyin": "chéng",
+    "meaning": "to ride; to mount; make use of; multiply",
+    "level": 6,
+    "phrase": "乘",
+    "sentence": "我正在学习“乘”。"
+  },
+  {
+    "word": "盛",
+    "pinyin": "chéng, shèng",
+    "meaning": "contain; to ladle; to fill | flourishing; grand; abundant",
+    "level": 6,
+    "phrase": "盛",
+    "sentence": "我正在学习“盛”。"
   },
   {
     "word": "惩罚",
@@ -17646,6 +22134,22 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "澄清",
     "sentence": "我正在学习“澄清”。"
+  },
+  {
+    "word": "橙",
+    "pinyin": "chéng",
+    "meaning": "orange (color); orange (fruit, tree)",
+    "level": 6,
+    "phrase": "橙",
+    "sentence": "我正在学习“橙”。"
+  },
+  {
+    "word": "秤",
+    "pinyin": "chèng",
+    "meaning": "balance; scale; steelyard",
+    "level": 6,
+    "phrase": "秤",
+    "sentence": "我正在学习“秤”。"
   },
   {
     "word": "吃苦",
@@ -17712,6 +22216,30 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“赤字”。"
   },
   {
+    "word": "冲动",
+    "pinyin": "chōngdòng",
+    "meaning": "impulsive; act on impulse",
+    "level": 6,
+    "phrase": "冲动",
+    "sentence": "我正在学习“冲动”。"
+  },
+  {
+    "word": "冲击",
+    "pinyin": "chōngjī",
+    "meaning": "attack; impact; a shock",
+    "level": 6,
+    "phrase": "冲击",
+    "sentence": "我正在学习“冲击”。"
+  },
+  {
+    "word": "冲突",
+    "pinyin": "chōngtū",
+    "meaning": "conflict; clash",
+    "level": 6,
+    "phrase": "冲突",
+    "sentence": "我正在学习“冲突”。"
+  },
+  {
     "word": "充当",
     "pinyin": "chōngdāng",
     "meaning": "serve as; play the part of",
@@ -17744,28 +22272,12 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“充足”。"
   },
   {
-    "word": "冲动",
-    "pinyin": "chōngdòng",
-    "meaning": "impulsive; act on impulse",
+    "word": "重叠",
+    "pinyin": "chóngdié",
+    "meaning": "to overlap",
     "level": 6,
-    "phrase": "冲动",
-    "sentence": "我正在学习“冲动”。"
-  },
-  {
-    "word": "冲击",
-    "pinyin": "chōngjī",
-    "meaning": "attack; impact; a shock",
-    "level": 6,
-    "phrase": "冲击",
-    "sentence": "我正在学习“冲击”。"
-  },
-  {
-    "word": "冲突",
-    "pinyin": "chōngtū",
-    "meaning": "conflict; clash",
-    "level": 6,
-    "phrase": "冲突",
-    "sentence": "我正在学习“冲突”。"
+    "phrase": "重叠",
+    "sentence": "我正在学习“重叠”。"
   },
   {
     "word": "崇拜",
@@ -17864,28 +22376,12 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“初步”。"
   },
   {
-    "word": "储备",
-    "pinyin": "chǔbèi",
-    "meaning": "reserves; store up",
+    "word": "除",
+    "pinyin": "chú",
+    "meaning": "besides; except; remove; to divide (mathematics)",
     "level": 6,
-    "phrase": "储备",
-    "sentence": "我正在学习“储备”。"
-  },
-  {
-    "word": "储存",
-    "pinyin": "chǔcún",
-    "meaning": "stockpile; to store",
-    "level": 6,
-    "phrase": "储存",
-    "sentence": "我正在学习“储存”。"
-  },
-  {
-    "word": "储蓄",
-    "pinyin": "chǔxù",
-    "meaning": "to save; to deposit",
-    "level": 6,
-    "phrase": "储蓄",
-    "sentence": "我正在学习“储蓄”。"
+    "phrase": "除",
+    "sentence": "我正在学习“除”。"
   },
   {
     "word": "处分",
@@ -17912,12 +22408,28 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“处置”。"
   },
   {
-    "word": "畜牧",
-    "pinyin": "xùmù",
-    "meaning": "raise animals",
+    "word": "储备",
+    "pinyin": "chǔbèi",
+    "meaning": "reserves; store up",
     "level": 6,
-    "phrase": "畜牧",
-    "sentence": "我正在学习“畜牧”。"
+    "phrase": "储备",
+    "sentence": "我正在学习“储备”。"
+  },
+  {
+    "word": "储存",
+    "pinyin": "chǔcún",
+    "meaning": "stockpile; to store",
+    "level": 6,
+    "phrase": "储存",
+    "sentence": "我正在学习“储存”。"
+  },
+  {
+    "word": "储蓄",
+    "pinyin": "chǔxù",
+    "meaning": "to save; to deposit",
+    "level": 6,
+    "phrase": "储蓄",
+    "sentence": "我正在学习“储蓄”。"
   },
   {
     "word": "触犯",
@@ -17960,14 +22472,6 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“传单”。"
   },
   {
-    "word": "传记",
-    "pinyin": "zhuànjì",
-    "meaning": "biography",
-    "level": 6,
-    "phrase": "传记",
-    "sentence": "我正在学习“传记”。"
-  },
-  {
     "word": "传授",
     "pinyin": "chuánshòu",
     "meaning": "impart; pass on; teach",
@@ -17990,6 +22494,14 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "喘气",
     "sentence": "我正在学习“喘气”。"
+  },
+  {
+    "word": "串",
+    "pinyin": "chuàn",
+    "meaning": "string together; conspire; gang up; mix up; bunch",
+    "level": 6,
+    "phrase": "串",
+    "sentence": "我正在学习“串”。"
   },
   {
     "word": "床单",
@@ -18064,6 +22576,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“垂直”。"
   },
   {
+    "word": "锤",
+    "pinyin": "chuí",
+    "meaning": "hammer; weight",
+    "level": 6,
+    "phrase": "锤",
+    "sentence": "我正在学习“锤”。"
+  },
+  {
     "word": "纯粹",
     "pinyin": "chúncuì",
     "meaning": "purely; pure",
@@ -18136,12 +22656,28 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“伺候”。"
   },
   {
+    "word": "刺",
+    "pinyin": "cì",
+    "meaning": "thorn; to sting; to prick; pierce; stab",
+    "level": 6,
+    "phrase": "刺",
+    "sentence": "我正在学习“刺”。"
+  },
+  {
     "word": "从容",
     "pinyin": "cóngróng",
     "meaning": "leisurely; calm",
     "level": 6,
     "phrase": "从容",
     "sentence": "我正在学习“从容”。"
+  },
+  {
+    "word": "丛",
+    "pinyin": "cóng",
+    "meaning": "crowd together; thicket; collection",
+    "level": 6,
+    "phrase": "丛",
+    "sentence": "我正在学习“丛”。"
   },
   {
     "word": "凑合",
@@ -18160,6 +22696,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“粗鲁”。"
   },
   {
+    "word": "窜",
+    "pinyin": "cuàn",
+    "meaning": "to flee; to escape; run away",
+    "level": 6,
+    "phrase": "窜",
+    "sentence": "我正在学习“窜”。"
+  },
+  {
     "word": "摧残",
     "pinyin": "cuīcán",
     "meaning": "to ruin; devastate; vandalize",
@@ -18176,6 +22720,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“脆弱”。"
   },
   {
+    "word": "搓",
+    "pinyin": "cuō",
+    "meaning": "rub or roll between the hands or fingers; to twist",
+    "level": 6,
+    "phrase": "搓",
+    "sentence": "我正在学习“搓”。"
+  },
+  {
     "word": "磋商",
     "pinyin": "cuōshāng",
     "meaning": "discuss seriously; consult; negotiate",
@@ -18190,6 +22742,14 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "挫折",
     "sentence": "我正在学习“挫折”。"
+  },
+  {
+    "word": "搭",
+    "pinyin": "dā",
+    "meaning": "to erect; to build; travel by (car, plane, etc.); to hang; to join",
+    "level": 6,
+    "phrase": "搭",
+    "sentence": "我正在学习“搭”。"
   },
   {
     "word": "搭档",
@@ -18352,14 +22912,6 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“歹徒”。"
   },
   {
-    "word": "逮捕",
-    "pinyin": "dàibǔ",
-    "meaning": "to arrest; to capture",
-    "level": 6,
-    "phrase": "逮捕",
-    "sentence": "我正在学习“逮捕”。"
-  },
-  {
     "word": "代价",
     "pinyin": "dàijià",
     "meaning": "price; cost; expense",
@@ -18392,6 +22944,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“怠慢”。"
   },
   {
+    "word": "逮捕",
+    "pinyin": "dàibǔ",
+    "meaning": "to arrest; to capture",
+    "level": 6,
+    "phrase": "逮捕",
+    "sentence": "我正在学习“逮捕”。"
+  },
+  {
     "word": "担保",
     "pinyin": "dānbǎo",
     "meaning": "guarantee; vouch for",
@@ -18422,14 +22982,6 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "诞生",
     "sentence": "我正在学习“诞生”。"
-  },
-  {
-    "word": "弹性",
-    "pinyin": "tánxìng",
-    "meaning": "flexibility; elasticity",
-    "level": 6,
-    "phrase": "弹性",
-    "sentence": "我正在学习“弹性”。"
   },
   {
     "word": "淡季",
@@ -18518,6 +23070,14 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "当选",
     "sentence": "我正在学习“当选”。"
+  },
+  {
+    "word": "党",
+    "pinyin": "dǎng",
+    "meaning": "party; club; association",
+    "level": 6,
+    "phrase": "党",
+    "sentence": "我正在学习“党”。"
   },
   {
     "word": "档案",
@@ -18624,30 +23184,6 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“得罪”。"
   },
   {
-    "word": "地步",
-    "pinyin": "dìbù",
-    "meaning": "condition; plight; extent",
-    "level": 6,
-    "phrase": "地步",
-    "sentence": "我正在学习“地步”。"
-  },
-  {
-    "word": "地势",
-    "pinyin": "dìshì",
-    "meaning": "terrain; topography of a place",
-    "level": 6,
-    "phrase": "地势",
-    "sentence": "我正在学习“地势”。"
-  },
-  {
-    "word": "地质",
-    "pinyin": "dìzhì",
-    "meaning": "geology",
-    "level": 6,
-    "phrase": "地质",
-    "sentence": "我正在学习“地质”。"
-  },
-  {
     "word": "灯笼",
     "pinyin": "dēnglong",
     "meaning": "lantern",
@@ -18672,6 +23208,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“登录”。"
   },
   {
+    "word": "蹬",
+    "pinyin": "dēng",
+    "meaning": "press down with the foot; step back or into something",
+    "level": 6,
+    "phrase": "蹬",
+    "sentence": "我正在学习“蹬”。"
+  },
+  {
     "word": "等候",
     "pinyin": "děnghòu",
     "meaning": "wait; queue",
@@ -18686,6 +23230,14 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "等级",
     "sentence": "我正在学习“等级”。"
+  },
+  {
+    "word": "瞪",
+    "pinyin": "dèng",
+    "meaning": "stare at; to glower",
+    "level": 6,
+    "phrase": "瞪",
+    "sentence": "我正在学习“瞪”。"
   },
   {
     "word": "堤坝",
@@ -18726,6 +23278,30 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "抵制",
     "sentence": "我正在学习“抵制”。"
+  },
+  {
+    "word": "地步",
+    "pinyin": "dìbù",
+    "meaning": "condition; plight; extent",
+    "level": 6,
+    "phrase": "地步",
+    "sentence": "我正在学习“地步”。"
+  },
+  {
+    "word": "地势",
+    "pinyin": "dìshì",
+    "meaning": "terrain; topography of a place",
+    "level": 6,
+    "phrase": "地势",
+    "sentence": "我正在学习“地势”。"
+  },
+  {
+    "word": "地质",
+    "pinyin": "dìzhì",
+    "meaning": "geology",
+    "level": 6,
+    "phrase": "地质",
+    "sentence": "我正在学习“地质”。"
   },
   {
     "word": "递增",
@@ -18784,6 +23360,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“电源”。"
   },
   {
+    "word": "垫",
+    "pinyin": "diàn",
+    "meaning": "cushion; to pad; pay for somebody and expect to be repaid",
+    "level": 6,
+    "phrase": "垫",
+    "sentence": "我正在学习“垫”。"
+  },
+  {
     "word": "惦记",
     "pinyin": "diànjì",
     "meaning": "to remember with concern; to be concerned about; to think about; to keep thinking about; to worry about",
@@ -18798,6 +23382,14 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "奠定",
     "sentence": "我正在学习“奠定”。"
+  },
+  {
+    "word": "叼",
+    "pinyin": "diāo",
+    "meaning": "hold sth. in the mouth",
+    "level": 6,
+    "phrase": "叼",
+    "sentence": "我正在学习“叼”。"
   },
   {
     "word": "雕刻",
@@ -18816,6 +23408,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“雕塑”。"
   },
   {
+    "word": "吊",
+    "pinyin": "diào",
+    "meaning": "hang; suspend",
+    "level": 6,
+    "phrase": "吊",
+    "sentence": "我正在学习“吊”。"
+  },
+  {
     "word": "调动",
     "pinyin": "diàodòng",
     "meaning": "to transfer; to maneuver (troops, etc.)",
@@ -18824,44 +23424,20 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“调动”。"
   },
   {
-    "word": "调和",
-    "pinyin": "tiáohé",
-    "meaning": "harmonious; harmony",
+    "word": "跌",
+    "pinyin": "diē",
+    "meaning": "to fall down; to drop",
     "level": 6,
-    "phrase": "调和",
-    "sentence": "我正在学习“调和”。"
+    "phrase": "跌",
+    "sentence": "我正在学习“跌”。"
   },
   {
-    "word": "调剂",
-    "pinyin": "tiáojì",
-    "meaning": "make an adjustment",
+    "word": "丁",
+    "pinyin": "dīng",
+    "meaning": "male adult; robust; cubes (of food); T-shaped (4th Heavenly Stem)",
     "level": 6,
-    "phrase": "调剂",
-    "sentence": "我正在学习“调剂”。"
-  },
-  {
-    "word": "调节",
-    "pinyin": "tiáojié",
-    "meaning": "adjust; regulate; reconcile",
-    "level": 6,
-    "phrase": "调节",
-    "sentence": "我正在学习“调节”。"
-  },
-  {
-    "word": "调解",
-    "pinyin": "tiáojiě",
-    "meaning": "mediation; bring together to an agreement",
-    "level": 6,
-    "phrase": "调解",
-    "sentence": "我正在学习“调解”。"
-  },
-  {
-    "word": "调料",
-    "pinyin": "tiáoliào",
-    "meaning": "seasoning; flavoring",
-    "level": 6,
-    "phrase": "调料",
-    "sentence": "我正在学习“调料”。"
+    "phrase": "丁",
+    "sentence": "我正在学习“丁”。"
   },
   {
     "word": "叮嘱",
@@ -18870,6 +23446,14 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "叮嘱",
     "sentence": "我正在学习“叮嘱”。"
+  },
+  {
+    "word": "盯",
+    "pinyin": "dīng",
+    "meaning": "to stare; to gaze",
+    "level": 6,
+    "phrase": "盯",
+    "sentence": "我正在学习“盯”。"
   },
   {
     "word": "定期",
@@ -19008,6 +23592,22 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“冻结”。"
   },
   {
+    "word": "栋",
+    "pinyin": "dòng",
+    "meaning": "roof beam; (mw for buildings)",
+    "level": 6,
+    "phrase": "栋",
+    "sentence": "我正在学习“栋”。"
+  },
+  {
+    "word": "兜",
+    "pinyin": "dōu",
+    "meaning": "pocket; bag; wrap up (in a piece of cloth); move around (in a circle); canvass (solicit); take responsibility",
+    "level": 6,
+    "phrase": "兜",
+    "sentence": "我正在学习“兜”。"
+  },
+  {
     "word": "陡峭",
     "pinyin": "dǒuqiào",
     "meaning": "steep; precipitous",
@@ -19070,6 +23670,14 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "杜绝",
     "sentence": "我正在学习“杜绝”。"
+  },
+  {
+    "word": "端",
+    "pinyin": "duān",
+    "meaning": "end; beginning; extremity; carry holding something from the sides",
+    "level": 6,
+    "phrase": "端",
+    "sentence": "我正在学习“端”。"
   },
   {
     "word": "端午节",
@@ -19240,20 +23848,20 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“额外”。"
   },
   {
-    "word": "恶化",
-    "pinyin": "èhuà",
-    "meaning": "worsen; deteriorate",
-    "level": 6,
-    "phrase": "恶化",
-    "sentence": "我正在学习“恶化”。"
-  },
-  {
     "word": "恶心",
     "pinyin": "ěxin",
     "meaning": "disgusting; nauseous; make somebody embarrassed (èxīn: bad/vicious habit; vice)",
     "level": 6,
     "phrase": "恶心",
     "sentence": "我正在学习“恶心”。"
+  },
+  {
+    "word": "恶化",
+    "pinyin": "èhuà",
+    "meaning": "worsen; deteriorate",
+    "level": 6,
+    "phrase": "恶化",
+    "sentence": "我正在学习“恶化”。"
   },
   {
     "word": "遏制",
@@ -19382,6 +23990,14 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "法人",
     "sentence": "我正在学习“法人”。"
+  },
+  {
+    "word": "番",
+    "pinyin": "fān",
+    "meaning": "(mw for acts or deeds); foreign",
+    "level": 6,
+    "phrase": "番",
+    "sentence": "我正在学习“番”。"
   },
   {
     "word": "凡是",
@@ -19672,6 +24288,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“诽谤”。"
   },
   {
+    "word": "肺",
+    "pinyin": "fèi",
+    "meaning": "lung",
+    "level": 6,
+    "phrase": "肺",
+    "sentence": "我正在学习“肺”。"
+  },
+  {
     "word": "废除",
     "pinyin": "fèichú",
     "meaning": "abolish; annul; abrogate",
@@ -19734,14 +24358,6 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "分解",
     "sentence": "我正在学习“分解”。"
-  },
-  {
-    "word": "分量",
-    "pinyin": "fènliàng",
-    "meaning": "weight; heft; amount",
-    "level": 6,
-    "phrase": "分量",
-    "sentence": "我正在学习“分量”。"
   },
   {
     "word": "分裂",
@@ -19822,6 +24438,14 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "粉碎",
     "sentence": "我正在学习“粉碎”。"
+  },
+  {
+    "word": "分量",
+    "pinyin": "fènliàng",
+    "meaning": "weight; heft; amount",
+    "level": 6,
+    "phrase": "分量",
+    "sentence": "我正在学习“分量”。"
   },
   {
     "word": "愤怒",
@@ -19944,6 +24568,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“锋利”。"
   },
   {
+    "word": "逢",
+    "pinyin": "féng",
+    "meaning": "to meet; come upon",
+    "level": 6,
+    "phrase": "逢",
+    "sentence": "我正在学习“逢”。"
+  },
+  {
     "word": "奉献",
     "pinyin": "fèngxiàn",
     "meaning": "consecrate; dedicate; devote",
@@ -20024,6 +24656,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“幅度”。"
   },
   {
+    "word": "辐射",
+    "pinyin": "fúshè",
+    "meaning": "radiation",
+    "level": 6,
+    "phrase": "辐射",
+    "sentence": "我正在学习“辐射”。"
+  },
+  {
     "word": "福利",
     "pinyin": "fúlì",
     "meaning": "material benefits; welfare; well-being",
@@ -20038,14 +24678,6 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "福气",
     "sentence": "我正在学习“福气”。"
-  },
-  {
-    "word": "辐射",
-    "pinyin": "fúshè",
-    "meaning": "radiation",
-    "level": 6,
-    "phrase": "辐射",
-    "sentence": "我正在学习“辐射”。"
   },
   {
     "word": "抚摸",
@@ -20160,12 +24792,12 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“复兴”。"
   },
   {
-    "word": "富裕",
-    "pinyin": "fùyù",
-    "meaning": "rich; to prosper; wealthy",
+    "word": "副",
+    "pinyin": "fù",
+    "meaning": "vice-; secondary; auxiliary; deputy; assistant; classifier for pairs (i.e. glasses)",
     "level": 6,
-    "phrase": "富裕",
-    "sentence": "我正在学习“富裕”。"
+    "phrase": "副",
+    "sentence": "我正在学习“副”。"
   },
   {
     "word": "赋予",
@@ -20174,6 +24806,14 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "赋予",
     "sentence": "我正在学习“赋予”。"
+  },
+  {
+    "word": "富裕",
+    "pinyin": "fùyù",
+    "meaning": "rich; to prosper; wealthy",
+    "level": 6,
+    "phrase": "富裕",
+    "sentence": "我正在学习“富裕”。"
   },
   {
     "word": "腹泻",
@@ -20200,12 +24840,52 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“改良”。"
   },
   {
+    "word": "钙",
+    "pinyin": "gài",
+    "meaning": "calcium",
+    "level": 6,
+    "phrase": "钙",
+    "sentence": "我正在学习“钙”。"
+  },
+  {
     "word": "盖章",
     "pinyin": "gàizhāng",
     "meaning": "affix one's seal; seal; stamp",
     "level": 6,
     "phrase": "盖章",
     "sentence": "我正在学习“盖章”。"
+  },
+  {
+    "word": "干旱",
+    "pinyin": "gānhàn",
+    "meaning": "drought; dry",
+    "level": 6,
+    "phrase": "干旱",
+    "sentence": "我正在学习“干旱”。"
+  },
+  {
+    "word": "干扰",
+    "pinyin": "gānrǎo",
+    "meaning": "interfere; obstruction",
+    "level": 6,
+    "phrase": "干扰",
+    "sentence": "我正在学习“干扰”。"
+  },
+  {
+    "word": "干涉",
+    "pinyin": "gānshè",
+    "meaning": "interfere; intervene; meddle",
+    "level": 6,
+    "phrase": "干涉",
+    "sentence": "我正在学习“干涉”。"
+  },
+  {
+    "word": "干预",
+    "pinyin": "gānyù",
+    "meaning": "meddle; intervene; intervention",
+    "level": 6,
+    "phrase": "干预",
+    "sentence": "我正在学习“干预”。"
   },
   {
     "word": "尴尬",
@@ -20232,44 +24912,12 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“感染”。"
   },
   {
-    "word": "干旱",
-    "pinyin": "gānhàn",
-    "meaning": "drought; dry",
-    "level": 6,
-    "phrase": "干旱",
-    "sentence": "我正在学习“干旱”。"
-  },
-  {
     "word": "干劲",
     "pinyin": "gànjìn",
     "meaning": "enthusiasm; energy; drive",
     "level": 6,
     "phrase": "干劲",
     "sentence": "我正在学习“干劲”。"
-  },
-  {
-    "word": "干扰",
-    "pinyin": "gānrǎo",
-    "meaning": "interfere; obstruction",
-    "level": 6,
-    "phrase": "干扰",
-    "sentence": "我正在学习“干扰”。"
-  },
-  {
-    "word": "干涉",
-    "pinyin": "gānshè",
-    "meaning": "interfere; intervene; meddle",
-    "level": 6,
-    "phrase": "干涉",
-    "sentence": "我正在学习“干涉”。"
-  },
-  {
-    "word": "干预",
-    "pinyin": "gānyù",
-    "meaning": "meddle; intervene; intervention",
-    "level": 6,
-    "phrase": "干预",
-    "sentence": "我正在学习“干预”。"
   },
   {
     "word": "纲领",
@@ -20400,6 +25048,22 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“鸽子”。"
   },
   {
+    "word": "搁",
+    "pinyin": "gē",
+    "meaning": "to place; put aside",
+    "level": 6,
+    "phrase": "搁",
+    "sentence": "我正在学习“搁”。"
+  },
+  {
+    "word": "割",
+    "pinyin": "gē",
+    "meaning": "to cut (apart/off)",
+    "level": 6,
+    "phrase": "割",
+    "sentence": "我正在学习“割”。"
+  },
+  {
     "word": "歌颂",
     "pinyin": "gēsòng",
     "meaning": "sing the praise of; extol; eulogize",
@@ -20464,14 +25128,6 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“各抒己见”。"
   },
   {
-    "word": "给予",
-    "pinyin": "jǐyǔ",
-    "meaning": "to give",
-    "level": 6,
-    "phrase": "给予",
-    "sentence": "我正在学习“给予”。"
-  },
-  {
     "word": "根深蒂固",
     "pinyin": "gēn shēn dì gù",
     "meaning": "deep-rooted; ingrained; inveterate (problem, etc.)",
@@ -20512,14 +25168,6 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“跟踪”。"
   },
   {
-    "word": "耕地",
-    "pinyin": "gēngdì",
-    "meaning": "arable land; to plow land",
-    "level": 6,
-    "phrase": "耕地",
-    "sentence": "我正在学习“耕地”。"
-  },
-  {
     "word": "更新",
     "pinyin": "gēngxīn",
     "meaning": "to replace the old with new; to renew; to renovate; to upgrade; to update; to regenerate; to rejuvenate",
@@ -20534,6 +25182,14 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "更正",
     "sentence": "我正在学习“更正”。"
+  },
+  {
+    "word": "耕地",
+    "pinyin": "gēngdì",
+    "meaning": "arable land; to plow land",
+    "level": 6,
+    "phrase": "耕地",
+    "sentence": "我正在学习“耕地”。"
   },
   {
     "word": "工艺品",
@@ -20752,14 +25408,6 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“构思”。"
   },
   {
-    "word": "姑且",
-    "pinyin": "gūqiě",
-    "meaning": "temporarily; the time being",
-    "level": 6,
-    "phrase": "姑且",
-    "sentence": "我正在学习“姑且”。"
-  },
-  {
     "word": "孤独",
     "pinyin": "gūdú",
     "meaning": "lonely; solitary",
@@ -20774,6 +25422,14 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "孤立",
     "sentence": "我正在学习“孤立”。"
+  },
+  {
+    "word": "姑且",
+    "pinyin": "gūqiě",
+    "meaning": "temporarily; the time being",
+    "level": 6,
+    "phrase": "姑且",
+    "sentence": "我正在学习“姑且”。"
   },
   {
     "word": "辜负",
@@ -20976,6 +25632,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“灌溉”。"
   },
   {
+    "word": "罐",
+    "pinyin": "guàn",
+    "meaning": "can; jar; pot; pitcher; jug",
+    "level": 6,
+    "phrase": "罐",
+    "sentence": "我正在学习“罐”。"
+  },
+  {
     "word": "光彩",
     "pinyin": "guāngcǎi",
     "meaning": "splendor; radiance; brilliance; honor",
@@ -21080,6 +25744,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“贵族”。"
   },
   {
+    "word": "跪",
+    "pinyin": "guì",
+    "meaning": "kneel",
+    "level": 6,
+    "phrase": "跪",
+    "sentence": "我正在学习“跪”。"
+  },
+  {
     "word": "棍棒",
     "pinyin": "gùnbàng",
     "meaning": "club",
@@ -21176,12 +25848,12 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“过于”。"
   },
   {
-    "word": "还原",
-    "pinyin": "huányuán",
-    "meaning": "restore to the original state; (Chemistry) reduce",
+    "word": "嗨",
+    "pinyin": "hāi",
+    "meaning": "hey/hi (loanword); oh; alas;",
     "level": 6,
-    "phrase": "还原",
-    "sentence": "我正在学习“还原”。"
+    "phrase": "嗨",
+    "sentence": "我正在学习“嗨”。"
   },
   {
     "word": "海拔",
@@ -21238,6 +25910,14 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "捍卫",
     "sentence": "我正在学习“捍卫”。"
+  },
+  {
+    "word": "行列",
+    "pinyin": "hángliè",
+    "meaning": "procession; ranks; queue",
+    "level": 6,
+    "phrase": "行列",
+    "sentence": "我正在学习“行列”。"
   },
   {
     "word": "航空",
@@ -21302,6 +25982,14 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "耗费",
     "sentence": "我正在学习“耗费”。"
+  },
+  {
+    "word": "呵",
+    "pinyin": "hē",
+    "meaning": "breathe out; scold",
+    "level": 6,
+    "phrase": "呵",
+    "sentence": "我正在学习“呵”。"
   },
   {
     "word": "合并",
@@ -21376,6 +26064,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“和谐”。"
   },
   {
+    "word": "嘿",
+    "pinyin": "hēi",
+    "meaning": "hey; interjection for calling attention",
+    "level": 6,
+    "phrase": "嘿",
+    "sentence": "我正在学习“嘿”。"
+  },
+  {
     "word": "痕迹",
     "pinyin": "hénjì",
     "meaning": "vestige; trace",
@@ -21400,12 +26096,36 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“恨不得”。"
   },
   {
+    "word": "横",
+    "pinyin": "héng",
+    "meaning": "horizontal; across; (horizontal character stroke)",
+    "level": 6,
+    "phrase": "横",
+    "sentence": "我正在学习“横”。"
+  },
+  {
+    "word": "哼",
+    "pinyin": "hēng",
+    "meaning": "groan; snort; to hum; croon",
+    "level": 6,
+    "phrase": "哼",
+    "sentence": "我正在学习“哼”。"
+  },
+  {
     "word": "轰动",
     "pinyin": "hōngdòng",
     "meaning": "a sensation; a stir",
     "level": 6,
     "phrase": "轰动",
     "sentence": "我正在学习“轰动”。"
+  },
+  {
+    "word": "烘",
+    "pinyin": "hōng",
+    "meaning": "to dry or warm by the fire; to bake; to heat by fire; to set off by contrast",
+    "level": 6,
+    "phrase": "烘",
+    "sentence": "我正在学习“烘”。"
   },
   {
     "word": "宏观",
@@ -21432,12 +26152,28 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“洪水”。"
   },
   {
+    "word": "哄",
+    "pinyin": "hǒng",
+    "meaning": "fool; coax; to amuse (a child)",
+    "level": 6,
+    "phrase": "哄",
+    "sentence": "我正在学习“哄”。"
+  },
+  {
     "word": "喉咙",
     "pinyin": "hóulóng",
     "meaning": "throat; larynx",
     "level": 6,
     "phrase": "喉咙",
     "sentence": "我正在学习“喉咙”。"
+  },
+  {
+    "word": "吼",
+    "pinyin": "hǒu",
+    "meaning": "roar; howl",
+    "level": 6,
+    "phrase": "吼",
+    "sentence": "我正在学习“吼”。"
   },
   {
     "word": "后代",
@@ -21624,6 +26360,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“欢乐”。"
   },
   {
+    "word": "还原",
+    "pinyin": "huányuán",
+    "meaning": "restore to the original state; (Chemistry) reduce",
+    "level": 6,
+    "phrase": "还原",
+    "sentence": "我正在学习“还原”。"
+  },
+  {
     "word": "环节",
     "pinyin": "huánjié",
     "meaning": "link; sector; segment (of annelid worms)",
@@ -21702,6 +26446,14 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "恍然大悟",
     "sentence": "我正在学习“恍然大悟”。"
+  },
+  {
+    "word": "晃",
+    "pinyin": "huàng",
+    "meaning": "to sway; to shake",
+    "level": 6,
+    "phrase": "晃",
+    "sentence": "我正在学习“晃”。"
   },
   {
     "word": "挥霍",
@@ -21798,6 +26550,14 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "昏迷",
     "sentence": "我正在学习“昏迷”。"
+  },
+  {
+    "word": "荤",
+    "pinyin": "hūn",
+    "meaning": "meat or fish dish; pungent vegetables forbidden to Buddhist vegetarians",
+    "level": 6,
+    "phrase": "荤",
+    "sentence": "我正在学习“荤”。"
   },
   {
     "word": "浑身",
@@ -22032,22 +26792,6 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“级别”。"
   },
   {
-    "word": "即便",
-    "pinyin": "jíbiàn",
-    "meaning": "even if; even though",
-    "level": 6,
-    "phrase": "即便",
-    "sentence": "我正在学习“即便”。"
-  },
-  {
-    "word": "即将",
-    "pinyin": "jíjiāng",
-    "meaning": "will shortly; soon; be on the verge of",
-    "level": 6,
-    "phrase": "即将",
-    "sentence": "我正在学习“即将”。"
-  },
-  {
     "word": "极端",
     "pinyin": "jíduān",
     "meaning": "extreme",
@@ -22062,6 +26806,22 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "极限",
     "sentence": "我正在学习“极限”。"
+  },
+  {
+    "word": "即便",
+    "pinyin": "jíbiàn",
+    "meaning": "even if; even though",
+    "level": 6,
+    "phrase": "即便",
+    "sentence": "我正在学习“即便”。"
+  },
+  {
+    "word": "即将",
+    "pinyin": "jíjiāng",
+    "meaning": "will shortly; soon; be on the verge of",
+    "level": 6,
+    "phrase": "即将",
+    "sentence": "我正在学习“即将”。"
   },
   {
     "word": "急功近利",
@@ -22136,6 +26896,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“籍贯”。"
   },
   {
+    "word": "给予",
+    "pinyin": "jǐyǔ",
+    "meaning": "to give",
+    "level": 6,
+    "phrase": "给予",
+    "sentence": "我正在学习“给予”。"
+  },
+  {
     "word": "计较",
     "pinyin": "jìjiào",
     "meaning": "focus excessively on; haggle; bicker; argue",
@@ -22168,20 +26936,20 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“纪要”。"
   },
   {
-    "word": "忌讳",
-    "pinyin": "jìhuì",
-    "meaning": "avoid as a taboo; abstain from; taboo",
-    "level": 6,
-    "phrase": "忌讳",
-    "sentence": "我正在学习“忌讳”。"
-  },
-  {
     "word": "技巧",
     "pinyin": "jìqiǎo",
     "meaning": "skill; technique",
     "level": 6,
     "phrase": "技巧",
     "sentence": "我正在学习“技巧”。"
+  },
+  {
+    "word": "忌讳",
+    "pinyin": "jìhuì",
+    "meaning": "avoid as a taboo; abstain from; taboo",
+    "level": 6,
+    "phrase": "忌讳",
+    "sentence": "我正在学习“忌讳”。"
   },
   {
     "word": "季度",
@@ -22216,20 +26984,20 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“继承”。"
   },
   {
-    "word": "寂静",
-    "pinyin": "jìjìng",
-    "meaning": "quiet",
-    "level": 6,
-    "phrase": "寂静",
-    "sentence": "我正在学习“寂静”。"
-  },
-  {
     "word": "寄托",
     "pinyin": "jìtuō",
     "meaning": "entrust somebody someone's care; consign; commit",
     "level": 6,
     "phrase": "寄托",
     "sentence": "我正在学习“寄托”。"
+  },
+  {
+    "word": "寂静",
+    "pinyin": "jìjìng",
+    "meaning": "quiet",
+    "level": 6,
+    "phrase": "寂静",
+    "sentence": "我正在学习“寂静”。"
   },
   {
     "word": "加工",
@@ -22352,30 +27120,6 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“坚硬”。"
   },
   {
-    "word": "间谍",
-    "pinyin": "jiàndié",
-    "meaning": "a spy; intelligence agent",
-    "level": 6,
-    "phrase": "间谍",
-    "sentence": "我正在学习“间谍”。"
-  },
-  {
-    "word": "间隔",
-    "pinyin": "jiàngé",
-    "meaning": "interval; intermission; gap; be separated",
-    "level": 6,
-    "phrase": "间隔",
-    "sentence": "我正在学习“间隔”。"
-  },
-  {
-    "word": "间接",
-    "pinyin": "jiànjiē",
-    "meaning": "indirect",
-    "level": 6,
-    "phrase": "间接",
-    "sentence": "我正在学习“间接”。"
-  },
-  {
     "word": "艰难",
     "pinyin": "jiānnán",
     "meaning": "difficult; arduous",
@@ -22408,12 +27152,20 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“监狱”。"
   },
   {
-    "word": "剪彩",
-    "pinyin": "jiǎn cǎi",
-    "meaning": "cut the ribbon at an opening ceremony",
+    "word": "煎",
+    "pinyin": "jiān",
+    "meaning": "pan-fry; fry in shallow oil",
     "level": 6,
-    "phrase": "剪彩",
-    "sentence": "我正在学习“剪彩”。"
+    "phrase": "煎",
+    "sentence": "我正在学习“煎”。"
+  },
+  {
+    "word": "拣",
+    "pinyin": "jiǎn",
+    "meaning": "choose; select; sort out",
+    "level": 6,
+    "phrase": "拣",
+    "sentence": "我正在学习“拣”。"
   },
   {
     "word": "检讨",
@@ -22430,6 +27182,14 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "检验",
     "sentence": "我正在学习“检验”。"
+  },
+  {
+    "word": "剪彩",
+    "pinyin": "jiǎn cǎi",
+    "meaning": "cut the ribbon at an opening ceremony",
+    "level": 6,
+    "phrase": "剪彩",
+    "sentence": "我正在学习“剪彩”。"
   },
   {
     "word": "简化",
@@ -22496,6 +27256,38 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“见义勇为”。"
   },
   {
+    "word": "间谍",
+    "pinyin": "jiàndié",
+    "meaning": "a spy; intelligence agent",
+    "level": 6,
+    "phrase": "间谍",
+    "sentence": "我正在学习“间谍”。"
+  },
+  {
+    "word": "间隔",
+    "pinyin": "jiàngé",
+    "meaning": "interval; intermission; gap; be separated",
+    "level": 6,
+    "phrase": "间隔",
+    "sentence": "我正在学习“间隔”。"
+  },
+  {
+    "word": "间接",
+    "pinyin": "jiànjiē",
+    "meaning": "indirect",
+    "level": 6,
+    "phrase": "间接",
+    "sentence": "我正在学习“间接”。"
+  },
+  {
+    "word": "剑",
+    "pinyin": "jiàn",
+    "meaning": "sword",
+    "level": 6,
+    "phrase": "剑",
+    "sentence": "我正在学习“剑”。"
+  },
+  {
     "word": "健全",
     "pinyin": "jiànquán",
     "meaning": "Perfect; sound; to perfect/strengthen/amplify",
@@ -22518,6 +27310,14 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "践踏",
     "sentence": "我正在学习“践踏”。"
+  },
+  {
+    "word": "溅",
+    "pinyin": "jiàn",
+    "meaning": "to splash",
+    "level": 6,
+    "phrase": "溅",
+    "sentence": "我正在学习“溅”。"
   },
   {
     "word": "鉴别",
@@ -22590,6 +27390,14 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "奖赏",
     "sentence": "我正在学习“奖赏”。"
+  },
+  {
+    "word": "桨",
+    "pinyin": "jiǎng",
+    "meaning": "oar; paddle",
+    "level": 6,
+    "phrase": "桨",
+    "sentence": "我正在学习“桨”。"
   },
   {
     "word": "降临",
@@ -22710,6 +27518,14 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "阶层",
     "sentence": "我正在学习“阶层”。"
+  },
+  {
+    "word": "皆",
+    "pinyin": "jiē",
+    "meaning": "all; each and every; in all cases",
+    "level": 6,
+    "phrase": "皆",
+    "sentence": "我正在学习“皆”。"
   },
   {
     "word": "接连",
@@ -22912,14 +27728,6 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“锦上添花”。"
   },
   {
-    "word": "近来",
-    "pinyin": "jìnlái",
-    "meaning": "recently; lately",
-    "level": 6,
-    "phrase": "近来",
-    "sentence": "我正在学习“近来”。"
-  },
-  {
     "word": "进而",
     "pinyin": "jìn'ér",
     "meaning": "and then (what follows next)",
@@ -22952,6 +27760,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“进展”。"
   },
   {
+    "word": "近来",
+    "pinyin": "jìnlái",
+    "meaning": "recently; lately",
+    "level": 6,
+    "phrase": "近来",
+    "sentence": "我正在学习“近来”。"
+  },
+  {
     "word": "晋升",
     "pinyin": "jìnshēng",
     "meaning": "promote to a higher position",
@@ -22966,6 +27782,14 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "浸泡",
     "sentence": "我正在学习“浸泡”。"
+  },
+  {
+    "word": "茎",
+    "pinyin": "jīng",
+    "meaning": "stalk; stem",
+    "level": 6,
+    "phrase": "茎",
+    "sentence": "我正在学习“茎”。"
   },
   {
     "word": "经费",
@@ -23086,6 +27910,14 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "精致",
     "sentence": "我正在学习“精致”。"
+  },
+  {
+    "word": "井",
+    "pinyin": "jǐng",
+    "meaning": "a well",
+    "level": 6,
+    "phrase": "井",
+    "sentence": "我正在学习“井”。"
   },
   {
     "word": "颈椎",
@@ -23216,22 +28048,6 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“就职”。"
   },
   {
-    "word": "居民",
-    "pinyin": "jūmín",
-    "meaning": "resident; inhabitant",
-    "level": 6,
-    "phrase": "居民",
-    "sentence": "我正在学习“居民”。"
-  },
-  {
-    "word": "居住",
-    "pinyin": "jūzhù",
-    "meaning": "reside; dwell; to live (in a place)",
-    "level": 6,
-    "phrase": "居住",
-    "sentence": "我正在学习“居住”。"
-  },
-  {
     "word": "拘留",
     "pinyin": "jūliú",
     "meaning": "detain (a prison); keep (someone) in custody",
@@ -23246,6 +28062,22 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "拘束",
     "sentence": "我正在学习“拘束”。"
+  },
+  {
+    "word": "居民",
+    "pinyin": "jūmín",
+    "meaning": "resident; inhabitant",
+    "level": 6,
+    "phrase": "居民",
+    "sentence": "我正在学习“居民”。"
+  },
+  {
+    "word": "居住",
+    "pinyin": "jūzhù",
+    "meaning": "reside; dwell; to live (in a place)",
+    "level": 6,
+    "phrase": "居住",
+    "sentence": "我正在学习“居住”。"
   },
   {
     "word": "鞠躬",
@@ -23360,20 +28192,20 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“聚精会神”。"
   },
   {
+    "word": "卷",
+    "pinyin": "juǎn",
+    "meaning": "to roll (up); to coil; (mw for tapes)",
+    "level": 6,
+    "phrase": "卷",
+    "sentence": "我正在学习“卷”。"
+  },
+  {
     "word": "决策",
     "pinyin": "juécè",
     "meaning": "Make policy; make strategic decision",
     "level": 6,
     "phrase": "决策",
     "sentence": "我正在学习“决策”。"
-  },
-  {
-    "word": "绝望",
-    "pinyin": "jué wàng",
-    "meaning": "desperation; forlorn; hopeless",
-    "level": 6,
-    "phrase": "绝望",
-    "sentence": "我正在学习“绝望”。"
   },
   {
     "word": "觉悟",
@@ -23390,6 +28222,14 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "觉醒",
     "sentence": "我正在学习“觉醒”。"
+  },
+  {
+    "word": "绝望",
+    "pinyin": "jué wàng",
+    "meaning": "desperation; forlorn; hopeless",
+    "level": 6,
+    "phrase": "绝望",
+    "sentence": "我正在学习“绝望”。"
   },
   {
     "word": "倔强",
@@ -23552,6 +28392,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“慷慨”。"
   },
   {
+    "word": "扛",
+    "pinyin": "káng",
+    "meaning": "to carry on one's shoulder",
+    "level": 6,
+    "phrase": "扛",
+    "sentence": "我正在学习“扛”。"
+  },
+  {
     "word": "抗议",
     "pinyin": "kàngyì",
     "meaning": "to protest; protest",
@@ -23608,12 +28456,12 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“科目”。"
   },
   {
-    "word": "可恶",
-    "pinyin": "kěwù",
-    "meaning": "hateful; abominable; repulsive",
+    "word": "磕",
+    "pinyin": "kē",
+    "meaning": "knock; tap",
     "level": 6,
-    "phrase": "可恶",
-    "sentence": "我正在学习“可恶”。"
+    "phrase": "磕",
+    "sentence": "我正在学习“磕”。"
   },
   {
     "word": "可观",
@@ -23630,6 +28478,14 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "可口",
     "sentence": "我正在学习“可口”。"
+  },
+  {
+    "word": "可恶",
+    "pinyin": "kěwù",
+    "meaning": "hateful; abominable; repulsive",
+    "level": 6,
+    "phrase": "可恶",
+    "sentence": "我正在学习“可恶”。"
   },
   {
     "word": "可行",
@@ -23688,12 +28544,20 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“恳切”。"
   },
   {
-    "word": "空白",
-    "pinyin": "kòngbái",
-    "meaning": "blank space; blank",
+    "word": "啃",
+    "pinyin": "kěn",
+    "meaning": "gnaw; nibble; bite",
     "level": 6,
-    "phrase": "空白",
-    "sentence": "我正在学习“空白”。"
+    "phrase": "啃",
+    "sentence": "我正在学习“啃”。"
+  },
+  {
+    "word": "坑",
+    "pinyin": "kēng",
+    "meaning": "pit; hole; defraud",
+    "level": 6,
+    "phrase": "坑",
+    "sentence": "我正在学习“坑”。"
   },
   {
     "word": "空洞",
@@ -23712,14 +28576,6 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“空前绝后”。"
   },
   {
-    "word": "空隙",
-    "pinyin": "kòngxì",
-    "meaning": "crack; gap between two objects",
-    "level": 6,
-    "phrase": "空隙",
-    "sentence": "我正在学习“空隙”。"
-  },
-  {
     "word": "空想",
     "pinyin": "kōngxiǎng",
     "meaning": "daydream; fantasy",
@@ -23736,12 +28592,28 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“空虚”。"
   },
   {
+    "word": "孔",
+    "pinyin": "kǒng",
+    "meaning": "hole",
+    "level": 6,
+    "phrase": "孔",
+    "sentence": "我正在学习“孔”。"
+  },
+  {
     "word": "恐怖",
     "pinyin": "kǒngbù",
     "meaning": "afraid; terror",
     "level": 6,
     "phrase": "恐怖",
     "sentence": "我正在学习“恐怖”。"
+  },
+  {
+    "word": "恐吓",
+    "pinyin": "kǒnghè",
+    "meaning": "to threaten",
+    "level": 6,
+    "phrase": "恐吓",
+    "sentence": "我正在学习“恐吓”。"
   },
   {
     "word": "恐惧",
@@ -23752,12 +28624,20 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“恐惧”。"
   },
   {
-    "word": "恐吓",
-    "pinyin": "kǒnghè",
-    "meaning": "to threaten",
+    "word": "空白",
+    "pinyin": "kòngbái",
+    "meaning": "blank space; blank",
     "level": 6,
-    "phrase": "恐吓",
-    "sentence": "我正在学习“恐吓”。"
+    "phrase": "空白",
+    "sentence": "我正在学习“空白”。"
+  },
+  {
+    "word": "空隙",
+    "pinyin": "kòngxì",
+    "meaning": "crack; gap between two objects",
+    "level": 6,
+    "phrase": "空隙",
+    "sentence": "我正在学习“空隙”。"
   },
   {
     "word": "口气",
@@ -23790,6 +28670,14 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "口音",
     "sentence": "我正在学习“口音”。"
+  },
+  {
+    "word": "扣",
+    "pinyin": "kòu",
+    "meaning": "to fasten; to button; button; buckle; knot; to arrest; to confiscate; to deduct (money); discount; to knock; put upside down; to smash or spike (a ball); to cover (with a bowl etc); fig. to tag a label on sb",
+    "level": 6,
+    "phrase": "扣",
+    "sentence": "我正在学习“扣”。"
   },
   {
     "word": "枯萎",
@@ -23832,6 +28720,22 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“苦涩”。"
   },
   {
+    "word": "挎",
+    "pinyin": "kuà",
+    "meaning": "carry over one's shoulder or slung on one's side",
+    "level": 6,
+    "phrase": "挎",
+    "sentence": "我正在学习“挎”。"
+  },
+  {
+    "word": "跨",
+    "pinyin": "kuà",
+    "meaning": "step across; stride; straddle; to cross",
+    "level": 6,
+    "phrase": "跨",
+    "sentence": "我正在学习“跨”。"
+  },
+  {
     "word": "快活",
     "pinyin": "kuàihuo",
     "meaning": "happy; cheerful",
@@ -23872,12 +28776,12 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“款式”。"
   },
   {
-    "word": "况且",
-    "pinyin": "kuàngqiě",
-    "meaning": "moreover; besides; in addition",
+    "word": "筐",
+    "pinyin": "kuāng",
+    "meaning": "basket",
     "level": 6,
-    "phrase": "况且",
-    "sentence": "我正在学习“况且”。"
+    "phrase": "筐",
+    "sentence": "我正在学习“筐”。"
   },
   {
     "word": "旷课",
@@ -23886,6 +28790,14 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "旷课",
     "sentence": "我正在学习“旷课”。"
+  },
+  {
+    "word": "况且",
+    "pinyin": "kuàngqiě",
+    "meaning": "moreover; besides; in addition",
+    "level": 6,
+    "phrase": "况且",
+    "sentence": "我正在学习“况且”。"
   },
   {
     "word": "矿产",
@@ -23968,6 +28880,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“蜡烛”。"
   },
   {
+    "word": "啦",
+    "pinyin": "la",
+    "meaning": "sentence-final particle: a contraction of 了 (le) and 啊 (a)",
+    "level": 6,
+    "phrase": "啦",
+    "sentence": "我正在学习“啦”。"
+  },
+  {
     "word": "来历",
     "pinyin": "láilì",
     "meaning": "history; antecedents; origin",
@@ -24016,6 +28936,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“狼吞虎咽”。"
   },
   {
+    "word": "捞",
+    "pinyin": "lāo",
+    "meaning": "dredge up; fish up",
+    "level": 6,
+    "phrase": "捞",
+    "sentence": "我正在学习“捞”。"
+  },
+  {
     "word": "牢固",
     "pinyin": "láogù",
     "meaning": "firm; secure; solid",
@@ -24038,14 +28966,6 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "唠叨",
     "sentence": "我正在学习“唠叨”。"
-  },
-  {
-    "word": "乐谱",
-    "pinyin": "yuèpǔ",
-    "meaning": "sheet music",
-    "level": 6,
-    "phrase": "乐谱",
-    "sentence": "我正在学习“乐谱”。"
   },
   {
     "word": "乐趣",
@@ -24102,6 +29022,14 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "冷却",
     "sentence": "我正在学习“冷却”。"
+  },
+  {
+    "word": "愣",
+    "pinyin": "lèng",
+    "meaning": "dumbfounded; stupefied; distracted; (spoken) blunt; rash",
+    "level": 6,
+    "phrase": "愣",
+    "sentence": "我正在学习“愣”。"
   },
   {
     "word": "黎明",
@@ -24264,6 +29192,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“例外”。"
   },
   {
+    "word": "粒",
+    "pinyin": "lì",
+    "meaning": "a grain; granule; (mw for grain-like things)",
+    "level": 6,
+    "phrase": "粒",
+    "sentence": "我正在学习“粒”。"
+  },
+  {
     "word": "连年",
     "pinyin": "liánnián",
     "meaning": "successive years; over many years; once again this year",
@@ -24344,6 +29280,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“谅解”。"
   },
   {
+    "word": "晾",
+    "pinyin": "liàng",
+    "meaning": "dry in the air/sun; (colloquial) snub or ignore",
+    "level": 6,
+    "phrase": "晾",
+    "sentence": "我正在学习“晾”。"
+  },
+  {
     "word": "辽阔",
     "pinyin": "liáokuò",
     "meaning": "vast; extensive",
@@ -24366,6 +29310,14 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "临床",
     "sentence": "我正在学习“临床”。"
+  },
+  {
+    "word": "淋",
+    "pinyin": "lín",
+    "meaning": "to drain; to drip; drench",
+    "level": 6,
+    "phrase": "淋",
+    "sentence": "我正在学习“淋”。"
   },
   {
     "word": "吝啬",
@@ -24472,6 +29424,38 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“领袖”。"
   },
   {
+    "word": "溜",
+    "pinyin": "liū",
+    "meaning": "slip away; to skate; to glide",
+    "level": 6,
+    "phrase": "溜",
+    "sentence": "我正在学习“溜”。"
+  },
+  {
+    "word": "留恋",
+    "pinyin": "liúliàn",
+    "meaning": "be reluctant to leave",
+    "level": 6,
+    "phrase": "留恋",
+    "sentence": "我正在学习“留恋”。"
+  },
+  {
+    "word": "留念",
+    "pinyin": "liúniàn",
+    "meaning": "to keep as a souvenir",
+    "level": 6,
+    "phrase": "留念",
+    "sentence": "我正在学习“留念”。"
+  },
+  {
+    "word": "留神",
+    "pinyin": "liú shén",
+    "meaning": "(idiom) take care to ...; be careful of ...",
+    "level": 6,
+    "phrase": "留神",
+    "sentence": "我正在学习“留神”。"
+  },
+  {
     "word": "流浪",
     "pinyin": "liúlàng",
     "meaning": "drift about; wander",
@@ -24504,38 +29488,6 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“流通”。"
   },
   {
-    "word": "留恋",
-    "pinyin": "liúliàn",
-    "meaning": "be reluctant to leave",
-    "level": 6,
-    "phrase": "留恋",
-    "sentence": "我正在学习“留恋”。"
-  },
-  {
-    "word": "留念",
-    "pinyin": "liúniàn",
-    "meaning": "to keep as a souvenir",
-    "level": 6,
-    "phrase": "留念",
-    "sentence": "我正在学习“留念”。"
-  },
-  {
-    "word": "留神",
-    "pinyin": "liú shén",
-    "meaning": "(idiom) take care to ...; be careful of ...",
-    "level": 6,
-    "phrase": "留神",
-    "sentence": "我正在学习“留神”。"
-  },
-  {
-    "word": "笼罩",
-    "pinyin": "lǒngzhào",
-    "meaning": "envelop; to shroud; be masked by",
-    "level": 6,
-    "phrase": "笼罩",
-    "sentence": "我正在学习“笼罩”。"
-  },
-  {
     "word": "聋哑",
     "pinyin": "lóngyǎ",
     "meaning": "deaf and dumb; deaf-mute",
@@ -24560,6 +29512,22 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“垄断”。"
   },
   {
+    "word": "笼罩",
+    "pinyin": "lǒngzhào",
+    "meaning": "envelop; to shroud; be masked by",
+    "level": 6,
+    "phrase": "笼罩",
+    "sentence": "我正在学习“笼罩”。"
+  },
+  {
+    "word": "搂",
+    "pinyin": "lǒu",
+    "meaning": "to hug; to embrace",
+    "level": 6,
+    "phrase": "搂",
+    "sentence": "我正在学习“搂”。"
+  },
+  {
     "word": "炉灶",
     "pinyin": "lúzào",
     "meaning": "kitchen range; cooking range; stovetop range",
@@ -24582,14 +29550,6 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "履行",
     "sentence": "我正在学习“履行”。"
-  },
-  {
-    "word": "率领",
-    "pinyin": "shuàilǐng",
-    "meaning": "lead; command; head",
-    "level": 6,
-    "phrase": "率领",
-    "sentence": "我正在学习“率领”。"
   },
   {
     "word": "掠夺",
@@ -24712,6 +29672,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“蚂蚁”。"
   },
   {
+    "word": "嘛",
+    "pinyin": "ma, má",
+    "meaning": "(used to persuade somebody to do something); (particle indicating obviousness) | (colloqial) what?",
+    "level": 6,
+    "phrase": "嘛",
+    "sentence": "我正在学习“嘛”。"
+  },
+  {
     "word": "埋伏",
     "pinyin": "máifu",
     "meaning": "ambush; lie in ambush",
@@ -24728,20 +29696,20 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“埋没”。"
   },
   {
-    "word": "埋怨",
-    "pinyin": "mányuàn",
-    "meaning": "complain; blame; connotes sb or sth is to blame",
-    "level": 6,
-    "phrase": "埋怨",
-    "sentence": "我正在学习“埋怨”。"
-  },
-  {
     "word": "埋葬",
     "pinyin": "máizàng",
     "meaning": "bury",
     "level": 6,
     "phrase": "埋葬",
     "sentence": "我正在学习“埋葬”。"
+  },
+  {
+    "word": "迈",
+    "pinyin": "mài",
+    "meaning": "to step; stride",
+    "level": 6,
+    "phrase": "迈",
+    "sentence": "我正在学习“迈”。"
   },
   {
     "word": "脉搏",
@@ -24752,20 +29720,20 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“脉搏”。"
   },
   {
-    "word": "慢性",
-    "pinyin": "mànxìng",
-    "meaning": "slow and patient; chronic (disease)",
+    "word": "埋怨",
+    "pinyin": "mányuàn",
+    "meaning": "complain; blame; connotes sb or sth is to blame",
     "level": 6,
-    "phrase": "慢性",
-    "sentence": "我正在学习“慢性”。"
+    "phrase": "埋怨",
+    "sentence": "我正在学习“埋怨”。"
   },
   {
-    "word": "漫画",
-    "pinyin": "mànhuà",
-    "meaning": "comics; manga",
+    "word": "蔓延",
+    "pinyin": "mànyán",
+    "meaning": "extend; spread; to creep",
     "level": 6,
-    "phrase": "漫画",
-    "sentence": "我正在学习“漫画”。"
+    "phrase": "蔓延",
+    "sentence": "我正在学习“蔓延”。"
   },
   {
     "word": "漫长",
@@ -24776,12 +29744,20 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“漫长”。"
   },
   {
-    "word": "蔓延",
-    "pinyin": "mànyán",
-    "meaning": "extend; spread; to creep",
+    "word": "漫画",
+    "pinyin": "mànhuà",
+    "meaning": "comics; manga",
     "level": 6,
-    "phrase": "蔓延",
-    "sentence": "我正在学习“蔓延”。"
+    "phrase": "漫画",
+    "sentence": "我正在学习“漫画”。"
+  },
+  {
+    "word": "慢性",
+    "pinyin": "mànxìng",
+    "meaning": "slow and patient; chronic (disease)",
+    "level": 6,
+    "phrase": "慢性",
+    "sentence": "我正在学习“慢性”。"
   },
   {
     "word": "忙碌",
@@ -24840,6 +29816,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“冒犯”。"
   },
   {
+    "word": "枚",
+    "pinyin": "méi",
+    "meaning": "(mw for coins, rings, medals)",
+    "level": 6,
+    "phrase": "枚",
+    "sentence": "我正在学习“枚”。"
+  },
+  {
     "word": "媒介",
     "pinyin": "méijiè",
     "meaning": "media; medium",
@@ -24886,6 +29870,14 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "猛烈",
     "sentence": "我正在学习“猛烈”。"
+  },
+  {
+    "word": "眯",
+    "pinyin": "mī",
+    "meaning": "to squint; to take a nap",
+    "level": 6,
+    "phrase": "眯",
+    "sentence": "我正在学习“眯”。"
   },
   {
     "word": "弥补",
@@ -25176,12 +30168,12 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“模型”。"
   },
   {
-    "word": "模样",
-    "pinyin": "múyàng",
-    "meaning": "appearance; form; approximation",
+    "word": "膜",
+    "pinyin": "mó",
+    "meaning": "membrane; film",
     "level": 6,
-    "phrase": "模样",
-    "sentence": "我正在学习“模样”。"
+    "phrase": "膜",
+    "sentence": "我正在学习“膜”。"
   },
   {
     "word": "摩擦",
@@ -25254,6 +30246,14 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "谋求",
     "sentence": "我正在学习“谋求”。"
+  },
+  {
+    "word": "模样",
+    "pinyin": "múyàng",
+    "meaning": "appearance; form; approximation",
+    "level": 6,
+    "phrase": "模样",
+    "sentence": "我正在学习“模样”。"
   },
   {
     "word": "母语",
@@ -25408,20 +30408,12 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“年度”。"
   },
   {
-    "word": "宁肯",
-    "pinyin": "nìngkěn",
-    "meaning": "would rather ...; it would be better",
+    "word": "捏",
+    "pinyin": "niē",
+    "meaning": "to pinch (with one's fingers); knead",
     "level": 6,
-    "phrase": "宁肯",
-    "sentence": "我正在学习“宁肯”。"
-  },
-  {
-    "word": "宁愿",
-    "pinyin": "nìngyuàn",
-    "meaning": "would rather; better",
-    "level": 6,
-    "phrase": "宁愿",
-    "sentence": "我正在学习“宁愿”。"
+    "phrase": "捏",
+    "sentence": "我正在学习“捏”。"
   },
   {
     "word": "凝固",
@@ -25446,6 +30438,30 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "凝视",
     "sentence": "我正在学习“凝视”。"
+  },
+  {
+    "word": "拧",
+    "pinyin": "níng",
+    "meaning": "wring; to pinch",
+    "level": 6,
+    "phrase": "拧",
+    "sentence": "我正在学习“拧”。"
+  },
+  {
+    "word": "宁肯",
+    "pinyin": "nìngkěn",
+    "meaning": "would rather ...; it would be better",
+    "level": 6,
+    "phrase": "宁肯",
+    "sentence": "我正在学习“宁肯”。"
+  },
+  {
+    "word": "宁愿",
+    "pinyin": "nìngyuàn",
+    "meaning": "would rather; better",
+    "level": 6,
+    "phrase": "宁愿",
+    "sentence": "我正在学习“宁愿”。"
   },
   {
     "word": "扭转",
@@ -25496,6 +30512,22 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“虐待”。"
   },
   {
+    "word": "挪",
+    "pinyin": "nuó",
+    "meaning": "shift; move",
+    "level": 6,
+    "phrase": "挪",
+    "sentence": "我正在学习“挪”。"
+  },
+  {
+    "word": "哦",
+    "pinyin": "ò",
+    "meaning": "oh (indicates understanding)",
+    "level": 6,
+    "phrase": "哦",
+    "sentence": "我正在学习“哦”。"
+  },
+  {
     "word": "殴打",
     "pinyin": "ōudǎ",
     "meaning": "beat up; hit",
@@ -25520,12 +30552,12 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“偶像”。"
   },
   {
-    "word": "徘徊",
-    "pinyin": "páihuái",
-    "meaning": "pace back and forth; hesitate; waver",
+    "word": "趴",
+    "pinyin": "pā",
+    "meaning": "lie on one's stomach",
     "level": 6,
-    "phrase": "徘徊",
-    "sentence": "我正在学习“徘徊”。"
+    "phrase": "趴",
+    "sentence": "我正在学习“趴”。"
   },
   {
     "word": "排斥",
@@ -25558,6 +30590,14 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "排练",
     "sentence": "我正在学习“排练”。"
+  },
+  {
+    "word": "徘徊",
+    "pinyin": "páihuái",
+    "meaning": "pace back and forth; hesitate; waver",
+    "level": 6,
+    "phrase": "徘徊",
+    "sentence": "我正在学习“徘徊”。"
   },
   {
     "word": "派别",
@@ -25598,6 +30638,14 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "判决",
     "sentence": "我正在学习“判决”。"
+  },
+  {
+    "word": "畔",
+    "pinyin": "pàn",
+    "meaning": "riverbank; side; boundary",
+    "level": 6,
+    "phrase": "畔",
+    "sentence": "我正在学习“畔”。"
   },
   {
     "word": "庞大",
@@ -25672,6 +30720,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“烹饪”。"
   },
   {
+    "word": "捧",
+    "pinyin": "pěng",
+    "meaning": "hold or carry with both hands facing up",
+    "level": 6,
+    "phrase": "捧",
+    "sentence": "我正在学习“捧”。"
+  },
+  {
     "word": "批发",
     "pinyin": "pīfā",
     "meaning": "wholesale",
@@ -25686,6 +30742,14 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "批判",
     "sentence": "我正在学习“批判”。"
+  },
+  {
+    "word": "劈",
+    "pinyin": "pī",
+    "meaning": "split in two; to divide",
+    "level": 6,
+    "phrase": "劈",
+    "sentence": "我正在学习“劈”。"
   },
   {
     "word": "皮革",
@@ -25776,6 +30840,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“片刻”。"
   },
   {
+    "word": "漂浮",
+    "pinyin": "piāofú",
+    "meaning": "superficial; float; hover; drift",
+    "level": 6,
+    "phrase": "漂浮",
+    "sentence": "我正在学习“漂浮”。"
+  },
+  {
     "word": "飘扬",
     "pinyin": "piāoyáng",
     "meaning": "wave in the wind; flutter; fly",
@@ -25784,12 +30856,12 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“飘扬”。"
   },
   {
-    "word": "漂浮",
-    "pinyin": "piāofú",
-    "meaning": "superficial; float; hover; drift",
+    "word": "撇",
+    "pinyin": "piě",
+    "meaning": "left-curving stroke (丿); throw; fling",
     "level": 6,
-    "phrase": "漂浮",
-    "sentence": "我正在学习“漂浮”。"
+    "phrase": "撇",
+    "sentence": "我正在学习“撇”。"
   },
   {
     "word": "拼搏",
@@ -25952,6 +31024,30 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“屏障”。"
   },
   {
+    "word": "坡",
+    "pinyin": "pō",
+    "meaning": "slope",
+    "level": 6,
+    "phrase": "坡",
+    "sentence": "我正在学习“坡”。"
+  },
+  {
+    "word": "泼",
+    "pinyin": "pō",
+    "meaning": "to splash; to spill; rude and unreasonable; brutish",
+    "level": 6,
+    "phrase": "泼",
+    "sentence": "我正在学习“泼”。"
+  },
+  {
+    "word": "颇",
+    "pinyin": "pō",
+    "meaning": "rather; quite; inclined to one side",
+    "level": 6,
+    "phrase": "颇",
+    "sentence": "我正在学习“颇”。"
+  },
+  {
     "word": "迫不及待",
     "pinyin": "pòbùjídài",
     "meaning": "be too impatient to wait",
@@ -25984,6 +31080,22 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“魄力”。"
   },
   {
+    "word": "扑",
+    "pinyin": "pū",
+    "meaning": "to assault; rush at; throw oneself on",
+    "level": 6,
+    "phrase": "扑",
+    "sentence": "我正在学习“扑”。"
+  },
+  {
+    "word": "铺",
+    "pinyin": "pù, pū",
+    "meaning": "bed; store | to spread; to lay",
+    "level": 6,
+    "phrase": "铺",
+    "sentence": "我正在学习“铺”。"
+  },
+  {
     "word": "朴实",
     "pinyin": "pǔshí",
     "meaning": "plain; sober; down-to-earth",
@@ -26014,14 +31126,6 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "瀑布",
     "sentence": "我正在学习“瀑布”。"
-  },
-  {
-    "word": "曝光",
-    "pinyin": "bàoguāng",
-    "meaning": "to expose; to make public",
-    "level": 6,
-    "phrase": "曝光",
-    "sentence": "我正在学习“曝光”。"
   },
   {
     "word": "凄凉",
@@ -26120,20 +31224,20 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“乞丐”。"
   },
   {
-    "word": "企图",
-    "pinyin": "qǐtú",
-    "meaning": "(to ) attempt; try; attempt",
-    "level": 6,
-    "phrase": "企图",
-    "sentence": "我正在学习“企图”。"
-  },
-  {
     "word": "岂有此理",
     "pinyin": "qǐ yǒu cǐ lǐ",
     "meaning": "outrageous; ridiculous; absurd",
     "level": 6,
     "phrase": "岂有此理",
     "sentence": "我正在学习“岂有此理”。"
+  },
+  {
+    "word": "企图",
+    "pinyin": "qǐtú",
+    "meaning": "(to ) attempt; try; attempt",
+    "level": 6,
+    "phrase": "企图",
+    "sentence": "我正在学习“企图”。"
   },
   {
     "word": "启程",
@@ -26312,6 +31416,22 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“器官”。"
   },
   {
+    "word": "掐",
+    "pinyin": "qiā",
+    "meaning": "pick (flowers); pinch; clutch",
+    "level": 6,
+    "phrase": "掐",
+    "sentence": "我正在学习“掐”。"
+  },
+  {
+    "word": "洽谈",
+    "pinyin": "qiàtán",
+    "meaning": "discuss; talk over",
+    "level": 6,
+    "phrase": "洽谈",
+    "sentence": "我正在学习“洽谈”。"
+  },
+  {
     "word": "恰当",
     "pinyin": "qiàdàng",
     "meaning": "appropriate; suitable; proper",
@@ -26336,14 +31456,6 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“恰巧”。"
   },
   {
-    "word": "洽谈",
-    "pinyin": "qiàtán",
-    "meaning": "discuss; talk over",
-    "level": 6,
-    "phrase": "洽谈",
-    "sentence": "我正在学习“洽谈”。"
-  },
-  {
     "word": "千方百计",
     "pinyin": "qiān fāng bǎi jì",
     "meaning": "by every possible means",
@@ -26366,6 +31478,14 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "迁徙",
     "sentence": "我正在学习“迁徙”。"
+  },
+  {
+    "word": "牵",
+    "pinyin": "qiān",
+    "meaning": "to lead along; to pull (an animal on a tether)",
+    "level": 6,
+    "phrase": "牵",
+    "sentence": "我正在学习“牵”。"
   },
   {
     "word": "牵扯",
@@ -26448,14 +31568,6 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“谴责”。"
   },
   {
-    "word": "强迫",
-    "pinyin": "qiǎngpò",
-    "meaning": "compel; to force",
-    "level": 6,
-    "phrase": "强迫",
-    "sentence": "我正在学习“强迫”。"
-  },
-  {
     "word": "强制",
     "pinyin": "qiángzhì",
     "meaning": "enforce; control; coerce",
@@ -26480,6 +31592,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“抢救”。"
   },
   {
+    "word": "强迫",
+    "pinyin": "qiǎngpò",
+    "meaning": "compel; to force",
+    "level": 6,
+    "phrase": "强迫",
+    "sentence": "我正在学习“强迫”。"
+  },
+  {
     "word": "桥梁",
     "pinyin": "qiáoliáng",
     "meaning": "bridge",
@@ -26494,6 +31614,14 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "窍门",
     "sentence": "我正在学习“窍门”。"
+  },
+  {
+    "word": "翘",
+    "pinyin": "qiào",
+    "meaning": "stick up; bend upwards",
+    "level": 6,
+    "phrase": "翘",
+    "sentence": "我正在学习“翘”。"
   },
   {
     "word": "切实",
@@ -26512,20 +31640,12 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“锲而不舍”。"
   },
   {
-    "word": "亲密",
-    "pinyin": "qīnmì",
-    "meaning": "intimate; close; familiarity",
+    "word": "钦佩",
+    "pinyin": "qīnpèi",
+    "meaning": "admire; have great respect for",
     "level": 6,
-    "phrase": "亲密",
-    "sentence": "我正在学习“亲密”。"
-  },
-  {
-    "word": "亲热",
-    "pinyin": "qīnrè",
-    "meaning": "intimate; affectionate; warm",
-    "level": 6,
-    "phrase": "亲热",
-    "sentence": "我正在学习“亲热”。"
+    "phrase": "钦佩",
+    "sentence": "我正在学习“钦佩”。"
   },
   {
     "word": "侵犯",
@@ -26544,12 +31664,20 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“侵略”。"
   },
   {
-    "word": "钦佩",
-    "pinyin": "qīnpèi",
-    "meaning": "admire; have great respect for",
+    "word": "亲密",
+    "pinyin": "qīnmì",
+    "meaning": "intimate; close; familiarity",
     "level": 6,
-    "phrase": "钦佩",
-    "sentence": "我正在学习“钦佩”。"
+    "phrase": "亲密",
+    "sentence": "我正在学习“亲密”。"
+  },
+  {
+    "word": "亲热",
+    "pinyin": "qīnrè",
+    "meaning": "intimate; affectionate; warm",
+    "level": 6,
+    "phrase": "亲热",
+    "sentence": "我正在学习“亲热”。"
   },
   {
     "word": "勤俭",
@@ -26760,14 +31888,6 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“曲折”。"
   },
   {
-    "word": "曲子",
-    "pinyin": "qǔzi",
-    "meaning": "folk tune; music; melody",
-    "level": 6,
-    "phrase": "曲子",
-    "sentence": "我正在学习“曲子”。"
-  },
-  {
     "word": "驱逐",
     "pinyin": "qūzhú",
     "meaning": "banishment; expel; deport",
@@ -26790,6 +31910,14 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "渠道",
     "sentence": "我正在学习“渠道”。"
+  },
+  {
+    "word": "曲子",
+    "pinyin": "qǔzi",
+    "meaning": "folk tune; music; melody",
+    "level": 6,
+    "phrase": "曲子",
+    "sentence": "我正在学习“曲子”。"
   },
   {
     "word": "取缔",
@@ -26816,22 +31944,6 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“圈套”。"
   },
   {
-    "word": "全局",
-    "pinyin": "quánjú",
-    "meaning": "overall situation",
-    "level": 6,
-    "phrase": "全局",
-    "sentence": "我正在学习“全局”。"
-  },
-  {
-    "word": "全力以赴",
-    "pinyin": "quán lì yǐ fù",
-    "meaning": "do at all costs; make an all-out effort",
-    "level": 6,
-    "phrase": "全力以赴",
-    "sentence": "我正在学习“全力以赴”。"
-  },
-  {
     "word": "权衡",
     "pinyin": "quánhéng",
     "meaning": "trade-off; weigh pros and cons",
@@ -26848,12 +31960,36 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“权威”。"
   },
   {
+    "word": "全局",
+    "pinyin": "quánjú",
+    "meaning": "overall situation",
+    "level": 6,
+    "phrase": "全局",
+    "sentence": "我正在学习“全局”。"
+  },
+  {
+    "word": "全力以赴",
+    "pinyin": "quán lì yǐ fù",
+    "meaning": "do at all costs; make an all-out effort",
+    "level": 6,
+    "phrase": "全力以赴",
+    "sentence": "我正在学习“全力以赴”。"
+  },
+  {
     "word": "拳头",
     "pinyin": "quántou",
     "meaning": "fist",
     "level": 6,
     "phrase": "拳头",
     "sentence": "我正在学习“拳头”。"
+  },
+  {
+    "word": "犬",
+    "pinyin": "quǎn",
+    "meaning": "dog (Kangxi radical 94)",
+    "level": 6,
+    "phrase": "犬",
+    "sentence": "我正在学习“犬”。"
   },
   {
     "word": "缺口",
@@ -26878,6 +32014,14 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "缺陷",
     "sentence": "我正在学习“缺陷”。"
+  },
+  {
+    "word": "瘸",
+    "pinyin": "qué",
+    "meaning": "lame",
+    "level": 6,
+    "phrase": "瘸",
+    "sentence": "我正在学习“瘸”。"
   },
   {
     "word": "确保",
@@ -26918,6 +32062,22 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "群众",
     "sentence": "我正在学习“群众”。"
+  },
+  {
+    "word": "染",
+    "pinyin": "rǎn",
+    "meaning": "dye; to catch (a disease)",
+    "level": 6,
+    "phrase": "染",
+    "sentence": "我正在学习“染”。"
+  },
+  {
+    "word": "嚷",
+    "pinyin": "rǎng",
+    "meaning": "blurt out; shout",
+    "level": 6,
+    "phrase": "嚷",
+    "sentence": "我正在学习“嚷”。"
   },
   {
     "word": "让步",
@@ -27216,6 +32376,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“柔和”。"
   },
   {
+    "word": "揉",
+    "pinyin": "róu",
+    "meaning": "knead; to massage; to rub",
+    "level": 6,
+    "phrase": "揉",
+    "sentence": "我正在学习“揉”。"
+  },
+  {
     "word": "儒家",
     "pinyin": "rújiā",
     "meaning": "Confucianism",
@@ -27248,6 +32416,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“撒谎”。"
   },
   {
+    "word": "散文",
+    "pinyin": "sǎnwén",
+    "meaning": "prose; essay",
+    "level": 6,
+    "phrase": "散文",
+    "sentence": "我正在学习“散文”。"
+  },
+  {
     "word": "散布",
     "pinyin": "sànbù",
     "meaning": "to scatter; disseminate; to spread",
@@ -27262,14 +32438,6 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "散发",
     "sentence": "我正在学习“散发”。"
-  },
-  {
-    "word": "散文",
-    "pinyin": "sǎnwén",
-    "meaning": "prose; essay",
-    "level": 6,
-    "phrase": "散文",
-    "sentence": "我正在学习“散文”。"
   },
   {
     "word": "丧失",
@@ -27304,12 +32472,12 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“刹车”。"
   },
   {
-    "word": "刹那",
-    "pinyin": "chànà",
-    "meaning": "an instant (Sanskrit: ksana); split second",
+    "word": "啥",
+    "pinyin": "shá",
+    "meaning": "(spoken) what",
     "level": 6,
-    "phrase": "刹那",
-    "sentence": "我正在学习“刹那”。"
+    "phrase": "啥",
+    "sentence": "我正在学习“啥”。"
   },
   {
     "word": "筛选",
@@ -27414,6 +32582,30 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "尚且",
     "sentence": "我正在学习“尚且”。"
+  },
+  {
+    "word": "捎",
+    "pinyin": "shāo",
+    "meaning": "bring or take (along); deliver (a message)",
+    "level": 6,
+    "phrase": "捎",
+    "sentence": "我正在学习“捎”。"
+  },
+  {
+    "word": "梢",
+    "pinyin": "shāo",
+    "meaning": "tip of a branch",
+    "level": 6,
+    "phrase": "梢",
+    "sentence": "我正在学习“梢”。"
+  },
+  {
+    "word": "哨",
+    "pinyin": "shào",
+    "meaning": "a whistle; sentry post",
+    "level": 6,
+    "phrase": "哨",
+    "sentence": "我正在学习“哨”。"
   },
   {
     "word": "奢侈",
@@ -27952,20 +33144,20 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“实质”。"
   },
   {
+    "word": "拾",
+    "pinyin": "shí",
+    "meaning": "pick up; ten (banker's anti-fraud numeral)",
+    "level": 6,
+    "phrase": "拾",
+    "sentence": "我正在学习“拾”。"
+  },
+  {
     "word": "使命",
     "pinyin": "shǐmìng",
     "meaning": "a (diplomatic or other) mission",
     "level": 6,
     "phrase": "使命",
     "sentence": "我正在学习“使命”。"
-  },
-  {
-    "word": "世代",
-    "pinyin": "shìdài",
-    "meaning": "for generations; generation to generation",
-    "level": 6,
-    "phrase": "世代",
-    "sentence": "我正在学习“世代”。"
   },
   {
     "word": "示范",
@@ -27990,6 +33182,30 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "示意",
     "sentence": "我正在学习“示意”。"
+  },
+  {
+    "word": "世代",
+    "pinyin": "shìdài",
+    "meaning": "for generations; generation to generation",
+    "level": 6,
+    "phrase": "世代",
+    "sentence": "我正在学习“世代”。"
+  },
+  {
+    "word": "势必",
+    "pinyin": "shìbì",
+    "meaning": "is bound to (happen)",
+    "level": 6,
+    "phrase": "势必",
+    "sentence": "我正在学习“势必”。"
+  },
+  {
+    "word": "势力",
+    "pinyin": "shìli",
+    "meaning": "power; influence",
+    "level": 6,
+    "phrase": "势力",
+    "sentence": "我正在学习“势力”。"
   },
   {
     "word": "事故",
@@ -28048,20 +33264,20 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“事业”。"
   },
   {
-    "word": "势必",
-    "pinyin": "shìbì",
-    "meaning": "is bound to (happen)",
+    "word": "试图",
+    "pinyin": "shìtú",
+    "meaning": "to try; to attempt",
     "level": 6,
-    "phrase": "势必",
-    "sentence": "我正在学习“势必”。"
+    "phrase": "试图",
+    "sentence": "我正在学习“试图”。"
   },
   {
-    "word": "势力",
-    "pinyin": "shìli",
-    "meaning": "power; influence",
+    "word": "试验",
+    "pinyin": "shìyàn",
+    "meaning": "experiment; test",
     "level": 6,
-    "phrase": "势力",
-    "sentence": "我正在学习“势力”。"
+    "phrase": "试验",
+    "sentence": "我正在学习“试验”。"
   },
   {
     "word": "视力",
@@ -28094,22 +33310,6 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "视野",
     "sentence": "我正在学习“视野”。"
-  },
-  {
-    "word": "试图",
-    "pinyin": "shìtú",
-    "meaning": "to try; to attempt",
-    "level": 6,
-    "phrase": "试图",
-    "sentence": "我正在学习“试图”。"
-  },
-  {
-    "word": "试验",
-    "pinyin": "shìyàn",
-    "meaning": "experiment; test",
-    "level": 6,
-    "phrase": "试验",
-    "sentence": "我正在学习“试验”。"
   },
   {
     "word": "是非",
@@ -28272,6 +33472,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“书面”。"
   },
   {
+    "word": "舒畅",
+    "pinyin": "shūchàng",
+    "meaning": "happy; entirely free from worry",
+    "level": 6,
+    "phrase": "舒畅",
+    "sentence": "我正在学习“舒畅”。"
+  },
+  {
     "word": "疏忽",
     "pinyin": "shūhu",
     "meaning": "neglect; overlook; negligence",
@@ -28288,12 +33496,12 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“疏远”。"
   },
   {
-    "word": "舒畅",
-    "pinyin": "shūchàng",
-    "meaning": "happy; entirely free from worry",
+    "word": "束",
+    "pinyin": "shù",
+    "meaning": "to tie; to bind; restrain; (mw for bunches, bundles, bouquets, etc.)",
     "level": 6,
-    "phrase": "舒畅",
-    "sentence": "我正在学习“舒畅”。"
+    "phrase": "束",
+    "sentence": "我正在学习“束”。"
   },
   {
     "word": "束缚",
@@ -28312,12 +33520,28 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“树立”。"
   },
   {
+    "word": "竖",
+    "pinyin": "shù",
+    "meaning": "vertical; to erect; vertical stroke",
+    "level": 6,
+    "phrase": "竖",
+    "sentence": "我正在学习“竖”。"
+  },
+  {
     "word": "数额",
     "pinyin": "shù'é",
     "meaning": "amount; sum of money; fixed number",
     "level": 6,
     "phrase": "数额",
     "sentence": "我正在学习“数额”。"
+  },
+  {
+    "word": "耍",
+    "pinyin": "shuǎ",
+    "meaning": "play/mess around with; juggle",
+    "level": 6,
+    "phrase": "耍",
+    "sentence": "我正在学习“耍”。"
   },
   {
     "word": "衰老",
@@ -28334,6 +33558,14 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "衰退",
     "sentence": "我正在学习“衰退”。"
+  },
+  {
+    "word": "率领",
+    "pinyin": "shuàilǐng",
+    "meaning": "lead; command; head",
+    "level": 6,
+    "phrase": "率领",
+    "sentence": "我正在学习“率领”。"
   },
   {
     "word": "涮火锅",
@@ -28488,6 +33720,22 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“肆无忌惮”。"
   },
   {
+    "word": "耸",
+    "pinyin": "sǒng",
+    "meaning": "shrug; towering; shock (alarm)",
+    "level": 6,
+    "phrase": "耸",
+    "sentence": "我正在学习“耸”。"
+  },
+  {
+    "word": "艘",
+    "pinyin": "sōu",
+    "meaning": "(mw for boats and ships)",
+    "level": 6,
+    "phrase": "艘",
+    "sentence": "我正在学习“艘”。"
+  },
+  {
     "word": "苏醒",
     "pinyin": "sūxǐng",
     "meaning": "wake up; regain consciousness",
@@ -28600,12 +33848,28 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“索性”。"
   },
   {
+    "word": "塌",
+    "pinyin": "tā",
+    "meaning": "collapse; fall down; crumple",
+    "level": 6,
+    "phrase": "塌",
+    "sentence": "我正在学习“塌”。"
+  },
+  {
     "word": "踏实",
     "pinyin": "tāshi",
     "meaning": "practical; down-to-earth; realistic; feel at ease; steadfast",
     "level": 6,
     "phrase": "踏实",
     "sentence": "我正在学习“踏实”。"
+  },
+  {
+    "word": "塔",
+    "pinyin": "tǎ",
+    "meaning": "pagoda; tower",
+    "level": 6,
+    "phrase": "塔",
+    "sentence": "我正在学习“塔”。"
   },
   {
     "word": "台风",
@@ -28648,12 +33912,28 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“贪污”。"
   },
   {
+    "word": "摊",
+    "pinyin": "tān",
+    "meaning": "to spread out; vendor's stand; booth; fry; (mw for puddles)",
+    "level": 6,
+    "phrase": "摊",
+    "sentence": "我正在学习“摊”。"
+  },
+  {
     "word": "瘫痪",
     "pinyin": "tānhuàn",
     "meaning": "paralysis",
     "level": 6,
     "phrase": "瘫痪",
     "sentence": "我正在学习“瘫痪”。"
+  },
+  {
+    "word": "弹性",
+    "pinyin": "tánxìng",
+    "meaning": "flexibility; elasticity",
+    "level": 6,
+    "phrase": "弹性",
+    "sentence": "我正在学习“弹性”。"
   },
   {
     "word": "坦白",
@@ -28712,6 +33992,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“倘若”。"
   },
   {
+    "word": "掏",
+    "pinyin": "tāo",
+    "meaning": "fish out (from pocket)",
+    "level": 6,
+    "phrase": "掏",
+    "sentence": "我正在学习“掏”。"
+  },
+  {
     "word": "滔滔不绝",
     "pinyin": "tāotāo bù jué",
     "meaning": "(saying) talking non-stop; gushing; torrential",
@@ -28752,6 +34040,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“讨好”。"
   },
   {
+    "word": "特长",
+    "pinyin": "tècháng",
+    "meaning": "strong point; specialty",
+    "level": 6,
+    "phrase": "特长",
+    "sentence": "我正在学习“特长”。"
+  },
+  {
     "word": "特定",
     "pinyin": "tèdìng",
     "meaning": "special; specific; designated",
@@ -28766,14 +34062,6 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "特意",
     "sentence": "我正在学习“特意”。"
-  },
-  {
-    "word": "特长",
-    "pinyin": "tècháng",
-    "meaning": "strong point; specialty",
-    "level": 6,
-    "phrase": "特长",
-    "sentence": "我正在学习“特长”。"
   },
   {
     "word": "提拔",
@@ -28928,12 +34216,12 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“田野”。"
   },
   {
-    "word": "挑拨",
-    "pinyin": "tiǎobō",
-    "meaning": "incite disharmony; provoke; stir up tension in others",
+    "word": "舔",
+    "pinyin": "tiǎn",
+    "meaning": "to lick",
     "level": 6,
-    "phrase": "挑拨",
-    "sentence": "我正在学习“挑拨”。"
+    "phrase": "舔",
+    "sentence": "我正在学习“舔”。"
   },
   {
     "word": "挑剔",
@@ -28942,14 +34230,6 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "挑剔",
     "sentence": "我正在学习“挑剔”。"
-  },
-  {
-    "word": "挑衅",
-    "pinyin": "tiǎoxìn",
-    "meaning": "provoke; defiance",
-    "level": 6,
-    "phrase": "挑衅",
-    "sentence": "我正在学习“挑衅”。"
   },
   {
     "word": "条款",
@@ -28976,6 +34256,62 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“条约”。"
   },
   {
+    "word": "调和",
+    "pinyin": "tiáohé",
+    "meaning": "harmonious; harmony",
+    "level": 6,
+    "phrase": "调和",
+    "sentence": "我正在学习“调和”。"
+  },
+  {
+    "word": "调剂",
+    "pinyin": "tiáojì",
+    "meaning": "make an adjustment",
+    "level": 6,
+    "phrase": "调剂",
+    "sentence": "我正在学习“调剂”。"
+  },
+  {
+    "word": "调节",
+    "pinyin": "tiáojié",
+    "meaning": "adjust; regulate; reconcile",
+    "level": 6,
+    "phrase": "调节",
+    "sentence": "我正在学习“调节”。"
+  },
+  {
+    "word": "调解",
+    "pinyin": "tiáojiě",
+    "meaning": "mediation; bring together to an agreement",
+    "level": 6,
+    "phrase": "调解",
+    "sentence": "我正在学习“调解”。"
+  },
+  {
+    "word": "调料",
+    "pinyin": "tiáoliào",
+    "meaning": "seasoning; flavoring",
+    "level": 6,
+    "phrase": "调料",
+    "sentence": "我正在学习“调料”。"
+  },
+  {
+    "word": "挑拨",
+    "pinyin": "tiǎobō",
+    "meaning": "incite disharmony; provoke; stir up tension in others",
+    "level": 6,
+    "phrase": "挑拨",
+    "sentence": "我正在学习“挑拨”。"
+  },
+  {
+    "word": "挑衅",
+    "pinyin": "tiǎoxìn",
+    "meaning": "provoke; defiance",
+    "level": 6,
+    "phrase": "挑衅",
+    "sentence": "我正在学习“挑衅”。"
+  },
+  {
     "word": "跳跃",
     "pinyin": "tiàoyuè",
     "meaning": "jump; leap; bound; skip",
@@ -28992,20 +34328,20 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“亭子”。"
   },
   {
-    "word": "停顿",
-    "pinyin": "tíngdùn",
-    "meaning": "pause; halt",
-    "level": 6,
-    "phrase": "停顿",
-    "sentence": "我正在学习“停顿”。"
-  },
-  {
     "word": "停泊",
     "pinyin": "tíngbó",
     "meaning": "anchor; mooring (of a ship)",
     "level": 6,
     "phrase": "停泊",
     "sentence": "我正在学习“停泊”。"
+  },
+  {
+    "word": "停顿",
+    "pinyin": "tíngdùn",
+    "meaning": "pause; halt",
+    "level": 6,
+    "phrase": "停顿",
+    "sentence": "我正在学习“停顿”。"
   },
   {
     "word": "停滞",
@@ -29080,6 +34416,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“同志”。"
   },
   {
+    "word": "铜",
+    "pinyin": "tóng",
+    "meaning": "copper",
+    "level": 6,
+    "phrase": "铜",
+    "sentence": "我正在学习“铜”。"
+  },
+  {
     "word": "童话",
     "pinyin": "tónghuà",
     "meaning": "fairy tale",
@@ -29128,14 +34472,6 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“投机”。"
   },
   {
-    "word": "投降",
-    "pinyin": "tóuxiáng",
-    "meaning": "to surrender",
-    "level": 6,
-    "phrase": "投降",
-    "sentence": "我正在学习“投降”。"
-  },
-  {
     "word": "投票",
     "pinyin": "tóupiào",
     "meaning": "vote; poll",
@@ -29152,6 +34488,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“投诉”。"
   },
   {
+    "word": "投降",
+    "pinyin": "tóuxiáng",
+    "meaning": "to surrender",
+    "level": 6,
+    "phrase": "投降",
+    "sentence": "我正在学习“投降”。"
+  },
+  {
     "word": "投掷",
     "pinyin": "tóuzhì",
     "meaning": "throw something a long distance; hurl",
@@ -29166,6 +34510,14 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "透露",
     "sentence": "我正在学习“透露”。"
+  },
+  {
+    "word": "秃",
+    "pinyin": "tū",
+    "meaning": "bald; blunt",
+    "level": 6,
+    "phrase": "秃",
+    "sentence": "我正在学习“秃”。"
   },
   {
     "word": "突破",
@@ -29192,20 +34544,20 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“徒弟”。"
   },
   {
-    "word": "涂抹",
-    "pinyin": "túmǒ",
-    "meaning": "scribble; smear; doodle",
-    "level": 6,
-    "phrase": "涂抹",
-    "sentence": "我正在学习“涂抹”。"
-  },
-  {
     "word": "途径",
     "pinyin": "tújìng",
     "meaning": "way; channel",
     "level": 6,
     "phrase": "途径",
     "sentence": "我正在学习“途径”。"
+  },
+  {
+    "word": "涂抹",
+    "pinyin": "túmǒ",
+    "meaning": "scribble; smear; doodle",
+    "level": 6,
+    "phrase": "涂抹",
+    "sentence": "我正在学习“涂抹”。"
   },
   {
     "word": "土壤",
@@ -29360,6 +34712,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“挖掘”。"
   },
   {
+    "word": "哇",
+    "pinyin": "wa",
+    "meaning": "wow; (sound of crying or surprise)",
+    "level": 6,
+    "phrase": "哇",
+    "sentence": "我正在学习“哇”。"
+  },
+  {
     "word": "娃娃",
     "pinyin": "wáwa",
     "meaning": "baby; child; doll",
@@ -29392,6 +34752,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“外表”。"
   },
   {
+    "word": "外行",
+    "pinyin": "wàiháng",
+    "meaning": "layman; amateur; nonprofessional",
+    "level": 6,
+    "phrase": "外行",
+    "sentence": "我正在学习“外行”。"
+  },
+  {
     "word": "外界",
     "pinyin": "wàijiè",
     "meaning": "the outside world; external",
@@ -29408,12 +34776,12 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“外向”。"
   },
   {
-    "word": "外行",
-    "pinyin": "wàiháng",
-    "meaning": "layman; amateur; nonprofessional",
+    "word": "丸",
+    "pinyin": "wán",
+    "meaning": "pill; pellet",
     "level": 6,
-    "phrase": "外行",
-    "sentence": "我正在学习“外行”。"
+    "phrase": "丸",
+    "sentence": "我正在学习“丸”。"
   },
   {
     "word": "完备",
@@ -29576,6 +34944,22 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“微观”。"
   },
   {
+    "word": "为难",
+    "pinyin": "wéinán",
+    "meaning": "make things difficult for someone; embarrassed",
+    "level": 6,
+    "phrase": "为难",
+    "sentence": "我正在学习“为难”。"
+  },
+  {
+    "word": "为期",
+    "pinyin": "wéiqī",
+    "meaning": "be scheduled for; last for (a certain duration)",
+    "level": 6,
+    "phrase": "为期",
+    "sentence": "我正在学习“为期”。"
+  },
+  {
     "word": "违背",
     "pinyin": "wéibèi",
     "meaning": "violate; go against",
@@ -29646,22 +35030,6 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "卫星",
     "sentence": "我正在学习“卫星”。"
-  },
-  {
-    "word": "为难",
-    "pinyin": "wéinán",
-    "meaning": "make things difficult for someone; embarrassed",
-    "level": 6,
-    "phrase": "为难",
-    "sentence": "我正在学习“为难”。"
-  },
-  {
-    "word": "为期",
-    "pinyin": "wéiqī",
-    "meaning": "be scheduled for; last for (a certain duration)",
-    "level": 6,
-    "phrase": "为期",
-    "sentence": "我正在学习“为期”。"
   },
   {
     "word": "未免",
@@ -29758,6 +35126,14 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "问世",
     "sentence": "我正在学习“问世”。"
+  },
+  {
+    "word": "窝",
+    "pinyin": "wō",
+    "meaning": "nest; den",
+    "level": 6,
+    "phrase": "窝",
+    "sentence": "我正在学习“窝”。"
   },
   {
     "word": "乌黑",
@@ -30008,6 +35384,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“牺牲”。"
   },
   {
+    "word": "溪",
+    "pinyin": "xī",
+    "meaning": "creek",
+    "level": 6,
+    "phrase": "溪",
+    "sentence": "我正在学习“溪”。"
+  },
+  {
     "word": "熄灭",
     "pinyin": "xīmiè",
     "meaning": "extinguish; go out (of fire); die out; extinction",
@@ -30120,6 +35504,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“狭窄”。"
   },
   {
+    "word": "霞",
+    "pinyin": "xiá",
+    "meaning": "red clouds",
+    "level": 6,
+    "phrase": "霞",
+    "sentence": "我正在学习“霞”。"
+  },
+  {
     "word": "下属",
     "pinyin": "xiàshǔ",
     "meaning": "subordinate; underling",
@@ -30184,12 +35576,28 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“贤惠”。"
   },
   {
+    "word": "弦",
+    "pinyin": "xián",
+    "meaning": "bow string; string of musical instruments",
+    "level": 6,
+    "phrase": "弦",
+    "sentence": "我正在学习“弦”。"
+  },
+  {
     "word": "衔接",
     "pinyin": "xiánjiē",
     "meaning": "to join together; to combine",
     "level": 6,
     "phrase": "衔接",
     "sentence": "我正在学习“衔接”。"
+  },
+  {
+    "word": "嫌",
+    "pinyin": "xián",
+    "meaning": "to dislike; suspicion; grudge",
+    "level": 6,
+    "phrase": "嫌",
+    "sentence": "我正在学习“嫌”。"
   },
   {
     "word": "嫌疑",
@@ -30312,14 +35720,6 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“相辅相成”。"
   },
   {
-    "word": "相声",
-    "pinyin": "xiàngsheng",
-    "meaning": "comic dialogue; crosstalk",
-    "level": 6,
-    "phrase": "相声",
-    "sentence": "我正在学习“相声”。"
-  },
-  {
     "word": "相应",
     "pinyin": "xiāngyìng",
     "meaning": "correspond; relevant",
@@ -30382,6 +35782,30 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "向往",
     "sentence": "我正在学习“向往”。"
+  },
+  {
+    "word": "巷",
+    "pinyin": "xiàng",
+    "meaning": "lane; alley",
+    "level": 6,
+    "phrase": "巷",
+    "sentence": "我正在学习“巷”。"
+  },
+  {
+    "word": "相声",
+    "pinyin": "xiàngsheng",
+    "meaning": "comic dialogue; crosstalk",
+    "level": 6,
+    "phrase": "相声",
+    "sentence": "我正在学习“相声”。"
+  },
+  {
+    "word": "削",
+    "pinyin": "xuē",
+    "meaning": "to pare/peel with a knife; to cut; to chop",
+    "level": 6,
+    "phrase": "削",
+    "sentence": "我正在学习“削”。"
   },
   {
     "word": "消除",
@@ -30464,14 +35888,6 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“效益”。"
   },
   {
-    "word": "协调",
-    "pinyin": "xiétiáo",
-    "meaning": "coordinate; harmonize",
-    "level": 6,
-    "phrase": "协调",
-    "sentence": "我正在学习“协调”。"
-  },
-  {
     "word": "协会",
     "pinyin": "xiéhuì",
     "meaning": "an association; a society",
@@ -30486,6 +35902,14 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "协商",
     "sentence": "我正在学习“协商”。"
+  },
+  {
+    "word": "协调",
+    "pinyin": "xiétiáo",
+    "meaning": "coordinate; harmonize",
+    "level": 6,
+    "phrase": "协调",
+    "sentence": "我正在学习“协调”。"
   },
   {
     "word": "协议",
@@ -30526,6 +35950,14 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "泄气",
     "sentence": "我正在学习“泄气”。"
+  },
+  {
+    "word": "屑",
+    "pinyin": "xiè",
+    "meaning": "crumbs; filings; worth while",
+    "level": 6,
+    "phrase": "屑",
+    "sentence": "我正在学习“屑”。"
   },
   {
     "word": "谢绝",
@@ -30688,20 +36120,36 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“信誉”。"
   },
   {
+    "word": "兴隆",
+    "pinyin": "xīnglóng",
+    "meaning": "prosperous; flourishing",
+    "level": 6,
+    "phrase": "兴隆",
+    "sentence": "我正在学习“兴隆”。"
+  },
+  {
+    "word": "兴旺",
+    "pinyin": "xīngwàng",
+    "meaning": "prosperous; thriving; to prosper",
+    "level": 6,
+    "phrase": "兴旺",
+    "sentence": "我正在学习“兴旺”。"
+  },
+  {
+    "word": "腥",
+    "pinyin": "xīng",
+    "meaning": "fishy (smell)",
+    "level": 6,
+    "phrase": "腥",
+    "sentence": "我正在学习“腥”。"
+  },
+  {
     "word": "刑事",
     "pinyin": "xíngshì",
     "meaning": "criminal; penal",
     "level": 6,
     "phrase": "刑事",
     "sentence": "我正在学习“刑事”。"
-  },
-  {
-    "word": "行列",
-    "pinyin": "hángliè",
-    "meaning": "procession; ranks; queue",
-    "level": 6,
-    "phrase": "行列",
-    "sentence": "我正在学习“行列”。"
   },
   {
     "word": "行政",
@@ -30726,22 +36174,6 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "兴高采烈",
     "sentence": "我正在学习“兴高采烈”。"
-  },
-  {
-    "word": "兴隆",
-    "pinyin": "xīnglóng",
-    "meaning": "prosperous; flourishing",
-    "level": 6,
-    "phrase": "兴隆",
-    "sentence": "我正在学习“兴隆”。"
-  },
-  {
-    "word": "兴旺",
-    "pinyin": "xīngwàng",
-    "meaning": "prosperous; thriving; to prosper",
-    "level": 6,
-    "phrase": "兴旺",
-    "sentence": "我正在学习“兴旺”。"
   },
   {
     "word": "兴致勃勃",
@@ -30864,6 +36296,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“羞耻”。"
   },
   {
+    "word": "绣",
+    "pinyin": "xiù",
+    "meaning": "embroider; embroidery",
+    "level": 6,
+    "phrase": "绣",
+    "sentence": "我正在学习“绣”。"
+  },
+  {
     "word": "嗅觉",
     "pinyin": "xiùjué",
     "meaning": "sense of smell; scent",
@@ -30926,6 +36366,14 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "序言",
     "sentence": "我正在学习“序言”。"
+  },
+  {
+    "word": "畜牧",
+    "pinyin": "xùmù",
+    "meaning": "raise animals",
+    "level": 6,
+    "phrase": "畜牧",
+    "sentence": "我正在学习“畜牧”。"
   },
   {
     "word": "酗酒",
@@ -31280,20 +36728,20 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“岩石”。"
   },
   {
-    "word": "沿海",
-    "pinyin": "yánhǎi",
-    "meaning": "coastal",
-    "level": 6,
-    "phrase": "沿海",
-    "sentence": "我正在学习“沿海”。"
-  },
-  {
     "word": "炎热",
     "pinyin": "yánrè",
     "meaning": "blistering hot; sizzling hot (weather)",
     "level": 6,
     "phrase": "炎热",
     "sentence": "我正在学习“炎热”。"
+  },
+  {
+    "word": "沿海",
+    "pinyin": "yánhǎi",
+    "meaning": "coastal",
+    "level": 6,
+    "phrase": "沿海",
+    "sentence": "我正在学习“沿海”。"
   },
   {
     "word": "掩盖",
@@ -31728,6 +37176,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“以致”。"
   },
   {
+    "word": "亦",
+    "pinyin": "yì",
+    "meaning": "also",
+    "level": 6,
+    "phrase": "亦",
+    "sentence": "我正在学习“亦”。"
+  },
+  {
     "word": "异常",
     "pinyin": "yìcháng",
     "meaning": "exceptional; abnormal",
@@ -31798,6 +37254,14 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "毅然",
     "sentence": "我正在学习“毅然”。"
+  },
+  {
+    "word": "翼",
+    "pinyin": "yì",
+    "meaning": "wings; fins on fish; shelter",
+    "level": 6,
+    "phrase": "翼",
+    "sentence": "我正在学习“翼”。"
   },
   {
     "word": "阴谋",
@@ -31888,22 +37352,6 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“隐约”。"
   },
   {
-    "word": "应酬",
-    "pinyin": "yìngchou",
-    "meaning": "socialize with; a social engagement",
-    "level": 6,
-    "phrase": "应酬",
-    "sentence": "我正在学习“应酬”。"
-  },
-  {
-    "word": "应邀",
-    "pinyin": "yìngyāo",
-    "meaning": "at sb.'s invitation",
-    "level": 6,
-    "phrase": "应邀",
-    "sentence": "我正在学习“应邀”。"
-  },
-  {
     "word": "英明",
     "pinyin": "yīngmíng",
     "meaning": "wise; brilliant",
@@ -31942,6 +37390,22 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "盈利",
     "sentence": "我正在学习“盈利”。"
+  },
+  {
+    "word": "应酬",
+    "pinyin": "yìngchou",
+    "meaning": "socialize with; a social engagement",
+    "level": 6,
+    "phrase": "应酬",
+    "sentence": "我正在学习“应酬”。"
+  },
+  {
+    "word": "应邀",
+    "pinyin": "yìngyāo",
+    "meaning": "at sb.'s invitation",
+    "level": 6,
+    "phrase": "应邀",
+    "sentence": "我正在学习“应邀”。"
   },
   {
     "word": "拥护",
@@ -32152,6 +37616,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“羽绒服”。"
   },
   {
+    "word": "玉",
+    "pinyin": "yù",
+    "meaning": "jade (Kangxi radical 96)",
+    "level": 6,
+    "phrase": "玉",
+    "sentence": "我正在学习“玉”。"
+  },
+  {
     "word": "预料",
     "pinyin": "yùliào",
     "meaning": "anticipate; to forecast; expectation",
@@ -32214,6 +37686,14 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "寓言",
     "sentence": "我正在学习“寓言”。"
+  },
+  {
+    "word": "愈",
+    "pinyin": "yù",
+    "meaning": "recover; heal; the more ... the more",
+    "level": 6,
+    "phrase": "愈",
+    "sentence": "我正在学习“愈”。"
   },
   {
     "word": "冤枉",
@@ -32320,6 +37800,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“约束”。"
   },
   {
+    "word": "乐谱",
+    "pinyin": "yuèpǔ",
+    "meaning": "sheet music",
+    "level": 6,
+    "phrase": "乐谱",
+    "sentence": "我正在学习“乐谱”。"
+  },
+  {
     "word": "岳母",
     "pinyin": "yuèmǔ",
     "meaning": "wife's mother; mother-in-law",
@@ -32368,6 +37856,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“蕴藏”。"
   },
   {
+    "word": "熨",
+    "pinyin": "yùn",
+    "meaning": "iron; press",
+    "level": 6,
+    "phrase": "熨",
+    "sentence": "我正在学习“熨”。"
+  },
+  {
     "word": "杂技",
     "pinyin": "zájì",
     "meaning": "acrobatics",
@@ -32382,6 +37878,22 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "杂交",
     "sentence": "我正在学习“杂交”。"
+  },
+  {
+    "word": "砸",
+    "pinyin": "zá",
+    "meaning": "to smash; to pound; to break; fail",
+    "level": 6,
+    "phrase": "砸",
+    "sentence": "我正在学习“砸”。"
+  },
+  {
+    "word": "咋",
+    "pinyin": "zǎ",
+    "meaning": "how/why (contraction of 怎么)",
+    "level": 6,
+    "phrase": "咋",
+    "sentence": "我正在学习“咋”。"
   },
   {
     "word": "灾难",
@@ -32400,6 +37912,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“栽培”。"
   },
   {
+    "word": "宰",
+    "pinyin": "zǎi",
+    "meaning": "slaughter; butcher; govern; rule; imperial official in dynastic China",
+    "level": 6,
+    "phrase": "宰",
+    "sentence": "我正在学习“宰”。"
+  },
+  {
     "word": "再接再厉",
     "pinyin": "zàijiēzàilì",
     "meaning": "continue the struggle; persist; unremitting efforts",
@@ -32414,6 +37934,14 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "在意",
     "sentence": "我正在学习“在意”。"
+  },
+  {
+    "word": "攒",
+    "pinyin": "zǎn",
+    "meaning": "save; hoard",
+    "level": 6,
+    "phrase": "攒",
+    "sentence": "我正在学习“攒”。"
   },
   {
     "word": "暂且",
@@ -32496,6 +38024,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“责怪”。"
   },
   {
+    "word": "贼",
+    "pinyin": "zéi",
+    "meaning": "thief",
+    "level": 6,
+    "phrase": "贼",
+    "sentence": "我正在学习“贼”。"
+  },
+  {
     "word": "增添",
     "pinyin": "zēngtiān",
     "meaning": "add to; increase",
@@ -32512,12 +38048,36 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“赠送”。"
   },
   {
+    "word": "扎",
+    "pinyin": "zhā",
+    "meaning": "to prick; push a needle into; penetrating",
+    "level": 6,
+    "phrase": "扎",
+    "sentence": "我正在学习“扎”。"
+  },
+  {
     "word": "扎实",
     "pinyin": "zhāshi",
     "meaning": "strong; sturdy; practical",
     "level": 6,
     "phrase": "扎实",
     "sentence": "我正在学习“扎实”。"
+  },
+  {
+    "word": "渣",
+    "pinyin": "zhā",
+    "meaning": "dregs; slag",
+    "level": 6,
+    "phrase": "渣",
+    "sentence": "我正在学习“渣”。"
+  },
+  {
+    "word": "眨",
+    "pinyin": "zhǎ",
+    "meaning": "wink; blink",
+    "level": 6,
+    "phrase": "眨",
+    "sentence": "我正在学习“眨”。"
   },
   {
     "word": "诈骗",
@@ -32688,6 +38248,22 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“招收”。"
   },
   {
+    "word": "朝气蓬勃",
+    "pinyin": "zhāo qì péng bó",
+    "meaning": "full of youthful energy (idiom); full of vigour and vitality; energetic; spirited; a bright spark",
+    "level": 6,
+    "phrase": "朝气蓬勃",
+    "sentence": "我正在学习“朝气蓬勃”。"
+  },
+  {
+    "word": "着迷",
+    "pinyin": "zháomí",
+    "meaning": "to be fascinated",
+    "level": 6,
+    "phrase": "着迷",
+    "sentence": "我正在学习“着迷”。"
+  },
+  {
     "word": "沼泽",
     "pinyin": "zhǎozé",
     "meaning": "marsh; swamp; glade; wetlands",
@@ -32712,22 +38288,6 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“照耀”。"
   },
   {
-    "word": "遮挡",
-    "pinyin": "zhēdǎng",
-    "meaning": "shelter from; keep out",
-    "level": 6,
-    "phrase": "遮挡",
-    "sentence": "我正在学习“遮挡”。"
-  },
-  {
-    "word": "折磨",
-    "pinyin": "zhémo",
-    "meaning": "persecute; to torture",
-    "level": 6,
-    "phrase": "折磨",
-    "sentence": "我正在学习“折磨”。"
-  },
-  {
     "word": "折腾",
     "pinyin": "zhēteng",
     "meaning": "toss from side to side (e.g. sleeplessly); do something over and over again; cause suffering; play crazy; screw around",
@@ -32736,36 +38296,28 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“折腾”。"
   },
   {
-    "word": "着迷",
-    "pinyin": "zháomí",
-    "meaning": "to be fascinated",
+    "word": "遮挡",
+    "pinyin": "zhēdǎng",
+    "meaning": "shelter from; keep out",
     "level": 6,
-    "phrase": "着迷",
-    "sentence": "我正在学习“着迷”。"
+    "phrase": "遮挡",
+    "sentence": "我正在学习“遮挡”。"
   },
   {
-    "word": "着手",
-    "pinyin": "zhuóshǒu",
-    "meaning": "put one's hand to; commence",
+    "word": "折",
+    "pinyin": "zhé",
+    "meaning": "to break; to fracture; convert into; to fold",
     "level": 6,
-    "phrase": "着手",
-    "sentence": "我正在学习“着手”。"
+    "phrase": "折",
+    "sentence": "我正在学习“折”。"
   },
   {
-    "word": "着想",
-    "pinyin": "zhuóxiǎng",
-    "meaning": "give consideration to; consider (other people's) needs",
+    "word": "折磨",
+    "pinyin": "zhémo",
+    "meaning": "persecute; to torture",
     "level": 6,
-    "phrase": "着想",
-    "sentence": "我正在学习“着想”。"
-  },
-  {
-    "word": "着重",
-    "pinyin": "zhuózhòng",
-    "meaning": "put emphasis on; to stress",
-    "level": 6,
-    "phrase": "着重",
-    "sentence": "我正在学习“着重”。"
+    "phrase": "折磨",
+    "sentence": "我正在学习“折磨”。"
   },
   {
     "word": "侦探",
@@ -32872,6 +38424,22 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“振兴”。"
   },
   {
+    "word": "震撼",
+    "pinyin": "zhènhàn",
+    "meaning": "to shake",
+    "level": 6,
+    "phrase": "震撼",
+    "sentence": "我正在学习“震撼”。"
+  },
+  {
+    "word": "震惊",
+    "pinyin": "zhènjīng",
+    "meaning": "shock; astonish; amaze",
+    "level": 6,
+    "phrase": "震惊",
+    "sentence": "我正在学习“震惊”。"
+  },
+  {
     "word": "镇定",
     "pinyin": "zhèndìng",
     "meaning": "cool; calm; unperturbed",
@@ -32888,20 +38456,12 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“镇静”。"
   },
   {
-    "word": "震撼",
-    "pinyin": "zhènhàn",
-    "meaning": "to shake",
+    "word": "正月",
+    "pinyin": "zhēngyuè",
+    "meaning": "the first month of the lunar calendar",
     "level": 6,
-    "phrase": "震撼",
-    "sentence": "我正在学习“震撼”。"
-  },
-  {
-    "word": "震惊",
-    "pinyin": "zhènjīng",
-    "meaning": "shock; astonish; amaze",
-    "level": 6,
-    "phrase": "震惊",
-    "sentence": "我正在学习“震惊”。"
+    "phrase": "正月",
+    "sentence": "我正在学习“正月”。"
   },
   {
     "word": "争端",
@@ -33032,14 +38592,6 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“正义”。"
   },
   {
-    "word": "正月",
-    "pinyin": "zhēngyuè",
-    "meaning": "the first month of the lunar calendar",
-    "level": 6,
-    "phrase": "正月",
-    "sentence": "我正在学习“正月”。"
-  },
-  {
     "word": "正宗",
     "pinyin": "zhèngzōng",
     "meaning": "authentic, orthodox; old school",
@@ -33152,6 +38704,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“支柱”。"
   },
   {
+    "word": "枝",
+    "pinyin": "zhī",
+    "meaning": "branch; twig; (mw for sticks, rods, pencils)",
+    "level": 6,
+    "phrase": "枝",
+    "sentence": "我正在学习“枝”。"
+  },
+  {
     "word": "知觉",
     "pinyin": "zhījué",
     "meaning": "perception; consciousness; feeling",
@@ -33192,14 +38752,6 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“执着”。"
   },
   {
-    "word": "侄子",
-    "pinyin": "zhízi",
-    "meaning": "nephew; brother's son or daughter",
-    "level": 6,
-    "phrase": "侄子",
-    "sentence": "我正在学习“侄子”。"
-  },
-  {
     "word": "直播",
     "pinyin": "zhíbō",
     "meaning": "live broadcast (not recorded)",
@@ -33214,6 +38766,14 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "直径",
     "sentence": "我正在学习“直径”。"
+  },
+  {
+    "word": "侄子",
+    "pinyin": "zhízi",
+    "meaning": "nephew; brother's son or daughter",
+    "level": 6,
+    "phrase": "侄子",
+    "sentence": "我正在学习“侄子”。"
   },
   {
     "word": "值班",
@@ -33520,14 +39080,6 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“肿瘤”。"
   },
   {
-    "word": "种植",
-    "pinyin": "zhòngzhí",
-    "meaning": "plant; grow; crop",
-    "level": 6,
-    "phrase": "种植",
-    "sentence": "我正在学习“种植”。"
-  },
-  {
     "word": "种子",
     "pinyin": "zhǒngzi",
     "meaning": "seed",
@@ -33552,12 +39104,12 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“众所周知”。"
   },
   {
-    "word": "重叠",
-    "pinyin": "chóngdié",
-    "meaning": "to overlap",
+    "word": "种植",
+    "pinyin": "zhòngzhí",
+    "meaning": "plant; grow; crop",
     "level": 6,
-    "phrase": "重叠",
-    "sentence": "我正在学习“重叠”。"
+    "phrase": "种植",
+    "sentence": "我正在学习“种植”。"
   },
   {
     "word": "重心",
@@ -33566,6 +39118,22 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "重心",
     "sentence": "我正在学习“重心”。"
+  },
+  {
+    "word": "舟",
+    "pinyin": "zhōu",
+    "meaning": "boat (Kangxi radical 137)",
+    "level": 6,
+    "phrase": "舟",
+    "sentence": "我正在学习“舟”。"
+  },
+  {
+    "word": "州",
+    "pinyin": "zhōu",
+    "meaning": "province; sub-prefecture; (United States) state",
+    "level": 6,
+    "phrase": "州",
+    "sentence": "我正在学习“州”。"
   },
   {
     "word": "周边",
@@ -33616,6 +39184,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“周转”。"
   },
   {
+    "word": "粥",
+    "pinyin": "zhōu",
+    "meaning": "porridge; congee; gruel",
+    "level": 6,
+    "phrase": "粥",
+    "sentence": "我正在学习“粥”。"
+  },
+  {
     "word": "昼夜",
     "pinyin": "zhòuyè",
     "meaning": "day and night; continuously without stop",
@@ -33630,6 +39206,14 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "皱纹",
     "sentence": "我正在学习“皱纹”。"
+  },
+  {
+    "word": "株",
+    "pinyin": "zhū",
+    "meaning": "stem; root; trunk; (mw for plants)",
+    "level": 6,
+    "phrase": "株",
+    "sentence": "我正在学习“株”。"
   },
   {
     "word": "诸位",
@@ -33696,20 +39280,20 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“主义”。"
   },
   {
+    "word": "拄",
+    "pinyin": "zhǔ",
+    "meaning": "post; lean on a stick; prop",
+    "level": 6,
+    "phrase": "拄",
+    "sentence": "我正在学习“拄”。"
+  },
+  {
     "word": "嘱咐",
     "pinyin": "zhǔfù",
     "meaning": "enjoin; to tell; exhort",
     "level": 6,
     "phrase": "嘱咐",
     "sentence": "我正在学习“嘱咐”。"
-  },
-  {
-    "word": "住宅",
-    "pinyin": "zhùzhái",
-    "meaning": "residence; tenement",
-    "level": 6,
-    "phrase": "住宅",
-    "sentence": "我正在学习“住宅”。"
   },
   {
     "word": "助理",
@@ -33726,6 +39310,14 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "助手",
     "sentence": "我正在学习“助手”。"
+  },
+  {
+    "word": "住宅",
+    "pinyin": "zhùzhái",
+    "meaning": "residence; tenement",
+    "level": 6,
+    "phrase": "住宅",
+    "sentence": "我正在学习“住宅”。"
   },
   {
     "word": "注射",
@@ -33784,6 +39376,22 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“铸造”。"
   },
   {
+    "word": "拽",
+    "pinyin": "zhuài",
+    "meaning": "drag; haul",
+    "level": 6,
+    "phrase": "拽",
+    "sentence": "我正在学习“拽”。"
+  },
+  {
+    "word": "专长",
+    "pinyin": "zhuāncháng",
+    "meaning": "specialty; special knowledge or ability",
+    "level": 6,
+    "phrase": "专长",
+    "sentence": "我正在学习“专长”。"
+  },
+  {
     "word": "专程",
     "pinyin": "zhuānchéng",
     "meaning": "special-purpose trip",
@@ -33808,12 +39416,12 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“专题”。"
   },
   {
-    "word": "专长",
-    "pinyin": "zhuāncháng",
-    "meaning": "specialty; special knowledge or ability",
+    "word": "砖",
+    "pinyin": "zhuān",
+    "meaning": "brick",
     "level": 6,
-    "phrase": "专长",
-    "sentence": "我正在学习“专长”。"
+    "phrase": "砖",
+    "sentence": "我正在学习“砖”。"
   },
   {
     "word": "转达",
@@ -33846,6 +39454,14 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "转折",
     "sentence": "我正在学习“转折”。"
+  },
+  {
+    "word": "传记",
+    "pinyin": "zhuànjì",
+    "meaning": "biography",
+    "level": 6,
+    "phrase": "传记",
+    "sentence": "我正在学习“传记”。"
   },
   {
     "word": "庄稼",
@@ -33912,6 +39528,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“壮烈”。"
   },
   {
+    "word": "幢",
+    "pinyin": "zhuàng",
+    "meaning": "(mw for houses, buildings); tent",
+    "level": 6,
+    "phrase": "幢",
+    "sentence": "我正在学习“幢”。"
+  },
+  {
     "word": "追悼",
     "pinyin": "zhuīdào",
     "meaning": "mourning; memorial (service, etc.)",
@@ -33928,6 +39552,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“追究”。"
   },
   {
+    "word": "坠",
+    "pinyin": "zhuì",
+    "meaning": "fall; drop",
+    "level": 6,
+    "phrase": "坠",
+    "sentence": "我正在学习“坠”。"
+  },
+  {
     "word": "准则",
     "pinyin": "zhǔnzé",
     "meaning": "principle; standard or norm; criterion",
@@ -33942,6 +39574,38 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "卓越",
     "sentence": "我正在学习“卓越”。"
+  },
+  {
+    "word": "着手",
+    "pinyin": "zhuóshǒu",
+    "meaning": "put one's hand to; commence",
+    "level": 6,
+    "phrase": "着手",
+    "sentence": "我正在学习“着手”。"
+  },
+  {
+    "word": "着想",
+    "pinyin": "zhuóxiǎng",
+    "meaning": "give consideration to; consider (other people's) needs",
+    "level": 6,
+    "phrase": "着想",
+    "sentence": "我正在学习“着想”。"
+  },
+  {
+    "word": "着重",
+    "pinyin": "zhuózhòng",
+    "meaning": "put emphasis on; to stress",
+    "level": 6,
+    "phrase": "着重",
+    "sentence": "我正在学习“着重”。"
+  },
+  {
+    "word": "琢磨",
+    "pinyin": "zuómo",
+    "meaning": "ponder; (also zhuómó: to polish (gems or literary works))",
+    "level": 6,
+    "phrase": "琢磨",
+    "sentence": "我正在学习“琢磨”。"
   },
   {
     "word": "姿态",
@@ -34128,6 +39792,14 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“走私”。"
   },
   {
+    "word": "揍",
+    "pinyin": "zòu",
+    "meaning": "(informal) beat; hit; (regional) smash; break",
+    "level": 6,
+    "phrase": "揍",
+    "sentence": "我正在学习“揍”。"
+  },
+  {
     "word": "租赁",
     "pinyin": "zūlìn",
     "meaning": "rent; lease",
@@ -34192,20 +39864,20 @@ window.HSK_WORDS = [
     "sentence": "我正在学习“祖先”。"
   },
   {
-    "word": "钻石",
-    "pinyin": "zuànshí",
-    "meaning": "diamond",
-    "level": 6,
-    "phrase": "钻石",
-    "sentence": "我正在学习“钻石”。"
-  },
-  {
     "word": "钻研",
     "pinyin": "zuānyán",
     "meaning": "study intensively; delve into",
     "level": 6,
     "phrase": "钻研",
     "sentence": "我正在学习“钻研”。"
+  },
+  {
+    "word": "钻石",
+    "pinyin": "zuànshí",
+    "meaning": "diamond",
+    "level": 6,
+    "phrase": "钻石",
+    "sentence": "我正在学习“钻石”。"
   },
   {
     "word": "嘴唇",
@@ -34238,14 +39910,6 @@ window.HSK_WORDS = [
     "level": 6,
     "phrase": "遵循",
     "sentence": "我正在学习“遵循”。"
-  },
-  {
-    "word": "琢磨",
-    "pinyin": "zuómo",
-    "meaning": "ponder; (also zhuómó: to polish (gems or literary works))",
-    "level": 6,
-    "phrase": "琢磨",
-    "sentence": "我正在学习“琢磨”。"
   },
   {
     "word": "作弊",

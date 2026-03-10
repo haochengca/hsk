@@ -7016,6 +7016,52 @@ function getTaskDraftAssigneeId() {
   return state.auth.username;
 }
 
+const TASK_CHAR_COUNTS_BY_LEVEL = HSK_CHARS.reduce((acc, item) => {
+  const level = Number(item && item.level);
+  if (!Number.isInteger(level) || level < 1 || level > 6) return acc;
+  acc[level] = (acc[level] || 0) + 1;
+  return acc;
+}, {});
+
+function getAvailableTaskCharCount(levels = state.taskDraftLevels) {
+  const selected = Array.isArray(levels) ? levels : [];
+  return selected.reduce((sum, level) => sum + (TASK_CHAR_COUNTS_BY_LEVEL[Number(level)] || 0), 0);
+}
+
+function refreshTaskDraftCountUi() {
+  if (taskLevelPicker) {
+    Array.from(taskLevelPicker.querySelectorAll("label")).forEach((label) => {
+      const input = label.querySelector("input[type='checkbox']");
+      if (!input) return;
+      const level = Number(input.value);
+      const count = TASK_CHAR_COUNTS_BY_LEVEL[level] || 0;
+      const labelText = ` HSK${level}（${count}字）`;
+      const textNode = Array.from(label.childNodes).find((node) => node.nodeType === Node.TEXT_NODE);
+      if (textNode) textNode.textContent = labelText;
+      else label.append(document.createTextNode(labelText));
+    });
+  }
+  if (taskPracticeCount) {
+    const availableCount = getAvailableTaskCharCount();
+    const currentValue = String(state.taskPracticeCount || taskPracticeCount.value || "20");
+    const presetValues = [5, 10, 20, 50].filter((value) => value <= availableCount);
+    const options = presetValues.map((value) => `<option value="${value}">${value}</option>`);
+    options.push(`<option value="all">全部（${availableCount}字）</option>`);
+    taskPracticeCount.innerHTML = options.join("");
+    const fallbackValue =
+      availableCount >= 20 ? "20" : availableCount >= 10 ? "10" : availableCount >= 5 ? "5" : "all";
+    const nextValue =
+      currentValue === "all" || Number(currentValue) > availableCount
+        ? "all"
+        : presetValues.includes(Number(currentValue))
+          ? currentValue
+          : fallbackValue;
+    taskPracticeCount.value = nextValue;
+    state.taskPracticeCount = nextValue;
+    taskPracticeCount.disabled = availableCount <= 0;
+  }
+}
+
 function applyTaskDraftToControls() {
   if (taskLevelPicker) {
     const selected = new Set((state.taskDraftLevels || []).map((item) => Number(item)));
@@ -7023,7 +7069,7 @@ function applyTaskDraftToControls() {
       input.checked = selected.has(Number(input.value));
     });
   }
-  if (taskPracticeCount) taskPracticeCount.value = state.taskPracticeCount || "20";
+  refreshTaskDraftCountUi();
   if (taskAssigneeRow && taskAssigneeSelect) {
     const isParent = state.auth.role === "parent";
     taskAssigneeRow.classList.toggle("hidden", !isParent);
@@ -7166,9 +7212,10 @@ function renderTaskPanel() {
     tasksPageSummary.textContent = `共 ${tasks.length} 个任务，其中 ${activeCount} 个未完成。`;
   }
   if (tasksCreateHint) {
+    const availableCount = getAvailableTaskCharCount(state.taskDraftLevels);
     tasksCreateHint.textContent = activeTaskForDraft
       ? `当前分配对象 ${draftAssigneeId} 已有未完成任务，需先完成或停止后才能创建新任务。`
-      : `当前可为 ${draftAssigneeId} 创建新任务。`;
+      : `当前可为 ${draftAssigneeId} 创建新任务，可用汉字 ${availableCount} 个。`;
   }
   if (taskCreateBtn) taskCreateBtn.disabled = Boolean(activeTaskForDraft);
   if (taskHistorySummary) taskHistorySummary.textContent = `任务：${tasks.length} 个`;
@@ -10991,6 +11038,8 @@ function wireReview() {
   if (taskLevelPicker) {
     taskLevelPicker.addEventListener("change", () => {
       state.taskDraftLevels = getSelectedTaskLevels();
+      refreshTaskDraftCountUi();
+      renderTaskPanel();
     });
   }
 
