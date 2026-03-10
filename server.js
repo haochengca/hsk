@@ -5,19 +5,6 @@ const crypto = require("crypto");
 const { DatabaseSync } = require("node:sqlite");
 const { Pool } = require("pg");
 const { URL } = require("url");
-const HSK_CHAR_DATA = require("./data/hsk_chars_1_6.json");
-const {
-  TEMPLATE_TYPE_HSK_LEVEL_CHARS,
-  TASK_STATUS,
-  createTaskRecord,
-  summarizeTask,
-  startTask,
-  resumeTask,
-  applyTaskProgressSnapshot,
-  completeTask,
-  normalizeTaskRecord,
-  canAccessTask
-} = require("./task-service.js");
 
 const HOST = process.env.HOST || "0.0.0.0";
 const PORT = Number(process.env.PORT || 8787);
@@ -172,8 +159,7 @@ function defaultDbState() {
     userData: {},
     lexiconOverrides: {},
     submissions: [],
-    sessions: [],
-    tasks: []
+    sessions: []
   };
 }
 
@@ -185,7 +171,6 @@ function normalizeDbState(input) {
   parsed.lexiconOverrides = parsed.lexiconOverrides && typeof parsed.lexiconOverrides === "object" ? parsed.lexiconOverrides : {};
   parsed.submissions = Array.isArray(parsed.submissions) ? parsed.submissions : [];
   parsed.sessions = Array.isArray(parsed.sessions) ? parsed.sessions : [];
-  parsed.tasks = Array.isArray(parsed.tasks) ? parsed.tasks.map(normalizeTaskRecord).filter((x) => x.id) : [];
   if (!parsed.users.some((x) => x && x.username === "admin")) {
     parsed.users.unshift(
       normalizeUserRecord({
@@ -255,29 +240,6 @@ function readSqliteStateFromFile(filePath) {
       if (tempDb && typeof tempDb.close === "function") tempDb.close();
     } catch {}
   }
-}
-
-function syncTaskProgressFromSubmissionReview(db, submission) {
-  if (!submission || !submission.taskId || !Number.isInteger(Number(submission.taskItemSeq)) || Number(submission.taskItemSeq) < 0) return;
-  const task = (db.tasks || []).find((item) => item && item.id === submission.taskId);
-  if (!task || !task.progress || !Array.isArray(task.progress.completedItems)) return;
-  const seq = Number(submission.taskItemSeq);
-  const completedIndex = task.progress.completedItems.findIndex((item) => Number(item && item.seq) === seq);
-  if (completedIndex < 0) return;
-  const current = task.progress.completedItems[completedIndex];
-  task.progress.completedItems.splice(completedIndex, 1, {
-    ...current,
-    text: String(current && current.text ? current.text : submission.target || ""),
-    itemId: String(current && current.itemId ? current.itemId : submission.target || ""),
-    isCorrect: Boolean(submission.finalResult),
-    accuracyPercent: normalizeAccuracyPercent(submission.accuracyPercent),
-    answeredAt: Math.max(Number(current && current.answeredAt) || 0, Number(submission.createdAt) || 0)
-  });
-  task.progress.correctCount = task.progress.completedItems.filter((item) => item && item.isCorrect).length;
-  task.progress.completedCount = task.progress.completedItems.length;
-  task.progress.wrongItems = [...new Set(task.progress.completedItems.filter((item) => item && !item.isCorrect).map((item) => item.text))];
-  task.progress.lastSnapshotAt = now();
-  task.summary = summarizeTask(task);
 }
 
 async function ensurePostgresStore() {
@@ -591,7 +553,6 @@ function removeUserDeep(db, username) {
   delete db.userData[target];
   db.submissions = (db.submissions || []).filter((x) => x && x.username !== target && x.reviewedBy !== target);
   db.sessions = (db.sessions || []).filter((x) => x && x.username !== target);
-  db.tasks = (db.tasks || []).filter((x) => x && x.ownerId !== target && x.assigneeId !== target);
 }
 
 function resetUserDataDeep(db, username) {
@@ -602,52 +563,10 @@ function resetUserDataDeep(db, username) {
   db.userData[target] = defaultUserData();
   db.submissions = (db.submissions || []).filter((x) => x && x.username !== target);
   db.sessions = (db.sessions || []).filter((x) => x && x.username !== target);
-  db.tasks = (db.tasks || []).filter((x) => x && x.ownerId !== target && x.assigneeId !== target);
   return {
     submissionsCleared: Math.max(0, beforeSubmissions - db.submissions.length),
     sessionsCleared: Math.max(0, beforeSessions - db.sessions.length)
   };
-}
-
-function getAccessibleTasks(db, username) {
-  return getAccessibleTasksForAuth(db, { username, role: "child", linkedChildren: [] });
-}
-
-function getActiveTaskForUser(db, username) {
-  return getActiveTaskForAssignee(db, username);
-}
-
-function getTaskForUser(db, taskId, username) {
-  return (db.tasks || []).find((task) => task && task.id === taskId && canAccessTask(task, username)) || null;
-}
-
-function canAuthAccessTask(auth, task) {
-  if (!auth || !task) return false;
-  if (canAccessTask(task, auth.username)) return true;
-  if (auth.role === "parent" && Array.isArray(auth.linkedChildren) && auth.linkedChildren.includes(task.assigneeId)) return true;
-  return false;
-}
-
-function getAccessibleTasksForAuth(db, auth) {
-  return (db.tasks || [])
-    .filter((task) => canAuthAccessTask(auth, task))
-    .sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
-}
-
-function getTaskForAuth(db, taskId, auth) {
-  return (db.tasks || []).find((task) => task && task.id === taskId && canAuthAccessTask(auth, task)) || null;
-}
-
-function getActiveTaskForAssignee(db, assigneeId) {
-  const target = String(assigneeId || "").trim();
-  if (!target) return null;
-  return (db.tasks || []).find(
-    (task) =>
-      task &&
-      task.assigneeId === target &&
-      task.status !== TASK_STATUS.COMPLETED &&
-      task.status !== TASK_STATUS.ARCHIVED
-  ) || null;
 }
 
 async function handleApi(req, res, pathname) {
@@ -867,9 +786,6 @@ async function handleApi(req, res, pathname) {
       id: `${now()}_${crypto.randomBytes(4).toString("hex")}`,
       username: auth.username,
       type: body.type === "word" ? "word" : "char",
-      taskId: String(body.taskId || ""),
-      taskSessionId: String(body.taskSessionId || ""),
-      taskItemSeq: Number.isInteger(Number(body.taskItemSeq)) ? Number(body.taskItemSeq) : -1,
       target: String(body.target || ""),
       pinyin: String(body.pinyin || ""),
       userAnswer: String(body.userAnswer || ""),
@@ -887,147 +803,6 @@ async function handleApi(req, res, pathname) {
     db.submissions.push(row);
     await saveDb(db);
     return sendJson(res, 201, { ok: true, submission: row });
-  }
-
-  if (req.method === "GET" && pathname === "/api/tasks") {
-    if (!isLearnerRole(auth.role)) return sendJson(res, 403, { ok: false, message: "仅父母或孩子账号可查看任务" });
-    return sendJson(res, 200, { ok: true, tasks: getAccessibleTasksForAuth(db, auth) });
-  }
-
-  if (req.method === "POST" && pathname === "/api/tasks") {
-    if (!isLearnerRole(auth.role)) return sendJson(res, 403, { ok: false, message: "仅父母或孩子账号可创建任务" });
-    const body = await parseBody(req);
-    const requestedAssignee = String(body.assigneeId || "").trim();
-    const assigneeId =
-      auth.role === "parent"
-        ? requestedAssignee && Array.isArray(auth.linkedChildren) && auth.linkedChildren.includes(requestedAssignee)
-          ? requestedAssignee
-          : auth.username
-        : auth.username;
-    const activeTask = getActiveTaskForAssignee(db, assigneeId);
-    if (activeTask) {
-      return sendJson(res, 409, {
-        ok: false,
-        message: "当前已有未完成任务，请先完成当前任务后再创建新任务",
-        activeTask
-      });
-    }
-    try {
-      const task = createTaskRecord(
-        {
-          ownerId: auth.username,
-          assigneeId,
-          templateType: body.templateType || TEMPLATE_TYPE_HSK_LEVEL_CHARS,
-          selectedLevels: body.selectedLevels,
-          dedupe: body.dedupe,
-          practiceCount: body.practiceCount,
-          dueAt: body.dueAt
-        },
-        HSK_CHAR_DATA,
-        now()
-      );
-      db.tasks.push(task);
-      await saveDb(db);
-      return sendJson(res, 201, { ok: true, task });
-    } catch (err) {
-      return sendJson(res, 400, { ok: false, message: err && err.message ? err.message : "任务创建失败" });
-    }
-  }
-
-  if (req.method === "GET" && pathname.startsWith("/api/tasks/")) {
-    const parts = pathname.split("/").filter(Boolean);
-    if (parts.length === 3) {
-      if (!isLearnerRole(auth.role)) return sendJson(res, 403, { ok: false, message: "仅父母或孩子账号可查看任务" });
-      const taskId = decodeURIComponent(parts[2] || "").trim();
-      const task = getTaskForAuth(db, taskId, auth);
-      if (!task) return sendJson(res, 404, { ok: false, message: "任务不存在" });
-      return sendJson(res, 200, { ok: true, task });
-    }
-  }
-
-  if (req.method === "POST" && pathname.startsWith("/api/tasks/")) {
-    if (!isLearnerRole(auth.role)) return sendJson(res, 403, { ok: false, message: "仅父母或孩子账号可操作任务" });
-    const parts = pathname.split("/").filter(Boolean);
-    const taskId = decodeURIComponent(parts[2] || "").trim();
-    const action = String(parts[3] || "").trim();
-    const taskIndex = (db.tasks || []).findIndex((task) => task && task.id === taskId && canAuthAccessTask(auth, task));
-    if (taskIndex < 0) return sendJson(res, 404, { ok: false, message: "任务不存在" });
-    const task = db.tasks[taskIndex];
-
-    if (action === "start") {
-      const nextTask = startTask(task, now());
-      db.tasks[taskIndex] = nextTask;
-      await saveDb(db);
-      return sendJson(res, 200, { ok: true, task: nextTask });
-    }
-
-    if (action === "resume") {
-      try {
-        const nextTask = resumeTask(task, now());
-        db.tasks[taskIndex] = nextTask;
-        await saveDb(db);
-        return sendJson(res, 200, { ok: true, task: nextTask, currentIndex: nextTask.progress.currentIndex });
-      } catch (err) {
-        return sendJson(res, 400, { ok: false, message: err && err.message ? err.message : "任务恢复失败" });
-      }
-    }
-
-    if (action === "progress") {
-      const body = await parseBody(req);
-      const { task: nextTask, idempotent } = applyTaskProgressSnapshot(
-        task,
-        {
-          status: body.status,
-          sessionId: body.sessionId,
-          checkpointId: body.checkpointId,
-          currentIndex: body.currentIndex,
-          completedItems: body.completedItems
-        },
-        now()
-      );
-      db.tasks[taskIndex] = nextTask;
-      await saveDb(db);
-      return sendJson(res, 200, { ok: true, task: nextTask, idempotent });
-    }
-
-    if (action === "complete") {
-      const body = await parseBody(req);
-      const nextTask = completeTask(
-        task,
-        {
-          status: TASK_STATUS.COMPLETED,
-          sessionId: body.sessionId,
-          checkpointId: body.checkpointId,
-          currentIndex: body.currentIndex,
-          completedItems: body.completedItems
-        },
-        now()
-      );
-      db.tasks[taskIndex] = nextTask;
-      await saveDb(db);
-      return sendJson(res, 200, { ok: true, task: nextTask, summary: nextTask.summary });
-    }
-
-    if (action === "stop") {
-      if (auth.role !== "parent") {
-        return sendJson(res, 403, { ok: false, message: "仅父母账号可停止任务" });
-      }
-      if (task.status === TASK_STATUS.COMPLETED || task.status === TASK_STATUS.ARCHIVED) {
-        return sendJson(res, 400, { ok: false, message: "该任务当前不可停止" });
-      }
-      const nextTask = {
-        ...task,
-        status: TASK_STATUS.ARCHIVED,
-        progress: {
-          ...task.progress,
-          pausedAt: now(),
-          lastSnapshotAt: now()
-        }
-      };
-      db.tasks[taskIndex] = nextTask;
-      await saveDb(db);
-      return sendJson(res, 200, { ok: true, task: nextTask });
-    }
   }
 
   if (req.method === "PUT" && pathname.startsWith("/api/submissions/") && pathname.endsWith("/review")) {
@@ -1065,7 +840,6 @@ async function handleApi(req, res, pathname) {
         updateWrongBookForUser(db, submission.username, submission, after);
       }
     }
-    syncTaskProgressFromSubmissionReview(db, submission);
     await saveDb(db);
     return sendJson(res, 200, { ok: true, submission });
   }
