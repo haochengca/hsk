@@ -1,5 +1,15 @@
 # 项目进度（执行与验证）
 
+## 本轮任务执行状态（2026-03-09）
+| 任务 | 状态 | 实现文件 | 验证结果 |
+|---|---|---|---|
+| 重建 HSK 汉字数据生成链路 | 已完成 | `scripts/generate_hsk_chars_from_source.py` `scripts/generate_hsk_data.py` `data/hsk_chars_1_6.json` `data/hsk_chars_1_6.js` | 通过：`npm run data:hsk` 产出 2663 个汉字，分级为 `174/173/270/447/621/978` |
+| 重建 HSK 词汇数据生成链路 | 已完成 | `scripts/generate_hsk_words_from_source.py` `scripts/generate_hsk_data.py` `data/hsk_words_1_6.json` `data/hsk_words_1_6.js` | 通过：`npm run data:hsk` 产出 4287 个多字词，单字词为 0 |
+| 学习页“全部学习项列表”增加独立 HSK 筛选 | 已完成 | `index.html` `app.js` `styles.css` | 通过：静态核对已接入 `learn-list-level-filter`，筛选逻辑已并入 `renderLearnCharList()` |
+| 学习页“全部学习项列表”改为两行居中布局 | 已完成 | `index.html` `styles.css` | 通过：标题独立第一行居中，筛选项第二行居中 |
+| 管理员学习项提示词覆盖链路文档化 | 已完成 | `docs/PRD.md` `docs/API.md` | 通过：已补充 `learning-item-override` 接口、`lexiconOverrides` 与提示词来源说明 |
+| 面向客户 README 与使用说明补充 | 已完成 | `README.md` | 通过：已新增客户视角使用说明文档 |
+
 ## 本轮任务执行状态（2026-03-03）
 | 任务 | 状态 | 实现文件 | 验证结果 |
 |---|---|---|---|
@@ -16,6 +26,8 @@
 
 ## 验证命令记录
 ```bash
+node --check app.js
+npm run data:hsk
 node --check app.js
 node tests/e2e/review-state-machine.spec.js
 ```

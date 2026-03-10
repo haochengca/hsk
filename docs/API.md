@@ -76,10 +76,14 @@ Base URL: `/api`
   "flags": {
     "recognitionV2Enabled": true
   },
+  "lexiconOverrides": {},
   "submissions": [],
   "tasks": []
 }
 ```
+- 说明：
+  - `lexiconOverrides` 为学习项覆盖表，键格式为 `char:字` 或 `word:词`
+  - 前端会在启动时应用该表中的 `pinyin / prompt1 / prompt2` 覆盖值
 
 ### `PUT /user-data`
 - Header: `Authorization`
@@ -295,12 +299,75 @@ Base URL: `/api`
 }
 ```
 
+## 8. 学习项管理
+
+### `PUT /admin/learning-item-override`
+- Header: `Authorization`（admin）
+- 请求：
+```json
+{
+  "type": "char|word",
+  "text": "高兴",
+  "pinyin": "gāoxìng",
+  "prompt1": "高兴",
+  "prompt2": "很高兴"
+}
+```
+- 说明：
+  - `type` 为空时按 `char` 处理
+  - `text` 必填，表示学习项内容
+  - `pinyin / prompt1 / prompt2` 任一非空即可生成覆盖记录
+  - 若三者都为空，则删除该学习项现有覆盖记录
+- 响应：
+```json
+{
+  "ok": true,
+  "key": "word:高兴",
+  "override": {
+    "type": "word",
+    "text": "高兴",
+    "pinyin": "gāoxìng",
+    "prompt1": "高兴",
+    "prompt2": "很高兴",
+    "updatedAt": 0,
+    "updatedBy": "admin"
+  },
+  "lexiconOverrides": {}
+}
+```
+
 说明：
 - 父母账号可使用 `PUT /submissions/:id/review` 与错题本管理接口（`/api/admin/users/:username/wrong-book` 的查询/编辑）。
 - 管理员账号不可使用 `PUT /submissions/:id/review`，可使用用户管理接口（`GET/DELETE /api/admin/users...`）与学习项管理接口。
-- 响应：`{ ok, submission }`
+- 管理员菜单中的“提示词1 / 提示词2”默认值由前端运行时生成；一旦通过本接口保存，就以后端 `lexiconOverrides` 为准。
 
-## 6. 错误码（常见）
+## 9. HSK 数据生成约定
+- HSK 原始源文件位于：
+  - `data/hsk_source/L1.txt`
+  - `data/hsk_source/L2.txt`
+  - `data/hsk_source/L3.txt`
+  - `data/hsk_source/L4.txt`
+  - `data/hsk_source/L5.txt`
+  - `data/hsk_source/L6.txt`
+- 词汇输出文件：
+  - `data/hsk_words_1_6.json`
+  - `data/hsk_words_1_6.js`
+- 汉字输出文件：
+  - `data/hsk_chars_1_6.json`
+  - `data/hsk_chars_1_6.js`
+- 词汇生成规则：
+  - 仅保留多字词
+  - 单字词不进入词汇数据
+- 汉字生成规则：
+  - 从词汇源逐字拆分得到
+  - 汉字等级取该字在词汇源中首次出现的等级
+  - 若该字存在单字词条，优先使用该条目的拼音与释义
+- 统一生成命令：
+```bash
+npm run data:hsk
+```
+
+## 10. 错误码（常见）
 - `400` 参数错误
 - `401` 未登录或会话过期
 - `403` 权限不足
