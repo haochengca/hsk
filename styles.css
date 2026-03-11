@@ -1146,6 +1146,110 @@ select {
   text-align: left;
 }
 
+.records-report-head {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.8rem;
+  margin-bottom: 0.9rem;
+}
+
+.records-report-highlight,
+.records-report-card {
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.84);
+  padding: 0.9rem;
+}
+
+.records-report-highlight .label,
+.records-report-card .report-subtitle {
+  margin: 0;
+  color: #667085;
+  font-size: 0.86rem;
+}
+
+.records-report-highlight .value {
+  margin: 0.25rem 0 0;
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: #213a5f;
+}
+
+.records-report-highlight .meta {
+  margin: 0.3rem 0 0;
+  color: #51647f;
+  font-size: 0.88rem;
+}
+
+.records-report-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.records-report-card h3 {
+  margin: 0 0 0.35rem;
+  color: #1f3652;
+}
+
+.records-chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.75rem;
+}
+
+.records-chip {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0.3rem 0.65rem;
+  background: rgba(0, 168, 168, 0.1);
+  border: 1px solid rgba(0, 168, 168, 0.18);
+  color: #1f4d57;
+  font-size: 0.9rem;
+}
+
+.records-chip.is-warn {
+  background: rgba(240, 68, 56, 0.08);
+  border-color: rgba(240, 68, 56, 0.18);
+  color: #8c2f2a;
+}
+
+.records-level-grid {
+  display: grid;
+  gap: 0.6rem;
+  margin-top: 0.75rem;
+}
+
+.records-level-row {
+  display: grid;
+  gap: 0.32rem;
+}
+
+.records-level-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.8rem;
+  font-size: 0.9rem;
+  color: #3d5575;
+}
+
+.records-level-track {
+  width: 100%;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(19, 35, 63, 0.09);
+  overflow: hidden;
+}
+
+.records-level-bar {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #00a8a8 0%, #ffca3a 100%);
+}
+
 .records-stat {
   border: 1px solid rgba(15, 23, 42, 0.1);
   border-radius: 10px;

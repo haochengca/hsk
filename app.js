@@ -431,6 +431,7 @@ const state = {
   reviewSettlementPoints: 0,
   reviewSettlementAnimated: false,
   reviewMessage: "请选择默写类型、等级和字数，然后点击“开始默写”。",
+  recordsReportUser: "",
   progress: {},
   wrongBook: [],
   wrongLevelFilter: "all",
@@ -527,7 +528,7 @@ function renderTabContent(tab, options = {}) {
 function warmHiddenTabs() {
   const queue = [];
   if (state.auth.role === "admin") queue.push("admin-users", "admin-wrong", "admin-items");
-  else if (state.auth.role === "parent") queue.push("admin", "admin-wrong");
+  else if (state.auth.role === "parent") queue.push("admin", "admin-wrong", "records");
   else if (state.auth.loggedIn) queue.push("write", "records");
   queue
     .filter((tab) => tab !== state.tab)
@@ -601,6 +602,9 @@ const adminItemsNext = document.getElementById("admin-items-next");
 const adminItemsPageInfo = document.getElementById("admin-items-page-info");
 const adminItemsMsg = document.getElementById("admin-items-msg");
 const adminItemsList = document.getElementById("admin-items-list");
+const recordsTargetRow = document.getElementById("records-target-row");
+const recordsTargetSelect = document.getElementById("records-target-select");
+const recordsReport = document.getElementById("records-report");
 const recordsCount = document.getElementById("records-count");
 const recordsList = document.getElementById("records-list");
 const recordsStats = document.getElementById("records-stats");
@@ -1600,7 +1604,8 @@ async function loadUserData() {
   state.reviewCount = prefs.reviewCount === "all" ? "all" : String(prefs.reviewCount || "10");
   state.reviewWrongMixRatio = String(prefs.reviewWrongMixRatio || "30");
   state.reviewPreviewMode = String(prefs.reviewPreviewMode || "0");
-  applyTaskDraftToControls();
+  const recordTargets = getRecordsTargetOptions();
+  state.recordsReportUser = recordTargets.length ? recordTargets[0].username : "";
   rebuildWrongQueue();
   refreshStats();
   refreshRewards();
@@ -1797,6 +1802,174 @@ function renderAdminWrongBookPanel() {
       </div>`;
     })
     .join("");
+}
+
+function getRecordsTargetOptions() {
+  if (state.auth.role === "parent") {
+    const linkedChildren = Array.isArray(state.auth.linkedChildren) ? state.auth.linkedChildren : [];
+    return linkedChildren.map((username) => ({ username, label: username }));
+  }
+  if (state.auth.username) return [{ username: state.auth.username, label: state.auth.username }];
+  return [];
+}
+
+function getRecordsTargetUsername() {
+  const options = getRecordsTargetOptions();
+  if (!options.length) return "";
+  if (!options.some((item) => item.username === state.recordsReportUser)) {
+    state.recordsReportUser = options[0].username;
+  }
+  return state.recordsReportUser;
+}
+
+function getSubmissionItemMeta(row) {
+  if (!row || !row.target) return null;
+  if (row.type === "word") return WORD_MAP.get(row.target) || null;
+  return CHAR_MAP.get(row.target) || null;
+}
+
+function buildRecordAggregateMap(rows) {
+  const map = new Map();
+  rows.forEach((row) => {
+    if (!row || !row.target || !row.type) return;
+    const key = `${row.type}:${row.target}`;
+    if (!map.has(key)) {
+      const meta = getSubmissionItemMeta(row);
+      map.set(key, {
+        key,
+        type: row.type,
+        text: row.target,
+        level: meta && meta.level ? Number(meta.level) : 1,
+        attempts: 0,
+        correct: 0,
+        wrong: 0,
+        accuracy: 0,
+        lastResult: null,
+        lastAt: 0
+      });
+    }
+    const current = map.get(key);
+    current.attempts += 1;
+    current.correct += row.finalResult ? 1 : 0;
+    current.wrong += row.finalResult ? 0 : 1;
+    current.accuracy = current.attempts > 0 ? Math.round((current.correct / current.attempts) * 100) : 0;
+    if (!current.lastAt || Number(row.createdAt || 0) > current.lastAt) {
+      current.lastAt = Number(row.createdAt || 0);
+      current.lastResult = Boolean(row.finalResult);
+    }
+  });
+  return map;
+}
+
+function buildLevelMasteryStats(rows) {
+  const aggregates = [...buildRecordAggregateMap(rows).values()];
+  return [1, 2, 3, 4, 5, 6].map((level) => {
+    const totalCount =
+      CHAR_ITEMS.filter((item) => Number(item.level) === level).length + WORD_ITEMS.filter((item) => Number(item.level) === level).length;
+    const levelItems = aggregates.filter((item) => Number(item.level) === level);
+    const masteredCount = levelItems.filter((item) => item.accuracy >= 80 && item.attempts >= 2).length;
+    const attemptedCount = levelItems.length;
+    const masteryPercent = totalCount > 0 ? Math.round((masteredCount / totalCount) * 100) : 0;
+    return { level, totalCount, attemptedCount, masteredCount, masteryPercent };
+  });
+}
+
+function buildTrendSummary(rows) {
+  const nowTs = Date.now();
+  const dayMs = 24 * 60 * 60 * 1000;
+  const recent = rows.filter((row) => nowTs - Number(row.createdAt || 0) <= 7 * dayMs);
+  const previous = rows.filter((row) => {
+    const gap = nowTs - Number(row.createdAt || 0);
+    return gap > 7 * dayMs && gap <= 14 * dayMs;
+  });
+  const recentAcc = recent.length ? Math.round((recent.filter((row) => row.finalResult).length / recent.length) * 100) : 0;
+  const previousAcc = previous.length ? Math.round((previous.filter((row) => row.finalResult).length / previous.length) * 100) : 0;
+  const diff = recentAcc - previousAcc;
+  let label = "趋势稳定";
+  if (recent.length > 0 && previous.length === 0) label = "刚开始进入稳定练习期";
+  else if (diff >= 10) label = "最近明显进步";
+  else if (diff <= -10) label = "最近有退步，需要回炉";
+  return {
+    label,
+    recentAcc,
+    previousAcc,
+    recentCount: recent.length,
+    previousCount: previous.length,
+    diff
+  };
+}
+
+function renderRecordsReport(targetUsername, rows) {
+  if (!recordsReport) return;
+  if (!targetUsername) {
+    recordsReport.innerHTML = "<p>当前没有可查看的报告对象。</p>";
+    return;
+  }
+  const aggregates = [...buildRecordAggregateMap(rows).values()];
+  const stableChars = aggregates
+    .filter((item) => item.type === "char" && item.attempts >= 3 && item.accuracy >= 85 && item.lastResult)
+    .sort((a, b) => b.accuracy - a.accuracy || b.attempts - a.attempts || b.lastAt - a.lastAt)
+    .slice(0, 10);
+  const weakWords = aggregates
+    .filter((item) => item.type === "word" && item.wrong >= 2)
+    .sort((a, b) => b.wrong - a.wrong || a.accuracy - b.accuracy || b.lastAt - a.lastAt)
+    .slice(0, 8);
+  const trend = buildTrendSummary(rows);
+  const within30d = rows.filter((row) => Date.now() - Number(row.createdAt || 0) <= 30 * 24 * 60 * 60 * 1000);
+  const monthlyAcc = within30d.length ? Math.round((within30d.filter((row) => row.finalResult).length / within30d.length) * 100) : 0;
+  const levelStats = buildLevelMasteryStats(rows);
+
+  recordsReport.innerHTML = `
+    <div class="records-report-head">
+      <div class="records-report-highlight">
+        <p class="label">报告对象</p>
+        <p class="value">${escapeHtmlAttr(targetUsername)}</p>
+      </div>
+      <div class="records-report-highlight">
+        <p class="label">最近7天趋势</p>
+        <p class="value">${escapeHtmlAttr(trend.label)}</p>
+        <p class="meta">本周 ${trend.recentCount} 次 · ${trend.recentAcc}%${trend.previousCount ? `，较上周 ${trend.diff >= 0 ? "+" : ""}${trend.diff}%` : ""}</p>
+      </div>
+      <div class="records-report-highlight">
+        <p class="label">最近30天</p>
+        <p class="value">${within30d.length} 次 · ${monthlyAcc}%</p>
+        <p class="meta">看月度节奏是否稳定</p>
+      </div>
+    </div>
+    <div class="records-report-grid">
+      <article class="records-report-card">
+        <h3>稳定掌握的字</h3>
+        <p class="report-subtitle">至少练过 3 次，正确率 85% 以上，最近一次也答对</p>
+        <div class="records-chip-list">
+          ${stableChars.length ? stableChars.map((item) => `<span class="records-chip">${escapeHtmlAttr(item.text)} · ${item.accuracy}%</span>`).join("") : "<p>还没有足够稳定的汉字，继续积累练习。</p>"}
+        </div>
+      </article>
+      <article class="records-report-card">
+        <h3>反复出错的词</h3>
+        <p class="report-subtitle">错误至少 2 次，优先安排复习</p>
+        <div class="records-chip-list">
+          ${weakWords.length ? weakWords.map((item) => `<span class="records-chip is-warn">${escapeHtmlAttr(item.text)} · 错 ${item.wrong} 次</span>`).join("") : "<p>近期没有反复出错的词汇。</p>"}
+        </div>
+      </article>
+    </div>
+    <article class="records-report-card">
+      <h3>HSK 各级掌握度</h3>
+      <p class="report-subtitle">按全部学习项口径统计，已掌握 = 正确率 80% 以上且至少练过 2 次</p>
+      <div class="records-level-grid">
+        ${levelStats
+          .map(
+            (item) => `<div class="records-level-row">
+              <div class="records-level-head">
+                <span>HSK ${item.level}</span>
+                <span>${item.masteredCount}/${item.totalCount} 项 · 已尝试 ${item.attemptedCount}</span>
+              </div>
+              <div class="records-level-track"><div class="records-level-bar" style="width:${item.masteryPercent}%"></div></div>
+            </div>`
+          )
+          .join("")}
+      </div>
+    </article>
+  `;
 }
 
 async function fetchAdminUsers() {
@@ -2075,17 +2248,35 @@ async function queryAdminWrongBook(username) {
 function renderUserRecords() {
   if (!state.auth.username || !isLearnerRole(state.auth.role)) {
     recordsCount.textContent = "记录：0 条";
+    if (recordsTargetRow) recordsTargetRow.classList.add("hidden");
+    if (recordsReport) recordsReport.innerHTML = "<p>仅父母或孩子可查看学习报告。</p>";
     recordsStats.innerHTML = "<p>仅父母或孩子可查看自己的统计。</p>";
     recordsList.innerHTML = "<p>仅父母或孩子可查看自己的记录。</p>";
     return;
   }
+  const options = getRecordsTargetOptions();
+  if (recordsTargetRow) recordsTargetRow.classList.toggle("hidden", !(state.auth.role === "parent" && options.length > 0));
+  if (recordsTargetSelect && state.auth.role === "parent") {
+    const nextOptions = options.map((item) => `<option value="${escapeHtmlAttr(item.username)}">${escapeHtmlAttr(item.label)}</option>`).join("");
+    if (recordsTargetSelect.innerHTML !== nextOptions) recordsTargetSelect.innerHTML = nextOptions;
+  }
+  const targetUsername = getRecordsTargetUsername();
+  if (recordsTargetSelect && targetUsername) recordsTargetSelect.value = targetUsername;
+  if (state.auth.role === "parent" && !targetUsername) {
+    recordsCount.textContent = "记录：0 条";
+    if (recordsReport) recordsReport.innerHTML = "<p>当前父母账号还没有关联孩子，暂时无法生成学习报告。</p>";
+    recordsStats.innerHTML = "<p>关联孩子后可查看周报/月报。</p>";
+    recordsList.innerHTML = "<p>暂无可展示记录。</p>";
+    return;
+  }
   const rows = state.submissions
-    .filter((x) => x && x.username === state.auth.username)
+    .filter((x) => x && x.username === targetUsername)
     .sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
+  renderRecordsReport(targetUsername, rows);
   renderUserRecordStats(rows);
-  recordsCount.textContent = `记录：${rows.length} 条`;
+  recordsCount.textContent = `${targetUsername} 的记录：${rows.length} 条`;
   if (rows.length === 0) {
-    recordsList.innerHTML = "<p>你还没有默写记录。</p>";
+    recordsList.innerHTML = `<p>${escapeHtmlAttr(targetUsername)} 还没有默写记录。</p>`;
     return;
   }
   recordsList.innerHTML = rows
@@ -2176,7 +2367,7 @@ async function setAuthState(username, role, token, profile = {}) {
   writeTabBtn.classList.toggle("hidden", manager);
   reviewTabBtn.classList.toggle("hidden", manager);
   wrongTabBtn.classList.toggle("hidden", manager);
-  recordsTab.classList.toggle("hidden", manager);
+  recordsTab.classList.toggle("hidden", role === "admin");
   adminTab.classList.toggle("hidden", !reviewAuditor);
   if (adminUsersTab) adminUsersTab.classList.toggle("hidden", !superAdmin);
   if (adminWrongTab) adminWrongTab.classList.toggle("hidden", !manager);
@@ -5146,11 +5337,20 @@ function wireWrongBook() {
   });
 }
 
+function wireRecords() {
+  if (recordsTargetSelect) {
+    recordsTargetSelect.addEventListener("change", (event) => {
+      state.recordsReportUser = event.target.value || "";
+      renderUserRecords();
+    });
+  }
+}
+
 function wireTabs() {
   tabs.forEach((btn) => {
     btn.addEventListener("click", () => {
       if (state.auth.role === "admin" && !["admin", "admin-users", "admin-wrong", "admin-items"].includes(btn.dataset.tab)) return;
-      if (state.auth.role === "parent" && !["admin", "admin-wrong"].includes(btn.dataset.tab)) return;
+      if (state.auth.role === "parent" && !["admin", "admin-wrong", "records"].includes(btn.dataset.tab)) return;
       if (btn.dataset.tab === "admin" && !canAccessReviewAudit(state.auth.role)) return;
       if (btn.dataset.tab === "admin-users" && !isSuperAdmin(state.auth.role)) return;
       if (btn.dataset.tab === "admin-wrong" && !isManagerRole(state.auth.role)) return;
@@ -5794,6 +5994,7 @@ async function init() {
   wireLearn();
   wireReview();
   wireWrongBook();
+  wireRecords();
   wireAdmin();
   setupCanvas();
   scheduleRecognitionTierWarmup(300);

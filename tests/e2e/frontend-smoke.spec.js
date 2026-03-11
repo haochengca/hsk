@@ -169,4 +169,20 @@ test("child user can navigate learn, write and review flows", async ({ page }) =
   await expect(page.locator("#records-panel")).toHaveClass(/is-active/);
   await expect(page.locator("#records-count")).toContainText("1 条");
   await expect(page.locator("#records-list")).toContainText(String(selectedText || "").trim());
+
+  await page.click("#user-menu-toggle");
+  await page.click("#logout-btn");
+  await expect(page.locator("#auth-screen")).toBeVisible();
+
+  await page.fill("#auth-username", parentUsername);
+  await page.fill("#auth-password", password);
+  await page.click("#auth-login");
+
+  await expect(page.locator("#records-tab")).not.toHaveClass(/hidden/);
+  await page.click("#records-tab");
+  await expect(page.locator("#records-panel")).toHaveClass(/is-active/);
+  await expect(page.locator("#records-target-select")).toHaveValue(childUsername);
+  await expect(page.locator("#records-report")).toContainText("报告对象");
+  await expect(page.locator("#records-report")).toContainText("HSK 各级掌握度");
+  await expect(page.locator("#records-count")).toContainText(`${childUsername} 的记录：1 条`);
 });
