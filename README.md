@@ -2,6 +2,23 @@
 
 这是一个面向家庭与教学场景的 HSK 学习网站，支持汉字学习、词汇学习、写字练习、默写测验、错题回流和管理员维护。
 
+## 快速启动
+
+```bash
+npm install
+npm start
+```
+
+- 默认地址：`http://127.0.0.1:8787`
+- 运行环境：Node.js `>=22`
+- 默认管理员账号：`admin / admin123`
+
+## 数据与存储
+- HSK 基础词库文件位于 `data/hsk_source/L1.txt` 到 `L6.txt`
+- 可通过 `npm run data:hsk` 重新生成汉字/词汇 JSON 与 JS 数据文件
+- 未配置 `DATABASE_URL` 时，服务端使用 SQLite（默认文件：`data/server_db.sqlite`）
+- 配置 `DATABASE_URL` 后，服务端切换到 Postgres；若目标库为空，会自动尝试导入本地旧数据
+
 ## 适用对象
 - 孩子：学习汉字、练习书写、进行默写、复习错题
 - 父母：查看孩子学习情况、复判默写结果、管理错题本
@@ -98,6 +115,7 @@
 ## 技术与部署
 - 前端：原生 HTML / CSS / JavaScript
 - 后端：Node.js
+- 持久化：SQLite / Postgres 自动切换
 - 数据支持 HSK1-6
 
 ## 开发辅助能力

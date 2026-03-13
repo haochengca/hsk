@@ -83,6 +83,9 @@ Base URL: `/api`
 - 说明：
   - `lexiconOverrides` 为学习项覆盖表，键格式为 `char:字` 或 `word:词`
   - 前端会在启动时应用该表中的 `pinyin / prompt1 / prompt2` 覆盖值
+  - `submissions` 返回规则：
+    - `admin` / `parent`：返回全部提交记录（按 `createdAt` 倒序）
+    - `child`：仅返回当前账号自己的提交记录
 
 ### `PUT /user-data`
 - Header: `Authorization`
@@ -96,6 +99,14 @@ Base URL: `/api`
 }
 ```
 - 响应：`{ ok, savedAt }`
+
+## 3.1 已下线路由
+
+### `GET|POST|PUT|DELETE /tasks`
+### `GET|POST|PUT|DELETE /tasks/:id`
+- Header: `Authorization`
+- 当前行为：统一返回 `404`
+- 响应：`{ ok: false, message: "任务功能已下线" }`
 
 ## 4. 默写提交
 
@@ -180,6 +191,54 @@ Base URL: `/api`
   - 若提交是词汇且传了 `wordCharResults`，最终 `finalResult` 以逐字结果自动汇总（全对=正确）。
 - 复判后会同步更新该用户积分、词汇错题、相关单字错题。
 
+## 6. 错题本管理
+
+### `GET /admin/users/:username/wrong-book`
+- Header: `Authorization`（admin|parent）
+- 说明：
+  - 仅可查看父母或孩子账号的错题本
+- 响应：
+```json
+{
+  "ok": true,
+  "wrongBook": [
+    {
+      "key": "word:高兴",
+      "type": "word",
+      "text": "高兴"
+    }
+  ]
+}
+```
+
+### `PUT /admin/users/:username/wrong-book`
+- Header: `Authorization`（admin|parent）
+- 请求：
+```json
+{
+  "action": "add|remove",
+  "type": "char|word",
+  "text": "高兴"
+}
+```
+- 说明：
+  - `action` 必须为 `add` 或 `remove`
+  - `type` 为空时按 `char` 处理
+  - 仅可操作父母或孩子账号的错题本
+- 响应：
+```json
+{
+  "ok": true,
+  "wrongBook": [
+    {
+      "key": "word:高兴",
+      "type": "word",
+      "text": "高兴"
+    }
+  ]
+}
+```
+
 ## 7. 管理员用户管理
 
 ### `GET /admin/users`
@@ -258,6 +317,11 @@ Base URL: `/api`
   "lexiconOverrides": {}
 }
 ```
+
+## 9. 认证与会话补充规则
+- 除 `GET /health`、`POST /register`、`POST /login` 外，其余 API 均要求 `Authorization: Bearer <token>`
+- 会话有效期为 30 天，服务端会在鉴权时清理过期会话
+- `POST /change-password` 成功后，仅保留当前登录会话，其余历史会话会被失效
 
 说明：
 - 父母账号可使用 `PUT /submissions/:id/review` 与错题本管理接口（`/api/admin/users/:username/wrong-book` 的查询/编辑）。

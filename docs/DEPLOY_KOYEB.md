@@ -4,6 +4,7 @@
 
 - 配置 `DATABASE_URL` 时使用 Postgres（推荐生产）
 - 不配置时回退 SQLite
+- 默认监听端口为 `8787`，Koyeb 会通过 `PORT` 注入实际运行端口
 
 ---
 
@@ -34,6 +35,12 @@ DATABASE_URL=postgresql://<user>:<password>@<host>:5432/<db>?sslmode=require
 
 然后点击 **Redeploy**。
 
+如需显式关闭额外 SSL 配置，可增加：
+
+```bash
+PGSSL=disable
+```
+
 ---
 
 ## 3) 自动迁移说明
@@ -56,5 +63,13 @@ GET /api/health
 ```
 
 返回 `ok: true` 即部署成功，且数据已切换到 Postgres。
+
+建议同时检查：
+
+```bash
+GET /
+```
+
+若首页可正常打开，说明静态资源与 API 服务均已启动。
 
 ---
