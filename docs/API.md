@@ -6,6 +6,91 @@ Base URL: `/api`
 ### `GET /health`
 - 响应：`{ ok: true, now }`
 
+### `GET /ocr/health`
+- 说明：代理 PaddleOCR 容器健康状态
+- 响应示例：
+```json
+{
+  "ok": true,
+  "service": "paddle-ocr",
+  "model": "PP-OCRv5_server_rec",
+  "ready": true
+}
+```
+
+### `POST /ocr/recognize`
+- 说明：对单张手写图片做 PaddleOCR 识别，适合单字或短词
+- 请求：
+```json
+{
+  "image": "data:image/png;base64,...",
+  "target": "你好",
+  "candidates": ["你好", "你们"],
+  "variantLimit": 4
+}
+```
+- 响应示例：
+```json
+{
+  "ok": true,
+  "engine": "PP-OCRv5_server_rec",
+  "bestText": "你好",
+  "bestScore": 0.97,
+  "bestVariant": "binary",
+  "results": [
+    {
+      "variant": "binary",
+      "text": "你好",
+      "score": 0.97
+    }
+  ]
+}
+```
+
+### `POST /ocr/judge`
+- 说明：判定功能当前优先走 PaddleOCR
+- 请求：
+```json
+{
+  "image": "data:image/png;base64,...",
+  "target": "你",
+  "type": "char",
+  "candidates": ["你", "他"]
+}
+```
+- 响应示例：
+```json
+{
+  "ok": true,
+  "target": "你",
+  "recognizedText": "你",
+  "systemResult": true,
+  "finalResult": true,
+  "accuracyPercent": 97,
+  "judgeDetail": {
+    "version": "paddleocr-v1",
+    "engine": "PP-OCRv5_server_rec",
+    "decision": "pass",
+    "decisionScore": 0.97,
+    "similarity": 1,
+    "variant": "binary",
+    "reason": "exact_match",
+    "ocrFirst": true,
+    "thresholds": {
+      "passConfidence": 0.82,
+      "fuzzySimilarity": 0.92
+    }
+  },
+  "candidates": [
+    {
+      "variant": "binary",
+      "text": "你",
+      "score": 0.97
+    }
+  ]
+}
+```
+
 ## 2. 认证
 
 ### `POST /register`

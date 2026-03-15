@@ -15,7 +15,8 @@
     "test:e2e": "playwright test tests/e2e/frontend-smoke.spec.js",
     "test:agents": "node --test tests/agent-coordinator.spec.js",
     "test:recognition": "node --test tests/recognition-core.spec.js",
-    "test:submissions": "node --test tests/submissions-judge-detail.spec.js"
+    "test:submissions": "node --test tests/submissions-judge-detail.spec.js",
+    "test:ocr-api": "node --test tests/ocr-proxy.spec.js"
   },
   "devDependencies": {
     "@playwright/test": "^1.54.2"

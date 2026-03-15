@@ -13,6 +13,43 @@ npm start
 - 运行环境：Node.js `>=22`
 - 默认管理员账号：`admin / admin123`
 
+## Docker Compose + PaddleOCR
+
+项目已补充基于 Docker Compose 的 PaddleOCR 部署：
+
+```bash
+docker compose up --build
+```
+
+- Web/API：`http://127.0.0.1:8787`
+- PaddleOCR 健康检查：`http://127.0.0.1:8788/health`
+- 主服务会通过 `/api/ocr/*` 代理 OCR 能力
+
+说明：
+- 容器内部署时，`docker-compose.yml` 已将主服务的 `OCR_SERVICE_URL` 固定为 `http://ocr-service:8788`
+- 非容器直接运行 `node server.js` 时，默认 OCR 地址为 `http://192.168.1.33:8788`
+
+当前 OCR 服务使用：
+
+- `paddleocr==3.4.0`
+- `paddlepaddle==3.3.0`
+- `PP-OCRv5_server_rec`
+
+如宿主机端口冲突，可通过环境变量覆盖：
+
+```bash
+OCR_HOST_PORT=8788 docker compose up --build
+```
+
+本地非容器调试时也可手动覆盖：
+
+```bash
+OCR_SERVICE_URL=http://192.168.1.33:8788 npm start
+```
+
+详细部署说明见：
+- [PaddleOCR Docker 部署](./docs/DEPLOY_PADDLEOCR_DOCKER.md)
+
 ## 数据与存储
 - HSK 基础词库文件位于 `data/hsk_source/L1.txt` 到 `L6.txt`
 - 可通过 `npm run data:hsk` 重新生成汉字/词汇 JSON 与 JS 数据文件
@@ -115,6 +152,7 @@ npm start
 ## 技术与部署
 - 前端：原生 HTML / CSS / JavaScript
 - 后端：Node.js
+- OCR：PaddleOCR 3.x（独立容器部署）
 - 持久化：SQLite / Postgres 自动切换
 - 数据支持 HSK1-6
 
