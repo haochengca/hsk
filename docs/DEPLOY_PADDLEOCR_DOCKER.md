@@ -38,7 +38,9 @@ docker compose up --build
 
 主服务：
 
-- `OCR_SERVICE_URL`，默认 `http://ocr-service:8788`
+- `OCR_SERVICE_URL`
+  - Docker Compose 容器内：`http://ocr-service:8788`
+  - 非容器本地调试默认：`http://192.168.1.33:8788`
 - `OCR_SERVICE_TIMEOUT_MS`，默认 `30000`
 
 OCR 服务：

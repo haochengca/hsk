@@ -25,6 +25,10 @@ docker compose up --build
 - PaddleOCR 健康检查：`http://127.0.0.1:8788/health`
 - 主服务会通过 `/api/ocr/*` 代理 OCR 能力
 
+说明：
+- 容器内部署时，`docker-compose.yml` 已将主服务的 `OCR_SERVICE_URL` 固定为 `http://ocr-service:8788`
+- 非容器直接运行 `node server.js` 时，默认 OCR 地址为 `http://192.168.1.33:8788`
+
 当前 OCR 服务使用：
 
 - `paddleocr==3.4.0`
@@ -35,6 +39,12 @@ docker compose up --build
 
 ```bash
 OCR_HOST_PORT=8788 docker compose up --build
+```
+
+本地非容器调试时也可手动覆盖：
+
+```bash
+OCR_SERVICE_URL=http://192.168.1.33:8788 npm start
 ```
 
 详细部署说明见：
