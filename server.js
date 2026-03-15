@@ -15,6 +15,8 @@ const DB_PATH = process.env.DB_PATH
 const DATABASE_URL = String(process.env.DATABASE_URL || "").trim();
 const USE_POSTGRES = Boolean(DATABASE_URL);
 const RECOGNITION_V2_ENABLED = !["0", "false", "off"].includes(String(process.env.RECOGNITION_V2_ENABLED || "1").trim().toLowerCase());
+const OCR_SERVICE_URL = String(process.env.OCR_SERVICE_URL || "http://ocr-service:8000").trim().replace(/\/+$/, "");
+const OCR_SERVICE_TIMEOUT_MS = Math.max(1000, Number(process.env.OCR_SERVICE_TIMEOUT_MS || 30000) || 30000);
 const LEGACY_JSON_DB_PATH = path.join(ROOT, "data", "server_db.json");
 const LEGACY_SQLITE_DB_PATH = path.join(ROOT, "data", "server_db.sqlite");
 const DB_STATE_KEY = "state";
@@ -393,6 +395,36 @@ function sendJson(res, statusCode, payload) {
   res.end(body);
 }
 
+async function readJsonResponse(response) {
+  const text = await response.text();
+  if (!text) return {};
+  try {
+    return JSON.parse(text);
+  } catch {
+    return { ok: false, message: text };
+  }
+}
+
+async function fetchOcrService(pathname, options = {}) {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), OCR_SERVICE_TIMEOUT_MS);
+  try {
+    const response = await fetch(`${OCR_SERVICE_URL}${pathname}`, {
+      method: options.method || "GET",
+      headers: {
+        "Content-Type": "application/json",
+        ...(options.headers || {})
+      },
+      body: options.body ? JSON.stringify(options.body) : undefined,
+      signal: controller.signal
+    });
+    const payload = await readJsonResponse(response);
+    return { status: response.status, ok: response.ok, payload };
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
 function getAuthContext(req, db) {
   const auth = req.headers.authorization || "";
   const token = auth.startsWith("Bearer ") ? auth.slice(7).trim() : "";
@@ -576,6 +608,69 @@ async function handleApi(req, res, pathname) {
 
   if (req.method === "GET" && pathname === "/api/health") {
     return sendJson(res, 200, { ok: true, now: now() });
+  }
+
+  if (req.method === "GET" && pathname === "/api/ocr/health") {
+    try {
+      const upstream = await fetchOcrService("/health");
+      return sendJson(res, upstream.status, upstream.payload);
+    } catch (err) {
+      return sendJson(res, 502, {
+        ok: false,
+        message: err && err.name === "AbortError" ? "OCR 服务请求超时" : "OCR 服务不可用"
+      });
+    }
+  }
+
+  if (req.method === "POST" && pathname === "/api/ocr/recognize") {
+    const body = await parseBody(req);
+    if (!body || typeof body.image !== "string" || !body.image.trim()) {
+      return sendJson(res, 400, { ok: false, message: "image 不能为空" });
+    }
+    try {
+      const upstream = await fetchOcrService("/ocr/recognize", {
+        method: "POST",
+        body: {
+          image: String(body.image || ""),
+          target: String(body.target || ""),
+          candidates: Array.isArray(body.candidates) ? body.candidates : [],
+          variantLimit: Number(body.variantLimit) || undefined
+        }
+      });
+      return sendJson(res, upstream.status, upstream.payload);
+    } catch (err) {
+      return sendJson(res, 502, {
+        ok: false,
+        message: err && err.name === "AbortError" ? "OCR 服务请求超时" : "OCR 服务不可用"
+      });
+    }
+  }
+
+  if (req.method === "POST" && pathname === "/api/ocr/judge") {
+    const body = await parseBody(req);
+    if (!body || typeof body.image !== "string" || !body.image.trim()) {
+      return sendJson(res, 400, { ok: false, message: "image 不能为空" });
+    }
+    if (typeof body.target !== "string" || !body.target.trim()) {
+      return sendJson(res, 400, { ok: false, message: "target 不能为空" });
+    }
+    try {
+      const upstream = await fetchOcrService("/ocr/judge", {
+        method: "POST",
+        body: {
+          image: String(body.image || ""),
+          target: String(body.target || ""),
+          type: body.type === "word" ? "word" : "char",
+          candidates: Array.isArray(body.candidates) ? body.candidates : []
+        }
+      });
+      return sendJson(res, upstream.status, upstream.payload);
+    } catch (err) {
+      return sendJson(res, 502, {
+        ok: false,
+        message: err && err.name === "AbortError" ? "OCR 服务请求超时" : "OCR 服务不可用"
+      });
+    }
   }
 
   if (req.method === "POST" && pathname === "/api/register") {

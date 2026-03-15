@@ -1,0 +1,46 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: hsk-app
+    depends_on:
+      ocr-service:
+        condition: service_healthy
+    environment:
+      HOST: 0.0.0.0
+      PORT: 8787
+      DB_PATH: /app/data/server_db.sqlite
+      OCR_SERVICE_URL: http://ocr-service:8000
+      OCR_SERVICE_TIMEOUT_MS: 30000
+      RECOGNITION_V2_ENABLED: "1"
+    ports:
+      - "8787:8787"
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped
+
+  ocr-service:
+    build:
+      context: .
+      dockerfile: docker/paddle-ocr/Dockerfile
+    container_name: hsk-paddle-ocr
+    environment:
+      PORT: 8000
+      OCR_MODEL_NAME: PP-OCRv5_server_rec
+      OCR_VARIANT_LIMIT: 4
+      PADDLE_PDX_MODEL_SOURCE: BOS
+    ports:
+      - "8000:8000"
+    volumes:
+      - paddle-model-cache:/root/.paddlex
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=5).read()"]
+      interval: 30s
+      timeout: 10s
+      retries: 10
+      start_period: 180s
+    restart: unless-stopped
+
+volumes:
+  paddle-model-cache:
