@@ -4,7 +4,77 @@ Base URL: `/api`
 
 ## 1. 健康检查
 ### `GET /health`
-- 响应：`{ ok: true, now }`
+- 响应：`{ ok: true, now, ocrEnabled }`
+
+### `GET /ocr/health`
+- 说明：
+  - 无需登录
+  - 用于检查 Node 代理是否已连接 PaddleOCR 服务
+- 成功响应：
+```json
+{
+  "ok": true,
+  "enabled": true,
+  "service": "hsk-paddleocr-api",
+  "version": "1.0.0",
+  "ready": true,
+  "engine": {
+    "provider": "PaddleOCR",
+    "modelName": "PP-OCRv5_server_rec",
+    "device": "cpu",
+    "paddleVersion": "3.3.0",
+    "paddleocrVersion": "3.4.0"
+  }
+}
+```
+
+## 1.1 OCR 识别
+
+### `POST /ocr/recognize`
+- Header: `Authorization`
+- 请求：
+```json
+{
+  "mode": "single_char",
+  "images": ["data:image/png;base64,..."],
+  "expectedTexts": ["你"]
+}
+```
+- 说明：
+  - `mode` 支持 `single_char | single_line`
+  - `images` 与 `expectedTexts` 数量必须一致
+  - 推荐通过该路由访问 OCR，前端无需直连 Python 服务
+- 响应：
+```json
+{
+  "ok": true,
+  "elapsedMs": 148.3,
+  "engine": {
+    "provider": "PaddleOCR",
+    "modelName": "PP-OCRv5_server_rec",
+    "device": "cpu",
+    "paddleVersion": "3.3.0",
+    "paddleocrVersion": "3.4.0",
+    "mode": "single_char",
+    "variants": ["raw", "normalized", "binary"]
+  },
+  "results": [
+    {
+      "index": 0,
+      "text": "你",
+      "confidence": 0.93,
+      "match": true,
+      "expectedText": "你",
+      "variant": "normalized",
+      "provider": "PaddleOCR",
+      "model": "PP-OCRv5_server_rec",
+      "candidates": [
+        { "text": "你", "confidence": 0.93, "variant": "normalized" }
+      ]
+    }
+  ]
+}
+```
 
 ## 2. 认证
 
@@ -74,7 +144,8 @@ Base URL: `/api`
     }
   },
   "flags": {
-    "recognitionV2Enabled": true
+    "recognitionV2Enabled": true,
+    "ocrEnabled": true
   },
   "lexiconOverrides": {},
   "submissions": []
@@ -133,6 +204,17 @@ Base URL: `/api`
     "tier": "simple|medium|complex",
     "thresholds": { "pass": 0.61, "retryLow": 0.56 },
     "engines": { "overlap": 0.71, "projection": 0.66, "grid": 0.67 },
+    "ocr": {
+      "applied": true,
+      "match": true,
+      "text": "你",
+      "expectedText": "你",
+      "confidence": 0.93,
+      "variant": "normalized",
+      "provider": "PaddleOCR",
+      "model": "PP-OCRv5_server_rec",
+      "source": "ocr-proxy"
+    },
     "retryAttempt": 0,
     "reason": "pass_threshold"
   },

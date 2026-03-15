@@ -384,7 +384,7 @@ function buildCharPhraseMap() {
 
 const state = {
   auth: { loggedIn: false, role: "", username: "", token: "", linkedParentUsername: "", linkedChildren: [] },
-  flags: { recognitionV2Enabled: true },
+  flags: { recognitionV2Enabled: true, ocrEnabled: false },
   lang: "zh",
   lexiconOverrides: {},
   tab: "learn",
@@ -446,11 +446,13 @@ const state = {
   reviewPreviewCountdownTimer: null,
   reviewPreviewToken: 0,
   reviewPreviewRunning: false,
+  reviewJudgePending: false,
   strokeWriter: null,
   strokeChar: "",
   refreshWriteCanvas: null,
   advanceTimer: null,
   syncTimer: null,
+  writeJudgePending: false,
   reviewDraftActive: false,
   reviewSessionSnapshot: null,
   pendingSubmissionPayloads: [],
@@ -645,6 +647,7 @@ const writeNextChar = document.getElementById("write-next-char");
 const targetChar = document.getElementById("target-char");
 const targetMeta = document.getElementById("target-meta");
 const writeFeedback = document.getElementById("write-feedback");
+const writeCheckBtn = document.getElementById("write-check");
 const strokeDemoPlay = document.getElementById("stroke-demo-play");
 const strokeDemoReplay = document.getElementById("stroke-demo-replay");
 const strokeDemo = document.getElementById("stroke-demo");
@@ -1130,6 +1133,20 @@ function normalizeJudgeDetail(detail) {
         grid: Math.max(0, Math.min(1, Number(detail.engines.grid) || 0))
       }
     : null;
+  const ocr = detail.ocr && typeof detail.ocr === "object"
+    ? {
+        applied: Boolean(detail.ocr.applied),
+        available: detail.ocr.available === undefined ? null : Boolean(detail.ocr.available),
+        match: Boolean(detail.ocr.match),
+        text: String(detail.ocr.text || ""),
+        expectedText: String(detail.ocr.expectedText || ""),
+        confidence: Math.max(0, Math.min(1, Number(detail.ocr.confidence) || 0)),
+        variant: String(detail.ocr.variant || ""),
+        model: String(detail.ocr.model || ""),
+        provider: String(detail.ocr.provider || ""),
+        source: String(detail.ocr.source || "")
+      }
+    : null;
   return {
     version: String(detail.version || "v2"),
     decision: ["pass", "fail", "retry"].includes(String(detail.decision)) ? String(detail.decision) : "fail",
@@ -1141,7 +1158,8 @@ function normalizeJudgeDetail(detail) {
     thresholds,
     engines,
     retryAttempt: Math.max(0, Number(detail.retryAttempt) || 0),
-    reason: String(detail.reason || "unknown")
+    reason: String(detail.reason || "unknown"),
+    ocr
   };
 }
 
@@ -1228,6 +1246,79 @@ async function apiRequest(path, options = {}) {
     throw new Error(body.message || `请求失败(${resp.status})`);
   }
   return body;
+}
+
+function normalizeOcrResult(item, engine = {}) {
+  const fallbackEngine = engine && typeof engine === "object" ? engine : {};
+  return {
+    index: Math.max(0, Number(item && item.index) || 0),
+    text: String((item && item.text) || ""),
+    confidence: Math.max(0, Math.min(1, Number(item && item.confidence) || 0)),
+    match: Boolean(item && item.match),
+    expectedText: String((item && item.expectedText) || ""),
+    variant: String((item && item.variant) || ""),
+    provider: String((item && item.provider) || fallbackEngine.provider || "PaddleOCR"),
+    model: String((item && item.model) || fallbackEngine.modelName || ""),
+    source: "ocr-proxy",
+    candidates: Array.isArray(item && item.candidates)
+      ? item.candidates.map((candidate) => ({
+          text: String((candidate && candidate.text) || ""),
+          confidence: Math.max(0, Math.min(1, Number(candidate && candidate.confidence) || 0)),
+          variant: String((candidate && candidate.variant) || "")
+        }))
+      : []
+  };
+}
+
+function canUseOcr() {
+  return state.flags.ocrEnabled === true;
+}
+
+async function requestOcrRecognition(images, expectedTexts, mode = "single_char") {
+  if (!canUseOcr()) return null;
+  const payloadImages = Array.isArray(images) ? images.map((item) => String(item || "")).filter(Boolean) : [];
+  if (!payloadImages.length) return null;
+  const payloadExpectedTexts = Array.isArray(expectedTexts) ? expectedTexts.map((item) => String(item || "")) : undefined;
+  try {
+    const resp = await apiRequest("/api/ocr/recognize", {
+      method: "POST",
+      body: JSON.stringify({
+        images: payloadImages,
+        expectedTexts: payloadExpectedTexts,
+        mode
+      })
+    });
+    const engine = resp && resp.engine && typeof resp.engine === "object" ? resp.engine : {};
+    return {
+      elapsedMs: Math.max(0, Number(resp && resp.elapsedMs) || 0),
+      engine,
+      results: Array.isArray(resp && resp.results)
+        ? resp.results.map((item) => normalizeOcrResult(item, engine))
+        : []
+    };
+  } catch (err) {
+    console.warn("ocr recognize failed:", err && err.message ? err.message : err);
+    return null;
+  }
+}
+
+function applyOcrToOutcome(outcome, ocrResult) {
+  if (!outcome || !outcome.detail || !ocrResult) return outcome;
+  if (!recognitionCore || typeof recognitionCore.decideRecognitionWithOcr !== "function") return outcome;
+  const detail = normalizeJudgeDetail(
+    recognitionCore.decideRecognitionWithOcr(outcome.detail, {
+      ...ocrResult,
+      applied: true,
+      available: true
+    })
+  );
+  if (!detail) return outcome;
+  return {
+    ...outcome,
+    finalDecision: detail.decision,
+    detail,
+    score: Math.max(0, Math.min(1, Number(detail.decisionScore) || 0))
+  };
 }
 
 function queueUserDataSync() {
@@ -1578,6 +1669,7 @@ async function loadUserData() {
   const boot = await apiRequest("/api/bootstrap");
   const flags = boot && boot.flags && typeof boot.flags === "object" ? boot.flags : {};
   state.flags.recognitionV2Enabled = flags.recognitionV2Enabled !== false;
+  state.flags.ocrEnabled = flags.ocrEnabled === true;
   if (boot.user && typeof boot.user === "object") {
     state.auth.role = boot.user.role || state.auth.role;
     state.auth.linkedParentUsername = String(boot.user.linkedParentUsername || "");
@@ -3040,12 +3132,20 @@ function renderReviewSummaryCard() {
 function renderReviewButtons() {
   const flow = getReviewFlowContext();
   const beginAsStop = state.reviewPreviewRunning || state.reviewActive || state.reviewFlowState === "reviewed";
+  const judgePending = state.reviewJudgePending === true;
   reviewBegin.disabled = beginAsStop ? false : !flow.canBegin;
   reviewRestart.disabled = !flow.canRestart;
-  if (reviewStartBtn) reviewStartBtn.disabled = !flow.canJudge;
-  if (reviewResetBtn) reviewResetBtn.disabled = !flow.canReset;
-  if (reviewNextBtn) reviewNextBtn.disabled = !flow.canNext;
+  if (reviewStartBtn) {
+    reviewStartBtn.disabled = judgePending || !flow.canJudge;
+    reviewStartBtn.textContent = judgePending ? "识别中..." : "完成并判定";
+  }
+  if (reviewResetBtn) reviewResetBtn.disabled = judgePending || !flow.canReset;
+  if (reviewNextBtn) reviewNextBtn.disabled = judgePending || !flow.canNext;
   if (reviewStopBtn) reviewStopBtn.disabled = !flow.canStop;
+  if (wordReviewSubmit) {
+    wordReviewSubmit.disabled = judgePending || !flow.canJudge;
+    wordReviewSubmit.textContent = judgePending ? "识别中..." : "提交词语";
+  }
 
   if (reviewNextBtn) reviewNextBtn.classList.toggle("hidden", !flow.showNext);
   if (reviewStopBtn) reviewStopBtn.classList.toggle("hidden", !flow.showStop);
@@ -4539,9 +4639,10 @@ function drawPadStrokesToCanvas(pad, size) {
   return drawStrokesToCanvas(pad.strokes, pad && pad.canvas ? pad.canvas.width : 320, size);
 }
 
-function evaluateDrawing() {
+async function evaluateDrawing() {
   const item = currentReviewItem();
   if (!item || item.type !== "char") return;
+  if (state.reviewJudgePending) return;
   if (state.reviewAwaitingNext) {
     reviewFeedback.textContent = "请点击“下一个字”继续。";
     return;
@@ -4558,30 +4659,44 @@ function evaluateDrawing() {
   const size = 96;
   const userCanvas = drawPadStrokesToCanvas(state.dictationPad, size);
   const userCtx = userCanvas.getContext("2d");
-
   const userBits = normalizeBits(getBinaryData(userCtx, size), size, size, 10);
   const templateBits = createTemplateBitsForChar(item.text, size);
-  const retryState = getReviewRetryState(item);
-  const outcome = resolveCharJudgeOutcome(item.text, userBits, templateBits, retryState.attempt);
-  if (outcome.finalDecision === "retry" && retryState.attempt < 1) {
-    retryState.attempt = 1;
-    if (state.dictationPad && typeof state.dictationPad.reset === "function") state.dictationPad.reset();
-    reviewFeedback.textContent = "接近正确，请再写一次。";
-    reviewAnswer.textContent = "";
-    reviewAnswer.classList.add("is-hidden");
-    return;
-  }
-
-  const finalPass = outcome.finalDecision === "pass";
-  const accuracy = Math.max(0, Math.min(100, Math.round(outcome.score * 100)));
   const handwritingImage = userCanvas.toDataURL("image/png");
-  finalizeReviewResult(item, finalPass, accuracy, {
-    handwritingImage,
-    mlFeature: extractMlFeature(userBits, size),
-    mlFeatureAccepted: finalPass && outcome.mlAccepted,
-    judgeDetail: outcome.detail
-  });
-  resetReviewRetryState();
+  state.reviewJudgePending = true;
+  renderReviewButtons();
+  if (canUseOcr()) reviewFeedback.textContent = "识别中...";
+  try {
+    const retryState = getReviewRetryState(item);
+    let outcome = resolveCharJudgeOutcome(item.text, userBits, templateBits, retryState.attempt);
+    const ocrResp = await requestOcrRecognition([handwritingImage], [item.text], "single_char");
+    if (ocrResp && Array.isArray(ocrResp.results) && ocrResp.results[0]) {
+      outcome = applyOcrToOutcome(outcome, ocrResp.results[0]);
+    }
+    if (outcome.finalDecision === "retry" && retryState.attempt < 1) {
+      retryState.attempt = 1;
+      if (state.dictationPad && typeof state.dictationPad.reset === "function") state.dictationPad.reset();
+      reviewFeedback.textContent = "接近正确，请再写一次。";
+      reviewAnswer.textContent = "";
+      reviewAnswer.classList.add("is-hidden");
+      return;
+    }
+
+    const finalPass = outcome.finalDecision === "pass";
+    const accuracy = Math.max(0, Math.min(100, Math.round(outcome.score * 100)));
+    finalizeReviewResult(item, finalPass, accuracy, {
+      handwritingImage,
+      mlFeature: extractMlFeature(userBits, size),
+      mlFeatureAccepted: finalPass && outcome.mlAccepted,
+      judgeDetail: outcome.detail
+    });
+    resetReviewRetryState();
+  } catch (err) {
+    console.error("evaluateDrawing failed:", err && err.message ? err.message : err);
+    reviewFeedback.textContent = "识别失败，请重试。";
+  } finally {
+    state.reviewJudgePending = false;
+    renderReviewButtons();
+  }
 }
 
 function createTemplateBitsForCharRaw(char, size) {
@@ -4607,9 +4722,10 @@ function createTemplateBitsForChar(char, size) {
   return bits;
 }
 
-function evaluateWordDrawing() {
+async function evaluateWordDrawing() {
   const item = currentReviewItem();
   if (!item || item.type !== "word") return;
+  if (state.reviewJudgePending) return;
   if (state.reviewAwaitingNext) {
     reviewFeedback.textContent = "请点击“下一个字”继续。";
     return;
@@ -4634,115 +4750,145 @@ function evaluateWordDrawing() {
     ? (Array.isArray(retryState.frozenWordResults) ? retryState.frozenWordResults.map((x) => (x ? { ...x } : x)) : new Array(chars.length).fill(null))
     : new Array(chars.length).fill(null);
   const nextPendingIndexes = [];
+  state.reviewJudgePending = true;
+  renderReviewButtons();
+  if (canUseOcr()) reviewFeedback.textContent = "识别中...";
+  try {
+    const workItems = [];
+    for (let i = 0; i < chars.length; i += 1) {
+      if (retryMode && !pendingSet.has(i)) continue;
+      const pad = state.dictationPads[i];
+      if (!pad || pad.strokeCount === 0) {
+        reviewFeedback.textContent = `请先完成第 ${i + 1} 个字的书写。`;
+        return;
+      }
+      const userCanvas = drawPadStrokesToCanvas(pad, size);
+      const userCtx = userCanvas.getContext("2d");
+      const userBits = normalizeBits(getBinaryData(userCtx, size), size, size, 10);
+      const templateBits = createTemplateBitsForChar(chars[i], size);
+      workItems.push({
+        index: i,
+        char: chars[i],
+        handwritingImage: userCanvas.toDataURL("image/png"),
+        mlFeature: extractMlFeature(userBits, size),
+        localOutcome: resolveCharJudgeOutcome(chars[i], userBits, templateBits, retryAttempt)
+      });
+    }
 
-  for (let i = 0; i < chars.length; i += 1) {
-    if (retryMode && !pendingSet.has(i)) continue;
-    const pad = state.dictationPads[i];
-    if (!pad || pad.strokeCount === 0) {
-      reviewFeedback.textContent = `请先完成第 ${i + 1} 个字的书写。`;
+    const ocrResp = await requestOcrRecognition(
+      workItems.map((item) => item.handwritingImage),
+      workItems.map((item) => item.char),
+      "single_char"
+    );
+
+    workItems.forEach((entry, seq) => {
+      let outcome = entry.localOutcome;
+      if (ocrResp && Array.isArray(ocrResp.results) && ocrResp.results[seq]) {
+        outcome = applyOcrToOutcome(outcome, ocrResp.results[seq]);
+      }
+      if (!retryMode && outcome.finalDecision === "retry") {
+        nextPendingIndexes.push(entry.index);
+        return;
+      }
+
+      const isGood = outcome.finalDecision === "pass";
+      const accuracy = Math.max(0, Math.min(100, Math.round(outcome.score * 100)));
+      charResults[entry.index] = {
+        char: entry.char,
+        isGood,
+        accuracyPercent: accuracy,
+        handwritingImage: entry.handwritingImage,
+        judgeDetail: outcome.detail,
+        mlFeature: entry.mlFeature,
+        mlFeatureAccepted: isGood && outcome.mlAccepted
+      };
+    });
+
+    if (!retryMode && nextPendingIndexes.length > 0) {
+      retryState.attempt = 1;
+      retryState.pendingIndexes = nextPendingIndexes;
+      retryState.frozenWordResults = charResults;
+      nextPendingIndexes.forEach((index) => {
+        const pad = state.dictationPads[index];
+        if (pad && typeof pad.reset === "function") pad.reset();
+      });
+      const pendingText = nextPendingIndexes.map((x) => x + 1).join("、");
+      reviewFeedback.textContent = `第 ${pendingText} 字接近正确，请重写这些字后再判定。`;
+      reviewAnswer.textContent = "";
+      reviewAnswer.classList.add("is-hidden");
       return;
     }
-    const userCanvas = drawPadStrokesToCanvas(pad, size);
-    const userCtx = userCanvas.getContext("2d");
-    const userBits = normalizeBits(getBinaryData(userCtx, size), size, size, 10);
-    const templateBits = createTemplateBitsForChar(chars[i], size);
-    const outcome = resolveCharJudgeOutcome(chars[i], userBits, templateBits, retryAttempt);
-    if (!retryMode && outcome.finalDecision === "retry") {
-      nextPendingIndexes.push(i);
-      continue;
-    }
 
-    const isGood = outcome.finalDecision === "pass";
-    const accuracy = Math.max(0, Math.min(100, Math.round(outcome.score * 100)));
-    charResults[i] = {
-      char: chars[i],
-      isGood,
-      accuracyPercent: accuracy,
-      handwritingImage: userCanvas.toDataURL("image/png"),
-      judgeDetail: outcome.detail,
-      mlFeature: extractMlFeature(userBits, size),
-      mlFeatureAccepted: isGood && outcome.mlAccepted
-    };
-  }
-
-  if (!retryMode && nextPendingIndexes.length > 0) {
-    retryState.attempt = 1;
-    retryState.pendingIndexes = nextPendingIndexes;
-    retryState.frozenWordResults = charResults;
-    nextPendingIndexes.forEach((index) => {
-      const pad = state.dictationPads[index];
-      if (pad && typeof pad.reset === "function") pad.reset();
+    const normalizedCharResults = charResults.map((x, idx) => {
+      if (x) return x;
+      return {
+        char: chars[idx],
+        isGood: false,
+        accuracyPercent: 0,
+        handwritingImage: "",
+        judgeDetail: normalizeJudgeDetail({
+          version: "v2",
+          decision: "fail",
+          decisionScore: 0,
+          baseScore: 0,
+          mlScore: null,
+          blendedScore: 0,
+          tier: "medium",
+          thresholds: { pass: 0.61, retryLow: 0.56 },
+          engines: { overlap: 0, projection: 0, grid: 0 },
+          retryAttempt,
+          reason: "missing_result"
+        }),
+        mlFeature: [],
+        mlFeatureAccepted: false
+      };
     });
-    const pendingText = nextPendingIndexes.map((x) => x + 1).join("、");
-    reviewFeedback.textContent = `第 ${pendingText} 字接近正确，请重写这些字后再判定。`;
-    reviewAnswer.textContent = "";
-    reviewAnswer.classList.add("is-hidden");
-    return;
+    const isGood = normalizedCharResults.every((x) => x.isGood);
+    const accuracyPercent = Math.round(
+      normalizedCharResults.reduce((sum, x) => sum + x.accuracyPercent, 0) / Math.max(1, normalizedCharResults.length)
+    );
+    const detailText = normalizedCharResults
+      .map((x, idx) => `第${idx + 1}字${x.isGood ? "正确" : "错误"}(${x.accuracyPercent}%)`)
+      .join("，");
+    const itemJudgeDetail = normalizeJudgeDetail({
+      version: "v2",
+      decision: isGood ? "pass" : "fail",
+      decisionScore: accuracyPercent / 100,
+      baseScore: accuracyPercent / 100,
+      mlScore: null,
+      blendedScore: accuracyPercent / 100,
+      tier: "medium",
+      thresholds: { pass: 0.61, retryLow: 0.56 },
+      engines: { overlap: 0, projection: 0, grid: 0 },
+      retryAttempt,
+      reason: isGood ? "word_all_pass" : "word_partial_fail"
+    });
+    finalizeReviewResult(item, isGood, accuracyPercent, {
+      userAnswer: detailText,
+      wordCharResults: normalizedCharResults.map((x) => ({
+        char: x.char,
+        isGood: x.isGood,
+        accuracyPercent: x.accuracyPercent,
+        handwritingImage: x.handwritingImage,
+        judgeDetail: x.judgeDetail
+      })),
+      mlUpdates: normalizedCharResults.map((x) => ({
+        char: x.char,
+        isGood: x.isGood,
+        feature: x.mlFeature,
+        accepted: Boolean(x.mlFeatureAccepted)
+      })),
+      handwritingImage: normalizedCharResults.map((x) => x.handwritingImage).join("||"),
+      judgeDetail: itemJudgeDetail
+    });
+    resetReviewRetryState();
+  } catch (err) {
+    console.error("evaluateWordDrawing failed:", err && err.message ? err.message : err);
+    reviewFeedback.textContent = "识别失败，请重试。";
+  } finally {
+    state.reviewJudgePending = false;
+    renderReviewButtons();
   }
-
-  const normalizedCharResults = charResults.map((x, idx) => {
-    if (x) return x;
-    return {
-      char: chars[idx],
-      isGood: false,
-      accuracyPercent: 0,
-      handwritingImage: "",
-      judgeDetail: normalizeJudgeDetail({
-        version: "v2",
-        decision: "fail",
-        decisionScore: 0,
-        baseScore: 0,
-        mlScore: null,
-        blendedScore: 0,
-        tier: "medium",
-        thresholds: { pass: 0.61, retryLow: 0.56 },
-        engines: { overlap: 0, projection: 0, grid: 0 },
-        retryAttempt,
-        reason: "missing_result"
-      }),
-      mlFeature: [],
-      mlFeatureAccepted: false
-    };
-  });
-  const isGood = normalizedCharResults.every((x) => x.isGood);
-  const accuracyPercent = Math.round(
-    normalizedCharResults.reduce((sum, x) => sum + x.accuracyPercent, 0) / Math.max(1, normalizedCharResults.length)
-  );
-  const detailText = normalizedCharResults
-    .map((x, idx) => `第${idx + 1}字${x.isGood ? "正确" : "错误"}(${x.accuracyPercent}%)`)
-    .join("，");
-  const itemJudgeDetail = normalizeJudgeDetail({
-    version: "v2",
-    decision: isGood ? "pass" : "fail",
-    decisionScore: accuracyPercent / 100,
-    baseScore: accuracyPercent / 100,
-    mlScore: null,
-    blendedScore: accuracyPercent / 100,
-    tier: "medium",
-    thresholds: { pass: 0.61, retryLow: 0.56 },
-    engines: { overlap: 0, projection: 0, grid: 0 },
-    retryAttempt,
-    reason: isGood ? "word_all_pass" : "word_partial_fail"
-  });
-  finalizeReviewResult(item, isGood, accuracyPercent, {
-    userAnswer: detailText,
-    wordCharResults: normalizedCharResults.map((x) => ({
-      char: x.char,
-      isGood: x.isGood,
-      accuracyPercent: x.accuracyPercent,
-      handwritingImage: x.handwritingImage,
-      judgeDetail: x.judgeDetail
-    })),
-    mlUpdates: normalizedCharResults.map((x) => ({
-      char: x.char,
-      isGood: x.isGood,
-      feature: x.mlFeature,
-      accepted: Boolean(x.mlFeatureAccepted)
-    })),
-    handwritingImage: normalizedCharResults.map((x) => x.handwritingImage).join("||"),
-    judgeDetail: itemJudgeDetail
-  });
-  resetReviewRetryState();
 }
 
 function cleanupDictationPad() {
@@ -5932,11 +6078,11 @@ function setupCanvas() {
     });
   }
 
-  const writeCheckBtn = document.getElementById("write-check");
   if (writeCheckBtn) {
-    writeCheckBtn.addEventListener("click", () => {
+    writeCheckBtn.addEventListener("click", async () => {
       const item = CHAR_MAP.get(writeSelect.value);
       if (!item) return;
+      if (state.writeJudgePending) return;
       if (strokes.length === 0) {
         writeFeedback.textContent = "请先写字，再进行智能判定。";
         return;
@@ -5951,26 +6097,44 @@ function setupCanvas() {
       if (!state.writeRetryState || state.writeRetryState.itemKey !== makeItemKey(item)) {
         resetWriteRetryState(makeItemKey(item));
       }
-      const retryAttempt = Math.max(0, Number(state.writeRetryState.attempt) || 0);
-      const outcome = resolveCharJudgeOutcome(item.text, userBits, templateBits, retryAttempt);
-      if (outcome.finalDecision === "retry" && retryAttempt < 1) {
-        state.writeRetryState.attempt = 1;
-        if (typeof state.refreshWriteCanvas === "function") state.refreshWriteCanvas({ clear: true });
-        writeFeedback.textContent = "接近正确，请再写一次。";
-        return;
-      }
-      const pass = outcome.finalDecision === "pass";
-      writeFeedback.textContent = pass ? "判定通过" : "判定未通过";
-      resetWriteRetryState(makeItemKey(item));
+      const handwritingImage = userCanvas.toDataURL("image/png");
+      state.writeJudgePending = true;
+      writeCheckBtn.disabled = true;
+      writeCheckBtn.textContent = "识别中...";
+      if (canUseOcr()) writeFeedback.textContent = "识别中...";
+      try {
+        const retryAttempt = Math.max(0, Number(state.writeRetryState.attempt) || 0);
+        let outcome = resolveCharJudgeOutcome(item.text, userBits, templateBits, retryAttempt);
+        const ocrResp = await requestOcrRecognition([handwritingImage], [item.text], "single_char");
+        if (ocrResp && Array.isArray(ocrResp.results) && ocrResp.results[0]) {
+          outcome = applyOcrToOutcome(outcome, ocrResp.results[0]);
+        }
+        if (outcome.finalDecision === "retry" && retryAttempt < 1) {
+          state.writeRetryState.attempt = 1;
+          if (typeof state.refreshWriteCanvas === "function") state.refreshWriteCanvas({ clear: true });
+          writeFeedback.textContent = "接近正确，请再写一次。";
+          return;
+        }
+        const pass = outcome.finalDecision === "pass";
+        writeFeedback.textContent = pass ? "判定通过" : "判定未通过";
+        resetWriteRetryState(makeItemKey(item));
 
-      scheduleProgress(item, pass);
-      if (pass) {
-        removeWrongItem(item);
-        addPoints(1);
-        if (outcome.mlAccepted) updateCharMlPrototype(item.text, extractMlFeature(userBits, size));
-      } else addWrongItem(item);
-      refreshStats();
-      rebuildWrongQueue();
+        scheduleProgress(item, pass);
+        if (pass) {
+          removeWrongItem(item);
+          addPoints(1);
+          if (outcome.mlAccepted) updateCharMlPrototype(item.text, extractMlFeature(userBits, size));
+        } else addWrongItem(item);
+        refreshStats();
+        rebuildWrongQueue();
+      } catch (err) {
+        console.error("write judge failed:", err && err.message ? err.message : err);
+        writeFeedback.textContent = "识别失败，请重试。";
+      } finally {
+        state.writeJudgePending = false;
+        writeCheckBtn.disabled = false;
+        writeCheckBtn.textContent = "智能判定";
+      }
     });
   }
 

@@ -15,6 +15,12 @@ const DB_PATH = process.env.DB_PATH
 const DATABASE_URL = String(process.env.DATABASE_URL || "").trim();
 const USE_POSTGRES = Boolean(DATABASE_URL);
 const RECOGNITION_V2_ENABLED = !["0", "false", "off"].includes(String(process.env.RECOGNITION_V2_ENABLED || "1").trim().toLowerCase());
+const OCR_API_BASE_URL = String(process.env.OCR_API_BASE_URL || "").trim().replace(/\/+$/, "");
+const OCR_ENABLED =
+  Boolean(OCR_API_BASE_URL) &&
+  !["0", "false", "off"].includes(String(process.env.OCR_ENABLED || "1").trim().toLowerCase());
+const OCR_API_TIMEOUT_MS = Math.max(1000, Number(process.env.OCR_API_TIMEOUT_MS || "15000") || 15000);
+const API_BODY_LIMIT_BYTES = Math.max(1_000_000, Number(process.env.API_BODY_LIMIT_BYTES || "8000000") || 8000000);
 const LEGACY_JSON_DB_PATH = path.join(ROOT, "data", "server_db.json");
 const LEGACY_SQLITE_DB_PATH = path.join(ROOT, "data", "server_db.sqlite");
 const DB_STATE_KEY = "state";
@@ -362,7 +368,7 @@ function parseBody(req) {
     let size = 0;
     req.on("data", (chunk) => {
       size += chunk.length;
-      if (size > 1_000_000) {
+      if (size > API_BODY_LIMIT_BYTES) {
         reject(new Error("payload too large"));
         req.destroy();
         return;
@@ -464,6 +470,20 @@ function normalizeJudgeDetail(detail) {
         grid: normalizeUnitScore(Number(detail.engines.grid))
       }
     : null;
+  const ocr = detail.ocr && typeof detail.ocr === "object"
+    ? {
+        applied: Boolean(detail.ocr.applied),
+        available: detail.ocr.available === undefined ? null : Boolean(detail.ocr.available),
+        match: Boolean(detail.ocr.match),
+        text: String(detail.ocr.text || ""),
+        expectedText: String(detail.ocr.expectedText || ""),
+        confidence: normalizeUnitScore(Number(detail.ocr.confidence)),
+        variant: String(detail.ocr.variant || ""),
+        model: String(detail.ocr.model || ""),
+        provider: String(detail.ocr.provider || ""),
+        source: String(detail.ocr.source || "")
+      }
+    : null;
   return {
     version: String(detail.version || "v2"),
     decision: ["pass", "fail", "retry"].includes(String(detail.decision)) ? String(detail.decision) : "fail",
@@ -475,8 +495,95 @@ function normalizeJudgeDetail(detail) {
     thresholds,
     engines,
     retryAttempt: Math.max(0, Number(detail.retryAttempt) || 0),
-    reason: String(detail.reason || "unknown")
+    reason: String(detail.reason || "unknown"),
+    ocr
   };
+}
+
+function normalizeOcrResult(item, engine = {}) {
+  const candidates = Array.isArray(item && item.candidates)
+    ? item.candidates
+        .map((candidate) => ({
+          text: String((candidate && candidate.text) || ""),
+          confidence: normalizeUnitScore(Number(candidate && candidate.confidence)),
+          variant: String((candidate && candidate.variant) || "")
+        }))
+        .filter((candidate) => candidate.text)
+    : [];
+  return {
+    index: Math.max(0, Number(item && item.index) || 0),
+    text: String((item && item.text) || ""),
+    confidence: normalizeUnitScore(Number(item && item.confidence)),
+    match: Boolean(item && item.match),
+    expectedText: String((item && item.expectedText) || ""),
+    variant: String((item && item.variant) || ""),
+    provider: String(engine.provider || "PaddleOCR"),
+    model: String(engine.modelName || ""),
+    candidates
+  };
+}
+
+function normalizeOcrResponse(payload) {
+  const engine = payload && payload.engine && typeof payload.engine === "object" ? payload.engine : {};
+  return {
+    ok: true,
+    elapsedMs: Math.max(0, Number(payload && payload.elapsedMs) || 0),
+    engine: {
+      provider: String(engine.provider || "PaddleOCR"),
+      modelName: String(engine.modelName || ""),
+      device: String(engine.device || ""),
+      paddleVersion: String(engine.paddleVersion || ""),
+      paddleocrVersion: String(engine.paddleocrVersion || ""),
+      mode: String(engine.mode || ""),
+      variants: Array.isArray(engine.variants) ? engine.variants.map((x) => String(x || "")).filter(Boolean) : []
+    },
+    results: Array.isArray(payload && payload.results)
+      ? payload.results.map((item) => normalizeOcrResult(item, engine))
+      : []
+  };
+}
+
+async function requestOcrService(method, servicePath, body) {
+  if (!OCR_ENABLED) {
+    const err = new Error("OCR服务未配置");
+    err.statusCode = 503;
+    throw err;
+  }
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), OCR_API_TIMEOUT_MS);
+  try {
+    const resp = await fetch(`${OCR_API_BASE_URL}${servicePath}`, {
+      method,
+      headers: body ? { "Content-Type": "application/json" } : undefined,
+      body: body ? JSON.stringify(body) : undefined,
+      signal: controller.signal
+    });
+    const raw = await resp.text();
+    let payload = {};
+    try {
+      payload = raw ? JSON.parse(raw) : {};
+    } catch {
+      payload = raw ? { message: raw } : {};
+    }
+    if (!resp.ok || payload.ok === false) {
+      const err = new Error(payload.message || `OCR服务请求失败(${resp.status})`);
+      err.statusCode = resp.status >= 400 && resp.status < 500 ? resp.status : 502;
+      throw err;
+    }
+    return payload;
+  } catch (err) {
+    if (err && err.name === "AbortError") {
+      const timeoutErr = new Error("OCR服务请求超时");
+      timeoutErr.statusCode = 504;
+      throw timeoutErr;
+    }
+    if (err && Number(err.statusCode)) throw err;
+    const proxyErr = new Error(err && err.message ? err.message : "OCR代理请求失败");
+    proxyErr.statusCode = 502;
+    throw proxyErr;
+  } finally {
+    clearTimeout(timer);
+  }
 }
 
 function addPointsForUser(db, username, pointsDelta, correctDelta) {
@@ -575,7 +682,30 @@ async function handleApi(req, res, pathname) {
   if (req.method === "OPTIONS") return sendJson(res, 200, { ok: true });
 
   if (req.method === "GET" && pathname === "/api/health") {
-    return sendJson(res, 200, { ok: true, now: now() });
+    return sendJson(res, 200, { ok: true, now: now(), ocrEnabled: OCR_ENABLED });
+  }
+
+  if (req.method === "GET" && pathname === "/api/ocr/health") {
+    if (!OCR_ENABLED) {
+      return sendJson(res, 503, { ok: false, enabled: false, message: "OCR服务未配置" });
+    }
+    try {
+      const payload = await requestOcrService("GET", "/health");
+      return sendJson(res, 200, {
+        ok: true,
+        enabled: true,
+        service: String(payload.service || ""),
+        version: String(payload.version || ""),
+        ready: Boolean(payload.ready),
+        engine: payload.engine && typeof payload.engine === "object" ? payload.engine : {}
+      });
+    } catch (err) {
+      return sendJson(res, Number(err && err.statusCode) || 502, {
+        ok: false,
+        enabled: true,
+        message: err && err.message ? err.message : "OCR服务不可用"
+      });
+    }
   }
 
   if (req.method === "POST" && pathname === "/api/register") {
@@ -703,7 +833,8 @@ async function handleApi(req, res, pathname) {
       },
       data,
       flags: {
-        recognitionV2Enabled: RECOGNITION_V2_ENABLED
+        recognitionV2Enabled: RECOGNITION_V2_ENABLED,
+        ocrEnabled: OCR_ENABLED
       },
       lexiconOverrides: db.lexiconOverrides || {},
       submissions
@@ -719,6 +850,34 @@ async function handleApi(req, res, pathname) {
     db.userData[auth.username] = normalizeUserData(body);
     await saveDb(db);
     return sendJson(res, 200, { ok: true, savedAt: now() });
+  }
+
+  if (req.method === "POST" && pathname === "/api/ocr/recognize") {
+    const body = await parseBody(req);
+    const images = Array.isArray(body.images) ? body.images.map((item) => String(item || "")).filter(Boolean) : [];
+    const expectedTexts = Array.isArray(body.expectedTexts)
+      ? body.expectedTexts.map((item) => String(item || ""))
+      : undefined;
+    const mode = body.mode === "single_line" ? "single_line" : "single_char";
+    if (!images.length) {
+      return sendJson(res, 400, { ok: false, message: "images 不能为空" });
+    }
+    if (expectedTexts && expectedTexts.length !== images.length) {
+      return sendJson(res, 400, { ok: false, message: "expectedTexts 数量必须与 images 一致" });
+    }
+    try {
+      const payload = await requestOcrService("POST", "/ocr/recognize", {
+        images,
+        expected_texts: expectedTexts,
+        mode
+      });
+      return sendJson(res, 200, normalizeOcrResponse(payload));
+    } catch (err) {
+      return sendJson(res, Number(err && err.statusCode) || 502, {
+        ok: false,
+        message: err && err.message ? err.message : "OCR识别失败"
+      });
+    }
   }
 
   if (req.method === "GET" && pathname === "/api/admin/users") {

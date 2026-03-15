@@ -1,0 +1,55 @@
+services:
+  paddleocr-api:
+    build:
+      context: ./services/paddleocr-api
+      dockerfile: Dockerfile
+    environment:
+      PADDLE_OCR_DEVICE: cpu
+      PADDLEOCR_REC_MODEL_NAME: PP-OCRv5_server_rec
+      PADDLE_PDX_MODEL_SOURCE: BOS
+      PADDLE_OCR_MAX_IMAGES: "12"
+    ports:
+      - "8060:8060"
+    volumes:
+      - paddle-model-cache:/root/.paddlex
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://127.0.0.1:8060/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 10
+      start_period: 180s
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      HOST: 0.0.0.0
+      PORT: 8787
+      DB_PATH: /app/data/server_db.sqlite
+      OCR_ENABLED: "1"
+      OCR_API_BASE_URL: http://paddleocr-api:8060
+      OCR_API_TIMEOUT_MS: "20000"
+    ports:
+      - "8787:8787"
+    volumes:
+      - app-data:/app/data
+    depends_on:
+      paddleocr-api:
+        condition: service_healthy
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://127.0.0.1:8787/api/health').then((resp)=>resp.ok?process.exit(0):process.exit(1)).catch(()=>process.exit(1))"
+        ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+
+volumes:
+  app-data:
+  paddle-model-cache:

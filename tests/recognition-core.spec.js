@@ -65,3 +65,50 @@ test("decideRecognition supports ML fallback pass and ml update gate", () => {
   });
   assert.equal(core.isMlUpdateEligible(high), true);
 });
+
+test("decideRecognitionWithOcr upgrades fail to pass on exact match", () => {
+  const local = core.decideRecognition({
+    tier: "medium",
+    engines: { overlap: 0.48, projection: 0.5, grid: 0.5 },
+    retryAttempt: 1
+  });
+  assert.equal(local.decision, "fail");
+
+  const merged = core.decideRecognitionWithOcr(local, {
+    applied: true,
+    available: true,
+    match: true,
+    text: "你",
+    expectedText: "你",
+    confidence: 0.82,
+    provider: "PaddleOCR",
+    model: "PP-OCRv5_server_rec",
+    source: "ocr-proxy"
+  });
+
+  assert.equal(merged.decision, "pass");
+  assert.equal(merged.reason, "pass_ocr_match");
+  assert.equal(merged.version, "v3");
+  assert.equal(merged.ocr.match, true);
+  assert.ok(merged.decisionScore >= 0.8);
+});
+
+test("decideRecognitionWithOcr preserves local decision on mismatch", () => {
+  const local = core.decideRecognition({
+    tier: "medium",
+    engines: { overlap: 0.45, projection: 0.45, grid: 0.45 },
+    retryAttempt: 1
+  });
+  const merged = core.decideRecognitionWithOcr(local, {
+    applied: true,
+    available: true,
+    match: false,
+    text: "大",
+    expectedText: "天",
+    confidence: 0.97
+  });
+
+  assert.equal(merged.decision, local.decision);
+  assert.equal(merged.reason, local.reason);
+  assert.equal(merged.ocr.match, false);
+});

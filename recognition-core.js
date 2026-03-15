@@ -103,6 +103,26 @@
     };
   }
 
+  function normalizeOcrResult(input) {
+    const confidence = Number.isFinite(input && input.confidence) ? clampUnit(input.confidence) : 0;
+    const text = String((input && input.text) || "");
+    const expectedText = String((input && input.expectedText) || "");
+    const available = input && input.available !== undefined ? Boolean(input.available) : Boolean(text || confidence > 0);
+    const applied = Boolean(input && input.applied !== false && available);
+    return {
+      applied,
+      available,
+      match: Boolean(input && input.match),
+      text,
+      expectedText,
+      confidence,
+      variant: String((input && input.variant) || ""),
+      model: String((input && input.model) || ""),
+      provider: String((input && input.provider) || ""),
+      source: String((input && input.source) || "")
+    };
+  }
+
   function decideRecognition(input, config = DEFAULT_CONFIG) {
     const tier = String((input && input.tier) || "medium");
     const retryAttempt = Math.max(0, Math.floor(toFiniteNumber(input && input.retryAttempt, 0)));
@@ -161,6 +181,29 @@
     };
   }
 
+  function decideRecognitionWithOcr(detail, ocrInput) {
+    const base = detail && typeof detail === "object" ? { ...detail } : decideRecognition({});
+    const ocr = normalizeOcrResult(ocrInput);
+    const merged = {
+      ...base,
+      version: ocr.applied ? "v3" : String(base.version || DEFAULT_CONFIG.version),
+      ocr: ocr.applied ? ocr : null
+    };
+
+    if (!ocr.applied || !ocr.match) return merged;
+
+    const decisionScore = clampUnit(base.decisionScore);
+    const assistedPass = ocr.confidence >= 0.5 || (base.decision === "retry" && ocr.confidence >= 0.35);
+    if (!assistedPass) return merged;
+
+    const boostedScore = clampUnit(Math.max(decisionScore, 0.62 + ocr.confidence * 0.24));
+    merged.decision = "pass";
+    merged.decisionScore = boostedScore;
+    merged.blendedScore = boostedScore;
+    merged.reason = base.decision === "pass" ? "pass_threshold_ocr_confirmed" : "pass_ocr_match";
+    return merged;
+  }
+
   function isMlUpdateEligible(detail) {
     if (!detail || detail.decision !== "pass") return false;
     const pass = clampUnit(detail.thresholds && detail.thresholds.pass);
@@ -195,7 +238,9 @@
     resolveTierProfile,
     combineEngineScores,
     blendMlScore,
+    normalizeOcrResult,
     decideRecognition,
+    decideRecognitionWithOcr,
     isMlUpdateEligible,
     mergeRetryWordResults
   };
