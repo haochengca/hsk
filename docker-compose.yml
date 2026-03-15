@@ -31,7 +31,7 @@ services:
       OCR_VARIANT_LIMIT: 4
       PADDLE_PDX_MODEL_SOURCE: BOS
     ports:
-      - "8000:8000"
+      - "${OCR_HOST_PORT:-18000}:8000"
     volumes:
       - paddle-model-cache:/root/.paddlex
     healthcheck:

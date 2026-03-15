@@ -22,7 +22,7 @@ docker compose up --build
 ```
 
 - Web/API：`http://127.0.0.1:8787`
-- PaddleOCR 健康检查：`http://127.0.0.1:8000/health`
+- PaddleOCR 健康检查：`http://127.0.0.1:18000/health`
 - 主服务会通过 `/api/ocr/*` 代理 OCR 能力
 
 当前 OCR 服务使用：
@@ -30,6 +30,12 @@ docker compose up --build
 - `paddleocr==3.4.0`
 - `paddlepaddle==3.3.0`
 - `PP-OCRv5_server_rec`
+
+如宿主机端口冲突，可通过环境变量覆盖：
+
+```bash
+OCR_HOST_PORT=18001 docker compose up --build
+```
 
 详细部署说明见：
 - [PaddleOCR Docker 部署](./docs/DEPLOY_PADDLEOCR_DOCKER.md)
