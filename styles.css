@@ -803,6 +803,15 @@ select {
   text-align: left;
 }
 
+@keyframes judge-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .review-judge-pane .answer-row {
   margin-top: 1.5rem;
 }
@@ -1285,6 +1294,26 @@ select {
   color: #2a476c;
 }
 
+#review-feedback.is-loading,
+#write-feedback.is-loading {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: #0f766e;
+  font-weight: 600;
+}
+
+#review-feedback.is-loading::before,
+#write-feedback.is-loading::before {
+  content: "";
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 999px;
+  border: 2px solid rgba(15, 118, 110, 0.18);
+  border-top-color: #0f766e;
+  animation: judge-spin 0.78s linear infinite;
+}
+
 .review-summary {
   margin-top: 0.8rem;
   border: 1px solid rgba(15, 23, 42, 0.14);
@@ -1311,6 +1340,25 @@ select {
   min-height: 1.4em;
   margin: 0.7rem 0 0;
   color: #2a476c;
+}
+
+button.is-loading {
+  position: relative;
+  pointer-events: none;
+  opacity: 0.88;
+}
+
+button.is-loading::after {
+  content: "";
+  display: inline-block;
+  width: 0.85rem;
+  height: 0.85rem;
+  margin-left: 0.5rem;
+  border-radius: 999px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: currentColor;
+  vertical-align: -0.12rem;
+  animation: judge-spin 0.78s linear infinite;
 }
 
 #stats-text {

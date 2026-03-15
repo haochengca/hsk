@@ -32,18 +32,18 @@ docker compose up --build
 启动后：
 
 - 主服务：`http://127.0.0.1:8787`
-- OCR 服务健康检查：`http://127.0.0.1:18000/health`
+- OCR 服务健康检查：`http://127.0.0.1:8788/health`
 
 ## 3. 相关环境变量
 
 主服务：
 
-- `OCR_SERVICE_URL`，默认 `http://ocr-service:8000`
+- `OCR_SERVICE_URL`，默认 `http://ocr-service:8788`
 - `OCR_SERVICE_TIMEOUT_MS`，默认 `30000`
 
 OCR 服务：
 
-- `OCR_HOST_PORT`，宿主机映射端口，默认 `18000`
+- `OCR_HOST_PORT`，宿主机映射端口，默认 `8788`
 - `OCR_MODEL_NAME`，默认 `PP-OCRv5_server_rec`
 - `OCR_VARIANT_LIMIT`，默认 `4`
 - `OCR_PASS_THRESHOLD`，默认 `0.82`
@@ -53,7 +53,7 @@ OCR 服务：
 示例：
 
 ```bash
-OCR_HOST_PORT=18001 docker compose up --build
+OCR_HOST_PORT=8788 docker compose up --build
 ```
 
 ## 4. 识别增强策略
