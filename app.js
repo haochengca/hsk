@@ -1351,10 +1351,21 @@ async function postSubmissionPayload(payload) {
   renderLearnCharList();
 }
 
-async function commitReviewDraftSession() {
+function queueSubmissionPayload(payload) {
+  if (!state.reviewDraftActive) return postSubmissionPayload(payload);
+  state.pendingSubmissionPayloads.push(payload);
+  return Promise.resolve({ ok: true, queued: true });
+}
+
+async function commitReviewDraftSession(options = {}) {
   if (!state.reviewDraftActive) return;
+  const shouldSyncUserData = options.syncUserData !== false;
+  const pendingPayloads = Array.isArray(state.pendingSubmissionPayloads) ? [...state.pendingSubmissionPayloads] : [];
   endReviewDraftSession();
-  await syncUserDataToServer();
+  for (const payload of pendingPayloads) {
+    await postSubmissionPayload(payload);
+  }
+  if (shouldSyncUserData) await syncUserDataToServer();
   renderAdminPanel();
   renderUserRecords();
   renderLearnCharList();
@@ -2642,7 +2653,7 @@ function recordSubmission(item, isGood, accuracyPercent, meta = {}) {
         }))
       : []
   };
-  postSubmissionPayload(payload)
+  queueSubmissionPayload(payload)
     .then(() => {
       refreshReviewDraftSnapshotToCurrent();
       renderUserRecords();
@@ -3170,7 +3181,9 @@ function finishReviewSession(isWrongBookSinglePractice) {
       console.warn("commit review draft failed:", err && err.message ? err.message : err);
     });
   } else {
-    endReviewDraftSession();
+    commitReviewDraftSession({ syncUserData: false }).catch((err) => {
+      console.warn("commit single wrong-book review failed:", err && err.message ? err.message : err);
+    });
   }
 
   state.reviewActive = false;
@@ -4126,12 +4139,10 @@ function finalizeReviewResult(item, isGood, accuracyPercent, meta = {}) {
       });
   }
   refreshStats();
-  if (!isWrongBookSinglePractice) {
-    recordSubmission(item, isGood, accuracyPercent, {
-      ...meta,
-      points: earnedPoints
-    });
-  }
+  recordSubmission(item, isGood, accuracyPercent, {
+    ...meta,
+    points: isWrongBookSinglePractice ? 0 : earnedPoints
+  });
   renderAdminPanel();
   renderUserRecords();
 

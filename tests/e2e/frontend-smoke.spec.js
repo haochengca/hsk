@@ -35,6 +35,34 @@ async function createUser(payload) {
   }
 }
 
+async function loginUser(username, password) {
+  const response = await fetch(`${BASE_URL}/api/login`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ username, password })
+  });
+  const body = await response.json();
+  if (!response.ok || body.ok === false || !body.token) {
+    throw new Error(body.message || `login failed: ${response.status}`);
+  }
+  return body;
+}
+
+async function saveUserData(token, payload) {
+  const response = await fetch(`${BASE_URL}/api/user-data`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`
+    },
+    body: JSON.stringify(payload)
+  });
+  const body = await response.json();
+  if (!response.ok || body.ok === false) {
+    throw new Error(body.message || `save user-data failed: ${response.status}`);
+  }
+}
+
 async function drawScribble(page, selector) {
   const canvas = page.locator(selector).first();
   await expect(canvas).toBeVisible();
@@ -155,15 +183,15 @@ test("child user can navigate learn, write and review flows", async ({ page }) =
   for (let attempt = 0; attempt < 3 && submissionResponses.length === 0; attempt += 1) {
     await drawScribble(page, "#dictation-writer canvas");
     await page.click("#review-start");
-    await page.waitForTimeout(700);
+    await page.waitForTimeout(1200);
     const feedback = await page.locator("#review-feedback").textContent();
     if (submissionResponses.length > 0) break;
     if (!String(feedback || "").includes("接近正确")) break;
   }
 
-  expect(submissionResponses.length).toBeGreaterThan(0);
-  expect(submissionResponses[0].ok()).toBeTruthy();
   await expect(page.locator("#review-summary-card")).toBeVisible();
+  await expect.poll(() => submissionResponses.length).toBeGreaterThan(0);
+  expect(submissionResponses[0].ok()).toBeTruthy();
 
   await page.click("#records-tab");
   await expect(page.locator("#records-panel")).toHaveClass(/is-active/);
@@ -185,4 +213,78 @@ test("child user can navigate learn, write and review flows", async ({ page }) =
   await expect(page.locator("#records-report")).toContainText("报告对象");
   await expect(page.locator("#records-report")).toContainText("HSK 各级掌握度");
   await expect(page.locator("#records-count")).toContainText(`${childUsername} 的记录：1 条`);
+});
+
+test("wrong-book single practice is saved into records and parent review audit", async ({ page }) => {
+  const parentUsername = `parent_${Date.now()}`;
+  const childUsername = `child_${Date.now()}`;
+  const password = "study123";
+
+  await createUser({ username: parentUsername, password, role: "parent", linkedParentUsername: "" });
+  await createUser({ username: childUsername, password, role: "child", linkedParentUsername: parentUsername });
+
+  const login = await loginUser(childUsername, password);
+  const firstChar = await fetch(`${BASE_URL}/data/hsk_chars_1_6.json`).then((response) => response.json()).then((rows) => rows[0]);
+  const charText = String(firstChar && (firstChar.text || firstChar.char) || "");
+  await saveUserData(login.token, {
+    wrongBook: [{ key: `char:${charText}` }],
+    reviewPrefs: {
+      reviewType: "char",
+      reviewCount: "1",
+      reviewPreviewMode: "0"
+    }
+  });
+
+  await page.goto(BASE_URL, { waitUntil: "networkidle" });
+  await page.fill("#auth-username", childUsername);
+  await page.fill("#auth-password", password);
+  await page.click("#auth-login");
+
+  await expect(page.locator("#app-shell")).toBeVisible();
+  await page.click('.tab[data-tab="wrong"]');
+  await expect(page.locator("#wrong-panel")).toHaveClass(/is-active/);
+  await expect(page.locator("#wrong-list")).toContainText(charText);
+
+  const submissionResponses = [];
+  page.on("response", (response) => {
+    if (response.url().includes("/api/submissions") && response.request().method() === "POST") {
+      submissionResponses.push(response);
+    }
+  });
+
+  await page.locator(`#wrong-list button[data-key="char:${charText}"]`).click();
+  await expect(page.locator("#review-panel")).toHaveClass(/is-active/);
+  await page.waitForTimeout(300);
+
+  for (let attempt = 0; attempt < 3 && submissionResponses.length === 0; attempt += 1) {
+    await drawScribble(page, "#dictation-writer canvas");
+    await page.waitForTimeout(150);
+    await page.click("#review-start");
+    await page.waitForTimeout(1200);
+    if (submissionResponses.length > 0) break;
+    const feedback = await page.locator("#review-feedback").textContent();
+    if (!String(feedback || "").includes("接近正确")) break;
+  }
+
+  expect(submissionResponses.length).toBeGreaterThan(0);
+  expect(submissionResponses[0].ok()).toBeTruthy();
+  await expect(page.locator("#review-summary-card")).toBeVisible();
+
+  await page.click("#records-tab");
+  await expect(page.locator("#records-panel")).toHaveClass(/is-active/);
+  await expect(page.locator("#records-count")).toContainText("1 条");
+  await expect(page.locator("#records-list")).toContainText(charText);
+
+  await page.click("#user-menu-toggle");
+  await page.click("#logout-btn");
+  await expect(page.locator("#auth-screen")).toBeVisible();
+
+  await page.fill("#auth-username", parentUsername);
+  await page.fill("#auth-password", password);
+  await page.click("#auth-login");
+
+  await expect(page.locator("#admin-panel")).toHaveClass(/is-active/);
+  await expect(page.locator("#admin-count")).toContainText("记录：");
+  await expect(page.locator("#admin-list")).toContainText(childUsername);
+  await expect(page.locator("#admin-list")).toContainText(charText);
 });
