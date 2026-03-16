@@ -21,6 +21,8 @@ const LEGACY_JSON_DB_PATH = path.join(ROOT, "data", "server_db.json");
 const LEGACY_SQLITE_DB_PATH = path.join(ROOT, "data", "server_db.sqlite");
 const DB_STATE_KEY = "state";
 const SESSION_EXPIRE_MS = 30 * 24 * 60 * 60 * 1000;
+const SUBMISSION_SAVE_RETRY_LIMIT = Math.max(1, Number(process.env.SUBMISSION_SAVE_RETRY_LIMIT || 3) || 3);
+const SUBMISSION_SAVE_RETRY_DELAY_MS = Math.max(50, Number(process.env.SUBMISSION_SAVE_RETRY_DELAY_MS || 300) || 300);
 let sqliteDb = null;
 let pgPool = null;
 
@@ -60,6 +62,10 @@ function getDbHealthInfo() {
 
 function now() {
   return Date.now();
+}
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 function createPasswordHash(password) {
@@ -186,6 +192,35 @@ function defaultDbState() {
   };
 }
 
+function normalizeSubmissionRecord(input) {
+  const row = input && typeof input === "object" ? { ...input } : {};
+  row.id = String(row.id || "").trim();
+  row.username = String(row.username || "").trim();
+  row.type = row.type === "word" ? "word" : "char";
+  row.target = String(row.target || "");
+  row.pinyin = String(row.pinyin || "");
+  row.userAnswer = String(row.userAnswer || "");
+  row.handwritingImage = String(row.handwritingImage || "");
+  row.accuracyPercent = normalizeAccuracyPercent(row.accuracyPercent);
+  row.systemResult = Boolean(row.systemResult);
+  row.finalResult = Boolean(row.finalResult);
+  row.judgeDetail = normalizeJudgeDetail(row.judgeDetail);
+  row.pointsAwarded = Number(row.pointsAwarded) || 0;
+  row.wordCharResults = Array.isArray(row.wordCharResults)
+    ? row.wordCharResults.map((x) => ({
+        char: String((x && x.char) || ""),
+        isGood: Boolean(x && x.isGood),
+        accuracyPercent: normalizeAccuracyPercent(x && x.accuracyPercent),
+        handwritingImage: String((x && x.handwritingImage) || ""),
+        judgeDetail: normalizeJudgeDetail(x && x.judgeDetail)
+      }))
+    : [];
+  row.reviewedBy = String(row.reviewedBy || "");
+  row.reviewedAt = Number(row.reviewedAt) || 0;
+  row.createdAt = Number(row.createdAt) || now();
+  return row;
+}
+
 function normalizeDbState(input) {
   const parsed = input && typeof input === "object" ? { ...input } : {};
   parsed.users = Array.isArray(parsed.users) ? parsed.users.map(normalizeUserRecord).filter((x) => x.username) : [];
@@ -207,6 +242,14 @@ function normalizeDbState(input) {
   return parsed;
 }
 
+function getCoreDbState(dbState) {
+  const normalized = normalizeDbState(dbState);
+  return {
+    ...normalized,
+    submissions: []
+  };
+}
+
 function getSqliteDb() {
   if (sqliteDb) return sqliteDb;
   if (!fs.existsSync(path.dirname(DB_PATH))) fs.mkdirSync(path.dirname(DB_PATH), { recursive: true });
@@ -216,6 +259,15 @@ function getSqliteDb() {
       key TEXT PRIMARY KEY,
       value TEXT NOT NULL
     );
+    CREATE TABLE IF NOT EXISTS submissions (
+      id TEXT PRIMARY KEY,
+      username TEXT NOT NULL,
+      reviewed_by TEXT NOT NULL DEFAULT '',
+      created_at INTEGER NOT NULL,
+      payload TEXT NOT NULL
+    );
+    CREATE INDEX IF NOT EXISTS idx_submissions_username_created_at ON submissions(username, created_at DESC);
+    CREATE INDEX IF NOT EXISTS idx_submissions_reviewed_by ON submissions(reviewed_by);
   `);
   return sqliteDb;
 }
@@ -274,6 +326,18 @@ async function ensurePostgresStore() {
       updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
     );
   `);
+  await pool.query(`
+    CREATE TABLE IF NOT EXISTS submissions (
+      id TEXT PRIMARY KEY,
+      username TEXT NOT NULL,
+      reviewed_by TEXT NOT NULL DEFAULT '',
+      created_at BIGINT NOT NULL,
+      payload JSONB NOT NULL,
+      updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+    );
+  `);
+  await pool.query("CREATE INDEX IF NOT EXISTS idx_submissions_username_created_at ON submissions(username, created_at DESC)");
+  await pool.query("CREATE INDEX IF NOT EXISTS idx_submissions_reviewed_by ON submissions(reviewed_by)");
 }
 
 async function readPostgresState() {
@@ -285,7 +349,7 @@ async function readPostgresState() {
 
 async function writePostgresState(dbState) {
   const pool = getPgPool();
-  const normalized = normalizeDbState(dbState);
+  const normalized = getCoreDbState(dbState);
   await pool.query(
     `
       INSERT INTO kv_store(key, value, updated_at)
@@ -297,26 +361,181 @@ async function writePostgresState(dbState) {
   );
 }
 
+async function listPostgresSubmissions() {
+  const pool = getPgPool();
+  const result = await pool.query("SELECT payload FROM submissions ORDER BY created_at DESC, id DESC");
+  return result.rows.map((row) => normalizeSubmissionRecord(row.payload));
+}
+
+async function countPostgresSubmissions() {
+  const pool = getPgPool();
+  const result = await pool.query("SELECT COUNT(*)::int AS count FROM submissions");
+  return Number(result.rows[0] && result.rows[0].count) || 0;
+}
+
+async function upsertPostgresSubmission(row) {
+  const pool = getPgPool();
+  const normalized = normalizeSubmissionRecord(row);
+  await pool.query(
+    `
+      INSERT INTO submissions(id, username, reviewed_by, created_at, payload, updated_at)
+      VALUES ($1, $2, $3, $4, $5::jsonb, NOW())
+      ON CONFLICT(id)
+      DO UPDATE SET
+        username = EXCLUDED.username,
+        reviewed_by = EXCLUDED.reviewed_by,
+        created_at = EXCLUDED.created_at,
+        payload = EXCLUDED.payload,
+        updated_at = NOW()
+    `,
+    [
+      normalized.id,
+      normalized.username,
+      normalized.reviewedBy,
+      normalized.createdAt,
+      JSON.stringify(normalized)
+    ]
+  );
+}
+
+async function deletePostgresSubmissionsByUsername(username) {
+  const pool = getPgPool();
+  const result = await pool.query("DELETE FROM submissions WHERE username = $1", [username]);
+  return Number(result.rowCount) || 0;
+}
+
+async function deletePostgresSubmissionsByUsernameOrReviewer(username) {
+  const pool = getPgPool();
+  const result = await pool.query("DELETE FROM submissions WHERE username = $1 OR reviewed_by = $1", [username]);
+  return Number(result.rowCount) || 0;
+}
+
+function listSqliteSubmissions() {
+  const db = getSqliteDb();
+  const rows = db.prepare("SELECT payload FROM submissions ORDER BY created_at DESC, id DESC").all();
+  return rows.map((row) => {
+    const payload = row && row.payload ? JSON.parse(String(row.payload)) : {};
+    return normalizeSubmissionRecord(payload);
+  });
+}
+
+function countSqliteSubmissions() {
+  const db = getSqliteDb();
+  const row = db.prepare("SELECT COUNT(*) AS count FROM submissions").get();
+  return Number(row && row.count) || 0;
+}
+
+function upsertSqliteSubmission(row) {
+  const db = getSqliteDb();
+  const normalized = normalizeSubmissionRecord(row);
+  db.prepare(`
+    INSERT INTO submissions(id, username, reviewed_by, created_at, payload)
+    VALUES(?, ?, ?, ?, ?)
+    ON CONFLICT(id) DO UPDATE SET
+      username = excluded.username,
+      reviewed_by = excluded.reviewed_by,
+      created_at = excluded.created_at,
+      payload = excluded.payload
+  `).run(
+    normalized.id,
+    normalized.username,
+    normalized.reviewedBy,
+    normalized.createdAt,
+    JSON.stringify(normalized)
+  );
+}
+
+function deleteSqliteSubmissionsByUsername(username) {
+  const db = getSqliteDb();
+  const result = db.prepare("DELETE FROM submissions WHERE username = ?").run(username);
+  return Number(result && result.changes) || 0;
+}
+
+function deleteSqliteSubmissionsByUsernameOrReviewer(username) {
+  const db = getSqliteDb();
+  const result = db.prepare("DELETE FROM submissions WHERE username = ? OR reviewed_by = ?").run(username, username);
+  return Number(result && result.changes) || 0;
+}
+
+async function listStoredSubmissions() {
+  if (USE_POSTGRES) return listPostgresSubmissions();
+  return listSqliteSubmissions();
+}
+
+async function countStoredSubmissions() {
+  if (USE_POSTGRES) return countPostgresSubmissions();
+  return countSqliteSubmissions();
+}
+
+async function saveSubmissionRow(row) {
+  if (USE_POSTGRES) {
+    await upsertPostgresSubmission(row);
+    return;
+  }
+  upsertSqliteSubmission(row);
+}
+
+async function deleteSubmissionRowsByUsername(username) {
+  if (USE_POSTGRES) return deletePostgresSubmissionsByUsername(username);
+  return deleteSqliteSubmissionsByUsername(username);
+}
+
+async function deleteSubmissionRowsByUsernameOrReviewer(username) {
+  if (USE_POSTGRES) return deletePostgresSubmissionsByUsernameOrReviewer(username);
+  return deleteSqliteSubmissionsByUsernameOrReviewer(username);
+}
+
+async function migrateLegacySubmissions(dbState) {
+  const legacyRows = Array.isArray(dbState && dbState.submissions) ? dbState.submissions : [];
+  if (!legacyRows.length) return 0;
+  const existingCount = await countStoredSubmissions();
+  if (existingCount > 0) return 0;
+  let migrated = 0;
+  for (const row of legacyRows) {
+    const normalized = normalizeSubmissionRecord(row);
+    if (!normalized.id || !normalized.username) continue;
+    await saveSubmissionRow(normalized);
+    migrated += 1;
+  }
+  if (migrated > 0) {
+    console.log(`[submissions] migrated ${migrated} legacy rows to dedicated store`);
+  }
+  return migrated;
+}
+
 async function ensureDbFile() {
   if (USE_POSTGRES) {
     await ensurePostgresStore();
     const existing = await readPostgresState();
-    if (existing) return;
+    if (existing) {
+      await migrateLegacySubmissions(existing);
+      await writePostgresState(existing);
+      return;
+    }
     const initial =
       readSqliteStateFromFile(DB_PATH) ||
       readSqliteStateFromFile(LEGACY_SQLITE_DB_PATH) ||
       readLegacyJsonDb() ||
       defaultDbState();
+    await migrateLegacySubmissions(initial);
     await writePostgresState(initial);
     return;
   }
 
   const db = getSqliteDb();
   const row = db.prepare("SELECT value FROM kv_store WHERE key = ?").get(DB_STATE_KEY);
-  if (row && row.value) return;
+  if (row && row.value) {
+    try {
+      const existing = normalizeDbState(JSON.parse(String(row.value)));
+      await migrateLegacySubmissions(existing);
+      db.prepare("INSERT OR REPLACE INTO kv_store(key, value) VALUES(?, ?)").run(DB_STATE_KEY, JSON.stringify(getCoreDbState(existing)));
+    } catch {}
+    return;
+  }
 
   const initial = readLegacyJsonDb() || defaultDbState();
-  const normalized = normalizeDbState(initial);
+  await migrateLegacySubmissions(initial);
+  const normalized = getCoreDbState(initial);
   db.prepare("INSERT OR REPLACE INTO kv_store(key, value) VALUES(?, ?)").run(DB_STATE_KEY, JSON.stringify(normalized));
 }
 
@@ -325,30 +544,78 @@ async function loadDb() {
   if (USE_POSTGRES) {
     try {
       const state = await readPostgresState();
-      return state || normalizeDbState(defaultDbState());
+      const dbState = state || normalizeDbState(defaultDbState());
+      dbState.submissions = await listStoredSubmissions();
+      return dbState;
     } catch {
-      return normalizeDbState(defaultDbState());
+      const fallback = normalizeDbState(defaultDbState());
+      fallback.submissions = [];
+      return fallback;
     }
   }
   const db = getSqliteDb();
   try {
     const row = db.prepare("SELECT value FROM kv_store WHERE key = ?").get(DB_STATE_KEY);
-    if (!row || !row.value) return normalizeDbState(defaultDbState());
+    if (!row || !row.value) {
+      const fallback = normalizeDbState(defaultDbState());
+      fallback.submissions = listSqliteSubmissions();
+      return fallback;
+    }
     const parsed = JSON.parse(String(row.value));
-    return normalizeDbState(parsed);
+    const state = normalizeDbState(parsed);
+    state.submissions = listSqliteSubmissions();
+    return state;
   } catch {
-    return normalizeDbState(defaultDbState());
+    const fallback = normalizeDbState(defaultDbState());
+    fallback.submissions = [];
+    return fallback;
   }
 }
 
 async function saveDb(db) {
-  if (USE_POSTGRES) {
-    await writePostgresState(db);
-    return;
+  let lastError = null;
+  for (let attempt = 1; attempt <= SUBMISSION_SAVE_RETRY_LIMIT; attempt += 1) {
+    try {
+      if (USE_POSTGRES) {
+        await writePostgresState(db);
+        return;
+      }
+      const conn = getSqliteDb();
+      const normalized = getCoreDbState(db);
+      conn.prepare("INSERT OR REPLACE INTO kv_store(key, value) VALUES(?, ?)").run(DB_STATE_KEY, JSON.stringify(normalized));
+      return;
+    } catch (err) {
+      lastError = err;
+      console.error(
+        `[db] save failed (attempt ${attempt}/${SUBMISSION_SAVE_RETRY_LIMIT}):`,
+        err && err.stack ? err.stack : err
+      );
+      if (attempt < SUBMISSION_SAVE_RETRY_LIMIT) {
+        await sleep(SUBMISSION_SAVE_RETRY_DELAY_MS * attempt);
+      }
+    }
   }
-  const conn = getSqliteDb();
-  const normalized = normalizeDbState(db);
-  conn.prepare("INSERT OR REPLACE INTO kv_store(key, value) VALUES(?, ?)").run(DB_STATE_KEY, JSON.stringify(normalized));
+  throw lastError;
+}
+
+async function saveSubmissionWithRetry(row) {
+  let lastError = null;
+  for (let attempt = 1; attempt <= SUBMISSION_SAVE_RETRY_LIMIT; attempt += 1) {
+    try {
+      await saveSubmissionRow(row);
+      return { attempts: attempt };
+    } catch (err) {
+      lastError = err;
+      console.error(
+        `[submissions] save failed (attempt ${attempt}/${SUBMISSION_SAVE_RETRY_LIMIT}) for ${row && row.id ? row.id : "unknown"}:`,
+        err && err.stack ? err.stack : err
+      );
+      if (attempt < SUBMISSION_SAVE_RETRY_LIMIT) {
+        await sleep(SUBMISSION_SAVE_RETRY_DELAY_MS * attempt);
+      }
+    }
+  }
+  throw lastError;
 }
 
 function ensureUserData(db, username) {
@@ -863,6 +1130,7 @@ async function handleApi(req, res, pathname) {
     if (!user) return sendJson(res, 404, { ok: false, message: "用户不存在" });
     if (normalizeRole(user.role) === "admin") return sendJson(res, 400, { ok: false, message: "不允许清空管理员账号数据" });
     const result = resetUserDataDeep(db, username);
+    await deleteSubmissionRowsByUsername(username);
     await saveDb(db);
     return sendJson(res, 200, {
       ok: true,
@@ -881,6 +1149,7 @@ async function handleApi(req, res, pathname) {
     if (normalizeRole(user.role) === "admin") return sendJson(res, 400, { ok: false, message: "不允许删除管理员账号" });
     if (username === auth.username) return sendJson(res, 400, { ok: false, message: "不允许删除当前登录账号" });
     removeUserDeep(db, username);
+    await deleteSubmissionRowsByUsernameOrReviewer(username);
     ensureFamilyLinks(db);
     await saveDb(db);
     return sendJson(res, 200, { ok: true, deleted: username });
@@ -917,10 +1186,10 @@ async function handleApi(req, res, pathname) {
       createdAt: Number(body.createdAt) || now()
     };
     console.log("[submissions] writing row:", JSON.stringify(row, null, 2));
-    db.submissions.push(row);
-    await saveDb(db);
-    console.log("[submissions] saved row:", row.id);
-    return sendJson(res, 201, { ok: true, submission: row });
+    const saveResult = await saveSubmissionWithRetry(row);
+    db.submissions.unshift(row);
+    console.log("[submissions] saved row:", row.id, `attempt=${saveResult.attempts}`);
+    return sendJson(res, 201, { ok: true, submission: row, saveAttempts: saveResult.attempts });
   }
 
   if (req.method === "PUT" && pathname.startsWith("/api/submissions/") && pathname.endsWith("/review")) {
@@ -958,6 +1227,7 @@ async function handleApi(req, res, pathname) {
         updateWrongBookForUser(db, submission.username, submission, after);
       }
     }
+    await saveSubmissionWithRetry(submission);
     await saveDb(db);
     return sendJson(res, 200, { ok: true, submission });
   }
@@ -1082,6 +1352,7 @@ const server = http.createServer(async (req, res) => {
     }
     serveStatic(req, res, url.pathname);
   } catch (err) {
+    console.error(`[http] request failed for ${req.method || "GET"} ${req.url || ""}:`, err && err.stack ? err.stack : err);
     sendJson(res, 500, { ok: false, message: err && err.message ? err.message : "internal error" });
   }
 });
