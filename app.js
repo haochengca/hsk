@@ -30,6 +30,8 @@ function rebuildLexiconCaches() {
     meaning: it.meaning,
     level: it.level,
     phrase: it.phrase || it.word,
+    prompt1: it.prompt1 || "",
+    prompt2: it.prompt2 || "",
     sentence: it.sentence || `我正在学习“${it.word}”。`
   }));
   CHAR_MAP = new Map(CHAR_ITEMS.map((it) => [it.text, it]));
@@ -37,10 +39,10 @@ function rebuildLexiconCaches() {
   CHAR_PHRASE_MAP = buildCharPhraseMap();
   BASE_ITEM_SNAPSHOT = new Map();
   CHAR_ITEMS.forEach((it) => {
-    BASE_ITEM_SNAPSHOT.set(`char:${it.text}`, { pinyin: it.pinyin || '', prompt1: '', prompt2: '' });
+    BASE_ITEM_SNAPSHOT.set(`char:${it.text}`, { pinyin: it.pinyin || '', prompt1: it.prompt1 || '', prompt2: it.prompt2 || '' });
   });
   WORD_ITEMS.forEach((it) => {
-    BASE_ITEM_SNAPSHOT.set(`word:${it.text}`, { pinyin: it.pinyin || '', prompt1: '', prompt2: '' });
+    BASE_ITEM_SNAPSHOT.set(`word:${it.text}`, { pinyin: it.pinyin || '', prompt1: it.prompt1 || '', prompt2: it.prompt2 || '' });
   });
 }
 
@@ -194,6 +196,8 @@ function buildCharItems() {
         meaning: it.meaning || "-",
         level: Number(it.level) || 1,
         phrase: it.phrase || it.char,
+        prompt1: it.prompt1 || "",
+        prompt2: it.prompt2 || "",
         sentence: it.sentence || `这是“${it.char}”字。`
       });
       return;
@@ -218,6 +222,8 @@ function buildCharItems() {
         meaning: w && w.meaning ? `来自词汇：${w.meaning}` : "来自词汇",
         level,
         phrase: ch,
+        prompt1: "",
+        prompt2: "",
         sentence: `这是“${ch}”字。`
       });
     });

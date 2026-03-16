@@ -209,6 +209,194 @@ def split_word_pinyin(word: str, pinyin: str, known_plain_by_char: dict[str, str
     return split_compact_pinyin(chars, pinyin, known_plain_by_char)
 
 
+def resolve_char_position(ch: str, word_text: str) -> str:
+    chars = list(word_text)
+    try:
+        idx = chars.index(ch)
+    except ValueError:
+        return "none"
+    if idx == 0:
+        return "start"
+    if idx == len(chars) - 1:
+        return "end"
+    return "middle"
+
+
+def score_prompt_candidate(ch: str, word: dict[str, object]) -> int:
+    text = str(word.get("word", "")).strip()
+    chars = list(text)
+    if not chars:
+        return -999
+    level = max(1, int(word.get("level", 6)))
+    length = len(chars)
+    unique_count = len(set(chars))
+    repeats = length - unique_count
+    score = 0
+    score += max(0, 8 - level) * 20
+    if length == 2:
+        score += 40
+    elif length == 3:
+        score += 26
+    elif length == 4:
+        score += 12
+    else:
+        score -= (length - 4) * 6
+    pos = resolve_char_position(ch, text)
+    if pos == "start":
+        score += 14
+    elif pos == "end":
+        score += 10
+    elif pos == "middle":
+        score += 8
+    if unique_count == length:
+        score += 6
+    if unique_count == 1:
+        score -= 30
+    score -= repeats * 6
+    if chars[0] == chars[-1]:
+        score -= 4
+    return score
+
+
+def score_prompt_diversity(ch: str, first_text: str, candidate_text: str) -> int:
+    first = str(first_text or "")
+    candidate = str(candidate_text or "")
+    if not first or not candidate or first == candidate:
+        return -999 if first == candidate else 0
+    first_chars = list(first)
+    candidate_chars = list(candidate)
+    overlap = sum(1 for c in candidate_chars if c in first_chars)
+    score = -overlap * 3
+    if len(first_chars) != len(candidate_chars):
+        score += 2
+    pos_a = resolve_char_position(ch, first)
+    pos_b = resolve_char_position(ch, candidate)
+    if pos_a != "none" and pos_b != "none" and pos_a != pos_b:
+        score += 8
+    return score
+
+
+FALLBACK_PROMPT_MAP: dict[str, list[str]] = {
+    "一": ["一个", "一起"],
+    "二": ["二月", "二十"],
+    "三": ["三个", "三天"],
+    "四": ["四个", "四季"],
+    "五": ["五个", "五月"],
+    "六": ["六个", "六月"],
+    "七": ["七天", "七个"],
+    "八": ["八个", "八月"],
+    "九": ["九个", "九月"],
+    "十": ["十个", "十天"],
+    "吗": ["是吗", "好吗"],
+    "呢": ["你呢", "在哪儿呢"],
+    "吧": ["好吧", "走吧"],
+    "啊": ["好啊", "啊？"],
+    "呀": ["对呀", "是呀"],
+    "嘛": ["干嘛", "好嘛"],
+    "了": ["好了", "来了"],
+    "的": ["我的", "你的"],
+    "地": ["地方", "地铁"],
+    "得": ["记得", "得到"],
+    "些": ["一些", "这些"],
+    "这": ["这里", "这个"],
+    "那": ["那里", "那个"],
+    "哪": ["哪里", "哪个"],
+    "每": ["每天", "每次"],
+    "很": ["很好", "很多"],
+    "太": ["太好了", "太大了"],
+    "不": ["不是", "不对"],
+    "有": ["有的", "有人"],
+    "在": ["在家", "在学校"],
+    "和": ["我和你", "你和他"],
+    "给": ["给你", "送给"],
+    "从": ["从前", "从来"],
+    "向": ["向前", "向上"],
+}
+
+
+def get_default_fallback_prompts(ch: str) -> tuple[str, str]:
+    pair = FALLBACK_PROMPT_MAP.get(ch)
+    if pair and len(pair) >= 2:
+        return pair[0], pair[1]
+    return f"{ch}字", f"写{ch}字"
+
+
+def build_char_prompt_map(char_order: list[str], rows: list[dict[str, object]]) -> dict[str, list[str]]:
+    candidate_map: dict[str, list[dict[str, object]]] = {char: [] for char in char_order}
+    for row in rows:
+        word = str(row.get("word", "")).strip()
+        if len(word) < 2:
+            continue
+        for ch in set(word):
+            if ch in candidate_map:
+                candidate_map[ch].append(row)
+
+    prompt_map: dict[str, list[str]] = {}
+    for ch in char_order:
+        seen: set[str] = set()
+        candidates: list[dict[str, object]] = []
+        for row in candidate_map.get(ch, []):
+            text = str(row.get("word", "")).strip()
+            if not text or text in seen:
+                continue
+            seen.add(text)
+            candidates.append(row)
+
+        ranked = sorted(
+            (
+                {
+                    "text": str(row["word"]),
+                    "level": int(row["level"]),
+                    "len": len(str(row["word"])),
+                    "score": score_prompt_candidate(ch, row),
+                }
+                for row in candidates
+            ),
+            key=lambda item: (-item["score"], item["level"], item["len"], item["text"]),
+        )
+
+        selected: list[str] = []
+        if ranked:
+            selected.append(str(ranked[0]["text"]))
+
+        if len(ranked) > 1 and selected:
+            best_second: dict[str, object] | None = None
+            for item in ranked[1:]:
+                merged_score = int(item["score"]) + score_prompt_diversity(ch, selected[0], str(item["text"]))
+                candidate = {
+                    "text": str(item["text"]),
+                    "merged_score": merged_score,
+                    "level": int(item["level"]),
+                    "len": int(item["len"]),
+                }
+                if best_second is None or (
+                    candidate["merged_score"],
+                    -candidate["level"],
+                    -candidate["len"],
+                    candidate["text"],
+                ) > (
+                    best_second["merged_score"],
+                    -int(best_second["level"]),
+                    -int(best_second["len"]),
+                    str(best_second["text"]),
+                ):
+                    best_second = candidate
+            if best_second and str(best_second["text"]) not in selected:
+                selected.append(str(best_second["text"]))
+
+        fallback_a, fallback_b = get_default_fallback_prompts(ch)
+        if len(selected) < 1 and fallback_a not in selected:
+            selected.append(fallback_a)
+        if len(selected) < 2 and fallback_b not in selected:
+            selected.append(fallback_b)
+        if len(selected) < 2:
+            fallback = fallback_a if fallback_a not in selected else f"{ch}{ch}"
+            if fallback not in selected:
+                selected.append(fallback)
+        prompt_map[ch] = selected[:2]
+    return prompt_map
+
+
 def build_word_rows() -> list[dict[str, object]]:
     rows: list[dict[str, object]] = []
     for path in sorted(SOURCE_DIR.glob("L*.txt"), key=lambda p: int(p.stem[1:])):
@@ -269,10 +457,15 @@ def build_items() -> list[dict[str, object]]:
                 char_first_seen[char] = row
                 char_first_word[char] = word
 
+    ordered_chars = [char for char, _ in sorted(char_first_seen.items(), key=lambda item: (int(item[1]["level"]), item[0]))]
+    prompt_map = build_char_prompt_map(ordered_chars, rows)
+
     items: list[dict[str, object]] = []
-    for char, row in sorted(char_first_seen.items(), key=lambda item: (int(item[1]["level"]), item[0])):
+    for char in ordered_chars:
+        row = char_first_seen[char]
         direct = direct_char_rows.get(char)
         source_word = char_first_word[char]
+        prompt1, prompt2 = prompt_map.get(char, list(get_default_fallback_prompts(char)))
         if direct:
             pinyin = str(direct["pinyin"]) or char_pinyin_hints.get(char, "-")
             meaning = sanitize_meaning(str(direct["meaning"]))
@@ -288,6 +481,8 @@ def build_items() -> list[dict[str, object]]:
                 "meaning": meaning,
                 "level": int(row["level"]),
                 "phrase": phrase,
+                "prompt1": prompt1,
+                "prompt2": prompt2,
                 "sentence": f"这是“{char}”字。",
             }
         )

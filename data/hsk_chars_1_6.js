@@ -5,6 +5,8 @@ window.HSK_CHARS = [
     "meaning": "one; once; a",
     "level": 1,
     "phrase": "一",
+    "prompt1": "一点儿",
+    "prompt2": "第一",
     "sentence": "这是“一”字。"
   },
   {
@@ -13,6 +15,8 @@ window.HSK_CHARS = [
     "meaning": "seven",
     "level": 1,
     "phrase": "七",
+    "prompt1": "七天",
+    "prompt2": "七个",
     "sentence": "这是“七”字。"
   },
   {
@@ -21,6 +25,8 @@ window.HSK_CHARS = [
     "meaning": "three",
     "level": 1,
     "phrase": "三",
+    "prompt1": "再三",
+    "prompt2": "丢三落四",
     "sentence": "这是“三”字。"
   },
   {
@@ -29,6 +35,8 @@ window.HSK_CHARS = [
     "meaning": "above; up",
     "level": 1,
     "phrase": "上",
+    "prompt1": "上午",
+    "prompt2": "晚上",
     "sentence": "这是“上”字。"
   },
   {
@@ -37,6 +45,8 @@ window.HSK_CHARS = [
     "meaning": "fall; below",
     "level": 1,
     "phrase": "下",
+    "prompt1": "下午",
+    "prompt2": "下雨",
     "sentence": "这是“下”字。"
   },
   {
@@ -45,6 +55,8 @@ window.HSK_CHARS = [
     "meaning": "no; not",
     "level": 1,
     "phrase": "不",
+    "prompt1": "不客气",
+    "prompt2": "对不起",
     "sentence": "这是“不”字。"
   },
   {
@@ -53,6 +65,8 @@ window.HSK_CHARS = [
     "meaning": "East",
     "level": 1,
     "phrase": "东",
+    "prompt1": "东西",
+    "prompt2": "房东",
     "sentence": "这是“东”字。"
   },
   {
@@ -61,6 +75,8 @@ window.HSK_CHARS = [
     "meaning": "general measure word",
     "level": 1,
     "phrase": "个",
+    "prompt1": "个子",
+    "prompt2": "整个",
     "sentence": "这是“个”字。"
   },
   {
@@ -69,6 +85,8 @@ window.HSK_CHARS = [
     "meaning": "China",
     "level": 1,
     "phrase": "中国",
+    "prompt1": "中午",
+    "prompt2": "中国",
     "sentence": "这是“中”字。"
   },
   {
@@ -77,6 +95,8 @@ window.HSK_CHARS = [
     "meaning": "what? (replaces the noun to turn a statement into a question)",
     "level": 1,
     "phrase": "什么",
+    "prompt1": "什么",
+    "prompt2": "怎么",
     "sentence": "这是“么”字。"
   },
   {
@@ -85,6 +105,8 @@ window.HSK_CHARS = [
     "meaning": "nine",
     "level": 1,
     "phrase": "九",
+    "prompt1": "九个",
+    "prompt2": "九月",
     "sentence": "这是“九”字。"
   },
   {
@@ -93,6 +115,8 @@ window.HSK_CHARS = [
     "meaning": "learn; to study",
     "level": 1,
     "phrase": "学习",
+    "prompt1": "学习",
+    "prompt2": "习惯",
     "sentence": "这是“习”字。"
   },
   {
@@ -101,6 +125,8 @@ window.HSK_CHARS = [
     "meaning": "book; letter",
     "level": 1,
     "phrase": "书",
+    "prompt1": "图书馆",
+    "prompt2": "书架",
     "sentence": "这是“书”字。"
   },
   {
@@ -109,6 +135,8 @@ window.HSK_CHARS = [
     "meaning": "to buy",
     "level": 1,
     "phrase": "买",
+    "prompt1": "买字",
+    "prompt2": "写买字",
     "sentence": "这是“买”字。"
   },
   {
@@ -117,6 +145,8 @@ window.HSK_CHARS = [
     "meaning": "indicates a completed or finished action",
     "level": 1,
     "phrase": "了",
+    "prompt1": "了解",
+    "prompt2": "除了",
     "sentence": "这是“了”字。"
   },
   {
@@ -125,6 +155,8 @@ window.HSK_CHARS = [
     "meaning": "two",
     "level": 1,
     "phrase": "二",
+    "prompt1": "二氧化碳",
+    "prompt2": "二十",
     "sentence": "这是“二”字。"
   },
   {
@@ -133,6 +165,8 @@ window.HSK_CHARS = [
     "meaning": "five",
     "level": 1,
     "phrase": "五",
+    "prompt1": "五个",
+    "prompt2": "五月",
     "sentence": "这是“五”字。"
   },
   {
@@ -141,6 +175,8 @@ window.HSK_CHARS = [
     "meaning": "some; few; several",
     "level": 1,
     "phrase": "些",
+    "prompt1": "一些",
+    "prompt2": "这些",
     "sentence": "这是“些”字。"
   },
   {
@@ -149,6 +185,8 @@ window.HSK_CHARS = [
     "meaning": "Beijing",
     "level": 1,
     "phrase": "北京",
+    "prompt1": "北京",
+    "prompt2": "京剧",
     "sentence": "这是“京”字。"
   },
   {
@@ -157,6 +195,8 @@ window.HSK_CHARS = [
     "meaning": "bright; light; shiny",
     "level": 1,
     "phrase": "亮",
+    "prompt1": "漂亮",
+    "prompt2": "月亮",
     "sentence": "这是“亮”字。"
   },
   {
@@ -165,6 +205,8 @@ window.HSK_CHARS = [
     "meaning": "person; man; people",
     "level": 1,
     "phrase": "人",
+    "prompt1": "别人",
+    "prompt2": "客人",
     "sentence": "这是“人”字。"
   },
   {
@@ -173,6 +215,8 @@ window.HSK_CHARS = [
     "meaning": "what? (replaces the noun to turn a statement into a question)",
     "level": 1,
     "phrase": "什么",
+    "prompt1": "什么",
+    "prompt2": "为什么",
     "sentence": "这是“什”字。"
   },
   {
@@ -181,6 +225,8 @@ window.HSK_CHARS = [
     "meaning": "today",
     "level": 1,
     "phrase": "今天",
+    "prompt1": "今天",
+    "prompt2": "至今",
     "sentence": "这是“今”字。"
   },
   {
@@ -189,6 +235,8 @@ window.HSK_CHARS = [
     "meaning": "he; him",
     "level": 1,
     "phrase": "他",
+    "prompt1": "其他",
+    "prompt2": "写他字",
     "sentence": "这是“他”字。"
   },
   {
@@ -197,6 +245,8 @@ window.HSK_CHARS = [
     "meaning": "we; us",
     "level": 1,
     "phrase": "我们",
+    "prompt1": "我们",
+    "prompt2": "咱们",
     "sentence": "这是“们”字。"
   },
   {
@@ -205,6 +255,8 @@ window.HSK_CHARS = [
     "meaning": "know how to",
     "level": 1,
     "phrase": "会",
+    "prompt1": "会议",
+    "prompt2": "机会",
     "sentence": "这是“会”字。"
   },
   {
@@ -213,6 +265,8 @@ window.HSK_CHARS = [
     "meaning": "to live; reside; to stop",
     "level": 1,
     "phrase": "住",
+    "prompt1": "忍不住",
+    "prompt2": "住宅",
     "sentence": "这是“住”字。"
   },
   {
@@ -221,6 +275,8 @@ window.HSK_CHARS = [
     "meaning": "work; a job",
     "level": 1,
     "phrase": "工作",
+    "prompt1": "工作",
+    "prompt2": "作业",
     "sentence": "这是“作”字。"
   },
   {
@@ -229,6 +285,8 @@ window.HSK_CHARS = [
     "meaning": "you (singular)",
     "level": 1,
     "phrase": "你",
+    "prompt1": "你字",
+    "prompt2": "写你字",
     "sentence": "这是“你”字。"
   },
   {
@@ -237,6 +295,8 @@ window.HSK_CHARS = [
     "meaning": "time",
     "level": 1,
     "phrase": "时候",
+    "prompt1": "时候",
+    "prompt2": "气候",
     "sentence": "这是“候”字。"
   },
   {
@@ -245,6 +305,8 @@ window.HSK_CHARS = [
     "meaning": "do; make",
     "level": 1,
     "phrase": "做",
+    "prompt1": "做主",
+    "prompt2": "写做字",
     "sentence": "这是“做”字。"
   },
   {
@@ -253,6 +315,8 @@ window.HSK_CHARS = [
     "meaning": "son",
     "level": 1,
     "phrase": "儿子",
+    "prompt1": "儿子",
+    "prompt2": "女儿",
     "sentence": "这是“儿”字。"
   },
   {
@@ -261,6 +325,8 @@ window.HSK_CHARS = [
     "meaning": "first; early; before",
     "level": 1,
     "phrase": "先",
+    "prompt1": "先生",
+    "prompt2": "首先",
     "sentence": "这是“先”字。"
   },
   {
@@ -269,6 +335,8 @@ window.HSK_CHARS = [
     "meaning": "eight",
     "level": 1,
     "phrase": "八",
+    "prompt1": "八个",
+    "prompt2": "八月",
     "sentence": "这是“八”字。"
   },
   {
@@ -277,6 +345,8 @@ window.HSK_CHARS = [
     "meaning": "six",
     "level": 1,
     "phrase": "六",
+    "prompt1": "六个",
+    "prompt2": "六月",
     "sentence": "这是“六”字。"
   },
   {
@@ -285,6 +355,8 @@ window.HSK_CHARS = [
     "meaning": "to close; shut; concern; relationship; turn off; mountain pass",
     "level": 1,
     "phrase": "关",
+    "prompt1": "没关系",
+    "prompt2": "关心",
     "sentence": "这是“关”字。"
   },
   {
@@ -293,6 +365,8 @@ window.HSK_CHARS = [
     "meaning": "happy; glad",
     "level": 1,
     "phrase": "高兴",
+    "prompt1": "高兴",
+    "prompt2": "感兴趣",
     "sentence": "这是“兴”字。"
   },
   {
@@ -301,6 +375,8 @@ window.HSK_CHARS = [
     "meaning": "again; once more",
     "level": 1,
     "phrase": "再",
+    "prompt1": "再见",
+    "prompt2": "一再",
     "sentence": "这是“再”字。"
   },
   {
@@ -309,6 +385,8 @@ window.HSK_CHARS = [
     "meaning": "to write; to compose",
     "level": 1,
     "phrase": "写",
+    "prompt1": "写作",
+    "prompt2": "描写",
     "sentence": "这是“写”字。"
   },
   {
@@ -317,6 +395,8 @@ window.HSK_CHARS = [
     "meaning": "cold",
     "level": 1,
     "phrase": "冷",
+    "prompt1": "冷静",
+    "prompt2": "冷淡",
     "sentence": "这是“冷”字。"
   },
   {
@@ -325,6 +405,8 @@ window.HSK_CHARS = [
     "meaning": "how many; several; a few",
     "level": 1,
     "phrase": "几",
+    "prompt1": "几乎",
+    "prompt2": "写几字",
     "sentence": "这是“几”字。"
   },
   {
@@ -333,6 +415,8 @@ window.HSK_CHARS = [
     "meaning": "go out; occur",
     "level": 1,
     "phrase": "出",
+    "prompt1": "出租车",
+    "prompt2": "演出",
     "sentence": "这是“出”字。"
   },
   {
@@ -341,6 +425,8 @@ window.HSK_CHARS = [
     "meaning": "divide; part; minute; cent | component; share; ingredient",
     "level": 1,
     "phrase": "分",
+    "prompt1": "分钟",
+    "prompt2": "部分",
     "sentence": "这是“分”字。"
   },
   {
@@ -349,6 +435,8 @@ window.HSK_CHARS = [
     "meaning": "in front",
     "level": 1,
     "phrase": "前面",
+    "prompt1": "前面",
+    "prompt2": "以前",
     "sentence": "这是“前”字。"
   },
   {
@@ -357,6 +445,8 @@ window.HSK_CHARS = [
     "meaning": "Beijing",
     "level": 1,
     "phrase": "北京",
+    "prompt1": "北京",
+    "prompt2": "北方",
     "sentence": "这是“北”字。"
   },
   {
@@ -365,6 +455,8 @@ window.HSK_CHARS = [
     "meaning": "doctor",
     "level": 1,
     "phrase": "医生",
+    "prompt1": "医生",
+    "prompt2": "医院",
     "sentence": "这是“医”字。"
   },
   {
@@ -373,6 +465,8 @@ window.HSK_CHARS = [
     "meaning": "ten",
     "level": 1,
     "phrase": "十",
+    "prompt1": "十分",
+    "prompt2": "十足",
     "sentence": "这是“十”字。"
   },
   {
@@ -381,6 +475,8 @@ window.HSK_CHARS = [
     "meaning": "late morning (before noon)",
     "level": 1,
     "phrase": "上午",
+    "prompt1": "上午",
+    "prompt2": "中午",
     "sentence": "这是“午”字。"
   },
   {
@@ -389,6 +485,8 @@ window.HSK_CHARS = [
     "meaning": "go; to leave",
     "level": 1,
     "phrase": "去",
+    "prompt1": "去年",
+    "prompt2": "过去",
     "sentence": "这是“去”字。"
   },
   {
@@ -397,6 +495,8 @@ window.HSK_CHARS = [
     "meaning": "friend",
     "level": 1,
     "phrase": "朋友",
+    "prompt1": "朋友",
+    "prompt2": "友谊",
     "sentence": "这是“友”字。"
   },
   {
@@ -405,6 +505,8 @@ window.HSK_CHARS = [
     "meaning": "to be called",
     "level": 1,
     "phrase": "叫",
+    "prompt1": "叫字",
+    "prompt2": "写叫字",
     "sentence": "这是“叫”字。"
   },
   {
@@ -413,6 +515,8 @@ window.HSK_CHARS = [
     "meaning": "number; day of a month",
     "level": 1,
     "phrase": "号",
+    "prompt1": "号码",
+    "prompt2": "挂号",
     "sentence": "这是“号”字。"
   },
   {
@@ -421,6 +525,8 @@ window.HSK_CHARS = [
     "meaning": "eat",
     "level": 1,
     "phrase": "吃",
+    "prompt1": "好吃",
+    "prompt2": "吃惊",
     "sentence": "这是“吃”字。"
   },
   {
@@ -429,6 +535,8 @@ window.HSK_CHARS = [
     "meaning": "fellow student; schoolmate",
     "level": 1,
     "phrase": "同学",
+    "prompt1": "同学",
+    "prompt2": "同意",
     "sentence": "这是“同”字。"
   },
   {
@@ -437,6 +545,8 @@ window.HSK_CHARS = [
     "meaning": "name",
     "level": 1,
     "phrase": "名字",
+    "prompt1": "名字",
+    "prompt2": "有名",
     "sentence": "这是“名”字。"
   },
   {
@@ -445,6 +555,8 @@ window.HSK_CHARS = [
     "meaning": "back; behind",
     "level": 1,
     "phrase": "后面",
+    "prompt1": "后面",
+    "prompt2": "然后",
     "sentence": "这是“后”字。"
   },
   {
@@ -453,6 +565,8 @@ window.HSK_CHARS = [
     "meaning": "indicates a yes/no question (added to a statement)",
     "level": 1,
     "phrase": "吗",
+    "prompt1": "是吗",
+    "prompt2": "好吗",
     "sentence": "这是“吗”字。"
   },
   {
@@ -461,6 +575,8 @@ window.HSK_CHARS = [
     "meaning": "listen; hear",
     "level": 1,
     "phrase": "听",
+    "prompt1": "打听",
+    "prompt2": "倾听",
     "sentence": "这是“听”字。"
   },
   {
@@ -469,6 +585,8 @@ window.HSK_CHARS = [
     "meaning": "indicates a question; how about...?;",
     "level": 1,
     "phrase": "呢",
+    "prompt1": "你呢",
+    "prompt2": "在哪儿呢",
     "sentence": "这是“呢”字。"
   },
   {
@@ -477,6 +595,8 @@ window.HSK_CHARS = [
     "meaning": "and; with",
     "level": 1,
     "phrase": "和",
+    "prompt1": "暖和",
+    "prompt2": "和平",
     "sentence": "这是“和”字。"
   },
   {
@@ -485,6 +605,8 @@ window.HSK_CHARS = [
     "meaning": "which; how",
     "level": 1,
     "phrase": "哪",
+    "prompt1": "哪儿",
+    "prompt2": "哪怕",
     "sentence": "这是“哪”字。"
   },
   {
@@ -493,6 +615,8 @@ window.HSK_CHARS = [
     "meaning": "shop; store",
     "level": 1,
     "phrase": "商店",
+    "prompt1": "商店",
+    "prompt2": "商量",
     "sentence": "这是“商”字。"
   },
   {
@@ -501,6 +625,8 @@ window.HSK_CHARS = [
     "meaning": "hello (on the phone)",
     "level": 1,
     "phrase": "喂",
+    "prompt1": "喂字",
+    "prompt2": "写喂字",
     "sentence": "这是“喂”字。"
   },
   {
@@ -509,6 +635,8 @@ window.HSK_CHARS = [
     "meaning": "to like",
     "level": 1,
     "phrase": "喜欢",
+    "prompt1": "喜欢",
+    "prompt2": "恭喜",
     "sentence": "这是“喜”字。"
   },
   {
@@ -517,6 +645,8 @@ window.HSK_CHARS = [
     "meaning": "to drink",
     "level": 1,
     "phrase": "喝",
+    "prompt1": "喝字",
+    "prompt2": "写喝字",
     "sentence": "这是“喝”字。"
   },
   {
@@ -525,6 +655,8 @@ window.HSK_CHARS = [
     "meaning": "four",
     "level": 1,
     "phrase": "四",
+    "prompt1": "四肢",
+    "prompt2": "丢三落四",
     "sentence": "这是“四”字。"
   },
   {
@@ -533,6 +665,8 @@ window.HSK_CHARS = [
     "meaning": "to return; to reply; to go back",
     "level": 1,
     "phrase": "回",
+    "prompt1": "回答",
+    "prompt2": "回忆",
     "sentence": "这是“回”字。"
   },
   {
@@ -541,6 +675,8 @@ window.HSK_CHARS = [
     "meaning": "China",
     "level": 1,
     "phrase": "中国",
+    "prompt1": "中国",
+    "prompt2": "国家",
     "sentence": "这是“国”字。"
   },
   {
@@ -549,6 +685,8 @@ window.HSK_CHARS = [
     "meaning": "at; on; in; indicates an action in progress",
     "level": 1,
     "phrase": "在",
+    "prompt1": "现在",
+    "prompt2": "正在",
     "sentence": "这是“在”字。"
   },
   {
@@ -557,6 +695,8 @@ window.HSK_CHARS = [
     "meaning": "sit",
     "level": 1,
     "phrase": "坐",
+    "prompt1": "乘坐",
+    "prompt2": "写坐字",
     "sentence": "这是“坐”字。"
   },
   {
@@ -565,6 +705,8 @@ window.HSK_CHARS = [
     "meaning": "lump; piece; sum of money",
     "level": 1,
     "phrase": "块",
+    "prompt1": "块字",
+    "prompt2": "写块字",
     "sentence": "这是“块”字。"
   },
   {
@@ -573,6 +715,8 @@ window.HSK_CHARS = [
     "meaning": "many",
     "level": 1,
     "phrase": "多",
+    "prompt1": "多少",
+    "prompt2": "多么",
     "sentence": "这是“多”字。"
   },
   {
@@ -581,6 +725,8 @@ window.HSK_CHARS = [
     "meaning": "big; large",
     "level": 1,
     "phrase": "大",
+    "prompt1": "大家",
+    "prompt2": "大约",
     "sentence": "这是“大”字。"
   },
   {
@@ -589,6 +735,8 @@ window.HSK_CHARS = [
     "meaning": "today",
     "level": 1,
     "phrase": "今天",
+    "prompt1": "天气",
+    "prompt2": "昨天",
     "sentence": "这是“天”字。"
   },
   {
@@ -597,6 +745,8 @@ window.HSK_CHARS = [
     "meaning": "too (much)",
     "level": 1,
     "phrase": "太",
+    "prompt1": "太阳",
+    "prompt2": "太极拳",
     "sentence": "这是“太”字。"
   },
   {
@@ -605,6 +755,8 @@ window.HSK_CHARS = [
     "meaning": "woman; female (Kangxi radical 38)",
     "level": 1,
     "phrase": "女",
+    "prompt1": "女儿",
+    "prompt2": "妇女",
     "sentence": "这是“女”字。"
   },
   {
@@ -613,6 +765,8 @@ window.HSK_CHARS = [
     "meaning": "she",
     "level": 1,
     "phrase": "她",
+    "prompt1": "她字",
+    "prompt2": "写她字",
     "sentence": "这是“她”字。"
   },
   {
@@ -621,6 +775,8 @@ window.HSK_CHARS = [
     "meaning": "good",
     "level": 1,
     "phrase": "好",
+    "prompt1": "好吃",
+    "prompt2": "爱好",
     "sentence": "这是“好”字。"
   },
   {
@@ -629,6 +785,8 @@ window.HSK_CHARS = [
     "meaning": "mom; mum",
     "level": 1,
     "phrase": "妈妈",
+    "prompt1": "妈妈",
+    "prompt2": "写妈字",
     "sentence": "这是“妈”字。"
   },
   {
@@ -637,6 +795,8 @@ window.HSK_CHARS = [
     "meaning": "young lady; miss; Ms.",
     "level": 1,
     "phrase": "小姐",
+    "prompt1": "小姐",
+    "prompt2": "姐姐",
     "sentence": "这是“姐”字。"
   },
   {
@@ -645,6 +805,8 @@ window.HSK_CHARS = [
     "meaning": "cup; glass",
     "level": 1,
     "phrase": "杯子",
+    "prompt1": "儿子",
+    "prompt2": "椅子",
     "sentence": "这是“子”字。"
   },
   {
@@ -653,6 +815,8 @@ window.HSK_CHARS = [
     "meaning": "letter; character",
     "level": 1,
     "phrase": "字",
+    "prompt1": "名字",
+    "prompt2": "数字",
     "sentence": "这是“字”字。"
   },
   {
@@ -661,6 +825,8 @@ window.HSK_CHARS = [
     "meaning": "fellow student; schoolmate",
     "level": 1,
     "phrase": "同学",
+    "prompt1": "学习",
+    "prompt2": "同学",
     "sentence": "这是“学”字。"
   },
   {
@@ -669,6 +835,8 @@ window.HSK_CHARS = [
     "meaning": "you're welcome; don't be polite",
     "level": 1,
     "phrase": "不客气",
+    "prompt1": "不客气",
+    "prompt2": "客人",
     "sentence": "这是“客”字。"
   },
   {
@@ -677,6 +845,8 @@ window.HSK_CHARS = [
     "meaning": "family; home",
     "level": 1,
     "phrase": "家",
+    "prompt1": "大家",
+    "prompt2": "国家",
     "sentence": "这是“家”字。"
   },
   {
@@ -685,6 +855,8 @@ window.HSK_CHARS = [
     "meaning": "correct; a pair; to face; be opposite; to; towards",
     "level": 1,
     "phrase": "对",
+    "prompt1": "对不起",
+    "prompt2": "反对",
     "sentence": "这是“对”字。"
   },
   {
@@ -693,6 +865,8 @@ window.HSK_CHARS = [
     "meaning": "small; young",
     "level": 1,
     "phrase": "小",
+    "prompt1": "小姐",
+    "prompt2": "小时",
     "sentence": "这是“小”字。"
   },
   {
@@ -701,6 +875,8 @@ window.HSK_CHARS = [
     "meaning": "few; little",
     "level": 1,
     "phrase": "少",
+    "prompt1": "多少",
+    "prompt2": "至少",
     "sentence": "这是“少”字。"
   },
   {
@@ -709,6 +885,8 @@ window.HSK_CHARS = [
     "meaning": "years old; age",
     "level": 1,
     "phrase": "岁",
+    "prompt1": "岁月",
+    "prompt2": "压岁钱",
     "sentence": "这是“岁”字。"
   },
   {
@@ -717,6 +895,8 @@ window.HSK_CHARS = [
     "meaning": "work; a job",
     "level": 1,
     "phrase": "工作",
+    "prompt1": "工作",
+    "prompt2": "工资",
     "sentence": "这是“工”字。"
   },
   {
@@ -725,6 +905,8 @@ window.HSK_CHARS = [
     "meaning": "teacher",
     "level": 1,
     "phrase": "老师",
+    "prompt1": "老师",
+    "prompt2": "师傅",
     "sentence": "这是“师”字。"
   },
   {
@@ -733,6 +915,8 @@ window.HSK_CHARS = [
     "meaning": "year",
     "level": 1,
     "phrase": "年",
+    "prompt1": "去年",
+    "prompt2": "年轻",
     "sentence": "这是“年”字。"
   },
   {
@@ -741,6 +925,8 @@ window.HSK_CHARS = [
     "meaning": "restaurant; hotel",
     "level": 1,
     "phrase": "饭店",
+    "prompt1": "商店",
+    "prompt2": "饭店",
     "sentence": "这是“店”字。"
   },
   {
@@ -749,6 +935,8 @@ window.HSK_CHARS = [
     "meaning": "to open; to start; to operate (a vehicle)",
     "level": 1,
     "phrase": "开",
+    "prompt1": "开始",
+    "prompt2": "离开",
     "sentence": "这是“开”字。"
   },
   {
@@ -757,6 +945,8 @@ window.HSK_CHARS = [
     "meaning": "movie; film",
     "level": 1,
     "phrase": "电影",
+    "prompt1": "电影",
+    "prompt2": "影响",
     "sentence": "这是“影”字。"
   },
   {
@@ -765,6 +955,8 @@ window.HSK_CHARS = [
     "meaning": "very; quite",
     "level": 1,
     "phrase": "很",
+    "prompt1": "很好",
+    "prompt2": "很多",
     "sentence": "这是“很”字。"
   },
   {
@@ -773,6 +965,8 @@ window.HSK_CHARS = [
     "meaning": "how?",
     "level": 1,
     "phrase": "怎么",
+    "prompt1": "怎么",
+    "prompt2": "怎么样",
     "sentence": "这是“怎”字。"
   },
   {
@@ -781,6 +975,8 @@ window.HSK_CHARS = [
     "meaning": "think; believe; suppose; would like to",
     "level": 1,
     "phrase": "想",
+    "prompt1": "理想",
+    "prompt2": "想象",
     "sentence": "这是“想”字。"
   },
   {
@@ -789,6 +985,8 @@ window.HSK_CHARS = [
     "meaning": "I; me",
     "level": 1,
     "phrase": "我",
+    "prompt1": "我们",
+    "prompt2": "写我字",
     "sentence": "这是“我”字。"
   },
   {
@@ -797,6 +995,8 @@ window.HSK_CHARS = [
     "meaning": "make a phone call",
     "level": 1,
     "phrase": "打电话",
+    "prompt1": "打电话",
+    "prompt2": "打篮球",
     "sentence": "这是“打”字。"
   },
   {
@@ -805,6 +1005,8 @@ window.HSK_CHARS = [
     "meaning": "time",
     "level": 1,
     "phrase": "时候",
+    "prompt1": "时候",
+    "prompt2": "小时",
     "sentence": "这是“时”字。"
   },
   {
@@ -813,6 +1015,8 @@ window.HSK_CHARS = [
     "meaning": "tomorrow",
     "level": 1,
     "phrase": "明天",
+    "prompt1": "明天",
+    "prompt2": "聪明",
     "sentence": "这是“明”字。"
   },
   {
@@ -821,6 +1025,8 @@ window.HSK_CHARS = [
     "meaning": "week",
     "level": 1,
     "phrase": "星期",
+    "prompt1": "星期",
+    "prompt2": "明星",
     "sentence": "这是“星”字。"
   },
   {
@@ -829,6 +1035,8 @@ window.HSK_CHARS = [
     "meaning": "yesterday",
     "level": 1,
     "phrase": "昨天",
+    "prompt1": "昨天",
+    "prompt2": "写昨字",
     "sentence": "这是“昨”字。"
   },
   {
@@ -837,6 +1045,8 @@ window.HSK_CHARS = [
     "meaning": "be; is; are; am",
     "level": 1,
     "phrase": "是",
+    "prompt1": "但是",
+    "prompt2": "还是",
     "sentence": "这是“是”字。"
   },
   {
@@ -845,6 +1055,8 @@ window.HSK_CHARS = [
     "meaning": "moon; month",
     "level": 1,
     "phrase": "月",
+    "prompt1": "月亮",
+    "prompt2": "正月",
     "sentence": "这是“月”字。"
   },
   {
@@ -853,6 +1065,8 @@ window.HSK_CHARS = [
     "meaning": "have",
     "level": 1,
     "phrase": "有",
+    "prompt1": "没有",
+    "prompt2": "有名",
     "sentence": "这是“有”字。"
   },
   {
@@ -861,6 +1075,8 @@ window.HSK_CHARS = [
     "meaning": "friend",
     "level": 1,
     "phrase": "朋友",
+    "prompt1": "朋友",
+    "prompt2": "写朋字",
     "sentence": "这是“朋”字。"
   },
   {
@@ -869,6 +1085,8 @@ window.HSK_CHARS = [
     "meaning": "clothes",
     "level": 1,
     "phrase": "衣服",
+    "prompt1": "衣服",
+    "prompt2": "服务员",
     "sentence": "这是“服”字。"
   },
   {
@@ -877,6 +1095,8 @@ window.HSK_CHARS = [
     "meaning": "week",
     "level": 1,
     "phrase": "星期",
+    "prompt1": "星期",
+    "prompt2": "学期",
     "sentence": "这是“期”字。"
   },
   {
@@ -885,6 +1105,8 @@ window.HSK_CHARS = [
     "meaning": "measure word for books",
     "level": 1,
     "phrase": "本",
+    "prompt1": "笔记本",
+    "prompt2": "本来",
     "sentence": "这是“本”字。"
   },
   {
@@ -893,6 +1115,8 @@ window.HSK_CHARS = [
     "meaning": "airplane",
     "level": 1,
     "phrase": "飞机",
+    "prompt1": "飞机",
+    "prompt2": "机场",
     "sentence": "这是“机”字。"
   },
   {
@@ -901,6 +1125,8 @@ window.HSK_CHARS = [
     "meaning": "come; arrive; ever since; next",
     "level": 1,
     "phrase": "来",
+    "prompt1": "后来",
+    "prompt2": "起来",
     "sentence": "这是“来”字。"
   },
   {
@@ -909,6 +1135,8 @@ window.HSK_CHARS = [
     "meaning": "cup; glass",
     "level": 1,
     "phrase": "杯子",
+    "prompt1": "杯子",
+    "prompt2": "干杯",
     "sentence": "这是“杯”字。"
   },
   {
@@ -917,6 +1145,8 @@ window.HSK_CHARS = [
     "meaning": "apple",
     "level": 1,
     "phrase": "苹果",
+    "prompt1": "水果",
+    "prompt2": "苹果",
     "sentence": "这是“果”字。"
   },
   {
@@ -925,6 +1155,8 @@ window.HSK_CHARS = [
     "meaning": "school",
     "level": 1,
     "phrase": "学校",
+    "prompt1": "学校",
+    "prompt2": "校长",
     "sentence": "这是“校”字。"
   },
   {
@@ -933,6 +1165,8 @@ window.HSK_CHARS = [
     "meaning": "how about?; how is/was it?",
     "level": 1,
     "phrase": "怎么样",
+    "prompt1": "怎么样",
+    "prompt2": "一样",
     "sentence": "这是“样”字。"
   },
   {
@@ -941,6 +1175,8 @@ window.HSK_CHARS = [
     "meaning": "table; desk",
     "level": 1,
     "phrase": "桌子",
+    "prompt1": "桌子",
+    "prompt2": "写桌字",
     "sentence": "这是“桌”字。"
   },
   {
@@ -949,6 +1185,8 @@ window.HSK_CHARS = [
     "meaning": "chair",
     "level": 1,
     "phrase": "椅子",
+    "prompt1": "椅子",
+    "prompt2": "写椅字",
     "sentence": "这是“椅”字。"
   },
   {
@@ -957,6 +1195,8 @@ window.HSK_CHARS = [
     "meaning": "to like",
     "level": 1,
     "phrase": "喜欢",
+    "prompt1": "喜欢",
+    "prompt2": "欢迎",
     "sentence": "这是“欢”字。"
   },
   {
@@ -965,6 +1205,8 @@ window.HSK_CHARS = [
     "meaning": "you're welcome; don't be polite",
     "level": 1,
     "phrase": "不客气",
+    "prompt1": "天气",
+    "prompt2": "不客气",
     "sentence": "这是“气”字。"
   },
   {
@@ -973,6 +1215,8 @@ window.HSK_CHARS = [
     "meaning": "water",
     "level": 1,
     "phrase": "水",
+    "prompt1": "水果",
+    "prompt2": "水平",
     "sentence": "这是“水”字。"
   },
   {
@@ -981,6 +1225,8 @@ window.HSK_CHARS = [
     "meaning": "Chinese language",
     "level": 1,
     "phrase": "汉语",
+    "prompt1": "汉语",
+    "prompt2": "写汉字",
     "sentence": "这是“汉”字。"
   },
   {
@@ -989,6 +1235,8 @@ window.HSK_CHARS = [
     "meaning": "it doesn't matter; never mind",
     "level": 1,
     "phrase": "没关系",
+    "prompt1": "没有",
+    "prompt2": "没关系",
     "sentence": "这是“没”字。"
   },
   {
@@ -997,6 +1245,8 @@ window.HSK_CHARS = [
     "meaning": "pretty; beautiful",
     "level": 1,
     "phrase": "漂亮",
+    "prompt1": "漂亮",
+    "prompt2": "漂浮",
     "sentence": "这是“漂”字。"
   },
   {
@@ -1005,6 +1255,8 @@ window.HSK_CHARS = [
     "meaning": "a dot; a little; o'clock",
     "level": 1,
     "phrase": "点",
+    "prompt1": "一点儿",
+    "prompt2": "重点",
     "sentence": "这是“点”字。"
   },
   {
@@ -1013,6 +1265,8 @@ window.HSK_CHARS = [
     "meaning": "heat; hot",
     "level": 1,
     "phrase": "热",
+    "prompt1": "热情",
+    "prompt2": "热闹",
     "sentence": "这是“热”字。"
   },
   {
@@ -1021,6 +1275,8 @@ window.HSK_CHARS = [
     "meaning": "love",
     "level": 1,
     "phrase": "爱",
+    "prompt1": "爱好",
+    "prompt2": "可爱",
     "sentence": "这是“爱”字。"
   },
   {
@@ -1029,6 +1285,8 @@ window.HSK_CHARS = [
     "meaning": "Dad",
     "level": 1,
     "phrase": "爸爸",
+    "prompt1": "爸爸",
+    "prompt2": "写爸字",
     "sentence": "这是“爸”字。"
   },
   {
@@ -1037,6 +1295,8 @@ window.HSK_CHARS = [
     "meaning": "dog",
     "level": 1,
     "phrase": "狗",
+    "prompt1": "狗字",
+    "prompt2": "写狗字",
     "sentence": "这是“狗”字。"
   },
   {
@@ -1045,6 +1305,8 @@ window.HSK_CHARS = [
     "meaning": "cat",
     "level": 1,
     "phrase": "猫",
+    "prompt1": "熊猫",
+    "prompt2": "写猫字",
     "sentence": "这是“猫”字。"
   },
   {
@@ -1053,6 +1315,8 @@ window.HSK_CHARS = [
     "meaning": "now",
     "level": 1,
     "phrase": "现在",
+    "prompt1": "现在",
+    "prompt2": "发现",
     "sentence": "这是“现”字。"
   },
   {
@@ -1061,6 +1325,8 @@ window.HSK_CHARS = [
     "meaning": "Mr.; Sir",
     "level": 1,
     "phrase": "先生",
+    "prompt1": "先生",
+    "prompt2": "学生",
     "sentence": "这是“生”字。"
   },
   {
@@ -1069,6 +1335,8 @@ window.HSK_CHARS = [
     "meaning": "make a phone call",
     "level": 1,
     "phrase": "打电话",
+    "prompt1": "电影",
+    "prompt2": "电视",
     "sentence": "这是“电”字。"
   },
   {
@@ -1077,6 +1345,8 @@ window.HSK_CHARS = [
     "meaning": "indicates possession, like adding 's to a noun",
     "level": 1,
     "phrase": "的",
+    "prompt1": "目的",
+    "prompt2": "的确",
     "sentence": "这是“的”字。"
   },
   {
@@ -1085,6 +1355,8 @@ window.HSK_CHARS = [
     "meaning": "see; look at; to watch",
     "level": 1,
     "phrase": "看",
+    "prompt1": "看见",
+    "prompt2": "看法",
     "sentence": "这是“看”字。"
   },
   {
@@ -1093,6 +1365,8 @@ window.HSK_CHARS = [
     "meaning": "to sleep; go to bed",
     "level": 1,
     "phrase": "睡觉",
+    "prompt1": "睡觉",
+    "prompt2": "写睡字",
     "sentence": "这是“睡”字。"
   },
   {
@@ -1101,6 +1375,8 @@ window.HSK_CHARS = [
     "meaning": "to rent",
     "level": 1,
     "phrase": "租",
+    "prompt1": "出租车",
+    "prompt2": "租赁",
     "sentence": "这是“租”字。"
   },
   {
@@ -1109,6 +1385,8 @@ window.HSK_CHARS = [
     "meaning": "rice; meter (Kangxi radical 119)",
     "level": 1,
     "phrase": "米",
+    "prompt1": "米饭",
+    "prompt2": "玉米",
     "sentence": "这是“米”字。"
   },
   {
@@ -1117,6 +1395,8 @@ window.HSK_CHARS = [
     "meaning": "be; relate to; system; fasten; department; faculty; connect | to tie",
     "level": 1,
     "phrase": "系",
+    "prompt1": "没关系",
+    "prompt2": "关系",
     "sentence": "这是“系”字。"
   },
   {
@@ -1125,6 +1405,8 @@ window.HSK_CHARS = [
     "meaning": "old; aged; tough; often (Kangxi radical 125)",
     "level": 1,
     "phrase": "老",
+    "prompt1": "老师",
+    "prompt2": "老虎",
     "sentence": "这是“老”字。"
   },
   {
@@ -1133,6 +1415,8 @@ window.HSK_CHARS = [
     "meaning": "can; be able",
     "level": 1,
     "phrase": "能",
+    "prompt1": "可能",
+    "prompt2": "能力",
     "sentence": "这是“能”字。"
   },
   {
@@ -1141,6 +1425,8 @@ window.HSK_CHARS = [
     "meaning": "computer",
     "level": 1,
     "phrase": "电脑",
+    "prompt1": "电脑",
+    "prompt2": "脑袋",
     "sentence": "这是“脑”字。"
   },
   {
@@ -1149,6 +1435,8 @@ window.HSK_CHARS = [
     "meaning": "apple",
     "level": 1,
     "phrase": "苹果",
+    "prompt1": "苹果",
+    "prompt2": "写苹字",
     "sentence": "这是“苹”字。"
   },
   {
@@ -1157,6 +1445,8 @@ window.HSK_CHARS = [
     "meaning": "tea",
     "level": 1,
     "phrase": "茶",
+    "prompt1": "茶字",
+    "prompt2": "写茶字",
     "sentence": "这是“茶”字。"
   },
   {
@@ -1165,6 +1455,8 @@ window.HSK_CHARS = [
     "meaning": "dish (type of food); vegetables",
     "level": 1,
     "phrase": "菜",
+    "prompt1": "菜单",
+    "prompt2": "蔬菜",
     "sentence": "这是“菜”字。"
   },
   {
@@ -1173,6 +1465,8 @@ window.HSK_CHARS = [
     "meaning": "clothes",
     "level": 1,
     "phrase": "衣服",
+    "prompt1": "衣服",
+    "prompt2": "衣裳",
     "sentence": "这是“衣”字。"
   },
   {
@@ -1181,6 +1475,8 @@ window.HSK_CHARS = [
     "meaning": "West (Kangxi radical 146)",
     "level": 1,
     "phrase": "西",
+    "prompt1": "东西",
+    "prompt2": "西瓜",
     "sentence": "这是“西”字。"
   },
   {
@@ -1189,6 +1485,8 @@ window.HSK_CHARS = [
     "meaning": "see; catch sight of",
     "level": 1,
     "phrase": "看见",
+    "prompt1": "再见",
+    "prompt2": "看见",
     "sentence": "这是“见”字。"
   },
   {
@@ -1197,6 +1495,8 @@ window.HSK_CHARS = [
     "meaning": "television; TV",
     "level": 1,
     "phrase": "电视",
+    "prompt1": "电视",
+    "prompt2": "重视",
     "sentence": "这是“视”字。"
   },
   {
@@ -1205,6 +1505,8 @@ window.HSK_CHARS = [
     "meaning": "to sleep; go to bed",
     "level": 1,
     "phrase": "睡觉",
+    "prompt1": "睡觉",
+    "prompt2": "觉得",
     "sentence": "这是“觉”字。"
   },
   {
@@ -1213,6 +1515,8 @@ window.HSK_CHARS = [
     "meaning": "recognize; know (a person)",
     "level": 1,
     "phrase": "认识",
+    "prompt1": "认识",
+    "prompt2": "认真",
     "sentence": "这是“认”字。"
   },
   {
@@ -1221,6 +1525,8 @@ window.HSK_CHARS = [
     "meaning": "recognize; know (a person)",
     "level": 1,
     "phrase": "认识",
+    "prompt1": "认识",
+    "prompt2": "知识",
     "sentence": "这是“识”字。"
   },
   {
@@ -1229,6 +1535,8 @@ window.HSK_CHARS = [
     "meaning": "make a phone call",
     "level": 1,
     "phrase": "打电话",
+    "prompt1": "打电话",
+    "prompt2": "说话",
     "sentence": "这是“话”字。"
   },
   {
@@ -1237,6 +1545,8 @@ window.HSK_CHARS = [
     "meaning": "Chinese language",
     "level": 1,
     "phrase": "汉语",
+    "prompt1": "汉语",
+    "prompt2": "语言",
     "sentence": "这是“语”字。"
   },
   {
@@ -1245,6 +1555,8 @@ window.HSK_CHARS = [
     "meaning": "speak",
     "level": 1,
     "phrase": "说",
+    "prompt1": "说话",
+    "prompt2": "小说",
     "sentence": "这是“说”字。"
   },
   {
@@ -1253,6 +1565,8 @@ window.HSK_CHARS = [
     "meaning": "please; invite; to treat someone to something",
     "level": 1,
     "phrase": "请",
+    "prompt1": "请假",
+    "prompt2": "邀请",
     "sentence": "这是“请”字。"
   },
   {
@@ -1261,6 +1575,8 @@ window.HSK_CHARS = [
     "meaning": "to read; to study",
     "level": 1,
     "phrase": "读",
+    "prompt1": "阅读",
+    "prompt2": "朗读",
     "sentence": "这是“读”字。"
   },
   {
@@ -1269,6 +1585,8 @@ window.HSK_CHARS = [
     "meaning": "who",
     "level": 1,
     "phrase": "谁",
+    "prompt1": "谁字",
+    "prompt2": "写谁字",
     "sentence": "这是“谁”字。"
   },
   {
@@ -1277,6 +1595,8 @@ window.HSK_CHARS = [
     "meaning": "thank you",
     "level": 1,
     "phrase": "谢谢",
+    "prompt1": "谢谢",
+    "prompt2": "感谢",
     "sentence": "这是“谢”字。"
   },
   {
@@ -1285,6 +1605,8 @@ window.HSK_CHARS = [
     "meaning": "sorry",
     "level": 1,
     "phrase": "对不起",
+    "prompt1": "对不起",
+    "prompt2": "起床",
     "sentence": "这是“起”字。"
   },
   {
@@ -1293,6 +1615,8 @@ window.HSK_CHARS = [
     "meaning": "taxi; cab",
     "level": 1,
     "phrase": "出租车",
+    "prompt1": "出租车",
+    "prompt2": "火车站",
     "sentence": "这是“车”字。"
   },
   {
@@ -1301,6 +1625,8 @@ window.HSK_CHARS = [
     "meaning": "this",
     "level": 1,
     "phrase": "这",
+    "prompt1": "这里",
+    "prompt2": "这个",
     "sentence": "这是“这”字。"
   },
   {
@@ -1309,6 +1635,8 @@ window.HSK_CHARS = [
     "meaning": "that; then",
     "level": 1,
     "phrase": "那",
+    "prompt1": "刹那",
+    "prompt2": "那个",
     "sentence": "这是“那”字。"
   },
   {
@@ -1317,6 +1645,8 @@ window.HSK_CHARS = [
     "meaning": "all; both",
     "level": 1,
     "phrase": "都",
+    "prompt1": "首都",
+    "prompt2": "写都字",
     "sentence": "这是“都”字。"
   },
   {
@@ -1325,6 +1655,8 @@ window.HSK_CHARS = [
     "meaning": "inside; Chinese mile (~.5 km)",
     "level": 1,
     "phrase": "里",
+    "prompt1": "公里",
+    "prompt2": "里程碑",
     "sentence": "这是“里”字。"
   },
   {
@@ -1333,6 +1665,8 @@ window.HSK_CHARS = [
     "meaning": "minute; (measure word for time)",
     "level": 1,
     "phrase": "分钟",
+    "prompt1": "分钟",
+    "prompt2": "写钟字",
     "sentence": "这是“钟”字。"
   },
   {
@@ -1341,6 +1675,8 @@ window.HSK_CHARS = [
     "meaning": "money; coin",
     "level": 1,
     "phrase": "钱",
+    "prompt1": "零钱",
+    "prompt2": "本钱",
     "sentence": "这是“钱”字。"
   },
   {
@@ -1349,6 +1685,8 @@ window.HSK_CHARS = [
     "meaning": "hospital",
     "level": 1,
     "phrase": "医院",
+    "prompt1": "医院",
+    "prompt2": "法院",
     "sentence": "这是“院”字。"
   },
   {
@@ -1357,6 +1695,8 @@ window.HSK_CHARS = [
     "meaning": "to rain",
     "level": 1,
     "phrase": "下雨",
+    "prompt1": "下雨",
+    "prompt2": "写雨字",
     "sentence": "这是“雨”字。"
   },
   {
@@ -1365,6 +1705,8 @@ window.HSK_CHARS = [
     "meaning": "back; behind",
     "level": 1,
     "phrase": "后面",
+    "prompt1": "前面",
+    "prompt2": "后面",
     "sentence": "这是“面”字。"
   },
   {
@@ -1373,6 +1715,8 @@ window.HSK_CHARS = [
     "meaning": "airplane",
     "level": 1,
     "phrase": "飞机",
+    "prompt1": "飞机",
+    "prompt2": "起飞",
     "sentence": "这是“飞”字。"
   },
   {
@@ -1381,6 +1725,8 @@ window.HSK_CHARS = [
     "meaning": "restaurant; hotel",
     "level": 1,
     "phrase": "饭店",
+    "prompt1": "饭店",
+    "prompt2": "米饭",
     "sentence": "这是“饭”字。"
   },
   {
@@ -1389,6 +1735,8 @@ window.HSK_CHARS = [
     "meaning": "high; tall (Kangxi radical 189)",
     "level": 1,
     "phrase": "高",
+    "prompt1": "高兴",
+    "prompt2": "提高",
     "sentence": "这是“高”字。"
   },
   {
@@ -1397,6 +1745,8 @@ window.HSK_CHARS = [
     "meaning": "husband; man",
     "level": 2,
     "phrase": "丈夫",
+    "prompt1": "丈夫",
+    "prompt2": "写丈字",
     "sentence": "这是“丈”字。"
   },
   {
@@ -1405,6 +1755,8 @@ window.HSK_CHARS = [
     "meaning": "two; 2; both; (unit of weight equal to 50 grams)",
     "level": 2,
     "phrase": "两",
+    "prompt1": "一举两得",
+    "prompt2": "写两字",
     "sentence": "这是“两”字。"
   },
   {
@@ -1413,6 +1765,8 @@ window.HSK_CHARS = [
     "meaning": "for; because of; to; for the sake of",
     "level": 2,
     "phrase": "为",
+    "prompt1": "因为",
+    "prompt2": "为什么",
     "sentence": "这是“为”字。"
   },
   {
@@ -1421,6 +1775,8 @@ window.HSK_CHARS = [
     "meaning": "happy",
     "level": 2,
     "phrase": "快乐",
+    "prompt1": "快乐",
+    "prompt2": "音乐",
     "sentence": "这是“乐”字。"
   },
   {
@@ -1429,6 +1785,8 @@ window.HSK_CHARS = [
     "meaning": "also; too",
     "level": 2,
     "phrase": "也",
+    "prompt1": "也许",
+    "prompt2": "写也字",
     "sentence": "这是“也”字。"
   },
   {
@@ -1437,6 +1795,8 @@ window.HSK_CHARS = [
     "meaning": "matter; affair; thing; business",
     "level": 2,
     "phrase": "事情",
+    "prompt1": "事情",
+    "prompt2": "故事",
     "sentence": "这是“事”字。"
   },
   {
@@ -1445,6 +1805,8 @@ window.HSK_CHARS = [
     "meaning": "to introduce; recommend; introduction",
     "level": 2,
     "phrase": "介绍",
+    "prompt1": "介绍",
+    "prompt2": "中介",
     "sentence": "这是“介”字。"
   },
   {
@@ -1453,6 +1815,8 @@ window.HSK_CHARS = [
     "meaning": "from; obey; observe",
     "level": 2,
     "phrase": "从",
+    "prompt1": "从来",
+    "prompt2": "自从",
     "sentence": "这是“从”字。"
   },
   {
@@ -1461,6 +1825,8 @@ window.HSK_CHARS = [
     "meaning": "to use; according to; so as to; for; by",
     "level": 2,
     "phrase": "以",
+    "prompt1": "可以",
+    "prompt2": "所以",
     "sentence": "这是“以”字。"
   },
   {
@@ -1469,6 +1835,8 @@ window.HSK_CHARS = [
     "meaning": "(mw for things, clothes, and items)",
     "level": 2,
     "phrase": "件",
+    "prompt1": "条件",
+    "prompt2": "电子邮件",
     "sentence": "这是“件”字。"
   },
   {
@@ -1477,6 +1845,8 @@ window.HSK_CHARS = [
     "meaning": "to rest; take a break",
     "level": 2,
     "phrase": "休息",
+    "prompt1": "休息",
+    "prompt2": "退休",
     "sentence": "这是“休”字。"
   },
   {
@@ -1485,6 +1855,8 @@ window.HSK_CHARS = [
     "meaning": "but; however",
     "level": 2,
     "phrase": "但是",
+    "prompt1": "但是",
+    "prompt2": "不但",
     "sentence": "这是“但”字。"
   },
   {
@@ -1493,6 +1865,8 @@ window.HSK_CHARS = [
     "meaning": "health; (human) body",
     "level": 2,
     "phrase": "身体",
+    "prompt1": "身体",
+    "prompt2": "体育",
     "sentence": "这是“体”字。"
   },
   {
@@ -1501,6 +1875,8 @@ window.HSK_CHARS = [
     "meaning": "plain; convenient; excretion; formal equivalent to | cheap",
     "level": 2,
     "phrase": "便",
+    "prompt1": "便宜",
+    "prompt2": "方便",
     "sentence": "这是“便”字。"
   },
   {
@@ -1509,6 +1885,8 @@ window.HSK_CHARS = [
     "meaning": "(public) bus",
     "level": 2,
     "phrase": "公共汽车",
+    "prompt1": "公司",
+    "prompt2": "公斤",
     "sentence": "这是“公”字。"
   },
   {
@@ -1517,6 +1895,8 @@ window.HSK_CHARS = [
     "meaning": "(public) bus",
     "level": 2,
     "phrase": "公共汽车",
+    "prompt1": "一共",
+    "prompt2": "公共汽车",
     "sentence": "这是“共”字。"
   },
   {
@@ -1525,6 +1905,8 @@ window.HSK_CHARS = [
     "meaning": "prepare; get ready",
     "level": 2,
     "phrase": "准备",
+    "prompt1": "准备",
+    "prompt2": "标准",
     "sentence": "这是“准”字。"
   },
   {
@@ -1533,6 +1915,8 @@ window.HSK_CHARS = [
     "meaning": "don't do something; don't | depart; | other; difference; distinguish",
     "level": 2,
     "phrase": "别",
+    "prompt1": "别人",
+    "prompt2": "特别",
     "sentence": "这是“别”字。"
   },
   {
@@ -1541,6 +1925,8 @@ window.HSK_CHARS = [
     "meaning": "arrive (at a place); until (a time)",
     "level": 2,
     "phrase": "到",
+    "prompt1": "迟到",
+    "prompt2": "遇到",
     "sentence": "这是“到”字。"
   },
   {
@@ -1549,6 +1935,8 @@ window.HSK_CHARS = [
     "meaning": "waiter/waitress; server; attendant",
     "level": 2,
     "phrase": "服务员",
+    "prompt1": "服务员",
+    "prompt2": "任务",
     "sentence": "这是“务”字。"
   },
   {
@@ -1557,6 +1945,8 @@ window.HSK_CHARS = [
     "meaning": "(physical) exercise; movement; sports; campaign",
     "level": 2,
     "phrase": "运动",
+    "prompt1": "运动",
+    "prompt2": "动物",
     "sentence": "这是“动”字。"
   },
   {
@@ -1565,6 +1955,8 @@ window.HSK_CHARS = [
     "meaning": "help; assist; aid",
     "level": 2,
     "phrase": "帮助",
+    "prompt1": "帮助",
+    "prompt2": "助理",
     "sentence": "这是“助”字。"
   },
   {
@@ -1573,6 +1965,8 @@ window.HSK_CHARS = [
     "meaning": "one thousand",
     "level": 2,
     "phrase": "千",
+    "prompt1": "千万",
+    "prompt2": "千方百计",
     "sentence": "这是“千”字。"
   },
   {
@@ -1581,6 +1975,8 @@ window.HSK_CHARS = [
     "meaning": "to sell",
     "level": 2,
     "phrase": "卖",
+    "prompt1": "出卖",
+    "prompt2": "贩卖",
     "sentence": "这是“卖”字。"
   },
   {
@@ -1589,6 +1985,8 @@ window.HSK_CHARS = [
     "meaning": "possible; maybe",
     "level": 2,
     "phrase": "可能",
+    "prompt1": "可以",
+    "prompt2": "可能",
     "sentence": "这是“可”字。"
   },
   {
@@ -1597,6 +1995,8 @@ window.HSK_CHARS = [
     "meaning": "the right (as opposed to left) side",
     "level": 2,
     "phrase": "右边",
+    "prompt1": "右边",
+    "prompt2": "左右",
     "sentence": "这是“右”字。"
   },
   {
@@ -1605,6 +2005,8 @@ window.HSK_CHARS = [
     "meaning": "company; corporation",
     "level": 2,
     "phrase": "公司",
+    "prompt1": "公司",
+    "prompt2": "司机",
     "sentence": "这是“司”字。"
   },
   {
@@ -1613,6 +2015,8 @@ window.HSK_CHARS = [
     "meaning": "particle indicating polite suggestion; | onomatopoeia | bar (serving drinks, providing internet access, etc.)",
     "level": 2,
     "phrase": "吧",
+    "prompt1": "酒吧",
+    "prompt2": "走吧",
     "sentence": "这是“吧”字。"
   },
   {
@@ -1621,6 +2025,8 @@ window.HSK_CHARS = [
     "meaning": "to tell; inform",
     "level": 2,
     "phrase": "告诉",
+    "prompt1": "告诉",
+    "prompt2": "广告",
     "sentence": "这是“告”字。"
   },
   {
@@ -1629,6 +2035,8 @@ window.HSK_CHARS = [
     "meaning": "waiter/waitress; server; attendant",
     "level": 2,
     "phrase": "服务员",
+    "prompt1": "服务员",
+    "prompt2": "演员",
     "sentence": "这是“员”字。"
   },
   {
@@ -1637,6 +2045,8 @@ window.HSK_CHARS = [
     "meaning": "coffee",
     "level": 2,
     "phrase": "咖啡",
+    "prompt1": "咖啡",
+    "prompt2": "写咖字",
     "sentence": "这是“咖”字。"
   },
   {
@@ -1645,6 +2055,8 @@ window.HSK_CHARS = [
     "meaning": "older brother",
     "level": 2,
     "phrase": "哥哥",
+    "prompt1": "哥哥",
+    "prompt2": "写哥字",
     "sentence": "这是“哥”字。"
   },
   {
@@ -1653,6 +2065,8 @@ window.HSK_CHARS = [
     "meaning": "sing (a song)",
     "level": 2,
     "phrase": "唱歌",
+    "prompt1": "唱歌",
+    "prompt2": "写唱字",
     "sentence": "这是“唱”字。"
   },
   {
@@ -1661,6 +2075,8 @@ window.HSK_CHARS = [
     "meaning": "coffee",
     "level": 2,
     "phrase": "咖啡",
+    "prompt1": "咖啡",
+    "prompt2": "写啡字",
     "sentence": "这是“啡”字。"
   },
   {
@@ -1669,6 +2085,8 @@ window.HSK_CHARS = [
     "meaning": "because",
     "level": 2,
     "phrase": "因为",
+    "prompt1": "因为",
+    "prompt2": "原因",
     "sentence": "这是“因”字。"
   },
   {
@@ -1677,6 +2095,8 @@ window.HSK_CHARS = [
     "meaning": "courtyard; place; field; (mw for games, performances, etc.)",
     "level": 2,
     "phrase": "场",
+    "prompt1": "机场",
+    "prompt2": "操场",
     "sentence": "这是“场”字。"
   },
   {
@@ -1685,6 +2105,8 @@ window.HSK_CHARS = [
     "meaning": "prepare; get ready",
     "level": 2,
     "phrase": "准备",
+    "prompt1": "准备",
+    "prompt2": "责备",
     "sentence": "这是“备”字。"
   },
   {
@@ -1693,6 +2115,8 @@ window.HSK_CHARS = [
     "meaning": "outer; outside; in addition; foreign",
     "level": 2,
     "phrase": "外",
+    "prompt1": "另外",
+    "prompt2": "外公",
     "sentence": "这是“外”字。"
   },
   {
@@ -1701,6 +2125,8 @@ window.HSK_CHARS = [
     "meaning": "husband; man",
     "level": 2,
     "phrase": "丈夫",
+    "prompt1": "丈夫",
+    "prompt2": "大夫",
     "sentence": "这是“夫”字。"
   },
   {
@@ -1709,6 +2135,8 @@ window.HSK_CHARS = [
     "meaning": "cow's milk",
     "level": 2,
     "phrase": "牛奶",
+    "prompt1": "牛奶",
+    "prompt2": "奶奶",
     "sentence": "这是“奶”字。"
   },
   {
@@ -1717,6 +2145,8 @@ window.HSK_CHARS = [
     "meaning": "younger sister",
     "level": 2,
     "phrase": "妹妹",
+    "prompt1": "妹妹",
+    "prompt2": "写妹字",
     "sentence": "这是“妹”字。"
   },
   {
@@ -1725,6 +2155,8 @@ window.HSK_CHARS = [
     "meaning": "wife",
     "level": 2,
     "phrase": "妻子",
+    "prompt1": "妻子",
+    "prompt2": "写妻字",
     "sentence": "这是“妻”字。"
   },
   {
@@ -1733,6 +2165,8 @@ window.HSK_CHARS = [
     "meaning": "begin; to start; beginning",
     "level": 2,
     "phrase": "开始",
+    "prompt1": "开始",
+    "prompt2": "始终",
     "sentence": "这是“始”字。"
   },
   {
@@ -1741,6 +2175,8 @@ window.HSK_CHARS = [
     "meaning": "surname; family name",
     "level": 2,
     "phrase": "姓",
+    "prompt1": "老百姓",
+    "prompt2": "写姓字",
     "sentence": "这是“姓”字。"
   },
   {
@@ -1749,6 +2185,8 @@ window.HSK_CHARS = [
     "meaning": "child; children; son or daughter",
     "level": 2,
     "phrase": "孩子",
+    "prompt1": "孩子",
+    "prompt2": "写孩字",
     "sentence": "这是“孩”字。"
   },
   {
@@ -1757,6 +2195,8 @@ window.HSK_CHARS = [
     "meaning": "it",
     "level": 2,
     "phrase": "它",
+    "prompt1": "它字",
+    "prompt2": "写它字",
     "sentence": "这是“它”字。"
   },
   {
@@ -1765,6 +2205,8 @@ window.HSK_CHARS = [
     "meaning": "to finish; be over; complete",
     "level": 2,
     "phrase": "完",
+    "prompt1": "完成",
+    "prompt2": "完全",
     "sentence": "这是“完”字。"
   },
   {
@@ -1773,6 +2215,8 @@ window.HSK_CHARS = [
     "meaning": "cheap",
     "level": 2,
     "phrase": "便宜",
+    "prompt1": "便宜",
+    "prompt2": "适宜",
     "sentence": "这是“宜”字。"
   },
   {
@@ -1781,6 +2225,8 @@ window.HSK_CHARS = [
     "meaning": "classroom",
     "level": 2,
     "phrase": "教室",
+    "prompt1": "教室",
+    "prompt2": "办公室",
     "sentence": "这是“室”字。"
   },
   {
@@ -1789,6 +2235,8 @@ window.HSK_CHARS = [
     "meaning": "guesthouse; hotel",
     "level": 2,
     "phrase": "宾馆",
+    "prompt1": "宾馆",
+    "prompt2": "嘉宾",
     "sentence": "这是“宾”字。"
   },
   {
@@ -1797,6 +2245,8 @@ window.HSK_CHARS = [
     "meaning": "then; at once; just; only; with regard to",
     "level": 2,
     "phrase": "就",
+    "prompt1": "成就",
+    "prompt2": "就近",
     "sentence": "这是“就”字。"
   },
   {
@@ -1805,6 +2255,8 @@ window.HSK_CHARS = [
     "meaning": "the left side; the left",
     "level": 2,
     "phrase": "左边",
+    "prompt1": "左边",
+    "prompt2": "左右",
     "sentence": "这是“左”字。"
   },
   {
@@ -1813,6 +2265,8 @@ window.HSK_CHARS = [
     "meaning": "already",
     "level": 2,
     "phrase": "已经",
+    "prompt1": "已经",
+    "prompt2": "而已",
     "sentence": "这是“已”字。"
   },
   {
@@ -1821,6 +2275,8 @@ window.HSK_CHARS = [
     "meaning": "to hope; wish for; to desire",
     "level": 2,
     "phrase": "希望",
+    "prompt1": "希望",
+    "prompt2": "写希字",
     "sentence": "这是“希”字。"
   },
   {
@@ -1829,6 +2285,8 @@ window.HSK_CHARS = [
     "meaning": "help; assist; aid",
     "level": 2,
     "phrase": "帮助",
+    "prompt1": "帮助",
+    "prompt2": "帮忙",
     "sentence": "这是“帮”字。"
   },
   {
@@ -1837,6 +2295,8 @@ window.HSK_CHARS = [
     "meaning": "extremely; extraordinary; very",
     "level": 2,
     "phrase": "非常",
+    "prompt1": "非常",
+    "prompt2": "经常",
     "sentence": "这是“常”字。"
   },
   {
@@ -1845,6 +2305,8 @@ window.HSK_CHARS = [
     "meaning": "get out of bed",
     "level": 2,
     "phrase": "起床",
+    "prompt1": "起床",
+    "prompt2": "床单",
     "sentence": "这是“床”字。"
   },
   {
@@ -1853,6 +2315,8 @@ window.HSK_CHARS = [
     "meaning": "younger brother",
     "level": 2,
     "phrase": "弟弟",
+    "prompt1": "弟弟",
+    "prompt2": "兄弟",
     "sentence": "这是“弟”字。"
   },
   {
@@ -1861,6 +2325,8 @@ window.HSK_CHARS = [
     "meaning": "to go (in a direction); towards; in the past",
     "level": 2,
     "phrase": "往",
+    "prompt1": "往返",
+    "prompt2": "交往",
     "sentence": "这是“往”字。"
   },
   {
@@ -1869,6 +2335,8 @@ window.HSK_CHARS = [
     "meaning": "(complement particle)",
     "level": 2,
     "phrase": "得",
+    "prompt1": "觉得",
+    "prompt2": "记得",
     "sentence": "这是“得”字。"
   },
   {
@@ -1877,6 +2345,8 @@ window.HSK_CHARS = [
     "meaning": "busy",
     "level": 2,
     "phrase": "忙",
+    "prompt1": "帮忙",
+    "prompt2": "连忙",
     "sentence": "这是“忙”字。"
   },
   {
@@ -1885,6 +2355,8 @@ window.HSK_CHARS = [
     "meaning": "fast; quick; swift",
     "level": 2,
     "phrase": "快",
+    "prompt1": "快乐",
+    "prompt2": "愉快",
     "sentence": "这是“快”字。"
   },
   {
@@ -1893,6 +2365,8 @@ window.HSK_CHARS = [
     "meaning": "meaning; idea; opinion",
     "level": 2,
     "phrase": "意思",
+    "prompt1": "意思",
+    "prompt2": "思考",
     "sentence": "这是“思”字。"
   },
   {
@@ -1901,6 +2375,8 @@ window.HSK_CHARS = [
     "meaning": "to rest; take a break",
     "level": 2,
     "phrase": "休息",
+    "prompt1": "休息",
+    "prompt2": "消息",
     "sentence": "这是“息”字。"
   },
   {
@@ -1909,6 +2385,8 @@ window.HSK_CHARS = [
     "meaning": "you (polite)",
     "level": 2,
     "phrase": "您",
+    "prompt1": "您字",
+    "prompt2": "写您字",
     "sentence": "这是“您”字。"
   },
   {
@@ -1917,6 +2395,8 @@ window.HSK_CHARS = [
     "meaning": "matter; affair; thing; business",
     "level": 2,
     "phrase": "事情",
+    "prompt1": "事情",
+    "prompt2": "热情",
     "sentence": "这是“情”字。"
   },
   {
@@ -1925,6 +2405,8 @@ window.HSK_CHARS = [
     "meaning": "meaning; idea; opinion",
     "level": 2,
     "phrase": "意思",
+    "prompt1": "意思",
+    "prompt2": "满意",
     "sentence": "这是“意”字。"
   },
   {
@@ -1933,6 +2415,8 @@ window.HSK_CHARS = [
     "meaning": "slow",
     "level": 2,
     "phrase": "慢",
+    "prompt1": "慢性",
+    "prompt2": "怠慢",
     "sentence": "这是“慢”字。"
   },
   {
@@ -1941,6 +2425,8 @@ window.HSK_CHARS = [
     "meaning": "understand; know",
     "level": 2,
     "phrase": "懂",
+    "prompt1": "懂字",
+    "prompt2": "写懂字",
     "sentence": "这是“懂”字。"
   },
   {
@@ -1949,6 +2435,8 @@ window.HSK_CHARS = [
     "meaning": "room",
     "level": 2,
     "phrase": "房间",
+    "prompt1": "房间",
+    "prompt2": "厨房",
     "sentence": "这是“房”字。"
   },
   {
@@ -1957,6 +2445,8 @@ window.HSK_CHARS = [
     "meaning": "place; that which; (mw for houses, buildings)",
     "level": 2,
     "phrase": "所",
+    "prompt1": "所以",
+    "prompt2": "厕所",
     "sentence": "这是“所”字。"
   },
   {
@@ -1965,6 +2455,8 @@ window.HSK_CHARS = [
     "meaning": "wristwatch",
     "level": 2,
     "phrase": "手表",
+    "prompt1": "手机",
+    "prompt2": "手表",
     "sentence": "这是“手”字。"
   },
   {
@@ -1973,6 +2465,8 @@ window.HSK_CHARS = [
     "meaning": "try to find; look for; seek; to give change",
     "level": 2,
     "phrase": "找",
+    "prompt1": "寻找",
+    "prompt2": "写找字",
     "sentence": "这是“找”字。"
   },
   {
@@ -1981,6 +2475,8 @@ window.HSK_CHARS = [
     "meaning": "newspaper",
     "level": 2,
     "phrase": "报纸",
+    "prompt1": "报纸",
+    "prompt2": "报名",
     "sentence": "这是“报”字。"
   },
   {
@@ -1989,6 +2485,8 @@ window.HSK_CHARS = [
     "meaning": "teach; instruct | religion; teaching",
     "level": 2,
     "phrase": "教",
+    "prompt1": "教室",
+    "prompt2": "教育",
     "sentence": "这是“教”字。"
   },
   {
@@ -1997,6 +2495,8 @@ window.HSK_CHARS = [
     "meaning": "new; Xinjiang autonomous region (abbreviation)",
     "level": 2,
     "phrase": "新",
+    "prompt1": "新闻",
+    "prompt2": "新鲜",
     "sentence": "这是“新”字。"
   },
   {
@@ -2005,6 +2505,8 @@ window.HSK_CHARS = [
     "meaning": "side, beside",
     "level": 2,
     "phrase": "旁边",
+    "prompt1": "旁边",
+    "prompt2": "写旁字",
     "sentence": "这是“旁”字。"
   },
   {
@@ -2013,6 +2515,8 @@ window.HSK_CHARS = [
     "meaning": "trip; journey; tour",
     "level": 2,
     "phrase": "旅游",
+    "prompt1": "旅游",
+    "prompt2": "旅行",
     "sentence": "这是“旅”字。"
   },
   {
@@ -2021,6 +2525,8 @@ window.HSK_CHARS = [
     "meaning": "sun; day; date; time (Kangxi radical 72)",
     "level": 2,
     "phrase": "日",
+    "prompt1": "生日",
+    "prompt2": "节日",
     "sentence": "这是“日”字。"
   },
   {
@@ -2029,6 +2535,8 @@ window.HSK_CHARS = [
     "meaning": "(early) morning",
     "level": 2,
     "phrase": "早上",
+    "prompt1": "早上",
+    "prompt2": "迟早",
     "sentence": "这是“早”字。"
   },
   {
@@ -2037,6 +2545,8 @@ window.HSK_CHARS = [
     "meaning": "evening; night",
     "level": 2,
     "phrase": "晚上",
+    "prompt1": "晚上",
+    "prompt2": "傍晚",
     "sentence": "这是“晚”字。"
   },
   {
@@ -2045,6 +2555,8 @@ window.HSK_CHARS = [
     "meaning": "clear; fine (as of weather)",
     "level": 2,
     "phrase": "晴",
+    "prompt1": "晴朗",
+    "prompt2": "写晴字",
     "sentence": "这是“晴”字。"
   },
   {
@@ -2053,6 +2565,8 @@ window.HSK_CHARS = [
     "meaning": "the most; -est; (indicator for superlative)",
     "level": 2,
     "phrase": "最",
+    "prompt1": "最后",
+    "prompt2": "最近",
     "sentence": "这是“最”字。"
   },
   {
@@ -2061,6 +2575,8 @@ window.HSK_CHARS = [
     "meaning": "to hope; wish for; to desire",
     "level": 2,
     "phrase": "希望",
+    "prompt1": "希望",
+    "prompt2": "失望",
     "sentence": "这是“望”字。"
   },
   {
@@ -2069,6 +2585,8 @@ window.HSK_CHARS = [
     "meaning": "strip; (mw for long thin objects); item",
     "level": 2,
     "phrase": "条",
+    "prompt1": "面条",
+    "prompt2": "条件",
     "sentence": "这是“条”字。"
   },
   {
@@ -2077,6 +2595,8 @@ window.HSK_CHARS = [
     "meaning": "(mw for number of times of occurrence); nth; order",
     "level": 2,
     "phrase": "次",
+    "prompt1": "其次",
+    "prompt2": "次要",
     "sentence": "这是“次”字。"
   },
   {
@@ -2085,6 +2605,8 @@ window.HSK_CHARS = [
     "meaning": "sing (a song)",
     "level": 2,
     "phrase": "唱歌",
+    "prompt1": "唱歌",
+    "prompt2": "歌颂",
     "sentence": "这是“歌”字。"
   },
   {
@@ -2093,6 +2615,8 @@ window.HSK_CHARS = [
     "meaning": "straight; currently; correct; just (right); pure; precisely",
     "level": 2,
     "phrase": "正",
+    "prompt1": "正在",
+    "prompt2": "真正",
     "sentence": "这是“正”字。"
   },
   {
@@ -2101,6 +2625,8 @@ window.HSK_CHARS = [
     "meaning": "to run; to jog",
     "level": 2,
     "phrase": "跑步",
+    "prompt1": "跑步",
+    "prompt2": "散步",
     "sentence": "这是“步”字。"
   },
   {
@@ -2109,6 +2635,8 @@ window.HSK_CHARS = [
     "meaning": "each; every",
     "level": 2,
     "phrase": "每",
+    "prompt1": "每天",
+    "prompt2": "每次",
     "sentence": "这是“每”字。"
   },
   {
@@ -2117,6 +2645,8 @@ window.HSK_CHARS = [
     "meaning": "compare; (indicates comparison) (Kangxi radical 81); to gesticulate as one talks",
     "level": 2,
     "phrase": "比",
+    "prompt1": "比赛",
+    "prompt2": "比较",
     "sentence": "这是“比”字。"
   },
   {
@@ -2125,6 +2655,8 @@ window.HSK_CHARS = [
     "meaning": "(public) bus",
     "level": 2,
     "phrase": "公共汽车",
+    "prompt1": "公共汽车",
+    "prompt2": "汽油",
     "sentence": "这是“汽”字。"
   },
   {
@@ -2133,6 +2665,8 @@ window.HSK_CHARS = [
     "meaning": "to swim",
     "level": 2,
     "phrase": "游泳",
+    "prompt1": "游泳",
+    "prompt2": "写泳字",
     "sentence": "这是“泳”字。"
   },
   {
@@ -2141,6 +2675,8 @@ window.HSK_CHARS = [
     "meaning": "to wash; bathe",
     "level": 2,
     "phrase": "洗",
+    "prompt1": "洗澡",
+    "prompt2": "洗手间",
     "sentence": "这是“洗”字。"
   },
   {
@@ -2149,6 +2685,8 @@ window.HSK_CHARS = [
     "meaning": "trip; journey; tour",
     "level": 2,
     "phrase": "旅游",
+    "prompt1": "游泳",
+    "prompt2": "旅游",
     "sentence": "这是“游”字。"
   },
   {
@@ -2157,6 +2695,8 @@ window.HSK_CHARS = [
     "meaning": "fire (Kangxi radical 86)",
     "level": 2,
     "phrase": "火",
+    "prompt1": "火车站",
+    "prompt2": "着火",
     "sentence": "这是“火”字。"
   },
   {
@@ -2165,6 +2705,8 @@ window.HSK_CHARS = [
     "meaning": "although; even though",
     "level": 2,
     "phrase": "虽然",
+    "prompt1": "虽然",
+    "prompt2": "然后",
     "sentence": "这是“然”字。"
   },
   {
@@ -2173,6 +2715,8 @@ window.HSK_CHARS = [
     "meaning": "cow's milk",
     "level": 2,
     "phrase": "牛奶",
+    "prompt1": "牛奶",
+    "prompt2": "牛仔裤",
     "sentence": "这是“牛”字。"
   },
   {
@@ -2181,6 +2725,8 @@ window.HSK_CHARS = [
     "meaning": "to play; have a good time; visit; enjoy",
     "level": 2,
     "phrase": "玩",
+    "prompt1": "开玩笑",
+    "prompt2": "玩具",
     "sentence": "这是“玩”字。"
   },
   {
@@ -2189,6 +2735,8 @@ window.HSK_CHARS = [
     "meaning": "team; class; squad",
     "level": 2,
     "phrase": "班",
+    "prompt1": "上班",
+    "prompt2": "航班",
     "sentence": "这是“班”字。"
   },
   {
@@ -2197,6 +2745,8 @@ window.HSK_CHARS = [
     "meaning": "play basketball",
     "level": 2,
     "phrase": "打篮球",
+    "prompt1": "打篮球",
+    "prompt2": "踢足球",
     "sentence": "这是“球”字。"
   },
   {
@@ -2205,6 +2755,8 @@ window.HSK_CHARS = [
     "meaning": "watermelon",
     "level": 2,
     "phrase": "西瓜",
+    "prompt1": "西瓜",
+    "prompt2": "写瓜字",
     "sentence": "这是“瓜”字。"
   },
   {
@@ -2213,6 +2765,8 @@ window.HSK_CHARS = [
     "meaning": "male",
     "level": 2,
     "phrase": "男",
+    "prompt1": "男字",
+    "prompt2": "写男字",
     "sentence": "这是“男”字。"
   },
   {
@@ -2221,6 +2775,8 @@ window.HSK_CHARS = [
     "meaning": "get sick; fall ill",
     "level": 2,
     "phrase": "生病",
+    "prompt1": "生病",
+    "prompt2": "病毒",
     "sentence": "这是“病”字。"
   },
   {
@@ -2229,6 +2785,8 @@ window.HSK_CHARS = [
     "meaning": "white; snowy; pure; bright; empty (Kangxi radical 106)",
     "level": 2,
     "phrase": "白",
+    "prompt1": "明白",
+    "prompt2": "苍白",
     "sentence": "这是“白”字。"
   },
   {
@@ -2237,6 +2795,8 @@ window.HSK_CHARS = [
     "meaning": "hundred",
     "level": 2,
     "phrase": "百",
+    "prompt1": "百分之",
+    "prompt2": "老百姓",
     "sentence": "这是“百”字。"
   },
   {
@@ -2245,6 +2805,8 @@ window.HSK_CHARS = [
     "meaning": "real; true; genuine",
     "level": 2,
     "phrase": "真",
+    "prompt1": "认真",
+    "prompt2": "真正",
     "sentence": "这是“真”字。"
   },
   {
@@ -2253,6 +2815,8 @@ window.HSK_CHARS = [
     "meaning": "eye",
     "level": 2,
     "phrase": "眼睛",
+    "prompt1": "眼睛",
+    "prompt2": "眼镜",
     "sentence": "这是“眼”字。"
   },
   {
@@ -2261,6 +2825,8 @@ window.HSK_CHARS = [
     "meaning": "-ing (indicating action in progress)",
     "level": 2,
     "phrase": "着",
+    "prompt1": "着急",
+    "prompt2": "随着",
     "sentence": "这是“着”字。"
   },
   {
@@ -2269,6 +2835,8 @@ window.HSK_CHARS = [
     "meaning": "eye",
     "level": 2,
     "phrase": "眼睛",
+    "prompt1": "眼睛",
+    "prompt2": "写睛字",
     "sentence": "这是“睛”字。"
   },
   {
@@ -2277,6 +2845,8 @@ window.HSK_CHARS = [
     "meaning": "know; be aware of",
     "level": 2,
     "phrase": "知道",
+    "prompt1": "知道",
+    "prompt2": "通知",
     "sentence": "这是“知”字。"
   },
   {
@@ -2285,6 +2855,8 @@ window.HSK_CHARS = [
     "meaning": "ticket; bank note; a vote",
     "level": 2,
     "phrase": "票",
+    "prompt1": "发票",
+    "prompt2": "股票",
     "sentence": "这是“票”字。"
   },
   {
@@ -2293,6 +2865,8 @@ window.HSK_CHARS = [
     "meaning": "leave; depart; go away; apart from",
     "level": 2,
     "phrase": "离",
+    "prompt1": "离开",
+    "prompt2": "距离",
     "sentence": "这是“离”字。"
   },
   {
@@ -2301,6 +2875,8 @@ window.HSK_CHARS = [
     "meaning": "to wear; put on; penetrate",
     "level": 2,
     "phrase": "穿",
+    "prompt1": "穿越",
+    "prompt2": "写穿字",
     "sentence": "这是“穿”字。"
   },
   {
@@ -2309,6 +2885,8 @@ window.HSK_CHARS = [
     "meaning": "stand; a station; be on one's feet; service center",
     "level": 2,
     "phrase": "站",
+    "prompt1": "火车站",
+    "prompt2": "网站",
     "sentence": "这是“站”字。"
   },
   {
@@ -2317,6 +2895,8 @@ window.HSK_CHARS = [
     "meaning": "to laugh; to smile",
     "level": 2,
     "phrase": "笑",
+    "prompt1": "笑话",
+    "prompt2": "开玩笑",
     "sentence": "这是“笑”字。"
   },
   {
@@ -2325,6 +2905,8 @@ window.HSK_CHARS = [
     "meaning": "pencil",
     "level": 2,
     "phrase": "铅笔",
+    "prompt1": "铅笔",
+    "prompt2": "笔记本",
     "sentence": "这是“笔”字。"
   },
   {
@@ -2333,6 +2915,8 @@ window.HSK_CHARS = [
     "meaning": "first; number 1",
     "level": 2,
     "phrase": "第一",
+    "prompt1": "第一",
+    "prompt2": "写第字",
     "sentence": "这是“第”字。"
   },
   {
@@ -2341,6 +2925,8 @@ window.HSK_CHARS = [
     "meaning": "to wait; rank; equal; etc.",
     "level": 2,
     "phrase": "等",
+    "prompt1": "等于",
+    "prompt2": "平等",
     "sentence": "这是“等”字。"
   },
   {
@@ -2349,6 +2935,8 @@ window.HSK_CHARS = [
     "meaning": "play basketball",
     "level": 2,
     "phrase": "打篮球",
+    "prompt1": "打篮球",
+    "prompt2": "写篮字",
     "sentence": "这是“篮”字。"
   },
   {
@@ -2357,6 +2945,8 @@ window.HSK_CHARS = [
     "meaning": "tired",
     "level": 2,
     "phrase": "累",
+    "prompt1": "积累",
+    "prompt2": "写累字",
     "sentence": "这是“累”字。"
   },
   {
@@ -2365,6 +2955,8 @@ window.HSK_CHARS = [
     "meaning": "red; symbol of success; bonus; popular",
     "level": 2,
     "phrase": "红",
+    "prompt1": "西红柿",
+    "prompt2": "分红",
     "sentence": "这是“红”字。"
   },
   {
@@ -2373,6 +2965,8 @@ window.HSK_CHARS = [
     "meaning": "newspaper",
     "level": 2,
     "phrase": "报纸",
+    "prompt1": "报纸",
+    "prompt2": "写纸字",
     "sentence": "这是“纸”字。"
   },
   {
@@ -2381,6 +2975,8 @@ window.HSK_CHARS = [
     "meaning": "to introduce; recommend; introduction",
     "level": 2,
     "phrase": "介绍",
+    "prompt1": "介绍",
+    "prompt2": "写绍字",
     "sentence": "这是“绍”字。"
   },
   {
@@ -2389,6 +2985,8 @@ window.HSK_CHARS = [
     "meaning": "already",
     "level": 2,
     "phrase": "已经",
+    "prompt1": "已经",
+    "prompt2": "经过",
     "sentence": "这是“经”字。"
   },
   {
@@ -2397,6 +2995,8 @@ window.HSK_CHARS = [
     "meaning": "to give; to grant; (passive particle)",
     "level": 2,
     "phrase": "给",
+    "prompt1": "给予",
+    "prompt2": "供给",
     "sentence": "这是“给”字。"
   },
   {
@@ -2405,6 +3005,8 @@ window.HSK_CHARS = [
     "meaning": "mutton; lamb",
     "level": 2,
     "phrase": "羊肉",
+    "prompt1": "羊肉",
+    "prompt2": "写羊字",
     "sentence": "这是“羊”字。"
   },
   {
@@ -2413,6 +3015,8 @@ window.HSK_CHARS = [
     "meaning": "test; exam; to give or take a test",
     "level": 2,
     "phrase": "考试",
+    "prompt1": "考试",
+    "prompt2": "考虑",
     "sentence": "这是“考”字。"
   },
   {
@@ -2421,6 +3025,8 @@ window.HSK_CHARS = [
     "meaning": "mutton; lamb",
     "level": 2,
     "phrase": "羊肉",
+    "prompt1": "羊肉",
+    "prompt2": "肌肉",
     "sentence": "这是“肉”字。"
   },
   {
@@ -2429,6 +3035,8 @@ window.HSK_CHARS = [
     "meaning": "to dance",
     "level": 2,
     "phrase": "跳舞",
+    "prompt1": "跳舞",
+    "prompt2": "鼓舞",
     "sentence": "这是“舞”字。"
   },
   {
@@ -2437,6 +3045,8 @@ window.HSK_CHARS = [
     "meaning": "color",
     "level": 2,
     "phrase": "颜色",
+    "prompt1": "颜色",
+    "prompt2": "景色",
     "sentence": "这是“色”字。"
   },
   {
@@ -2445,6 +3055,8 @@ window.HSK_CHARS = [
     "meaning": "medicine; drug; cure; chemical",
     "level": 2,
     "phrase": "药",
+    "prompt1": "火药",
+    "prompt2": "写药字",
     "sentence": "这是“药”字。"
   },
   {
@@ -2453,6 +3065,8 @@ window.HSK_CHARS = [
     "meaning": "although; even though",
     "level": 2,
     "phrase": "虽然",
+    "prompt1": "虽然",
+    "prompt2": "写虽字",
     "sentence": "这是“虽”字。"
   },
   {
@@ -2461,6 +3075,8 @@ window.HSK_CHARS = [
     "meaning": "(chicken) egg",
     "level": 2,
     "phrase": "鸡蛋",
+    "prompt1": "鸡蛋",
+    "prompt2": "蛋糕",
     "sentence": "这是“蛋”字。"
   },
   {
@@ -2469,6 +3085,8 @@ window.HSK_CHARS = [
     "meaning": "wristwatch",
     "level": 2,
     "phrase": "手表",
+    "prompt1": "手表",
+    "prompt2": "表示",
     "sentence": "这是“表”字。"
   },
   {
@@ -2477,6 +3095,8 @@ window.HSK_CHARS = [
     "meaning": "to want; to need; will/shall; important",
     "level": 2,
     "phrase": "要",
+    "prompt1": "要求",
+    "prompt2": "需要",
     "sentence": "这是“要”字。"
   },
   {
@@ -2485,6 +3105,8 @@ window.HSK_CHARS = [
     "meaning": "ask; let; yield",
     "level": 2,
     "phrase": "让",
+    "prompt1": "让步",
+    "prompt2": "转让",
     "sentence": "这是“让”字。"
   },
   {
@@ -2493,6 +3115,8 @@ window.HSK_CHARS = [
     "meaning": "to tell; inform",
     "level": 2,
     "phrase": "告诉",
+    "prompt1": "告诉",
+    "prompt2": "诉讼",
     "sentence": "这是“诉”字。"
   },
   {
@@ -2501,6 +3125,8 @@ window.HSK_CHARS = [
     "meaning": "to try; to test; examination",
     "level": 2,
     "phrase": "试",
+    "prompt1": "考试",
+    "prompt2": "试卷",
     "sentence": "这是“试”字。"
   },
   {
@@ -2509,6 +3135,8 @@ window.HSK_CHARS = [
     "meaning": "class; subject; lesson; course",
     "level": 2,
     "phrase": "课",
+    "prompt1": "课程",
+    "prompt2": "旷课",
     "sentence": "这是“课”字。"
   },
   {
@@ -2517,6 +3145,8 @@ window.HSK_CHARS = [
     "meaning": "expensive; noble; honorable; Guizhou province (abbreviation)",
     "level": 2,
     "phrase": "贵",
+    "prompt1": "宝贵",
+    "prompt2": "贵族",
     "sentence": "这是“贵”字。"
   },
   {
@@ -2525,6 +3155,8 @@ window.HSK_CHARS = [
     "meaning": "to walk; to go; to move (Kangxi radical 156)",
     "level": 2,
     "phrase": "走",
+    "prompt1": "走廊",
+    "prompt2": "走私",
     "sentence": "这是“走”字。"
   },
   {
@@ -2533,6 +3165,8 @@ window.HSK_CHARS = [
     "meaning": "to play football/soccer",
     "level": 2,
     "phrase": "踢足球",
+    "prompt1": "踢足球",
+    "prompt2": "满足",
     "sentence": "这是“足”字。"
   },
   {
@@ -2541,6 +3175,8 @@ window.HSK_CHARS = [
     "meaning": "to run; to jog",
     "level": 2,
     "phrase": "跑步",
+    "prompt1": "跑步",
+    "prompt2": "写跑字",
     "sentence": "这是“跑”字。"
   },
   {
@@ -2549,6 +3185,8 @@ window.HSK_CHARS = [
     "meaning": "road; path; journey; route",
     "level": 2,
     "phrase": "路",
+    "prompt1": "迷路",
+    "prompt2": "高速公路",
     "sentence": "这是“路”字。"
   },
   {
@@ -2557,6 +3195,8 @@ window.HSK_CHARS = [
     "meaning": "to dance",
     "level": 2,
     "phrase": "跳舞",
+    "prompt1": "跳舞",
+    "prompt2": "跳跃",
     "sentence": "这是“跳”字。"
   },
   {
@@ -2565,6 +3205,8 @@ window.HSK_CHARS = [
     "meaning": "to play football/soccer",
     "level": 2,
     "phrase": "踢足球",
+    "prompt1": "踢足球",
+    "prompt2": "写踢字",
     "sentence": "这是“踢”字。"
   },
   {
@@ -2573,6 +3215,8 @@ window.HSK_CHARS = [
     "meaning": "health; (human) body",
     "level": 2,
     "phrase": "身体",
+    "prompt1": "身体",
+    "prompt2": "随身",
     "sentence": "这是“身”字。"
   },
   {
@@ -2581,6 +3225,8 @@ window.HSK_CHARS = [
     "meaning": "side, beside",
     "level": 2,
     "phrase": "旁边",
+    "prompt1": "右边",
+    "prompt2": "旁边",
     "sentence": "这是“边”字。"
   },
   {
@@ -2589,6 +3235,8 @@ window.HSK_CHARS = [
     "meaning": "to pass; to cross; go over; (indicates a past experience)",
     "level": 2,
     "phrase": "过",
+    "prompt1": "过去",
+    "prompt2": "难过",
     "sentence": "这是“过”字。"
   },
   {
@@ -2597,6 +3245,8 @@ window.HSK_CHARS = [
     "meaning": "(physical) exercise; movement; sports; campaign",
     "level": 2,
     "phrase": "运动",
+    "prompt1": "运动",
+    "prompt2": "幸运",
     "sentence": "这是“运”字。"
   },
   {
@@ -2605,6 +3255,8 @@ window.HSK_CHARS = [
     "meaning": "near; close (to)",
     "level": 2,
     "phrase": "近",
+    "prompt1": "最近",
+    "prompt2": "附近",
     "sentence": "这是“近”字。"
   },
   {
@@ -2613,6 +3265,8 @@ window.HSK_CHARS = [
     "meaning": "still; yet; in addition; even",
     "level": 2,
     "phrase": "还",
+    "prompt1": "还是",
+    "prompt2": "归还",
     "sentence": "这是“还”字。"
   },
   {
@@ -2621,6 +3275,8 @@ window.HSK_CHARS = [
     "meaning": "enter; come in",
     "level": 2,
     "phrase": "进",
+    "prompt1": "进行",
+    "prompt2": "改进",
     "sentence": "这是“进”字。"
   },
   {
@@ -2629,6 +3285,8 @@ window.HSK_CHARS = [
     "meaning": "far; distant; remote",
     "level": 2,
     "phrase": "远",
+    "prompt1": "永远",
+    "prompt2": "遥远",
     "sentence": "这是“远”字。"
   },
   {
@@ -2637,6 +3295,8 @@ window.HSK_CHARS = [
     "meaning": "deliver; to carry; to give; send",
     "level": 2,
     "phrase": "送",
+    "prompt1": "赠送",
+    "prompt2": "写送字",
     "sentence": "这是“送”字。"
   },
   {
@@ -2645,6 +3305,8 @@ window.HSK_CHARS = [
     "meaning": "know; be aware of",
     "level": 2,
     "phrase": "知道",
+    "prompt1": "知道",
+    "prompt2": "街道",
     "sentence": "这是“道”字。"
   },
   {
@@ -2653,6 +3315,8 @@ window.HSK_CHARS = [
     "meaning": "pencil",
     "level": 2,
     "phrase": "铅笔",
+    "prompt1": "铅笔",
+    "prompt2": "写铅字",
     "sentence": "这是“铅”字。"
   },
   {
@@ -2661,6 +3325,8 @@ window.HSK_CHARS = [
     "meaning": "mistake; error; blunder; miss an opportunity",
     "level": 2,
     "phrase": "错",
+    "prompt1": "错误",
+    "prompt2": "写错字",
     "sentence": "这是“错”字。"
   },
   {
@@ -2669,6 +3335,8 @@ window.HSK_CHARS = [
     "meaning": "long; length | grow; chief (Kangxi radical 168)",
     "level": 2,
     "phrase": "长",
+    "prompt1": "校长",
+    "prompt2": "长江",
     "sentence": "这是“长”字。"
   },
   {
@@ -2677,6 +3345,8 @@ window.HSK_CHARS = [
     "meaning": "door; opening; gate (Kangxi radical 169)",
     "level": 2,
     "phrase": "门",
+    "prompt1": "专门",
+    "prompt2": "部门",
     "sentence": "这是“门”字。"
   },
   {
@@ -2685,6 +3355,8 @@ window.HSK_CHARS = [
     "meaning": "ask; inquire",
     "level": 2,
     "phrase": "问",
+    "prompt1": "问题",
+    "prompt2": "询问",
     "sentence": "这是“问”字。"
   },
   {
@@ -2693,6 +3365,8 @@ window.HSK_CHARS = [
     "meaning": "room",
     "level": 2,
     "phrase": "房间",
+    "prompt1": "房间",
+    "prompt2": "时间",
     "sentence": "这是“间”字。"
   },
   {
@@ -2701,6 +3375,8 @@ window.HSK_CHARS = [
     "meaning": "cloudy (weather); yin (the negative principle of Yin and Yang); secret; the moon; negative; shade",
     "level": 2,
     "phrase": "阴",
+    "prompt1": "阴谋",
+    "prompt2": "写阴字",
     "sentence": "这是“阴”字。"
   },
   {
@@ -2709,6 +3385,8 @@ window.HSK_CHARS = [
     "meaning": "snow",
     "level": 2,
     "phrase": "雪",
+    "prompt1": "雪上加霜",
+    "prompt2": "写雪字",
     "sentence": "这是“雪”字。"
   },
   {
@@ -2717,6 +3395,8 @@ window.HSK_CHARS = [
     "meaning": "zero; remnant",
     "level": 2,
     "phrase": "零",
+    "prompt1": "零钱",
+    "prompt2": "零食",
     "sentence": "这是“零”字。"
   },
   {
@@ -2725,6 +3405,8 @@ window.HSK_CHARS = [
     "meaning": "non-; un-; not be; wrongdoing; simply must (Kangxi radical 175)",
     "level": 2,
     "phrase": "非",
+    "prompt1": "非常",
+    "prompt2": "除非",
     "sentence": "这是“非”字。"
   },
   {
@@ -2733,6 +3415,8 @@ window.HSK_CHARS = [
     "meaning": "topic; subject; question on a test or assignment",
     "level": 2,
     "phrase": "题",
+    "prompt1": "问题",
+    "prompt2": "题目",
     "sentence": "这是“题”字。"
   },
   {
@@ -2741,6 +3425,8 @@ window.HSK_CHARS = [
     "meaning": "color",
     "level": 2,
     "phrase": "颜色",
+    "prompt1": "颜色",
+    "prompt2": "写颜字",
     "sentence": "这是“颜”字。"
   },
   {
@@ -2749,6 +3435,8 @@ window.HSK_CHARS = [
     "meaning": "guesthouse; hotel",
     "level": 2,
     "phrase": "宾馆",
+    "prompt1": "宾馆",
+    "prompt2": "图书馆",
     "sentence": "这是“馆”字。"
   },
   {
@@ -2757,6 +3445,8 @@ window.HSK_CHARS = [
     "meaning": "fish (Kangxi radical 195)",
     "level": 2,
     "phrase": "鱼",
+    "prompt1": "鱼字",
+    "prompt2": "写鱼字",
     "sentence": "这是“鱼”字。"
   },
   {
@@ -2765,6 +3455,8 @@ window.HSK_CHARS = [
     "meaning": "(chicken) egg",
     "level": 2,
     "phrase": "鸡蛋",
+    "prompt1": "鸡蛋",
+    "prompt2": "写鸡字",
     "sentence": "这是“鸡”字。"
   },
   {
@@ -2773,6 +3465,8 @@ window.HSK_CHARS = [
     "meaning": "black; dark (Kangxi radical 203); Heilongjiang province (abbreviation)",
     "level": 2,
     "phrase": "黑",
+    "prompt1": "黑板",
+    "prompt2": "乌黑",
     "sentence": "这是“黑”字。"
   },
   {
@@ -2781,6 +3475,8 @@ window.HSK_CHARS = [
     "meaning": "ten thousand",
     "level": 3,
     "phrase": "万",
+    "prompt1": "千万",
+    "prompt2": "万一",
     "sentence": "这是“万”字。"
   },
   {
@@ -2789,6 +3485,8 @@ window.HSK_CHARS = [
     "meaning": "moreover; in addition; as well as",
     "level": 3,
     "phrase": "而且",
+    "prompt1": "而且",
+    "prompt2": "并且",
     "sentence": "这是“且”字。"
   },
   {
@@ -2797,6 +3495,8 @@ window.HSK_CHARS = [
     "meaning": "world",
     "level": 3,
     "phrase": "世界",
+    "prompt1": "世界",
+    "prompt2": "世纪",
     "sentence": "这是“世”字。"
   },
   {
@@ -2805,6 +3505,8 @@ window.HSK_CHARS = [
     "meaning": "school assignment; homework; task",
     "level": 3,
     "phrase": "作业",
+    "prompt1": "作业",
+    "prompt2": "职业",
     "sentence": "这是“业”字。"
   },
   {
@@ -2813,6 +3515,8 @@ window.HSK_CHARS = [
     "meaning": "main; principal; major",
     "level": 3,
     "phrase": "主要",
+    "prompt1": "主要",
+    "prompt2": "主意",
     "sentence": "这是“主”字。"
   },
   {
@@ -2821,6 +3525,8 @@ window.HSK_CHARS = [
     "meaning": "long (time)",
     "level": 3,
     "phrase": "久",
+    "prompt1": "悠久",
+    "prompt2": "持久",
     "sentence": "这是“久”字。"
   },
   {
@@ -2829,6 +3535,8 @@ window.HSK_CHARS = [
     "meaning": "almost",
     "level": 3,
     "phrase": "几乎",
+    "prompt1": "几乎",
+    "prompt2": "在乎",
     "sentence": "这是“乎”字。"
   },
   {
@@ -2837,6 +3545,8 @@ window.HSK_CHARS = [
     "meaning": "about; regarding; concerning",
     "level": 3,
     "phrase": "关于",
+    "prompt1": "关于",
+    "prompt2": "终于",
     "sentence": "这是“于”字。"
   },
   {
@@ -2845,6 +3555,8 @@ window.HSK_CHARS = [
     "meaning": "umbrella; parasol",
     "level": 3,
     "phrase": "伞",
+    "prompt1": "伞字",
+    "prompt2": "写伞字",
     "sentence": "这是“伞”字。"
   },
   {
@@ -2853,6 +3565,8 @@ window.HSK_CHARS = [
     "meaning": "position; location; (polite mw for people)",
     "level": 3,
     "phrase": "位",
+    "prompt1": "座位",
+    "prompt2": "位置",
     "sentence": "这是“位”字。"
   },
   {
@@ -2861,6 +3575,8 @@ window.HSK_CHARS = [
     "meaning": "believe (sb.); be convinced of",
     "level": 3,
     "phrase": "相信",
+    "prompt1": "相信",
+    "prompt2": "信用卡",
     "sentence": "这是“信”字。"
   },
   {
@@ -2869,6 +3585,8 @@ window.HSK_CHARS = [
     "meaning": "lend; borrow; excuse",
     "level": 3,
     "phrase": "借",
+    "prompt1": "借口",
+    "prompt2": "借鉴",
     "sentence": "这是“借”字。"
   },
   {
@@ -2877,6 +3595,8 @@ window.HSK_CHARS = [
     "meaning": "fake; if; borrow | vacation; holiday",
     "level": 3,
     "phrase": "假",
+    "prompt1": "请假",
+    "prompt2": "寒假",
     "sentence": "这是“假”字。"
   },
   {
@@ -2885,6 +3605,8 @@ window.HSK_CHARS = [
     "meaning": "health; healthy",
     "level": 3,
     "phrase": "健康",
+    "prompt1": "健康",
+    "prompt2": "健身",
     "sentence": "这是“健”字。"
   },
   {
@@ -2893,6 +3615,8 @@ window.HSK_CHARS = [
     "meaning": "be like; resemble; appearance; appear",
     "level": 3,
     "phrase": "像",
+    "prompt1": "好像",
+    "prompt2": "肖像",
     "sentence": "这是“像”字。"
   },
   {
@@ -2901,6 +3625,8 @@ window.HSK_CHARS = [
     "meaning": "Chinese monetary unit; dollar; first; principal",
     "level": 3,
     "phrase": "元",
+    "prompt1": "元旦",
+    "prompt2": "单元",
     "sentence": "这是“元”字。"
   },
   {
@@ -2909,6 +3635,8 @@ window.HSK_CHARS = [
     "meaning": "actually; in fact",
     "level": 3,
     "phrase": "其实",
+    "prompt1": "其他",
+    "prompt2": "其实",
     "sentence": "这是“其”字。"
   },
   {
@@ -2917,6 +3645,8 @@ window.HSK_CHARS = [
     "meaning": "dictionary",
     "level": 3,
     "phrase": "词典",
+    "prompt1": "词典",
+    "prompt2": "经典",
     "sentence": "这是“典”字。"
   },
   {
@@ -2925,6 +3655,8 @@ window.HSK_CHARS = [
     "meaning": "catch cold; (common) cold",
     "level": 3,
     "phrase": "感冒",
+    "prompt1": "感冒",
+    "prompt2": "冒险",
     "sentence": "这是“冒”字。"
   },
   {
@@ -2933,6 +3665,8 @@ window.HSK_CHARS = [
     "meaning": "winter",
     "level": 3,
     "phrase": "冬",
+    "prompt1": "冬字",
+    "prompt2": "写冬字",
     "sentence": "这是“冬”字。"
   },
   {
@@ -2941,6 +3675,8 @@ window.HSK_CHARS = [
     "meaning": "refrigerator",
     "level": 3,
     "phrase": "冰箱",
+    "prompt1": "冰箱",
+    "prompt2": "冰激凌",
     "sentence": "这是“冰”字。"
   },
   {
@@ -2949,6 +3685,8 @@ window.HSK_CHARS = [
     "meaning": "settle (a dispute); resolve; solve",
     "level": 3,
     "phrase": "解决",
+    "prompt1": "决定",
+    "prompt2": "解决",
     "sentence": "这是“决”字。"
   },
   {
@@ -2957,6 +3695,8 @@ window.HSK_CHARS = [
     "meaning": "clean; neat and tidy",
     "level": 3,
     "phrase": "干净",
+    "prompt1": "干净",
+    "prompt2": "写净字",
     "sentence": "这是“净”字。"
   },
   {
@@ -2965,6 +3705,8 @@ window.HSK_CHARS = [
     "meaning": "just (indicating the immediate past); recently; firm",
     "level": 3,
     "phrase": "刚",
+    "prompt1": "刚才",
+    "prompt2": "写刚字",
     "sentence": "这是“刚”字。"
   },
   {
@@ -2973,6 +3715,8 @@ window.HSK_CHARS = [
     "meaning": "windy; to blow (wind)",
     "level": 3,
     "phrase": "刮风",
+    "prompt1": "刮风",
+    "prompt2": "写刮字",
     "sentence": "这是“刮”字。"
   },
   {
@@ -2981,6 +3725,8 @@ window.HSK_CHARS = [
     "meaning": "brush one's teeth",
     "level": 3,
     "phrase": "刷牙",
+    "prompt1": "刷牙",
+    "prompt2": "印刷",
     "sentence": "这是“刷”字。"
   },
   {
@@ -2989,6 +3735,8 @@ window.HSK_CHARS = [
     "meaning": "quarter (hour); (mw for short time intervals); carve; to cut",
     "level": 3,
     "phrase": "刻",
+    "prompt1": "刻苦",
+    "prompt2": "立刻",
     "sentence": "这是“刻”字。"
   },
   {
@@ -2997,6 +3745,8 @@ window.HSK_CHARS = [
     "meaning": "to work hard; to strive",
     "level": 3,
     "phrase": "努力",
+    "prompt1": "努力",
+    "prompt2": "力气",
     "sentence": "这是“力”字。"
   },
   {
@@ -3005,6 +3755,8 @@ window.HSK_CHARS = [
     "meaning": "method; way (of doing something)",
     "level": 3,
     "phrase": "办法",
+    "prompt1": "办法",
+    "prompt2": "办公室",
     "sentence": "这是“办”字。"
   },
   {
@@ -3013,6 +3765,8 @@ window.HSK_CHARS = [
     "meaning": "participate; join; take part in",
     "level": 3,
     "phrase": "参加",
+    "prompt1": "参加",
+    "prompt2": "加班",
     "sentence": "这是“加”字。"
   },
   {
@@ -3021,6 +3775,8 @@ window.HSK_CHARS = [
     "meaning": "to work hard; to strive",
     "level": 3,
     "phrase": "努力",
+    "prompt1": "努力",
+    "prompt2": "写努字",
     "sentence": "这是“努”字。"
   },
   {
@@ -3029,6 +3785,8 @@ window.HSK_CHARS = [
     "meaning": "to cover; to wrap; to hold; include; (mw for containers, packages, etc.)",
     "level": 3,
     "phrase": "包",
+    "prompt1": "面包",
+    "prompt2": "包子",
     "sentence": "这是“包”字。"
   },
   {
@@ -3037,6 +3795,8 @@ window.HSK_CHARS = [
     "meaning": "change",
     "level": 3,
     "phrase": "变化",
+    "prompt1": "变化",
+    "prompt2": "文化",
     "sentence": "这是“化”字。"
   },
   {
@@ -3045,6 +3805,8 @@ window.HSK_CHARS = [
     "meaning": "half; semi-; incomplete",
     "level": 3,
     "phrase": "半",
+    "prompt1": "半途而废",
+    "prompt2": "写半字",
     "sentence": "这是“半”字。"
   },
   {
@@ -3053,6 +3815,8 @@ window.HSK_CHARS = [
     "meaning": "menu",
     "level": 3,
     "phrase": "菜单",
+    "prompt1": "简单",
+    "prompt2": "菜单",
     "sentence": "这是“单”字。"
   },
   {
@@ -3061,6 +3825,8 @@ window.HSK_CHARS = [
     "meaning": "South",
     "level": 3,
     "phrase": "南",
+    "prompt1": "指南针",
+    "prompt2": "南辕北辙",
     "sentence": "这是“南”字。"
   },
   {
@@ -3069,6 +3835,8 @@ window.HSK_CHARS = [
     "meaning": "credit card",
     "level": 3,
     "phrase": "信用卡",
+    "prompt1": "信用卡",
+    "prompt2": "卡车",
     "sentence": "这是“卡”字。"
   },
   {
@@ -3077,6 +3845,8 @@ window.HSK_CHARS = [
     "meaning": "history",
     "level": 3,
     "phrase": "历史",
+    "prompt1": "历史",
+    "prompt2": "经历",
     "sentence": "这是“历”字。"
   },
   {
@@ -3085,6 +3855,8 @@ window.HSK_CHARS = [
     "meaning": "participate; join; take part in",
     "level": 3,
     "phrase": "参加",
+    "prompt1": "参加",
+    "prompt2": "参观",
     "sentence": "这是“参”字。"
   },
   {
@@ -3093,6 +3865,8 @@ window.HSK_CHARS = [
     "meaning": "(once) again; also; both (Kangxi radical 29)",
     "level": 3,
     "phrase": "又",
+    "prompt1": "又字",
+    "prompt2": "写又字",
     "sentence": "这是“又”字。"
   },
   {
@@ -3101,6 +3875,8 @@ window.HSK_CHARS = [
     "meaning": "two; double; (mw for pairs)",
     "level": 3,
     "phrase": "双",
+    "prompt1": "双方",
+    "prompt2": "双胞胎",
     "sentence": "这是“双”字。"
   },
   {
@@ -3109,6 +3885,8 @@ window.HSK_CHARS = [
     "meaning": "send out; to issue; to show (one's feelings) | hair",
     "level": 3,
     "phrase": "发",
+    "prompt1": "发烧",
+    "prompt2": "头发",
     "sentence": "这是“发”字。"
   },
   {
@@ -3117,6 +3895,8 @@ window.HSK_CHARS = [
     "meaning": "(informal) father's younger brother; uncle",
     "level": 3,
     "phrase": "叔叔",
+    "prompt1": "叔叔",
+    "prompt2": "写叔字",
     "sentence": "这是“叔”字。"
   },
   {
@@ -3125,6 +3905,8 @@ window.HSK_CHARS = [
     "meaning": "change",
     "level": 3,
     "phrase": "变化",
+    "prompt1": "变化",
+    "prompt2": "改变",
     "sentence": "这是“变”字。"
   },
   {
@@ -3133,6 +3915,8 @@ window.HSK_CHARS = [
     "meaning": "mouth (Kangxi radical 30)",
     "level": 3,
     "phrase": "口",
+    "prompt1": "入口",
+    "prompt2": "口味",
     "sentence": "这是“口”字。"
   },
   {
@@ -3141,6 +3925,8 @@ window.HSK_CHARS = [
     "meaning": "sentence",
     "level": 3,
     "phrase": "句子",
+    "prompt1": "句子",
+    "prompt2": "写句字",
     "sentence": "这是“句”字。"
   },
   {
@@ -3149,6 +3935,8 @@ window.HSK_CHARS = [
     "meaning": "but; only; merely; just | (mw for birds and certain animals)",
     "level": 3,
     "phrase": "只",
+    "prompt1": "只有",
+    "prompt2": "只要",
     "sentence": "这是“只”字。"
   },
   {
@@ -3157,6 +3945,8 @@ window.HSK_CHARS = [
     "meaning": "history",
     "level": 3,
     "phrase": "历史",
+    "prompt1": "历史",
+    "prompt2": "写史字",
     "sentence": "这是“史”字。"
   },
   {
@@ -3165,6 +3955,8 @@ window.HSK_CHARS = [
     "meaning": "direction; towards; to turn; to face",
     "level": 3,
     "phrase": "向",
+    "prompt1": "方向",
+    "prompt2": "向来",
     "sentence": "这是“向”字。"
   },
   {
@@ -3173,6 +3965,8 @@ window.HSK_CHARS = [
     "meaning": "weekend",
     "level": 3,
     "phrase": "周末",
+    "prompt1": "周末",
+    "prompt2": "周围",
     "sentence": "这是“周”字。"
   },
   {
@@ -3181,6 +3975,8 @@ window.HSK_CHARS = [
     "meaning": "make a sound; to ring; echo",
     "level": 3,
     "phrase": "响",
+    "prompt1": "影响",
+    "prompt2": "响应",
     "sentence": "这是“响”字。"
   },
   {
@@ -3189,6 +3985,8 @@ window.HSK_CHARS = [
     "meaning": "cry; weep",
     "level": 3,
     "phrase": "哭",
+    "prompt1": "哭泣",
+    "prompt2": "写哭字",
     "sentence": "这是“哭”字。"
   },
   {
@@ -3197,6 +3995,8 @@ window.HSK_CHARS = [
     "meaning": "ah; (particle showing elation, doubt, puzzled surprise, or approval)",
     "level": 3,
     "phrase": "啊",
+    "prompt1": "好啊",
+    "prompt2": "啊？",
     "sentence": "这是“啊”字。"
   },
   {
@@ -3205,6 +4005,8 @@ window.HSK_CHARS = [
     "meaning": "beer",
     "level": 3,
     "phrase": "啤酒",
+    "prompt1": "啤酒",
+    "prompt2": "写啤字",
     "sentence": "这是“啤”字。"
   },
   {
@@ -3213,6 +4015,8 @@ window.HSK_CHARS = [
     "meaning": "mouth",
     "level": 3,
     "phrase": "嘴",
+    "prompt1": "嘴唇",
+    "prompt2": "写嘴字",
     "sentence": "这是“嘴”字。"
   },
   {
@@ -3221,6 +4025,8 @@ window.HSK_CHARS = [
     "meaning": "public park",
     "level": 3,
     "phrase": "公园",
+    "prompt1": "公园",
+    "prompt2": "园林",
     "sentence": "这是“园”字。"
   },
   {
@@ -3229,6 +4035,8 @@ window.HSK_CHARS = [
     "meaning": "map",
     "level": 3,
     "phrase": "地图",
+    "prompt1": "地图",
+    "prompt2": "图书馆",
     "sentence": "这是“图”字。"
   },
   {
@@ -3237,6 +4045,8 @@ window.HSK_CHARS = [
     "meaning": "earth; ground | (adverbial particle)",
     "level": 3,
     "phrase": "地",
+    "prompt1": "地图",
+    "prompt2": "地铁",
     "sentence": "这是“地”字。"
   },
   {
@@ -3245,6 +4055,8 @@ window.HSK_CHARS = [
     "meaning": "bad; broken",
     "level": 3,
     "phrase": "坏",
+    "prompt1": "破坏",
+    "prompt2": "败坏",
     "sentence": "这是“坏”字。"
   },
   {
@@ -3253,6 +4065,8 @@ window.HSK_CHARS = [
     "meaning": "city or town",
     "level": 3,
     "phrase": "城市",
+    "prompt1": "城市",
+    "prompt2": "长城",
     "sentence": "这是“城”字。"
   },
   {
@@ -3261,6 +4075,8 @@ window.HSK_CHARS = [
     "meaning": "environment; surroundings",
     "level": 3,
     "phrase": "环境",
+    "prompt1": "环境",
+    "prompt2": "境界",
     "sentence": "这是“境”字。"
   },
   {
@@ -3269,6 +4085,8 @@ window.HSK_CHARS = [
     "meaning": "sound; voice",
     "level": 3,
     "phrase": "声音",
+    "prompt1": "声音",
+    "prompt2": "声调",
     "sentence": "这是“声”字。"
   },
   {
@@ -3277,6 +4095,8 @@ window.HSK_CHARS = [
     "meaning": "revise; to review",
     "level": 3,
     "phrase": "复习",
+    "prompt1": "复习",
+    "prompt2": "复杂",
     "sentence": "这是“复”字。"
   },
   {
@@ -3285,6 +4105,8 @@ window.HSK_CHARS = [
     "meaning": "summer",
     "level": 3,
     "phrase": "夏",
+    "prompt1": "夏令营",
+    "prompt2": "写夏字",
     "sentence": "这是“夏”字。"
   },
   {
@@ -3293,6 +4115,8 @@ window.HSK_CHARS = [
     "meaning": "hair (on the head)",
     "level": 3,
     "phrase": "头发",
+    "prompt1": "头发",
+    "prompt2": "骨头",
     "sentence": "这是“头”字。"
   },
   {
@@ -3301,6 +4125,8 @@ window.HSK_CHARS = [
     "meaning": "strange; odd",
     "level": 3,
     "phrase": "奇怪",
+    "prompt1": "奇怪",
+    "prompt2": "好奇",
     "sentence": "这是“奇”字。"
   },
   {
@@ -3309,6 +4135,8 @@ window.HSK_CHARS = [
     "meaning": "if; in the event that",
     "level": 3,
     "phrase": "如果",
+    "prompt1": "如果",
+    "prompt2": "比如",
     "sentence": "这是“如”字。"
   },
   {
@@ -3317,6 +4145,8 @@ window.HSK_CHARS = [
     "meaning": "auntie; step-mother; mother's younger sister",
     "level": 3,
     "phrase": "阿姨",
+    "prompt1": "阿姨",
+    "prompt2": "写姨字",
     "sentence": "这是“姨”字。"
   },
   {
@@ -3325,6 +4155,8 @@ window.HSK_CHARS = [
     "meaning": "get married",
     "level": 3,
     "phrase": "结婚",
+    "prompt1": "结婚",
+    "prompt2": "婚礼",
     "sentence": "这是“婚”字。"
   },
   {
@@ -3333,6 +4165,8 @@ window.HSK_CHARS = [
     "meaning": "season; time; period",
     "level": 3,
     "phrase": "季节",
+    "prompt1": "季节",
+    "prompt2": "淡季",
     "sentence": "这是“季”字。"
   },
   {
@@ -3341,6 +4175,8 @@ window.HSK_CHARS = [
     "meaning": "quiet; peaceful; calm",
     "level": 3,
     "phrase": "安静",
+    "prompt1": "安静",
+    "prompt2": "安排",
     "sentence": "这是“安”字。"
   },
   {
@@ -3349,6 +4185,8 @@ window.HSK_CHARS = [
     "meaning": "decide; resolve",
     "level": 3,
     "phrase": "决定",
+    "prompt1": "一定",
+    "prompt2": "决定",
     "sentence": "这是“定”字。"
   },
   {
@@ -3357,6 +4195,8 @@ window.HSK_CHARS = [
     "meaning": "actually; in fact",
     "level": 3,
     "phrase": "其实",
+    "prompt1": "其实",
+    "prompt2": "实际",
     "sentence": "这是“实”字。"
   },
   {
@@ -3365,6 +4205,8 @@ window.HSK_CHARS = [
     "meaning": "afraid of; to fear",
     "level": 3,
     "phrase": "害怕",
+    "prompt1": "害怕",
+    "prompt2": "厉害",
     "sentence": "这是“害”字。"
   },
   {
@@ -3373,6 +4215,8 @@ window.HSK_CHARS = [
     "meaning": "easy; likely; liable (to)",
     "level": 3,
     "phrase": "容易",
+    "prompt1": "容易",
+    "prompt2": "内容",
     "sentence": "这是“容”字。"
   },
   {
@@ -3381,6 +4225,8 @@ window.HSK_CHARS = [
     "meaning": "(mw for layers, floors of buildings)",
     "level": 3,
     "phrase": "层",
+    "prompt1": "层次",
+    "prompt2": "阶层",
     "sentence": "这是“层”字。"
   },
   {
@@ -3389,6 +4235,8 @@ window.HSK_CHARS = [
     "meaning": "neighbor",
     "level": 3,
     "phrase": "邻居",
+    "prompt1": "邻居",
+    "prompt2": "居然",
     "sentence": "这是“居”字。"
   },
   {
@@ -3397,6 +4245,8 @@ window.HSK_CHARS = [
     "meaning": "mountain climbing",
     "level": 3,
     "phrase": "爬山",
+    "prompt1": "爬山",
+    "prompt2": "山脉",
     "sentence": "这是“山”字。"
   },
   {
@@ -3405,6 +4255,8 @@ window.HSK_CHARS = [
     "meaning": "differ from; fall short of; poor; inferior",
     "level": 3,
     "phrase": "差",
+    "prompt1": "出差",
+    "prompt2": "差不多",
     "sentence": "这是“差”字。"
   },
   {
@@ -3413,6 +4265,8 @@ window.HSK_CHARS = [
     "meaning": "oneself; self",
     "level": 3,
     "phrase": "自己",
+    "prompt1": "自己",
+    "prompt2": "各抒己见",
     "sentence": "这是“己”字。"
   },
   {
@@ -3421,6 +4275,8 @@ window.HSK_CHARS = [
     "meaning": "supermarket",
     "level": 3,
     "phrase": "超市",
+    "prompt1": "城市",
+    "prompt2": "超市",
     "sentence": "这是“市”字。"
   },
   {
@@ -3429,6 +4285,8 @@ window.HSK_CHARS = [
     "meaning": "band; belt; ribbon; carry; bring; take along; bring up (kids)",
     "level": 3,
     "phrase": "带",
+    "prompt1": "系领带",
+    "prompt2": "带领",
     "sentence": "这是“带”字。"
   },
   {
@@ -3437,6 +4295,8 @@ window.HSK_CHARS = [
     "meaning": "hat; cap",
     "level": 3,
     "phrase": "帽子",
+    "prompt1": "帽子",
+    "prompt2": "写帽字",
     "sentence": "这是“帽”字。"
   },
   {
@@ -3445,6 +4305,8 @@ window.HSK_CHARS = [
     "meaning": "to concern; shield; dry; clean (Kangxi radical 51)",
     "level": 3,
     "phrase": "干",
+    "prompt1": "干净",
+    "prompt2": "饼干",
     "sentence": "这是“干”字。"
   },
   {
@@ -3453,6 +4315,8 @@ window.HSK_CHARS = [
     "meaning": "flat; level; equal; ordinary",
     "level": 3,
     "phrase": "平",
+    "prompt1": "水平",
+    "prompt2": "平时",
     "sentence": "这是“平”字。"
   },
   {
@@ -3461,6 +4325,8 @@ window.HSK_CHARS = [
     "meaning": "should; ought to; must",
     "level": 3,
     "phrase": "应该",
+    "prompt1": "应该",
+    "prompt2": "适应",
     "sentence": "这是“应”字。"
   },
   {
@@ -3469,6 +4335,8 @@ window.HSK_CHARS = [
     "meaning": "health; healthy",
     "level": 3,
     "phrase": "健康",
+    "prompt1": "健康",
+    "prompt2": "写康字",
     "sentence": "这是“康”字。"
   },
   {
@@ -3477,6 +4345,8 @@ window.HSK_CHARS = [
     "meaning": "(mw for flat objects); to spread out; (common surname)",
     "level": 3,
     "phrase": "张",
+    "prompt1": "紧张",
+    "prompt2": "慌张",
     "sentence": "这是“张”字。"
   },
   {
@@ -3485,6 +4355,8 @@ window.HSK_CHARS = [
     "meaning": "should; act as; work as; manage; match; (sound of bells)",
     "level": 3,
     "phrase": "当",
+    "prompt1": "当然",
+    "prompt2": "当时",
     "sentence": "这是“当”字。"
   },
   {
@@ -3493,6 +4365,8 @@ window.HSK_CHARS = [
     "meaning": "to worry; feel anxious",
     "level": 3,
     "phrase": "担心",
+    "prompt1": "关心",
+    "prompt2": "放心",
     "sentence": "这是“心”字。"
   },
   {
@@ -3501,6 +4375,8 @@ window.HSK_CHARS = [
     "meaning": "must; have to",
     "level": 3,
     "phrase": "必须",
+    "prompt1": "必须",
+    "prompt2": "未必",
     "sentence": "这是“必”字。"
   },
   {
@@ -3509,6 +4385,8 @@ window.HSK_CHARS = [
     "meaning": "forget",
     "level": 3,
     "phrase": "忘记",
+    "prompt1": "忘记",
+    "prompt2": "备忘录",
     "sentence": "这是“忘”字。"
   },
   {
@@ -3517,6 +4395,8 @@ window.HSK_CHARS = [
     "meaning": "afraid of; to fear",
     "level": 3,
     "phrase": "害怕",
+    "prompt1": "害怕",
+    "prompt2": "恐怕",
     "sentence": "这是“怕”字。"
   },
   {
@@ -3525,6 +4405,8 @@ window.HSK_CHARS = [
     "meaning": "to worry; feel anxious",
     "level": 3,
     "phrase": "着急",
+    "prompt1": "着急",
+    "prompt2": "急诊",
     "sentence": "这是“急”字。"
   },
   {
@@ -3533,6 +4415,8 @@ window.HSK_CHARS = [
     "meaning": "strange; odd",
     "level": 3,
     "phrase": "奇怪",
+    "prompt1": "奇怪",
+    "prompt2": "难怪",
     "sentence": "这是“怪”字。"
   },
   {
@@ -3541,6 +4425,8 @@ window.HSK_CHARS = [
     "meaning": "always; eventually",
     "level": 3,
     "phrase": "总是",
+    "prompt1": "总是",
+    "prompt2": "总结",
     "sentence": "这是“总”字。"
   },
   {
@@ -3549,6 +4435,8 @@ window.HSK_CHARS = [
     "meaning": "habit; be accustomed to; usual practice",
     "level": 3,
     "phrase": "习惯",
+    "prompt1": "习惯",
+    "prompt2": "惯例",
     "sentence": "这是“惯”字。"
   },
   {
@@ -3557,6 +4445,8 @@ window.HSK_CHARS = [
     "meaning": "catch cold; (common) cold",
     "level": 3,
     "phrase": "感冒",
+    "prompt1": "感冒",
+    "prompt2": "感兴趣",
     "sentence": "这是“感”字。"
   },
   {
@@ -3565,6 +4455,8 @@ window.HSK_CHARS = [
     "meaning": "be willing; want to; be ready",
     "level": 3,
     "phrase": "愿意",
+    "prompt1": "愿意",
+    "prompt2": "自愿",
     "sentence": "这是“愿”字。"
   },
   {
@@ -3573,6 +4465,8 @@ window.HSK_CHARS = [
     "meaning": "game; play; recreation",
     "level": 3,
     "phrase": "游戏",
+    "prompt1": "游戏",
+    "prompt2": "戏剧",
     "sentence": "这是“戏”字。"
   },
   {
@@ -3581,6 +4475,8 @@ window.HSK_CHARS = [
     "meaning": "achievement; success; results (of work or study)",
     "level": 3,
     "phrase": "成绩",
+    "prompt1": "成绩",
+    "prompt2": "完成",
     "sentence": "这是“成”字。"
   },
   {
@@ -3589,6 +4485,8 @@ window.HSK_CHARS = [
     "meaning": "or; possible; maybe; perhaps",
     "level": 3,
     "phrase": "或者",
+    "prompt1": "或者",
+    "prompt2": "或许",
     "sentence": "这是“或”字。"
   },
   {
@@ -3597,6 +4495,8 @@ window.HSK_CHARS = [
     "meaning": "ability; talent; just now; not until",
     "level": 3,
     "phrase": "才",
+    "prompt1": "刚才",
+    "prompt2": "人才",
     "sentence": "这是“才”字。"
   },
   {
@@ -3605,6 +4505,8 @@ window.HSK_CHARS = [
     "meaning": "to clean; to sweep",
     "level": 3,
     "phrase": "打扫",
+    "prompt1": "打扫",
+    "prompt2": "写扫字",
     "sentence": "这是“扫”字。"
   },
   {
@@ -3613,6 +4515,8 @@ window.HSK_CHARS = [
     "meaning": "(mw for things with handles); (pretransitive particle); to hold",
     "level": 3,
     "phrase": "把",
+    "prompt1": "把握",
+    "prompt2": "把手",
     "sentence": "这是“把”字。"
   },
   {
@@ -3621,6 +4525,8 @@ window.HSK_CHARS = [
     "meaning": "passport",
     "level": 3,
     "phrase": "护照",
+    "prompt1": "护照",
+    "prompt2": "保护",
     "sentence": "这是“护”字。"
   },
   {
@@ -3629,6 +4535,8 @@ window.HSK_CHARS = [
     "meaning": "to worry; feel anxious",
     "level": 3,
     "phrase": "担心",
+    "prompt1": "担心",
+    "prompt2": "承担",
     "sentence": "这是“担”字。"
   },
   {
@@ -3637,6 +4545,8 @@ window.HSK_CHARS = [
     "meaning": "select; to pick; choose",
     "level": 3,
     "phrase": "选择",
+    "prompt1": "选择",
+    "prompt2": "不择手段",
     "sentence": "这是“择”字。"
   },
   {
@@ -3645,6 +4555,8 @@ window.HSK_CHARS = [
     "meaning": "carry in your hand; seize; to catch",
     "level": 3,
     "phrase": "拿",
+    "prompt1": "拿手",
+    "prompt2": "写拿字",
     "sentence": "这是“拿”字。"
   },
   {
@@ -3653,6 +4565,8 @@ window.HSK_CHARS = [
     "meaning": "change; to exchange; to barter; to trade",
     "level": 3,
     "phrase": "换",
+    "prompt1": "交换",
+    "prompt2": "兑换",
     "sentence": "这是“换”字。"
   },
   {
@@ -3661,6 +4575,8 @@ window.HSK_CHARS = [
     "meaning": "according to; based on; basis",
     "level": 3,
     "phrase": "根据",
+    "prompt1": "根据",
+    "prompt2": "据说",
     "sentence": "这是“据”字。"
   },
   {
@@ -3669,6 +4585,8 @@ window.HSK_CHARS = [
     "meaning": "connect; to meet; to pick up (somebody); to receive",
     "level": 3,
     "phrase": "接",
+    "prompt1": "接受",
+    "prompt2": "直接",
     "sentence": "这是“接”字。"
   },
   {
@@ -3677,6 +4595,8 @@ window.HSK_CHARS = [
     "meaning": "to carry; to lift; to raise (an issue)",
     "level": 3,
     "phrase": "提",
+    "prompt1": "提高",
+    "prompt2": "提醒",
     "sentence": "这是“提”字。"
   },
   {
@@ -3685,6 +4605,8 @@ window.HSK_CHARS = [
     "meaning": "to move; to transport",
     "level": 3,
     "phrase": "搬",
+    "prompt1": "搬字",
+    "prompt2": "写搬字",
     "sentence": "这是“搬”字。"
   },
   {
@@ -3693,6 +4615,8 @@ window.HSK_CHARS = [
     "meaning": "put; to place; to release; to free",
     "level": 3,
     "phrase": "放",
+    "prompt1": "放心",
+    "prompt2": "放松",
     "sentence": "这是“放”字。"
   },
   {
@@ -3701,6 +4625,8 @@ window.HSK_CHARS = [
     "meaning": "story; tale",
     "level": 3,
     "phrase": "故事",
+    "prompt1": "故事",
+    "prompt2": "故意",
     "sentence": "这是“故”字。"
   },
   {
@@ -3709,6 +4635,8 @@ window.HSK_CHARS = [
     "meaning": "number | to count; to rank",
     "level": 3,
     "phrase": "数",
+    "prompt1": "数学",
+    "prompt2": "数量",
     "sentence": "这是“数”字。"
   },
   {
@@ -3717,6 +4645,8 @@ window.HSK_CHARS = [
     "meaning": "culture; civilization",
     "level": 3,
     "phrase": "文化",
+    "prompt1": "文化",
+    "prompt2": "中文",
     "sentence": "这是“文”字。"
   },
   {
@@ -3725,6 +4655,8 @@ window.HSK_CHARS = [
     "meaning": "beverage; drink",
     "level": 3,
     "phrase": "饮料",
+    "prompt1": "饮料",
+    "prompt2": "材料",
     "sentence": "这是“料”字。"
   },
   {
@@ -3733,6 +4665,8 @@ window.HSK_CHARS = [
     "meaning": "kilogram",
     "level": 3,
     "phrase": "公斤",
+    "prompt1": "公斤",
+    "prompt2": "写斤字",
     "sentence": "这是“斤”字。"
   },
   {
@@ -3741,6 +4675,8 @@ window.HSK_CHARS = [
     "meaning": "square; direction; side (Kangxi radical 70)",
     "level": 3,
     "phrase": "方",
+    "prompt1": "方便",
+    "prompt2": "地方",
     "sentence": "这是“方”字。"
   },
   {
@@ -3749,6 +4685,8 @@ window.HSK_CHARS = [
     "meaning": "old; past; used",
     "level": 3,
     "phrase": "旧",
+    "prompt1": "仍旧",
+    "prompt2": "陈旧",
     "sentence": "这是“旧”字。"
   },
   {
@@ -3757,6 +4695,8 @@ window.HSK_CHARS = [
     "meaning": "easy; likely; liable (to)",
     "level": 3,
     "phrase": "容易",
+    "prompt1": "容易",
+    "prompt2": "轻易",
     "sentence": "这是“易”字。"
   },
   {
@@ -3765,6 +4705,8 @@ window.HSK_CHARS = [
     "meaning": "spring (season); joyful",
     "level": 3,
     "phrase": "春",
+    "prompt1": "青春",
+    "prompt2": "写春字",
     "sentence": "这是“春”字。"
   },
   {
@@ -3773,6 +4715,8 @@ window.HSK_CHARS = [
     "meaning": "more; even more",
     "level": 3,
     "phrase": "更",
+    "prompt1": "更新",
+    "prompt2": "更正",
     "sentence": "这是“更”字。"
   },
   {
@@ -3781,6 +4725,8 @@ window.HSK_CHARS = [
     "meaning": "weekend",
     "level": 3,
     "phrase": "周末",
+    "prompt1": "周末",
+    "prompt2": "粉末",
     "sentence": "这是“末”字。"
   },
   {
@@ -3789,6 +4735,8 @@ window.HSK_CHARS = [
     "meaning": "(mw for flowers and clouds)",
     "level": 3,
     "phrase": "朵",
+    "prompt1": "耳朵",
+    "prompt2": "写朵字",
     "sentence": "这是“朵”字。"
   },
   {
@@ -3797,6 +4745,8 @@ window.HSK_CHARS = [
     "meaning": "trunk; suitcase",
     "level": 3,
     "phrase": "行李箱",
+    "prompt1": "行李箱",
+    "prompt2": "写李字",
     "sentence": "这是“李”字。"
   },
   {
@@ -3805,6 +4755,8 @@ window.HSK_CHARS = [
     "meaning": "to tie; to bind; restrain; (mw for bunches, bundles, bouquets, etc.)",
     "level": 3,
     "phrase": "束",
+    "prompt1": "结束",
+    "prompt2": "束缚",
     "sentence": "这是“束”字。"
   },
   {
@@ -3813,6 +4765,8 @@ window.HSK_CHARS = [
     "meaning": "blackboard",
     "level": 3,
     "phrase": "黑板",
+    "prompt1": "黑板",
+    "prompt2": "老板",
     "sentence": "这是“板”字。"
   },
   {
@@ -3821,6 +4775,8 @@ window.HSK_CHARS = [
     "meaning": "an extreme; pole; very",
     "level": 3,
     "phrase": "极",
+    "prompt1": "积极",
+    "prompt2": "极其",
     "sentence": "这是“极”字。"
   },
   {
@@ -3829,6 +4785,8 @@ window.HSK_CHARS = [
     "meaning": "to check; examine; inspect",
     "level": 3,
     "phrase": "检查",
+    "prompt1": "检查",
+    "prompt2": "调查",
     "sentence": "这是“查”字。"
   },
   {
@@ -3837,6 +4795,8 @@ window.HSK_CHARS = [
     "meaning": "tree",
     "level": 3,
     "phrase": "树",
+    "prompt1": "树立",
+    "prompt2": "写树字",
     "sentence": "这是“树”字。"
   },
   {
@@ -3845,6 +4805,8 @@ window.HSK_CHARS = [
     "meaning": "root; base; (mw for long, slender objects)",
     "level": 3,
     "phrase": "根",
+    "prompt1": "根据",
+    "prompt2": "根本",
     "sentence": "这是“根”字。"
   },
   {
@@ -3853,6 +4815,8 @@ window.HSK_CHARS = [
     "meaning": "elevator",
     "level": 3,
     "phrase": "电梯",
+    "prompt1": "电梯",
+    "prompt2": "写梯字",
     "sentence": "这是“梯”字。"
   },
   {
@@ -3861,6 +4825,8 @@ window.HSK_CHARS = [
     "meaning": "to check; examine; inspect",
     "level": 3,
     "phrase": "检查",
+    "prompt1": "检查",
+    "prompt2": "检验",
     "sentence": "这是“检”字。"
   },
   {
@@ -3869,6 +4835,8 @@ window.HSK_CHARS = [
     "meaning": "clear; distinct; be clear about",
     "level": 3,
     "phrase": "清楚",
+    "prompt1": "清楚",
+    "prompt2": "写楚字",
     "sentence": "这是“楚”字。"
   },
   {
@@ -3877,6 +4845,8 @@ window.HSK_CHARS = [
     "meaning": "story; floor; (multi-story) building",
     "level": 3,
     "phrase": "楼",
+    "prompt1": "楼字",
+    "prompt2": "写楼字",
     "sentence": "这是“楼”字。"
   },
   {
@@ -3885,6 +4855,8 @@ window.HSK_CHARS = [
     "meaning": "paragraph; segment; section",
     "level": 3,
     "phrase": "段",
+    "prompt1": "阶段",
+    "prompt2": "不择手段",
     "sentence": "这是“段”字。"
   },
   {
@@ -3893,6 +4865,8 @@ window.HSK_CHARS = [
     "meaning": "to request; to demand; requirement",
     "level": 3,
     "phrase": "要求",
+    "prompt1": "要求",
+    "prompt2": "追求",
     "sentence": "这是“求”字。"
   },
   {
@@ -3901,6 +4875,8 @@ window.HSK_CHARS = [
     "meaning": "Yellow River",
     "level": 3,
     "phrase": "黄河",
+    "prompt1": "黄河",
+    "prompt2": "写河字",
     "sentence": "这是“河”字。"
   },
   {
@@ -3909,6 +4885,8 @@ window.HSK_CHARS = [
     "meaning": "method; way (of doing something)",
     "level": 3,
     "phrase": "办法",
+    "prompt1": "办法",
+    "prompt2": "法律",
     "sentence": "这是“法”字。"
   },
   {
@@ -3917,6 +4895,8 @@ window.HSK_CHARS = [
     "meaning": "pay attention to; take notice of; be careful",
     "level": 3,
     "phrase": "注意",
+    "prompt1": "注意",
+    "prompt2": "注册",
     "sentence": "这是“注”字。"
   },
   {
@@ -3925,6 +4905,8 @@ window.HSK_CHARS = [
     "meaning": "clear; distinct; be clear about",
     "level": 3,
     "phrase": "清楚",
+    "prompt1": "清楚",
+    "prompt2": "清淡",
     "sentence": "这是“清”字。"
   },
   {
@@ -3933,6 +4915,8 @@ window.HSK_CHARS = [
     "meaning": "thirsty",
     "level": 3,
     "phrase": "渴",
+    "prompt1": "渴望",
+    "prompt2": "写渴字",
     "sentence": "这是“渴”字。"
   },
   {
@@ -3941,6 +4925,8 @@ window.HSK_CHARS = [
     "meaning": "full; abbreviation for Manchurian",
     "level": 3,
     "phrase": "满",
+    "prompt1": "满意",
+    "prompt2": "充满",
     "sentence": "这是“满”字。"
   },
   {
@@ -3949,6 +4935,8 @@ window.HSK_CHARS = [
     "meaning": "bathe; take a bath or shower; bath or shower",
     "level": 3,
     "phrase": "洗澡",
+    "prompt1": "洗澡",
+    "prompt2": "写澡字",
     "sentence": "这是“澡”字。"
   },
   {
@@ -3957,6 +4945,8 @@ window.HSK_CHARS = [
     "meaning": "lamp; light",
     "level": 3,
     "phrase": "灯",
+    "prompt1": "灯笼",
+    "prompt2": "写灯字",
     "sentence": "这是“灯”字。"
   },
   {
@@ -3965,6 +4955,8 @@ window.HSK_CHARS = [
     "meaning": "to exercise; work out; toughen; to temper",
     "level": 3,
     "phrase": "锻炼",
+    "prompt1": "锻炼",
+    "prompt2": "提炼",
     "sentence": "这是“炼”字。"
   },
   {
@@ -3973,6 +4965,8 @@ window.HSK_CHARS = [
     "meaning": "have a fever",
     "level": 3,
     "phrase": "发烧",
+    "prompt1": "发烧",
+    "prompt2": "燃烧",
     "sentence": "这是“烧”字。"
   },
   {
@@ -3981,6 +4975,8 @@ window.HSK_CHARS = [
     "meaning": "to shine; illuminate; according to",
     "level": 3,
     "phrase": "照",
+    "prompt1": "照片",
+    "prompt2": "护照",
     "sentence": "这是“照”字。"
   },
   {
@@ -3989,6 +4985,8 @@ window.HSK_CHARS = [
     "meaning": "panda",
     "level": 3,
     "phrase": "熊猫",
+    "prompt1": "熊猫",
+    "prompt2": "写熊字",
     "sentence": "这是“熊”字。"
   },
   {
@@ -3997,6 +4995,8 @@ window.HSK_CHARS = [
     "meaning": "mountain climbing",
     "level": 3,
     "phrase": "爬山",
+    "prompt1": "爬山",
+    "prompt2": "写爬字",
     "sentence": "这是“爬”字。"
   },
   {
@@ -4005,6 +5005,8 @@ window.HSK_CHARS = [
     "meaning": "(informal) father's father; paternal grandfather",
     "level": 3,
     "phrase": "爷爷",
+    "prompt1": "爷爷",
+    "prompt2": "写爷字",
     "sentence": "这是“爷”字。"
   },
   {
@@ -4013,6 +5015,8 @@ window.HSK_CHARS = [
     "meaning": "(mw for pieces of things); a slice; a flake (Kangxi radical 91) | film; photo",
     "level": 3,
     "phrase": "片",
+    "prompt1": "照片",
+    "prompt2": "片面",
     "sentence": "这是“片”字。"
   },
   {
@@ -4021,6 +5025,8 @@ window.HSK_CHARS = [
     "meaning": "brush one's teeth",
     "level": 3,
     "phrase": "刷牙",
+    "prompt1": "刷牙",
+    "prompt2": "牙膏",
     "sentence": "这是“牙”字。"
   },
   {
@@ -4029,6 +5035,8 @@ window.HSK_CHARS = [
     "meaning": "animal",
     "level": 3,
     "phrase": "动物",
+    "prompt1": "动物",
+    "prompt2": "礼物",
     "sentence": "这是“物”字。"
   },
   {
@@ -4037,6 +5045,8 @@ window.HSK_CHARS = [
     "meaning": "special; especially; particular",
     "level": 3,
     "phrase": "特别",
+    "prompt1": "特别",
+    "prompt2": "特点",
     "sentence": "这是“特”字。"
   },
   {
@@ -4045,6 +5055,8 @@ window.HSK_CHARS = [
     "meaning": "environment; surroundings",
     "level": 3,
     "phrase": "环境",
+    "prompt1": "环境",
+    "prompt2": "耳环",
     "sentence": "这是“环”字。"
   },
   {
@@ -4053,6 +5065,8 @@ window.HSK_CHARS = [
     "meaning": "manager; director",
     "level": 3,
     "phrase": "经理",
+    "prompt1": "经理",
+    "prompt2": "理解",
     "sentence": "这是“理”字。"
   },
   {
@@ -4061,6 +5075,8 @@ window.HSK_CHARS = [
     "meaning": "bottle",
     "level": 3,
     "phrase": "瓶子",
+    "prompt1": "瓶子",
+    "prompt2": "写瓶字",
     "sentence": "这是“瓶”字。"
   },
   {
@@ -4069,6 +5085,8 @@ window.HSK_CHARS = [
     "meaning": "sweet",
     "level": 3,
     "phrase": "甜",
+    "prompt1": "甜字",
+    "prompt2": "写甜字",
     "sentence": "这是“甜”字。"
   },
   {
@@ -4077,6 +5095,8 @@ window.HSK_CHARS = [
     "meaning": "to use (Kangxi radical 101)",
     "level": 3,
     "phrase": "用",
+    "prompt1": "信用卡",
+    "prompt2": "使用",
     "sentence": "这是“用”字。"
   },
   {
@@ -4085,6 +5105,8 @@ window.HSK_CHARS = [
     "meaning": "draw; picture; painting",
     "level": 3,
     "phrase": "画",
+    "prompt1": "动画片",
+    "prompt2": "漫画",
     "sentence": "这是“画”字。"
   },
   {
@@ -4093,6 +5115,8 @@ window.HSK_CHARS = [
     "meaning": "world",
     "level": 3,
     "phrase": "世界",
+    "prompt1": "世界",
+    "prompt2": "界限",
     "sentence": "这是“界”字。"
   },
   {
@@ -4101,6 +5125,8 @@ window.HSK_CHARS = [
     "meaning": "to leave (behind, a message); to retain; to stay",
     "level": 3,
     "phrase": "留",
+    "prompt1": "留学",
+    "prompt2": "保留",
     "sentence": "这是“留”字。"
   },
   {
@@ -4109,6 +5135,8 @@ window.HSK_CHARS = [
     "meaning": "ache; sore; (it) hurts; love fondly",
     "level": 3,
     "phrase": "疼",
+    "prompt1": "疼爱",
+    "prompt2": "心疼",
     "sentence": "这是“疼”字。"
   },
   {
@@ -4117,6 +5145,8 @@ window.HSK_CHARS = [
     "meaning": "thin; tight; lean",
     "level": 3,
     "phrase": "瘦",
+    "prompt1": "瘦字",
+    "prompt2": "写瘦字",
     "sentence": "这是“瘦”字。"
   },
   {
@@ -4125,6 +5155,8 @@ window.HSK_CHARS = [
     "meaning": "leather shoes",
     "level": 3,
     "phrase": "皮鞋",
+    "prompt1": "皮鞋",
+    "prompt2": "橡皮",
     "sentence": "这是“皮”字。"
   },
   {
@@ -4133,6 +5165,8 @@ window.HSK_CHARS = [
     "meaning": "plate; dish; tray",
     "level": 3,
     "phrase": "盘子",
+    "prompt1": "盘子",
+    "prompt2": "键盘",
     "sentence": "这是“盘”字。"
   },
   {
@@ -4141,6 +5175,8 @@ window.HSK_CHARS = [
     "meaning": "program; item (on a program)",
     "level": 3,
     "phrase": "节目",
+    "prompt1": "节目",
+    "prompt2": "目的",
     "sentence": "这是“目”字。"
   },
   {
@@ -4149,6 +5185,8 @@ window.HSK_CHARS = [
     "meaning": "straight; vertical; frank; directly; continuously",
     "level": 3,
     "phrase": "直",
+    "prompt1": "一直",
+    "prompt2": "直接",
     "sentence": "这是“直”字。"
   },
   {
@@ -4157,6 +5195,8 @@ window.HSK_CHARS = [
     "meaning": "believe (sb.); be convinced of",
     "level": 3,
     "phrase": "相信",
+    "prompt1": "相信",
+    "prompt2": "照相机",
     "sentence": "这是“相”字。"
   },
   {
@@ -4165,6 +5205,8 @@ window.HSK_CHARS = [
     "meaning": "short (in length, duration, or height); lack",
     "level": 3,
     "phrase": "短",
+    "prompt1": "短信",
+    "prompt2": "缩短",
     "sentence": "这是“短”字。"
   },
   {
@@ -4173,6 +5215,8 @@ window.HSK_CHARS = [
     "meaning": "short; low",
     "level": 3,
     "phrase": "矮",
+    "prompt1": "矮字",
+    "prompt2": "写矮字",
     "sentence": "这是“矮”字。"
   },
   {
@@ -4181,6 +5225,8 @@ window.HSK_CHARS = [
     "meaning": "bowl; cup",
     "level": 3,
     "phrase": "碗",
+    "prompt1": "碗字",
+    "prompt2": "写碗字",
     "sentence": "这是“碗”字。"
   },
   {
@@ -4189,6 +5235,8 @@ window.HSK_CHARS = [
     "meaning": "gift; present",
     "level": 3,
     "phrase": "礼物",
+    "prompt1": "礼物",
+    "prompt2": "礼貌",
     "sentence": "这是“礼”字。"
   },
   {
@@ -4197,6 +5245,8 @@ window.HSK_CHARS = [
     "meaning": "autumn; fall; harvest time",
     "level": 3,
     "phrase": "秋",
+    "prompt1": "秋字",
+    "prompt2": "写秋字",
     "sentence": "这是“秋”字。"
   },
   {
@@ -4205,6 +5255,8 @@ window.HSK_CHARS = [
     "meaning": "type; breed; race; seed",
     "level": 3,
     "phrase": "种",
+    "prompt1": "种类",
+    "prompt2": "播种",
     "sentence": "这是“种”字。"
   },
   {
@@ -4213,6 +5265,8 @@ window.HSK_CHARS = [
     "meaning": "empty; sky | leave blank; leisure",
     "level": 3,
     "phrase": "空",
+    "prompt1": "空调",
+    "prompt2": "填空",
     "sentence": "这是“空”字。"
   },
   {
@@ -4221,6 +5275,8 @@ window.HSK_CHARS = [
     "meaning": "sudden; abrupt",
     "level": 3,
     "phrase": "突然",
+    "prompt1": "突然",
+    "prompt2": "突出",
     "sentence": "这是“突”字。"
   },
   {
@@ -4229,6 +5285,8 @@ window.HSK_CHARS = [
     "meaning": "to reply; to answer",
     "level": 3,
     "phrase": "回答",
+    "prompt1": "回答",
+    "prompt2": "答案",
     "sentence": "这是“答”字。"
   },
   {
@@ -4237,6 +5295,8 @@ window.HSK_CHARS = [
     "meaning": "chopsticks",
     "level": 3,
     "phrase": "筷子",
+    "prompt1": "筷子",
+    "prompt2": "写筷字",
     "sentence": "这是“筷”字。"
   },
   {
@@ -4245,6 +5305,8 @@ window.HSK_CHARS = [
     "meaning": "simple; not complicated",
     "level": 3,
     "phrase": "简单",
+    "prompt1": "简单",
+    "prompt2": "简直",
     "sentence": "这是“简”字。"
   },
   {
@@ -4253,6 +5315,8 @@ window.HSK_CHARS = [
     "meaning": "to plan; intend",
     "level": 3,
     "phrase": "打算",
+    "prompt1": "打算",
+    "prompt2": "计算",
     "sentence": "这是“算”字。"
   },
   {
@@ -4261,6 +5325,8 @@ window.HSK_CHARS = [
     "meaning": "refrigerator",
     "level": 3,
     "phrase": "冰箱",
+    "prompt1": "冰箱",
+    "prompt2": "行李箱",
     "sentence": "这是“箱”字。"
   },
   {
@@ -4269,6 +5335,8 @@ window.HSK_CHARS = [
     "meaning": "cake",
     "level": 3,
     "phrase": "蛋糕",
+    "prompt1": "蛋糕",
+    "prompt2": "糟糕",
     "sentence": "这是“糕”字。"
   },
   {
@@ -4277,6 +5345,8 @@ window.HSK_CHARS = [
     "meaning": "grade; year (in school)",
     "level": 3,
     "phrase": "年级",
+    "prompt1": "年级",
+    "prompt2": "高级",
     "sentence": "这是“级”字。"
   },
   {
@@ -4285,6 +5355,8 @@ window.HSK_CHARS = [
     "meaning": "practice; exercise",
     "level": 3,
     "phrase": "练习",
+    "prompt1": "练习",
+    "prompt2": "训练",
     "sentence": "这是“练”字。"
   },
   {
@@ -4293,6 +5365,8 @@ window.HSK_CHARS = [
     "meaning": "at last; in the end; finally",
     "level": 3,
     "phrase": "终于",
+    "prompt1": "终于",
+    "prompt2": "始终",
     "sentence": "这是“终”字。"
   },
   {
@@ -4301,6 +5375,8 @@ window.HSK_CHARS = [
     "meaning": "get married",
     "level": 3,
     "phrase": "结婚",
+    "prompt1": "结婚",
+    "prompt2": "结束",
     "sentence": "这是“结”字。"
   },
   {
@@ -4309,6 +5385,8 @@ window.HSK_CHARS = [
     "meaning": "achievement; success; results (of work or study)",
     "level": 3,
     "phrase": "成绩",
+    "prompt1": "成绩",
+    "prompt2": "写绩字",
     "sentence": "这是“绩”字。"
   },
   {
@@ -4317,6 +5395,8 @@ window.HSK_CHARS = [
     "meaning": "green",
     "level": 3,
     "phrase": "绿",
+    "prompt1": "绿字",
+    "prompt2": "写绿字",
     "sentence": "这是“绿”字。"
   },
   {
@@ -4325,6 +5405,8 @@ window.HSK_CHARS = [
     "meaning": "to surf the web; to go online",
     "level": 3,
     "phrase": "上网",
+    "prompt1": "上网",
+    "prompt2": "网站",
     "sentence": "这是“网”字。"
   },
   {
@@ -4333,6 +5415,8 @@ window.HSK_CHARS = [
     "meaning": "or; possible; maybe; perhaps",
     "level": 3,
     "phrase": "或者",
+    "prompt1": "或者",
+    "prompt2": "记者",
     "sentence": "这是“者”字。"
   },
   {
@@ -4341,6 +5425,8 @@ window.HSK_CHARS = [
     "meaning": "and; but; yet; while (Kangxi radical 126)",
     "level": 3,
     "phrase": "而",
+    "prompt1": "而且",
+    "prompt2": "然而",
     "sentence": "这是“而”字。"
   },
   {
@@ -4349,6 +5435,8 @@ window.HSK_CHARS = [
     "meaning": "ear",
     "level": 3,
     "phrase": "耳朵",
+    "prompt1": "耳朵",
+    "prompt2": "耳环",
     "sentence": "这是“耳”字。"
   },
   {
@@ -4357,6 +5445,8 @@ window.HSK_CHARS = [
     "meaning": "to chat",
     "level": 3,
     "phrase": "聊天",
+    "prompt1": "聊天",
+    "prompt2": "无聊",
     "sentence": "这是“聊”字。"
   },
   {
@@ -4365,6 +5455,8 @@ window.HSK_CHARS = [
     "meaning": "intelligent; clever; bright; smart",
     "level": 3,
     "phrase": "聪明",
+    "prompt1": "聪明",
+    "prompt2": "写聪字",
     "sentence": "这是“聪”字。"
   },
   {
@@ -4373,6 +5465,8 @@ window.HSK_CHARS = [
     "meaning": "physical training; sports",
     "level": 3,
     "phrase": "体育",
+    "prompt1": "体育",
+    "prompt2": "教育",
     "sentence": "这是“育”字。"
   },
   {
@@ -4381,6 +5475,8 @@ window.HSK_CHARS = [
     "meaning": "fat; plump",
     "level": 3,
     "phrase": "胖",
+    "prompt1": "胖字",
+    "prompt2": "写胖字",
     "sentence": "这是“胖”字。"
   },
   {
@@ -4389,6 +5485,8 @@ window.HSK_CHARS = [
     "meaning": "foot (body part)",
     "level": 3,
     "phrase": "脚",
+    "prompt1": "脚字",
+    "prompt2": "写脚字",
     "sentence": "这是“脚”字。"
   },
   {
@@ -4397,6 +5495,8 @@ window.HSK_CHARS = [
     "meaning": "face",
     "level": 3,
     "phrase": "脸",
+    "prompt1": "脸字",
+    "prompt2": "写脸字",
     "sentence": "这是“脸”字。"
   },
   {
@@ -4405,6 +5505,8 @@ window.HSK_CHARS = [
     "meaning": "leg",
     "level": 3,
     "phrase": "腿",
+    "prompt1": "腿字",
+    "prompt2": "写腿字",
     "sentence": "这是“腿”字。"
   },
   {
@@ -4413,6 +5515,8 @@ window.HSK_CHARS = [
     "meaning": "oneself; self",
     "level": 3,
     "phrase": "自己",
+    "prompt1": "自己",
+    "prompt2": "自行车",
     "sentence": "这是“自”字。"
   },
   {
@@ -4421,6 +5525,8 @@ window.HSK_CHARS = [
     "meaning": "comfortable; feeling well",
     "level": 3,
     "phrase": "舒服",
+    "prompt1": "舒服",
+    "prompt2": "舒适",
     "sentence": "这是“舒”字。"
   },
   {
@@ -4429,6 +5535,8 @@ window.HSK_CHARS = [
     "meaning": "general; ordinary; common; same",
     "level": 3,
     "phrase": "一般",
+    "prompt1": "一般",
+    "prompt2": "写般字",
     "sentence": "这是“般”字。"
   },
   {
@@ -4437,6 +5545,8 @@ window.HSK_CHARS = [
     "meaning": "a boat; vessel; ship",
     "level": 3,
     "phrase": "船",
+    "prompt1": "船舶",
+    "prompt2": "轮船",
     "sentence": "这是“船”字。"
   },
   {
@@ -4445,6 +5555,8 @@ window.HSK_CHARS = [
     "meaning": "section; part; festival; moral integrity; save; (mw for class periods)",
     "level": 3,
     "phrase": "节",
+    "prompt1": "节日",
+    "prompt2": "季节",
     "sentence": "这是“节”字。"
   },
   {
@@ -4453,6 +5565,8 @@ window.HSK_CHARS = [
     "meaning": "flower; blossom; spend money; cost",
     "level": 3,
     "phrase": "花",
+    "prompt1": "花生",
+    "prompt2": "棉花",
     "sentence": "这是“花”字。"
   },
   {
@@ -4461,6 +5575,8 @@ window.HSK_CHARS = [
     "meaning": "grass; straw; draft (of a document)",
     "level": 3,
     "phrase": "草",
+    "prompt1": "草案",
+    "prompt2": "起草",
     "sentence": "这是“草”字。"
   },
   {
@@ -4469,6 +5585,8 @@ window.HSK_CHARS = [
     "meaning": "blue",
     "level": 3,
     "phrase": "蓝",
+    "prompt1": "蔚蓝",
+    "prompt2": "写蓝字",
     "sentence": "这是“蓝”字。"
   },
   {
@@ -4477,6 +5595,8 @@ window.HSK_CHARS = [
     "meaning": "banana",
     "level": 3,
     "phrase": "香蕉",
+    "prompt1": "香蕉",
+    "prompt2": "写蕉字",
     "sentence": "这是“蕉”字。"
   },
   {
@@ -4485,6 +5605,8 @@ window.HSK_CHARS = [
     "meaning": "walk; be current; do; will do; okay",
     "level": 3,
     "phrase": "行",
+    "prompt1": "银行",
+    "prompt2": "行李箱",
     "sentence": "这是“行”字。"
   },
   {
@@ -4493,6 +5615,8 @@ window.HSK_CHARS = [
     "meaning": "street",
     "level": 3,
     "phrase": "街道",
+    "prompt1": "街道",
+    "prompt2": "写街字",
     "sentence": "这是“街”字。"
   },
   {
@@ -4501,6 +5625,8 @@ window.HSK_CHARS = [
     "meaning": "shirt; blouse",
     "level": 3,
     "phrase": "衬衫",
+    "prompt1": "衬衫",
+    "prompt2": "写衫字",
     "sentence": "这是“衫”字。"
   },
   {
@@ -4509,6 +5635,8 @@ window.HSK_CHARS = [
     "meaning": "shirt; blouse",
     "level": 3,
     "phrase": "衬衫",
+    "prompt1": "衬衫",
+    "prompt2": "衬托",
     "sentence": "这是“衬”字。"
   },
   {
@@ -4517,6 +5645,8 @@ window.HSK_CHARS = [
     "meaning": "by (indicates passive voice sentences); a quilt/blanket",
     "level": 3,
     "phrase": "被",
+    "prompt1": "被子",
+    "prompt2": "被告",
     "sentence": "这是“被”字。"
   },
   {
@@ -4525,6 +5655,8 @@ window.HSK_CHARS = [
     "meaning": "skirt",
     "level": 3,
     "phrase": "裙子",
+    "prompt1": "裙子",
+    "prompt2": "写裙字",
     "sentence": "这是“裙”字。"
   },
   {
@@ -4533,6 +5665,8 @@ window.HSK_CHARS = [
     "meaning": "pants; trousers",
     "level": 3,
     "phrase": "裤子",
+    "prompt1": "裤子",
+    "prompt2": "牛仔裤",
     "sentence": "这是“裤”字。"
   },
   {
@@ -4541,6 +5675,8 @@ window.HSK_CHARS = [
     "meaning": "horn; angle; unit of money (1/10 yuan); corner (Kangxi radical 148) | role (theater)",
     "level": 3,
     "phrase": "角",
+    "prompt1": "角度",
+    "prompt2": "角色",
     "sentence": "这是“角”字。"
   },
   {
@@ -4549,6 +5685,8 @@ window.HSK_CHARS = [
     "meaning": "settle (a dispute); resolve; solve",
     "level": 3,
     "phrase": "解决",
+    "prompt1": "解决",
+    "prompt2": "了解",
     "sentence": "这是“解”字。"
   },
   {
@@ -4557,6 +5695,8 @@ window.HSK_CHARS = [
     "meaning": "meeting; conference",
     "level": 3,
     "phrase": "会议",
+    "prompt1": "会议",
+    "prompt2": "建议",
     "sentence": "这是“议”字。"
   },
   {
@@ -4565,6 +5705,8 @@ window.HSK_CHARS = [
     "meaning": "notebook",
     "level": 3,
     "phrase": "笔记本",
+    "prompt1": "记得",
+    "prompt2": "忘记",
     "sentence": "这是“记”字。"
   },
   {
@@ -4573,6 +5715,8 @@ window.HSK_CHARS = [
     "meaning": "to talk; to lecture; to explain; a speech",
     "level": 3,
     "phrase": "讲",
+    "prompt1": "讲座",
+    "prompt2": "演讲",
     "sentence": "这是“讲”字。"
   },
   {
@@ -4581,6 +5725,8 @@ window.HSK_CHARS = [
     "meaning": "dictionary",
     "level": 3,
     "phrase": "词典",
+    "prompt1": "词典",
+    "prompt2": "词语",
     "sentence": "这是“词”字。"
   },
   {
@@ -4589,6 +5735,8 @@ window.HSK_CHARS = [
     "meaning": "should; ought to; must",
     "level": 3,
     "phrase": "应该",
+    "prompt1": "应该",
+    "prompt2": "活该",
     "sentence": "这是“该”字。"
   },
   {
@@ -4597,6 +5745,8 @@ window.HSK_CHARS = [
     "meaning": "air conditioning",
     "level": 3,
     "phrase": "空调",
+    "prompt1": "空调",
+    "prompt2": "调查",
     "sentence": "这是“调”字。"
   },
   {
@@ -4605,6 +5755,8 @@ window.HSK_CHARS = [
     "meaning": "(sports) match; competition",
     "level": 3,
     "phrase": "比赛",
+    "prompt1": "比赛",
+    "prompt2": "决赛",
     "sentence": "这是“赛”字。"
   },
   {
@@ -4613,6 +5765,8 @@ window.HSK_CHARS = [
     "meaning": "supermarket",
     "level": 3,
     "phrase": "超市",
+    "prompt1": "超市",
+    "prompt2": "超过",
     "sentence": "这是“超”字。"
   },
   {
@@ -4621,6 +5775,8 @@ window.HSK_CHARS = [
     "meaning": "even more; the more; exceed",
     "level": 3,
     "phrase": "越",
+    "prompt1": "优越",
+    "prompt2": "超越",
     "sentence": "这是“越”字。"
   },
   {
@@ -4629,6 +5785,8 @@ window.HSK_CHARS = [
     "meaning": "be interested in",
     "level": 3,
     "phrase": "感兴趣",
+    "prompt1": "感兴趣",
+    "prompt2": "有趣",
     "sentence": "这是“趣”字。"
   },
   {
@@ -4637,6 +5795,8 @@ window.HSK_CHARS = [
     "meaning": "to follow; go with; heel",
     "level": 3,
     "phrase": "跟",
+    "prompt1": "跟前",
+    "prompt2": "跟随",
     "sentence": "这是“跟”字。"
   },
   {
@@ -4645,6 +5805,8 @@ window.HSK_CHARS = [
     "meaning": "light; easy; gentle; soft",
     "level": 3,
     "phrase": "轻",
+    "prompt1": "年轻",
+    "prompt2": "轻松",
     "sentence": "这是“轻”字。"
   },
   {
@@ -4653,6 +5815,8 @@ window.HSK_CHARS = [
     "meaning": "compare; contrast; relatively",
     "level": 3,
     "phrase": "比较",
+    "prompt1": "比较",
+    "prompt2": "较量",
     "sentence": "这是“较”字。"
   },
   {
@@ -4661,6 +5825,8 @@ window.HSK_CHARS = [
     "meaning": "(mw for vehicles)",
     "level": 3,
     "phrase": "辆",
+    "prompt1": "辆字",
+    "prompt2": "写辆字",
     "sentence": "这是“辆”字。"
   },
   {
@@ -4669,6 +5835,8 @@ window.HSK_CHARS = [
     "meaning": "to welcome; greet",
     "level": 3,
     "phrase": "欢迎",
+    "prompt1": "欢迎",
+    "prompt2": "迎接",
     "sentence": "这是“迎”字。"
   },
   {
@@ -4677,6 +5845,8 @@ window.HSK_CHARS = [
     "meaning": "arrive late",
     "level": 3,
     "phrase": "迟到",
+    "prompt1": "迟到",
+    "prompt2": "推迟",
     "sentence": "这是“迟”字。"
   },
   {
@@ -4685,6 +5855,8 @@ window.HSK_CHARS = [
     "meaning": "select; to pick; choose",
     "level": 3,
     "phrase": "选择",
+    "prompt1": "选择",
+    "prompt2": "筛选",
     "sentence": "这是“选”字。"
   },
   {
@@ -4693,6 +5865,8 @@ window.HSK_CHARS = [
     "meaning": "to meet; run into; come across",
     "level": 3,
     "phrase": "遇到",
+    "prompt1": "遇到",
+    "prompt2": "待遇",
     "sentence": "这是“遇”字。"
   },
   {
@@ -4701,6 +5875,8 @@ window.HSK_CHARS = [
     "meaning": "email",
     "level": 3,
     "phrase": "电子邮件",
+    "prompt1": "邮局",
+    "prompt2": "电子邮件",
     "sentence": "这是“邮”字。"
   },
   {
@@ -4709,6 +5885,8 @@ window.HSK_CHARS = [
     "meaning": "neighbor",
     "level": 3,
     "phrase": "邻居",
+    "prompt1": "邻居",
+    "prompt2": "写邻字",
     "sentence": "这是“邻”字。"
   },
   {
@@ -4717,6 +5895,8 @@ window.HSK_CHARS = [
     "meaning": "beer",
     "level": 3,
     "phrase": "啤酒",
+    "prompt1": "啤酒",
+    "prompt2": "酒吧",
     "sentence": "这是“酒”字。"
   },
   {
@@ -4725,6 +5905,8 @@ window.HSK_CHARS = [
     "meaning": "heavy; serious; important",
     "level": 3,
     "phrase": "重",
+    "prompt1": "重要",
+    "prompt2": "尊重",
     "sentence": "这是“重”字。"
   },
   {
@@ -4733,6 +5915,8 @@ window.HSK_CHARS = [
     "meaning": "subway",
     "level": 3,
     "phrase": "地铁",
+    "prompt1": "地铁",
+    "prompt2": "钢铁",
     "sentence": "这是“铁”字。"
   },
   {
@@ -4741,6 +5925,8 @@ window.HSK_CHARS = [
     "meaning": "silver (the element)",
     "level": 3,
     "phrase": "银",
+    "prompt1": "银行",
+    "prompt2": "写银字",
     "sentence": "这是“银”字。"
   },
   {
@@ -4749,6 +5935,8 @@ window.HSK_CHARS = [
     "meaning": "to exercise; work out; toughen; to temper",
     "level": 3,
     "phrase": "锻炼",
+    "prompt1": "锻炼",
+    "prompt2": "写锻字",
     "sentence": "这是“锻”字。"
   },
   {
@@ -4757,6 +5945,8 @@ window.HSK_CHARS = [
     "meaning": "hear; to smell; news; reputation",
     "level": 3,
     "phrase": "闻",
+    "prompt1": "新闻",
+    "prompt2": "见闻",
     "sentence": "这是“闻”字。"
   },
   {
@@ -4765,6 +5955,8 @@ window.HSK_CHARS = [
     "meaning": "the sun",
     "level": 3,
     "phrase": "太阳",
+    "prompt1": "太阳",
+    "prompt2": "阳光",
     "sentence": "这是“阳”字。"
   },
   {
@@ -4773,6 +5965,8 @@ window.HSK_CHARS = [
     "meaning": "auntie; step-mother; mother's younger sister",
     "level": 3,
     "phrase": "阿姨",
+    "prompt1": "阿姨",
+    "prompt2": "写阿字",
     "sentence": "这是“阿”字。"
   },
   {
@@ -4781,6 +5975,8 @@ window.HSK_CHARS = [
     "meaning": "(in the) vicinity; nearby; neighboring",
     "level": 3,
     "phrase": "附近",
+    "prompt1": "附近",
+    "prompt2": "附属",
     "sentence": "这是“附”字。"
   },
   {
@@ -4789,6 +5985,8 @@ window.HSK_CHARS = [
     "meaning": "besides; except; remove; to divide (mathematics)",
     "level": 3,
     "phrase": "除",
+    "prompt1": "除了",
+    "prompt2": "删除",
     "sentence": "这是“除”字。"
   },
   {
@@ -4797,6 +5995,8 @@ window.HSK_CHARS = [
     "meaning": "difficult",
     "level": 3,
     "phrase": "难",
+    "prompt1": "难过",
+    "prompt2": "困难",
     "sentence": "这是“难”字。"
   },
   {
@@ -4805,6 +6005,8 @@ window.HSK_CHARS = [
     "meaning": "to need; to want; to demand",
     "level": 3,
     "phrase": "需要",
+    "prompt1": "需要",
+    "prompt2": "需求",
     "sentence": "这是“需”字。"
   },
   {
@@ -4813,6 +6015,8 @@ window.HSK_CHARS = [
     "meaning": "quiet; peaceful; calm",
     "level": 3,
     "phrase": "安静",
+    "prompt1": "安静",
+    "prompt2": "冷静",
     "sentence": "这是“静”字。"
   },
   {
@@ -4821,6 +6025,8 @@ window.HSK_CHARS = [
     "meaning": "leather shoes",
     "level": 3,
     "phrase": "皮鞋",
+    "prompt1": "皮鞋",
+    "prompt2": "写鞋字",
     "sentence": "这是“鞋”字。"
   },
   {
@@ -4829,6 +6035,8 @@ window.HSK_CHARS = [
     "meaning": "sound; voice",
     "level": 3,
     "phrase": "声音",
+    "prompt1": "音乐",
+    "prompt2": "声音",
     "sentence": "这是“音”字。"
   },
   {
@@ -4837,6 +6045,8 @@ window.HSK_CHARS = [
     "meaning": "must; have to",
     "level": 3,
     "phrase": "必须",
+    "prompt1": "必须",
+    "prompt2": "须知",
     "sentence": "这是“须”字。"
   },
   {
@@ -4845,6 +6055,8 @@ window.HSK_CHARS = [
     "meaning": "take care of; look after; give consideration",
     "level": 3,
     "phrase": "照顾",
+    "prompt1": "照顾",
+    "prompt2": "顾客",
     "sentence": "这是“顾”字。"
   },
   {
@@ -4853,6 +6065,8 @@ window.HSK_CHARS = [
     "meaning": "windy; to blow (wind)",
     "level": 3,
     "phrase": "刮风",
+    "prompt1": "刮风",
+    "prompt2": "风险",
     "sentence": "这是“风”字。"
   },
   {
@@ -4861,6 +6075,8 @@ window.HSK_CHARS = [
     "meaning": "beverage; drink",
     "level": 3,
     "phrase": "饮料",
+    "prompt1": "饮料",
+    "prompt2": "饮食",
     "sentence": "这是“饮”字。"
   },
   {
@@ -4869,6 +6085,8 @@ window.HSK_CHARS = [
     "meaning": "eat until full; satisfied",
     "level": 3,
     "phrase": "饱",
+    "prompt1": "饱和",
+    "prompt2": "饱经沧桑",
     "sentence": "这是“饱”字。"
   },
   {
@@ -4877,6 +6095,8 @@ window.HSK_CHARS = [
     "meaning": "hungry",
     "level": 3,
     "phrase": "饿",
+    "prompt1": "饥饿",
+    "prompt2": "写饿字",
     "sentence": "这是“饿”字。"
   },
   {
@@ -4885,6 +6105,8 @@ window.HSK_CHARS = [
     "meaning": "fragrant; savory (Kangxi radical 186)",
     "level": 3,
     "phrase": "香",
+    "prompt1": "香蕉",
+    "prompt2": "香肠",
     "sentence": "这是“香”字。"
   },
   {
@@ -4893,6 +6115,8 @@ window.HSK_CHARS = [
     "meaning": "horse (Kangxi radical 187)",
     "level": 3,
     "phrase": "马",
+    "prompt1": "马上",
+    "prompt2": "马虎",
     "sentence": "这是“马”字。"
   },
   {
@@ -4901,6 +6125,8 @@ window.HSK_CHARS = [
     "meaning": "to ride (an animal or bike); to sit astride",
     "level": 3,
     "phrase": "骑",
+    "prompt1": "骑字",
+    "prompt2": "写骑字",
     "sentence": "这是“骑”字。"
   },
   {
@@ -4909,6 +6135,8 @@ window.HSK_CHARS = [
     "meaning": "fresh (experience, food, etc.); new; novel",
     "level": 3,
     "phrase": "新鲜",
+    "prompt1": "新鲜",
+    "prompt2": "鲜艳",
     "sentence": "这是“鲜”字。"
   },
   {
@@ -4917,6 +6145,8 @@ window.HSK_CHARS = [
     "meaning": "bird (Kangxi radical 196)",
     "level": 3,
     "phrase": "鸟",
+    "prompt1": "鸟字",
+    "prompt2": "写鸟字",
     "sentence": "这是“鸟”字。"
   },
   {
@@ -4925,6 +6155,8 @@ window.HSK_CHARS = [
     "meaning": "Yellow River",
     "level": 3,
     "phrase": "黄河",
+    "prompt1": "黄河",
+    "prompt2": "黄金",
     "sentence": "这是“黄”字。"
   },
   {
@@ -4933,6 +6165,8 @@ window.HSK_CHARS = [
     "meaning": "nose",
     "level": 3,
     "phrase": "鼻子",
+    "prompt1": "鼻子",
+    "prompt2": "鼻涕",
     "sentence": "这是“鼻”字。"
   },
   {
@@ -4941,6 +6175,8 @@ window.HSK_CHARS = [
     "meaning": "(formal) and; to give; together with; participate; final particle expressing doubt or surprise",
     "level": 4,
     "phrase": "与",
+    "prompt1": "与其",
+    "prompt2": "参与",
     "sentence": "这是“与”字。"
   },
   {
@@ -4949,6 +6185,8 @@ window.HSK_CHARS = [
     "meaning": "specialized",
     "level": 4,
     "phrase": "专门",
+    "prompt1": "专业",
+    "prompt2": "专门",
     "sentence": "这是“专”字。"
   },
   {
@@ -4957,6 +6195,8 @@ window.HSK_CHARS = [
     "meaning": "lose (something); throw; put aside",
     "level": 4,
     "phrase": "丢",
+    "prompt1": "丢人",
+    "prompt2": "丢三落四",
     "sentence": "这是“丢”字。"
   },
   {
@@ -4965,6 +6205,8 @@ window.HSK_CHARS = [
     "meaning": "strict; stringent; tight",
     "level": 4,
     "phrase": "严格",
+    "prompt1": "严格",
+    "prompt2": "严重",
     "sentence": "这是“严”字。"
   },
   {
@@ -4973,6 +6215,8 @@ window.HSK_CHARS = [
     "meaning": "rich; enrich; abundant; plentiful",
     "level": 4,
     "phrase": "丰富",
+    "prompt1": "丰富",
+    "prompt2": "丰盛",
     "sentence": "这是“丰”字。"
   },
   {
@@ -4981,6 +6225,8 @@ window.HSK_CHARS = [
     "meaning": "beautiful",
     "level": 4,
     "phrase": "美丽",
+    "prompt1": "美丽",
+    "prompt2": "壮丽",
     "sentence": "这是“丽”字。"
   },
   {
@@ -4989,6 +6235,8 @@ window.HSK_CHARS = [
     "meaning": "lift; raise; cite",
     "level": 4,
     "phrase": "举",
+    "prompt1": "举办",
+    "prompt2": "举行",
     "sentence": "这是“举”字。"
   },
   {
@@ -4997,6 +6245,8 @@ window.HSK_CHARS = [
     "meaning": "(literary equivalent to ); (pronoun); of",
     "level": 4,
     "phrase": "之",
+    "prompt1": "百分之",
+    "prompt2": "总之",
     "sentence": "这是“之”字。"
   },
   {
@@ -5005,6 +6255,8 @@ window.HSK_CHARS = [
     "meaning": "ping pong; table tennis",
     "level": 4,
     "phrase": "乒乓球",
+    "prompt1": "乒乓球",
+    "prompt2": "写乒字",
     "sentence": "这是“乒”字。"
   },
   {
@@ -5013,6 +6265,8 @@ window.HSK_CHARS = [
     "meaning": "ping pong; table tennis",
     "level": 4,
     "phrase": "乒乓球",
+    "prompt1": "乒乓球",
+    "prompt2": "写乓字",
     "sentence": "这是“乓”字。"
   },
   {
@@ -5021,6 +6275,8 @@ window.HSK_CHARS = [
     "meaning": "to ride; to mount; make use of; multiply",
     "level": 4,
     "phrase": "乘",
+    "prompt1": "乘坐",
+    "prompt2": "写乘字",
     "sentence": "这是“乘”字。"
   },
   {
@@ -5029,6 +6285,8 @@ window.HSK_CHARS = [
     "meaning": "disorder; confusion; arbitrarily",
     "level": 4,
     "phrase": "乱",
+    "prompt1": "扰乱",
+    "prompt2": "胡乱",
     "sentence": "这是“乱”字。"
   },
   {
@@ -5037,6 +6295,8 @@ window.HSK_CHARS = [
     "meaning": "compete",
     "level": 4,
     "phrase": "竞争",
+    "prompt1": "竞争",
+    "prompt2": "争论",
     "sentence": "这是“争”字。"
   },
   {
@@ -5045,6 +6305,8 @@ window.HSK_CHARS = [
     "meaning": "cloud; Yunnan province | say; speak",
     "level": 4,
     "phrase": "云",
+    "prompt1": "云字",
+    "prompt2": "写云字",
     "sentence": "这是“云”字。"
   },
   {
@@ -5053,6 +6315,8 @@ window.HSK_CHARS = [
     "meaning": "Internet",
     "level": 4,
     "phrase": "互联网",
+    "prompt1": "互相",
+    "prompt2": "互联网",
     "sentence": "这是“互”字。"
   },
   {
@@ -5061,6 +6325,8 @@ window.HSK_CHARS = [
     "meaning": "Asia",
     "level": 4,
     "phrase": "亚洲",
+    "prompt1": "亚洲",
+    "prompt2": "亚军",
     "sentence": "这是“亚”字。"
   },
   {
@@ -5069,6 +6335,8 @@ window.HSK_CHARS = [
     "meaning": "deliver; turn over; intersect; to pay (money); friendship",
     "level": 4,
     "phrase": "交",
+    "prompt1": "交流",
+    "prompt2": "交通",
     "sentence": "这是“交”字。"
   },
   {
@@ -5077,6 +6345,8 @@ window.HSK_CHARS = [
     "meaning": "father",
     "level": 4,
     "phrase": "父亲",
+    "prompt1": "亲戚",
+    "prompt2": "父亲",
     "sentence": "这是“亲”字。"
   },
   {
@@ -5085,6 +6355,8 @@ window.HSK_CHARS = [
     "meaning": "not only; not just",
     "level": 4,
     "phrase": "不仅",
+    "prompt1": "不仅",
+    "prompt2": "写仅字",
     "sentence": "这是“仅”字。"
   },
   {
@@ -5093,6 +6365,8 @@ window.HSK_CHARS = [
     "meaning": "still; yet",
     "level": 4,
     "phrase": "仍然",
+    "prompt1": "仍然",
+    "prompt2": "仍旧",
     "sentence": "这是“仍”字。"
   },
   {
@@ -5101,6 +6375,8 @@ window.HSK_CHARS = [
     "meaning": "careful; attentive; cautious",
     "level": 4,
     "phrase": "仔细",
+    "prompt1": "仔细",
+    "prompt2": "牛仔裤",
     "sentence": "这是“仔”字。"
   },
   {
@@ -5109,6 +6385,8 @@ window.HSK_CHARS = [
     "meaning": "to pay",
     "level": 4,
     "phrase": "付款",
+    "prompt1": "付款",
+    "prompt2": "应付",
     "sentence": "这是“付”字。"
   },
   {
@@ -5117,6 +6395,8 @@ window.HSK_CHARS = [
     "meaning": "price",
     "level": 4,
     "phrase": "价格",
+    "prompt1": "价格",
+    "prompt2": "评价",
     "sentence": "这是“价”字。"
   },
   {
@@ -5125,6 +6405,8 @@ window.HSK_CHARS = [
     "meaning": "any; whatever; whichever",
     "level": 4,
     "phrase": "任何",
+    "prompt1": "任何",
+    "prompt2": "责任",
     "sentence": "这是“任”字。"
   },
   {
@@ -5133,6 +6415,8 @@ window.HSK_CHARS = [
     "meaning": "part; portion; (mw for documents, papers, jobs, etc.)",
     "level": 4,
     "phrase": "份",
+    "prompt1": "身份",
+    "prompt2": "股份",
     "sentence": "这是“份”字。"
   },
   {
@@ -5141,6 +6425,8 @@ window.HSK_CHARS = [
     "meaning": "spectator; audience",
     "level": 4,
     "phrase": "观众",
+    "prompt1": "观众",
+    "prompt2": "群众",
     "sentence": "这是“众”字。"
   },
   {
@@ -5149,6 +6435,8 @@ window.HSK_CHARS = [
     "meaning": "merit; good point; a strength; a benefit",
     "level": 4,
     "phrase": "优点",
+    "prompt1": "优点",
+    "prompt2": "优秀",
     "sentence": "这是“优”字。"
   },
   {
@@ -5157,6 +6445,8 @@ window.HSK_CHARS = [
     "meaning": "young man; lad; youngster",
     "level": 4,
     "phrase": "小伙子",
+    "prompt1": "小伙子",
+    "prompt2": "伙伴",
     "sentence": "这是“伙”字。"
   },
   {
@@ -5165,6 +6455,8 @@ window.HSK_CHARS = [
     "meaning": "fax; facsimile",
     "level": 4,
     "phrase": "传真",
+    "prompt1": "传真",
+    "prompt2": "流传",
     "sentence": "这是“传”字。"
   },
   {
@@ -5173,6 +6465,8 @@ window.HSK_CHARS = [
     "meaning": "sad; grieve; brokenhearted",
     "level": 4,
     "phrase": "伤心",
+    "prompt1": "伤心",
+    "prompt2": "受伤",
     "sentence": "这是“伤”字。"
   },
   {
@@ -5181,6 +6475,8 @@ window.HSK_CHARS = [
     "meaning": "appraise; estimate",
     "level": 4,
     "phrase": "估计",
+    "prompt1": "估计",
+    "prompt2": "评估",
     "sentence": "这是“估”字。"
   },
   {
@@ -5189,6 +6485,8 @@ window.HSK_CHARS = [
     "meaning": "low; to lower (one's head); droop",
     "level": 4,
     "phrase": "低",
+    "prompt1": "降低",
+    "prompt2": "贬低",
     "sentence": "这是“低”字。"
   },
   {
@@ -5197,6 +6495,8 @@ window.HSK_CHARS = [
     "meaning": "any; whatever; whichever",
     "level": 4,
     "phrase": "任何",
+    "prompt1": "任何",
+    "prompt2": "何必",
     "sentence": "这是“何”字。"
   },
   {
@@ -5205,6 +6505,8 @@ window.HSK_CHARS = [
     "meaning": "to use; to make; to cause; enable; envoy; messenger",
     "level": 4,
     "phrase": "使",
+    "prompt1": "使用",
+    "prompt2": "即使",
     "sentence": "这是“使”字。"
   },
   {
@@ -5213,6 +6515,8 @@ window.HSK_CHARS = [
     "meaning": "for example; for instance",
     "level": 4,
     "phrase": "例如",
+    "prompt1": "例如",
+    "prompt2": "比例",
     "sentence": "这是“例”字。"
   },
   {
@@ -5221,6 +6525,8 @@ window.HSK_CHARS = [
     "meaning": "to supply; provide; furnish",
     "level": 4,
     "phrase": "提供",
+    "prompt1": "提供",
+    "prompt2": "供给",
     "sentence": "这是“供”字。"
   },
   {
@@ -5229,6 +6535,8 @@ window.HSK_CHARS = [
     "meaning": "to protect; to defend",
     "level": 4,
     "phrase": "保护",
+    "prompt1": "保护",
+    "prompt2": "保证",
     "sentence": "这是“保”字。"
   },
   {
@@ -5237,6 +6545,8 @@ window.HSK_CHARS = [
     "meaning": "(colloquial) two (people)",
     "level": 4,
     "phrase": "俩",
+    "prompt1": "俩字",
+    "prompt2": "写俩字",
     "sentence": "这是“俩”字。"
   },
   {
@@ -5245,6 +6555,8 @@ window.HSK_CHARS = [
     "meaning": "to repair; perform maintenance; to overhaul",
     "level": 4,
     "phrase": "修理",
+    "prompt1": "修理",
+    "prompt2": "装修",
     "sentence": "这是“修”字。"
   },
   {
@@ -5253,6 +6565,8 @@ window.HSK_CHARS = [
     "meaning": "(two, three, etc)-fold; times (multiplier)",
     "level": 4,
     "phrase": "倍",
+    "prompt1": "倍字",
+    "prompt2": "写倍字",
     "sentence": "这是“倍”字。"
   },
   {
@@ -5261,6 +6575,8 @@ window.HSK_CHARS = [
     "meaning": "to collapse; to fall; fail; to exchange | to pour; contrary to expectations",
     "level": 4,
     "phrase": "倒",
+    "prompt1": "倒霉",
+    "prompt2": "摔倒",
     "sentence": "这是“倒”字。"
   },
   {
@@ -5269,6 +6585,8 @@ window.HSK_CHARS = [
     "meaning": "be worth; deserve",
     "level": 4,
     "phrase": "值得",
+    "prompt1": "值得",
+    "prompt2": "价值",
     "sentence": "这是“值”字。"
   },
   {
@@ -5277,6 +6595,8 @@ window.HSK_CHARS = [
     "meaning": "to stop; to halt; to park (a car)",
     "level": 4,
     "phrase": "停",
+    "prompt1": "停泊",
+    "prompt2": "停顿",
     "sentence": "这是“停”字。"
   },
   {
@@ -5285,6 +6605,8 @@ window.HSK_CHARS = [
     "meaning": "occasionally; once in a while; sometimes",
     "level": 4,
     "phrase": "偶尔",
+    "prompt1": "偶尔",
+    "prompt2": "偶然",
     "sentence": "这是“偶”字。"
   },
   {
@@ -5293,6 +6615,8 @@ window.HSK_CHARS = [
     "meaning": "master; qualified worker; teacher",
     "level": 4,
     "phrase": "师傅",
+    "prompt1": "师傅",
+    "prompt2": "写傅字",
     "sentence": "这是“傅”字。"
   },
   {
@@ -5301,6 +6625,8 @@ window.HSK_CHARS = [
     "meaning": "proud; arrogant; conceited; take pride in",
     "level": 4,
     "phrase": "骄傲",
+    "prompt1": "骄傲",
+    "prompt2": "写傲字",
     "sentence": "这是“傲”字。"
   },
   {
@@ -5309,6 +6635,8 @@ window.HSK_CHARS = [
     "meaning": "to permit; allow",
     "level": 4,
     "phrase": "允许",
+    "prompt1": "允许",
+    "prompt2": "写允字",
     "sentence": "这是“允”字。"
   },
   {
@@ -5317,6 +6645,8 @@ window.HSK_CHARS = [
     "meaning": "light; ray; bright; only; merely; used up",
     "level": 4,
     "phrase": "光",
+    "prompt1": "阳光",
+    "prompt2": "光盘",
     "sentence": "这是“光”字。"
   },
   {
@@ -5325,6 +6655,8 @@ window.HSK_CHARS = [
     "meaning": "gram; overcome; restrain",
     "level": 4,
     "phrase": "克",
+    "prompt1": "巧克力",
+    "prompt2": "克服",
     "sentence": "这是“克”字。"
   },
   {
@@ -5333,6 +6665,8 @@ window.HSK_CHARS = [
     "meaning": "free (of charge); no cost",
     "level": 4,
     "phrase": "免费",
+    "prompt1": "免费",
+    "prompt2": "难免",
     "sentence": "这是“免”字。"
   },
   {
@@ -5341,6 +6675,8 @@ window.HSK_CHARS = [
     "meaning": "entrance",
     "level": 4,
     "phrase": "入口",
+    "prompt1": "入口",
+    "prompt2": "收入",
     "sentence": "这是“入”字。"
   },
   {
@@ -5349,6 +6685,8 @@ window.HSK_CHARS = [
     "meaning": "safe; safety; secure; security",
     "level": 4,
     "phrase": "安全",
+    "prompt1": "全部",
+    "prompt2": "完全",
     "sentence": "这是“全”字。"
   },
   {
@@ -5357,6 +6695,8 @@ window.HSK_CHARS = [
     "meaning": "furniture",
     "level": 4,
     "phrase": "家具",
+    "prompt1": "家具",
+    "prompt2": "具备",
     "sentence": "这是“具”字。"
   },
   {
@@ -5365,6 +6705,8 @@ window.HSK_CHARS = [
     "meaning": "cultivate; acquire; to form",
     "level": 4,
     "phrase": "养成",
+    "prompt1": "养成",
+    "prompt2": "营养",
     "sentence": "这是“养”字。"
   },
   {
@@ -5373,6 +6715,8 @@ window.HSK_CHARS = [
     "meaning": "inside; inner; internal; within",
     "level": 4,
     "phrase": "内",
+    "prompt1": "内容",
+    "prompt2": "内部",
     "sentence": "这是“内”字。"
   },
   {
@@ -5381,6 +6725,8 @@ window.HSK_CHARS = [
     "meaning": "circumstance; state of affairs; situation",
     "level": 4,
     "phrase": "情况",
+    "prompt1": "情况",
+    "prompt2": "状况",
     "sentence": "这是“况”字。"
   },
   {
@@ -5389,6 +6735,8 @@ window.HSK_CHARS = [
     "meaning": "nice and cool; pleasantly cool",
     "level": 4,
     "phrase": "凉快",
+    "prompt1": "凉快",
+    "prompt2": "着凉",
     "sentence": "这是“凉”字。"
   },
   {
@@ -5397,6 +6745,8 @@ window.HSK_CHARS = [
     "meaning": "go on a diet; lose weight",
     "level": 4,
     "phrase": "减肥",
+    "prompt1": "减少",
+    "prompt2": "减肥",
     "sentence": "这是“减”字。"
   },
   {
@@ -5405,6 +6755,8 @@ window.HSK_CHARS = [
     "meaning": "knife; blade (Kangxi radical 18)",
     "level": 4,
     "phrase": "刀",
+    "prompt1": "剪刀",
+    "prompt2": "写刀字",
     "sentence": "这是“刀”字。"
   },
   {
@@ -5413,6 +6765,8 @@ window.HSK_CHARS = [
     "meaning": "to cut; to chop | correspond to; absolutely; ardently",
     "level": 4,
     "phrase": "切",
+    "prompt1": "一切",
+    "prompt2": "迫切",
     "sentence": "这是“切”字。"
   },
   {
@@ -5421,6 +6775,8 @@ window.HSK_CHARS = [
     "meaning": "delimit; to transfer; assign | to row; to paddle; to scratch",
     "level": 4,
     "phrase": "划",
+    "prompt1": "计划",
+    "prompt2": "划分",
     "sentence": "这是“划”字。"
   },
   {
@@ -5429,6 +6785,8 @@ window.HSK_CHARS = [
     "meaning": "arrange; align; permutation",
     "level": 4,
     "phrase": "排列",
+    "prompt1": "排列",
+    "prompt2": "列车",
     "sentence": "这是“列”字。"
   },
   {
@@ -5437,6 +6795,8 @@ window.HSK_CHARS = [
     "meaning": "standard; regulation; however; in that case",
     "level": 4,
     "phrase": "则",
+    "prompt1": "否则",
+    "prompt2": "规则",
     "sentence": "这是“则”字。"
   },
   {
@@ -5445,6 +6805,8 @@ window.HSK_CHARS = [
     "meaning": "to judge; judgment; to decide",
     "level": 4,
     "phrase": "判断",
+    "prompt1": "判断",
+    "prompt2": "谈判",
     "sentence": "这是“判”字。"
   },
   {
@@ -5453,6 +6815,8 @@ window.HSK_CHARS = [
     "meaning": "fluent",
     "level": 4,
     "phrase": "流利",
+    "prompt1": "流利",
+    "prompt2": "顺利",
     "sentence": "这是“利”字。"
   },
   {
@@ -5461,6 +6825,8 @@ window.HSK_CHARS = [
     "meaning": "Beijing Opera",
     "level": 4,
     "phrase": "京剧",
+    "prompt1": "京剧",
+    "prompt2": "戏剧",
     "sentence": "这是“剧”字。"
   },
   {
@@ -5469,6 +6835,8 @@ window.HSK_CHARS = [
     "meaning": "have as remainder; be left over; surplus",
     "level": 4,
     "phrase": "剩",
+    "prompt1": "剩字",
+    "prompt2": "写剩字",
     "sentence": "这是“剩”字。"
   },
   {
@@ -5477,6 +6845,8 @@ window.HSK_CHARS = [
     "meaning": "success; to succeed",
     "level": 4,
     "phrase": "成功",
+    "prompt1": "功夫",
+    "prompt2": "成功",
     "sentence": "这是“功”字。"
   },
   {
@@ -5485,6 +6855,8 @@ window.HSK_CHARS = [
     "meaning": "encourage; inspire",
     "level": 4,
     "phrase": "鼓励",
+    "prompt1": "鼓励",
+    "prompt2": "激励",
     "sentence": "这是“励”字。"
   },
   {
@@ -5493,6 +6865,8 @@ window.HSK_CHARS = [
     "meaning": "brave; courageous",
     "level": 4,
     "phrase": "勇敢",
+    "prompt1": "勇敢",
+    "prompt2": "勇气",
     "sentence": "这是“勇”字。"
   },
   {
@@ -5501,6 +6875,8 @@ window.HSK_CHARS = [
     "meaning": "spoon; scoop; ladle",
     "level": 4,
     "phrase": "勺子",
+    "prompt1": "勺子",
+    "prompt2": "写勺字",
     "sentence": "这是“勺”字。"
   },
   {
@@ -5509,6 +6885,8 @@ window.HSK_CHARS = [
     "meaning": "key",
     "level": 4,
     "phrase": "钥匙",
+    "prompt1": "钥匙",
+    "prompt2": "写匙字",
     "sentence": "这是“匙”字。"
   },
   {
@@ -5517,6 +6895,8 @@ window.HSK_CHARS = [
     "meaning": "suburbs; outskirts",
     "level": 4,
     "phrase": "郊区",
+    "prompt1": "区别",
+    "prompt2": "郊区",
     "sentence": "这是“区”字。"
   },
   {
@@ -5525,6 +6905,8 @@ window.HSK_CHARS = [
     "meaning": "doctor; PhD",
     "level": 4,
     "phrase": "博士",
+    "prompt1": "博士",
+    "prompt2": "博物馆",
     "sentence": "这是“博”字。"
   },
   {
@@ -5533,6 +6915,8 @@ window.HSK_CHARS = [
     "meaning": "occupy; seize; to constitute",
     "level": 4,
     "phrase": "占",
+    "prompt1": "占线",
+    "prompt2": "占领",
     "sentence": "这是“占”字。"
   },
   {
@@ -5541,6 +6925,8 @@ window.HSK_CHARS = [
     "meaning": "restroom; bathroom; water closet (WC)",
     "level": 4,
     "phrase": "卫生间",
+    "prompt1": "卫生间",
+    "prompt2": "捍卫",
     "sentence": "这是“卫”字。"
   },
   {
@@ -5549,6 +6935,8 @@ window.HSK_CHARS = [
     "meaning": "to print",
     "level": 4,
     "phrase": "打印",
+    "prompt1": "印象",
+    "prompt2": "打印",
     "sentence": "这是“印”字。"
   },
   {
@@ -5557,6 +6945,8 @@ window.HSK_CHARS = [
     "meaning": "danger; dangerous; perilous",
     "level": 4,
     "phrase": "危险",
+    "prompt1": "危险",
+    "prompt2": "危害",
     "sentence": "这是“危”字。"
   },
   {
@@ -5565,6 +6955,8 @@ window.HSK_CHARS = [
     "meaning": "even if; even though",
     "level": 4,
     "phrase": "即使",
+    "prompt1": "即使",
+    "prompt2": "立即",
     "sentence": "这是“即”字。"
   },
   {
@@ -5573,6 +6965,8 @@ window.HSK_CHARS = [
     "meaning": "but; yet; however",
     "level": 4,
     "phrase": "却",
+    "prompt1": "冷却",
+    "prompt2": "写却字",
     "sentence": "这是“却”字。"
   },
   {
@@ -5581,6 +6975,8 @@ window.HSK_CHARS = [
     "meaning": "dining hall; cafeteria; restaurant",
     "level": 4,
     "phrase": "餐厅",
+    "prompt1": "客厅",
+    "prompt2": "餐厅",
     "sentence": "这是“厅”字。"
   },
   {
@@ -5589,6 +6985,8 @@ window.HSK_CHARS = [
     "meaning": "terrible; formidable; fierce; cool; awesome",
     "level": 4,
     "phrase": "厉害",
+    "prompt1": "厉害",
+    "prompt2": "严厉",
     "sentence": "这是“厉”字。"
   },
   {
@@ -5597,6 +6995,8 @@ window.HSK_CHARS = [
     "meaning": "pressure; stress",
     "level": 4,
     "phrase": "压力",
+    "prompt1": "压力",
+    "prompt2": "血压",
     "sentence": "这是“压”字。"
   },
   {
@@ -5605,6 +7005,8 @@ window.HSK_CHARS = [
     "meaning": "to hate; loathe; disgusting; troublesome",
     "level": 4,
     "phrase": "讨厌",
+    "prompt1": "讨厌",
+    "prompt2": "厌恶",
     "sentence": "这是“厌”字。"
   },
   {
@@ -5613,6 +7015,8 @@ window.HSK_CHARS = [
     "meaning": "bathroom; toilet; lavatory",
     "level": 4,
     "phrase": "厕所",
+    "prompt1": "厕所",
+    "prompt2": "写厕字",
     "sentence": "这是“厕”字。"
   },
   {
@@ -5621,6 +7025,8 @@ window.HSK_CHARS = [
     "meaning": "thick (for flat things); generous",
     "level": 4,
     "phrase": "厚",
+    "prompt1": "浓厚",
+    "prompt2": "雄厚",
     "sentence": "这是“厚”字。"
   },
   {
@@ -5629,6 +7035,8 @@ window.HSK_CHARS = [
     "meaning": "original; former; as it turns out",
     "level": 4,
     "phrase": "原来",
+    "prompt1": "原因",
+    "prompt2": "原谅",
     "sentence": "这是“原”字。"
   },
   {
@@ -5637,6 +7045,8 @@ window.HSK_CHARS = [
     "meaning": "kitchen",
     "level": 4,
     "phrase": "厨房",
+    "prompt1": "厨房",
+    "prompt2": "写厨字",
     "sentence": "这是“厨”字。"
   },
   {
@@ -5645,6 +7055,8 @@ window.HSK_CHARS = [
     "meaning": "timely; in time; promptly; without delay",
     "level": 4,
     "phrase": "及时",
+    "prompt1": "及时",
+    "prompt2": "来得及",
     "sentence": "这是“及”字。"
   },
   {
@@ -5653,6 +7065,8 @@ window.HSK_CHARS = [
     "meaning": "oppose; fight against",
     "level": 4,
     "phrase": "反对",
+    "prompt1": "反对",
+    "prompt2": "相反",
     "sentence": "这是“反”字。"
   },
   {
@@ -5661,6 +7075,8 @@ window.HSK_CHARS = [
     "meaning": "to take; get; choose",
     "level": 4,
     "phrase": "取",
+    "prompt1": "取消",
+    "prompt2": "采取",
     "sentence": "这是“取”字。"
   },
   {
@@ -5669,6 +7085,8 @@ window.HSK_CHARS = [
     "meaning": "accept; receive (honors, etc.)",
     "level": 4,
     "phrase": "接受",
+    "prompt1": "受到",
+    "prompt2": "难受",
     "sentence": "这是“受”字。"
   },
   {
@@ -5677,6 +7095,8 @@ window.HSK_CHARS = [
     "meaning": "another; in addition; besides",
     "level": 4,
     "phrase": "另外",
+    "prompt1": "另外",
+    "prompt2": "写另字",
     "sentence": "这是“另”字。"
   },
   {
@@ -5685,6 +7105,8 @@ window.HSK_CHARS = [
     "meaning": "platform; Taiwan (abbr.); desk; stage; typhoon; (mw for machines); (classical) you (in letters)",
     "level": 4,
     "phrase": "台",
+    "prompt1": "台阶",
+    "prompt2": "阳台",
     "sentence": "这是“台”字。"
   },
   {
@@ -5693,6 +7115,8 @@ window.HSK_CHARS = [
     "meaning": "leaves",
     "level": 4,
     "phrase": "叶子",
+    "prompt1": "叶子",
+    "prompt2": "写叶字",
     "sentence": "这是“叶”字。"
   },
   {
@@ -5701,6 +7125,8 @@ window.HSK_CHARS = [
     "meaning": "each; every",
     "level": 4,
     "phrase": "各",
+    "prompt1": "各自",
+    "prompt2": "各抒己见",
     "sentence": "这是“各”字。"
   },
   {
@@ -5709,6 +7135,8 @@ window.HSK_CHARS = [
     "meaning": "in keeping with; in accordance with; conform",
     "level": 4,
     "phrase": "符合",
+    "prompt1": "合格",
+    "prompt2": "适合",
     "sentence": "这是“合”字。"
   },
   {
@@ -5717,6 +7145,8 @@ window.HSK_CHARS = [
     "meaning": "if not; otherwise; or else",
     "level": 4,
     "phrase": "否则",
+    "prompt1": "否则",
+    "prompt2": "是否",
     "sentence": "这是“否”字。"
   },
   {
@@ -5725,6 +7155,8 @@ window.HSK_CHARS = [
     "meaning": "attract (interest, investment, etc.)",
     "level": 4,
     "phrase": "吸引",
+    "prompt1": "吸引",
+    "prompt2": "呼吸",
     "sentence": "这是“吸”字。"
   },
   {
@@ -5733,6 +7165,8 @@ window.HSK_CHARS = [
     "meaning": "ah; oh; (used for after words ending with a, e, i, o, or ü)",
     "level": 4,
     "phrase": "呀",
+    "prompt1": "对呀",
+    "prompt2": "是呀",
     "sentence": "这是“呀”字。"
   },
   {
@@ -5741,6 +7175,8 @@ window.HSK_CHARS = [
     "meaning": "flavor; taste",
     "level": 4,
     "phrase": "味道",
+    "prompt1": "味道",
+    "prompt2": "口味",
     "sentence": "这是“味”字。"
   },
   {
@@ -5749,6 +7185,8 @@ window.HSK_CHARS = [
     "meaning": "notify; greet; inform",
     "level": 4,
     "phrase": "打招呼",
+    "prompt1": "打招呼",
+    "prompt2": "呼吸",
     "sentence": "这是“呼”字。"
   },
   {
@@ -5757,6 +7195,8 @@ window.HSK_CHARS = [
     "meaning": "life",
     "level": 4,
     "phrase": "生命",
+    "prompt1": "生命",
+    "prompt2": "命运",
     "sentence": "这是“命”字。"
   },
   {
@@ -5765,6 +7205,8 @@ window.HSK_CHARS = [
     "meaning": "we (including the listener); us; our",
     "level": 4,
     "phrase": "咱们",
+    "prompt1": "咱们",
+    "prompt2": "写咱字",
     "sentence": "这是“咱”字。"
   },
   {
@@ -5773,6 +7215,8 @@ window.HSK_CHARS = [
     "meaning": "to cough",
     "level": 4,
     "phrase": "咳嗽",
+    "prompt1": "咳嗽",
+    "prompt2": "写咳字",
     "sentence": "这是“咳”字。"
   },
   {
@@ -5781,6 +7225,8 @@ window.HSK_CHARS = [
     "meaning": "salty; salted; all",
     "level": 4,
     "phrase": "咸",
+    "prompt1": "咸字",
+    "prompt2": "写咸字",
     "sentence": "这是“咸”字。"
   },
   {
@@ -5789,6 +7235,8 @@ window.HSK_CHARS = [
     "meaning": "salesclerk; shop assistant",
     "level": 4,
     "phrase": "售货员",
+    "prompt1": "售货员",
+    "prompt2": "销售",
     "sentence": "这是“售”字。"
   },
   {
@@ -5797,6 +7245,8 @@ window.HSK_CHARS = [
     "meaning": "to cough",
     "level": 4,
     "phrase": "咳嗽",
+    "prompt1": "咳嗽",
+    "prompt2": "写嗽字",
     "sentence": "这是“嗽”字。"
   },
   {
@@ -5805,6 +7255,8 @@ window.HSK_CHARS = [
     "meaning": "sleepy; surround; hard-pressed",
     "level": 4,
     "phrase": "困",
+    "prompt1": "困难",
+    "prompt2": "贫困",
     "sentence": "这是“困”字。"
   },
   {
@@ -5813,6 +7265,8 @@ window.HSK_CHARS = [
     "meaning": "surroundings; vicinity; environment",
     "level": 4,
     "phrase": "周围",
+    "prompt1": "周围",
+    "prompt2": "围绕",
     "sentence": "这是“围”字。"
   },
   {
@@ -5821,6 +7275,8 @@ window.HSK_CHARS = [
     "meaning": "garbage can",
     "level": 4,
     "phrase": "垃圾桶",
+    "prompt1": "垃圾桶",
+    "prompt2": "写圾字",
     "sentence": "这是“圾”字。"
   },
   {
@@ -5829,6 +7285,8 @@ window.HSK_CHARS = [
     "meaning": "address",
     "level": 4,
     "phrase": "地址",
+    "prompt1": "地址",
+    "prompt2": "写址字",
     "sentence": "这是“址”字。"
   },
   {
@@ -5837,6 +7295,8 @@ window.HSK_CHARS = [
     "meaning": "persist in; persevere",
     "level": 4,
     "phrase": "坚持",
+    "prompt1": "坚持",
+    "prompt2": "坚强",
     "sentence": "这是“坚”字。"
   },
   {
@@ -5845,6 +7305,8 @@ window.HSK_CHARS = [
     "meaning": "garbage can",
     "level": 4,
     "phrase": "垃圾桶",
+    "prompt1": "垃圾桶",
+    "prompt2": "写垃字",
     "sentence": "这是“垃”字。"
   },
   {
@@ -5853,6 +7315,8 @@ window.HSK_CHARS = [
     "meaning": "base; foundation",
     "level": 4,
     "phrase": "基础",
+    "prompt1": "基础",
+    "prompt2": "基本",
     "sentence": "这是“基”字。"
   },
   {
@@ -5861,6 +7325,8 @@ window.HSK_CHARS = [
     "meaning": "traffic jam",
     "level": 4,
     "phrase": "堵车",
+    "prompt1": "堵车",
+    "prompt2": "堵塞",
     "sentence": "这是“堵”字。"
   },
   {
@@ -5869,6 +7335,8 @@ window.HSK_CHARS = [
     "meaning": "plastic bag",
     "level": 4,
     "phrase": "塑料袋",
+    "prompt1": "塑料袋",
+    "prompt2": "雕塑",
     "sentence": "这是“塑”字。"
   },
   {
@@ -5877,6 +7345,8 @@ window.HSK_CHARS = [
     "meaning": "fill in the blanks; fill a vacancy",
     "level": 4,
     "phrase": "填空",
+    "prompt1": "填空",
+    "prompt2": "写填字",
     "sentence": "这是“填”字。"
   },
   {
@@ -5885,6 +7355,8 @@ window.HSK_CHARS = [
     "meaning": "to increase; to raise; add",
     "level": 4,
     "phrase": "增加",
+    "prompt1": "增加",
+    "prompt2": "递增",
     "sentence": "这是“增”字。"
   },
   {
@@ -5893,6 +7365,8 @@ window.HSK_CHARS = [
     "meaning": "doctor; PhD",
     "level": 4,
     "phrase": "博士",
+    "prompt1": "博士",
+    "prompt2": "硕士",
     "sentence": "这是“士”字。"
   },
   {
@@ -5901,6 +7375,8 @@ window.HSK_CHARS = [
     "meaning": "everywhere; in all places; all over",
     "level": 4,
     "phrase": "到处",
+    "prompt1": "到处",
+    "prompt2": "好处",
     "sentence": "这是“处”字。"
   },
   {
@@ -5909,6 +7385,8 @@ window.HSK_CHARS = [
     "meaning": "enough; to reach",
     "level": 4,
     "phrase": "够",
+    "prompt1": "够字",
+    "prompt2": "写够字",
     "sentence": "这是“够”字。"
   },
   {
@@ -5917,6 +7395,8 @@ window.HSK_CHARS = [
     "meaning": "be defeated; fail; lose",
     "level": 4,
     "phrase": "失败",
+    "prompt1": "失望",
+    "prompt2": "失败",
     "sentence": "这是“失”字。"
   },
   {
@@ -5925,6 +7405,8 @@ window.HSK_CHARS = [
     "meaning": "excitement be excited",
     "level": 4,
     "phrase": "兴奋",
+    "prompt1": "兴奋",
+    "prompt2": "奋斗",
     "sentence": "这是“奋”字。"
   },
   {
@@ -5933,6 +7415,8 @@ window.HSK_CHARS = [
     "meaning": "bonus",
     "level": 4,
     "phrase": "奖金",
+    "prompt1": "奖金",
+    "prompt2": "过奖",
     "sentence": "这是“奖”字。"
   },
   {
@@ -5941,6 +7425,8 @@ window.HSK_CHARS = [
     "meaning": "exist; to deposit; to store",
     "level": 4,
     "phrase": "存",
+    "prompt1": "存在",
+    "prompt2": "保存",
     "sentence": "这是“存”字。"
   },
   {
@@ -5949,6 +7435,8 @@ window.HSK_CHARS = [
     "meaning": "grandson; son's son",
     "level": 4,
     "phrase": "孙子",
+    "prompt1": "孙子",
+    "prompt2": "写孙字",
     "sentence": "这是“孙”字。"
   },
   {
@@ -5957,6 +7445,8 @@ window.HSK_CHARS = [
     "meaning": "send by mail",
     "level": 4,
     "phrase": "寄",
+    "prompt1": "寄托",
+    "prompt2": "写寄字",
     "sentence": "这是“寄”字。"
   },
   {
@@ -5965,6 +7455,8 @@ window.HSK_CHARS = [
     "meaning": "password; secret code",
     "level": 4,
     "phrase": "密码",
+    "prompt1": "密码",
+    "prompt2": "秘密",
     "sentence": "这是“密”字。"
   },
   {
@@ -5973,6 +7465,8 @@ window.HSK_CHARS = [
     "meaning": "wealthy",
     "level": 4,
     "phrase": "富",
+    "prompt1": "丰富",
+    "prompt2": "富裕",
     "sentence": "这是“富”字。"
   },
   {
@@ -5981,6 +7475,8 @@ window.HSK_CHARS = [
     "meaning": "winter vacation",
     "level": 4,
     "phrase": "寒假",
+    "prompt1": "寒假",
+    "prompt2": "严寒",
     "sentence": "这是“寒”字。"
   },
   {
@@ -5989,6 +7485,8 @@ window.HSK_CHARS = [
     "meaning": "police",
     "level": 4,
     "phrase": "警察",
+    "prompt1": "警察",
+    "prompt2": "观察",
     "sentence": "这是“察”字。"
   },
   {
@@ -5997,6 +7495,8 @@ window.HSK_CHARS = [
     "meaning": "tour guide",
     "level": 4,
     "phrase": "导游",
+    "prompt1": "导游",
+    "prompt2": "领导",
     "sentence": "这是“导”字。"
   },
   {
@@ -6005,6 +7505,8 @@ window.HSK_CHARS = [
     "meaning": "envelope",
     "level": 4,
     "phrase": "信封",
+    "prompt1": "信封",
+    "prompt2": "封闭",
     "sentence": "这是“封”字。"
   },
   {
@@ -6013,6 +7515,8 @@ window.HSK_CHARS = [
     "meaning": "the future",
     "level": 4,
     "phrase": "将来",
+    "prompt1": "将来",
+    "prompt2": "即将",
     "sentence": "这是“将”字。"
   },
   {
@@ -6021,6 +7525,8 @@ window.HSK_CHARS = [
     "meaning": "esteem; to respect; to value; to honor",
     "level": 4,
     "phrase": "尊重",
+    "prompt1": "尊重",
+    "prompt2": "尊敬",
     "sentence": "这是“尊”字。"
   },
   {
@@ -6029,6 +7535,8 @@ window.HSK_CHARS = [
     "meaning": "occasionally; once in a while; sometimes",
     "level": 4,
     "phrase": "偶尔",
+    "prompt1": "偶尔",
+    "prompt2": "写尔字",
     "sentence": "这是“尔”字。"
   },
   {
@@ -6037,6 +7545,8 @@ window.HSK_CHARS = [
     "meaning": "to taste; flavor; (past tense marker)",
     "level": 4,
     "phrase": "尝",
+    "prompt1": "尝试",
+    "prompt2": "品尝",
     "sentence": "这是“尝”字。"
   },
   {
@@ -6045,6 +7555,8 @@ window.HSK_CHARS = [
     "meaning": "especially; particularly",
     "level": 4,
     "phrase": "尤其",
+    "prompt1": "尤其",
+    "prompt2": "写尤字",
     "sentence": "这是“尤”字。"
   },
   {
@@ -6053,6 +7565,8 @@ window.HSK_CHARS = [
     "meaning": "despite; although; even though | freely; without hesitation",
     "level": 4,
     "phrase": "尽管",
+    "prompt1": "尽管",
+    "prompt2": "尽量",
     "sentence": "这是“尽”字。"
   },
   {
@@ -6061,6 +7575,8 @@ window.HSK_CHARS = [
     "meaning": "post office",
     "level": 4,
     "phrase": "邮局",
+    "prompt1": "邮局",
+    "prompt2": "局面",
     "sentence": "这是“局”字。"
   },
   {
@@ -6069,6 +7585,8 @@ window.HSK_CHARS = [
     "meaning": "develop; development; growth",
     "level": 4,
     "phrase": "发展",
+    "prompt1": "发展",
+    "prompt2": "展览",
     "sentence": "这是“展”字。"
   },
   {
@@ -6077,6 +7595,8 @@ window.HSK_CHARS = [
     "meaning": "chocolate",
     "level": 4,
     "phrase": "巧克力",
+    "prompt1": "巧克力",
+    "prompt2": "巧妙",
     "sentence": "这是“巧”字。"
   },
   {
@@ -6085,6 +7605,8 @@ window.HSK_CHARS = [
     "meaning": "towel; washcloth",
     "level": 4,
     "phrase": "毛巾",
+    "prompt1": "毛巾",
+    "prompt2": "围巾",
     "sentence": "这是“巾”字。"
   },
   {
@@ -6093,6 +7615,8 @@ window.HSK_CHARS = [
     "meaning": "handsome; graceful; commander-in-chief",
     "level": 4,
     "phrase": "帅",
+    "prompt1": "帅字",
+    "prompt2": "写帅字",
     "sentence": "这是“帅”字。"
   },
   {
@@ -6101,6 +7625,8 @@ window.HSK_CHARS = [
     "meaning": "and; besides; moreover",
     "level": 4,
     "phrase": "并且",
+    "prompt1": "并且",
+    "prompt2": "合并",
     "sentence": "这是“并”字。"
   },
   {
@@ -6109,6 +7635,8 @@ window.HSK_CHARS = [
     "meaning": "happy; blessed; fortunate",
     "level": 4,
     "phrase": "幸福",
+    "prompt1": "幸福",
+    "prompt2": "幸运",
     "sentence": "这是“幸”字。"
   },
   {
@@ -6117,6 +7645,8 @@ window.HSK_CHARS = [
     "meaning": "humorous",
     "level": 4,
     "phrase": "幽默",
+    "prompt1": "幽默",
+    "prompt2": "写幽字",
     "sentence": "这是“幽”字。"
   },
   {
@@ -6125,6 +7655,8 @@ window.HSK_CHARS = [
     "meaning": "broadcast; on the air",
     "level": 4,
     "phrase": "广播",
+    "prompt1": "广告",
+    "prompt2": "广播",
     "sentence": "这是“广”字。"
   },
   {
@@ -6133,6 +7665,8 @@ window.HSK_CHARS = [
     "meaning": "sequence; order",
     "level": 4,
     "phrase": "顺序",
+    "prompt1": "顺序",
+    "prompt2": "程序",
     "sentence": "这是“序”字。"
   },
   {
@@ -6141,6 +7675,8 @@ window.HSK_CHARS = [
     "meaning": "bottom; background; base",
     "level": 4,
     "phrase": "底",
+    "prompt1": "到底",
+    "prompt2": "彻底",
     "sentence": "这是“底”字。"
   },
   {
@@ -6149,6 +7685,8 @@ window.HSK_CHARS = [
     "meaning": "speed; rate; velocity",
     "level": 4,
     "phrase": "速度",
+    "prompt1": "态度",
+    "prompt2": "速度",
     "sentence": "这是“度”字。"
   },
   {
@@ -6157,6 +7695,8 @@ window.HSK_CHARS = [
     "meaning": "(mw for mountains, bridges, tall buildings, etc.); | seat; base; stand; constellation",
     "level": 4,
     "phrase": "座",
+    "prompt1": "座位",
+    "prompt2": "讲座",
     "sentence": "这是“座”字。"
   },
   {
@@ -6165,6 +7705,8 @@ window.HSK_CHARS = [
     "meaning": "to propose; to suggest; recommend",
     "level": 4,
     "phrase": "建议",
+    "prompt1": "建议",
+    "prompt2": "建设",
     "sentence": "这是“建”字。"
   },
   {
@@ -6173,6 +7715,8 @@ window.HSK_CHARS = [
     "meaning": "abandon; renounce; give up",
     "level": 4,
     "phrase": "放弃",
+    "prompt1": "放弃",
+    "prompt2": "抛弃",
     "sentence": "这是“弃”字。"
   },
   {
@@ -6181,6 +7725,8 @@ window.HSK_CHARS = [
     "meaning": "do; manage; to handle; make",
     "level": 4,
     "phrase": "弄",
+    "prompt1": "玩弄",
+    "prompt2": "写弄字",
     "sentence": "这是“弄”字。"
   },
   {
@@ -6189,6 +7735,8 @@ window.HSK_CHARS = [
     "meaning": "formal; official",
     "level": 4,
     "phrase": "正式",
+    "prompt1": "正式",
+    "prompt2": "样式",
     "sentence": "这是“式”字。"
   },
   {
@@ -6197,6 +7745,8 @@ window.HSK_CHARS = [
     "meaning": "attract (interest, investment, etc.)",
     "level": 4,
     "phrase": "吸引",
+    "prompt1": "引起",
+    "prompt2": "吸引",
     "sentence": "这是“引”字。"
   },
   {
@@ -6205,6 +7755,8 @@ window.HSK_CHARS = [
     "meaning": "play the piano",
     "level": 4,
     "phrase": "弹钢琴",
+    "prompt1": "弹钢琴",
+    "prompt2": "导弹",
     "sentence": "这是“弹”字。"
   },
   {
@@ -6213,6 +7765,8 @@ window.HSK_CHARS = [
     "meaning": "brilliant; spectacular; wonderful",
     "level": 4,
     "phrase": "精彩",
+    "prompt1": "精彩",
+    "prompt2": "彩虹",
     "sentence": "这是“彩”字。"
   },
   {
@@ -6221,6 +7775,8 @@ window.HSK_CHARS = [
     "meaning": "law; statute",
     "level": 4,
     "phrase": "法律",
+    "prompt1": "律师",
+    "prompt2": "法律",
     "sentence": "这是“律”字。"
   },
   {
@@ -6229,6 +7785,8 @@ window.HSK_CHARS = [
     "meaning": "a little bit; slightly",
     "level": 4,
     "phrase": "稍微",
+    "prompt1": "稍微",
+    "prompt2": "微笑",
     "sentence": "这是“微”字。"
   },
   {
@@ -6237,6 +7795,8 @@ window.HSK_CHARS = [
     "meaning": "to recall; recollect",
     "level": 4,
     "phrase": "回忆",
+    "prompt1": "回忆",
+    "prompt2": "记忆",
     "sentence": "这是“忆”字。"
   },
   {
@@ -6245,6 +7805,8 @@ window.HSK_CHARS = [
     "meaning": "magazine",
     "level": 4,
     "phrase": "杂志",
+    "prompt1": "杂志",
+    "prompt2": "标志",
     "sentence": "这是“志”字。"
   },
   {
@@ -6253,6 +7815,8 @@ window.HSK_CHARS = [
     "meaning": "doubt; to suspect; be skeptical",
     "level": 4,
     "phrase": "怀疑",
+    "prompt1": "怀疑",
+    "prompt2": "怀念",
     "sentence": "这是“怀”字。"
   },
   {
@@ -6261,6 +7825,8 @@ window.HSK_CHARS = [
     "meaning": "manner; bearing; attitude",
     "level": 4,
     "phrase": "态度",
+    "prompt1": "态度",
+    "prompt2": "状态",
     "sentence": "这是“态”字。"
   },
   {
@@ -6269,6 +7835,8 @@ window.HSK_CHARS = [
     "meaning": "pitiful; poor; pathetic",
     "level": 4,
     "phrase": "可怜",
+    "prompt1": "可怜",
+    "prompt2": "写怜字",
     "sentence": "这是“怜”字。"
   },
   {
@@ -6277,6 +7845,8 @@ window.HSK_CHARS = [
     "meaning": "gender; sex; sexual distinction",
     "level": 4,
     "phrase": "性别",
+    "prompt1": "性别",
+    "prompt2": "性格",
     "sentence": "这是“性”字。"
   },
   {
@@ -6285,6 +7855,8 @@ window.HSK_CHARS = [
     "meaning": "be afraid; to fear; I'm afraid that...",
     "level": 4,
     "phrase": "恐怕",
+    "prompt1": "恐怕",
+    "prompt2": "恐惧",
     "sentence": "这是“恐”字。"
   },
   {
@@ -6293,6 +7865,8 @@ window.HSK_CHARS = [
     "meaning": "worried; vexed",
     "level": 4,
     "phrase": "烦恼",
+    "prompt1": "烦恼",
+    "prompt2": "恼火",
     "sentence": "这是“恼”字。"
   },
   {
@@ -6301,6 +7875,8 @@ window.HSK_CHARS = [
     "meaning": "familiar with; know well",
     "level": 4,
     "phrase": "熟悉",
+    "prompt1": "熟悉",
+    "prompt2": "据悉",
     "sentence": "这是“悉”字。"
   },
   {
@@ -6309,6 +7885,8 @@ window.HSK_CHARS = [
     "meaning": "to regret; repent",
     "level": 4,
     "phrase": "后悔",
+    "prompt1": "后悔",
+    "prompt2": "悔恨",
     "sentence": "这是“悔”字。"
   },
   {
@@ -6317,6 +7895,8 @@ window.HSK_CHARS = [
     "meaning": "be startled; be shocked; be amazed",
     "level": 4,
     "phrase": "吃惊",
+    "prompt1": "吃惊",
+    "prompt2": "惊讶",
     "sentence": "这是“惊”字。"
   },
   {
@@ -6325,6 +7905,8 @@ window.HSK_CHARS = [
     "meaning": "it's a pity; regrettable; too bad",
     "level": 4,
     "phrase": "可惜",
+    "prompt1": "可惜",
+    "prompt2": "珍惜",
     "sentence": "这是“惜”字。"
   },
   {
@@ -6333,6 +7915,8 @@ window.HSK_CHARS = [
     "meaning": "happy; cheerful; delightful",
     "level": 4,
     "phrase": "愉快",
+    "prompt1": "愉快",
+    "prompt2": "写愉字",
     "sentence": "这是“愉”字。"
   },
   {
@@ -6341,6 +7925,8 @@ window.HSK_CHARS = [
     "meaning": "to envy; admire",
     "level": 4,
     "phrase": "羡慕",
+    "prompt1": "羡慕",
+    "prompt2": "写慕字",
     "sentence": "这是“慕”字。"
   },
   {
@@ -6349,6 +7935,8 @@ window.HSK_CHARS = [
     "meaning": "lazy",
     "level": 4,
     "phrase": "懒",
+    "prompt1": "懒惰",
+    "prompt2": "写懒字",
     "sentence": "这是“懒”字。"
   },
   {
@@ -6357,6 +7945,8 @@ window.HSK_CHARS = [
     "meaning": "a relative (i.e. family relation)",
     "level": 4,
     "phrase": "亲戚",
+    "prompt1": "亲戚",
+    "prompt2": "写戚字",
     "sentence": "这是“戚”字。"
   },
   {
@@ -6365,6 +7955,8 @@ window.HSK_CHARS = [
     "meaning": "put on; to wear; to respect",
     "level": 4,
     "phrase": "戴",
+    "prompt1": "爱戴",
+    "prompt2": "写戴字",
     "sentence": "这是“戴”字。"
   },
   {
@@ -6373,6 +7965,8 @@ window.HSK_CHARS = [
     "meaning": "window",
     "level": 4,
     "phrase": "窗户",
+    "prompt1": "窗户",
+    "prompt2": "账户",
     "sentence": "这是“户”字。"
   },
   {
@@ -6381,6 +7975,8 @@ window.HSK_CHARS = [
     "meaning": "to throw; throw away",
     "level": 4,
     "phrase": "扔",
+    "prompt1": "扔字",
+    "prompt2": "写扔字",
     "sentence": "这是“扔”字。"
   },
   {
@@ -6389,6 +7985,8 @@ window.HSK_CHARS = [
     "meaning": "to praise; commend",
     "level": 4,
     "phrase": "表扬",
+    "prompt1": "表扬",
+    "prompt2": "飘扬",
     "sentence": "这是“扬”字。"
   },
   {
@@ -6397,6 +7995,8 @@ window.HSK_CHARS = [
     "meaning": "dress up; put on make up",
     "level": 4,
     "phrase": "打扮",
+    "prompt1": "打扮",
+    "prompt2": "扮演",
     "sentence": "这是“扮”字。"
   },
   {
@@ -6405,6 +8005,8 @@ window.HSK_CHARS = [
     "meaning": "disturb",
     "level": 4,
     "phrase": "打扰",
+    "prompt1": "打扰",
+    "prompt2": "扰乱",
     "sentence": "这是“扰”字。"
   },
   {
@@ -6413,6 +8015,8 @@ window.HSK_CHARS = [
     "meaning": "criticize; to comment; wholesale; (mw for batches, lots, etc.)",
     "level": 4,
     "phrase": "批",
+    "prompt1": "批评",
+    "prompt2": "批准",
     "sentence": "这是“批”字。"
   },
   {
@@ -6421,6 +8025,8 @@ window.HSK_CHARS = [
     "meaning": "technology; technique; skill",
     "level": 4,
     "phrase": "技术",
+    "prompt1": "技术",
+    "prompt2": "杂技",
     "sentence": "这是“技”字。"
   },
   {
@@ -6429,6 +8035,8 @@ window.HSK_CHARS = [
     "meaning": "to break; to fracture; convert into; to fold",
     "level": 4,
     "phrase": "折",
+    "prompt1": "打折",
+    "prompt2": "折腾",
     "sentence": "这是“折”字。"
   },
   {
@@ -6437,6 +8045,8 @@ window.HSK_CHARS = [
     "meaning": "to lift; to raise (with both palms up); carry (together)",
     "level": 4,
     "phrase": "抬",
+    "prompt1": "抬字",
+    "prompt2": "写抬字",
     "sentence": "这是“抬”字。"
   },
   {
@@ -6445,6 +8055,8 @@ window.HSK_CHARS = [
     "meaning": "to hold; to hug; carry in one's arms; to cradle",
     "level": 4,
     "phrase": "抱",
+    "prompt1": "抱歉",
+    "prompt2": "拥抱",
     "sentence": "这是“抱”字。"
   },
   {
@@ -6453,6 +8065,8 @@ window.HSK_CHARS = [
     "meaning": "to smoke (a cigarette, pipe, etc.)",
     "level": 4,
     "phrase": "抽烟",
+    "prompt1": "抽烟",
+    "prompt2": "抽象",
     "sentence": "这是“抽”字。"
   },
   {
@@ -6461,6 +8075,8 @@ window.HSK_CHARS = [
     "meaning": "to pull; to play (string instruments); to drag",
     "level": 4,
     "phrase": "拉",
+    "prompt1": "拉字",
+    "prompt2": "写拉字",
     "sentence": "这是“拉”字。"
   },
   {
@@ -6469,6 +8085,8 @@ window.HSK_CHARS = [
     "meaning": "to refuse; to decline; to reject",
     "level": 4,
     "phrase": "拒绝",
+    "prompt1": "拒绝",
+    "prompt2": "写拒字",
     "sentence": "这是“拒”字。"
   },
   {
@@ -6477,6 +8095,8 @@ window.HSK_CHARS = [
     "meaning": "notify; greet; inform",
     "level": 4,
     "phrase": "打招呼",
+    "prompt1": "招聘",
+    "prompt2": "打招呼",
     "sentence": "这是“招”字。"
   },
   {
@@ -6485,6 +8105,8 @@ window.HSK_CHARS = [
     "meaning": "Sunday",
     "level": 4,
     "phrase": "礼拜天",
+    "prompt1": "礼拜天",
+    "prompt2": "拜访",
     "sentence": "这是“拜”字。"
   },
   {
@@ -6493,6 +8115,8 @@ window.HSK_CHARS = [
     "meaning": "pick up; ten (banker's anti-fraud numeral)",
     "level": 4,
     "phrase": "拾",
+    "prompt1": "收拾",
+    "prompt2": "写拾字",
     "sentence": "这是“拾”字。"
   },
   {
@@ -6501,6 +8125,8 @@ window.HSK_CHARS = [
     "meaning": "persist in; persevere",
     "level": 4,
     "phrase": "坚持",
+    "prompt1": "坚持",
+    "prompt2": "支持",
     "sentence": "这是“持”字。"
   },
   {
@@ -6509,6 +8135,8 @@ window.HSK_CHARS = [
     "meaning": "hang; put up; suspend",
     "level": 4,
     "phrase": "挂",
+    "prompt1": "挂号",
+    "prompt2": "悬挂",
     "sentence": "这是“挂”字。"
   },
   {
@@ -6517,6 +8145,8 @@ window.HSK_CHARS = [
     "meaning": "finger; to point (at, to, out); refer to",
     "level": 4,
     "phrase": "指",
+    "prompt1": "指导",
+    "prompt2": "手指",
     "sentence": "这是“指”字。"
   },
   {
@@ -6525,6 +8155,8 @@ window.HSK_CHARS = [
     "meaning": "on time; on schedule",
     "level": 4,
     "phrase": "按时",
+    "prompt1": "按时",
+    "prompt2": "按照",
     "sentence": "这是“按”字。"
   },
   {
@@ -6533,6 +8165,8 @@ window.HSK_CHARS = [
     "meaning": "straighten up; stick out; rather (good); very",
     "level": 4,
     "phrase": "挺",
+    "prompt1": "挺拔",
+    "prompt2": "写挺字",
     "sentence": "这是“挺”字。"
   },
   {
@@ -6541,6 +8175,8 @@ window.HSK_CHARS = [
     "meaning": "professor; instruct; to lecture",
     "level": 4,
     "phrase": "教授",
+    "prompt1": "教授",
+    "prompt2": "授予",
     "sentence": "这是“授”字。"
   },
   {
@@ -6549,6 +8185,8 @@ window.HSK_CHARS = [
     "meaning": "to drop; to fall",
     "level": 4,
     "phrase": "掉",
+    "prompt1": "掉字",
+    "prompt2": "写掉字",
     "sentence": "这是“掉”字。"
   },
   {
@@ -6557,6 +8195,8 @@ window.HSK_CHARS = [
     "meaning": "arrange; to plan",
     "level": 4,
     "phrase": "安排",
+    "prompt1": "排列",
+    "prompt2": "安排",
     "sentence": "这是“排”字。"
   },
   {
@@ -6565,6 +8205,8 @@ window.HSK_CHARS = [
     "meaning": "to push; to scrape; to decline; postpone; elect",
     "level": 4,
     "phrase": "推",
+    "prompt1": "推迟",
+    "prompt2": "推辞",
     "sentence": "这是“推”字。"
   },
   {
@@ -6573,6 +8215,8 @@ window.HSK_CHARS = [
     "meaning": "broadcast; on the air",
     "level": 4,
     "phrase": "广播",
+    "prompt1": "广播",
+    "prompt2": "播放",
     "sentence": "这是“播”字。"
   },
   {
@@ -6581,6 +8225,8 @@ window.HSK_CHARS = [
     "meaning": "to wipe; to rub; to polish",
     "level": 4,
     "phrase": "擦",
+    "prompt1": "摩擦",
+    "prompt2": "写擦字",
     "sentence": "这是“擦”字。"
   },
   {
@@ -6589,6 +8235,8 @@ window.HSK_CHARS = [
     "meaning": "branch; support; put up; (mw for long; narrow objects) (Kangxi radical 65)",
     "level": 4,
     "phrase": "支",
+    "prompt1": "支持",
+    "prompt2": "支票",
     "sentence": "这是“支”字。"
   },
   {
@@ -6597,6 +8245,8 @@ window.HSK_CHARS = [
     "meaning": "receive; accept; collect; to harvest",
     "level": 4,
     "phrase": "收",
+    "prompt1": "收入",
+    "prompt2": "收拾",
     "sentence": "这是“收”字。"
   },
   {
@@ -6605,6 +8255,8 @@ window.HSK_CHARS = [
     "meaning": "to change; alter; to transform",
     "level": 4,
     "phrase": "改变",
+    "prompt1": "改变",
+    "prompt2": "修改",
     "sentence": "这是“改”字。"
   },
   {
@@ -6613,6 +8265,8 @@ window.HSK_CHARS = [
     "meaning": "effect; result",
     "level": 4,
     "phrase": "效果",
+    "prompt1": "效果",
+    "prompt2": "效率",
     "sentence": "这是“效”字。"
   },
   {
@@ -6621,6 +8275,8 @@ window.HSK_CHARS = [
     "meaning": "to dare",
     "level": 4,
     "phrase": "敢",
+    "prompt1": "勇敢",
+    "prompt2": "不敢当",
     "sentence": "这是“敢”字。"
   },
   {
@@ -6629,6 +8285,8 @@ window.HSK_CHARS = [
     "meaning": "to go for a walk",
     "level": 4,
     "phrase": "散步",
+    "prompt1": "散步",
+    "prompt2": "解散",
     "sentence": "这是“散”字。"
   },
   {
@@ -6637,6 +8295,8 @@ window.HSK_CHARS = [
     "meaning": "knock; blackmail",
     "level": 4,
     "phrase": "敲",
+    "prompt1": "敲字",
+    "prompt2": "写敲字",
     "sentence": "这是“敲”字。"
   },
   {
@@ -6645,6 +8305,8 @@ window.HSK_CHARS = [
     "meaning": "put in order; arrange; straighten up; to tidy; to pack (luggage)",
     "level": 4,
     "phrase": "整理",
+    "prompt1": "整理",
+    "prompt2": "调整",
     "sentence": "这是“整”字。"
   },
   {
@@ -6653,6 +8315,8 @@ window.HSK_CHARS = [
     "meaning": "to break; decide; absolutely (usually negative)",
     "level": 4,
     "phrase": "断",
+    "prompt1": "判断",
+    "prompt2": "诊断",
     "sentence": "这是“断”字。"
   },
   {
@@ -6661,6 +8325,8 @@ window.HSK_CHARS = [
     "meaning": "nationality; ethnic group",
     "level": 4,
     "phrase": "民族",
+    "prompt1": "民族",
+    "prompt2": "贵族",
     "sentence": "这是“族”字。"
   },
   {
@@ -6669,6 +8335,8 @@ window.HSK_CHARS = [
     "meaning": "have not; without; not (Kangxi radical 71)",
     "level": 4,
     "phrase": "无",
+    "prompt1": "无聊",
+    "prompt2": "无论",
     "sentence": "这是“无”字。"
   },
   {
@@ -6677,6 +8345,8 @@ window.HSK_CHARS = [
     "meaning": "since; given that; now that",
     "level": 4,
     "phrase": "既然",
+    "prompt1": "既然",
+    "prompt2": "一如既往",
     "sentence": "这是“既”字。"
   },
   {
@@ -6685,6 +8355,8 @@ window.HSK_CHARS = [
     "meaning": "common; universal; general; widespread",
     "level": 4,
     "phrase": "普遍",
+    "prompt1": "普遍",
+    "prompt2": "普通话",
     "sentence": "这是“普”字。"
   },
   {
@@ -6693,6 +8365,8 @@ window.HSK_CHARS = [
     "meaning": "scenery; landscape; scene; view",
     "level": 4,
     "phrase": "景色",
+    "prompt1": "景色",
+    "prompt2": "风景",
     "sentence": "这是“景”字。"
   },
   {
@@ -6701,6 +8375,8 @@ window.HSK_CHARS = [
     "meaning": "temporary; transient; for the moment",
     "level": 4,
     "phrase": "暂时",
+    "prompt1": "暂时",
+    "prompt2": "暂且",
     "sentence": "这是“暂”字。"
   },
   {
@@ -6709,6 +8385,8 @@ window.HSK_CHARS = [
     "meaning": "have summer vacation",
     "level": 4,
     "phrase": "放暑假",
+    "prompt1": "放暑假",
+    "prompt2": "写暑字",
     "sentence": "这是“暑”字。"
   },
   {
@@ -6717,6 +8395,8 @@ window.HSK_CHARS = [
     "meaning": "warm; nice and warm",
     "level": 4,
     "phrase": "暖和",
+    "prompt1": "暖和",
+    "prompt2": "温暖",
     "sentence": "这是“暖”字。"
   },
   {
@@ -6725,6 +8405,8 @@ window.HSK_CHARS = [
     "meaning": "technology; technique; skill",
     "level": 4,
     "phrase": "技术",
+    "prompt1": "技术",
+    "prompt2": "艺术",
     "sentence": "这是“术”字。"
   },
   {
@@ -6733,6 +8415,8 @@ window.HSK_CHARS = [
     "meaning": "complicated; complex",
     "level": 4,
     "phrase": "复杂",
+    "prompt1": "杂志",
+    "prompt2": "复杂",
     "sentence": "这是“杂”字。"
   },
   {
@@ -6741,6 +8425,8 @@ window.HSK_CHARS = [
     "meaning": "material",
     "level": 4,
     "phrase": "材料",
+    "prompt1": "材料",
+    "prompt2": "身材",
     "sentence": "这是“材”字。"
   },
   {
@@ -6749,6 +8435,8 @@ window.HSK_CHARS = [
     "meaning": "relax; loosen; slacken",
     "level": 4,
     "phrase": "放松",
+    "prompt1": "放松",
+    "prompt2": "轻松",
     "sentence": "这是“松”字。"
   },
   {
@@ -6757,6 +8445,8 @@ window.HSK_CHARS = [
     "meaning": "forest",
     "level": 4,
     "phrase": "森林",
+    "prompt1": "森林",
+    "prompt2": "园林",
     "sentence": "这是“林”字。"
   },
   {
@@ -6765,6 +8455,8 @@ window.HSK_CHARS = [
     "meaning": "dye; to catch (a disease)",
     "level": 4,
     "phrase": "染",
+    "prompt1": "污染",
+    "prompt2": "传染",
     "sentence": "这是“染”字。"
   },
   {
@@ -6773,6 +8465,8 @@ window.HSK_CHARS = [
     "meaning": "tomato",
     "level": 4,
     "phrase": "西红柿",
+    "prompt1": "西红柿",
+    "prompt2": "写柿字",
     "sentence": "这是“柿”字。"
   },
   {
@@ -6781,6 +8475,8 @@ window.HSK_CHARS = [
     "meaning": "(an official) standard; norm; criterion",
     "level": 4,
     "phrase": "标准",
+    "prompt1": "标准",
+    "prompt2": "鼠标",
     "sentence": "这是“标”字。"
   },
   {
@@ -6789,6 +8485,8 @@ window.HSK_CHARS = [
     "meaning": "form (document)",
     "level": 4,
     "phrase": "表格",
+    "prompt1": "严格",
+    "prompt2": "表格",
     "sentence": "这是“格”字。"
   },
   {
@@ -6797,6 +8495,8 @@ window.HSK_CHARS = [
     "meaning": "answer; solution",
     "level": 4,
     "phrase": "答案",
+    "prompt1": "答案",
+    "prompt2": "方案",
     "sentence": "这是“案”字。"
   },
   {
@@ -6805,6 +8505,8 @@ window.HSK_CHARS = [
     "meaning": "bridge",
     "level": 4,
     "phrase": "桥",
+    "prompt1": "桥梁",
+    "prompt2": "立交桥",
     "sentence": "这是“桥”字。"
   },
   {
@@ -6813,6 +8515,8 @@ window.HSK_CHARS = [
     "meaning": "garbage can",
     "level": 4,
     "phrase": "垃圾桶",
+    "prompt1": "垃圾桶",
+    "prompt2": "写桶字",
     "sentence": "这是“桶”字。"
   },
   {
@@ -6821,6 +8525,8 @@ window.HSK_CHARS = [
     "meaning": "to dream",
     "level": 4,
     "phrase": "梦",
+    "prompt1": "梦想",
+    "prompt2": "写梦字",
     "sentence": "这是“梦”字。"
   },
   {
@@ -6829,6 +8535,8 @@ window.HSK_CHARS = [
     "meaning": "stick; club; good; excellent",
     "level": 4,
     "phrase": "棒",
+    "prompt1": "棍棒",
+    "prompt2": "写棒字",
     "sentence": "这是“棒”字。"
   },
   {
@@ -6837,6 +8545,8 @@ window.HSK_CHARS = [
     "meaning": "forest",
     "level": 4,
     "phrase": "森林",
+    "prompt1": "森林",
+    "prompt2": "写森字",
     "sentence": "这是“森”字。"
   },
   {
@@ -6845,6 +8555,8 @@ window.HSK_CHARS = [
     "meaning": "(mw for plants)",
     "level": 4,
     "phrase": "棵",
+    "prompt1": "棵字",
+    "prompt2": "写棵字",
     "sentence": "这是“棵”字。"
   },
   {
@@ -6853,6 +8565,8 @@ window.HSK_CHARS = [
     "meaning": "plant; botanical; vegetation",
     "level": 4,
     "phrase": "植物",
+    "prompt1": "植物",
+    "prompt2": "种植",
     "sentence": "这是“植”字。"
   },
   {
@@ -6861,6 +8575,8 @@ window.HSK_CHARS = [
     "meaning": "probably; roughly; approximate",
     "level": 4,
     "phrase": "大概",
+    "prompt1": "大概",
+    "prompt2": "概括",
     "sentence": "这是“概”字。"
   },
   {
@@ -6869,6 +8585,8 @@ window.HSK_CHARS = [
     "meaning": "rubber; an eraser",
     "level": 4,
     "phrase": "橡皮",
+    "prompt1": "橡皮",
+    "prompt2": "写橡字",
     "sentence": "这是“橡”字。"
   },
   {
@@ -6877,6 +8595,8 @@ window.HSK_CHARS = [
     "meaning": "to pay",
     "level": 4,
     "phrase": "付款",
+    "prompt1": "付款",
+    "prompt2": "贷款",
     "sentence": "这是“款”字。"
   },
   {
@@ -6885,6 +8605,8 @@ window.HSK_CHARS = [
     "meaning": "be sorry; feel apologetic; to regret",
     "level": 4,
     "phrase": "抱歉",
+    "prompt1": "抱歉",
+    "prompt2": "道歉",
     "sentence": "这是“歉”字。"
   },
   {
@@ -6893,6 +8615,8 @@ window.HSK_CHARS = [
     "meaning": "to ban; prohibit",
     "level": 4,
     "phrase": "禁止",
+    "prompt1": "禁止",
+    "prompt2": "阻止",
     "sentence": "这是“止”字。"
   },
   {
@@ -6901,6 +8625,8 @@ window.HSK_CHARS = [
     "meaning": "therefore; thus; that is why; because of this",
     "level": 4,
     "phrase": "因此",
+    "prompt1": "因此",
+    "prompt2": "此外",
     "sentence": "这是“此”字。"
   },
   {
@@ -6909,6 +8635,8 @@ window.HSK_CHARS = [
     "meaning": "to die; dead; fixed; impassible; extremely",
     "level": 4,
     "phrase": "死",
+    "prompt1": "死亡",
+    "prompt2": "写死字",
     "sentence": "这是“死”字。"
   },
   {
@@ -6917,6 +8645,8 @@ window.HSK_CHARS = [
     "meaning": "mother",
     "level": 4,
     "phrase": "母亲",
+    "prompt1": "母亲",
+    "prompt2": "字母",
     "sentence": "这是“母”字。"
   },
   {
@@ -6925,6 +8655,8 @@ window.HSK_CHARS = [
     "meaning": "to graduate; to finish school",
     "level": 4,
     "phrase": "毕业",
+    "prompt1": "毕业",
+    "prompt2": "毕竟",
     "sentence": "这是“毕”字。"
   },
   {
@@ -6933,6 +8665,8 @@ window.HSK_CHARS = [
     "meaning": "hair; fur; feather; dime (Kangxi radical 82)",
     "level": 4,
     "phrase": "毛",
+    "prompt1": "毛巾",
+    "prompt2": "羽毛球",
     "sentence": "这是“毛”字。"
   },
   {
@@ -6941,6 +8675,8 @@ window.HSK_CHARS = [
     "meaning": "nationality; ethnic group",
     "level": 4,
     "phrase": "民族",
+    "prompt1": "民族",
+    "prompt2": "移民",
     "sentence": "这是“民”字。"
   },
   {
@@ -6949,6 +8685,8 @@ window.HSK_CHARS = [
     "meaning": "forever; eternal; always",
     "level": 4,
     "phrase": "永远",
+    "prompt1": "永远",
+    "prompt2": "永恒",
     "sentence": "这是“永”字。"
   },
   {
@@ -6957,6 +8695,8 @@ window.HSK_CHARS = [
     "meaning": "fruit juice",
     "level": 4,
     "phrase": "果汁",
+    "prompt1": "果汁",
+    "prompt2": "写汁字",
     "sentence": "这是“汁”字。"
   },
   {
@@ -6965,6 +8705,8 @@ window.HSK_CHARS = [
     "meaning": "sweat; perspiration; Khan",
     "level": 4,
     "phrase": "汗",
+    "prompt1": "汗字",
+    "prompt2": "写汗字",
     "sentence": "这是“汗”字。"
   },
   {
@@ -6973,6 +8715,8 @@ window.HSK_CHARS = [
     "meaning": "the Yangtze River; the Changjiang River",
     "level": 4,
     "phrase": "长江",
+    "prompt1": "长江",
+    "prompt2": "写江字",
     "sentence": "这是“江”字。"
   },
   {
@@ -6981,6 +8725,8 @@ window.HSK_CHARS = [
     "meaning": "pollution; contamination",
     "level": 4,
     "phrase": "污染",
+    "prompt1": "污染",
+    "prompt2": "贪污",
     "sentence": "这是“污”字。"
   },
   {
@@ -6989,6 +8735,8 @@ window.HSK_CHARS = [
     "meaning": "soup; broth",
     "level": 4,
     "phrase": "汤",
+    "prompt1": "汤字",
+    "prompt2": "写汤字",
     "sentence": "这是“汤”字。"
   },
   {
@@ -6997,6 +8745,8 @@ window.HSK_CHARS = [
     "meaning": "sofa",
     "level": 4,
     "phrase": "沙发",
+    "prompt1": "沙发",
+    "prompt2": "沙漠",
     "sentence": "这是“沙”字。"
   },
   {
@@ -7005,6 +8755,8 @@ window.HSK_CHARS = [
     "meaning": "gas station",
     "level": 4,
     "phrase": "加油站",
+    "prompt1": "加油站",
+    "prompt2": "油炸",
     "sentence": "这是“油”字。"
   },
   {
@@ -7013,6 +8765,8 @@ window.HSK_CHARS = [
     "meaning": "mineral water",
     "level": 4,
     "phrase": "矿泉水",
+    "prompt1": "矿泉水",
+    "prompt2": "源泉",
     "sentence": "这是“泉”字。"
   },
   {
@@ -7021,6 +8775,8 @@ window.HSK_CHARS = [
     "meaning": "to splash; to spill; rude and unreasonable; brutish",
     "level": 4,
     "phrase": "泼",
+    "prompt1": "活泼",
+    "prompt2": "写泼字",
     "sentence": "这是“泼”字。"
   },
   {
@@ -7029,6 +8785,8 @@ window.HSK_CHARS = [
     "meaning": "ocean",
     "level": 4,
     "phrase": "海洋",
+    "prompt1": "海洋",
+    "prompt2": "写洋字",
     "sentence": "这是“洋”字。"
   },
   {
@@ -7037,6 +8795,8 @@ window.HSK_CHARS = [
     "meaning": "Asia",
     "level": 4,
     "phrase": "亚洲",
+    "prompt1": "亚洲",
+    "prompt2": "欧洲",
     "sentence": "这是“洲”字。"
   },
   {
@@ -7045,6 +8805,8 @@ window.HSK_CHARS = [
     "meaning": "activity; exercise; move about",
     "level": 4,
     "phrase": "活动",
+    "prompt1": "活动",
+    "prompt2": "生活",
     "sentence": "这是“活”字。"
   },
   {
@@ -7053,6 +8815,8 @@ window.HSK_CHARS = [
     "meaning": "communicate; exchange; give and take; interaction; to alternate",
     "level": 4,
     "phrase": "交流",
+    "prompt1": "流利",
+    "prompt2": "交流",
     "sentence": "这是“流”字。"
   },
   {
@@ -7061,6 +8825,8 @@ window.HSK_CHARS = [
     "meaning": "economy; economic",
     "level": 4,
     "phrase": "经济",
+    "prompt1": "经济",
+    "prompt2": "救济",
     "sentence": "这是“济”字。"
   },
   {
@@ -7069,6 +8835,8 @@ window.HSK_CHARS = [
     "meaning": "to waste; squander",
     "level": 4,
     "phrase": "浪费",
+    "prompt1": "浪漫",
+    "prompt2": "浪费",
     "sentence": "这是“浪”字。"
   },
   {
@@ -7077,6 +8845,8 @@ window.HSK_CHARS = [
     "meaning": "ocean",
     "level": 4,
     "phrase": "海洋",
+    "prompt1": "海洋",
+    "prompt2": "海鲜",
     "sentence": "这是“海”字。"
   },
   {
@@ -7085,6 +8855,8 @@ window.HSK_CHARS = [
     "meaning": "news; information",
     "level": 4,
     "phrase": "消息",
+    "prompt1": "消息",
+    "prompt2": "取消",
     "sentence": "这是“消”字。"
   },
   {
@@ -7093,6 +8865,8 @@ window.HSK_CHARS = [
     "meaning": "deep; profound; dark (of colors)",
     "level": 4,
     "phrase": "深",
+    "prompt1": "深刻",
+    "prompt2": "资深",
     "sentence": "这是“深”字。"
   },
   {
@@ -7101,6 +8875,8 @@ window.HSK_CHARS = [
     "meaning": "temperature",
     "level": 4,
     "phrase": "温度",
+    "prompt1": "温度",
+    "prompt2": "温柔",
     "sentence": "这是“温”字。"
   },
   {
@@ -7109,6 +8885,8 @@ window.HSK_CHARS = [
     "meaning": "perform; to play",
     "level": 4,
     "phrase": "表演",
+    "prompt1": "演出",
+    "prompt2": "表演",
     "sentence": "这是“演”字。"
   },
   {
@@ -7117,6 +8895,8 @@ window.HSK_CHARS = [
     "meaning": "romantic",
     "level": 4,
     "phrase": "浪漫",
+    "prompt1": "浪漫",
+    "prompt2": "漫长",
     "sentence": "这是“漫”字。"
   },
   {
@@ -7125,6 +8905,8 @@ window.HSK_CHARS = [
     "meaning": "excite; agitate",
     "level": 4,
     "phrase": "激动",
+    "prompt1": "激动",
+    "prompt2": "感激",
     "sentence": "这是“激”字。"
   },
   {
@@ -7133,6 +8915,8 @@ window.HSK_CHARS = [
     "meaning": "to smoke (a cigarette, pipe, etc.)",
     "level": 4,
     "phrase": "抽烟",
+    "prompt1": "抽烟",
+    "prompt2": "炊烟",
     "sentence": "这是“烟”字。"
   },
   {
@@ -7141,6 +8925,8 @@ window.HSK_CHARS = [
     "meaning": "roast duck",
     "level": 4,
     "phrase": "烤鸭",
+    "prompt1": "烤鸭",
+    "prompt2": "写烤字",
     "sentence": "这是“烤”字。"
   },
   {
@@ -7149,6 +8935,8 @@ window.HSK_CHARS = [
     "meaning": "worried; vexed",
     "level": 4,
     "phrase": "烦恼",
+    "prompt1": "烦恼",
+    "prompt2": "麻烦",
     "sentence": "这是“烦”字。"
   },
   {
@@ -7157,6 +8945,8 @@ window.HSK_CHARS = [
     "meaning": "familiar with; know well",
     "level": 4,
     "phrase": "熟悉",
+    "prompt1": "熟悉",
+    "prompt2": "成熟",
     "sentence": "这是“熟”字。"
   },
   {
@@ -7165,6 +8955,8 @@ window.HSK_CHARS = [
     "meaning": "father",
     "level": 4,
     "phrase": "父亲",
+    "prompt1": "父亲",
+    "prompt2": "祖父",
     "sentence": "这是“父”字。"
   },
   {
@@ -7173,6 +8965,8 @@ window.HSK_CHARS = [
     "meaning": "boarding pass",
     "level": 4,
     "phrase": "登机牌",
+    "prompt1": "登机牌",
+    "prompt2": "名牌",
     "sentence": "这是“牌”字。"
   },
   {
@@ -7181,6 +8975,8 @@ window.HSK_CHARS = [
     "meaning": "to guess",
     "level": 4,
     "phrase": "猜",
+    "prompt1": "猜字",
+    "prompt2": "写猜字",
     "sentence": "这是“猜”字。"
   },
   {
@@ -7189,6 +8985,8 @@ window.HSK_CHARS = [
     "meaning": "play the piano",
     "level": 4,
     "phrase": "弹钢琴",
+    "prompt1": "弹钢琴",
+    "prompt2": "写琴字",
     "sentence": "这是“琴”字。"
   },
   {
@@ -7197,6 +8995,8 @@ window.HSK_CHARS = [
     "meaning": "even (to the point of); so much so that",
     "level": 4,
     "phrase": "甚至",
+    "prompt1": "甚至",
+    "prompt2": "写甚字",
     "sentence": "这是“甚”字。"
   },
   {
@@ -7205,6 +9005,8 @@ window.HSK_CHARS = [
     "meaning": "follow; from; by; through",
     "level": 4,
     "phrase": "由",
+    "prompt1": "由于",
+    "prompt2": "自由",
     "sentence": "这是“由”字。"
   },
   {
@@ -7213,6 +9015,8 @@ window.HSK_CHARS = [
     "meaning": "apply for; application",
     "level": 4,
     "phrase": "申请",
+    "prompt1": "申请",
+    "prompt2": "申报",
     "sentence": "这是“申”字。"
   },
   {
@@ -7221,6 +9025,8 @@ window.HSK_CHARS = [
     "meaning": "doubt; to suspect; be skeptical",
     "level": 4,
     "phrase": "怀疑",
+    "prompt1": "怀疑",
+    "prompt2": "疑问",
     "sentence": "这是“疑”字。"
   },
   {
@@ -7229,6 +9035,8 @@ window.HSK_CHARS = [
     "meaning": "boarding pass",
     "level": 4,
     "phrase": "登机牌",
+    "prompt1": "登机牌",
+    "prompt2": "登记",
     "sentence": "这是“登”字。"
   },
   {
@@ -7237,6 +9045,8 @@ window.HSK_CHARS = [
     "meaning": "salt",
     "level": 4,
     "phrase": "盐",
+    "prompt1": "盐字",
+    "prompt2": "写盐字",
     "sentence": "这是“盐”字。"
   },
   {
@@ -7245,6 +9055,8 @@ window.HSK_CHARS = [
     "meaning": "box",
     "level": 4,
     "phrase": "盒子",
+    "prompt1": "盒子",
+    "prompt2": "写盒字",
     "sentence": "这是“盒”字。"
   },
   {
@@ -7253,6 +9065,8 @@ window.HSK_CHARS = [
     "meaning": "to save; economize; omit; province",
     "level": 4,
     "phrase": "省",
+    "prompt1": "省略",
+    "prompt2": "节省",
     "sentence": "这是“省”字。"
   },
   {
@@ -7261,6 +9075,8 @@ window.HSK_CHARS = [
     "meaning": "mineral water",
     "level": 4,
     "phrase": "矿泉水",
+    "prompt1": "矿泉水",
+    "prompt2": "矿产",
     "sentence": "这是“矿”字。"
   },
   {
@@ -7269,6 +9085,8 @@ window.HSK_CHARS = [
     "meaning": "number",
     "level": 4,
     "phrase": "号码",
+    "prompt1": "号码",
+    "prompt2": "密码",
     "sentence": "这是“码”字。"
   },
   {
@@ -7277,6 +9095,8 @@ window.HSK_CHARS = [
     "meaning": "to study; to research",
     "level": 4,
     "phrase": "研究",
+    "prompt1": "研究",
+    "prompt2": "钻研",
     "sentence": "这是“研”字。"
   },
   {
@@ -7285,6 +9105,8 @@ window.HSK_CHARS = [
     "meaning": "broken; damaged; to split",
     "level": 4,
     "phrase": "破",
+    "prompt1": "破产",
+    "prompt2": "破坏",
     "sentence": "这是“破”字。"
   },
   {
@@ -7293,6 +9115,8 @@ window.HSK_CHARS = [
     "meaning": "base; foundation",
     "level": 4,
     "phrase": "基础",
+    "prompt1": "基础",
+    "prompt2": "写础字",
     "sentence": "这是“础”字。"
   },
   {
@@ -7301,6 +9125,8 @@ window.HSK_CHARS = [
     "meaning": "Master's degree (M.A.)",
     "level": 4,
     "phrase": "硕士",
+    "prompt1": "硕士",
+    "prompt2": "写硕字",
     "sentence": "这是“硕”字。"
   },
   {
@@ -7309,6 +9135,8 @@ window.HSK_CHARS = [
     "meaning": "indeed; in truth; reliable",
     "level": 4,
     "phrase": "确实",
+    "prompt1": "确实",
+    "prompt2": "正确",
     "sentence": "这是“确”字。"
   },
   {
@@ -7317,6 +9145,8 @@ window.HSK_CHARS = [
     "meaning": "express; show; indicate",
     "level": 4,
     "phrase": "表示",
+    "prompt1": "表示",
+    "prompt2": "显示",
     "sentence": "这是“示”字。"
   },
   {
@@ -7325,6 +9155,8 @@ window.HSK_CHARS = [
     "meaning": "society",
     "level": 4,
     "phrase": "社会",
+    "prompt1": "社会",
+    "prompt2": "报社",
     "sentence": "这是“社”字。"
   },
   {
@@ -7333,6 +9165,8 @@ window.HSK_CHARS = [
     "meaning": "congratulate",
     "level": 4,
     "phrase": "祝贺",
+    "prompt1": "祝贺",
+    "prompt2": "庆祝",
     "sentence": "这是“祝”字。"
   },
   {
@@ -7341,6 +9175,8 @@ window.HSK_CHARS = [
     "meaning": "to ban; prohibit",
     "level": 4,
     "phrase": "禁止",
+    "prompt1": "禁止",
+    "prompt2": "严禁",
     "sentence": "这是“禁”字。"
   },
   {
@@ -7349,6 +9185,8 @@ window.HSK_CHARS = [
     "meaning": "happy; blessed; fortunate",
     "level": 4,
     "phrase": "幸福",
+    "prompt1": "幸福",
+    "prompt2": "祝福",
     "sentence": "这是“福”字。"
   },
   {
@@ -7357,6 +9195,8 @@ window.HSK_CHARS = [
     "meaning": "outstanding; excellent",
     "level": 4,
     "phrase": "优秀",
+    "prompt1": "优秀",
+    "prompt2": "写秀字",
     "sentence": "这是“秀”字。"
   },
   {
@@ -7365,6 +9205,8 @@ window.HSK_CHARS = [
     "meaning": "science; scientific knowledge",
     "level": 4,
     "phrase": "科学",
+    "prompt1": "科学",
+    "prompt2": "本科",
     "sentence": "这是“科”字。"
   },
   {
@@ -7373,6 +9215,8 @@ window.HSK_CHARS = [
     "meaning": "second (unit of time or angle)",
     "level": 4,
     "phrase": "秒",
+    "prompt1": "秒字",
+    "prompt2": "写秒字",
     "sentence": "这是“秒”字。"
   },
   {
@@ -7381,6 +9225,8 @@ window.HSK_CHARS = [
     "meaning": "active; positive; energetic",
     "level": 4,
     "phrase": "积极",
+    "prompt1": "积极",
+    "prompt2": "积累",
     "sentence": "这是“积”字。"
   },
   {
@@ -7389,6 +9235,8 @@ window.HSK_CHARS = [
     "meaning": "course of events; process",
     "level": 4,
     "phrase": "过程",
+    "prompt1": "过程",
+    "prompt2": "程度",
     "sentence": "这是“程”字。"
   },
   {
@@ -7397,6 +9245,8 @@ window.HSK_CHARS = [
     "meaning": "a little bit; slightly",
     "level": 4,
     "phrase": "稍微",
+    "prompt1": "稍微",
+    "prompt2": "写稍字",
     "sentence": "这是“稍”字。"
   },
   {
@@ -7405,6 +9255,8 @@ window.HSK_CHARS = [
     "meaning": "after all; when all is said and done; actually",
     "level": 4,
     "phrase": "究竟",
+    "prompt1": "究竟",
+    "prompt2": "研究",
     "sentence": "这是“究”字。"
   },
   {
@@ -7413,6 +9265,8 @@ window.HSK_CHARS = [
     "meaning": "poor; exhausted",
     "level": 4,
     "phrase": "穷",
+    "prompt1": "层出不穷",
+    "prompt2": "无穷无尽",
     "sentence": "这是“穷”字。"
   },
   {
@@ -7421,6 +9275,8 @@ window.HSK_CHARS = [
     "meaning": "window",
     "level": 4,
     "phrase": "窗户",
+    "prompt1": "窗户",
+    "prompt2": "窗帘",
     "sentence": "这是“窗”字。"
   },
   {
@@ -7429,6 +9285,8 @@ window.HSK_CHARS = [
     "meaning": "compete",
     "level": 4,
     "phrase": "竞争",
+    "prompt1": "竞争",
+    "prompt2": "竞选",
     "sentence": "这是“竞”字。"
   },
   {
@@ -7437,6 +9295,8 @@ window.HSK_CHARS = [
     "meaning": "unexpectedly; to one's surprise; go so far as to",
     "level": 4,
     "phrase": "竟然",
+    "prompt1": "竟然",
+    "prompt2": "究竟",
     "sentence": "这是“竟”字。"
   },
   {
@@ -7445,6 +9305,8 @@ window.HSK_CHARS = [
     "meaning": "article; essay",
     "level": 4,
     "phrase": "文章",
+    "prompt1": "文章",
+    "prompt2": "章程",
     "sentence": "这是“章”字。"
   },
   {
@@ -7453,6 +9315,8 @@ window.HSK_CHARS = [
     "meaning": "child; children",
     "level": 4,
     "phrase": "儿童",
+    "prompt1": "儿童",
+    "prompt2": "童话",
     "sentence": "这是“童”字。"
   },
   {
@@ -7461,6 +9325,8 @@ window.HSK_CHARS = [
     "meaning": "in keeping with; in accordance with; conform",
     "level": 4,
     "phrase": "符合",
+    "prompt1": "符合",
+    "prompt2": "符号",
     "sentence": "这是“符”字。"
   },
   {
@@ -7469,6 +9335,8 @@ window.HSK_CHARS = [
     "meaning": "stupid; foolish; silly; dumb; clumsy",
     "level": 4,
     "phrase": "笨",
+    "prompt1": "笨拙",
+    "prompt2": "写笨字",
     "sentence": "这是“笨”字。"
   },
   {
@@ -7477,6 +9345,8 @@ window.HSK_CHARS = [
     "meaning": "bamboo used for drawing lots; toothpick; to sign (one's name)",
     "level": 4,
     "phrase": "签",
+    "prompt1": "签证",
+    "prompt2": "签署",
     "sentence": "这是“签”字。"
   },
   {
@@ -7485,6 +9355,8 @@ window.HSK_CHARS = [
     "meaning": "no matter (what, how, etc.); regardless of",
     "level": 4,
     "phrase": "不管",
+    "prompt1": "管理",
+    "prompt2": "尽管",
     "sentence": "这是“管”字。"
   },
   {
@@ -7493,6 +9365,8 @@ window.HSK_CHARS = [
     "meaning": "sheet; (mw for articles); piece of writing",
     "level": 4,
     "phrase": "篇",
+    "prompt1": "篇字",
+    "prompt2": "写篇字",
     "sentence": "这是“篇”字。"
   },
   {
@@ -7501,6 +9375,8 @@ window.HSK_CHARS = [
     "meaning": "nationality",
     "level": 4,
     "phrase": "国籍",
+    "prompt1": "国籍",
+    "prompt2": "籍贯",
     "sentence": "这是“籍”字。"
   },
   {
@@ -7509,6 +9385,8 @@ window.HSK_CHARS = [
     "meaning": "careless; inadvertent; negligent",
     "level": 4,
     "phrase": "粗心",
+    "prompt1": "粗心",
+    "prompt2": "粗糙",
     "sentence": "这是“粗”字。"
   },
   {
@@ -7517,6 +9395,8 @@ window.HSK_CHARS = [
     "meaning": "brilliant; spectacular; wonderful",
     "level": 4,
     "phrase": "精彩",
+    "prompt1": "精彩",
+    "prompt2": "精神",
     "sentence": "这是“精”字。"
   },
   {
@@ -7525,6 +9405,8 @@ window.HSK_CHARS = [
     "meaning": "sugar; candy; sweets",
     "level": 4,
     "phrase": "糖",
+    "prompt1": "糖字",
+    "prompt2": "写糖字",
     "sentence": "这是“糖”字。"
   },
   {
@@ -7533,6 +9415,8 @@ window.HSK_CHARS = [
     "meaning": "nervous; tension; strain",
     "level": 4,
     "phrase": "紧张",
+    "prompt1": "紧张",
+    "prompt2": "赶紧",
     "sentence": "这是“紧”字。"
   },
   {
@@ -7541,6 +9425,8 @@ window.HSK_CHARS = [
     "meaning": "approximately; about",
     "level": 4,
     "phrase": "大约",
+    "prompt1": "约会",
+    "prompt2": "节约",
     "sentence": "这是“约”字。"
   },
   {
@@ -7549,6 +9435,8 @@ window.HSK_CHARS = [
     "meaning": "century",
     "level": 4,
     "phrase": "世纪",
+    "prompt1": "世纪",
+    "prompt2": "纪念",
     "sentence": "这是“纪”字。"
   },
   {
@@ -7557,6 +9445,8 @@ window.HSK_CHARS = [
     "meaning": "the (phone) line is busy",
     "level": 4,
     "phrase": "占线",
+    "prompt1": "占线",
+    "prompt2": "线索",
     "sentence": "这是“线”字。"
   },
   {
@@ -7565,6 +9455,8 @@ window.HSK_CHARS = [
     "meaning": "detailed; in detail; minute",
     "level": 4,
     "phrase": "详细",
+    "prompt1": "仔细",
+    "prompt2": "详细",
     "sentence": "这是“细”字。"
   },
   {
@@ -7573,6 +9465,8 @@ window.HSK_CHARS = [
     "meaning": "to refuse; to decline; to reject",
     "level": 4,
     "phrase": "拒绝",
+    "prompt1": "拒绝",
+    "prompt2": "绝对",
     "sentence": "这是“绝”字。"
   },
   {
@@ -7581,6 +9475,8 @@ window.HSK_CHARS = [
     "meaning": "to continue; to go on; to proceed",
     "level": 4,
     "phrase": "继续",
+    "prompt1": "继续",
+    "prompt2": "继承",
     "sentence": "这是“继”字。"
   },
   {
@@ -7589,6 +9485,8 @@ window.HSK_CHARS = [
     "meaning": "to continue; to go on; to proceed",
     "level": 4,
     "phrase": "继续",
+    "prompt1": "继续",
+    "prompt2": "陆续",
     "sentence": "这是“续”字。"
   },
   {
@@ -7597,6 +9495,8 @@ window.HSK_CHARS = [
     "meaning": "weak point; defect; fault; shortcoming",
     "level": 4,
     "phrase": "缺点",
+    "prompt1": "缺少",
+    "prompt2": "缺点",
     "sentence": "这是“缺”字。"
   },
   {
@@ -7605,6 +9505,8 @@ window.HSK_CHARS = [
     "meaning": "beautiful",
     "level": 4,
     "phrase": "美丽",
+    "prompt1": "美丽",
+    "prompt2": "赞美",
     "sentence": "这是“美”字。"
   },
   {
@@ -7613,6 +9515,8 @@ window.HSK_CHARS = [
     "meaning": "blush; shy",
     "level": 4,
     "phrase": "害羞",
+    "prompt1": "害羞",
+    "prompt2": "羞耻",
     "sentence": "这是“羞”字。"
   },
   {
@@ -7621,6 +9525,8 @@ window.HSK_CHARS = [
     "meaning": "to envy; admire",
     "level": 4,
     "phrase": "羡慕",
+    "prompt1": "羡慕",
+    "prompt2": "写羡字",
     "sentence": "这是“羡”字。"
   },
   {
@@ -7629,6 +9535,8 @@ window.HSK_CHARS = [
     "meaning": "badminton",
     "level": 4,
     "phrase": "羽毛球",
+    "prompt1": "羽毛球",
+    "prompt2": "羽绒服",
     "sentence": "这是“羽”字。"
   },
   {
@@ -7637,6 +9545,8 @@ window.HSK_CHARS = [
     "meaning": "to turn over; capsize; translate",
     "level": 4,
     "phrase": "翻",
+    "prompt1": "翻译",
+    "prompt2": "推翻",
     "sentence": "这是“翻”字。"
   },
   {
@@ -7645,6 +9555,8 @@ window.HSK_CHARS = [
     "meaning": "to be patient",
     "level": 4,
     "phrase": "耐心",
+    "prompt1": "耐心",
+    "prompt2": "不耐烦",
     "sentence": "这是“耐”字。"
   },
   {
@@ -7653,6 +9565,8 @@ window.HSK_CHARS = [
     "meaning": "profession; occupation",
     "level": 4,
     "phrase": "职业",
+    "prompt1": "职业",
+    "prompt2": "辞职",
     "sentence": "这是“职”字。"
   },
   {
@@ -7661,6 +9575,8 @@ window.HSK_CHARS = [
     "meaning": "Internet",
     "level": 4,
     "phrase": "互联网",
+    "prompt1": "联系",
+    "prompt2": "互联网",
     "sentence": "这是“联”字。"
   },
   {
@@ -7669,6 +9585,8 @@ window.HSK_CHARS = [
     "meaning": "accept a job offer; to apply for a job",
     "level": 4,
     "phrase": "应聘",
+    "prompt1": "应聘",
+    "prompt2": "招聘",
     "sentence": "这是“聘”字。"
   },
   {
@@ -7677,6 +9595,8 @@ window.HSK_CHARS = [
     "meaning": "hold a meeting; get together; a party",
     "level": 4,
     "phrase": "聚会",
+    "prompt1": "聚会",
+    "prompt2": "凝聚",
     "sentence": "这是“聚”字。"
   },
   {
@@ -7685,6 +9605,8 @@ window.HSK_CHARS = [
     "meaning": "belly; abdomen; stomach",
     "level": 4,
     "phrase": "肚子",
+    "prompt1": "肚子",
+    "prompt2": "写肚字",
     "sentence": "这是“肚”字。"
   },
   {
@@ -7693,6 +9615,8 @@ window.HSK_CHARS = [
     "meaning": "skin",
     "level": 4,
     "phrase": "皮肤",
+    "prompt1": "皮肤",
+    "prompt2": "写肤字",
     "sentence": "这是“肤”字。"
   },
   {
@@ -7701,6 +9625,8 @@ window.HSK_CHARS = [
     "meaning": "go on a diet; lose weight",
     "level": 4,
     "phrase": "减肥",
+    "prompt1": "减肥",
+    "prompt2": "肥皂",
     "sentence": "这是“肥”字。"
   },
   {
@@ -7709,6 +9635,8 @@ window.HSK_CHARS = [
     "meaning": "sure; definite; affirm; approve",
     "level": 4,
     "phrase": "肯定",
+    "prompt1": "肯定",
+    "prompt2": "宁肯",
     "sentence": "这是“肯”字。"
   },
   {
@@ -7717,6 +9645,8 @@ window.HSK_CHARS = [
     "meaning": "arm",
     "level": 4,
     "phrase": "胳膊",
+    "prompt1": "胳膊",
+    "prompt2": "写胳字",
     "sentence": "这是“胳”字。"
   },
   {
@@ -7725,6 +9655,8 @@ window.HSK_CHARS = [
     "meaning": "filthy; dirty",
     "level": 4,
     "phrase": "脏",
+    "prompt1": "心脏",
+    "prompt2": "写脏字",
     "sentence": "这是“脏”字。"
   },
   {
@@ -7733,6 +9665,8 @@ window.HSK_CHARS = [
     "meaning": "to shed; take off; to escape",
     "level": 4,
     "phrase": "脱",
+    "prompt1": "脱离",
+    "prompt2": "摆脱",
     "sentence": "这是“脱”字。"
   },
   {
@@ -7741,6 +9675,8 @@ window.HSK_CHARS = [
     "meaning": "temperament; disposition; temper",
     "level": 4,
     "phrase": "脾气",
+    "prompt1": "脾气",
+    "prompt2": "写脾字",
     "sentence": "这是“脾”字。"
   },
   {
@@ -7749,6 +9685,8 @@ window.HSK_CHARS = [
     "meaning": "arm",
     "level": 4,
     "phrase": "胳膊",
+    "prompt1": "胳膊",
+    "prompt2": "写膊字",
     "sentence": "这是“膊”字。"
   },
   {
@@ -7757,6 +9695,8 @@ window.HSK_CHARS = [
     "meaning": "toothpaste",
     "level": 4,
     "phrase": "牙膏",
+    "prompt1": "牙膏",
+    "prompt2": "写膏字",
     "sentence": "这是“膏”字。"
   },
   {
@@ -7765,6 +9705,8 @@ window.HSK_CHARS = [
     "meaning": "even (to the point of); so much so that",
     "level": 4,
     "phrase": "甚至",
+    "prompt1": "至少",
+    "prompt2": "甚至",
     "sentence": "这是“至”字。"
   },
   {
@@ -7773,6 +9715,8 @@ window.HSK_CHARS = [
     "meaning": "scheduled flight; flight number",
     "level": 4,
     "phrase": "航班",
+    "prompt1": "航班",
+    "prompt2": "导航",
     "sentence": "这是“航”字。"
   },
   {
@@ -7781,6 +9725,8 @@ window.HSK_CHARS = [
     "meaning": "art",
     "level": 4,
     "phrase": "艺术",
+    "prompt1": "艺术",
+    "prompt2": "文艺",
     "sentence": "这是“艺”字。"
   },
   {
@@ -7789,6 +9735,8 @@ window.HSK_CHARS = [
     "meaning": "bitter; miserable",
     "level": 4,
     "phrase": "苦",
+    "prompt1": "辛苦",
+    "prompt2": "艰苦",
     "sentence": "这是“苦”字。"
   },
   {
@@ -7797,6 +9745,8 @@ window.HSK_CHARS = [
     "meaning": "obtain; acquire; to gain",
     "level": 4,
     "phrase": "获得",
+    "prompt1": "获得",
+    "prompt2": "收获",
     "sentence": "这是“获”字。"
   },
   {
@@ -7805,6 +9755,8 @@ window.HSK_CHARS = [
     "meaning": "grape",
     "level": 4,
     "phrase": "葡萄",
+    "prompt1": "葡萄",
+    "prompt2": "写萄字",
     "sentence": "这是“萄”字。"
   },
   {
@@ -7813,6 +9765,8 @@ window.HSK_CHARS = [
     "meaning": "descend; to land; put down",
     "level": 4,
     "phrase": "降落",
+    "prompt1": "降落",
+    "prompt2": "落后",
     "sentence": "这是“落”字。"
   },
   {
@@ -7821,6 +9775,8 @@ window.HSK_CHARS = [
     "meaning": "famous; well-known; celebration",
     "level": 4,
     "phrase": "著名",
+    "prompt1": "著名",
+    "prompt2": "显著",
     "sentence": "这是“著”字。"
   },
   {
@@ -7829,6 +9785,8 @@ window.HSK_CHARS = [
     "meaning": "grape",
     "level": 4,
     "phrase": "葡萄",
+    "prompt1": "葡萄",
+    "prompt2": "写葡字",
     "sentence": "这是“葡”字。"
   },
   {
@@ -7837,6 +9795,8 @@ window.HSK_CHARS = [
     "meaning": "tiger",
     "level": 4,
     "phrase": "老虎",
+    "prompt1": "老虎",
+    "prompt2": "马虎",
     "sentence": "这是“虎”字。"
   },
   {
@@ -7845,6 +9805,8 @@ window.HSK_CHARS = [
     "meaning": "think over; consider",
     "level": 4,
     "phrase": "考虑",
+    "prompt1": "考虑",
+    "prompt2": "顾虑",
     "sentence": "这是“虑”字。"
   },
   {
@@ -7853,6 +9815,8 @@ window.HSK_CHARS = [
     "meaning": "plastic bag",
     "level": 4,
     "phrase": "塑料袋",
+    "prompt1": "塑料袋",
+    "prompt2": "脑袋",
     "sentence": "这是“袋”字。"
   },
   {
@@ -7861,6 +9825,8 @@ window.HSK_CHARS = [
     "meaning": "socks; stockings",
     "level": 4,
     "phrase": "袜子",
+    "prompt1": "袜子",
+    "prompt2": "写袜字",
     "sentence": "这是“袜”字。"
   },
   {
@@ -7869,6 +9835,8 @@ window.HSK_CHARS = [
     "meaning": "to visit (a place, such as a tourist spot); inspect",
     "level": 4,
     "phrase": "参观",
+    "prompt1": "观众",
+    "prompt2": "参观",
     "sentence": "这是“观”字。"
   },
   {
@@ -7877,6 +9845,8 @@ window.HSK_CHARS = [
     "meaning": "regulation; stipulate; fix; set",
     "level": 4,
     "phrase": "规定",
+    "prompt1": "规定",
+    "prompt2": "规矩",
     "sentence": "这是“规”字。"
   },
   {
@@ -7885,6 +9855,8 @@ window.HSK_CHARS = [
     "meaning": "language",
     "level": 4,
     "phrase": "语言",
+    "prompt1": "语言",
+    "prompt2": "发言",
     "sentence": "这是“言”字。"
   },
   {
@@ -7893,6 +9865,8 @@ window.HSK_CHARS = [
     "meaning": "police",
     "level": 4,
     "phrase": "警察",
+    "prompt1": "警察",
+    "prompt2": "报警",
     "sentence": "这是“警”字。"
   },
   {
@@ -7901,6 +9875,8 @@ window.HSK_CHARS = [
     "meaning": "appraise; estimate",
     "level": 4,
     "phrase": "估计",
+    "prompt1": "计划",
+    "prompt2": "估计",
     "sentence": "这是“计”字。"
   },
   {
@@ -7909,6 +9885,8 @@ window.HSK_CHARS = [
     "meaning": "to discuss; discussion; to talk over",
     "level": 4,
     "phrase": "讨论",
+    "prompt1": "讨厌",
+    "prompt2": "讨论",
     "sentence": "这是“讨”字。"
   },
   {
@@ -7917,6 +9895,8 @@ window.HSK_CHARS = [
     "meaning": "many; a lot; much",
     "level": 4,
     "phrase": "许多",
+    "prompt1": "许多",
+    "prompt2": "允许",
     "sentence": "这是“许”字。"
   },
   {
@@ -7925,6 +9905,8 @@ window.HSK_CHARS = [
     "meaning": "to discuss; discussion; to talk over",
     "level": 4,
     "phrase": "讨论",
+    "prompt1": "无论",
+    "prompt2": "讨论",
     "sentence": "这是“论”字。"
   },
   {
@@ -7933,6 +9915,8 @@ window.HSK_CHARS = [
     "meaning": "to guarantee; ensure",
     "level": 4,
     "phrase": "保证",
+    "prompt1": "证明",
+    "prompt2": "签证",
     "sentence": "这是“证”字。"
   },
   {
@@ -7941,6 +9925,8 @@ window.HSK_CHARS = [
     "meaning": "criticize",
     "level": 4,
     "phrase": "批评",
+    "prompt1": "批评",
+    "prompt2": "评价",
     "sentence": "这是“评”字。"
   },
   {
@@ -7949,6 +9935,8 @@ window.HSK_CHARS = [
     "meaning": "translate; translation; interpret",
     "level": 4,
     "phrase": "翻译",
+    "prompt1": "翻译",
+    "prompt2": "写译字",
     "sentence": "这是“译”字。"
   },
   {
@@ -7957,6 +9945,8 @@ window.HSK_CHARS = [
     "meaning": "honest; honorable",
     "level": 4,
     "phrase": "诚实",
+    "prompt1": "诚实",
+    "prompt2": "诚恳",
     "sentence": "这是“诚”字。"
   },
   {
@@ -7965,6 +9955,8 @@ window.HSK_CHARS = [
     "meaning": "detailed; in detail; minute",
     "level": 4,
     "phrase": "详细",
+    "prompt1": "详细",
+    "prompt2": "安详",
     "sentence": "这是“详”字。"
   },
   {
@@ -7973,6 +9965,8 @@ window.HSK_CHARS = [
     "meaning": "error; mistake; mistaken",
     "level": 4,
     "phrase": "错误",
+    "prompt1": "误会",
+    "prompt2": "错误",
     "sentence": "这是“误”字。"
   },
   {
@@ -7981,6 +9975,8 @@ window.HSK_CHARS = [
     "meaning": "to excuse; forgive; to pardon",
     "level": 4,
     "phrase": "原谅",
+    "prompt1": "原谅",
+    "prompt2": "谅解",
     "sentence": "这是“谅”字。"
   },
   {
@@ -7989,6 +9985,8 @@ window.HSK_CHARS = [
     "meaning": "to talk; to chat; discuss",
     "level": 4,
     "phrase": "谈",
+    "prompt1": "谈判",
+    "prompt2": "洽谈",
     "sentence": "这是“谈”字。"
   },
   {
@@ -7997,6 +9995,8 @@ window.HSK_CHARS = [
     "meaning": "friendship; companionship",
     "level": 4,
     "phrase": "友谊",
+    "prompt1": "友谊",
+    "prompt2": "深情厚谊",
     "sentence": "这是“谊”字。"
   },
   {
@@ -8005,6 +10005,8 @@ window.HSK_CHARS = [
     "meaning": "impression",
     "level": 4,
     "phrase": "印象",
+    "prompt1": "印象",
+    "prompt2": "象棋",
     "sentence": "这是“象”字。"
   },
   {
@@ -8013,6 +10015,8 @@ window.HSK_CHARS = [
     "meaning": "courtesy; politeness; manners",
     "level": 4,
     "phrase": "礼貌",
+    "prompt1": "礼貌",
+    "prompt2": "面貌",
     "sentence": "这是“貌”字。"
   },
   {
@@ -8021,6 +10025,8 @@ window.HSK_CHARS = [
     "meaning": "responsible for (something); in charge of",
     "level": 4,
     "phrase": "负责",
+    "prompt1": "负责",
+    "prompt2": "辜负",
     "sentence": "这是“负”字。"
   },
   {
@@ -8029,6 +10035,8 @@ window.HSK_CHARS = [
     "meaning": "responsible for (something); in charge of",
     "level": 4,
     "phrase": "负责",
+    "prompt1": "责任",
+    "prompt2": "负责",
     "sentence": "这是“责”字。"
   },
   {
@@ -8037,6 +10045,8 @@ window.HSK_CHARS = [
     "meaning": "be defeated; fail; lose",
     "level": 4,
     "phrase": "失败",
+    "prompt1": "失败",
+    "prompt2": "败坏",
     "sentence": "这是“败”字。"
   },
   {
@@ -8045,6 +10055,8 @@ window.HSK_CHARS = [
     "meaning": "salesclerk; shop assistant",
     "level": 4,
     "phrase": "售货员",
+    "prompt1": "售货员",
+    "prompt2": "货币",
     "sentence": "这是“货”字。"
   },
   {
@@ -8053,6 +10065,8 @@ window.HSK_CHARS = [
     "meaning": "quality; mass (physics)",
     "level": 4,
     "phrase": "质量",
+    "prompt1": "质量",
+    "prompt2": "物质",
     "sentence": "这是“质”字。"
   },
   {
@@ -8061,6 +10075,8 @@ window.HSK_CHARS = [
     "meaning": "go shopping; buy goods",
     "level": 4,
     "phrase": "购物",
+    "prompt1": "购物",
+    "prompt2": "采购",
     "sentence": "这是“购”字。"
   },
   {
@@ -8069,6 +10085,8 @@ window.HSK_CHARS = [
     "meaning": "to waste; squander",
     "level": 4,
     "phrase": "浪费",
+    "prompt1": "免费",
+    "prompt2": "浪费",
     "sentence": "这是“费”字。"
   },
   {
@@ -8077,6 +10095,8 @@ window.HSK_CHARS = [
     "meaning": "congratulate",
     "level": 4,
     "phrase": "祝贺",
+    "prompt1": "祝贺",
+    "prompt2": "写贺字",
     "sentence": "这是“贺”字。"
   },
   {
@@ -8085,6 +10105,8 @@ window.HSK_CHARS = [
     "meaning": "wages; pay; earnings; salary",
     "level": 4,
     "phrase": "工资",
+    "prompt1": "工资",
+    "prompt2": "资金",
     "sentence": "这是“资”字。"
   },
   {
@@ -8093,6 +10115,8 @@ window.HSK_CHARS = [
     "meaning": "earn; make a profit",
     "level": 4,
     "phrase": "赚",
+    "prompt1": "赚字",
+    "prompt2": "写赚字",
     "sentence": "这是“赚”字。"
   },
   {
@@ -8101,6 +10125,8 @@ window.HSK_CHARS = [
     "meaning": "to win; to beat; to profit",
     "level": 4,
     "phrase": "赢",
+    "prompt1": "赢字",
+    "prompt2": "写赢字",
     "sentence": "这是“赢”字。"
   },
   {
@@ -8109,6 +10135,8 @@ window.HSK_CHARS = [
     "meaning": "catch up; overtake; drive away",
     "level": 4,
     "phrase": "赶",
+    "prompt1": "赶快",
+    "prompt2": "赶紧",
     "sentence": "这是“赶”字。"
   },
   {
@@ -8117,6 +10145,8 @@ window.HSK_CHARS = [
     "meaning": "(mw for trips times) | to wade",
     "level": 4,
     "phrase": "趟",
+    "prompt1": "趟字",
+    "prompt2": "写趟字",
     "sentence": "这是“趟”字。"
   },
   {
@@ -8125,6 +10155,8 @@ window.HSK_CHARS = [
     "meaning": "distance; be apart; away from",
     "level": 4,
     "phrase": "距离",
+    "prompt1": "距离",
+    "prompt2": "差距",
     "sentence": "这是“距”字。"
   },
   {
@@ -8133,6 +10165,8 @@ window.HSK_CHARS = [
     "meaning": "recline; lie down (on back or side)",
     "level": 4,
     "phrase": "躺",
+    "prompt1": "躺字",
+    "prompt2": "写躺字",
     "sentence": "这是“躺”字。"
   },
   {
@@ -8141,6 +10175,8 @@ window.HSK_CHARS = [
     "meaning": "to turn; to change; pass on | revolve; rotate",
     "level": 4,
     "phrase": "转",
+    "prompt1": "转变",
+    "prompt2": "转告",
     "sentence": "这是“转”字。"
   },
   {
@@ -8149,6 +10185,8 @@ window.HSK_CHARS = [
     "meaning": "to transport; to lose (a game, etc.)",
     "level": 4,
     "phrase": "输",
+    "prompt1": "输入",
+    "prompt2": "运输",
     "sentence": "这是“输”字。"
   },
   {
@@ -8157,6 +10195,8 @@ window.HSK_CHARS = [
     "meaning": "hard; exhausting; toilsome; laborious",
     "level": 4,
     "phrase": "辛苦",
+    "prompt1": "辛苦",
+    "prompt2": "辛勤",
     "sentence": "这是“辛”字。"
   },
   {
@@ -8165,6 +10205,8 @@ window.HSK_CHARS = [
     "meaning": "hot (spicy)",
     "level": 4,
     "phrase": "辣",
+    "prompt1": "辣椒",
+    "prompt2": "写辣字",
     "sentence": "这是“辣”字。"
   },
   {
@@ -8173,6 +10215,8 @@ window.HSK_CHARS = [
     "meaning": "even; including; join",
     "level": 4,
     "phrase": "连",
+    "prompt1": "连忙",
+    "prompt2": "连续",
     "sentence": "这是“连”字。"
   },
   {
@@ -8181,6 +10225,8 @@ window.HSK_CHARS = [
     "meaning": "to get lost",
     "level": 4,
     "phrase": "迷路",
+    "prompt1": "迷路",
+    "prompt2": "球迷",
     "sentence": "这是“迷”字。"
   },
   {
@@ -8189,6 +10235,8 @@ window.HSK_CHARS = [
     "meaning": "suitable; proper; appropriate",
     "level": 4,
     "phrase": "合适",
+    "prompt1": "适合",
+    "prompt2": "合适",
     "sentence": "这是“适”字。"
   },
   {
@@ -8197,6 +10245,8 @@ window.HSK_CHARS = [
     "meaning": "traffic; transportation",
     "level": 4,
     "phrase": "交通",
+    "prompt1": "通知",
+    "prompt2": "交通",
     "sentence": "这是“通”字。"
   },
   {
@@ -8205,6 +10255,8 @@ window.HSK_CHARS = [
     "meaning": "to stroll; to visit; go window shopping",
     "level": 4,
     "phrase": "逛",
+    "prompt1": "逛字",
+    "prompt2": "写逛字",
     "sentence": "这是“逛”字。"
   },
   {
@@ -8213,6 +10265,8 @@ window.HSK_CHARS = [
     "meaning": "highway",
     "level": 4,
     "phrase": "高速公路",
+    "prompt1": "速度",
+    "prompt2": "迅速",
     "sentence": "这是“速”字。"
   },
   {
@@ -8221,6 +10275,8 @@ window.HSK_CHARS = [
     "meaning": "a time; everywhere; turn; (mw for times or turns)",
     "level": 4,
     "phrase": "遍",
+    "prompt1": "普遍",
+    "prompt2": "遍布",
     "sentence": "这是“遍”字。"
   },
   {
@@ -8229,6 +10285,8 @@ window.HSK_CHARS = [
     "meaning": "to invite",
     "level": 4,
     "phrase": "邀请",
+    "prompt1": "邀请",
+    "prompt2": "应邀",
     "sentence": "这是“邀”字。"
   },
   {
@@ -8237,6 +10295,8 @@ window.HSK_CHARS = [
     "meaning": "suburbs; outskirts",
     "level": 4,
     "phrase": "郊区",
+    "prompt1": "郊区",
+    "prompt2": "写郊字",
     "sentence": "这是“郊”字。"
   },
   {
@@ -8245,6 +10305,8 @@ window.HSK_CHARS = [
     "meaning": "part; share; section",
     "level": 4,
     "phrase": "部分",
+    "prompt1": "部分",
+    "prompt2": "全部",
     "sentence": "这是“部”字。"
   },
   {
@@ -8253,6 +10315,8 @@ window.HSK_CHARS = [
     "meaning": "sour; sore; ache",
     "level": 4,
     "phrase": "酸",
+    "prompt1": "酸字",
+    "prompt2": "写酸字",
     "sentence": "这是“酸”字。"
   },
   {
@@ -8261,6 +10325,8 @@ window.HSK_CHARS = [
     "meaning": "wake up",
     "level": 4,
     "phrase": "醒",
+    "prompt1": "提醒",
+    "prompt2": "觉醒",
     "sentence": "这是“醒”字。"
   },
   {
@@ -8269,6 +10335,8 @@ window.HSK_CHARS = [
     "meaning": "to explain",
     "level": 4,
     "phrase": "解释",
+    "prompt1": "解释",
+    "prompt2": "释放",
     "sentence": "这是“释”字。"
   },
   {
@@ -8277,6 +10345,8 @@ window.HSK_CHARS = [
     "meaning": "consult; talk over; discuss",
     "level": 4,
     "phrase": "商量",
+    "prompt1": "商量",
+    "prompt2": "质量",
     "sentence": "这是“量”字。"
   },
   {
@@ -8285,6 +10355,8 @@ window.HSK_CHARS = [
     "meaning": "bonus",
     "level": 4,
     "phrase": "奖金",
+    "prompt1": "奖金",
+    "prompt2": "现金",
     "sentence": "这是“金”字。"
   },
   {
@@ -8293,6 +10365,8 @@ window.HSK_CHARS = [
     "meaning": "inject; get a shot",
     "level": 4,
     "phrase": "打针",
+    "prompt1": "打针",
+    "prompt2": "针对",
     "sentence": "这是“针”字。"
   },
   {
@@ -8301,6 +10375,8 @@ window.HSK_CHARS = [
     "meaning": "play the piano",
     "level": 4,
     "phrase": "弹钢琴",
+    "prompt1": "弹钢琴",
+    "prompt2": "钢铁",
     "sentence": "这是“钢”字。"
   },
   {
@@ -8309,6 +10385,8 @@ window.HSK_CHARS = [
     "meaning": "key",
     "level": 4,
     "phrase": "钥匙",
+    "prompt1": "钥匙",
+    "prompt2": "写钥字",
     "sentence": "这是“钥”字。"
   },
   {
@@ -8317,6 +10395,8 @@ window.HSK_CHARS = [
     "meaning": "crucial; key; pivotal",
     "level": 4,
     "phrase": "关键",
+    "prompt1": "关键",
+    "prompt2": "键盘",
     "sentence": "这是“键”字。"
   },
   {
@@ -8325,6 +10405,8 @@ window.HSK_CHARS = [
     "meaning": "mirror",
     "level": 4,
     "phrase": "镜子",
+    "prompt1": "镜子",
+    "prompt2": "眼镜",
     "sentence": "这是“镜”字。"
   },
   {
@@ -8333,6 +10415,8 @@ window.HSK_CHARS = [
     "meaning": "bustling; lively; busy",
     "level": 4,
     "phrase": "热闹",
+    "prompt1": "热闹",
+    "prompt2": "无理取闹",
     "sentence": "这是“闹”字。"
   },
   {
@@ -8341,6 +10425,8 @@ window.HSK_CHARS = [
     "meaning": "read; reading",
     "level": 4,
     "phrase": "阅读",
+    "prompt1": "阅读",
+    "prompt2": "写阅字",
     "sentence": "这是“阅”字。"
   },
   {
@@ -8349,6 +10435,8 @@ window.HSK_CHARS = [
     "meaning": "queue; stand in line",
     "level": 4,
     "phrase": "排队",
+    "prompt1": "排队",
+    "prompt2": "队伍",
     "sentence": "这是“队”字。"
   },
   {
@@ -8357,6 +10445,8 @@ window.HSK_CHARS = [
     "meaning": "international",
     "level": 4,
     "phrase": "国际",
+    "prompt1": "国际",
+    "prompt2": "实际",
     "sentence": "这是“际”字。"
   },
   {
@@ -8365,6 +10455,8 @@ window.HSK_CHARS = [
     "meaning": "reduce; to lower; to drop",
     "level": 4,
     "phrase": "降低",
+    "prompt1": "降低",
+    "prompt2": "降落",
     "sentence": "这是“降”字。"
   },
   {
@@ -8373,6 +10465,8 @@ window.HSK_CHARS = [
     "meaning": "danger; dangerous; perilous",
     "level": 4,
     "phrase": "危险",
+    "prompt1": "危险",
+    "prompt2": "风险",
     "sentence": "这是“险”字。"
   },
   {
@@ -8381,6 +10475,8 @@ window.HSK_CHARS = [
     "meaning": "accompany; keep company",
     "level": 4,
     "phrase": "陪",
+    "prompt1": "陪字",
+    "prompt2": "写陪字",
     "sentence": "这是“陪”字。"
   },
   {
@@ -8389,6 +10485,8 @@ window.HSK_CHARS = [
     "meaning": "as one pleases; informal; random; casual",
     "level": 4,
     "phrase": "随便",
+    "prompt1": "随便",
+    "prompt2": "随着",
     "sentence": "这是“随”字。"
   },
   {
@@ -8397,6 +10495,8 @@ window.HSK_CHARS = [
     "meaning": "page; leaf (Kangxi radical 181)",
     "level": 4,
     "phrase": "页",
+    "prompt1": "页字",
+    "prompt2": "写页字",
     "sentence": "这是“页”字。"
   },
   {
@@ -8405,6 +10505,8 @@ window.HSK_CHARS = [
     "meaning": "conveniently; in passing; on the way",
     "level": 4,
     "phrase": "顺便",
+    "prompt1": "顺便",
+    "prompt2": "顺序",
     "sentence": "这是“顺”字。"
   },
   {
@@ -8413,6 +10515,8 @@ window.HSK_CHARS = [
     "meaning": "(of students) prepare a lesson before class; preview",
     "level": 4,
     "phrase": "预习",
+    "prompt1": "预习",
+    "prompt2": "预防",
     "sentence": "这是“预”字。"
   },
   {
@@ -8421,6 +10525,8 @@ window.HSK_CHARS = [
     "meaning": "dining hall; cafeteria; restaurant",
     "level": 4,
     "phrase": "餐厅",
+    "prompt1": "餐厅",
+    "prompt2": "写餐字",
     "sentence": "这是“餐”字。"
   },
   {
@@ -8429,6 +10535,8 @@ window.HSK_CHARS = [
     "meaning": "dumpling; potsticker",
     "level": 4,
     "phrase": "饺子",
+    "prompt1": "饺子",
+    "prompt2": "写饺字",
     "sentence": "这是“饺”字。"
   },
   {
@@ -8437,6 +10545,8 @@ window.HSK_CHARS = [
     "meaning": "biscuit; cracker; cookie",
     "level": 4,
     "phrase": "饼干",
+    "prompt1": "饼干",
+    "prompt2": "写饼字",
     "sentence": "这是“饼”字。"
   },
   {
@@ -8445,6 +10555,8 @@ window.HSK_CHARS = [
     "meaning": "head; chief; first; (mw for poems and songs) (Kangxi radical 185)",
     "level": 4,
     "phrase": "首",
+    "prompt1": "首先",
+    "prompt2": "首都",
     "sentence": "这是“首”字。"
   },
   {
@@ -8453,6 +10565,8 @@ window.HSK_CHARS = [
     "meaning": "proud; arrogant; conceited; take pride in",
     "level": 4,
     "phrase": "骄傲",
+    "prompt1": "骄傲",
+    "prompt2": "写骄字",
     "sentence": "这是“骄”字。"
   },
   {
@@ -8461,6 +10575,8 @@ window.HSK_CHARS = [
     "meaning": "experience",
     "level": 4,
     "phrase": "经验",
+    "prompt1": "经验",
+    "prompt2": "测验",
     "sentence": "这是“验”字。"
   },
   {
@@ -8469,6 +10585,8 @@ window.HSK_CHARS = [
     "meaning": "to cheat; to swindle; deceive",
     "level": 4,
     "phrase": "骗",
+    "prompt1": "欺骗",
+    "prompt2": "诈骗",
     "sentence": "这是“骗”字。"
   },
   {
@@ -8477,6 +10595,8 @@ window.HSK_CHARS = [
     "meaning": "roast duck",
     "level": 4,
     "phrase": "烤鸭",
+    "prompt1": "烤鸭",
+    "prompt2": "写鸭字",
     "sentence": "这是“鸭”字。"
   },
   {
@@ -8485,6 +10605,8 @@ window.HSK_CHARS = [
     "meaning": "trouble (someone); troubling; bothersome",
     "level": 4,
     "phrase": "麻烦",
+    "prompt1": "麻烦",
+    "prompt2": "麻醉",
     "sentence": "这是“麻”字。"
   },
   {
@@ -8493,6 +10615,8 @@ window.HSK_CHARS = [
     "meaning": "humorous",
     "level": 4,
     "phrase": "幽默",
+    "prompt1": "幽默",
+    "prompt2": "沉默",
     "sentence": "这是“默”字。"
   },
   {
@@ -8501,6 +10625,8 @@ window.HSK_CHARS = [
     "meaning": "encourage; inspire",
     "level": 4,
     "phrase": "鼓励",
+    "prompt1": "鼓励",
+    "prompt2": "鼓舞",
     "sentence": "这是“鼓”字。"
   },
   {
@@ -8509,6 +10635,8 @@ window.HSK_CHARS = [
     "meaning": "(a person's) age",
     "level": 4,
     "phrase": "年龄",
+    "prompt1": "年龄",
+    "prompt2": "写龄字",
     "sentence": "这是“龄”字。"
   },
   {
@@ -8517,6 +10645,8 @@ window.HSK_CHARS = [
     "meaning": "ugly; disgraceful (2nd Earthly Branch)",
     "level": 5,
     "phrase": "丑",
+    "prompt1": "丑恶",
+    "prompt2": "写丑字",
     "sentence": "这是“丑”字。"
   },
   {
@@ -8525,6 +10655,8 @@ window.HSK_CHARS = [
     "meaning": "silk",
     "level": 5,
     "phrase": "丝绸",
+    "prompt1": "丝毫",
+    "prompt2": "丝绸",
     "sentence": "这是“丝”字。"
   },
   {
@@ -8533,6 +10665,8 @@ window.HSK_CHARS = [
     "meaning": "(polite) welcome!; honor somebody with one's presence",
     "level": 5,
     "phrase": "光临",
+    "prompt1": "临时",
+    "prompt2": "面临",
     "sentence": "这是“临”字。"
   },
   {
@@ -8541,6 +10675,8 @@ window.HSK_CHARS = [
     "meaning": "duty; obligation; volunteer duty",
     "level": 5,
     "phrase": "义务",
+    "prompt1": "义务",
+    "prompt2": "意义",
     "sentence": "这是“义”字。"
   },
   {
@@ -8549,6 +10685,8 @@ window.HSK_CHARS = [
     "meaning": "shortage; to lack; be short of",
     "level": 5,
     "phrase": "缺乏",
+    "prompt1": "缺乏",
+    "prompt2": "贫乏",
     "sentence": "这是“乏”字。"
   },
   {
@@ -8557,6 +10695,8 @@ window.HSK_CHARS = [
     "meaning": "(of a child) obedient; well-behaved; clever; perverse; contrary to reason",
     "level": 5,
     "phrase": "乖",
+    "prompt1": "乖字",
+    "prompt2": "写乖字",
     "sentence": "这是“乖”字。"
   },
   {
@@ -8565,6 +10705,8 @@ window.HSK_CHARS = [
     "meaning": "two; twist (2nd Heavenly Stem) (Kangxi radical 5)",
     "level": 5,
     "phrase": "乙",
+    "prompt1": "乙字",
+    "prompt2": "写乙字",
     "sentence": "这是“乙”字。"
   },
   {
@@ -8573,6 +10715,8 @@ window.HSK_CHARS = [
     "meaning": "hometown",
     "level": 5,
     "phrase": "家乡",
+    "prompt1": "家乡",
+    "prompt2": "乡镇",
     "sentence": "这是“乡”字。"
   },
   {
@@ -8581,6 +10725,8 @@ window.HSK_CHARS = [
     "meaning": "suffer losses; get the worst of",
     "level": 5,
     "phrase": "吃亏",
+    "prompt1": "吃亏",
+    "prompt2": "幸亏",
     "sentence": "这是“亏”字。"
   },
   {
@@ -8589,6 +10735,8 @@ window.HSK_CHARS = [
     "meaning": "property; fortune",
     "level": 5,
     "phrase": "财产",
+    "prompt1": "产品",
+    "prompt2": "财产",
     "sentence": "这是“产”字。"
   },
   {
@@ -8597,6 +10745,8 @@ window.HSK_CHARS = [
     "meaning": "enjoy",
     "level": 5,
     "phrase": "享受",
+    "prompt1": "享受",
+    "prompt2": "写享字",
     "sentence": "这是“享”字。"
   },
   {
@@ -8605,6 +10755,8 @@ window.HSK_CHARS = [
     "meaning": "one hundred million (100,000,000)",
     "level": 5,
     "phrase": "亿",
+    "prompt1": "亿字",
+    "prompt2": "写亿字",
     "sentence": "这是“亿”字。"
   },
   {
@@ -8613,6 +10765,8 @@ window.HSK_CHARS = [
     "meaning": "represent; to delegate",
     "level": 5,
     "phrase": "代表",
+    "prompt1": "代替",
+    "prompt2": "近代",
     "sentence": "这是“代”字。"
   },
   {
@@ -8621,6 +10775,8 @@ window.HSK_CHARS = [
     "meaning": "an order; a command",
     "level": 5,
     "phrase": "命令",
+    "prompt1": "命令",
+    "prompt2": "夏令营",
     "sentence": "这是“令”字。"
   },
   {
@@ -8629,6 +10785,8 @@ window.HSK_CHARS = [
     "meaning": "to seem as though; as if",
     "level": 5,
     "phrase": "仿佛",
+    "prompt1": "仿佛",
+    "prompt2": "模仿",
     "sentence": "这是“仿”字。"
   },
   {
@@ -8637,6 +10795,8 @@ window.HSK_CHARS = [
     "meaning": "company; business; firm",
     "level": 5,
     "phrase": "企业",
+    "prompt1": "企业",
+    "prompt2": "企图",
     "sentence": "这是“企”字。"
   },
   {
@@ -8645,6 +10805,8 @@ window.HSK_CHARS = [
     "meaning": "great; mighty; large",
     "level": 5,
     "phrase": "伟大",
+    "prompt1": "伟大",
+    "prompt2": "雄伟",
     "sentence": "这是“伟”字。"
   },
   {
@@ -8653,6 +10815,8 @@ window.HSK_CHARS = [
     "meaning": "partner (for an activity); friend; pal",
     "level": 5,
     "phrase": "伙伴",
+    "prompt1": "伙伴",
+    "prompt2": "伴随",
     "sentence": "这是“伴”字。"
   },
   {
@@ -8661,6 +10825,8 @@ window.HSK_CHARS = [
     "meaning": "to stretch; extend",
     "level": 5,
     "phrase": "伸",
+    "prompt1": "延伸",
+    "prompt2": "写伸字",
     "sentence": "这是“伸”字。"
   },
   {
@@ -8669,6 +10835,8 @@ window.HSK_CHARS = [
     "meaning": "seems as if; rather like",
     "level": 5,
     "phrase": "似的",
+    "prompt1": "似乎",
+    "prompt2": "相似",
     "sentence": "这是“似”字。"
   },
   {
@@ -8677,6 +10845,8 @@ window.HSK_CHARS = [
     "meaning": "unnecessary; superfluous",
     "level": 5,
     "phrase": "多余",
+    "prompt1": "业余",
+    "prompt2": "多余",
     "sentence": "这是“余”字。"
   },
   {
@@ -8685,6 +10855,8 @@ window.HSK_CHARS = [
     "meaning": "to seem as though; as if",
     "level": 5,
     "phrase": "仿佛",
+    "prompt1": "仿佛",
+    "prompt2": "写佛字",
     "sentence": "这是“佛”字。"
   },
   {
@@ -8693,6 +10865,8 @@ window.HSK_CHARS = [
     "meaning": "admire; to respect",
     "level": 5,
     "phrase": "佩服",
+    "prompt1": "佩服",
+    "prompt2": "钦佩",
     "sentence": "这是“佩”字。"
   },
   {
@@ -8701,6 +10875,8 @@ window.HSK_CHARS = [
     "meaning": "still; as before",
     "level": 5,
     "phrase": "依然",
+    "prompt1": "依然",
+    "prompt2": "依靠",
     "sentence": "这是“依”字。"
   },
   {
@@ -8709,6 +10885,8 @@ window.HSK_CHARS = [
     "meaning": "promote (an idea or cause); to advance",
     "level": 5,
     "phrase": "促进",
+    "prompt1": "促使",
+    "prompt2": "促进",
     "sentence": "这是“促”字。"
   },
   {
@@ -8717,6 +10895,8 @@ window.HSK_CHARS = [
     "meaning": "handsome",
     "level": 5,
     "phrase": "英俊",
+    "prompt1": "英俊",
+    "prompt2": "写俊字",
     "sentence": "这是“俊”字。"
   },
   {
@@ -8725,6 +10905,8 @@ window.HSK_CHARS = [
     "meaning": "social custom",
     "level": 5,
     "phrase": "风俗",
+    "prompt1": "风俗",
+    "prompt2": "俗话",
     "sentence": "这是“俗”字。"
   },
   {
@@ -8733,6 +10915,8 @@ window.HSK_CHARS = [
     "meaning": "club (group or organization)",
     "level": 5,
     "phrase": "俱乐部",
+    "prompt1": "俱乐部",
+    "prompt2": "与日俱增",
     "sentence": "这是“俱”字。"
   },
   {
@@ -8741,6 +10925,8 @@ window.HSK_CHARS = [
     "meaning": "promote; to advocate; proposal",
     "level": 5,
     "phrase": "提倡",
+    "prompt1": "提倡",
+    "prompt2": "倡议",
     "sentence": "这是“倡”字。"
   },
   {
@@ -8749,6 +10935,8 @@ window.HSK_CHARS = [
     "meaning": "steal; pilfer",
     "level": 5,
     "phrase": "偷",
+    "prompt1": "偷字",
+    "prompt2": "写偷字",
     "sentence": "这是“偷”字。"
   },
   {
@@ -8757,6 +10945,8 @@ window.HSK_CHARS = [
     "meaning": "compensate; pay for somebody else's loss",
     "level": 5,
     "phrase": "赔偿",
+    "prompt1": "赔偿",
+    "prompt2": "偿还",
     "sentence": "这是“偿”字。"
   },
   {
@@ -8765,6 +10955,8 @@ window.HSK_CHARS = [
     "meaning": "in the evening; when night falls",
     "level": 5,
     "phrase": "傍晚",
+    "prompt1": "傍晚",
+    "prompt2": "写傍字",
     "sentence": "这是“傍”字。"
   },
   {
@@ -8773,6 +10965,8 @@ window.HSK_CHARS = [
     "meaning": "to press; to urge; to hurry",
     "level": 5,
     "phrase": "催",
+    "prompt1": "催字",
+    "prompt2": "写催字",
     "sentence": "这是“催”字。"
   },
   {
@@ -8781,6 +10975,8 @@ window.HSK_CHARS = [
     "meaning": "foolish; fool",
     "level": 5,
     "phrase": "傻",
+    "prompt1": "傻字",
+    "prompt2": "写傻字",
     "sentence": "这是“傻”字。"
   },
   {
@@ -8789,6 +10985,8 @@ window.HSK_CHARS = [
     "meaning": "brothers; younger brother; brethren",
     "level": 5,
     "phrase": "兄弟",
+    "prompt1": "兄弟",
+    "prompt2": "写兄字",
     "sentence": "这是“兄”字。"
   },
   {
@@ -8797,6 +10995,8 @@ window.HSK_CHARS = [
     "meaning": "replenish; to supplement; to complement",
     "level": 5,
     "phrase": "补充",
+    "prompt1": "充分",
+    "prompt2": "补充",
     "sentence": "这是“充”字。"
   },
   {
@@ -8805,6 +11005,8 @@ window.HSK_CHARS = [
     "meaning": "to exchange; to convert (currencies)",
     "level": 5,
     "phrase": "兑换",
+    "prompt1": "兑换",
+    "prompt2": "兑现",
     "sentence": "这是“兑”字。"
   },
   {
@@ -8813,6 +11015,8 @@ window.HSK_CHARS = [
     "meaning": "rabbit; hare",
     "level": 5,
     "phrase": "兔子",
+    "prompt1": "兔子",
+    "prompt2": "写兔字",
     "sentence": "这是“兔”字。"
   },
   {
@@ -8821,6 +11025,8 @@ window.HSK_CHARS = [
     "meaning": "soldier",
     "level": 5,
     "phrase": "士兵",
+    "prompt1": "士兵",
+    "prompt2": "写兵字",
     "sentence": "这是“兵”字。"
   },
   {
@@ -8829,6 +11035,8 @@ window.HSK_CHARS = [
     "meaning": "part time",
     "level": 5,
     "phrase": "兼职",
+    "prompt1": "兼职",
+    "prompt2": "统筹兼顾",
     "sentence": "这是“兼”字。"
   },
   {
@@ -8837,6 +11045,8 @@ window.HSK_CHARS = [
     "meaning": "book; (mw for books)",
     "level": 5,
     "phrase": "册",
+    "prompt1": "注册",
+    "prompt2": "写册字",
     "sentence": "这是“册”字。"
   },
   {
@@ -8845,6 +11055,8 @@ window.HSK_CHARS = [
     "meaning": "champion",
     "level": 5,
     "phrase": "冠军",
+    "prompt1": "军事",
+    "prompt2": "冠军",
     "sentence": "这是“军”字。"
   },
   {
@@ -8853,6 +11065,8 @@ window.HSK_CHARS = [
     "meaning": "rural area; countryside",
     "level": 5,
     "phrase": "农村",
+    "prompt1": "农业",
+    "prompt2": "农民",
     "sentence": "这是“农”字。"
   },
   {
@@ -8861,6 +11075,8 @@ window.HSK_CHARS = [
     "meaning": "champion",
     "level": 5,
     "phrase": "冠军",
+    "prompt1": "冠军",
+    "prompt2": "写冠字",
     "sentence": "这是“冠”字。"
   },
   {
@@ -8869,6 +11085,8 @@ window.HSK_CHARS = [
     "meaning": "to rush; to clash; to rinse; thoroughfare",
     "level": 5,
     "phrase": "冲",
+    "prompt1": "冲击",
+    "prompt2": "冲突",
     "sentence": "这是“冲”字。"
   },
   {
@@ -8877,6 +11095,8 @@ window.HSK_CHARS = [
     "meaning": "to freeze",
     "level": 5,
     "phrase": "冻",
+    "prompt1": "冻结",
+    "prompt2": "写冻字",
     "sentence": "这是“冻”字。"
   },
   {
@@ -8885,6 +11105,8 @@ window.HSK_CHARS = [
     "meaning": "ice cream",
     "level": 5,
     "phrase": "冰激凌",
+    "prompt1": "冰激凌",
+    "prompt2": "凌晨",
     "sentence": "这是“凌”字。"
   },
   {
@@ -8893,6 +11115,8 @@ window.HSK_CHARS = [
     "meaning": "lean against; evidence; proof; no matter (what/how/etc.)",
     "level": 5,
     "phrase": "凭",
+    "prompt1": "文凭",
+    "prompt2": "写凭字",
     "sentence": "这是“凭”字。"
   },
   {
@@ -8901,6 +11125,8 @@ window.HSK_CHARS = [
     "meaning": "to shoot; to fire (a gun)",
     "level": 5,
     "phrase": "射击",
+    "prompt1": "射击",
+    "prompt2": "袭击",
     "sentence": "这是“击”字。"
   },
   {
@@ -8909,6 +11135,8 @@ window.HSK_CHARS = [
     "meaning": "create; bring about; creativity",
     "level": 5,
     "phrase": "创造",
+    "prompt1": "创造",
+    "prompt2": "创立",
     "sentence": "这是“创”字。"
   },
   {
@@ -8917,6 +11145,8 @@ window.HSK_CHARS = [
     "meaning": "junior; primary",
     "level": 5,
     "phrase": "初级",
+    "prompt1": "初级",
+    "prompt2": "最初",
     "sentence": "这是“初”字。"
   },
   {
@@ -8925,6 +11155,8 @@ window.HSK_CHARS = [
     "meaning": "to delete",
     "level": 5,
     "phrase": "删除",
+    "prompt1": "删除",
+    "prompt2": "写删字",
     "sentence": "这是“删”字。"
   },
   {
@@ -8933,6 +11165,8 @@ window.HSK_CHARS = [
     "meaning": "duplicate; reproduce",
     "level": 5,
     "phrase": "复制",
+    "prompt1": "制作",
+    "prompt2": "限制",
     "sentence": "这是“制”字。"
   },
   {
@@ -8941,6 +11175,8 @@ window.HSK_CHARS = [
     "meaning": "thorn; to sting; to prick; pierce; stab",
     "level": 5,
     "phrase": "刺",
+    "prompt1": "刺激",
+    "prompt2": "讽刺",
     "sentence": "这是“刺”字。"
   },
   {
@@ -8949,6 +11185,8 @@ window.HSK_CHARS = [
     "meaning": "scissors",
     "level": 5,
     "phrase": "剪刀",
+    "prompt1": "剪刀",
+    "prompt2": "剪彩",
     "sentence": "这是“剪”字。"
   },
   {
@@ -8957,6 +11195,8 @@ window.HSK_CHARS = [
     "meaning": "advise; to urge; persuade",
     "level": 5,
     "phrase": "劝",
+    "prompt1": "劝字",
+    "prompt2": "写劝字",
     "sentence": "这是“劝”字。"
   },
   {
@@ -8965,6 +11205,8 @@ window.HSK_CHARS = [
     "meaning": "vile; horrible",
     "level": 5,
     "phrase": "恶劣",
+    "prompt1": "恶劣",
+    "prompt2": "优胜劣汰",
     "sentence": "这是“劣”字。"
   },
   {
@@ -8973,6 +11215,8 @@ window.HSK_CHARS = [
     "meaning": "exert all one's strength",
     "level": 5,
     "phrase": "使劲儿",
+    "prompt1": "使劲儿",
+    "prompt2": "干劲",
     "sentence": "这是“劲”字。"
   },
   {
@@ -8981,6 +11225,8 @@ window.HSK_CHARS = [
     "meaning": "work; toil; (physical) labor",
     "level": 5,
     "phrase": "劳动",
+    "prompt1": "劳动",
+    "prompt2": "疲劳",
     "sentence": "这是“劳”字。"
   },
   {
@@ -8989,6 +11235,8 @@ window.HSK_CHARS = [
     "meaning": "trend; tendency",
     "level": 5,
     "phrase": "趋势",
+    "prompt1": "优势",
+    "prompt2": "趋势",
     "sentence": "这是“势”字。"
   },
   {
@@ -8997,6 +11245,8 @@ window.HSK_CHARS = [
     "meaning": "hardworking; diligent; industrious",
     "level": 5,
     "phrase": "勤奋",
+    "prompt1": "勤奋",
+    "prompt2": "辛勤",
     "sentence": "这是“勤”字。"
   },
   {
@@ -9005,6 +11255,8 @@ window.HSK_CHARS = [
     "meaning": "not; do not",
     "level": 5,
     "phrase": "勿",
+    "prompt1": "勿字",
+    "prompt2": "写勿字",
     "sentence": "这是“勿”字。"
   },
   {
@@ -9013,6 +11265,8 @@ window.HSK_CHARS = [
     "meaning": "even; well-distributed",
     "level": 5,
     "phrase": "均匀",
+    "prompt1": "均匀",
+    "prompt2": "写匀字",
     "sentence": "这是“匀”字。"
   },
   {
@@ -9021,6 +11275,8 @@ window.HSK_CHARS = [
     "meaning": "hasty; hurried",
     "level": 5,
     "phrase": "匆忙",
+    "prompt1": "匆忙",
+    "prompt2": "写匆字",
     "sentence": "这是“匆”字。"
   },
   {
@@ -9029,6 +11285,8 @@ window.HSK_CHARS = [
     "meaning": "ordinary person; (mw for horses, bolt of cloth)",
     "level": 5,
     "phrase": "匹",
+    "prompt1": "匹字",
+    "prompt2": "写匹字",
     "sentence": "这是“匹”字。"
   },
   {
@@ -9037,6 +11295,8 @@ window.HSK_CHARS = [
     "meaning": "rise; hoist; promote; liter",
     "level": 5,
     "phrase": "升",
+    "prompt1": "晋升",
+    "prompt2": "写升字",
     "sentence": "这是“升”字。"
   },
   {
@@ -9045,6 +11305,8 @@ window.HSK_CHARS = [
     "meaning": "luxurious",
     "level": 5,
     "phrase": "豪华",
+    "prompt1": "华裔",
+    "prompt2": "豪华",
     "sentence": "这是“华”字。"
   },
   {
@@ -9053,6 +11315,8 @@ window.HSK_CHARS = [
     "meaning": "bedroom",
     "level": 5,
     "phrase": "卧室",
+    "prompt1": "卧室",
+    "prompt2": "写卧字",
     "sentence": "这是“卧”字。"
   },
   {
@@ -9061,6 +11325,8 @@ window.HSK_CHARS = [
     "meaning": "to roll (up); to coil; (mw for tapes)",
     "level": 5,
     "phrase": "卷",
+    "prompt1": "试卷",
+    "prompt2": "写卷字",
     "sentence": "这是“卷”字。"
   },
   {
@@ -9069,6 +11335,8 @@ window.HSK_CHARS = [
     "meaning": "factory",
     "level": 5,
     "phrase": "工厂",
+    "prompt1": "工厂",
+    "prompt2": "写厂字",
     "sentence": "这是“厂”字。"
   },
   {
@@ -9077,6 +11345,8 @@ window.HSK_CHARS = [
     "meaning": "centimeter",
     "level": 5,
     "phrase": "厘米",
+    "prompt1": "厘米",
+    "prompt2": "写厘字",
     "sentence": "这是“厘”字。"
   },
   {
@@ -9085,6 +11355,8 @@ window.HSK_CHARS = [
     "meaning": "carriage; railroad car",
     "level": 5,
     "phrase": "车厢",
+    "prompt1": "车厢",
+    "prompt2": "写厢字",
     "sentence": "这是“厢”字。"
   },
   {
@@ -9093,6 +11365,8 @@ window.HSK_CHARS = [
     "meaning": "large building; edifice; mansion",
     "level": 5,
     "phrase": "大厦",
+    "prompt1": "大厦",
+    "prompt2": "写厦字",
     "sentence": "这是“厦”字。"
   },
   {
@@ -9101,6 +11375,8 @@ window.HSK_CHARS = [
     "meaning": "county; district",
     "level": 5,
     "phrase": "县",
+    "prompt1": "县字",
+    "prompt2": "写县字",
     "sentence": "这是“县”字。"
   },
   {
@@ -9109,6 +11385,8 @@ window.HSK_CHARS = [
     "meaning": "fork; cross",
     "level": 5,
     "phrase": "叉子",
+    "prompt1": "叉子",
+    "prompt2": "交叉",
     "sentence": "这是“叉”字。"
   },
   {
@@ -9117,6 +11395,8 @@ window.HSK_CHARS = [
     "meaning": "retell; narrate",
     "level": 5,
     "phrase": "叙述",
+    "prompt1": "叙述",
+    "prompt2": "写叙字",
     "sentence": "这是“叙”字。"
   },
   {
@@ -9125,6 +11405,8 @@ window.HSK_CHARS = [
     "meaning": "ancient times",
     "level": 5,
     "phrase": "古代",
+    "prompt1": "古代",
+    "prompt2": "古典",
     "sentence": "这是“古”字。"
   },
   {
@@ -9133,6 +11415,8 @@ window.HSK_CHARS = [
     "meaning": "convene (a conference or meeting); call together",
     "level": 5,
     "phrase": "召开",
+    "prompt1": "召开",
+    "prompt2": "号召",
     "sentence": "这是“召”字。"
   },
   {
@@ -9141,6 +11425,8 @@ window.HSK_CHARS = [
     "meaning": "to spit | to vomit; throw up",
     "level": 5,
     "phrase": "吐",
+    "prompt1": "呕吐",
+    "prompt2": "吞吞吐吐",
     "sentence": "这是“吐”字。"
   },
   {
@@ -9149,6 +11435,8 @@ window.HSK_CHARS = [
     "meaning": "frighten; to scare; intimidate",
     "level": 5,
     "phrase": "吓",
+    "prompt1": "恐吓",
+    "prompt2": "写吓字",
     "sentence": "这是“吓”字。"
   },
   {
@@ -9157,6 +11445,8 @@ window.HSK_CHARS = [
     "meaning": "ton",
     "level": 5,
     "phrase": "吨",
+    "prompt1": "吨字",
+    "prompt2": "写吨字",
     "sentence": "这是“吨”字。"
   },
   {
@@ -9165,6 +11455,8 @@ window.HSK_CHARS = [
     "meaning": "contain; embody; include",
     "level": 5,
     "phrase": "包含",
+    "prompt1": "包含",
+    "prompt2": "含糊",
     "sentence": "这是“含”字。"
   },
   {
@@ -9173,6 +11465,8 @@ window.HSK_CHARS = [
     "meaning": "enlighten; inspire",
     "level": 5,
     "phrase": "启发",
+    "prompt1": "启发",
+    "prompt2": "启蒙",
     "sentence": "这是“启”字。"
   },
   {
@@ -9181,6 +11475,8 @@ window.HSK_CHARS = [
     "meaning": "to quarrel; make noise",
     "level": 5,
     "phrase": "吵",
+    "prompt1": "吵架",
+    "prompt2": "写吵字",
     "sentence": "这是“吵”字。"
   },
   {
@@ -9189,6 +11485,8 @@ window.HSK_CHARS = [
     "meaning": "to blow; to blast; to puff",
     "level": 5,
     "phrase": "吹",
+    "prompt1": "吹捧",
+    "prompt2": "吹牛",
     "sentence": "这是“吹”字。"
   },
   {
@@ -9197,6 +11495,8 @@ window.HSK_CHARS = [
     "meaning": "kiss; lips",
     "level": 5,
     "phrase": "吻",
+    "prompt1": "吻字",
+    "prompt2": "写吻字",
     "sentence": "这是“吻”字。"
   },
   {
@@ -9205,6 +11505,8 @@ window.HSK_CHARS = [
     "meaning": "stupid; foolish; blank; dumbstruck; to stay",
     "level": 5,
     "phrase": "呆",
+    "prompt1": "发呆",
+    "prompt2": "写呆字",
     "sentence": "这是“呆”字。"
   },
   {
@@ -9213,6 +11515,8 @@ window.HSK_CHARS = [
     "meaning": "request information; consultant; advisory",
     "level": 5,
     "phrase": "咨询",
+    "prompt1": "咨询",
+    "prompt2": "写咨字",
     "sentence": "这是“咨”字。"
   },
   {
@@ -9221,6 +11525,8 @@ window.HSK_CHARS = [
     "meaning": "to bite; to nip",
     "level": 5,
     "phrase": "咬",
+    "prompt1": "咬字",
+    "prompt2": "写咬字",
     "sentence": "这是“咬”字。"
   },
   {
@@ -9229,6 +11535,8 @@ window.HSK_CHARS = [
     "meaning": "product; goods; merchandise",
     "level": 5,
     "phrase": "产品",
+    "prompt1": "产品",
+    "prompt2": "商品",
     "sentence": "这是“品”字。"
   },
   {
@@ -9237,6 +11545,8 @@ window.HSK_CHARS = [
     "meaning": "exhale; sip; (sound of laughter)",
     "level": 5,
     "phrase": "哈",
+    "prompt1": "哈字",
+    "prompt2": "写哈字",
     "sentence": "这是“哈”字。"
   },
   {
@@ -9245,6 +11555,8 @@ window.HSK_CHARS = [
     "meaning": "hey!; (interjection of surprise or dissatisfaction)",
     "level": 5,
     "phrase": "哎",
+    "prompt1": "哎字",
+    "prompt2": "写哎字",
     "sentence": "这是“哎”字。"
   },
   {
@@ -9253,6 +11565,8 @@ window.HSK_CHARS = [
     "meaning": "philosophy",
     "level": 5,
     "phrase": "哲学",
+    "prompt1": "哲学",
+    "prompt2": "写哲字",
     "sentence": "这是“哲”字。"
   },
   {
@@ -9261,6 +11575,8 @@ window.HSK_CHARS = [
     "meaning": "(an exclamation indicating resignation); oh well; oh; mm",
     "level": 5,
     "phrase": "唉",
+    "prompt1": "唉字",
+    "prompt2": "写唉字",
     "sentence": "这是“唉”字。"
   },
   {
@@ -9269,6 +11585,8 @@ window.HSK_CHARS = [
     "meaning": "only; sole",
     "level": 5,
     "phrase": "唯一",
+    "prompt1": "唯一",
+    "prompt2": "唯独",
     "sentence": "这是“唯”字。"
   },
   {
@@ -9277,6 +11595,8 @@ window.HSK_CHARS = [
     "meaning": "improve; make better",
     "level": 5,
     "phrase": "改善",
+    "prompt1": "善于",
+    "prompt2": "改善",
     "sentence": "这是“善”字。"
   },
   {
@@ -9285,6 +11605,8 @@ window.HSK_CHARS = [
     "meaning": "call; cry; shout",
     "level": 5,
     "phrase": "喊",
+    "prompt1": "喊字",
+    "prompt2": "写喊字",
     "sentence": "这是“喊”字。"
   },
   {
@@ -9293,6 +11615,8 @@ window.HSK_CHARS = [
     "meaning": "to sneeze",
     "level": 5,
     "phrase": "打喷嚏",
+    "prompt1": "打喷嚏",
+    "prompt2": "写喷字",
     "sentence": "这是“喷”字。"
   },
   {
@@ -9301,6 +11625,8 @@ window.HSK_CHARS = [
     "meaning": "throat; voice",
     "level": 5,
     "phrase": "嗓子",
+    "prompt1": "嗓子",
+    "prompt2": "写嗓字",
     "sentence": "这是“嗓”字。"
   },
   {
@@ -9309,6 +11635,8 @@ window.HSK_CHARS = [
     "meaning": "(interjection expressing what?, huh? hmm? why? ok, etc.)",
     "level": 5,
     "phrase": "嗯",
+    "prompt1": "嗯字",
+    "prompt2": "写嗯字",
     "sentence": "这是“嗯”字。"
   },
   {
@@ -9317,6 +11645,8 @@ window.HSK_CHARS = [
     "meaning": "honored guest",
     "level": 5,
     "phrase": "嘉宾",
+    "prompt1": "嘉宾",
+    "prompt2": "写嘉字",
     "sentence": "这是“嘉”字。"
   },
   {
@@ -9325,6 +11655,8 @@ window.HSK_CHARS = [
     "meaning": "battery charger",
     "level": 5,
     "phrase": "充电器",
+    "prompt1": "乐器",
+    "prompt2": "机器",
     "sentence": "这是“器”字。"
   },
   {
@@ -9333,6 +11665,8 @@ window.HSK_CHARS = [
     "meaning": "to sneeze",
     "level": 5,
     "phrase": "打喷嚏",
+    "prompt1": "打喷嚏",
+    "prompt2": "写嚏字",
     "sentence": "这是“嚏”字。"
   },
   {
@@ -9341,6 +11675,8 @@ window.HSK_CHARS = [
     "meaning": "round; ball; group; unite; dumpling; (mw for ball-like things)",
     "level": 5,
     "phrase": "团",
+    "prompt1": "团体",
+    "prompt2": "集团",
     "sentence": "这是“团”字。"
   },
   {
@@ -9349,6 +11685,8 @@ window.HSK_CHARS = [
     "meaning": "fixed; regular; stable",
     "level": 5,
     "phrase": "固定",
+    "prompt1": "固定",
+    "prompt2": "顽固",
     "sentence": "这是“固”字。"
   },
   {
@@ -9357,6 +11695,8 @@ window.HSK_CHARS = [
     "meaning": "round; circular; formal unit of Chinese currency",
     "level": 5,
     "phrase": "圆",
+    "prompt1": "圆满",
+    "prompt2": "椭圆",
     "sentence": "这是“圆”字。"
   },
   {
@@ -9365,6 +11705,8 @@ window.HSK_CHARS = [
     "meaning": "circle; ring; (mw for loops, orbits, etc.)",
     "level": 5,
     "phrase": "圈",
+    "prompt1": "圈套",
+    "prompt2": "写圈字",
     "sentence": "这是“圈”字。"
   },
   {
@@ -9373,6 +11715,8 @@ window.HSK_CHARS = [
     "meaning": "land; territory; soil",
     "level": 5,
     "phrase": "土地",
+    "prompt1": "土地",
+    "prompt2": "土豆",
     "sentence": "这是“土”字。"
   },
   {
@@ -9381,6 +11725,8 @@ window.HSK_CHARS = [
     "meaning": "even; well-distributed",
     "level": 5,
     "phrase": "均匀",
+    "prompt1": "均匀",
+    "prompt2": "平均",
     "sentence": "这是“均”字。"
   },
   {
@@ -9389,6 +11735,8 @@ window.HSK_CHARS = [
     "meaning": "frank",
     "level": 5,
     "phrase": "坦率",
+    "prompt1": "坦率",
+    "prompt2": "平坦",
     "sentence": "这是“坦”字。"
   },
   {
@@ -9397,6 +11745,8 @@ window.HSK_CHARS = [
     "meaning": "large-scale; wide-scale",
     "level": 5,
     "phrase": "大型",
+    "prompt1": "大型",
+    "prompt2": "类型",
     "sentence": "这是“型”字。"
   },
   {
@@ -9405,6 +11755,8 @@ window.HSK_CHARS = [
     "meaning": "domain; sphere; field; area",
     "level": 5,
     "phrase": "领域",
+    "prompt1": "领域",
+    "prompt2": "区域",
     "sentence": "这是“域”字。"
   },
   {
@@ -9413,6 +11765,8 @@ window.HSK_CHARS = [
     "meaning": "cultivate; train",
     "level": 5,
     "phrase": "培训",
+    "prompt1": "培养",
+    "prompt2": "培训",
     "sentence": "这是“培”字。"
   },
   {
@@ -9421,6 +11775,8 @@ window.HSK_CHARS = [
     "meaning": "pile; heap; stack; crowd",
     "level": 5,
     "phrase": "堆",
+    "prompt1": "堆积",
+    "prompt2": "写堆字",
     "sentence": "这是“堆”字。"
   },
   {
@@ -9429,6 +11785,8 @@ window.HSK_CHARS = [
     "meaning": "pool; pond",
     "level": 5,
     "phrase": "池塘",
+    "prompt1": "池塘",
+    "prompt2": "写塘字",
     "sentence": "这是“塘”字。"
   },
   {
@@ -9437,6 +11795,8 @@ window.HSK_CHARS = [
     "meaning": "wall",
     "level": 5,
     "phrase": "墙",
+    "prompt1": "墙字",
+    "prompt2": "写墙字",
     "sentence": "这是“墙”字。"
   },
   {
@@ -9445,6 +11805,8 @@ window.HSK_CHARS = [
     "meaning": "next door",
     "level": 5,
     "phrase": "隔壁",
+    "prompt1": "隔壁",
+    "prompt2": "悬崖峭壁",
     "sentence": "这是“壁”字。"
   },
   {
@@ -9453,6 +11815,8 @@ window.HSK_CHARS = [
     "meaning": "pot; kettle; jug; (mw for bottled liquids)",
     "level": 5,
     "phrase": "壶",
+    "prompt1": "壶字",
+    "prompt2": "写壶字",
     "sentence": "这是“壶”字。"
   },
   {
@@ -9461,6 +11825,8 @@ window.HSK_CHARS = [
     "meaning": "Lunar New Year's Eve",
     "level": 5,
     "phrase": "除夕",
+    "prompt1": "除夕",
+    "prompt2": "夕阳",
     "sentence": "这是“夕”字。"
   },
   {
@@ -9469,6 +11835,8 @@ window.HSK_CHARS = [
     "meaning": "night; darkness",
     "level": 5,
     "phrase": "夜",
+    "prompt1": "熬夜",
+    "prompt2": "昼夜",
     "sentence": "这是“夜”字。"
   },
   {
@@ -9477,6 +11845,8 @@ window.HSK_CHARS = [
     "meaning": "to boast; to praise; exaggerate",
     "level": 5,
     "phrase": "夸",
+    "prompt1": "夸张",
+    "prompt2": "写夸字",
     "sentence": "这是“夸”字。"
   },
   {
@@ -9485,6 +11855,8 @@ window.HSK_CHARS = [
     "meaning": "clip; tongs; folder",
     "level": 5,
     "phrase": "夹子",
+    "prompt1": "夹子",
+    "prompt2": "夹杂",
     "sentence": "这是“夹”字。"
   },
   {
@@ -9493,6 +11865,8 @@ window.HSK_CHARS = [
     "meaning": "can't help but; have no choice",
     "level": 5,
     "phrase": "无奈",
+    "prompt1": "无奈",
+    "prompt2": "写奈字",
     "sentence": "这是“奈”字。"
   },
   {
@@ -9501,6 +11875,8 @@ window.HSK_CHARS = [
     "meaning": "cover; (mw for sets of things); tie together",
     "level": 5,
     "phrase": "套",
+    "prompt1": "手套",
+    "prompt2": "配套",
     "sentence": "这是“套”字。"
   },
   {
@@ -9509,6 +11885,8 @@ window.HSK_CHARS = [
     "meaning": "woman; women in general",
     "level": 5,
     "phrase": "妇女",
+    "prompt1": "妇女",
+    "prompt2": "媳妇",
     "sentence": "这是“妇”字。"
   },
   {
@@ -9517,6 +11895,8 @@ window.HSK_CHARS = [
     "meaning": "ingenious; clever",
     "level": 5,
     "phrase": "巧妙",
+    "prompt1": "巧妙",
+    "prompt2": "美妙",
     "sentence": "这是“妙”字。"
   },
   {
@@ -9525,6 +11905,8 @@ window.HSK_CHARS = [
     "meaning": "hinder; to hamper; to obstruct",
     "level": 5,
     "phrase": "妨碍",
+    "prompt1": "妨碍",
+    "prompt2": "不妨",
     "sentence": "这是“妨”字。"
   },
   {
@@ -9533,6 +11915,8 @@ window.HSK_CHARS = [
     "meaning": "paternal aunt; father's sister",
     "level": 5,
     "phrase": "姑姑",
+    "prompt1": "姑娘",
+    "prompt2": "姑且",
     "sentence": "这是“姑”字。"
   },
   {
@@ -9541,6 +11925,8 @@ window.HSK_CHARS = [
     "meaning": "feel wronged; nurse a grievance",
     "level": 5,
     "phrase": "委屈",
+    "prompt1": "委屈",
+    "prompt2": "委托",
     "sentence": "这是“委”字。"
   },
   {
@@ -9549,6 +11935,8 @@ window.HSK_CHARS = [
     "meaning": "maternal grandmother",
     "level": 5,
     "phrase": "姥姥",
+    "prompt1": "姥姥",
+    "prompt2": "写姥字",
     "sentence": "这是“姥”字。"
   },
   {
@@ -9557,6 +11945,8 @@ window.HSK_CHARS = [
     "meaning": "marriage; matrimony; wedding",
     "level": 5,
     "phrase": "婚姻",
+    "prompt1": "婚姻",
+    "prompt2": "写姻字",
     "sentence": "这是“姻”字。"
   },
   {
@@ -9565,6 +11955,8 @@ window.HSK_CHARS = [
     "meaning": "posture; position; pose",
     "level": 5,
     "phrase": "姿势",
+    "prompt1": "姿势",
+    "prompt2": "姿态",
     "sentence": "这是“姿”字。"
   },
   {
@@ -9573,6 +11965,8 @@ window.HSK_CHARS = [
     "meaning": "threaten; to menace",
     "level": 5,
     "phrase": "威胁",
+    "prompt1": "威胁",
+    "prompt2": "示威",
     "sentence": "这是“威”字。"
   },
   {
@@ -9581,6 +11975,8 @@ window.HSK_CHARS = [
     "meaning": "young woman; girl",
     "level": 5,
     "phrase": "姑娘",
+    "prompt1": "姑娘",
+    "prompt2": "新娘",
     "sentence": "这是“娘”字。"
   },
   {
@@ -9589,6 +11985,8 @@ window.HSK_CHARS = [
     "meaning": "entertain; amuse; entertainment",
     "level": 5,
     "phrase": "娱乐",
+    "prompt1": "娱乐",
+    "prompt2": "写娱字",
     "sentence": "这是“娱”字。"
   },
   {
@@ -9597,6 +11995,8 @@ window.HSK_CHARS = [
     "meaning": "marry (a wife); take a wife",
     "level": 5,
     "phrase": "娶",
+    "prompt1": "娶字",
+    "prompt2": "写娶字",
     "sentence": "这是“娶”字。"
   },
   {
@@ -9605,6 +12005,8 @@ window.HSK_CHARS = [
     "meaning": "(informal) wife",
     "level": 5,
     "phrase": "老婆",
+    "prompt1": "老婆",
+    "prompt2": "写婆字",
     "sentence": "这是“婆”字。"
   },
   {
@@ -9613,6 +12015,8 @@ window.HSK_CHARS = [
     "meaning": "(news) media; medium",
     "level": 5,
     "phrase": "媒体",
+    "prompt1": "媒体",
+    "prompt2": "媒介",
     "sentence": "这是“媒”字。"
   },
   {
@@ -9621,6 +12025,8 @@ window.HSK_CHARS = [
     "meaning": "marry (a husband); take a husband",
     "level": 5,
     "phrase": "嫁",
+    "prompt1": "嫁字",
+    "prompt2": "写嫁字",
     "sentence": "这是“嫁”字。"
   },
   {
@@ -9629,6 +12035,8 @@ window.HSK_CHARS = [
     "meaning": "tender; inexperienced",
     "level": 5,
     "phrase": "嫩",
+    "prompt1": "嫩字",
+    "prompt2": "写嫩字",
     "sentence": "这是“嫩”字。"
   },
   {
@@ -9637,6 +12045,8 @@ window.HSK_CHARS = [
     "meaning": "become pregnant; have conceived",
     "level": 5,
     "phrase": "怀孕",
+    "prompt1": "怀孕",
+    "prompt2": "孕育",
     "sentence": "这是“孕”字。"
   },
   {
@@ -9645,6 +12055,8 @@ window.HSK_CHARS = [
     "meaning": "filial piety",
     "level": 5,
     "phrase": "孝顺",
+    "prompt1": "孝顺",
+    "prompt2": "写孝字",
     "sentence": "这是“孝”字。"
   },
   {
@@ -9653,6 +12065,8 @@ window.HSK_CHARS = [
     "meaning": "would rather; it is the lesser of two evils to",
     "level": 5,
     "phrase": "宁可",
+    "prompt1": "宁可",
+    "prompt2": "安宁",
     "sentence": "这是“宁”字。"
   },
   {
@@ -9661,6 +12075,8 @@ window.HSK_CHARS = [
     "meaning": "observe; abide by; comply with; keep (commandments); to respect (an agreement)",
     "level": 5,
     "phrase": "遵守",
+    "prompt1": "遵守",
+    "prompt2": "守护",
     "sentence": "这是“守”字。"
   },
   {
@@ -9669,6 +12085,8 @@ window.HSK_CHARS = [
     "meaning": "an official; organ; governmental",
     "level": 5,
     "phrase": "官",
+    "prompt1": "官方",
+    "prompt2": "器官",
     "sentence": "这是“官”字。"
   },
   {
@@ -9677,6 +12095,8 @@ window.HSK_CHARS = [
     "meaning": "treasure; precious things; darling; baby",
     "level": 5,
     "phrase": "宝贝",
+    "prompt1": "宝贝",
+    "prompt2": "宝贵",
     "sentence": "这是“宝”字。"
   },
   {
@@ -9685,6 +12105,8 @@ window.HSK_CHARS = [
     "meaning": "a pet",
     "level": 5,
     "phrase": "宠物",
+    "prompt1": "宠物",
+    "prompt2": "写宠字",
     "sentence": "这是“宠”字。"
   },
   {
@@ -9693,6 +12115,8 @@ window.HSK_CHARS = [
     "meaning": "announce; declare; proclaim",
     "level": 5,
     "phrase": "宣布",
+    "prompt1": "宣传",
+    "prompt2": "宣布",
     "sentence": "这是“宣”字。"
   },
   {
@@ -9701,6 +12125,8 @@ window.HSK_CHARS = [
     "meaning": "banquet; feast; dinner party",
     "level": 5,
     "phrase": "宴会",
+    "prompt1": "宴会",
+    "prompt2": "写宴字",
     "sentence": "这是“宴”字。"
   },
   {
@@ -9709,6 +12135,8 @@ window.HSK_CHARS = [
     "meaning": "wide; broad; relaxed; lenient",
     "level": 5,
     "phrase": "宽",
+    "prompt1": "宽容",
+    "prompt2": "宽敞",
     "sentence": "这是“宽”字。"
   },
   {
@@ -9717,6 +12145,8 @@ window.HSK_CHARS = [
     "meaning": "dormitory; living quarters; hostel",
     "level": 5,
     "phrase": "宿舍",
+    "prompt1": "宿舍",
+    "prompt2": "写宿字",
     "sentence": "这是“宿”字。"
   },
   {
@@ -9725,6 +12155,8 @@ window.HSK_CHARS = [
     "meaning": "lonely; lonesome",
     "level": 5,
     "phrase": "寂寞",
+    "prompt1": "寂寞",
+    "prompt2": "寂静",
     "sentence": "这是“寂”字。"
   },
   {
@@ -9733,6 +12165,8 @@ window.HSK_CHARS = [
     "meaning": "apartment building",
     "level": 5,
     "phrase": "公寓",
+    "prompt1": "公寓",
+    "prompt2": "寓言",
     "sentence": "这是“寓”字。"
   },
   {
@@ -9741,6 +12175,8 @@ window.HSK_CHARS = [
     "meaning": "lonely; lonesome",
     "level": 5,
     "phrase": "寂寞",
+    "prompt1": "寂寞",
+    "prompt2": "写寞字",
     "sentence": "这是“寞”字。"
   },
   {
@@ -9749,6 +12185,8 @@ window.HSK_CHARS = [
     "meaning": "seek; look for; quest",
     "level": 5,
     "phrase": "寻找",
+    "prompt1": "寻找",
+    "prompt2": "寻觅",
     "sentence": "这是“寻”字。"
   },
   {
@@ -9757,6 +12195,8 @@ window.HSK_CHARS = [
     "meaning": "life span; life expectancy",
     "level": 5,
     "phrase": "寿命",
+    "prompt1": "寿命",
+    "prompt2": "写寿字",
     "sentence": "这是“寿”字。"
   },
   {
@@ -9765,6 +12205,8 @@ window.HSK_CHARS = [
     "meaning": "to shoot; to fire (a gun)",
     "level": 5,
     "phrase": "射击",
+    "prompt1": "射击",
+    "prompt2": "辐射",
     "sentence": "这是“射”字。"
   },
   {
@@ -9773,6 +12215,8 @@ window.HSK_CHARS = [
     "meaning": "dust; dirt",
     "level": 5,
     "phrase": "灰尘",
+    "prompt1": "灰尘",
+    "prompt2": "写尘字",
     "sentence": "这是“尘”字。"
   },
   {
@@ -9781,6 +12225,8 @@ window.HSK_CHARS = [
     "meaning": "fashion; fad",
     "level": 5,
     "phrase": "时尚",
+    "prompt1": "时尚",
+    "prompt2": "尚且",
     "sentence": "这是“尚”字。"
   },
   {
@@ -9789,6 +12235,8 @@ window.HSK_CHARS = [
     "meaning": "ruler (measuring instrument)",
     "level": 5,
     "phrase": "尺子",
+    "prompt1": "尺子",
+    "prompt2": "写尺字",
     "sentence": "这是“尺”字。"
   },
   {
@@ -9797,6 +12245,8 @@ window.HSK_CHARS = [
     "meaning": "tail",
     "level": 5,
     "phrase": "尾巴",
+    "prompt1": "尾巴",
+    "prompt2": "写尾字",
     "sentence": "这是“尾”字。"
   },
   {
@@ -9805,6 +12255,8 @@ window.HSK_CHARS = [
     "meaning": "feel wronged; nurse a grievance",
     "level": 5,
     "phrase": "委屈",
+    "prompt1": "委屈",
+    "prompt2": "屈服",
     "sentence": "这是“屈”字。"
   },
   {
@@ -9813,6 +12265,8 @@ window.HSK_CHARS = [
     "meaning": "drawer",
     "level": 5,
     "phrase": "抽屉",
+    "prompt1": "抽屉",
+    "prompt2": "写屉字",
     "sentence": "这是“屉”字。"
   },
   {
@@ -9821,6 +12275,8 @@ window.HSK_CHARS = [
     "meaning": "arrive at; period; session; (mw for events; meetings; etc.)",
     "level": 5,
     "phrase": "届",
+    "prompt1": "届字",
+    "prompt2": "写届字",
     "sentence": "这是“届”字。"
   },
   {
@@ -9829,6 +12285,8 @@ window.HSK_CHARS = [
     "meaning": "room; house",
     "level": 5,
     "phrase": "屋子",
+    "prompt1": "屋子",
+    "prompt2": "写屋字",
     "sentence": "这是“屋”字。"
   },
   {
@@ -9837,6 +12295,8 @@ window.HSK_CHARS = [
     "meaning": "metal",
     "level": 5,
     "phrase": "金属",
+    "prompt1": "属于",
+    "prompt2": "金属",
     "sentence": "这是“属”字。"
   },
   {
@@ -9845,6 +12305,8 @@ window.HSK_CHARS = [
     "meaning": "islands",
     "level": 5,
     "phrase": "岛屿",
+    "prompt1": "岛屿",
+    "prompt2": "写屿字",
     "sentence": "这是“屿”字。"
   },
   {
@@ -9853,6 +12315,8 @@ window.HSK_CHARS = [
     "meaning": "islands",
     "level": 5,
     "phrase": "岛屿",
+    "prompt1": "岛屿",
+    "prompt2": "写岛字",
     "sentence": "这是“岛”字。"
   },
   {
@@ -9861,6 +12325,8 @@ window.HSK_CHARS = [
     "meaning": "bank; shore; beach; coast",
     "level": 5,
     "phrase": "岸",
+    "prompt1": "岸字",
+    "prompt2": "写岸字",
     "sentence": "这是“岸”字。"
   },
   {
@@ -9869,6 +12335,8 @@ window.HSK_CHARS = [
     "meaning": "very difficult; arduous; hard",
     "level": 5,
     "phrase": "艰巨",
+    "prompt1": "巨大",
+    "prompt2": "艰巨",
     "sentence": "这是“巨”字。"
   },
   {
@@ -9877,6 +12345,8 @@ window.HSK_CHARS = [
     "meaning": "tail",
     "level": 5,
     "phrase": "尾巴",
+    "prompt1": "尾巴",
+    "prompt2": "巴结",
     "sentence": "这是“巴”字。"
   },
   {
@@ -9885,6 +12355,8 @@ window.HSK_CHARS = [
     "meaning": "(currency) renminbi (RMB)",
     "level": 5,
     "phrase": "人民币",
+    "prompt1": "人民币",
+    "prompt2": "货币",
     "sentence": "这是“币”字。"
   },
   {
@@ -9893,6 +12365,8 @@ window.HSK_CHARS = [
     "meaning": "cloth; announce; to spread",
     "level": 5,
     "phrase": "布",
+    "prompt1": "公布",
+    "prompt2": "宣布",
     "sentence": "这是“布”字。"
   },
   {
@@ -9901,6 +12375,8 @@ window.HSK_CHARS = [
     "meaning": "window curtain",
     "level": 5,
     "phrase": "窗帘",
+    "prompt1": "窗帘",
+    "prompt2": "写帘字",
     "sentence": "这是“帘”字。"
   },
   {
@@ -9909,6 +12385,8 @@ window.HSK_CHARS = [
     "meaning": "attend; be present; participate",
     "level": 5,
     "phrase": "出席",
+    "prompt1": "主席",
+    "prompt2": "出席",
     "sentence": "这是“席”字。"
   },
   {
@@ -9917,6 +12395,8 @@ window.HSK_CHARS = [
     "meaning": "width of cloth; size; (mw for pictures, paintings, textiles)",
     "level": 5,
     "phrase": "幅",
+    "prompt1": "幅度",
+    "prompt2": "写幅字",
     "sentence": "这是“幅”字。"
   },
   {
@@ -9925,6 +12405,8 @@ window.HSK_CHARS = [
     "meaning": "opening ceremony",
     "level": 5,
     "phrase": "开幕式",
+    "prompt1": "字幕",
+    "prompt2": "开幕式",
     "sentence": "这是“幕”字。"
   },
   {
@@ -9933,6 +12415,8 @@ window.HSK_CHARS = [
     "meaning": "delusion; fantasy; illusion",
     "level": 5,
     "phrase": "幻想",
+    "prompt1": "幻想",
+    "prompt2": "写幻字",
     "sentence": "这是“幻”字。"
   },
   {
@@ -9941,6 +12425,8 @@ window.HSK_CHARS = [
     "meaning": "kindergarten; nursery school",
     "level": 5,
     "phrase": "幼儿园",
+    "prompt1": "幼儿园",
+    "prompt2": "幼稚",
     "sentence": "这是“幼”字。"
   },
   {
@@ -9949,6 +12435,8 @@ window.HSK_CHARS = [
     "meaning": "National Day",
     "level": 5,
     "phrase": "国庆节",
+    "prompt1": "庆祝",
+    "prompt2": "国庆节",
     "sentence": "这是“庆”字。"
   },
   {
@@ -9957,6 +12445,8 @@ window.HSK_CHARS = [
     "meaning": "garage",
     "level": 5,
     "phrase": "车库",
+    "prompt1": "车库",
+    "prompt2": "仓库",
     "sentence": "这是“库”字。"
   },
   {
@@ -9965,6 +12455,8 @@ window.HSK_CHARS = [
     "meaning": "government",
     "level": 5,
     "phrase": "政府",
+    "prompt1": "政府",
+    "prompt2": "写府字",
     "sentence": "这是“府”字。"
   },
   {
@@ -9973,6 +12465,8 @@ window.HSK_CHARS = [
     "meaning": "nonsense; rubbish",
     "level": 5,
     "phrase": "废话",
+    "prompt1": "废话",
+    "prompt2": "作废",
     "sentence": "这是“废”字。"
   },
   {
@@ -9981,6 +12475,8 @@ window.HSK_CHARS = [
     "meaning": "family; household",
     "level": 5,
     "phrase": "家庭",
+    "prompt1": "家庭",
+    "prompt2": "写庭字",
     "sentence": "这是“庭”字。"
   },
   {
@@ -9989,6 +12485,8 @@ window.HSK_CHARS = [
     "meaning": "extend; prolong; lengthen",
     "level": 5,
     "phrase": "延长",
+    "prompt1": "延长",
+    "prompt2": "蔓延",
     "sentence": "这是“延”字。"
   },
   {
@@ -9997,6 +12495,8 @@ window.HSK_CHARS = [
     "meaning": "turn a corner; make a turn",
     "level": 5,
     "phrase": "拐弯",
+    "prompt1": "拐弯",
+    "prompt2": "写弯字",
     "sentence": "这是“弯”字。"
   },
   {
@@ -10005,6 +12505,8 @@ window.HSK_CHARS = [
     "meaning": "weak; feeble; young",
     "level": 5,
     "phrase": "弱",
+    "prompt1": "弱点",
+    "prompt2": "薄弱",
     "sentence": "这是“弱”字。"
   },
   {
@@ -10013,6 +12515,8 @@ window.HSK_CHARS = [
     "meaning": "strong; staunch",
     "level": 5,
     "phrase": "坚强",
+    "prompt1": "强烈",
+    "prompt2": "坚强",
     "sentence": "这是“强”字。"
   },
   {
@@ -10021,6 +12525,8 @@ window.HSK_CHARS = [
     "meaning": "conclude from the facts; induce; sum up from the facts",
     "level": 5,
     "phrase": "归纳",
+    "prompt1": "归纳",
+    "prompt2": "归还",
     "sentence": "这是“归”字。"
   },
   {
@@ -10029,6 +12535,8 @@ window.HSK_CHARS = [
     "meaning": "to record; take notes",
     "level": 5,
     "phrase": "记录",
+    "prompt1": "录取",
+    "prompt2": "记录",
     "sentence": "这是“录”字。"
   },
   {
@@ -10037,6 +12545,8 @@ window.HSK_CHARS = [
     "meaning": "take shape; form",
     "level": 5,
     "phrase": "形成",
+    "prompt1": "形势",
+    "prompt2": "形象",
     "sentence": "这是“形”字。"
   },
   {
@@ -10045,6 +12555,8 @@ window.HSK_CHARS = [
     "meaning": "thorough; complete; completely",
     "level": 5,
     "phrase": "彻底",
+    "prompt1": "彻底",
+    "prompt2": "贯彻",
     "sentence": "这是“彻”字。"
   },
   {
@@ -10053,6 +12565,8 @@ window.HSK_CHARS = [
     "meaning": "each other; one another",
     "level": 5,
     "phrase": "彼此",
+    "prompt1": "彼此",
+    "prompt2": "写彼字",
     "sentence": "这是“彼”字。"
   },
   {
@@ -10061,6 +12575,8 @@ window.HSK_CHARS = [
     "meaning": "characteristics; distinctive features; trait",
     "level": 5,
     "phrase": "特征",
+    "prompt1": "征求",
+    "prompt2": "象征",
     "sentence": "这是“征”字。"
   },
   {
@@ -10069,6 +12585,8 @@ window.HSK_CHARS = [
     "meaning": "treatment; pay; wage; salary",
     "level": 5,
     "phrase": "待遇",
+    "prompt1": "待遇",
+    "prompt2": "等待",
     "sentence": "这是“待”字。"
   },
   {
@@ -10077,6 +12595,8 @@ window.HSK_CHARS = [
     "meaning": "morals; morality; ethics",
     "level": 5,
     "phrase": "道德",
+    "prompt1": "道德",
+    "prompt2": "品德",
     "sentence": "这是“德”字。"
   },
   {
@@ -10085,6 +12605,8 @@ window.HSK_CHARS = [
     "meaning": "cannot help but; unable to bear",
     "level": 5,
     "phrase": "忍不住",
+    "prompt1": "忍不住",
+    "prompt2": "残忍",
     "sentence": "这是“忍”字。"
   },
   {
@@ -10093,6 +12615,8 @@ window.HSK_CHARS = [
     "meaning": "read aloud; to study; to miss or think of somebody",
     "level": 5,
     "phrase": "念",
+    "prompt1": "怀念",
+    "prompt2": "观念",
     "sentence": "这是“念”字。"
   },
   {
@@ -10101,6 +12625,8 @@ window.HSK_CHARS = [
     "meaning": "suddenly; all of a sudden",
     "level": 5,
     "phrase": "忽然",
+    "prompt1": "忽然",
+    "prompt2": "忽视",
     "sentence": "这是“忽”字。"
   },
   {
@@ -10109,6 +12635,8 @@ window.HSK_CHARS = [
     "meaning": "complain; grumble",
     "level": 5,
     "phrase": "抱怨",
+    "prompt1": "抱怨",
+    "prompt2": "恩怨",
     "sentence": "这是“怨”字。"
   },
   {
@@ -10117,6 +12645,8 @@ window.HSK_CHARS = [
     "meaning": "romantic love; be in love; love affair",
     "level": 5,
     "phrase": "恋爱",
+    "prompt1": "恋爱",
+    "prompt2": "留恋",
     "sentence": "这是“恋”字。"
   },
   {
@@ -10125,6 +12655,8 @@ window.HSK_CHARS = [
     "meaning": "reinstate; resume; recover",
     "level": 5,
     "phrase": "恢复",
+    "prompt1": "恢复",
+    "prompt2": "写恢字",
     "sentence": "这是“恢”字。"
   },
   {
@@ -10133,6 +12665,8 @@ window.HSK_CHARS = [
     "meaning": "to hate",
     "level": 5,
     "phrase": "恨",
+    "prompt1": "悔恨",
+    "prompt2": "恨不得",
     "sentence": "这是“恨”字。"
   },
   {
@@ -10141,6 +12675,8 @@ window.HSK_CHARS = [
     "meaning": "congratulate",
     "level": 5,
     "phrase": "恭喜",
+    "prompt1": "恭喜",
+    "prompt2": "恭敬",
     "sentence": "这是“恭”字。"
   },
   {
@@ -10149,6 +12685,8 @@ window.HSK_CHARS = [
     "meaning": "honest; sincere",
     "level": 5,
     "phrase": "诚恳",
+    "prompt1": "诚恳",
+    "prompt2": "恳切",
     "sentence": "这是“恳”字。"
   },
   {
@@ -10157,6 +12695,8 @@ window.HSK_CHARS = [
     "meaning": "vile; horrible",
     "level": 5,
     "phrase": "恶劣",
+    "prompt1": "恶劣",
+    "prompt2": "可恶",
     "sentence": "这是“恶”字。"
   },
   {
@@ -10165,6 +12705,8 @@ window.HSK_CHARS = [
     "meaning": "quietly",
     "level": 5,
     "phrase": "悄悄",
+    "prompt1": "悄悄",
+    "prompt2": "写悄字",
     "sentence": "这是“悄”字。"
   },
   {
@@ -10173,6 +12715,8 @@ window.HSK_CHARS = [
     "meaning": "established; long; longstanding",
     "level": 5,
     "phrase": "悠久",
+    "prompt1": "悠久",
+    "prompt2": "写悠字",
     "sentence": "这是“悠”字。"
   },
   {
@@ -10181,6 +12725,8 @@ window.HSK_CHARS = [
     "meaning": "pessimistic",
     "level": 5,
     "phrase": "悲观",
+    "prompt1": "悲观",
+    "prompt2": "悲惨",
     "sentence": "这是“悲”字。"
   },
   {
@@ -10189,6 +12735,8 @@ window.HSK_CHARS = [
     "meaning": "preferential; favorable",
     "level": 5,
     "phrase": "优惠",
+    "prompt1": "优惠",
+    "prompt2": "贤惠",
     "sentence": "这是“惠”字。"
   },
   {
@@ -10197,6 +12745,8 @@ window.HSK_CHARS = [
     "meaning": "ashamed",
     "level": 5,
     "phrase": "惭愧",
+    "prompt1": "惭愧",
+    "prompt2": "写惭字",
     "sentence": "这是“惭”字。"
   },
   {
@@ -10205,6 +12755,8 @@ window.HSK_CHARS = [
     "meaning": "worry about sth.",
     "level": 5,
     "phrase": "发愁",
+    "prompt1": "发愁",
+    "prompt2": "写愁字",
     "sentence": "这是“愁”字。"
   },
   {
@@ -10213,6 +12765,8 @@ window.HSK_CHARS = [
     "meaning": "ashamed",
     "level": 5,
     "phrase": "惭愧",
+    "prompt1": "惭愧",
+    "prompt2": "不愧",
     "sentence": "这是“愧”字。"
   },
   {
@@ -10221,6 +12775,8 @@ window.HSK_CHARS = [
     "meaning": "flustered; flurried",
     "level": 5,
     "phrase": "慌张",
+    "prompt1": "慌张",
+    "prompt2": "写慌字",
     "sentence": "这是“慌”字。"
   },
   {
@@ -10229,6 +12785,8 @@ window.HSK_CHARS = [
     "meaning": "cautious; prudent",
     "level": 5,
     "phrase": "谨慎",
+    "prompt1": "谨慎",
+    "prompt2": "慎重",
     "sentence": "这是“慎”字。"
   },
   {
@@ -10237,6 +12795,8 @@ window.HSK_CHARS = [
     "meaning": "wisdom; knowledge",
     "level": 5,
     "phrase": "智慧",
+    "prompt1": "智慧",
+    "prompt2": "写慧字",
     "sentence": "这是“慧”字。"
   },
   {
@@ -10245,6 +12805,8 @@ window.HSK_CHARS = [
     "meaning": "to comfort; to console",
     "level": 5,
     "phrase": "安慰",
+    "prompt1": "安慰",
+    "prompt2": "慰问",
     "sentence": "这是“慰”字。"
   },
   {
@@ -10253,6 +12815,8 @@ window.HSK_CHARS = [
     "meaning": "regret; pity; sorry",
     "level": 5,
     "phrase": "遗憾",
+    "prompt1": "遗憾",
+    "prompt2": "写憾字",
     "sentence": "这是“憾”字。"
   },
   {
@@ -10261,6 +12825,8 @@ window.HSK_CHARS = [
     "meaning": "warn against; swear off",
     "level": 5,
     "phrase": "戒",
+    "prompt1": "戒指",
+    "prompt2": "戒备",
     "sentence": "这是“戒”字。"
   },
   {
@@ -10269,6 +12835,8 @@ window.HSK_CHARS = [
     "meaning": "challenge",
     "level": 5,
     "phrase": "挑战",
+    "prompt1": "战争",
+    "prompt2": "挑战",
     "sentence": "这是“战”字。"
   },
   {
@@ -10277,6 +12845,8 @@ window.HSK_CHARS = [
     "meaning": "fan (for waving)",
     "level": 5,
     "phrase": "扇子",
+    "prompt1": "扇子",
+    "prompt2": "写扇字",
     "sentence": "这是“扇”字。"
   },
   {
@@ -10285,6 +12855,8 @@ window.HSK_CHARS = [
     "meaning": "motorcycle; motorbike",
     "level": 5,
     "phrase": "摩托车",
+    "prompt1": "摩托车",
+    "prompt2": "托运",
     "sentence": "这是“托”字。"
   },
   {
@@ -10293,6 +12865,8 @@ window.HSK_CHARS = [
     "meaning": "a license; a permit",
     "level": 5,
     "phrase": "执照",
+    "prompt1": "执照",
+    "prompt2": "固执",
     "sentence": "这是“执”字。"
   },
   {
@@ -10301,6 +12875,8 @@ window.HSK_CHARS = [
     "meaning": "enlarge; expand",
     "level": 5,
     "phrase": "扩大",
+    "prompt1": "扩大",
+    "prompt2": "扩散",
     "sentence": "这是“扩”字。"
   },
   {
@@ -10309,6 +12885,8 @@ window.HSK_CHARS = [
     "meaning": "to support with hand; to help somebody up",
     "level": 5,
     "phrase": "扶",
+    "prompt1": "扶字",
+    "prompt2": "写扶字",
     "sentence": "这是“扶”字。"
   },
   {
@@ -10317,6 +12895,8 @@ window.HSK_CHARS = [
     "meaning": "undertake; assume (responsibility)",
     "level": 5,
     "phrase": "承担",
+    "prompt1": "承受",
+    "prompt2": "承认",
     "sentence": "这是“承”字。"
   },
   {
@@ -10325,6 +12905,8 @@ window.HSK_CHARS = [
     "meaning": "to copy; plagiarize; search and confiscate",
     "level": 5,
     "phrase": "抄",
+    "prompt1": "抄字",
+    "prompt2": "写抄字",
     "sentence": "这是“抄”字。"
   },
   {
@@ -10333,6 +12915,8 @@ window.HSK_CHARS = [
     "meaning": "to carry in your hand holding strongly; catch; arrest",
     "level": 5,
     "phrase": "抓",
+    "prompt1": "抓紧",
+    "prompt2": "写抓字",
     "sentence": "这是“抓”字。"
   },
   {
@@ -10341,6 +12925,8 @@ window.HSK_CHARS = [
     "meaning": "put into operation; throw into; to invest",
     "level": 5,
     "phrase": "投入",
+    "prompt1": "投入",
+    "prompt2": "投资",
     "sentence": "这是“投”字。"
   },
   {
@@ -10349,6 +12935,8 @@ window.HSK_CHARS = [
     "meaning": "to shiver; to shudder; tremble",
     "level": 5,
     "phrase": "发抖",
+    "prompt1": "发抖",
+    "prompt2": "颤抖",
     "sentence": "这是“抖”字。"
   },
   {
@@ -10357,6 +12945,8 @@ window.HSK_CHARS = [
     "meaning": "fight over; vie for; grab; rush | bump against",
     "level": 5,
     "phrase": "抢",
+    "prompt1": "抢劫",
+    "prompt2": "抢救",
     "sentence": "这是“抢”字。"
   },
   {
@@ -10365,6 +12955,8 @@ window.HSK_CHARS = [
     "meaning": "drape over one's shoulders; split open; open",
     "level": 5,
     "phrase": "披",
+    "prompt1": "披字",
+    "prompt2": "写披字",
     "sentence": "这是“披”字。"
   },
   {
@@ -10373,6 +12965,8 @@ window.HSK_CHARS = [
     "meaning": "security deposit; down payment",
     "level": 5,
     "phrase": "押金",
+    "prompt1": "押金",
+    "prompt2": "写押字",
     "sentence": "这是“押”字。"
   },
   {
@@ -10381,6 +12975,8 @@ window.HSK_CHARS = [
     "meaning": "unravel; to tear; demolish",
     "level": 5,
     "phrase": "拆",
+    "prompt1": "拆字",
+    "prompt2": "写拆字",
     "sentence": "这是“拆”字。"
   },
   {
@@ -10389,6 +12985,8 @@ window.HSK_CHARS = [
     "meaning": "to clap; to pat; to shoot (pictures, a film); send (a telegram)",
     "level": 5,
     "phrase": "拍",
+    "prompt1": "拍字",
+    "prompt2": "写拍字",
     "sentence": "这是“拍”字。"
   },
   {
@@ -10397,6 +12995,8 @@ window.HSK_CHARS = [
     "meaning": "turn a corner; make a turn",
     "level": 5,
     "phrase": "拐弯",
+    "prompt1": "拐弯",
+    "prompt2": "拐杖",
     "sentence": "这是“拐”字。"
   },
   {
@@ -10405,6 +13005,8 @@ window.HSK_CHARS = [
     "meaning": "embrace; to hug",
     "level": 5,
     "phrase": "拥抱",
+    "prompt1": "拥抱",
+    "prompt2": "拥挤",
     "sentence": "这是“拥”字。"
   },
   {
@@ -10413,6 +13015,8 @@ window.HSK_CHARS = [
     "meaning": "to block; to cut off; hinder",
     "level": 5,
     "phrase": "拦",
+    "prompt1": "阻拦",
+    "prompt2": "写拦字",
     "sentence": "这是“拦”字。"
   },
   {
@@ -10421,6 +13025,8 @@ window.HSK_CHARS = [
     "meaning": "comprise; include; consist of",
     "level": 5,
     "phrase": "包括",
+    "prompt1": "包括",
+    "prompt2": "概括",
     "sentence": "这是“括”字。"
   },
   {
@@ -10429,6 +13035,8 @@ window.HSK_CHARS = [
     "meaning": "Tai chi, a Chinese martial art",
     "level": 5,
     "phrase": "太极拳",
+    "prompt1": "太极拳",
+    "prompt2": "拳头",
     "sentence": "这是“拳”字。"
   },
   {
@@ -10437,6 +13045,8 @@ window.HSK_CHARS = [
     "meaning": "pinyin; phonetic writing",
     "level": 5,
     "phrase": "拼音",
+    "prompt1": "拼音",
+    "prompt2": "拼搏",
     "sentence": "这是“拼”字。"
   },
   {
@@ -10445,6 +13055,8 @@ window.HSK_CHARS = [
     "meaning": "challenge",
     "level": 5,
     "phrase": "挑战",
+    "prompt1": "挑战",
+    "prompt2": "挑衅",
     "sentence": "这是“挑”字。"
   },
   {
@@ -10453,6 +13065,8 @@ window.HSK_CHARS = [
     "meaning": "to block; hinder; gear; equipment",
     "level": 5,
     "phrase": "挡",
+    "prompt1": "遮挡",
+    "prompt2": "写挡字",
     "sentence": "这是“挡”字。"
   },
   {
@@ -10461,6 +13075,8 @@ window.HSK_CHARS = [
     "meaning": "to earn | to struggle",
     "level": 5,
     "phrase": "挣",
+    "prompt1": "挣扎",
+    "prompt2": "写挣字",
     "sentence": "这是“挣”字。"
   },
   {
@@ -10469,6 +13085,8 @@ window.HSK_CHARS = [
     "meaning": "to crowd; to push; to squeeze",
     "level": 5,
     "phrase": "拥挤",
+    "prompt1": "拥挤",
+    "prompt2": "写挤字",
     "sentence": "这是“挤”字。"
   },
   {
@@ -10477,6 +13095,8 @@ window.HSK_CHARS = [
     "meaning": "to wave; brandish; wield; wipe away",
     "level": 5,
     "phrase": "挥",
+    "prompt1": "发挥",
+    "prompt2": "指挥",
     "sentence": "这是“挥”字。"
   },
   {
@@ -10485,6 +13105,8 @@ window.HSK_CHARS = [
     "meaning": "vibrate; vibration",
     "level": 5,
     "phrase": "振动",
+    "prompt1": "振动",
+    "prompt2": "振奋",
     "sentence": "这是“振”字。"
   },
   {
@@ -10493,6 +13115,8 @@ window.HSK_CHARS = [
     "meaning": "to contribute; to donate; to subsribe to; to abandon; to relinquish; contribution; tax",
     "level": 5,
     "phrase": "捐",
+    "prompt1": "捐字",
+    "prompt2": "写捐字",
     "sentence": "这是“捐”字。"
   },
   {
@@ -10501,6 +13125,8 @@ window.HSK_CHARS = [
     "meaning": "loss (financial); lose",
     "level": 5,
     "phrase": "损失",
+    "prompt1": "损失",
+    "prompt2": "亏损",
     "sentence": "这是“损”字。"
   },
   {
@@ -10509,6 +13135,8 @@ window.HSK_CHARS = [
     "meaning": "to pick up; collect; gather",
     "level": 5,
     "phrase": "捡",
+    "prompt1": "捡字",
+    "prompt2": "写捡字",
     "sentence": "这是“捡”字。"
   },
   {
@@ -10517,6 +13145,8 @@ window.HSK_CHARS = [
     "meaning": "applaud",
     "level": 5,
     "phrase": "鼓掌",
+    "prompt1": "掌握",
+    "prompt2": "鼓掌",
     "sentence": "这是“掌”字。"
   },
   {
@@ -10525,6 +13155,8 @@ window.HSK_CHARS = [
     "meaning": "to control",
     "level": 5,
     "phrase": "控制",
+    "prompt1": "控制",
+    "prompt2": "遥控",
     "sentence": "这是“控”字。"
   },
   {
@@ -10533,6 +13165,8 @@ window.HSK_CHARS = [
     "meaning": "measure; step (to be taken)",
     "level": 5,
     "phrase": "措施",
+    "prompt1": "措施",
+    "prompt2": "写措字",
     "sentence": "这是“措”字。"
   },
   {
@@ -10541,6 +13175,8 @@ window.HSK_CHARS = [
     "meaning": "to describe; to depict; to portray",
     "level": 5,
     "phrase": "描写",
+    "prompt1": "描写",
+    "prompt2": "描绘",
     "sentence": "这是“描”字。"
   },
   {
@@ -10549,6 +13185,8 @@ window.HSK_CHARS = [
     "meaning": "to insert; stick in; pierce",
     "level": 5,
     "phrase": "插",
+    "prompt1": "插座",
+    "prompt2": "写插字",
     "sentence": "这是“插”字。"
   },
   {
@@ -10557,6 +13195,8 @@ window.HSK_CHARS = [
     "meaning": "grasp; hold; certainty; assurance",
     "level": 5,
     "phrase": "把握",
+    "prompt1": "握手",
+    "prompt2": "掌握",
     "sentence": "这是“握”字。"
   },
   {
@@ -10565,6 +13205,8 @@ window.HSK_CHARS = [
     "meaning": "search; look for something; scour",
     "level": 5,
     "phrase": "搜索",
+    "prompt1": "搜索",
+    "prompt2": "写搜字",
     "sentence": "这是“搜”字。"
   },
   {
@@ -10573,6 +13215,8 @@ window.HSK_CHARS = [
     "meaning": "do; make; be engaged in",
     "level": 5,
     "phrase": "搞",
+    "prompt1": "搞字",
+    "prompt2": "写搞字",
     "sentence": "这是“搞”字。"
   },
   {
@@ -10581,6 +13225,8 @@ window.HSK_CHARS = [
     "meaning": "take a photograph; shoot a film",
     "level": 5,
     "phrase": "摄影",
+    "prompt1": "摄影",
+    "prompt2": "摄氏度",
     "sentence": "这是“摄”字。"
   },
   {
@@ -10589,6 +13235,8 @@ window.HSK_CHARS = [
     "meaning": "to put (on); arrange; to sway; pendulum",
     "level": 5,
     "phrase": "摆",
+    "prompt1": "摆脱",
+    "prompt2": "摇摆",
     "sentence": "这是“摆”字。"
   },
   {
@@ -10597,6 +13245,8 @@ window.HSK_CHARS = [
     "meaning": "to shake; to rock",
     "level": 5,
     "phrase": "摇",
+    "prompt1": "摇摆",
+    "prompt2": "摇滚",
     "sentence": "这是“摇”字。"
   },
   {
@@ -10605,6 +13255,8 @@ window.HSK_CHARS = [
     "meaning": "fall down; slip and fall; tumble; trip",
     "level": 5,
     "phrase": "摔倒",
+    "prompt1": "摔倒",
+    "prompt2": "写摔字",
     "sentence": "这是“摔”字。"
   },
   {
@@ -10613,6 +13265,8 @@ window.HSK_CHARS = [
     "meaning": "to pick (flowers, fruit, etc.); to pluck; to take; to borrow",
     "level": 5,
     "phrase": "摘",
+    "prompt1": "摘要",
+    "prompt2": "写摘字",
     "sentence": "这是“摘”字。"
   },
   {
@@ -10621,6 +13275,8 @@ window.HSK_CHARS = [
     "meaning": "motorcycle; motorbike",
     "level": 5,
     "phrase": "摩托车",
+    "prompt1": "摩托车",
+    "prompt2": "按摩",
     "sentence": "这是“摩”字。"
   },
   {
@@ -10629,6 +13285,8 @@ window.HSK_CHARS = [
     "meaning": "to touch; to stroke; fish out; feel out",
     "level": 5,
     "phrase": "摸",
+    "prompt1": "摸索",
+    "prompt2": "抚摸",
     "sentence": "这是“摸”字。"
   },
   {
@@ -10637,6 +13295,8 @@ window.HSK_CHARS = [
     "meaning": "to tear (something)",
     "level": 5,
     "phrase": "撕",
+    "prompt1": "撕字",
+    "prompt2": "写撕字",
     "sentence": "这是“撕”字。"
   },
   {
@@ -10645,6 +13305,8 @@ window.HSK_CHARS = [
     "meaning": "to hit; collide; run into",
     "level": 5,
     "phrase": "撞",
+    "prompt1": "撞字",
+    "prompt2": "写撞字",
     "sentence": "这是“撞”字。"
   },
   {
@@ -10653,6 +13315,8 @@ window.HSK_CHARS = [
     "meaning": "playground; sports field",
     "level": 5,
     "phrase": "操场",
+    "prompt1": "操场",
+    "prompt2": "操心",
     "sentence": "这是“操”字。"
   },
   {
@@ -10661,6 +13325,8 @@ window.HSK_CHARS = [
     "meaning": "government",
     "level": 5,
     "phrase": "政府",
+    "prompt1": "政府",
+    "prompt2": "政治",
     "sentence": "这是“政”字。"
   },
   {
@@ -10669,6 +13335,8 @@ window.HSK_CHARS = [
     "meaning": "enemy",
     "level": 5,
     "phrase": "敌人",
+    "prompt1": "敌人",
+    "prompt2": "敌视",
     "sentence": "这是“敌”字。"
   },
   {
@@ -10677,6 +13345,8 @@ window.HSK_CHARS = [
     "meaning": "be allergic; allergy",
     "level": 5,
     "phrase": "过敏",
+    "prompt1": "敏感",
+    "prompt2": "过敏",
     "sentence": "这是“敏”字。"
   },
   {
@@ -10685,6 +13355,8 @@ window.HSK_CHARS = [
     "meaning": "to save (life); to assist; to rescue",
     "level": 5,
     "phrase": "救",
+    "prompt1": "救护车",
+    "prompt2": "补救",
     "sentence": "这是“救”字。"
   },
   {
@@ -10693,6 +13365,8 @@ window.HSK_CHARS = [
     "meaning": "respect; revere",
     "level": 5,
     "phrase": "尊敬",
+    "prompt1": "尊敬",
+    "prompt2": "敬礼",
     "sentence": "这是“敬”字。"
   },
   {
@@ -10701,6 +13375,8 @@ window.HSK_CHARS = [
     "meaning": "strive; to struggle",
     "level": 5,
     "phrase": "奋斗",
+    "prompt1": "奋斗",
+    "prompt2": "斗争",
     "sentence": "这是“斗”字。"
   },
   {
@@ -10709,6 +13385,8 @@ window.HSK_CHARS = [
     "meaning": "slanting; tilted",
     "level": 5,
     "phrase": "斜",
+    "prompt1": "倾斜",
+    "prompt2": "写斜字",
     "sentence": "这是“斜”字。"
   },
   {
@@ -10717,6 +13395,8 @@ window.HSK_CHARS = [
     "meaning": "measure; step (to be taken)",
     "level": 5,
     "phrase": "措施",
+    "prompt1": "措施",
+    "prompt2": "设施",
     "sentence": "这是“施”字。"
   },
   {
@@ -10725,6 +13405,8 @@ window.HSK_CHARS = [
     "meaning": "in case (something happens); once (sth. has happened... then); in one day",
     "level": 5,
     "phrase": "一旦",
+    "prompt1": "一旦",
+    "prompt2": "元旦",
     "sentence": "这是“旦”字。"
   },
   {
@@ -10733,6 +13415,8 @@ window.HSK_CHARS = [
     "meaning": "middle third of a month",
     "level": 5,
     "phrase": "中旬",
+    "prompt1": "中旬",
+    "prompt2": "写旬字",
     "sentence": "这是“旬”字。"
   },
   {
@@ -10741,6 +13425,8 @@ window.HSK_CHARS = [
     "meaning": "insect",
     "level": 5,
     "phrase": "昆虫",
+    "prompt1": "昆虫",
+    "prompt2": "写昆字",
     "sentence": "这是“昆”字。"
   },
   {
@@ -10749,6 +13435,8 @@ window.HSK_CHARS = [
     "meaning": "reflect; reflection; report on",
     "level": 5,
     "phrase": "反映",
+    "prompt1": "反映",
+    "prompt2": "写映字",
     "sentence": "这是“映”字。"
   },
   {
@@ -10757,6 +13445,8 @@ window.HSK_CHARS = [
     "meaning": "clear; obvious",
     "level": 5,
     "phrase": "明显",
+    "prompt1": "显得",
+    "prompt2": "明显",
     "sentence": "这是“显”字。"
   },
   {
@@ -10765,6 +13455,8 @@ window.HSK_CHARS = [
     "meaning": "to dry in the sun; shine upon; to sun; bask",
     "level": 5,
     "phrase": "晒",
+    "prompt1": "晒字",
+    "prompt2": "写晒字",
     "sentence": "这是“晒”字。"
   },
   {
@@ -10773,6 +13465,8 @@ window.HSK_CHARS = [
     "meaning": "dizzy; to fain",
     "level": 5,
     "phrase": "晕",
+    "prompt1": "晕字",
+    "prompt2": "写晕字",
     "sentence": "这是“晕”字。"
   },
   {
@@ -10781,6 +13475,8 @@ window.HSK_CHARS = [
     "meaning": "wisdom; knowledge",
     "level": 5,
     "phrase": "智慧",
+    "prompt1": "智慧",
+    "prompt2": "理智",
     "sentence": "这是“智”字。"
   },
   {
@@ -10789,6 +13485,8 @@ window.HSK_CHARS = [
     "meaning": "dark; gloomy; hidden; secret",
     "level": 5,
     "phrase": "暗",
+    "prompt1": "暗示",
+    "prompt2": "写暗字",
     "sentence": "这是“暗”字。"
   },
   {
@@ -10797,6 +13495,8 @@ window.HSK_CHARS = [
     "meaning": "once; (refers to something that happened previously)",
     "level": 5,
     "phrase": "曾经",
+    "prompt1": "曾经",
+    "prompt2": "写曾字",
     "sentence": "这是“曾”字。"
   },
   {
@@ -10805,6 +13505,8 @@ window.HSK_CHARS = [
     "meaning": "to replace",
     "level": 5,
     "phrase": "代替",
+    "prompt1": "代替",
+    "prompt2": "写替字",
     "sentence": "这是“替”字。"
   },
   {
@@ -10813,6 +13515,8 @@ window.HSK_CHARS = [
     "meaning": "read aloud",
     "level": 5,
     "phrase": "朗读",
+    "prompt1": "朗读",
+    "prompt2": "晴朗",
     "sentence": "这是“朗”字。"
   },
   {
@@ -10821,6 +13525,8 @@ window.HSK_CHARS = [
     "meaning": "to face; towards; dynasty",
     "level": 5,
     "phrase": "朝",
+    "prompt1": "朝代",
+    "prompt2": "朝气蓬勃",
     "sentence": "这是“朝”字。"
   },
   {
@@ -10829,6 +13535,8 @@ window.HSK_CHARS = [
     "meaning": "wood; log; timber",
     "level": 5,
     "phrase": "木头",
+    "prompt1": "木头",
+    "prompt2": "麻木",
     "sentence": "这是“木”字。"
   },
   {
@@ -10837,6 +13545,8 @@ window.HSK_CHARS = [
     "meaning": "not necessarily; need not",
     "level": 5,
     "phrase": "未必",
+    "prompt1": "未必",
+    "prompt2": "未来",
     "sentence": "这是“未”字。"
   },
   {
@@ -10845,6 +13555,8 @@ window.HSK_CHARS = [
     "meaning": "to kill; to murder",
     "level": 5,
     "phrase": "杀",
+    "prompt1": "抹杀",
+    "prompt2": "写杀字",
     "sentence": "这是“杀”字。"
   },
   {
@@ -10853,6 +13565,8 @@ window.HSK_CHARS = [
     "meaning": "power; authority",
     "level": 5,
     "phrase": "权力",
+    "prompt1": "权利",
+    "prompt2": "权力",
     "sentence": "这是“权”字。"
   },
   {
@@ -10861,6 +13575,8 @@ window.HSK_CHARS = [
     "meaning": "rural area; countryside",
     "level": 5,
     "phrase": "农村",
+    "prompt1": "农村",
+    "prompt2": "写村字",
     "sentence": "这是“村”字。"
   },
   {
@@ -10869,6 +13585,8 @@ window.HSK_CHARS = [
     "meaning": "to constitute; to compose",
     "level": 5,
     "phrase": "构成",
+    "prompt1": "构成",
+    "prompt2": "结构",
     "sentence": "这是“构”字。"
   },
   {
@@ -10877,6 +13595,8 @@ window.HSK_CHARS = [
     "meaning": "analyze; analysis",
     "level": 5,
     "phrase": "分析",
+    "prompt1": "分析",
+    "prompt2": "写析字",
     "sentence": "这是“析”字。"
   },
   {
@@ -10885,6 +13605,8 @@ window.HSK_CHARS = [
     "meaning": "gun; spear",
     "level": 5,
     "phrase": "枪",
+    "prompt1": "枪字",
+    "prompt2": "写枪字",
     "sentence": "这是“枪”字。"
   },
   {
@@ -10893,6 +13615,8 @@ window.HSK_CHARS = [
     "meaning": "to quarrel; to squabble; bicker",
     "level": 5,
     "phrase": "吵架",
+    "prompt1": "书架",
+    "prompt2": "吵架",
     "sentence": "这是“架”字。"
   },
   {
@@ -10901,6 +13625,8 @@ window.HSK_CHARS = [
     "meaning": "a certain; some",
     "level": 5,
     "phrase": "某",
+    "prompt1": "某字",
+    "prompt2": "写某字",
     "sentence": "这是“某”字。"
   },
   {
@@ -10909,6 +13635,8 @@ window.HSK_CHARS = [
     "meaning": "gentle and soft; tender; gentle",
     "level": 5,
     "phrase": "温柔",
+    "prompt1": "温柔",
+    "prompt2": "柔和",
     "sentence": "这是“柔”字。"
   },
   {
@@ -10917,6 +13645,8 @@ window.HSK_CHARS = [
     "meaning": "counter; bar; front desk",
     "level": 5,
     "phrase": "柜台",
+    "prompt1": "柜台",
+    "prompt2": "写柜字",
     "sentence": "这是“柜”字。"
   },
   {
@@ -10925,6 +13655,8 @@ window.HSK_CHARS = [
     "meaning": "match (for lighting fire)",
     "level": 5,
     "phrase": "火柴",
+    "prompt1": "火柴",
+    "prompt2": "柴油",
     "sentence": "这是“柴”字。"
   },
   {
@@ -10933,6 +13665,8 @@ window.HSK_CHARS = [
     "meaning": "core; nucleus",
     "level": 5,
     "phrase": "核心",
+    "prompt1": "核心",
+    "prompt2": "考核",
     "sentence": "这是“核”字。"
   },
   {
@@ -10941,6 +13675,8 @@ window.HSK_CHARS = [
     "meaning": "peach",
     "level": 5,
     "phrase": "桃",
+    "prompt1": "桃字",
+    "prompt2": "写桃字",
     "sentence": "这是“桃”字。"
   },
   {
@@ -10949,6 +13685,8 @@ window.HSK_CHARS = [
     "meaning": "tangerine",
     "level": 5,
     "phrase": "桔子",
+    "prompt1": "桔子",
+    "prompt2": "写桔字",
     "sentence": "这是“桔”字。"
   },
   {
@@ -10957,6 +13695,8 @@ window.HSK_CHARS = [
     "meaning": "top quality; first rate; high class",
     "level": 5,
     "phrase": "高档",
+    "prompt1": "高档",
+    "prompt2": "档次",
     "sentence": "这是“档”字。"
   },
   {
@@ -10965,6 +13705,8 @@ window.HSK_CHARS = [
     "meaning": "pear",
     "level": 5,
     "phrase": "梨",
+    "prompt1": "梨字",
+    "prompt2": "写梨字",
     "sentence": "这是“梨”字。"
   },
   {
@@ -10973,6 +13715,8 @@ window.HSK_CHARS = [
     "meaning": "comb; hairbrush",
     "level": 5,
     "phrase": "梳子",
+    "prompt1": "梳子",
+    "prompt2": "写梳字",
     "sentence": "这是“梳”字。"
   },
   {
@@ -10981,6 +13725,8 @@ window.HSK_CHARS = [
     "meaning": "chess; Chinese chess",
     "level": 5,
     "phrase": "象棋",
+    "prompt1": "象棋",
+    "prompt2": "写棋字",
     "sentence": "这是“棋”字。"
   },
   {
@@ -10989,6 +13735,8 @@ window.HSK_CHARS = [
     "meaning": "hot pepper; chili",
     "level": 5,
     "phrase": "辣椒",
+    "prompt1": "辣椒",
+    "prompt2": "写椒字",
     "sentence": "这是“椒”字。"
   },
   {
@@ -10997,6 +13745,8 @@ window.HSK_CHARS = [
     "meaning": "scale; scope; extent",
     "level": 5,
     "phrase": "规模",
+    "prompt1": "模仿",
+    "prompt2": "规模",
     "sentence": "这是“模”字。"
   },
   {
@@ -11005,6 +13755,8 @@ window.HSK_CHARS = [
     "meaning": "yawn; to lack; owe (Kangxi radical 76)",
     "level": 5,
     "phrase": "欠",
+    "prompt1": "欠字",
+    "prompt2": "写欠字",
     "sentence": "这是“欠”字。"
   },
   {
@@ -11013,6 +13765,8 @@ window.HSK_CHARS = [
     "meaning": "appreciate; enjoy; admire",
     "level": 5,
     "phrase": "欣赏",
+    "prompt1": "欣赏",
+    "prompt2": "欣慰",
     "sentence": "这是“欣”字。"
   },
   {
@@ -11021,6 +13775,8 @@ window.HSK_CHARS = [
     "meaning": "Europe",
     "level": 5,
     "phrase": "欧洲",
+    "prompt1": "欧洲",
+    "prompt2": "写欧字",
     "sentence": "这是“欧”字。"
   },
   {
@@ -11029,6 +13785,8 @@ window.HSK_CHARS = [
     "meaning": "to rest; to go to bed; to take a break",
     "level": 5,
     "phrase": "歇",
+    "prompt1": "歇字",
+    "prompt2": "写歇字",
     "sentence": "这是“歇”字。"
   },
   {
@@ -11037,6 +13795,8 @@ window.HSK_CHARS = [
     "meaning": "martial arts",
     "level": 5,
     "phrase": "武术",
+    "prompt1": "武术",
+    "prompt2": "武装",
     "sentence": "这是“武”字。"
   },
   {
@@ -11045,6 +13805,8 @@ window.HSK_CHARS = [
     "meaning": "askew; crooked; devious; recline to take a rest (colloquial)",
     "level": 5,
     "phrase": "歪",
+    "prompt1": "歪曲",
+    "prompt2": "写歪字",
     "sentence": "这是“歪”字。"
   },
   {
@@ -11053,6 +13815,8 @@ window.HSK_CHARS = [
     "meaning": "special; particular; extraordinary; unusual",
     "level": 5,
     "phrase": "特殊",
+    "prompt1": "特殊",
+    "prompt2": "悬殊",
     "sentence": "这是“殊”字。"
   },
   {
@@ -11061,6 +13825,8 @@ window.HSK_CHARS = [
     "meaning": "virus",
     "level": 5,
     "phrase": "病毒",
+    "prompt1": "病毒",
+    "prompt2": "毒品",
     "sentence": "这是“毒”字。"
   },
   {
@@ -11069,6 +13835,8 @@ window.HSK_CHARS = [
     "meaning": "the slightest amount or degree; a very little bit",
     "level": 5,
     "phrase": "丝毫",
+    "prompt1": "丝毫",
+    "prompt2": "毫米",
     "sentence": "这是“毫”字。"
   },
   {
@@ -11077,6 +13845,8 @@ window.HSK_CHARS = [
     "meaning": "carpet; rug",
     "level": 5,
     "phrase": "地毯",
+    "prompt1": "地毯",
+    "prompt2": "写毯字",
     "sentence": "这是“毯”字。"
   },
   {
@@ -11085,6 +13855,8 @@ window.HSK_CHARS = [
     "meaning": "atmosphere; mood; ambience",
     "level": 5,
     "phrase": "气氛",
+    "prompt1": "气氛",
+    "prompt2": "写氛字",
     "sentence": "这是“氛”字。"
   },
   {
@@ -11093,6 +13865,8 @@ window.HSK_CHARS = [
     "meaning": "vocabulary",
     "level": 5,
     "phrase": "词汇",
+    "prompt1": "汇率",
+    "prompt2": "词汇",
     "sentence": "这是“汇”字。"
   },
   {
@@ -11101,6 +13875,8 @@ window.HSK_CHARS = [
     "meaning": "pool; pond",
     "level": 5,
     "phrase": "池塘",
+    "prompt1": "池塘",
+    "prompt2": "电池",
     "sentence": "这是“池”字。"
   },
   {
@@ -11109,6 +13885,8 @@ window.HSK_CHARS = [
     "meaning": "silent; uncommunicative",
     "level": 5,
     "phrase": "沉默",
+    "prompt1": "沉默",
+    "prompt2": "深沉",
     "sentence": "这是“沉”字。"
   },
   {
@@ -11117,6 +13895,8 @@ window.HSK_CHARS = [
     "meaning": "link; connect; communicate",
     "level": 5,
     "phrase": "沟通",
+    "prompt1": "沟通",
+    "prompt2": "写沟字",
     "sentence": "这是“沟”字。"
   },
   {
@@ -11125,6 +13905,8 @@ window.HSK_CHARS = [
     "meaning": "politics",
     "level": 5,
     "phrase": "政治",
+    "prompt1": "治疗",
+    "prompt2": "政治",
     "sentence": "这是“治”字。"
   },
   {
@@ -11133,6 +13915,8 @@ window.HSK_CHARS = [
     "meaning": "extensive; wide ranging",
     "level": 5,
     "phrase": "广泛",
+    "prompt1": "广泛",
+    "prompt2": "泛滥",
     "sentence": "这是“泛”字。"
   },
   {
@@ -11141,6 +13925,8 @@ window.HSK_CHARS = [
     "meaning": "shed tears",
     "level": 5,
     "phrase": "流泪",
+    "prompt1": "流泪",
+    "prompt2": "热泪盈眶",
     "sentence": "这是“泪”字。"
   },
   {
@@ -11149,6 +13935,8 @@ window.HSK_CHARS = [
     "meaning": "to sprinkle; to spray; to spill",
     "level": 5,
     "phrase": "洒",
+    "prompt1": "潇洒",
+    "prompt2": "写洒字",
     "sentence": "这是“洒”字。"
   },
   {
@@ -11157,6 +13945,8 @@ window.HSK_CHARS = [
     "meaning": "cave; hole",
     "level": 5,
     "phrase": "洞",
+    "prompt1": "空洞",
+    "prompt2": "写洞字",
     "sentence": "这是“洞”字。"
   },
   {
@@ -11165,6 +13955,8 @@ window.HSK_CHARS = [
     "meaning": "dispatch; (mw for political groups; schools of thought; etc.)",
     "level": 5,
     "phrase": "派",
+    "prompt1": "派别",
+    "prompt2": "派遣",
     "sentence": "这是“派”字。"
   },
   {
@@ -11173,6 +13965,8 @@ window.HSK_CHARS = [
     "meaning": "shallow; simple; superficial; light (of colors)",
     "level": 5,
     "phrase": "浅",
+    "prompt1": "浅字",
+    "prompt2": "写浅字",
     "sentence": "这是“浅”字。"
   },
   {
@@ -11181,6 +13975,8 @@ window.HSK_CHARS = [
     "meaning": "to water; irrigate; to pour; to sprinkle",
     "level": 5,
     "phrase": "浇",
+    "prompt1": "浇字",
+    "prompt2": "写浇字",
     "sentence": "这是“浇”字。"
   },
   {
@@ -11189,6 +13985,8 @@ window.HSK_CHARS = [
     "meaning": "test; exam; to test",
     "level": 5,
     "phrase": "测验",
+    "prompt1": "测验",
+    "prompt2": "推测",
     "sentence": "这是“测”字。"
   },
   {
@@ -11197,6 +13995,8 @@ window.HSK_CHARS = [
     "meaning": "browse; glance over; skim through",
     "level": 5,
     "phrase": "浏览",
+    "prompt1": "浏览",
+    "prompt2": "写浏字",
     "sentence": "这是“浏”字。"
   },
   {
@@ -11205,6 +14005,8 @@ window.HSK_CHARS = [
     "meaning": "concentrated; dense",
     "level": 5,
     "phrase": "浓",
+    "prompt1": "浓厚",
+    "prompt2": "写浓字",
     "sentence": "这是“浓”字。"
   },
   {
@@ -11213,6 +14015,8 @@ window.HSK_CHARS = [
     "meaning": "confused; bewildered; muddled",
     "level": 5,
     "phrase": "糊涂",
+    "prompt1": "糊涂",
+    "prompt2": "涂抹",
     "sentence": "这是“涂”字。"
   },
   {
@@ -11221,6 +14025,8 @@ window.HSK_CHARS = [
     "meaning": "profit",
     "level": 5,
     "phrase": "利润",
+    "prompt1": "利润",
+    "prompt2": "湿润",
     "sentence": "这是“润”字。"
   },
   {
@@ -11229,6 +14035,8 @@ window.HSK_CHARS = [
     "meaning": "to rise (of prices, rivers); to go up | to swell; to bloat",
     "level": 5,
     "phrase": "涨",
+    "prompt1": "高涨",
+    "prompt2": "写涨字",
     "sentence": "这是“涨”字。"
   },
   {
@@ -11237,6 +14045,8 @@ window.HSK_CHARS = [
     "meaning": "naughty; bad",
     "level": 5,
     "phrase": "淘气",
+    "prompt1": "淘气",
+    "prompt2": "淘汰",
     "sentence": "这是“淘”字。"
   },
   {
@@ -11245,6 +14055,8 @@ window.HSK_CHARS = [
     "meaning": "diluted; weak; thin",
     "level": 5,
     "phrase": "淡",
+    "prompt1": "冷淡",
+    "prompt2": "清淡",
     "sentence": "这是“淡”字。"
   },
   {
@@ -11253,6 +14065,8 @@ window.HSK_CHARS = [
     "meaning": "gradually; by degrees",
     "level": 5,
     "phrase": "逐渐",
+    "prompt1": "逐渐",
+    "prompt2": "循序渐进",
     "sentence": "这是“渐”字。"
   },
   {
@@ -11261,6 +14075,8 @@ window.HSK_CHARS = [
     "meaning": "damp; moist; humid",
     "level": 5,
     "phrase": "潮湿",
+    "prompt1": "湿润",
+    "prompt2": "潮湿",
     "sentence": "这是“湿”字。"
   },
   {
@@ -11269,6 +14085,8 @@ window.HSK_CHARS = [
     "meaning": "energy resources; power source",
     "level": 5,
     "phrase": "能源",
+    "prompt1": "能源",
+    "prompt2": "资源",
     "sentence": "这是“源”字。"
   },
   {
@@ -11277,6 +14095,8 @@ window.HSK_CHARS = [
     "meaning": "slippery; cunning; crafty",
     "level": 5,
     "phrase": "滑",
+    "prompt1": "光滑",
+    "prompt2": "写滑字",
     "sentence": "这是“滑”字。"
   },
   {
@@ -11285,6 +14105,8 @@ window.HSK_CHARS = [
     "meaning": "to roll; get lost; to boil",
     "level": 5,
     "phrase": "滚",
+    "prompt1": "摇滚",
+    "prompt2": "写滚字",
     "sentence": "这是“滚”字。"
   },
   {
@@ -11293,6 +14115,8 @@ window.HSK_CHARS = [
     "meaning": "sand bar; sand beach",
     "level": 5,
     "phrase": "沙滩",
+    "prompt1": "沙滩",
+    "prompt2": "写滩字",
     "sentence": "这是“滩”字。"
   },
   {
@@ -11301,6 +14125,8 @@ window.HSK_CHARS = [
     "meaning": "to drip; drop; (mw for drops of liquid)",
     "level": 5,
     "phrase": "滴",
+    "prompt1": "滴字",
+    "prompt2": "写滴字",
     "sentence": "这是“滴”字。"
   },
   {
@@ -11309,6 +14135,8 @@ window.HSK_CHARS = [
     "meaning": "to leak; to funnel; to let out",
     "level": 5,
     "phrase": "漏",
+    "prompt1": "走漏",
+    "prompt2": "写漏字",
     "sentence": "这是“漏”字。"
   },
   {
@@ -11317,6 +14145,8 @@ window.HSK_CHARS = [
     "meaning": "desert",
     "level": 5,
     "phrase": "沙漠",
+    "prompt1": "沙漠",
+    "prompt2": "写漠字",
     "sentence": "这是“漠”字。"
   },
   {
@@ -11325,6 +14155,8 @@ window.HSK_CHARS = [
     "meaning": "damp; moist; humid",
     "level": 5,
     "phrase": "潮湿",
+    "prompt1": "潮湿",
+    "prompt2": "高潮",
     "sentence": "这是“潮”字。"
   },
   {
@@ -11333,6 +14165,8 @@ window.HSK_CHARS = [
     "meaning": "ash; gray (grey); dust; lime",
     "level": 5,
     "phrase": "灰",
+    "prompt1": "灰尘",
+    "prompt2": "灰心",
     "sentence": "这是“灰”字。"
   },
   {
@@ -11341,6 +14175,8 @@ window.HSK_CHARS = [
     "meaning": "flexible; nimble; agile",
     "level": 5,
     "phrase": "灵活",
+    "prompt1": "灵活",
+    "prompt2": "机灵",
     "sentence": "这是“灵”字。"
   },
   {
@@ -11349,6 +14185,8 @@ window.HSK_CHARS = [
     "meaning": "disaster; calamity",
     "level": 5,
     "phrase": "灾害",
+    "prompt1": "灾害",
+    "prompt2": "灾难",
     "sentence": "这是“灾”字。"
   },
   {
@@ -11357,6 +14195,8 @@ window.HSK_CHARS = [
     "meaning": "to stir-fry; saute",
     "level": 5,
     "phrase": "炒",
+    "prompt1": "炒字",
+    "prompt2": "写炒字",
     "sentence": "这是“炒”字。"
   },
   {
@@ -11365,6 +14205,8 @@ window.HSK_CHARS = [
     "meaning": "coal",
     "level": 5,
     "phrase": "煤炭",
+    "prompt1": "煤炭",
+    "prompt2": "写炭字",
     "sentence": "这是“炭”字。"
   },
   {
@@ -11373,6 +14215,8 @@ window.HSK_CHARS = [
     "meaning": "firecracker; a long string of small firecrackers",
     "level": 5,
     "phrase": "鞭炮",
+    "prompt1": "鞭炮",
+    "prompt2": "写炮字",
     "sentence": "这是“炮”字。"
   },
   {
@@ -11381,6 +14225,8 @@ window.HSK_CHARS = [
     "meaning": "deep fry",
     "level": 5,
     "phrase": "油炸",
+    "prompt1": "油炸",
+    "prompt2": "爆炸",
     "sentence": "这是“炸”字。"
   },
   {
@@ -11389,6 +14235,8 @@ window.HSK_CHARS = [
     "meaning": "overcooked; rotten; soft; mushy",
     "level": 5,
     "phrase": "烂",
+    "prompt1": "灿烂",
+    "prompt2": "腐烂",
     "sentence": "这是“烂”字。"
   },
   {
@@ -11397,6 +14245,8 @@ window.HSK_CHARS = [
     "meaning": "intense; acute; sharp; fierce",
     "level": 5,
     "phrase": "激烈",
+    "prompt1": "强烈",
+    "prompt2": "热烈",
     "sentence": "这是“烈”字。"
   },
   {
@@ -11405,6 +14255,8 @@ window.HSK_CHARS = [
     "meaning": "to scald; to burn; scalding hot; to iron",
     "level": 5,
     "phrase": "烫",
+    "prompt1": "烫字",
+    "prompt2": "写烫字",
     "sentence": "这是“烫”字。"
   },
   {
@@ -11413,6 +14265,8 @@ window.HSK_CHARS = [
     "meaning": "coal",
     "level": 5,
     "phrase": "煤炭",
+    "prompt1": "煤炭",
+    "prompt2": "写煤字",
     "sentence": "这是“煤”字。"
   },
   {
@@ -11421,6 +14275,8 @@ window.HSK_CHARS = [
     "meaning": "to boil; to cook",
     "level": 5,
     "phrase": "煮",
+    "prompt1": "煮字",
+    "prompt2": "写煮字",
     "sentence": "这是“煮”字。"
   },
   {
@@ -11429,6 +14285,8 @@ window.HSK_CHARS = [
     "meaning": "endure; to boil",
     "level": 5,
     "phrase": "熬",
+    "prompt1": "熬夜",
+    "prompt2": "写熬字",
     "sentence": "这是“熬”字。"
   },
   {
@@ -11437,6 +14295,8 @@ window.HSK_CHARS = [
     "meaning": "combustion; burn; kindle",
     "level": 5,
     "phrase": "燃烧",
+    "prompt1": "燃烧",
+    "prompt2": "写燃字",
     "sentence": "这是“燃”字。"
   },
   {
@@ -11445,6 +14305,8 @@ window.HSK_CHARS = [
     "meaning": "to dry (of paint, cement, etc.); dry; dryness",
     "level": 5,
     "phrase": "干燥",
+    "prompt1": "干燥",
+    "prompt2": "枯燥",
     "sentence": "这是“燥”字。"
   },
   {
@@ -11453,6 +14315,8 @@ window.HSK_CHARS = [
     "meaning": "publish",
     "level": 5,
     "phrase": "出版",
+    "prompt1": "出版",
+    "prompt2": "版本",
     "sentence": "这是“版”字。"
   },
   {
@@ -11461,6 +14325,8 @@ window.HSK_CHARS = [
     "meaning": "form; figure; shape",
     "level": 5,
     "phrase": "形状",
+    "prompt1": "状况",
+    "prompt2": "形状",
     "sentence": "这是“状”字。"
   },
   {
@@ -11469,6 +14335,8 @@ window.HSK_CHARS = [
     "meaning": "hesitate; hesitant; undecided",
     "level": 5,
     "phrase": "犹豫",
+    "prompt1": "犹豫",
+    "prompt2": "犹如",
     "sentence": "这是“犹”字。"
   },
   {
@@ -11477,6 +14345,8 @@ window.HSK_CHARS = [
     "meaning": "crazy; madness; wild; extreme popularity; insane; frenzied; unbridled",
     "level": 5,
     "phrase": "疯狂",
+    "prompt1": "疯狂",
+    "prompt2": "写狂字",
     "sentence": "这是“狂”字。"
   },
   {
@@ -11485,6 +14355,8 @@ window.HSK_CHARS = [
     "meaning": "crafty; cunning; sly",
     "level": 5,
     "phrase": "狡猾",
+    "prompt1": "狡猾",
+    "prompt2": "写狡字",
     "sentence": "这是“狡”字。"
   },
   {
@@ -11493,6 +14365,8 @@ window.HSK_CHARS = [
     "meaning": "alone",
     "level": 5,
     "phrase": "单独",
+    "prompt1": "独特",
+    "prompt2": "单独",
     "sentence": "这是“独”字。"
   },
   {
@@ -11501,6 +14375,8 @@ window.HSK_CHARS = [
     "meaning": "lion",
     "level": 5,
     "phrase": "狮子",
+    "prompt1": "狮子",
+    "prompt2": "写狮字",
     "sentence": "这是“狮”字。"
   },
   {
@@ -11509,6 +14385,8 @@ window.HSK_CHARS = [
     "meaning": "pig",
     "level": 5,
     "phrase": "猪",
+    "prompt1": "猪字",
+    "prompt2": "写猪字",
     "sentence": "这是“猪”字。"
   },
   {
@@ -11517,6 +14395,8 @@ window.HSK_CHARS = [
     "meaning": "contribute; dedicate; contribution",
     "level": 5,
     "phrase": "贡献",
+    "prompt1": "贡献",
+    "prompt2": "文献",
     "sentence": "这是“献”字。"
   },
   {
@@ -11525,6 +14405,8 @@ window.HSK_CHARS = [
     "meaning": "monkey",
     "level": 5,
     "phrase": "猴子",
+    "prompt1": "猴子",
+    "prompt2": "写猴字",
     "sentence": "这是“猴”字。"
   },
   {
@@ -11533,6 +14415,8 @@ window.HSK_CHARS = [
     "meaning": "crafty; cunning; sly",
     "level": 5,
     "phrase": "狡猾",
+    "prompt1": "狡猾",
+    "prompt2": "写猾字",
     "sentence": "这是“猾”字。"
   },
   {
@@ -11541,6 +14425,8 @@ window.HSK_CHARS = [
     "meaning": "exchange rate",
     "level": 5,
     "phrase": "汇率",
+    "prompt1": "坦率",
+    "prompt2": "汇率",
     "sentence": "这是“率”字。"
   },
   {
@@ -11549,6 +14435,8 @@ window.HSK_CHARS = [
     "meaning": "jade (Kangxi radical 96)",
     "level": 5,
     "phrase": "玉",
+    "prompt1": "玉米",
+    "prompt2": "写玉字",
     "sentence": "这是“玉”字。"
   },
   {
@@ -11557,6 +14445,8 @@ window.HSK_CHARS = [
     "meaning": "king",
     "level": 5,
     "phrase": "国王",
+    "prompt1": "王子",
+    "prompt2": "国王",
     "sentence": "这是“王”字。"
   },
   {
@@ -11565,6 +14455,8 @@ window.HSK_CHARS = [
     "meaning": "glass; nylon; plastic",
     "level": 5,
     "phrase": "玻璃",
+    "prompt1": "玻璃",
+    "prompt2": "写玻字",
     "sentence": "这是“玻”字。"
   },
   {
@@ -11573,6 +14465,8 @@ window.HSK_CHARS = [
     "meaning": "to treasure; cherish; to value",
     "level": 5,
     "phrase": "珍惜",
+    "prompt1": "珍惜",
+    "prompt2": "珍贵",
     "sentence": "这是“珍”字。"
   },
   {
@@ -11581,6 +14475,8 @@ window.HSK_CHARS = [
     "meaning": "glass; nylon; plastic",
     "level": 5,
     "phrase": "玻璃",
+    "prompt1": "玻璃",
+    "prompt2": "写璃字",
     "sentence": "这是“璃”字。"
   },
   {
@@ -11589,6 +14485,8 @@ window.HSK_CHARS = [
     "meaning": "to throw; to fling; to swing; cast off",
     "level": 5,
     "phrase": "甩",
+    "prompt1": "甩字",
+    "prompt2": "写甩字",
     "sentence": "这是“甩”字。"
   },
   {
@@ -11597,6 +14495,8 @@ window.HSK_CHARS = [
     "meaning": "one; armor (1st Heavenly Stem)",
     "level": 5,
     "phrase": "甲",
+    "prompt1": "指甲",
+    "prompt2": "写甲字",
     "sentence": "这是“甲”字。"
   },
   {
@@ -11605,6 +14505,8 @@ window.HSK_CHARS = [
     "meaning": "to omit; to leave out; abbreviate",
     "level": 5,
     "phrase": "省略",
+    "prompt1": "省略",
+    "prompt2": "策略",
     "sentence": "这是“略”字。"
   },
   {
@@ -11613,6 +14515,8 @@ window.HSK_CHARS = [
     "meaning": "to treat; to cure; medical treatment",
     "level": 5,
     "phrase": "治疗",
+    "prompt1": "治疗",
+    "prompt2": "写疗字",
     "sentence": "这是“疗”字。"
   },
   {
@@ -11621,6 +14525,8 @@ window.HSK_CHARS = [
     "meaning": "crazy; madness; wild; extreme popularity; insane; frenzied; unbridled",
     "level": 5,
     "phrase": "疯狂",
+    "prompt1": "疯狂",
+    "prompt2": "写疯字",
     "sentence": "这是“疯”字。"
   },
   {
@@ -11629,6 +14535,8 @@ window.HSK_CHARS = [
     "meaning": "fatigue; wearily; weariness; tired",
     "level": 5,
     "phrase": "疲劳",
+    "prompt1": "疲劳",
+    "prompt2": "疲惫",
     "sentence": "这是“疲”字。"
   },
   {
@@ -11637,6 +14545,8 @@ window.HSK_CHARS = [
     "meaning": "to itch; itchy",
     "level": 5,
     "phrase": "痒",
+    "prompt1": "痒字",
+    "prompt2": "写痒字",
     "sentence": "这是“痒”字。"
   },
   {
@@ -11645,6 +14555,8 @@ window.HSK_CHARS = [
     "meaning": "pain; suffering; agony",
     "level": 5,
     "phrase": "痛苦",
+    "prompt1": "痛快",
+    "prompt2": "痛苦",
     "sentence": "这是“痛”字。"
   },
   {
@@ -11653,6 +14565,8 @@ window.HSK_CHARS = [
     "meaning": "soap",
     "level": 5,
     "phrase": "肥皂",
+    "prompt1": "肥皂",
+    "prompt2": "写皂字",
     "sentence": "这是“皂”字。"
   },
   {
@@ -11661,6 +14575,8 @@ window.HSK_CHARS = [
     "meaning": "basin; (flower) pot",
     "level": 5,
     "phrase": "盆",
+    "prompt1": "盆地",
+    "prompt2": "写盆字",
     "sentence": "这是“盆”字。"
   },
   {
@@ -11669,6 +14585,8 @@ window.HSK_CHARS = [
     "meaning": "benefit; (in sb.'s) interest",
     "level": 5,
     "phrase": "利益",
+    "prompt1": "利益",
+    "prompt2": "日益",
     "sentence": "这是“益”字。"
   },
   {
@@ -11677,6 +14595,8 @@ window.HSK_CHARS = [
     "meaning": "lid; top; cover; to build",
     "level": 5,
     "phrase": "盖",
+    "prompt1": "盖章",
+    "prompt2": "覆盖",
     "sentence": "这是“盖”字。"
   },
   {
@@ -11685,6 +14605,8 @@ window.HSK_CHARS = [
     "meaning": "to hope for; look forward to",
     "level": 5,
     "phrase": "盼望",
+    "prompt1": "盼望",
+    "prompt2": "写盼字",
     "sentence": "这是“盼”字。"
   },
   {
@@ -11693,6 +14615,8 @@ window.HSK_CHARS = [
     "meaning": "contradiction; conflict",
     "level": 5,
     "phrase": "矛盾",
+    "prompt1": "矛盾",
+    "prompt2": "写盾字",
     "sentence": "这是“盾”字。"
   },
   {
@@ -11701,6 +14625,8 @@ window.HSK_CHARS = [
     "meaning": "eyebrow",
     "level": 5,
     "phrase": "眉毛",
+    "prompt1": "眉毛",
+    "prompt2": "写眉字",
     "sentence": "这是“眉”字。"
   },
   {
@@ -11709,6 +14635,8 @@ window.HSK_CHARS = [
     "meaning": "lose sleep; insomnia",
     "level": 5,
     "phrase": "失眠",
+    "prompt1": "失眠",
+    "prompt2": "写眠字",
     "sentence": "这是“眠”字。"
   },
   {
@@ -11717,6 +14645,8 @@ window.HSK_CHARS = [
     "meaning": "to open (eyes)",
     "level": 5,
     "phrase": "睁",
+    "prompt1": "睁字",
+    "prompt2": "写睁字",
     "sentence": "这是“睁”字。"
   },
   {
@@ -11725,6 +14655,8 @@ window.HSK_CHARS = [
     "meaning": "blind",
     "level": 5,
     "phrase": "瞎",
+    "prompt1": "瞎字",
+    "prompt2": "写瞎字",
     "sentence": "这是“瞎”字。"
   },
   {
@@ -11733,6 +14665,8 @@ window.HSK_CHARS = [
     "meaning": "look at; see (colloquial)",
     "level": 5,
     "phrase": "瞧",
+    "prompt1": "瞧字",
+    "prompt2": "写瞧字",
     "sentence": "这是“瞧”字。"
   },
   {
@@ -11741,6 +14675,8 @@ window.HSK_CHARS = [
     "meaning": "contradiction; conflict",
     "level": 5,
     "phrase": "矛盾",
+    "prompt1": "矛盾",
+    "prompt2": "写矛字",
     "sentence": "这是“矛”字。"
   },
   {
@@ -11749,6 +14685,8 @@ window.HSK_CHARS = [
     "meaning": "rule; custom",
     "level": 5,
     "phrase": "规矩",
+    "prompt1": "规矩",
+    "prompt2": "写矩字",
     "sentence": "这是“矩”字。"
   },
   {
@@ -11757,6 +14695,8 @@ window.HSK_CHARS = [
     "meaning": "stone; rock",
     "level": 5,
     "phrase": "石头",
+    "prompt1": "石头",
+    "prompt2": "钻石",
     "sentence": "这是“石”字。"
   },
   {
@@ -11765,6 +14705,8 @@ window.HSK_CHARS = [
     "meaning": "to chop; cut down",
     "level": 5,
     "phrase": "砍",
+    "prompt1": "砍伐",
+    "prompt2": "写砍字",
     "sentence": "这是“砍”字。"
   },
   {
@@ -11773,6 +14715,8 @@ window.HSK_CHARS = [
     "meaning": "hard; stiff; obstinately",
     "level": 5,
     "phrase": "硬",
+    "prompt1": "硬件",
+    "prompt2": "坚硬",
     "sentence": "这是“硬”字。"
   },
   {
@@ -11781,6 +14725,8 @@ window.HSK_CHARS = [
     "meaning": "hinder; to hamper; to obstruct",
     "level": 5,
     "phrase": "妨碍",
+    "prompt1": "妨碍",
+    "prompt2": "障碍",
     "sentence": "这是“碍”字。"
   },
   {
@@ -11789,6 +14735,8 @@ window.HSK_CHARS = [
     "meaning": "broken; break into pieces",
     "level": 5,
     "phrase": "碎",
+    "prompt1": "粉碎",
+    "prompt2": "写碎字",
     "sentence": "这是“碎”字。"
   },
   {
@@ -11797,6 +14745,8 @@ window.HSK_CHARS = [
     "meaning": "to touch; to bump; to encounter",
     "level": 5,
     "phrase": "碰",
+    "prompt1": "碰字",
+    "prompt2": "写碰字",
     "sentence": "这是“碰”字。"
   },
   {
@@ -11805,6 +14755,8 @@ window.HSK_CHARS = [
     "meaning": "vigor; spirit; mind",
     "level": 5,
     "phrase": "精神",
+    "prompt1": "神秘",
+    "prompt2": "精神",
     "sentence": "这是“神”字。"
   },
   {
@@ -11813,6 +14765,8 @@ window.HSK_CHARS = [
     "meaning": "private (citizen); personal; individual",
     "level": 5,
     "phrase": "私人",
+    "prompt1": "私人",
+    "prompt2": "自私",
     "sentence": "这是“私”字。"
   },
   {
@@ -11821,6 +14775,8 @@ window.HSK_CHARS = [
     "meaning": "a secret; confidential",
     "level": 5,
     "phrase": "秘密",
+    "prompt1": "秘书",
+    "prompt2": "神秘",
     "sentence": "这是“秘”字。"
   },
   {
@@ -11829,6 +14785,8 @@ window.HSK_CHARS = [
     "meaning": "order; sequence",
     "level": 5,
     "phrase": "秩序",
+    "prompt1": "秩序",
+    "prompt2": "写秩字",
     "sentence": "这是“秩”字。"
   },
   {
@@ -11837,6 +14795,8 @@ window.HSK_CHARS = [
     "meaning": "weigh; to call; be called",
     "level": 5,
     "phrase": "称",
+    "prompt1": "称呼",
+    "prompt2": "称赞",
     "sentence": "这是“称”字。"
   },
   {
@@ -11845,6 +14805,8 @@ window.HSK_CHARS = [
     "meaning": "to move",
     "level": 5,
     "phrase": "移动",
+    "prompt1": "移动",
+    "prompt2": "移民",
     "sentence": "这是“移”字。"
   },
   {
@@ -11853,6 +14815,8 @@ window.HSK_CHARS = [
     "meaning": "tax",
     "level": 5,
     "phrase": "税",
+    "prompt1": "税字",
+    "prompt2": "写税字",
     "sentence": "这是“税”字。"
   },
   {
@@ -11861,6 +14825,8 @@ window.HSK_CHARS = [
     "meaning": "stable; steady",
     "level": 5,
     "phrase": "稳定",
+    "prompt1": "稳定",
+    "prompt2": "写稳字",
     "sentence": "这是“稳”字。"
   },
   {
@@ -11869,6 +14835,8 @@ window.HSK_CHARS = [
     "meaning": "narrow; petty; hard-up",
     "level": 5,
     "phrase": "窄",
+    "prompt1": "狭窄",
+    "prompt2": "写窄字",
     "sentence": "这是“窄”字。"
   },
   {
@@ -11877,6 +14845,8 @@ window.HSK_CHARS = [
     "meaning": "establish; to set up",
     "level": 5,
     "phrase": "成立",
+    "prompt1": "立刻",
+    "prompt2": "独立",
     "sentence": "这是“立”字。"
   },
   {
@@ -11885,6 +14855,8 @@ window.HSK_CHARS = [
     "meaning": "bamboo",
     "level": 5,
     "phrase": "竹子",
+    "prompt1": "竹子",
+    "prompt2": "烟花爆竹",
     "sentence": "这是“竹”字。"
   },
   {
@@ -11893,6 +14865,8 @@ window.HSK_CHARS = [
     "meaning": "a building; to construct; architecture",
     "level": 5,
     "phrase": "建筑",
+    "prompt1": "建筑",
+    "prompt2": "写筑字",
     "sentence": "这是“筑”字。"
   },
   {
@@ -11901,6 +14875,8 @@ window.HSK_CHARS = [
     "meaning": "type",
     "level": 5,
     "phrase": "类型",
+    "prompt1": "类型",
+    "prompt2": "种类",
     "sentence": "这是“类”字。"
   },
   {
@@ -11909,6 +14885,8 @@ window.HSK_CHARS = [
     "meaning": "to paste",
     "level": 5,
     "phrase": "粘贴",
+    "prompt1": "粘贴",
+    "prompt2": "写粘字",
     "sentence": "这是“粘”字。"
   },
   {
@@ -11917,6 +14895,8 @@ window.HSK_CHARS = [
     "meaning": "grain; food; cereals",
     "level": 5,
     "phrase": "粮食",
+    "prompt1": "粮食",
+    "prompt2": "写粮字",
     "sentence": "这是“粮”字。"
   },
   {
@@ -11925,6 +14905,8 @@ window.HSK_CHARS = [
     "meaning": "confused; bewildered; muddled",
     "level": 5,
     "phrase": "糊涂",
+    "prompt1": "糊涂",
+    "prompt2": "模糊",
     "sentence": "这是“糊”字。"
   },
   {
@@ -11933,6 +14915,8 @@ window.HSK_CHARS = [
     "meaning": "coarse",
     "level": 5,
     "phrase": "粗糙",
+    "prompt1": "粗糙",
+    "prompt2": "写糙字",
     "sentence": "这是“糙”字。"
   },
   {
@@ -11941,6 +14925,8 @@ window.HSK_CHARS = [
     "meaning": "terrible; too bad; how terrible; what bad luck; what a mess",
     "level": 5,
     "phrase": "糟糕",
+    "prompt1": "糟糕",
+    "prompt2": "糟蹋",
     "sentence": "这是“糟”字。"
   },
   {
@@ -11949,6 +14935,8 @@ window.HSK_CHARS = [
     "meaning": "element; factor",
     "level": 5,
     "phrase": "因素",
+    "prompt1": "因素",
+    "prompt2": "素食",
     "sentence": "这是“素”字。"
   },
   {
@@ -11957,6 +14945,8 @@ window.HSK_CHARS = [
     "meaning": "search; look for something; scour",
     "level": 5,
     "phrase": "搜索",
+    "prompt1": "搜索",
+    "prompt2": "索性",
     "sentence": "这是“索”字。"
   },
   {
@@ -11965,6 +14955,8 @@ window.HSK_CHARS = [
     "meaning": "purple",
     "level": 5,
     "phrase": "紫",
+    "prompt1": "紫字",
+    "prompt2": "写紫字",
     "sentence": "这是“紫”字。"
   },
   {
@@ -11973,6 +14965,8 @@ window.HSK_CHARS = [
     "meaning": "prosperous; prosperity; booming (economy)",
     "level": 5,
     "phrase": "繁荣",
+    "prompt1": "繁荣",
+    "prompt2": "频繁",
     "sentence": "这是“繁”字。"
   },
   {
@@ -11981,6 +14975,8 @@ window.HSK_CHARS = [
     "meaning": "simple; pure; merely",
     "level": 5,
     "phrase": "单纯",
+    "prompt1": "单纯",
+    "prompt2": "纯粹",
     "sentence": "这是“纯”字。"
   },
   {
@@ -11989,6 +14985,8 @@ window.HSK_CHARS = [
     "meaning": "outline; the key point",
     "level": 5,
     "phrase": "提纲",
+    "prompt1": "提纲",
+    "prompt2": "纲领",
     "sentence": "这是“纲”字。"
   },
   {
@@ -11997,6 +14995,8 @@ window.HSK_CHARS = [
     "meaning": "conclude from the facts; induce; sum up from the facts",
     "level": 5,
     "phrase": "归纳",
+    "prompt1": "归纳",
+    "prompt2": "采纳",
     "sentence": "这是“纳”字。"
   },
   {
@@ -12005,6 +15005,8 @@ window.HSK_CHARS = [
     "meaning": "one after another; in succession; in profusion; diverse; pell-mell",
     "level": 5,
     "phrase": "纷纷",
+    "prompt1": "纠纷",
+    "prompt2": "纷纷",
     "sentence": "这是“纷”字。"
   },
   {
@@ -12013,6 +15015,8 @@ window.HSK_CHARS = [
     "meaning": "compose; team up; group",
     "level": 5,
     "phrase": "组",
+    "prompt1": "组合",
+    "prompt2": "组织",
     "sentence": "这是“组”字。"
   },
   {
@@ -12021,6 +15025,8 @@ window.HSK_CHARS = [
     "meaning": "organize; organization",
     "level": 5,
     "phrase": "组织",
+    "prompt1": "组织",
+    "prompt2": "编织",
     "sentence": "这是“织”字。"
   },
   {
@@ -12029,6 +15035,8 @@ window.HSK_CHARS = [
     "meaning": "to wind; to coil; move round",
     "level": 5,
     "phrase": "绕",
+    "prompt1": "围绕",
+    "prompt2": "缠绕",
     "sentence": "这是“绕”字。"
   },
   {
@@ -12037,6 +15045,8 @@ window.HSK_CHARS = [
     "meaning": "network",
     "level": 5,
     "phrase": "网络",
+    "prompt1": "网络",
+    "prompt2": "联络",
     "sentence": "这是“络”字。"
   },
   {
@@ -12045,6 +15055,8 @@ window.HSK_CHARS = [
     "meaning": "tradition; traditional",
     "level": 5,
     "phrase": "传统",
+    "prompt1": "统一",
+    "prompt2": "系统",
     "sentence": "这是“统”字。"
   },
   {
@@ -12053,6 +15065,8 @@ window.HSK_CHARS = [
     "meaning": "emotion; sentiment; mood; morale",
     "level": 5,
     "phrase": "情绪",
+    "prompt1": "情绪",
+    "prompt2": "写绪字",
     "sentence": "这是“绪”字。"
   },
   {
@@ -12061,6 +15075,8 @@ window.HSK_CHARS = [
     "meaning": "cord; string; rope",
     "level": 5,
     "phrase": "绳子",
+    "prompt1": "绳子",
+    "prompt2": "写绳字",
     "sentence": "这是“绳”字。"
   },
   {
@@ -12069,6 +15085,8 @@ window.HSK_CHARS = [
     "meaning": "maintain (of equipment); to mend; repair",
     "level": 5,
     "phrase": "维修",
+    "prompt1": "维修",
+    "prompt2": "纤维",
     "sentence": "这是“维”字。"
   },
   {
@@ -12077,6 +15095,8 @@ window.HSK_CHARS = [
     "meaning": "silk",
     "level": 5,
     "phrase": "丝绸",
+    "prompt1": "丝绸",
+    "prompt2": "写绸字",
     "sentence": "这是“绸”字。"
   },
   {
@@ -12085,6 +15105,8 @@ window.HSK_CHARS = [
     "meaning": "synthesized; composite; summarize",
     "level": 5,
     "phrase": "综合",
+    "prompt1": "综合",
+    "prompt2": "写综字",
     "sentence": "这是“综”字。"
   },
   {
@@ -12093,6 +15115,8 @@ window.HSK_CHARS = [
     "meaning": "to alleviate",
     "level": 5,
     "phrase": "缓解",
+    "prompt1": "缓解",
+    "prompt2": "迟缓",
     "sentence": "这是“缓”字。"
   },
   {
@@ -12101,6 +15125,8 @@ window.HSK_CHARS = [
     "meaning": "to edit; compile; editor",
     "level": 5,
     "phrase": "编辑",
+    "prompt1": "编辑",
+    "prompt2": "编织",
     "sentence": "这是“编”字。"
   },
   {
@@ -12109,6 +15135,8 @@ window.HSK_CHARS = [
     "meaning": "shorten; cut down; curtail",
     "level": 5,
     "phrase": "缩短",
+    "prompt1": "缩短",
+    "prompt2": "收缩",
     "sentence": "这是“缩”字。"
   },
   {
@@ -12117,6 +15145,8 @@ window.HSK_CHARS = [
     "meaning": "fine; penalty (monetary)",
     "level": 5,
     "phrase": "罚款",
+    "prompt1": "罚款",
+    "prompt2": "惩罚",
     "sentence": "这是“罚”字。"
   },
   {
@@ -12125,6 +15155,8 @@ window.HSK_CHARS = [
     "meaning": "position; place; seat",
     "level": 5,
     "phrase": "位置",
+    "prompt1": "位置",
+    "prompt2": "设置",
     "sentence": "这是“置”字。"
   },
   {
@@ -12133,6 +15165,8 @@ window.HSK_CHARS = [
     "meaning": "crowd; group; (mw for groups, flocks, or swarms)",
     "level": 5,
     "phrase": "群",
+    "prompt1": "群众",
+    "prompt2": "写群字",
     "sentence": "这是“群”字。"
   },
   {
@@ -12141,6 +15175,8 @@ window.HSK_CHARS = [
     "meaning": "wing",
     "level": 5,
     "phrase": "翅膀",
+    "prompt1": "翅膀",
+    "prompt2": "写翅字",
     "sentence": "这是“翅”字。"
   },
   {
@@ -12149,6 +15185,8 @@ window.HSK_CHARS = [
     "meaning": "to delay; waste time",
     "level": 5,
     "phrase": "耽误",
+    "prompt1": "耽误",
+    "prompt2": "写耽字",
     "sentence": "这是“耽”字。"
   },
   {
@@ -12157,6 +15195,8 @@ window.HSK_CHARS = [
     "meaning": "solemn; serious; earnest",
     "level": 5,
     "phrase": "严肃",
+    "prompt1": "严肃",
+    "prompt2": "写肃字",
     "sentence": "这是“肃”字。"
   },
   {
@@ -12165,6 +15205,8 @@ window.HSK_CHARS = [
     "meaning": "muscle; flesh",
     "level": 5,
     "phrase": "肌肉",
+    "prompt1": "肌肉",
+    "prompt2": "写肌字",
     "sentence": "这是“肌”字。"
   },
   {
@@ -12173,6 +15215,8 @@ window.HSK_CHARS = [
     "meaning": "sausage",
     "level": 5,
     "phrase": "香肠",
+    "prompt1": "香肠",
+    "prompt2": "写肠字",
     "sentence": "这是“肠”字。"
   },
   {
@@ -12181,6 +15225,8 @@ window.HSK_CHARS = [
     "meaning": "shares; stock (market)",
     "level": 5,
     "phrase": "股票",
+    "prompt1": "股票",
+    "prompt2": "屁股",
     "sentence": "这是“股”字。"
   },
   {
@@ -12189,6 +15235,8 @@ window.HSK_CHARS = [
     "meaning": "shoulder",
     "level": 5,
     "phrase": "肩膀",
+    "prompt1": "肩膀",
+    "prompt2": "写肩字",
     "sentence": "这是“肩”字。"
   },
   {
@@ -12197,6 +15245,8 @@ window.HSK_CHARS = [
     "meaning": "threaten; to menace",
     "level": 5,
     "phrase": "威胁",
+    "prompt1": "威胁",
+    "prompt2": "写胁字",
     "sentence": "这是“胁”字。"
   },
   {
@@ -12205,6 +15255,8 @@ window.HSK_CHARS = [
     "meaning": "stomach",
     "level": 5,
     "phrase": "胃",
+    "prompt1": "胃口",
+    "prompt2": "写胃字",
     "sentence": "这是“胃”字。"
   },
   {
@@ -12213,6 +15265,8 @@ window.HSK_CHARS = [
     "meaning": "coward",
     "level": 5,
     "phrase": "胆小鬼",
+    "prompt1": "胆小鬼",
+    "prompt2": "胆怯",
     "sentence": "这是“胆”字。"
   },
   {
@@ -12221,6 +15275,8 @@ window.HSK_CHARS = [
     "meaning": "carry on one's back; to bear",
     "level": 5,
     "phrase": "背",
+    "prompt1": "背景",
+    "prompt2": "后背",
     "sentence": "这是“背”字。"
   },
   {
@@ -12229,6 +15285,8 @@ window.HSK_CHARS = [
     "meaning": "famous scenic spots and ancient historic sites",
     "level": 5,
     "phrase": "名胜古迹",
+    "prompt1": "胜利",
+    "prompt2": "胜负",
     "sentence": "这是“胜”字。"
   },
   {
@@ -12237,6 +15295,8 @@ window.HSK_CHARS = [
     "meaning": "talk nonsense; drivel",
     "level": 5,
     "phrase": "胡说",
+    "prompt1": "胡同",
+    "prompt2": "胡说",
     "sentence": "这是“胡”字。"
   },
   {
@@ -12245,6 +15305,8 @@ window.HSK_CHARS = [
     "meaning": "(watery) glue; gum",
     "level": 5,
     "phrase": "胶水",
+    "prompt1": "胶水",
+    "prompt2": "写胶字",
     "sentence": "这是“胶”字。"
   },
   {
@@ -12253,6 +15315,8 @@ window.HSK_CHARS = [
     "meaning": "chest; bosom; heart",
     "level": 5,
     "phrase": "胸",
+    "prompt1": "胸怀",
+    "prompt2": "胸膛",
     "sentence": "这是“胸”字。"
   },
   {
@@ -12261,6 +15325,8 @@ window.HSK_CHARS = [
     "meaning": "straightforward; clear-cut; blunt",
     "level": 5,
     "phrase": "干脆",
+    "prompt1": "干脆",
+    "prompt2": "脆弱",
     "sentence": "这是“脆”字。"
   },
   {
@@ -12269,6 +15335,8 @@ window.HSK_CHARS = [
     "meaning": "neck",
     "level": 5,
     "phrase": "脖子",
+    "prompt1": "脖子",
+    "prompt2": "写脖字",
     "sentence": "这是“脖”字。"
   },
   {
@@ -12277,6 +15345,8 @@ window.HSK_CHARS = [
     "meaning": "tofu; bean curd",
     "level": 5,
     "phrase": "豆腐",
+    "prompt1": "豆腐",
+    "prompt2": "腐败",
     "sentence": "这是“腐”字。"
   },
   {
@@ -12285,6 +15355,8 @@ window.HSK_CHARS = [
     "meaning": "waist; lower back; pocket",
     "level": 5,
     "phrase": "腰",
+    "prompt1": "腰字",
+    "prompt2": "写腰字",
     "sentence": "这是“腰”字。"
   },
   {
@@ -12293,6 +15365,8 @@ window.HSK_CHARS = [
     "meaning": "wing",
     "level": 5,
     "phrase": "翅膀",
+    "prompt1": "翅膀",
+    "prompt2": "肩膀",
     "sentence": "这是“膀”字。"
   },
   {
@@ -12301,6 +15375,8 @@ window.HSK_CHARS = [
     "meaning": "stench; stink",
     "level": 5,
     "phrase": "臭",
+    "prompt1": "臭字",
+    "prompt2": "写臭字",
     "sentence": "这是“臭”字。"
   },
   {
@@ -12309,6 +15385,8 @@ window.HSK_CHARS = [
     "meaning": "lead to; bring about; to cause",
     "level": 5,
     "phrase": "导致",
+    "prompt1": "一致",
+    "prompt2": "导致",
     "sentence": "这是“致”字。"
   },
   {
@@ -12317,6 +15395,8 @@ window.HSK_CHARS = [
     "meaning": "mother's brother; maternal uncle",
     "level": 5,
     "phrase": "舅舅",
+    "prompt1": "舅舅",
+    "prompt2": "写舅字",
     "sentence": "这是“舅”字。"
   },
   {
@@ -12325,6 +15405,8 @@ window.HSK_CHARS = [
     "meaning": "hate to part with; begrudge doing something",
     "level": 5,
     "phrase": "舍不得",
+    "prompt1": "宿舍",
+    "prompt2": "舍不得",
     "sentence": "这是“舍”字。"
   },
   {
@@ -12333,6 +15415,8 @@ window.HSK_CHARS = [
     "meaning": "good; favorable; well",
     "level": 5,
     "phrase": "良好",
+    "prompt1": "良好",
+    "prompt2": "善良",
     "sentence": "这是“良”字。"
   },
   {
@@ -12341,6 +15425,8 @@ window.HSK_CHARS = [
     "meaning": "very difficult; arduous; hard",
     "level": 5,
     "phrase": "艰巨",
+    "prompt1": "艰巨",
+    "prompt2": "艰苦",
     "sentence": "这是“艰”字。"
   },
   {
@@ -12349,6 +15435,8 @@ window.HSK_CHARS = [
     "meaning": "bright-colored",
     "level": 5,
     "phrase": "鲜艳",
+    "prompt1": "鲜艳",
+    "prompt2": "写艳字",
     "sentence": "这是“艳”字。"
   },
   {
@@ -12357,6 +15445,8 @@ window.HSK_CHARS = [
     "meaning": "slim; slender",
     "level": 5,
     "phrase": "苗条",
+    "prompt1": "苗条",
+    "prompt2": "拔苗助长",
     "sentence": "这是“苗”字。"
   },
   {
@@ -12365,6 +15455,8 @@ window.HSK_CHARS = [
     "meaning": "handsome",
     "level": 5,
     "phrase": "英俊",
+    "prompt1": "英俊",
+    "prompt2": "英雄",
     "sentence": "这是“英”字。"
   },
   {
@@ -12373,6 +15465,8 @@ window.HSK_CHARS = [
     "meaning": "scope; range; limits; extent",
     "level": 5,
     "phrase": "范围",
+    "prompt1": "范围",
+    "prompt2": "规范",
     "sentence": "这是“范”字。"
   },
   {
@@ -12381,6 +15475,8 @@ window.HSK_CHARS = [
     "meaning": "recommend; recommendation",
     "level": 5,
     "phrase": "推荐",
+    "prompt1": "推荐",
+    "prompt2": "写荐字",
     "sentence": "这是“荐”字。"
   },
   {
@@ -12389,6 +15485,8 @@ window.HSK_CHARS = [
     "meaning": "prosperous; prosperity; booming (economy)",
     "level": 5,
     "phrase": "繁荣",
+    "prompt1": "繁荣",
+    "prompt2": "荣誉",
     "sentence": "这是“荣”字。"
   },
   {
@@ -12397,6 +15495,8 @@ window.HSK_CHARS = [
     "meaning": "engage in (a business activity, etc.); run/operate (a business)",
     "level": 5,
     "phrase": "经营",
+    "prompt1": "营业",
+    "prompt2": "经营",
     "sentence": "这是“营”字。"
   },
   {
@@ -12405,6 +15505,8 @@ window.HSK_CHARS = [
     "meaning": "vegetables; produce",
     "level": 5,
     "phrase": "蔬菜",
+    "prompt1": "蔬菜",
+    "prompt2": "写蔬字",
     "sentence": "这是“蔬”字。"
   },
   {
@@ -12413,6 +15515,8 @@ window.HSK_CHARS = [
     "meaning": "thin; flimsy; weak (first two pronunciations)",
     "level": 5,
     "phrase": "薄",
+    "prompt1": "薄弱",
+    "prompt2": "写薄字",
     "sentence": "这是“薄”字。"
   },
   {
@@ -12421,6 +15525,8 @@ window.HSK_CHARS = [
     "meaning": "hide oneself; take cover",
     "level": 5,
     "phrase": "躲藏",
+    "prompt1": "躲藏",
+    "prompt2": "蕴藏",
     "sentence": "这是“藏”字。"
   },
   {
@@ -12429,6 +15535,8 @@ window.HSK_CHARS = [
     "meaning": "modest",
     "level": 5,
     "phrase": "谦虚",
+    "prompt1": "虚心",
+    "prompt2": "谦虚",
     "sentence": "这是“虚”字。"
   },
   {
@@ -12437,6 +15545,8 @@ window.HSK_CHARS = [
     "meaning": "insect",
     "level": 5,
     "phrase": "昆虫",
+    "prompt1": "昆虫",
+    "prompt2": "写虫字",
     "sentence": "这是“虫”字。"
   },
   {
@@ -12445,6 +15555,8 @@ window.HSK_CHARS = [
     "meaning": "rainbow",
     "level": 5,
     "phrase": "彩虹",
+    "prompt1": "彩虹",
+    "prompt2": "写虹字",
     "sentence": "这是“虹”字。"
   },
   {
@@ -12453,6 +15565,8 @@ window.HSK_CHARS = [
     "meaning": "snake; serpent",
     "level": 5,
     "phrase": "蛇",
+    "prompt1": "画蛇添足",
+    "prompt2": "写蛇字",
     "sentence": "这是“蛇”字。"
   },
   {
@@ -12461,6 +15575,8 @@ window.HSK_CHARS = [
     "meaning": "bee; honeybee",
     "level": 5,
     "phrase": "蜜蜂",
+    "prompt1": "蜜蜂",
+    "prompt2": "写蜂字",
     "sentence": "这是“蜂”字。"
   },
   {
@@ -12469,6 +15585,8 @@ window.HSK_CHARS = [
     "meaning": "bee; honeybee",
     "level": 5,
     "phrase": "蜜蜂",
+    "prompt1": "蜜蜂",
+    "prompt2": "写蜜字",
     "sentence": "这是“蜜”字。"
   },
   {
@@ -12477,6 +15595,8 @@ window.HSK_CHARS = [
     "meaning": "butterfly",
     "level": 5,
     "phrase": "蝴蝶",
+    "prompt1": "蝴蝶",
+    "prompt2": "写蝴字",
     "sentence": "这是“蝴”字。"
   },
   {
@@ -12485,6 +15605,8 @@ window.HSK_CHARS = [
     "meaning": "butterfly",
     "level": 5,
     "phrase": "蝴蝶",
+    "prompt1": "蝴蝶",
+    "prompt2": "写蝶字",
     "sentence": "这是“蝶”字。"
   },
   {
@@ -12493,6 +15615,8 @@ window.HSK_CHARS = [
     "meaning": "blood (Kangxi radical 143)",
     "level": 5,
     "phrase": "血",
+    "prompt1": "血压",
+    "prompt2": "心血",
     "sentence": "这是“血”字。"
   },
   {
@@ -12501,6 +15625,8 @@ window.HSK_CHARS = [
     "meaning": "balance; balanced; equilibrium",
     "level": 5,
     "phrase": "平衡",
+    "prompt1": "平衡",
+    "prompt2": "权衡",
     "sentence": "这是“衡”字。"
   },
   {
@@ -12509,6 +15635,8 @@ window.HSK_CHARS = [
     "meaning": "replenish; to supplement; to complement",
     "level": 5,
     "phrase": "补充",
+    "prompt1": "补充",
+    "prompt2": "弥补",
     "sentence": "这是“补”字。"
   },
   {
@@ -12517,6 +15645,8 @@ window.HSK_CHARS = [
     "meaning": "director-general; president",
     "level": 5,
     "phrase": "总裁",
+    "prompt1": "总裁",
+    "prompt2": "裁缝",
     "sentence": "这是“裁”字。"
   },
   {
@@ -12525,6 +15655,8 @@ window.HSK_CHARS = [
     "meaning": "to load; dress up; pretend; clothing; to install",
     "level": 5,
     "phrase": "装",
+    "prompt1": "装修",
+    "prompt2": "服装",
     "sentence": "这是“装”字。"
   },
   {
@@ -12533,6 +15665,8 @@ window.HSK_CHARS = [
     "meaning": "person of Chinese descent",
     "level": 5,
     "phrase": "华裔",
+    "prompt1": "华裔",
+    "prompt2": "写裔字",
     "sentence": "这是“裔”字。"
   },
   {
@@ -12541,6 +15675,8 @@ window.HSK_CHARS = [
     "meaning": "wrap up; bind up; package",
     "level": 5,
     "phrase": "包裹",
+    "prompt1": "包裹",
+    "prompt2": "写裹字",
     "sentence": "这是“裹”字。"
   },
   {
@@ -12549,6 +15685,8 @@ window.HSK_CHARS = [
     "meaning": "browse; glance over; skim through",
     "level": 5,
     "phrase": "浏览",
+    "prompt1": "展览",
+    "prompt2": "游览",
     "sentence": "这是“览”字。"
   },
   {
@@ -12557,6 +15695,8 @@ window.HSK_CHARS = [
     "meaning": "come into contact with",
     "level": 5,
     "phrase": "接触",
+    "prompt1": "接触",
+    "prompt2": "触犯",
     "sentence": "这是“触”字。"
   },
   {
@@ -12565,6 +15705,8 @@ window.HSK_CHARS = [
     "meaning": "place an order; book ahead; subscribe for",
     "level": 5,
     "phrase": "预订",
+    "prompt1": "预订",
+    "prompt2": "写订字",
     "sentence": "这是“订”字。"
   },
   {
@@ -12573,6 +15715,8 @@ window.HSK_CHARS = [
     "meaning": "lesson; teach someone or learn a lesson; a moral",
     "level": 5,
     "phrase": "教训",
+    "prompt1": "训练",
+    "prompt2": "教训",
     "sentence": "这是“训”字。"
   },
   {
@@ -12581,6 +15725,8 @@ window.HSK_CHARS = [
     "meaning": "satirize; ridicule; mock; irony",
     "level": 5,
     "phrase": "讽刺",
+    "prompt1": "讽刺",
+    "prompt2": "写讽字",
     "sentence": "这是“讽”字。"
   },
   {
@@ -12589,6 +15735,8 @@ window.HSK_CHARS = [
     "meaning": "suppose that; hypothesis; conjecture",
     "level": 5,
     "phrase": "假设",
+    "prompt1": "设备",
+    "prompt2": "建设",
     "sentence": "这是“设”字。"
   },
   {
@@ -12597,6 +15745,8 @@ window.HSK_CHARS = [
     "meaning": "interview; gather news; hunt for and collect",
     "level": 5,
     "phrase": "采访",
+    "prompt1": "采访",
+    "prompt2": "访问",
     "sentence": "这是“访”字。"
   },
   {
@@ -12605,6 +15755,8 @@ window.HSK_CHARS = [
     "meaning": "emergency call; emergency treatment",
     "level": 5,
     "phrase": "急诊",
+    "prompt1": "诊断",
+    "prompt2": "急诊",
     "sentence": "这是“诊”字。"
   },
   {
@@ -12613,6 +15765,8 @@ window.HSK_CHARS = [
     "meaning": "poem; poetry; verse",
     "level": 5,
     "phrase": "诗",
+    "prompt1": "诗字",
+    "prompt2": "写诗字",
     "sentence": "这是“诗”字。"
   },
   {
@@ -12621,6 +15775,8 @@ window.HSK_CHARS = [
     "meaning": "inquire about",
     "level": 5,
     "phrase": "询问",
+    "prompt1": "询问",
+    "prompt2": "咨询",
     "sentence": "这是“询”字。"
   },
   {
@@ -12629,6 +15785,8 @@ window.HSK_CHARS = [
     "meaning": "doesn't matter; be indifferent",
     "level": 5,
     "phrase": "无所谓",
+    "prompt1": "无所谓",
+    "prompt2": "写谓字",
     "sentence": "这是“谓”字。"
   },
   {
@@ -12637,6 +15795,8 @@ window.HSK_CHARS = [
     "meaning": "modest",
     "level": 5,
     "phrase": "谦虚",
+    "prompt1": "谦虚",
+    "prompt2": "谦逊",
     "sentence": "这是“谦”字。"
   },
   {
@@ -12645,6 +15805,8 @@ window.HSK_CHARS = [
     "meaning": "cautious; prudent",
     "level": 5,
     "phrase": "谨慎",
+    "prompt1": "谨慎",
+    "prompt2": "写谨字",
     "sentence": "这是“谨”字。"
   },
   {
@@ -12653,6 +15815,8 @@ window.HSK_CHARS = [
     "meaning": "tofu; bean curd",
     "level": 5,
     "phrase": "豆腐",
+    "prompt1": "豆腐",
+    "prompt2": "土豆",
     "sentence": "这是“豆”字。"
   },
   {
@@ -12661,6 +15825,8 @@ window.HSK_CHARS = [
     "meaning": "luxurious",
     "level": 5,
     "phrase": "豪华",
+    "prompt1": "豪华",
+    "prompt2": "自豪",
     "sentence": "这是“豪”字。"
   },
   {
@@ -12669,6 +15835,8 @@ window.HSK_CHARS = [
     "meaning": "hesitate; hesitant; undecided",
     "level": 5,
     "phrase": "犹豫",
+    "prompt1": "犹豫",
+    "prompt2": "写豫字",
     "sentence": "这是“豫”字。"
   },
   {
@@ -12677,6 +15845,8 @@ window.HSK_CHARS = [
     "meaning": "treasure; precious things; darling; baby",
     "level": 5,
     "phrase": "宝贝",
+    "prompt1": "宝贝",
+    "prompt2": "贝壳",
     "sentence": "这是“贝”字。"
   },
   {
@@ -12685,6 +15855,8 @@ window.HSK_CHARS = [
     "meaning": "contribute; dedicate; contribution",
     "level": 5,
     "phrase": "贡献",
+    "prompt1": "贡献",
+    "prompt2": "写贡字",
     "sentence": "这是“贡”字。"
   },
   {
@@ -12693,6 +15865,8 @@ window.HSK_CHARS = [
     "meaning": "property; fortune",
     "level": 5,
     "phrase": "财产",
+    "prompt1": "财产",
+    "prompt2": "发财",
     "sentence": "这是“财”字。"
   },
   {
@@ -12701,6 +15875,8 @@ window.HSK_CHARS = [
     "meaning": "pay the bill; settle accounts",
     "level": 5,
     "phrase": "结账",
+    "prompt1": "账户",
+    "prompt2": "结账",
     "sentence": "这是“账”字。"
   },
   {
@@ -12709,6 +15885,8 @@ window.HSK_CHARS = [
     "meaning": "show consideration for; thoughtful",
     "level": 5,
     "phrase": "体贴",
+    "prompt1": "体贴",
+    "prompt2": "粘贴",
     "sentence": "这是“贴”字。"
   },
   {
@@ -12717,6 +15895,8 @@ window.HSK_CHARS = [
     "meaning": "(bank) loan; provide a loan",
     "level": 5,
     "phrase": "贷款",
+    "prompt1": "贷款",
+    "prompt2": "写贷字",
     "sentence": "这是“贷”字。"
   },
   {
@@ -12725,6 +15905,8 @@ window.HSK_CHARS = [
     "meaning": "(commercial) trade",
     "level": 5,
     "phrase": "贸易",
+    "prompt1": "贸易",
+    "prompt2": "写贸字",
     "sentence": "这是“贸”字。"
   },
   {
@@ -12733,6 +15915,8 @@ window.HSK_CHARS = [
     "meaning": "appreciate; enjoy; admire",
     "level": 5,
     "phrase": "欣赏",
+    "prompt1": "欣赏",
+    "prompt2": "奖赏",
     "sentence": "这是“赏”字。"
   },
   {
@@ -12741,6 +15925,8 @@ window.HSK_CHARS = [
     "meaning": "compensate; pay for somebody else's loss",
     "level": 5,
     "phrase": "赔偿",
+    "prompt1": "赔偿",
+    "prompt2": "写赔字",
     "sentence": "这是“赔”字。"
   },
   {
@@ -12749,6 +15935,8 @@ window.HSK_CHARS = [
     "meaning": "to praise; to acclaim",
     "level": 5,
     "phrase": "称赞",
+    "prompt1": "赞成",
+    "prompt2": "称赞",
     "sentence": "这是“赞”字。"
   },
   {
@@ -12757,6 +15945,8 @@ window.HSK_CHARS = [
     "meaning": "avail oneself of; take advantage of (an opportunity or situation)",
     "level": 5,
     "phrase": "趁",
+    "prompt1": "趁字",
+    "prompt2": "写趁字",
     "sentence": "这是“趁”字。"
   },
   {
@@ -12765,6 +15955,8 @@ window.HSK_CHARS = [
     "meaning": "trend; tendency",
     "level": 5,
     "phrase": "趋势",
+    "prompt1": "趋势",
+    "prompt2": "写趋字",
     "sentence": "这是“趋”字。"
   },
   {
@@ -12773,6 +15965,8 @@ window.HSK_CHARS = [
     "meaning": "active; vigorous",
     "level": 5,
     "phrase": "活跃",
+    "prompt1": "活跃",
+    "prompt2": "飞跃",
     "sentence": "这是“跃”字。"
   },
   {
@@ -12781,6 +15975,8 @@ window.HSK_CHARS = [
     "meaning": "practice; put into practice; carry out",
     "level": 5,
     "phrase": "实践",
+    "prompt1": "实践",
+    "prompt2": "践踏",
     "sentence": "这是“践”字。"
   },
   {
@@ -12789,6 +15985,8 @@ window.HSK_CHARS = [
     "meaning": "step upon; to tread; to stamp",
     "level": 5,
     "phrase": "踩",
+    "prompt1": "踩字",
+    "prompt2": "写踩字",
     "sentence": "这是“踩”字。"
   },
   {
@@ -12797,6 +15995,8 @@ window.HSK_CHARS = [
     "meaning": "to crouch; to squat",
     "level": 5,
     "phrase": "蹲",
+    "prompt1": "蹲字",
+    "prompt2": "写蹲字",
     "sentence": "这是“蹲”字。"
   },
   {
@@ -12805,6 +16005,8 @@ window.HSK_CHARS = [
     "meaning": "hide oneself; take cover",
     "level": 5,
     "phrase": "躲藏",
+    "prompt1": "躲藏",
+    "prompt2": "写躲字",
     "sentence": "这是“躲”字。"
   },
   {
@@ -12813,6 +16015,8 @@ window.HSK_CHARS = [
     "meaning": "to alternate; take turns; rotate",
     "level": 5,
     "phrase": "轮流",
+    "prompt1": "轮流",
+    "prompt2": "轮船",
     "sentence": "这是“轮”字。"
   },
   {
@@ -12821,6 +16025,8 @@ window.HSK_CHARS = [
     "meaning": "soft",
     "level": 5,
     "phrase": "软",
+    "prompt1": "软件",
+    "prompt2": "写软字",
     "sentence": "这是“软”字。"
   },
   {
@@ -12829,6 +16035,8 @@ window.HSK_CHARS = [
     "meaning": "to download",
     "level": 5,
     "phrase": "下载",
+    "prompt1": "下载",
+    "prompt2": "记载",
     "sentence": "这是“载”字。"
   },
   {
@@ -12837,6 +16045,8 @@ window.HSK_CHARS = [
     "meaning": "to coach; to tutor; give advice (in study)",
     "level": 5,
     "phrase": "辅导",
+    "prompt1": "辅导",
+    "prompt2": "辅助",
     "sentence": "这是“辅”字。"
   },
   {
@@ -12845,6 +16055,8 @@ window.HSK_CHARS = [
     "meaning": "(for) a lifetime; all one's life",
     "level": 5,
     "phrase": "一辈子",
+    "prompt1": "长辈",
+    "prompt2": "一辈子",
     "sentence": "这是“辈”字。"
   },
   {
@@ -12853,6 +16065,8 @@ window.HSK_CHARS = [
     "meaning": "to edit; compile; editor",
     "level": 5,
     "phrase": "编辑",
+    "prompt1": "编辑",
+    "prompt2": "逻辑",
     "sentence": "这是“辑”字。"
   },
   {
@@ -12861,6 +16075,8 @@ window.HSK_CHARS = [
     "meaning": "resign from a position",
     "level": 5,
     "phrase": "辞职",
+    "prompt1": "辞职",
+    "prompt2": "推辞",
     "sentence": "这是“辞”字。"
   },
   {
@@ -12869,6 +16085,8 @@ window.HSK_CHARS = [
     "meaning": "argue; debate; argue over",
     "level": 5,
     "phrase": "辩论",
+    "prompt1": "辩论",
+    "prompt2": "答辩",
     "sentence": "这是“辩”字。"
   },
   {
@@ -12877,6 +16095,8 @@ window.HSK_CHARS = [
     "meaning": "to express; to voice; convey",
     "level": 5,
     "phrase": "表达",
+    "prompt1": "达到",
+    "prompt2": "表达",
     "sentence": "这是“达”字。"
   },
   {
@@ -12885,6 +16105,8 @@ window.HSK_CHARS = [
     "meaning": "fast; quick; rapid",
     "level": 5,
     "phrase": "迅速",
+    "prompt1": "迅速",
+    "prompt2": "写迅字",
     "sentence": "这是“迅”字。"
   },
   {
@@ -12893,6 +16115,8 @@ window.HSK_CHARS = [
     "meaning": "go back and forth; go to and fro",
     "level": 5,
     "phrase": "往返",
+    "prompt1": "往返",
+    "prompt2": "写返字",
     "sentence": "这是“返”字。"
   },
   {
@@ -12901,6 +16125,8 @@ window.HSK_CHARS = [
     "meaning": "violate (a law)",
     "level": 5,
     "phrase": "违反",
+    "prompt1": "违反",
+    "prompt2": "违背",
     "sentence": "这是“违”字。"
   },
   {
@@ -12909,6 +16135,8 @@ window.HSK_CHARS = [
     "meaning": "urgent; pressing",
     "level": 5,
     "phrase": "迫切",
+    "prompt1": "迫切",
+    "prompt2": "逼迫",
     "sentence": "这是“迫”字。"
   },
   {
@@ -12917,6 +16145,8 @@ window.HSK_CHARS = [
     "meaning": "retell; narrate",
     "level": 5,
     "phrase": "叙述",
+    "prompt1": "叙述",
+    "prompt2": "陈述",
     "sentence": "这是“述”字。"
   },
   {
@@ -12925,6 +16155,8 @@ window.HSK_CHARS = [
     "meaning": "famous scenic spots and ancient historic sites",
     "level": 5,
     "phrase": "名胜古迹",
+    "prompt1": "奇迹",
+    "prompt2": "迹象",
     "sentence": "这是“迹”字。"
   },
   {
@@ -12933,6 +16165,8 @@ window.HSK_CHARS = [
     "meaning": "pursue; chase",
     "level": 5,
     "phrase": "追",
+    "prompt1": "追求",
+    "prompt2": "追究",
     "sentence": "这是“追”字。"
   },
   {
@@ -12941,6 +16175,8 @@ window.HSK_CHARS = [
     "meaning": "to retreat; decline; withdraw",
     "level": 5,
     "phrase": "退",
+    "prompt1": "退休",
+    "prompt2": "退步",
     "sentence": "这是“退”字。"
   },
   {
@@ -12949,6 +16185,8 @@ window.HSK_CHARS = [
     "meaning": "to escape; run away; flee",
     "level": 5,
     "phrase": "逃",
+    "prompt1": "逃避",
+    "prompt2": "写逃字",
     "sentence": "这是“逃”字。"
   },
   {
@@ -12957,6 +16195,8 @@ window.HSK_CHARS = [
     "meaning": "transparent; open (non-secretive)",
     "level": 5,
     "phrase": "透明",
+    "prompt1": "透明",
+    "prompt2": "渗透",
     "sentence": "这是“透”字。"
   },
   {
@@ -12965,6 +16205,8 @@ window.HSK_CHARS = [
     "meaning": "step by step; gradually",
     "level": 5,
     "phrase": "逐步",
+    "prompt1": "逐步",
+    "prompt2": "逐渐",
     "sentence": "这是“逐”字。"
   },
   {
@@ -12973,6 +16215,8 @@ window.HSK_CHARS = [
     "meaning": "hand over; to pass; to give",
     "level": 5,
     "phrase": "递",
+    "prompt1": "递增",
+    "prompt2": "写递字",
     "sentence": "这是“递”字。"
   },
   {
@@ -12981,6 +16225,8 @@ window.HSK_CHARS = [
     "meaning": "long distance",
     "level": 5,
     "phrase": "长途",
+    "prompt1": "前途",
+    "prompt2": "长途",
     "sentence": "这是“途”字。"
   },
   {
@@ -12989,6 +16235,8 @@ window.HSK_CHARS = [
     "meaning": "to tease; amuse; to stay; to stop; funny",
     "level": 5,
     "phrase": "逗",
+    "prompt1": "逗字",
+    "prompt2": "写逗字",
     "sentence": "这是“逗”字。"
   },
   {
@@ -12997,6 +16245,8 @@ window.HSK_CHARS = [
     "meaning": "create; bring about; creativity",
     "level": 5,
     "phrase": "创造",
+    "prompt1": "造成",
+    "prompt2": "制造",
     "sentence": "这是“造”字。"
   },
   {
@@ -13005,6 +16255,8 @@ window.HSK_CHARS = [
     "meaning": "logic",
     "level": 5,
     "phrase": "逻辑",
+    "prompt1": "逻辑",
+    "prompt2": "巡逻",
     "sentence": "这是“逻”字。"
   },
   {
@@ -13013,6 +16265,8 @@ window.HSK_CHARS = [
     "meaning": "regret; pity; sorry",
     "level": 5,
     "phrase": "遗憾",
+    "prompt1": "遗憾",
+    "prompt2": "遗留",
     "sentence": "这是“遗”字。"
   },
   {
@@ -13021,6 +16275,8 @@ window.HSK_CHARS = [
     "meaning": "observe; abide by; comply with; keep (commandments); to respect (an agreement)",
     "level": 5,
     "phrase": "遵守",
+    "prompt1": "遵守",
+    "prompt2": "遵循",
     "sentence": "这是“遵”字。"
   },
   {
@@ -13029,6 +16285,8 @@ window.HSK_CHARS = [
     "meaning": "avoid; avert; prevent",
     "level": 5,
     "phrase": "避免",
+    "prompt1": "避免",
+    "prompt2": "逃避",
     "sentence": "这是“避”字。"
   },
   {
@@ -13037,6 +16295,8 @@ window.HSK_CHARS = [
     "meaning": "distribute; assign; allocate",
     "level": 5,
     "phrase": "分配",
+    "prompt1": "配合",
+    "prompt2": "分配",
     "sentence": "这是“配”字。"
   },
   {
@@ -13045,6 +16305,8 @@ window.HSK_CHARS = [
     "meaning": "soy sauce",
     "level": 5,
     "phrase": "酱油",
+    "prompt1": "酱油",
+    "prompt2": "写酱字",
     "sentence": "这是“酱”字。"
   },
   {
@@ -13053,6 +16315,8 @@ window.HSK_CHARS = [
     "meaning": "intoxicated; become drunk",
     "level": 5,
     "phrase": "醉",
+    "prompt1": "陶醉",
+    "prompt2": "麻醉",
     "sentence": "这是“醉”字。"
   },
   {
@@ -13061,6 +16325,8 @@ window.HSK_CHARS = [
     "meaning": "vinegar",
     "level": 5,
     "phrase": "醋",
+    "prompt1": "醋字",
+    "prompt2": "写醋字",
     "sentence": "这是“醋”字。"
   },
   {
@@ -13069,6 +16335,8 @@ window.HSK_CHARS = [
     "meaning": "interview; gather news; hunt for and collect",
     "level": 5,
     "phrase": "采访",
+    "prompt1": "采取",
+    "prompt2": "采访",
     "sentence": "这是“采”字。"
   },
   {
@@ -13077,6 +16345,8 @@ window.HSK_CHARS = [
     "meaning": "to fish",
     "level": 5,
     "phrase": "钓",
+    "prompt1": "钓字",
+    "prompt2": "写钓字",
     "sentence": "这是“钓”字。"
   },
   {
@@ -13085,6 +16355,8 @@ window.HSK_CHARS = [
     "meaning": "bell",
     "level": 5,
     "phrase": "铃",
+    "prompt1": "铃字",
+    "prompt2": "写铃字",
     "sentence": "这是“铃”字。"
   },
   {
@@ -13093,6 +16365,8 @@ window.HSK_CHARS = [
     "meaning": "necklace",
     "level": 5,
     "phrase": "项链",
+    "prompt1": "项链",
+    "prompt2": "写链字",
     "sentence": "这是“链”字。"
   },
   {
@@ -13101,6 +16375,8 @@ window.HSK_CHARS = [
     "meaning": "to sell; to market; sales",
     "level": 5,
     "phrase": "销售",
+    "prompt1": "销售",
+    "prompt2": "畅销",
     "sentence": "这是“销”字。"
   },
   {
@@ -13109,6 +16385,8 @@ window.HSK_CHARS = [
     "meaning": "lock",
     "level": 5,
     "phrase": "锁",
+    "prompt1": "封锁",
+    "prompt2": "连锁",
     "sentence": "这是“锁”字。"
   },
   {
@@ -13117,6 +16395,8 @@ window.HSK_CHARS = [
     "meaning": "pot; pan; boiler",
     "level": 5,
     "phrase": "锅",
+    "prompt1": "涮火锅",
+    "prompt2": "写锅字",
     "sentence": "这是“锅”字。"
   },
   {
@@ -13125,6 +16405,8 @@ window.HSK_CHARS = [
     "meaning": "lightning",
     "level": 5,
     "phrase": "闪电",
+    "prompt1": "闪电",
+    "prompt2": "闪烁",
     "sentence": "这是“闪”字。"
   },
   {
@@ -13133,6 +16415,8 @@ window.HSK_CHARS = [
     "meaning": "close; shut",
     "level": 5,
     "phrase": "关闭",
+    "prompt1": "关闭",
+    "prompt2": "闭塞",
     "sentence": "这是“闭”字。"
   },
   {
@@ -13141,6 +16425,8 @@ window.HSK_CHARS = [
     "meaning": "rush; break through; to temper oneself (by battling difficulties)",
     "level": 5,
     "phrase": "闯",
+    "prompt1": "闯字",
+    "prompt2": "写闯字",
     "sentence": "这是“闯”字。"
   },
   {
@@ -13149,6 +16435,8 @@ window.HSK_CHARS = [
     "meaning": "leisure; free time; idle; unused",
     "level": 5,
     "phrase": "空闲",
+    "prompt1": "休闲",
+    "prompt2": "空闲",
     "sentence": "这是“闲”字。"
   },
   {
@@ -13157,6 +16445,8 @@ window.HSK_CHARS = [
     "meaning": "prevent; take precautions against",
     "level": 5,
     "phrase": "预防",
+    "prompt1": "预防",
+    "prompt2": "防治",
     "sentence": "这是“防”字。"
   },
   {
@@ -13165,6 +16455,8 @@ window.HSK_CHARS = [
     "meaning": "short period; disposition of troops; wave",
     "level": 5,
     "phrase": "阵",
+    "prompt1": "阵地",
+    "prompt2": "阵容",
     "sentence": "这是“阵”字。"
   },
   {
@@ -13173,6 +16465,8 @@ window.HSK_CHARS = [
     "meaning": "stage; phase",
     "level": 5,
     "phrase": "阶段",
+    "prompt1": "阶段",
+    "prompt2": "台阶",
     "sentence": "这是“阶”字。"
   },
   {
@@ -13181,6 +16475,8 @@ window.HSK_CHARS = [
     "meaning": "prevent; to block",
     "level": 5,
     "phrase": "阻止",
+    "prompt1": "阻止",
+    "prompt2": "阻碍",
     "sentence": "这是“阻”字。"
   },
   {
@@ -13189,6 +16485,8 @@ window.HSK_CHARS = [
     "meaning": "land; dry land (as opposed to the sea)",
     "level": 5,
     "phrase": "陆地",
+    "prompt1": "陆地",
+    "prompt2": "陆续",
     "sentence": "这是“陆”字。"
   },
   {
@@ -13197,6 +16495,8 @@ window.HSK_CHARS = [
     "meaning": "strange; unfamiliar",
     "level": 5,
     "phrase": "陌生",
+    "prompt1": "陌生",
+    "prompt2": "写陌字",
     "sentence": "这是“陌”字。"
   },
   {
@@ -13205,6 +16505,8 @@ window.HSK_CHARS = [
     "meaning": "restrictions; to limit; to bound",
     "level": 5,
     "phrase": "限制",
+    "prompt1": "限制",
+    "prompt2": "界限",
     "sentence": "这是“限”字。"
   },
   {
@@ -13213,6 +16515,8 @@ window.HSK_CHARS = [
     "meaning": "next door",
     "level": 5,
     "phrase": "隔壁",
+    "prompt1": "隔壁",
+    "prompt2": "间隔",
     "sentence": "这是“隔”字。"
   },
   {
@@ -13221,6 +16525,8 @@ window.HSK_CHARS = [
     "meaning": "hero",
     "level": 5,
     "phrase": "英雄",
+    "prompt1": "英雄",
+    "prompt2": "雄厚",
     "sentence": "这是“雄”字。"
   },
   {
@@ -13229,6 +16535,8 @@ window.HSK_CHARS = [
     "meaning": "gather; assemble; to muster",
     "level": 5,
     "phrase": "集合",
+    "prompt1": "集中",
+    "prompt2": "集合",
     "sentence": "这是“集”字。"
   },
   {
@@ -13237,6 +16545,8 @@ window.HSK_CHARS = [
     "meaning": "thunder",
     "level": 5,
     "phrase": "雷",
+    "prompt1": "雷达",
+    "prompt2": "写雷字",
     "sentence": "这是“雷”字。"
   },
   {
@@ -13245,6 +16555,8 @@ window.HSK_CHARS = [
     "meaning": "fog; mist",
     "level": 5,
     "phrase": "雾",
+    "prompt1": "雾字",
+    "prompt2": "写雾字",
     "sentence": "这是“雾”字。"
   },
   {
@@ -13253,6 +16565,8 @@ window.HSK_CHARS = [
     "meaning": "earthquake",
     "level": 5,
     "phrase": "地震",
+    "prompt1": "地震",
+    "prompt2": "震撼",
     "sentence": "这是“震”字。"
   },
   {
@@ -13261,6 +16575,8 @@ window.HSK_CHARS = [
     "meaning": "have bad luck; be out of luck",
     "level": 5,
     "phrase": "倒霉",
+    "prompt1": "倒霉",
+    "prompt2": "写霉字",
     "sentence": "这是“霉”字。"
   },
   {
@@ -13269,6 +16585,8 @@ window.HSK_CHARS = [
     "meaning": "blue; green; young (Kangxi radical 174); Qinghai province (abbr.)",
     "level": 5,
     "phrase": "青",
+    "prompt1": "青春",
+    "prompt2": "青少年",
     "sentence": "这是“青”字。"
   },
   {
@@ -13277,6 +16595,8 @@ window.HSK_CHARS = [
     "meaning": "depend on; lean on; near; to trust",
     "level": 5,
     "phrase": "靠",
+    "prompt1": "可靠",
+    "prompt2": "靠拢",
     "sentence": "这是“靠”字。"
   },
   {
@@ -13285,6 +16605,8 @@ window.HSK_CHARS = [
     "meaning": "to reform",
     "level": 5,
     "phrase": "改革",
+    "prompt1": "改革",
+    "prompt2": "革命",
     "sentence": "这是“革”字。"
   },
   {
@@ -13293,6 +16615,8 @@ window.HSK_CHARS = [
     "meaning": "firecracker; a long string of small firecrackers",
     "level": 5,
     "phrase": "鞭炮",
+    "prompt1": "鞭炮",
+    "prompt2": "鞭策",
     "sentence": "这是“鞭”字。"
   },
   {
@@ -13301,6 +16625,8 @@ window.HSK_CHARS = [
     "meaning": "top; roof; carry on one's head; prop up; to butt; (mw for headwear, i.e. hats)",
     "level": 5,
     "phrase": "顶",
+    "prompt1": "顶字",
+    "prompt2": "写顶字",
     "sentence": "这是“顶”字。"
   },
   {
@@ -13309,6 +16635,8 @@ window.HSK_CHARS = [
     "meaning": "nape (of the neck); sum (of money); mw item",
     "level": 5,
     "phrase": "项",
+    "prompt1": "项目",
+    "prompt2": "项链",
     "sentence": "这是“项”字。"
   },
   {
@@ -13317,6 +16645,8 @@ window.HSK_CHARS = [
     "meaning": "pause; arrange; stamp feet; suddenly; (mw for meals)",
     "level": 5,
     "phrase": "顿",
+    "prompt1": "顿时",
+    "prompt2": "整顿",
     "sentence": "这是“顿”字。"
   },
   {
@@ -13325,6 +16655,8 @@ window.HSK_CHARS = [
     "meaning": "skill; ability; capability",
     "level": 5,
     "phrase": "本领",
+    "prompt1": "领域",
+    "prompt2": "本领",
     "sentence": "这是“领”字。"
   },
   {
@@ -13333,6 +16665,8 @@ window.HSK_CHARS = [
     "meaning": "frequency; (television) channel",
     "level": 5,
     "phrase": "频道",
+    "prompt1": "频道",
+    "prompt2": "视频",
     "sentence": "这是“频”字。"
   },
   {
@@ -13341,6 +16675,8 @@ window.HSK_CHARS = [
     "meaning": "(mw for hearts and small, round things like seeds, grains, beans, etc.)",
     "level": 5,
     "phrase": "颗",
+    "prompt1": "颗字",
+    "prompt2": "写颗字",
     "sentence": "这是“颗”字。"
   },
   {
@@ -13349,6 +16685,8 @@ window.HSK_CHARS = [
     "meaning": "to float; flutter",
     "level": 5,
     "phrase": "飘",
+    "prompt1": "飘扬",
+    "prompt2": "写飘字",
     "sentence": "这是“飘”字。"
   },
   {
@@ -13357,6 +16695,8 @@ window.HSK_CHARS = [
     "meaning": "grain; food; cereals",
     "level": 5,
     "phrase": "粮食",
+    "prompt1": "食物",
+    "prompt2": "零食",
     "sentence": "这是“食”字。"
   },
   {
@@ -13365,6 +16705,8 @@ window.HSK_CHARS = [
     "meaning": "decorate",
     "level": 5,
     "phrase": "装饰",
+    "prompt1": "装饰",
+    "prompt2": "首饰",
     "sentence": "这是“饰”字。"
   },
   {
@@ -13373,6 +16715,8 @@ window.HSK_CHARS = [
     "meaning": "steamed bun/roll",
     "level": 5,
     "phrase": "馒头",
+    "prompt1": "馒头",
+    "prompt2": "写馒字",
     "sentence": "这是“馒”字。"
   },
   {
@@ -13381,6 +16725,8 @@ window.HSK_CHARS = [
     "meaning": "to drive; to pilot (a ship, an airplane, etc.)",
     "level": 5,
     "phrase": "驾驶",
+    "prompt1": "驾驶",
+    "prompt2": "写驶字",
     "sentence": "这是“驶”字。"
   },
   {
@@ -13389,6 +16735,8 @@ window.HSK_CHARS = [
     "meaning": "to drive; to pilot (a ship, an airplane, etc.)",
     "level": 5,
     "phrase": "驾驶",
+    "prompt1": "驾驶",
+    "prompt2": "劳驾",
     "sentence": "这是“驾”字。"
   },
   {
@@ -13397,6 +16745,8 @@ window.HSK_CHARS = [
     "meaning": "scold; curse; condemn; verbally abuse",
     "level": 5,
     "phrase": "骂",
+    "prompt1": "骂字",
+    "prompt2": "写骂字",
     "sentence": "这是“骂”字。"
   },
   {
@@ -13405,6 +16755,8 @@ window.HSK_CHARS = [
     "meaning": "step; move; measure; procedure",
     "level": 5,
     "phrase": "步骤",
+    "prompt1": "步骤",
+    "prompt2": "写骤字",
     "sentence": "这是“骤”字。"
   },
   {
@@ -13413,6 +16765,8 @@ window.HSK_CHARS = [
     "meaning": "bone; moral character",
     "level": 5,
     "phrase": "骨头",
+    "prompt1": "骨头",
+    "prompt2": "骨干",
     "sentence": "这是“骨”字。"
   },
   {
@@ -13421,6 +16775,8 @@ window.HSK_CHARS = [
     "meaning": "fashionable",
     "level": 5,
     "phrase": "时髦",
+    "prompt1": "时髦",
+    "prompt2": "写髦字",
     "sentence": "这是“髦”字。"
   },
   {
@@ -13429,6 +16785,8 @@ window.HSK_CHARS = [
     "meaning": "coward",
     "level": 5,
     "phrase": "胆小鬼",
+    "prompt1": "胆小鬼",
+    "prompt2": "魔鬼",
     "sentence": "这是“鬼”字。"
   },
   {
@@ -13437,6 +16795,8 @@ window.HSK_CHARS = [
     "meaning": "charm; glamour; enchantment",
     "level": 5,
     "phrase": "魅力",
+    "prompt1": "魅力",
+    "prompt2": "写魅字",
     "sentence": "这是“魅”字。"
   },
   {
@@ -13445,6 +16805,8 @@ window.HSK_CHARS = [
     "meaning": "microphone",
     "level": 5,
     "phrase": "麦克风",
+    "prompt1": "小麦",
+    "prompt2": "麦克风",
     "sentence": "这是“麦”字。"
   },
   {
@@ -13453,6 +16815,8 @@ window.HSK_CHARS = [
     "meaning": "rat; mouse",
     "level": 5,
     "phrase": "老鼠",
+    "prompt1": "鼠标",
+    "prompt2": "老鼠",
     "sentence": "这是“鼠”字。"
   },
   {
@@ -13461,6 +16825,8 @@ window.HSK_CHARS = [
     "meaning": "tidy; neat; in good order",
     "level": 5,
     "phrase": "整齐",
+    "prompt1": "整齐",
+    "prompt2": "齐全",
     "sentence": "这是“齐”字。"
   },
   {
@@ -13469,6 +16835,8 @@ window.HSK_CHARS = [
     "meaning": "tooth",
     "level": 5,
     "phrase": "牙齿",
+    "prompt1": "牙齿",
+    "prompt2": "写齿字",
     "sentence": "这是“齿”字。"
   },
   {
@@ -13477,6 +16845,8 @@ window.HSK_CHARS = [
     "meaning": "dragon (Kangxi radical 212)",
     "level": 5,
     "phrase": "龙",
+    "prompt1": "水龙头",
+    "prompt2": "写龙字",
     "sentence": "这是“龙”字。"
   },
   {
@@ -13485,6 +16855,8 @@ window.HSK_CHARS = [
     "meaning": "male adult; robust; cubes (of food); T-shaped (4th Heavenly Stem)",
     "level": 6,
     "phrase": "丁",
+    "prompt1": "丁字",
+    "prompt2": "写丁字",
     "sentence": "这是“丁”字。"
   },
   {
@@ -13493,6 +16865,8 @@ window.HSK_CHARS = [
     "meaning": "beggar",
     "level": 6,
     "phrase": "乞丐",
+    "prompt1": "乞丐",
+    "prompt2": "写丐字",
     "sentence": "这是“丐”字。"
   },
   {
@@ -13501,6 +16875,8 @@ window.HSK_CHARS = [
     "meaning": "hills",
     "level": 6,
     "phrase": "丘陵",
+    "prompt1": "丘陵",
+    "prompt2": "写丘字",
     "sentence": "这是“丘”字。"
   },
   {
@@ -13509,6 +16885,8 @@ window.HSK_CHARS = [
     "meaning": "bright; fire (3rd Heavenly Stem)",
     "level": 6,
     "phrase": "丙",
+    "prompt1": "丙字",
+    "prompt2": "写丙字",
     "sentence": "这是“丙”字。"
   },
   {
@@ -13517,6 +16895,8 @@ window.HSK_CHARS = [
     "meaning": "crowd together; thicket; collection",
     "level": 6,
     "phrase": "丛",
+    "prompt1": "丛字",
+    "prompt2": "写丛字",
     "sentence": "这是“丛”字。"
   },
   {
@@ -13525,6 +16905,8 @@ window.HSK_CHARS = [
     "meaning": "dejected; depressed; dispirited",
     "level": 6,
     "phrase": "沮丧",
+    "prompt1": "丧失",
+    "prompt2": "沮丧",
     "sentence": "这是“丧”字。"
   },
   {
@@ -13533,6 +16915,8 @@ window.HSK_CHARS = [
     "meaning": "string together; conspire; gang up; mix up; bunch",
     "level": 6,
     "phrase": "串",
+    "prompt1": "串字",
+    "prompt2": "写串字",
     "sentence": "这是“串”字。"
   },
   {
@@ -13541,6 +16925,8 @@ window.HSK_CHARS = [
     "meaning": "pill; pellet",
     "level": 6,
     "phrase": "丸",
+    "prompt1": "丸字",
+    "prompt2": "写丸字",
     "sentence": "这是“丸”字。"
   },
   {
@@ -13549,6 +16935,8 @@ window.HSK_CHARS = [
     "meaning": "jet-black; pitch-black",
     "level": 6,
     "phrase": "乌黑",
+    "prompt1": "乌黑",
+    "prompt2": "写乌字",
     "sentence": "这是“乌”字。"
   },
   {
@@ -13557,6 +16945,8 @@ window.HSK_CHARS = [
     "meaning": "beggar",
     "level": 6,
     "phrase": "乞丐",
+    "prompt1": "乞丐",
+    "prompt2": "写乞字",
     "sentence": "这是“乞”字。"
   },
   {
@@ -13565,6 +16955,8 @@ window.HSK_CHARS = [
     "meaning": "breast-feeding; to suckle",
     "level": 6,
     "phrase": "哺乳",
+    "prompt1": "哺乳",
+    "prompt2": "写乳字",
     "sentence": "这是“乳”字。"
   },
   {
@@ -13573,6 +16965,8 @@ window.HSK_CHARS = [
     "meaning": "confer upon; bestow; endow; entrust (a task)",
     "level": 6,
     "phrase": "赋予",
+    "prompt1": "授予",
+    "prompt2": "赋予",
     "sentence": "这是“予”字。"
   },
   {
@@ -13581,6 +16975,8 @@ window.HSK_CHARS = [
     "meaning": "a well",
     "level": 6,
     "phrase": "井",
+    "prompt1": "井字",
+    "prompt2": "写井字",
     "sentence": "这是“井”字。"
   },
   {
@@ -13589,6 +16985,8 @@ window.HSK_CHARS = [
     "meaning": "be destroyed; perish; exterminate; become extinct",
     "level": 6,
     "phrase": "灭亡",
+    "prompt1": "死亡",
+    "prompt2": "灭亡",
     "sentence": "这是“亡”字。"
   },
   {
@@ -13597,6 +16995,8 @@ window.HSK_CHARS = [
     "meaning": "also",
     "level": 6,
     "phrase": "亦",
+    "prompt1": "亦字",
+    "prompt2": "写亦字",
     "sentence": "这是“亦”字。"
   },
   {
@@ -13605,6 +17005,8 @@ window.HSK_CHARS = [
     "meaning": "pavilion; kiosk",
     "level": 6,
     "phrase": "亭子",
+    "prompt1": "亭子",
+    "prompt2": "写亭字",
     "sentence": "这是“亭”字。"
   },
   {
@@ -13613,6 +17015,8 @@ window.HSK_CHARS = [
     "meaning": "benevolent; kindhearted; charitable",
     "level": 6,
     "phrase": "仁慈",
+    "prompt1": "仁慈",
+    "prompt2": "写仁字",
     "sentence": "这是“仁”字。"
   },
   {
@@ -13621,6 +17025,8 @@ window.HSK_CHARS = [
     "meaning": "retaliate; to revenge; avenge",
     "level": 6,
     "phrase": "报仇",
+    "prompt1": "报仇",
+    "prompt2": "写仇字",
     "sentence": "这是“仇”字。"
   },
   {
@@ -13629,6 +17035,8 @@ window.HSK_CHARS = [
     "meaning": "hurried",
     "level": 6,
     "phrase": "仓促",
+    "prompt1": "仓促",
+    "prompt2": "仓库",
     "sentence": "这是“仓”字。"
   },
   {
@@ -13637,6 +17045,8 @@ window.HSK_CHARS = [
     "meaning": "fight; go to war; fight a battle",
     "level": 6,
     "phrase": "打仗",
+    "prompt1": "打仗",
+    "prompt2": "写仗字",
     "sentence": "这是“仗”字。"
   },
   {
@@ -13645,6 +17055,8 @@ window.HSK_CHARS = [
     "meaning": "fig. lighthearted person; Daoist immortal; supernatural entity; (in modern fiction) fairy, elf, leprechaun, etc.; supernatural being, celestial being, immortal; a person who has the power of clairvoyance or who is free from worldly cares",
     "level": 6,
     "phrase": "神仙",
+    "prompt1": "神仙",
+    "prompt2": "写仙字",
     "sentence": "这是“仙”字。"
   },
   {
@@ -13653,6 +17065,8 @@ window.HSK_CHARS = [
     "meaning": "apparatus; (scientific) instrument",
     "level": 6,
     "phrase": "仪器",
+    "prompt1": "仪器",
+    "prompt2": "仪式",
     "sentence": "这是“仪”字。"
   },
   {
@@ -13661,6 +17075,8 @@ window.HSK_CHARS = [
     "meaning": "firm belief; faith; believe in (a religion)",
     "level": 6,
     "phrase": "信仰",
+    "prompt1": "信仰",
+    "prompt2": "瞻仰",
     "sentence": "这是“仰”字。"
   },
   {
@@ -13669,6 +17085,8 @@ window.HSK_CHARS = [
     "meaning": "ranks; troops",
     "level": 6,
     "phrase": "队伍",
+    "prompt1": "队伍",
+    "prompt2": "写伍字",
     "sentence": "这是“伍”字。"
   },
   {
@@ -13677,6 +17095,8 @@ window.HSK_CHARS = [
     "meaning": "ambush; lie in ambush",
     "level": 6,
     "phrase": "埋伏",
+    "prompt1": "埋伏",
+    "prompt2": "起伏",
     "sentence": "这是“伏”字。"
   },
   {
@@ -13685,6 +17105,8 @@ window.HSK_CHARS = [
     "meaning": "pace; (measured) step; march",
     "level": 6,
     "phrase": "步伐",
+    "prompt1": "步伐",
+    "prompt2": "砍伐",
     "sentence": "这是“伐”字。"
   },
   {
@@ -13693,6 +17115,8 @@ window.HSK_CHARS = [
     "meaning": "family happiness",
     "level": 6,
     "phrase": "天伦之乐",
+    "prompt1": "天伦之乐",
+    "prompt2": "写伦字",
     "sentence": "这是“伦”字。"
   },
   {
@@ -13701,6 +17125,8 @@ window.HSK_CHARS = [
     "meaning": "forge; to fake; to counterfeit",
     "level": 6,
     "phrase": "伪造",
+    "prompt1": "伪造",
+    "prompt2": "虚伪",
     "sentence": "这是“伪”字。"
   },
   {
@@ -13709,6 +17135,8 @@ window.HSK_CHARS = [
     "meaning": "aunt; wife of father's older brother",
     "level": 6,
     "phrase": "伯母",
+    "prompt1": "伯母",
+    "prompt2": "写伯字",
     "sentence": "这是“伯”字。"
   },
   {
@@ -13717,6 +17145,8 @@ window.HSK_CHARS = [
     "meaning": "clever; witty; intelligent",
     "level": 6,
     "phrase": "伶俐",
+    "prompt1": "伶俐",
+    "prompt2": "写伶字",
     "sentence": "这是“伶”字。"
   },
   {
@@ -13725,6 +17155,8 @@ window.HSK_CHARS = [
     "meaning": "serve; wait upon; act as a valet",
     "level": 6,
     "phrase": "伺候",
+    "prompt1": "伺候",
+    "prompt2": "写伺字",
     "sentence": "这是“伺”字。"
   },
   {
@@ -13733,6 +17165,8 @@ window.HSK_CHARS = [
     "meaning": "employ; hire",
     "level": 6,
     "phrase": "雇佣",
+    "prompt1": "雇佣",
+    "prompt2": "写佣字",
     "sentence": "这是“佣”字。"
   },
   {
@@ -13741,6 +17175,8 @@ window.HSK_CHARS = [
     "meaning": "delicacy",
     "level": 6,
     "phrase": "佳肴",
+    "prompt1": "佳肴",
+    "prompt2": "写佳字",
     "sentence": "这是“佳”字。"
   },
   {
@@ -13749,6 +17185,8 @@ window.HSK_CHARS = [
     "meaning": "speak frankly and in measured tones; argue about leisurely and boldly",
     "level": 6,
     "phrase": "侃侃而谈",
+    "prompt1": "侃侃而谈",
+    "prompt2": "写侃字",
     "sentence": "这是“侃”字。"
   },
   {
@@ -13757,6 +17195,8 @@ window.HSK_CHARS = [
     "meaning": "nephew; brother's son or daughter",
     "level": 6,
     "phrase": "侄子",
+    "prompt1": "侄子",
+    "prompt2": "写侄字",
     "sentence": "这是“侄”字。"
   },
   {
@@ -13765,6 +17205,8 @@ window.HSK_CHARS = [
     "meaning": "luxury; sumptuous; extravagant",
     "level": 6,
     "phrase": "奢侈",
+    "prompt1": "奢侈",
+    "prompt2": "写侈字",
     "sentence": "这是“侈”字。"
   },
   {
@@ -13773,6 +17215,8 @@ window.HSK_CHARS = [
     "meaning": "knight-errant; a genre of swordplay martial arts movies and books",
     "level": 6,
     "phrase": "武侠",
+    "prompt1": "武侠",
+    "prompt2": "写侠字",
     "sentence": "这是“侠”字。"
   },
   {
@@ -13781,6 +17225,8 @@ window.HSK_CHARS = [
     "meaning": "companion; partner; mate",
     "level": 6,
     "phrase": "伴侣",
+    "prompt1": "伴侣",
+    "prompt2": "写侣字",
     "sentence": "这是“侣”字。"
   },
   {
@@ -13789,6 +17235,8 @@ window.HSK_CHARS = [
     "meaning": "by luck; by a fluke",
     "level": 6,
     "phrase": "侥幸",
+    "prompt1": "侥幸",
+    "prompt2": "写侥字",
     "sentence": "这是“侥”字。"
   },
   {
@@ -13797,6 +17245,8 @@ window.HSK_CHARS = [
     "meaning": "detective",
     "level": 6,
     "phrase": "侦探",
+    "prompt1": "侦探",
+    "prompt2": "写侦字",
     "sentence": "这是“侦”字。"
   },
   {
@@ -13805,6 +17255,8 @@ window.HSK_CHARS = [
     "meaning": "side; profile; flank; face in profile",
     "level": 6,
     "phrase": "侧面",
+    "prompt1": "侧面",
+    "prompt2": "写侧字",
     "sentence": "这是“侧”字。"
   },
   {
@@ -13813,6 +17265,8 @@ window.HSK_CHARS = [
     "meaning": "overseas Chinese",
     "level": 6,
     "phrase": "华侨",
+    "prompt1": "华侨",
+    "prompt2": "写侨字",
     "sentence": "这是“侨”字。"
   },
   {
@@ -13821,6 +17275,8 @@ window.HSK_CHARS = [
     "meaning": "to insult; humiliate",
     "level": 6,
     "phrase": "侮辱",
+    "prompt1": "侮辱",
+    "prompt2": "写侮字",
     "sentence": "这是“侮”字。"
   },
   {
@@ -13829,6 +17285,8 @@ window.HSK_CHARS = [
     "meaning": "encroach on; infringe on; violation",
     "level": 6,
     "phrase": "侵犯",
+    "prompt1": "侵犯",
+    "prompt2": "侵略",
     "sentence": "这是“侵”字。"
   },
   {
@@ -13837,6 +17295,8 @@ window.HSK_CHARS = [
     "meaning": "clever; witty; intelligent",
     "level": 6,
     "phrase": "伶俐",
+    "prompt1": "伶俐",
+    "prompt2": "写俐字",
     "sentence": "这是“俐”字。"
   },
   {
@@ -13845,6 +17305,8 @@ window.HSK_CHARS = [
     "meaning": "captive; prisoner",
     "level": 6,
     "phrase": "俘虏",
+    "prompt1": "俘虏",
+    "prompt2": "写俘字",
     "sentence": "这是“俘”字。"
   },
   {
@@ -13853,6 +17315,8 @@ window.HSK_CHARS = [
     "meaning": "hardworking and thrifty",
     "level": 6,
     "phrase": "勤俭",
+    "prompt1": "勤俭",
+    "prompt2": "写俭字",
     "sentence": "这是“俭”字。"
   },
   {
@@ -13861,6 +17325,8 @@ window.HSK_CHARS = [
     "meaning": "look down at; overlook",
     "level": 6,
     "phrase": "俯视",
+    "prompt1": "俯视",
+    "prompt2": "写俯字",
     "sentence": "这是“俯”字。"
   },
   {
@@ -13869,6 +17335,8 @@ window.HSK_CHARS = [
     "meaning": "stubborn; unbending",
     "level": 6,
     "phrase": "倔强",
+    "prompt1": "倔强",
+    "prompt2": "写倔字",
     "sentence": "这是“倔”字。"
   },
   {
@@ -13877,6 +17345,8 @@ window.HSK_CHARS = [
     "meaning": "provided that; supposing that; if; in case",
     "level": 6,
     "phrase": "倘若",
+    "prompt1": "倘若",
+    "prompt2": "写倘字",
     "sentence": "这是“倘”字。"
   },
   {
@@ -13885,6 +17355,8 @@ window.HSK_CHARS = [
     "meaning": "tired; weary",
     "level": 6,
     "phrase": "疲倦",
+    "prompt1": "疲倦",
+    "prompt2": "写倦字",
     "sentence": "这是“倦”字。"
   },
   {
@@ -13893,6 +17365,8 @@ window.HSK_CHARS = [
     "meaning": "bond",
     "level": 6,
     "phrase": "债券",
+    "prompt1": "债券",
+    "prompt2": "写债字",
     "sentence": "这是“债”字。"
   },
   {
@@ -13901,6 +17375,8 @@ window.HSK_CHARS = [
     "meaning": "listen attentively; heed (other people's opinions)",
     "level": 6,
     "phrase": "倾听",
+    "prompt1": "倾向",
+    "prompt2": "倾斜",
     "sentence": "这是“倾”字。"
   },
   {
@@ -13909,6 +17385,8 @@ window.HSK_CHARS = [
     "meaning": "bias; deviation",
     "level": 6,
     "phrase": "偏差",
+    "prompt1": "偏僻",
+    "prompt2": "偏见",
     "sentence": "这是“偏”字。"
   },
   {
@@ -13917,6 +17395,8 @@ window.HSK_CHARS = [
     "meaning": "reserves; store up",
     "level": 6,
     "phrase": "储备",
+    "prompt1": "储备",
+    "prompt2": "储蓄",
     "sentence": "这是“储”字。"
   },
   {
@@ -13925,6 +17405,8 @@ window.HSK_CHARS = [
     "meaning": "stiff",
     "level": 6,
     "phrase": "僵硬",
+    "prompt1": "僵硬",
+    "prompt2": "写僵字",
     "sentence": "这是“僵”字。"
   },
   {
@@ -13933,6 +17415,8 @@ window.HSK_CHARS = [
     "meaning": "remote and isolated; far from the city",
     "level": 6,
     "phrase": "偏僻",
+    "prompt1": "偏僻",
+    "prompt2": "写僻字",
     "sentence": "这是“僻”字。"
   },
   {
@@ -13941,6 +17425,8 @@ window.HSK_CHARS = [
     "meaning": "Confucianism",
     "level": 6,
     "phrase": "儒家",
+    "prompt1": "儒家",
+    "prompt2": "写儒字",
     "sentence": "这是“儒”字。"
   },
   {
@@ -13949,6 +17435,8 @@ window.HSK_CHARS = [
     "meaning": "omen, sign",
     "level": 6,
     "phrase": "预兆",
+    "prompt1": "预兆",
+    "prompt2": "写兆字",
     "sentence": "这是“兆”字。"
   },
   {
@@ -13957,6 +17445,8 @@ window.HSK_CHARS = [
     "meaning": "party; club; association",
     "level": 6,
     "phrase": "党",
+    "prompt1": "党字",
+    "prompt2": "写党字",
     "sentence": "这是“党”字。"
   },
   {
@@ -13965,6 +17455,8 @@ window.HSK_CHARS = [
     "meaning": "pocket; bag; wrap up (in a piece of cloth); move around (in a circle); canvass (solicit); take responsibility",
     "level": 6,
     "phrase": "兜",
+    "prompt1": "兜字",
+    "prompt2": "写兜字",
     "sentence": "这是“兜”字。"
   },
   {
@@ -13973,6 +17465,8 @@ window.HSK_CHARS = [
     "meaning": "cautious and conscientious",
     "level": 6,
     "phrase": "兢兢业业",
+    "prompt1": "兢兢业业",
+    "prompt2": "写兢字",
     "sentence": "这是“兢”字。"
   },
   {
@@ -13981,6 +17475,8 @@ window.HSK_CHARS = [
     "meaning": "birds and animals; the beasts of the field and the birds of the air",
     "level": 6,
     "phrase": "飞禽走兽",
+    "prompt1": "飞禽走兽",
+    "prompt2": "写兽字",
     "sentence": "这是“兽”字。"
   },
   {
@@ -13989,6 +17485,8 @@ window.HSK_CHARS = [
     "meaning": "to wrong; injustice; not worthwhile",
     "level": 6,
     "phrase": "冤枉",
+    "prompt1": "冤枉",
+    "prompt2": "写冤字",
     "sentence": "这是“冤”字。"
   },
   {
@@ -13997,6 +17495,8 @@ window.HSK_CHARS = [
     "meaning": "desolate; feel like no one likes you",
     "level": 6,
     "phrase": "凄凉",
+    "prompt1": "凄凉",
+    "prompt2": "写凄字",
     "sentence": "这是“凄”字。"
   },
   {
@@ -14005,6 +17505,8 @@ window.HSK_CHARS = [
     "meaning": "bring together; make do in a bad situation; improvise",
     "level": 6,
     "phrase": "凑合",
+    "prompt1": "凑合",
+    "prompt2": "写凑字",
     "sentence": "这是“凑”字。"
   },
   {
@@ -14013,6 +17515,8 @@ window.HSK_CHARS = [
     "meaning": "curdle; freeze; solidify; congeal",
     "level": 6,
     "phrase": "凝固",
+    "prompt1": "凝固",
+    "prompt2": "凝视",
     "sentence": "这是“凝”字。"
   },
   {
@@ -14021,6 +17525,8 @@ window.HSK_CHARS = [
     "meaning": "every; any; all; without exception",
     "level": 6,
     "phrase": "凡是",
+    "prompt1": "凡是",
+    "prompt2": "平凡",
     "sentence": "这是“凡”字。"
   },
   {
@@ -14029,6 +17535,8 @@ window.HSK_CHARS = [
     "meaning": "fierce; ferocious; menacing",
     "level": 6,
     "phrase": "凶恶",
+    "prompt1": "凶恶",
+    "prompt2": "凶手",
     "sentence": "这是“凶”字。"
   },
   {
@@ -14037,6 +17545,8 @@ window.HSK_CHARS = [
     "meaning": "(of a surface) uneven; bumpy",
     "level": 6,
     "phrase": "凹凸",
+    "prompt1": "凹凸",
+    "prompt2": "写凸字",
     "sentence": "这是“凸”字。"
   },
   {
@@ -14045,6 +17555,8 @@ window.HSK_CHARS = [
     "meaning": "(of a surface) uneven; bumpy",
     "level": 6,
     "phrase": "凹凸",
+    "prompt1": "凹凸",
+    "prompt2": "写凹字",
     "sentence": "这是“凹”字。"
   },
   {
@@ -14053,6 +17565,8 @@ window.HSK_CHARS = [
     "meaning": "publish in a newspaper; carry a story",
     "level": 6,
     "phrase": "刊登",
+    "prompt1": "刊物",
+    "prompt2": "刊登",
     "sentence": "这是“刊”字。"
   },
   {
@@ -14061,6 +17575,8 @@ window.HSK_CHARS = [
     "meaning": "criminal; penal",
     "level": 6,
     "phrase": "刑事",
+    "prompt1": "刑事",
+    "prompt2": "写刑字",
     "sentence": "这是“刑”字。"
   },
   {
@@ -14069,6 +17585,8 @@ window.HSK_CHARS = [
     "meaning": "bond",
     "level": 6,
     "phrase": "债券",
+    "prompt1": "债券",
+    "prompt2": "写券字",
     "sentence": "这是“券”字。"
   },
   {
@@ -14077,6 +17595,8 @@ window.HSK_CHARS = [
     "meaning": "an instant (Sanskrit: ksana); split second",
     "level": 6,
     "phrase": "刹那",
+    "prompt1": "刹车",
+    "prompt2": "刹那",
     "sentence": "这是“刹”字。"
   },
   {
@@ -14085,6 +17605,8 @@ window.HSK_CHARS = [
     "meaning": "make an adjustment",
     "level": 6,
     "phrase": "调剂",
+    "prompt1": "调剂",
+    "prompt2": "写剂字",
     "sentence": "这是“剂”字。"
   },
   {
@@ -14093,6 +17615,8 @@ window.HSK_CHARS = [
     "meaning": "to pare/peel with a knife; to cut; to chop",
     "level": 6,
     "phrase": "削",
+    "prompt1": "削弱",
+    "prompt2": "剥削",
     "sentence": "这是“削”字。"
   },
   {
@@ -14101,6 +17625,8 @@ window.HSK_CHARS = [
     "meaning": "sword",
     "level": 6,
     "phrase": "剑",
+    "prompt1": "剑字",
+    "prompt2": "写剑字",
     "sentence": "这是“剑”字。"
   },
   {
@@ -14109,6 +17635,8 @@ window.HSK_CHARS = [
     "meaning": "picky; fastidious",
     "level": 6,
     "phrase": "挑剔",
+    "prompt1": "挑剔",
+    "prompt2": "写剔字",
     "sentence": "这是“剔”字。"
   },
   {
@@ -14117,6 +17645,8 @@ window.HSK_CHARS = [
     "meaning": "dissect; analyze; anatomy",
     "level": 6,
     "phrase": "解剖",
+    "prompt1": "解剖",
+    "prompt2": "写剖字",
     "sentence": "这是“剖”字。"
   },
   {
@@ -14125,6 +17655,8 @@ window.HSK_CHARS = [
     "meaning": "to exploit",
     "level": 6,
     "phrase": "剥削",
+    "prompt1": "剥削",
+    "prompt2": "写剥字",
     "sentence": "这是“剥”字。"
   },
   {
@@ -14133,6 +17665,8 @@ window.HSK_CHARS = [
     "meaning": "vice-; secondary; auxiliary; deputy; assistant; classifier for pairs (i.e. glasses)",
     "level": 6,
     "phrase": "副",
+    "prompt1": "名副其实",
+    "prompt2": "写副字",
     "sentence": "这是“副”字。"
   },
   {
@@ -14141,6 +17675,8 @@ window.HSK_CHARS = [
     "meaning": "to cut (apart/off)",
     "level": 6,
     "phrase": "割",
+    "prompt1": "割字",
+    "prompt2": "写割字",
     "sentence": "这是“割”字。"
   },
   {
@@ -14149,6 +17685,8 @@ window.HSK_CHARS = [
     "meaning": "split in two; to divide",
     "level": 6,
     "phrase": "劈",
+    "prompt1": "劈字",
+    "prompt2": "写劈字",
     "sentence": "这是“劈”字。"
   },
   {
@@ -14157,6 +17695,8 @@ window.HSK_CHARS = [
     "meaning": "rob; looting",
     "level": 6,
     "phrase": "抢劫",
+    "prompt1": "抢劫",
+    "prompt2": "写劫字",
     "sentence": "这是“劫”字。"
   },
   {
@@ -14165,6 +17705,8 @@ window.HSK_CHARS = [
     "meaning": "in high spirits",
     "level": 6,
     "phrase": "兴致勃勃",
+    "prompt1": "朝气蓬勃",
+    "prompt2": "兴致勃勃",
     "sentence": "这是“勃”字。"
   },
   {
@@ -14173,6 +17715,8 @@ window.HSK_CHARS = [
     "meaning": "encourage",
     "level": 6,
     "phrase": "勉励",
+    "prompt1": "勉励",
+    "prompt2": "勉强",
     "sentence": "这是“勉”字。"
   },
   {
@@ -14181,6 +17725,8 @@ window.HSK_CHARS = [
     "meaning": "exploration",
     "level": 6,
     "phrase": "勘探",
+    "prompt1": "勘探",
+    "prompt2": "写勘字",
     "sentence": "这是“勘”字。"
   },
   {
@@ -14189,6 +17735,8 @@ window.HSK_CHARS = [
     "meaning": "collude with; collaborate; gang up",
     "level": 6,
     "phrase": "勾结",
+    "prompt1": "勾结",
+    "prompt2": "写勾字",
     "sentence": "这是“勾”字。"
   },
   {
@@ -14197,6 +17745,8 @@ window.HSK_CHARS = [
     "meaning": "make concerted efforts",
     "level": 6,
     "phrase": "齐心协力",
+    "prompt1": "协会",
+    "prompt2": "妥协",
     "sentence": "这是“协”字。"
   },
   {
@@ -14205,6 +17755,8 @@ window.HSK_CHARS = [
     "meaning": "base; mean; despicable; contemptible; unprincipled",
     "level": 6,
     "phrase": "卑鄙",
+    "prompt1": "卑鄙",
+    "prompt2": "自卑",
     "sentence": "这是“卑”字。"
   },
   {
@@ -14213,6 +17765,8 @@ window.HSK_CHARS = [
     "meaning": "distinction; excellence; splendid",
     "level": 6,
     "phrase": "卓越",
+    "prompt1": "卓越",
+    "prompt2": "写卓字",
     "sentence": "这是“卓”字。"
   },
   {
@@ -14221,6 +17775,8 @@ window.HSK_CHARS = [
     "meaning": "load and unload; to transfer",
     "level": 6,
     "phrase": "装卸",
+    "prompt1": "装卸",
+    "prompt2": "写卸字",
     "sentence": "这是“卸”字。"
   },
   {
@@ -14229,6 +17785,8 @@ window.HSK_CHARS = [
     "meaning": "betray; forsake",
     "level": 6,
     "phrase": "背叛",
+    "prompt1": "背叛",
+    "prompt2": "写叛字",
     "sentence": "这是“叛”字。"
   },
   {
@@ -14237,6 +17795,8 @@ window.HSK_CHARS = [
     "meaning": "to overlap",
     "level": 6,
     "phrase": "重叠",
+    "prompt1": "重叠",
+    "prompt2": "写叠字",
     "sentence": "这是“叠”字。"
   },
   {
@@ -14245,6 +17805,8 @@ window.HSK_CHARS = [
     "meaning": "be talkative (especially about trivial matters); be garrulous; prattle",
     "level": 6,
     "phrase": "唠叨",
+    "prompt1": "唠叨",
+    "prompt2": "写叨字",
     "sentence": "这是“叨”字。"
   },
   {
@@ -14253,6 +17815,8 @@ window.HSK_CHARS = [
     "meaning": "horn; trumpet; loudspeaker",
     "level": 6,
     "phrase": "喇叭",
+    "prompt1": "喇叭",
+    "prompt2": "写叭字",
     "sentence": "这是“叭”字。"
   },
   {
@@ -14261,6 +17825,8 @@ window.HSK_CHARS = [
     "meaning": "urge again and again; exhort; repeatedly warn",
     "level": 6,
     "phrase": "叮嘱",
+    "prompt1": "叮嘱",
+    "prompt2": "写叮字",
     "sentence": "这是“叮”字。"
   },
   {
@@ -14269,6 +17835,8 @@ window.HSK_CHARS = [
     "meaning": "to sigh",
     "level": 6,
     "phrase": "叹气",
+    "prompt1": "叹气",
+    "prompt2": "赞叹",
     "sentence": "这是“叹”字。"
   },
   {
@@ -14277,6 +17845,8 @@ window.HSK_CHARS = [
     "meaning": "hold sth. in the mouth",
     "level": 6,
     "phrase": "叼",
+    "prompt1": "叼字",
+    "prompt2": "写叼字",
     "sentence": "这是“叼”字。"
   },
   {
@@ -14285,6 +17855,8 @@ window.HSK_CHARS = [
     "meaning": "call on (someone to do something); appeal",
     "level": 6,
     "phrase": "呼吁",
+    "prompt1": "呼吁",
+    "prompt2": "写吁字",
     "sentence": "这是“吁”字。"
   },
   {
@@ -14293,6 +17865,8 @@ window.HSK_CHARS = [
     "meaning": "lucky",
     "level": 6,
     "phrase": "吉祥",
+    "prompt1": "吉祥",
+    "prompt2": "写吉字",
     "sentence": "这是“吉”字。"
   },
   {
@@ -14301,6 +17875,8 @@ window.HSK_CHARS = [
     "meaning": "hang; suspend",
     "level": 6,
     "phrase": "吊",
+    "prompt1": "吊字",
+    "prompt2": "写吊字",
     "sentence": "这是“吊”字。"
   },
   {
@@ -14309,6 +17885,8 @@ window.HSK_CHARS = [
     "meaning": "gentleman; man of noble character",
     "level": 6,
     "phrase": "君子",
+    "prompt1": "君子",
+    "prompt2": "写君字",
     "sentence": "这是“君”字。"
   },
   {
@@ -14317,6 +17895,8 @@ window.HSK_CHARS = [
     "meaning": "stingy; mean; miserly",
     "level": 6,
     "phrase": "吝啬",
+    "prompt1": "吝啬",
+    "prompt2": "写吝字",
     "sentence": "这是“吝”字。"
   },
   {
@@ -14325,6 +17905,8 @@ window.HSK_CHARS = [
     "meaning": "wolf down one's food (idiom); gorge oneself",
     "level": 6,
     "phrase": "狼吞虎咽",
+    "prompt1": "狼吞虎咽",
+    "prompt2": "吞吞吐吐",
     "sentence": "这是“吞”字。"
   },
   {
@@ -14333,6 +17915,8 @@ window.HSK_CHARS = [
     "meaning": "to moan; to groan",
     "level": 6,
     "phrase": "呻吟",
+    "prompt1": "呻吟",
+    "prompt2": "写吟字",
     "sentence": "这是“吟”字。"
   },
   {
@@ -14341,6 +17925,8 @@ window.HSK_CHARS = [
     "meaning": "instruct; instructions; to tell; to order (to do something)",
     "level": 6,
     "phrase": "吩咐",
+    "prompt1": "吩咐",
+    "prompt2": "写吩字",
     "sentence": "这是“吩”字。"
   },
   {
@@ -14349,6 +17935,8 @@ window.HSK_CHARS = [
     "meaning": "roar; howl",
     "level": 6,
     "phrase": "吼",
+    "prompt1": "吼字",
+    "prompt2": "写吼字",
     "sentence": "这是“吼”字。"
   },
   {
@@ -14357,6 +17945,8 @@ window.HSK_CHARS = [
     "meaning": "appear; emerge; present (a certain appearance)",
     "level": 6,
     "phrase": "呈现",
+    "prompt1": "呈现",
+    "prompt2": "写呈字",
     "sentence": "这是“呈”字。"
   },
   {
@@ -14365,6 +17955,8 @@ window.HSK_CHARS = [
     "meaning": "to vomit; retch; nausea",
     "level": 6,
     "phrase": "呕吐",
+    "prompt1": "呕吐",
+    "prompt2": "写呕字",
     "sentence": "这是“呕”字。"
   },
   {
@@ -14373,6 +17965,8 @@ window.HSK_CHARS = [
     "meaning": "breathe out; scold",
     "level": 6,
     "phrase": "呵",
+    "prompt1": "呵字",
+    "prompt2": "写呵字",
     "sentence": "这是“呵”字。"
   },
   {
@@ -14381,6 +17975,8 @@ window.HSK_CHARS = [
     "meaning": "to moan; to groan",
     "level": 6,
     "phrase": "呻吟",
+    "prompt1": "呻吟",
+    "prompt2": "写呻字",
     "sentence": "这是“呻”字。"
   },
   {
@@ -14389,6 +17985,8 @@ window.HSK_CHARS = [
     "meaning": "to chew",
     "level": 6,
     "phrase": "咀嚼",
+    "prompt1": "咀嚼",
+    "prompt2": "写咀字",
     "sentence": "这是“咀”字。"
   },
   {
@@ -14397,6 +17995,8 @@ window.HSK_CHARS = [
     "meaning": "how/why (contraction of )",
     "level": 6,
     "phrase": "咋",
+    "prompt1": "咋字",
+    "prompt2": "写咋字",
     "sentence": "这是“咋”字。"
   },
   {
@@ -14405,6 +18005,8 @@ window.HSK_CHARS = [
     "meaning": "instruct; instructions; to tell; to order (to do something)",
     "level": 6,
     "phrase": "吩咐",
+    "prompt1": "吩咐",
+    "prompt2": "嘱咐",
     "sentence": "这是“咐”字。"
   },
   {
@@ -14413,6 +18015,8 @@ window.HSK_CHARS = [
     "meaning": "throat; larynx",
     "level": 6,
     "phrase": "喉咙",
+    "prompt1": "喉咙",
+    "prompt2": "写咙字",
     "sentence": "这是“咙”字。"
   },
   {
@@ -14421,6 +18025,8 @@ window.HSK_CHARS = [
     "meaning": "wolf down one's food (idiom); gorge oneself",
     "level": 6,
     "phrase": "狼吞虎咽",
+    "prompt1": "狼吞虎咽",
+    "prompt2": "写咽字",
     "sentence": "这是“咽”字。"
   },
   {
@@ -14429,6 +18035,8 @@ window.HSK_CHARS = [
     "meaning": "grieved; sorrowful; sad",
     "level": 6,
     "phrase": "悲哀",
+    "prompt1": "悲哀",
+    "prompt2": "写哀字",
     "sentence": "这是“哀”字。"
   },
   {
@@ -14437,6 +18045,8 @@ window.HSK_CHARS = [
     "meaning": "fool; coax; to amuse (a child)",
     "level": 6,
     "phrase": "哄",
+    "prompt1": "起哄",
+    "prompt2": "写哄字",
     "sentence": "这是“哄”字。"
   },
   {
@@ -14445,6 +18055,8 @@ window.HSK_CHARS = [
     "meaning": "tremble; to shiver; to quiver",
     "level": 6,
     "phrase": "哆嗦",
+    "prompt1": "哆嗦",
+    "prompt2": "写哆字",
     "sentence": "这是“哆”字。"
   },
   {
@@ -14453,6 +18065,8 @@ window.HSK_CHARS = [
     "meaning": "wow; (sound of crying or surprise)",
     "level": 6,
     "phrase": "哇",
+    "prompt1": "哇字",
+    "prompt2": "写哇字",
     "sentence": "这是“哇”字。"
   },
   {
@@ -14461,6 +18075,8 @@ window.HSK_CHARS = [
     "meaning": "deaf and dumb; deaf-mute",
     "level": 6,
     "phrase": "聋哑",
+    "prompt1": "聋哑",
+    "prompt2": "写哑字",
     "sentence": "这是“哑”字。"
   },
   {
@@ -14469,6 +18085,8 @@ window.HSK_CHARS = [
     "meaning": "cause a scene",
     "level": 6,
     "phrase": "喧哗",
+    "prompt1": "喧哗",
+    "prompt2": "写哗字",
     "sentence": "这是“哗”字。"
   },
   {
@@ -14477,6 +18095,8 @@ window.HSK_CHARS = [
     "meaning": "oh (indicates understanding)",
     "level": 6,
     "phrase": "哦",
+    "prompt1": "哦字",
+    "prompt2": "写哦字",
     "sentence": "这是“哦”字。"
   },
   {
@@ -14485,6 +18105,8 @@ window.HSK_CHARS = [
     "meaning": "a whistle; sentry post",
     "level": 6,
     "phrase": "哨",
+    "prompt1": "哨字",
+    "prompt2": "写哨字",
     "sentence": "这是“哨”字。"
   },
   {
@@ -14493,6 +18115,8 @@ window.HSK_CHARS = [
     "meaning": "breast-feeding; to suckle",
     "level": 6,
     "phrase": "哺乳",
+    "prompt1": "哺乳",
+    "prompt2": "写哺字",
     "sentence": "这是“哺”字。"
   },
   {
@@ -14501,6 +18125,8 @@ window.HSK_CHARS = [
     "meaning": "groan; snort; to hum; croon",
     "level": 6,
     "phrase": "哼",
+    "prompt1": "哼字",
+    "prompt2": "写哼字",
     "sentence": "这是“哼”字。"
   },
   {
@@ -14509,6 +18135,8 @@ window.HSK_CHARS = [
     "meaning": "long-winded; wordy; troublesome; pesky",
     "level": 6,
     "phrase": "啰唆",
+    "prompt1": "啰唆",
+    "prompt2": "写唆字",
     "sentence": "这是“唆”字。"
   },
   {
@@ -14517,6 +18145,8 @@ window.HSK_CHARS = [
     "meaning": "lip",
     "level": 6,
     "phrase": "嘴唇",
+    "prompt1": "嘴唇",
+    "prompt2": "写唇字",
     "sentence": "这是“唇”字。"
   },
   {
@@ -14525,6 +18155,8 @@ window.HSK_CHARS = [
     "meaning": "beyond belief; preposterous; absurd; intemperate",
     "level": 6,
     "phrase": "荒唐",
+    "prompt1": "荒唐",
+    "prompt2": "写唐字",
     "sentence": "这是“唐”字。"
   },
   {
@@ -14533,6 +18165,8 @@ window.HSK_CHARS = [
     "meaning": "be talkative (especially about trivial matters); be garrulous; prattle",
     "level": 6,
     "phrase": "唠叨",
+    "prompt1": "唠叨",
+    "prompt2": "写唠字",
     "sentence": "这是“唠”字。"
   },
   {
@@ -14541,6 +18175,8 @@ window.HSK_CHARS = [
     "meaning": "call out (a name etc.); shout",
     "level": 6,
     "phrase": "呼唤",
+    "prompt1": "呼唤",
+    "prompt2": "写唤字",
     "sentence": "这是“唤”字。"
   },
   {
@@ -14549,6 +18185,8 @@ window.HSK_CHARS = [
     "meaning": "cast aside; spurn",
     "level": 6,
     "phrase": "唾弃",
+    "prompt1": "唾弃",
+    "prompt2": "写唾字",
     "sentence": "这是“唾”字。"
   },
   {
@@ -14557,6 +18195,8 @@ window.HSK_CHARS = [
     "meaning": "gnaw; nibble; bite",
     "level": 6,
     "phrase": "啃",
+    "prompt1": "啃字",
+    "prompt2": "写啃字",
     "sentence": "这是“啃”字。"
   },
   {
@@ -14565,6 +18205,8 @@ window.HSK_CHARS = [
     "meaning": "(spoken) what",
     "level": 6,
     "phrase": "啥",
+    "prompt1": "啥字",
+    "prompt2": "写啥字",
     "sentence": "这是“啥”字。"
   },
   {
@@ -14573,6 +18215,8 @@ window.HSK_CHARS = [
     "meaning": "sentence-final particle: a contraction of (le) and (a)",
     "level": 6,
     "phrase": "啦",
+    "prompt1": "啦字",
+    "prompt2": "写啦字",
     "sentence": "这是“啦”字。"
   },
   {
@@ -14581,6 +18225,8 @@ window.HSK_CHARS = [
     "meaning": "stingy; mean; miserly",
     "level": 6,
     "phrase": "吝啬",
+    "prompt1": "吝啬",
+    "prompt2": "写啬字",
     "sentence": "这是“啬”字。"
   },
   {
@@ -14589,6 +18235,8 @@ window.HSK_CHARS = [
     "meaning": "long-winded; wordy; troublesome; pesky",
     "level": 6,
     "phrase": "啰唆",
+    "prompt1": "啰唆",
+    "prompt2": "写啰字",
     "sentence": "这是“啰”字。"
   },
   {
@@ -14597,6 +18245,8 @@ window.HSK_CHARS = [
     "meaning": "whistle; scream; howl",
     "level": 6,
     "phrase": "呼啸",
+    "prompt1": "呼啸",
+    "prompt2": "写啸字",
     "sentence": "这是“啸”字。"
   },
   {
@@ -14605,6 +18255,8 @@ window.HSK_CHARS = [
     "meaning": "horn; trumpet; loudspeaker",
     "level": 6,
     "phrase": "喇叭",
+    "prompt1": "喇叭",
+    "prompt2": "写喇字",
     "sentence": "这是“喇”字。"
   },
   {
@@ -14613,6 +18265,8 @@ window.HSK_CHARS = [
     "meaning": "throat; larynx",
     "level": 6,
     "phrase": "喉咙",
+    "prompt1": "喉咙",
+    "prompt2": "写喉字",
     "sentence": "这是“喉”字。"
   },
   {
@@ -14621,6 +18275,8 @@ window.HSK_CHARS = [
     "meaning": "to pant; gasp for breath",
     "level": 6,
     "phrase": "喘气",
+    "prompt1": "喘气",
+    "prompt2": "写喘字",
     "sentence": "这是“喘”字。"
   },
   {
@@ -14629,6 +18285,8 @@ window.HSK_CHARS = [
     "meaning": "cause a scene",
     "level": 6,
     "phrase": "喧哗",
+    "prompt1": "喧哗",
+    "prompt2": "写喧字",
     "sentence": "这是“喧”字。"
   },
   {
@@ -14637,6 +18295,8 @@ window.HSK_CHARS = [
     "meaning": "metaphor; analogy; figure of speech",
     "level": 6,
     "phrase": "比喻",
+    "prompt1": "比喻",
+    "prompt2": "家喻户晓",
     "sentence": "这是“喻”字。"
   },
   {
@@ -14645,6 +18305,8 @@ window.HSK_CHARS = [
     "meaning": "sense of smell; scent",
     "level": 6,
     "phrase": "嗅觉",
+    "prompt1": "嗅觉",
+    "prompt2": "写嗅字",
     "sentence": "这是“嗅”字。"
   },
   {
@@ -14653,6 +18315,8 @@ window.HSK_CHARS = [
     "meaning": "tremble; to shiver; to quiver",
     "level": 6,
     "phrase": "哆嗦",
+    "prompt1": "哆嗦",
+    "prompt2": "写嗦字",
     "sentence": "这是“嗦”字。"
   },
   {
@@ -14661,6 +18325,8 @@ window.HSK_CHARS = [
     "meaning": "hey/hi (loanword); oh; alas;",
     "level": 6,
     "phrase": "嗨",
+    "prompt1": "嗨字",
+    "prompt2": "写嗨字",
     "sentence": "这是“嗨”字。"
   },
   {
@@ -14669,6 +18335,8 @@ window.HSK_CHARS = [
     "meaning": "noisy; raucous",
     "level": 6,
     "phrase": "嘈杂",
+    "prompt1": "嘈杂",
+    "prompt2": "写嘈字",
     "sentence": "这是“嘈”字。"
   },
   {
@@ -14677,6 +18345,8 @@ window.HSK_CHARS = [
     "meaning": "(used to persuade somebody to do something); (particle indicating obviousness) | (colloqial) what?",
     "level": 6,
     "phrase": "嘛",
+    "prompt1": "干嘛",
+    "prompt2": "好嘛",
     "sentence": "这是“嘛”字。"
   },
   {
@@ -14685,6 +18355,8 @@ window.HSK_CHARS = [
     "meaning": "urge again and again; exhort; repeatedly warn",
     "level": 6,
     "phrase": "叮嘱",
+    "prompt1": "嘱咐",
+    "prompt2": "叮嘱",
     "sentence": "这是“嘱”字。"
   },
   {
@@ -14693,6 +18365,8 @@ window.HSK_CHARS = [
     "meaning": "jeer; mock; scoff",
     "level": 6,
     "phrase": "嘲笑",
+    "prompt1": "嘲笑",
+    "prompt2": "写嘲字",
     "sentence": "这是“嘲”字。"
   },
   {
@@ -14701,6 +18375,8 @@ window.HSK_CHARS = [
     "meaning": "hey; interjection for calling attention",
     "level": 6,
     "phrase": "嘿",
+    "prompt1": "嘿字",
+    "prompt2": "写嘿字",
     "sentence": "这是“嘿”字。"
   },
   {
@@ -14709,6 +18385,8 @@ window.HSK_CHARS = [
     "meaning": "uproar; rumble; noise; static",
     "level": 6,
     "phrase": "噪音",
+    "prompt1": "噪音",
+    "prompt2": "写噪字",
     "sentence": "这是“噪”字。"
   },
   {
@@ -14717,6 +18395,8 @@ window.HSK_CHARS = [
     "meaning": "blurt out; shout",
     "level": 6,
     "phrase": "嚷",
+    "prompt1": "嚷字",
+    "prompt2": "写嚷字",
     "sentence": "这是“嚷”字。"
   },
   {
@@ -14725,6 +18405,8 @@ window.HSK_CHARS = [
     "meaning": "to chew",
     "level": 6,
     "phrase": "咀嚼",
+    "prompt1": "咀嚼",
+    "prompt2": "写嚼字",
     "sentence": "这是“嚼”字。"
   },
   {
@@ -14733,6 +18415,8 @@ window.HSK_CHARS = [
     "meaning": "divine; holy; sacred",
     "level": 6,
     "phrase": "神圣",
+    "prompt1": "神圣",
+    "prompt2": "写圣字",
     "sentence": "这是“圣”字。"
   },
   {
@@ -14741,6 +18425,8 @@ window.HSK_CHARS = [
     "meaning": "pit; hole; defraud",
     "level": 6,
     "phrase": "坑",
+    "prompt1": "坑字",
+    "prompt2": "写坑字",
     "sentence": "这是“坑”字。"
   },
   {
@@ -14749,6 +18435,8 @@ window.HSK_CHARS = [
     "meaning": "forum",
     "level": 6,
     "phrase": "论坛",
+    "prompt1": "论坛",
+    "prompt2": "写坛字",
     "sentence": "这是“坛”字。"
   },
   {
@@ -14757,6 +18445,8 @@ window.HSK_CHARS = [
     "meaning": "dam; dyke",
     "level": 6,
     "phrase": "堤坝",
+    "prompt1": "堤坝",
+    "prompt2": "写坝字",
     "sentence": "这是“坝”字。"
   },
   {
@@ -14765,6 +18455,8 @@ window.HSK_CHARS = [
     "meaning": "tomb; sepulcher",
     "level": 6,
     "phrase": "坟墓",
+    "prompt1": "坟墓",
+    "prompt2": "写坟字",
     "sentence": "这是“坟”字。"
   },
   {
@@ -14773,6 +18465,8 @@ window.HSK_CHARS = [
     "meaning": "fall; drop",
     "level": 6,
     "phrase": "坠",
+    "prompt1": "坠字",
+    "prompt2": "写坠字",
     "sentence": "这是“坠”字。"
   },
   {
@@ -14781,6 +18475,8 @@ window.HSK_CHARS = [
     "meaning": "slope",
     "level": 6,
     "phrase": "坡",
+    "prompt1": "坡字",
+    "prompt2": "写坡字",
     "sentence": "这是“坡”字。"
   },
   {
@@ -14789,6 +18485,8 @@ window.HSK_CHARS = [
     "meaning": "perpendicular; vertical",
     "level": 6,
     "phrase": "垂直",
+    "prompt1": "垂直",
+    "prompt2": "写垂字",
     "sentence": "这是“垂”字。"
   },
   {
@@ -14797,6 +18495,8 @@ window.HSK_CHARS = [
     "meaning": "monopoly",
     "level": 6,
     "phrase": "垄断",
+    "prompt1": "垄断",
+    "prompt2": "写垄字",
     "sentence": "这是“垄”字。"
   },
   {
@@ -14805,6 +18505,8 @@ window.HSK_CHARS = [
     "meaning": "cushion; to pad; pay for somebody and expect to be repaid",
     "level": 6,
     "phrase": "垫",
+    "prompt1": "垫字",
+    "prompt2": "写垫字",
     "sentence": "这是“垫”字。"
   },
   {
@@ -14813,6 +18515,8 @@ window.HSK_CHARS = [
     "meaning": "ambush; lie in ambush",
     "level": 6,
     "phrase": "埋伏",
+    "prompt1": "埋伏",
+    "prompt2": "埋葬",
     "sentence": "这是“埋”字。"
   },
   {
@@ -14821,6 +18525,8 @@ window.HSK_CHARS = [
     "meaning": "paradise; heaven",
     "level": 6,
     "phrase": "天堂",
+    "prompt1": "天堂",
+    "prompt2": "写堂字",
     "sentence": "这是“堂”字。"
   },
   {
@@ -14829,6 +18535,8 @@ window.HSK_CHARS = [
     "meaning": "morally degenerate; become depraved",
     "level": 6,
     "phrase": "堕落",
+    "prompt1": "堕落",
+    "prompt2": "写堕字",
     "sentence": "这是“堕”字。"
   },
   {
@@ -14837,6 +18545,8 @@ window.HSK_CHARS = [
     "meaning": "castle",
     "level": 6,
     "phrase": "城堡",
+    "prompt1": "城堡",
+    "prompt2": "写堡字",
     "sentence": "这是“堡”字。"
   },
   {
@@ -14845,6 +18555,8 @@ window.HSK_CHARS = [
     "meaning": "dam; dyke",
     "level": 6,
     "phrase": "堤坝",
+    "prompt1": "堤坝",
+    "prompt2": "写堤字",
     "sentence": "这是“堤”字。"
   },
   {
@@ -14853,6 +18565,8 @@ window.HSK_CHARS = [
     "meaning": "cannot bear/stand; utterly",
     "level": 6,
     "phrase": "不堪",
+    "prompt1": "不堪",
+    "prompt2": "难堪",
     "sentence": "这是“堪”字。"
   },
   {
@@ -14861,6 +18575,8 @@ window.HSK_CHARS = [
     "meaning": "collapse; fall down; crumple",
     "level": 6,
     "phrase": "塌",
+    "prompt1": "塌字",
+    "prompt2": "写塌字",
     "sentence": "这是“塌”字。"
   },
   {
@@ -14869,6 +18585,8 @@ window.HSK_CHARS = [
     "meaning": "pagoda; tower",
     "level": 6,
     "phrase": "塔",
+    "prompt1": "塔字",
+    "prompt2": "写塔字",
     "sentence": "这是“塔”字。"
   },
   {
@@ -14877,6 +18595,8 @@ window.HSK_CHARS = [
     "meaning": "stop up; shelter from; hard to get to; unenlightened",
     "level": 6,
     "phrase": "闭塞",
+    "prompt1": "堵塞",
+    "prompt2": "闭塞",
     "sentence": "这是“塞”字。"
   },
   {
@@ -14885,6 +18605,8 @@ window.HSK_CHARS = [
     "meaning": "villa",
     "level": 6,
     "phrase": "别墅",
+    "prompt1": "别墅",
+    "prompt2": "写墅字",
     "sentence": "这是“墅”字。"
   },
   {
@@ -14893,6 +18615,8 @@ window.HSK_CHARS = [
     "meaning": "tomb; sepulcher",
     "level": 6,
     "phrase": "坟墓",
+    "prompt1": "坟墓",
+    "prompt2": "写墓字",
     "sentence": "这是“墓”字。"
   },
   {
@@ -14901,6 +18625,8 @@ window.HSK_CHARS = [
     "meaning": "ruins",
     "level": 6,
     "phrase": "废墟",
+    "prompt1": "废墟",
+    "prompt2": "写墟字",
     "sentence": "这是“墟”字。"
   },
   {
@@ -14909,6 +18635,8 @@ window.HSK_CHARS = [
     "meaning": "ink",
     "level": 6,
     "phrase": "墨水儿",
+    "prompt1": "墨水儿",
+    "prompt2": "写墨字",
     "sentence": "这是“墨”字。"
   },
   {
@@ -14917,6 +18645,8 @@ window.HSK_CHARS = [
     "meaning": "soil; earth",
     "level": 6,
     "phrase": "土壤",
+    "prompt1": "土壤",
+    "prompt2": "写壤字",
     "sentence": "这是“壤”字。"
   },
   {
@@ -14925,6 +18655,8 @@ window.HSK_CHARS = [
     "meaning": "with justice on one's side, one is bold and assured; to have the courage of ones convictions; just and forceful",
     "level": 6,
     "phrase": "理直气壮",
+    "prompt1": "壮丽",
+    "prompt2": "壮观",
     "sentence": "这是“壮”字。"
   },
   {
@@ -14933,6 +18665,8 @@ window.HSK_CHARS = [
     "meaning": "shell; conch; cowry",
     "level": 6,
     "phrase": "贝壳",
+    "prompt1": "贝壳",
+    "prompt2": "写壳字",
     "sentence": "这是“壳”字。"
   },
   {
@@ -14941,6 +18675,8 @@ window.HSK_CHARS = [
     "meaning": "central; middle; center",
     "level": 6,
     "phrase": "中央",
+    "prompt1": "中央",
+    "prompt2": "写央字",
     "sentence": "这是“央”字。"
   },
   {
@@ -14949,6 +18685,8 @@ window.HSK_CHARS = [
     "meaning": "to plunder; rob; pillage",
     "level": 6,
     "phrase": "掠夺",
+    "prompt1": "争夺",
+    "prompt2": "掠夺",
     "sentence": "这是“夺”字。"
   },
   {
@@ -14957,6 +18695,8 @@ window.HSK_CHARS = [
     "meaning": "consecrate; dedicate; devote",
     "level": 6,
     "phrase": "奉献",
+    "prompt1": "奉献",
+    "prompt2": "写奉字",
     "sentence": "这是“奉”字。"
   },
   {
@@ -14965,6 +18705,8 @@ window.HSK_CHARS = [
     "meaning": "rhythm; cadence; tempo",
     "level": 6,
     "phrase": "节奏",
+    "prompt1": "演奏",
+    "prompt2": "节奏",
     "sentence": "这是“奏”字。"
   },
   {
@@ -14973,6 +18715,8 @@ window.HSK_CHARS = [
     "meaning": "rush about; be busy running about",
     "level": 6,
     "phrase": "奔波",
+    "prompt1": "奔波",
+    "prompt2": "奔驰",
     "sentence": "这是“奔”字。"
   },
   {
@@ -14981,6 +18725,8 @@ window.HSK_CHARS = [
     "meaning": "establish; to found; to settle",
     "level": 6,
     "phrase": "奠定",
+    "prompt1": "奠定",
+    "prompt2": "写奠字",
     "sentence": "这是“奠”字。"
   },
   {
@@ -14989,6 +18735,8 @@ window.HSK_CHARS = [
     "meaning": "luxury; sumptuous; extravagant",
     "level": 6,
     "phrase": "奢侈",
+    "prompt1": "奢侈",
+    "prompt2": "写奢字",
     "sentence": "这是“奢”字。"
   },
   {
@@ -14997,6 +18745,8 @@ window.HSK_CHARS = [
     "meaning": "mystery; enigma; profound; deep",
     "level": 6,
     "phrase": "奥秘",
+    "prompt1": "奥秘",
+    "prompt2": "深奥",
     "sentence": "这是“奥”字。"
   },
   {
@@ -15005,6 +18755,8 @@ window.HSK_CHARS = [
     "meaning": "slave",
     "level": 6,
     "phrase": "奴隶",
+    "prompt1": "奴隶",
+    "prompt2": "写奴字",
     "sentence": "这是“奴”字。"
   },
   {
@@ -15013,6 +18765,8 @@ window.HSK_CHARS = [
     "meaning": "vainly hope; wishful thinking; delusion",
     "level": 6,
     "phrase": "妄想",
+    "prompt1": "妄想",
+    "prompt2": "写妄字",
     "sentence": "这是“妄”字。"
   },
   {
@@ -15021,6 +18775,8 @@ window.HSK_CHARS = [
     "meaning": "put on make-up",
     "level": 6,
     "phrase": "化妆",
+    "prompt1": "化妆",
+    "prompt2": "写妆字",
     "sentence": "这是“妆”字。"
   },
   {
@@ -15029,6 +18785,8 @@ window.HSK_CHARS = [
     "meaning": "to be jealous; to envy, covet; to hate; to begrudge",
     "level": 6,
     "phrase": "嫉妒",
+    "prompt1": "嫉妒",
+    "prompt2": "写妒字",
     "sentence": "这是“妒”字。"
   },
   {
@@ -15037,6 +18795,8 @@ window.HSK_CHARS = [
     "meaning": "appropriate; proper; pertinence",
     "level": 6,
     "phrase": "妥当",
+    "prompt1": "妥协",
+    "prompt2": "妥当",
     "sentence": "这是“妥”字。"
   },
   {
@@ -15045,6 +18805,8 @@ window.HSK_CHARS = [
     "meaning": "nanny; housekeeper",
     "level": 6,
     "phrase": "保姆",
+    "prompt1": "保姆",
+    "prompt2": "写姆字",
     "sentence": "这是“姆”字。"
   },
   {
@@ -15053,6 +18815,8 @@ window.HSK_CHARS = [
     "meaning": "baby; child; doll",
     "level": 6,
     "phrase": "娃娃",
+    "prompt1": "娃娃",
+    "prompt2": "写娃字",
     "sentence": "这是“娃”字。"
   },
   {
@@ -15061,6 +18825,8 @@ window.HSK_CHARS = [
     "meaning": "delicate; effeminate; squeamish",
     "level": 6,
     "phrase": "娇气",
+    "prompt1": "娇气",
+    "prompt2": "写娇字",
     "sentence": "这是“娇”字。"
   },
   {
@@ -15069,6 +18835,8 @@ window.HSK_CHARS = [
     "meaning": "greedy; avaricious",
     "level": 6,
     "phrase": "贪婪",
+    "prompt1": "贪婪",
+    "prompt2": "写婪字",
     "sentence": "这是“婪”字。"
   },
   {
@@ -15077,6 +18845,8 @@ window.HSK_CHARS = [
     "meaning": "baby infant",
     "level": 6,
     "phrase": "婴儿",
+    "prompt1": "婴儿",
+    "prompt2": "写婴字",
     "sentence": "这是“婴”字。"
   },
   {
@@ -15085,6 +18855,8 @@ window.HSK_CHARS = [
     "meaning": "daughter-in-law; son's wife",
     "level": 6,
     "phrase": "媳妇",
+    "prompt1": "媳妇",
+    "prompt2": "写媳字",
     "sentence": "这是“媳”字。"
   },
   {
@@ -15093,6 +18865,8 @@ window.HSK_CHARS = [
     "meaning": "(informal) elder brother's wife; sister-in-law",
     "level": 6,
     "phrase": "嫂子",
+    "prompt1": "嫂子",
+    "prompt2": "写嫂字",
     "sentence": "这是“嫂”字。"
   },
   {
@@ -15101,6 +18875,8 @@ window.HSK_CHARS = [
     "meaning": "to be jealous; to envy, covet; to hate; to begrudge",
     "level": 6,
     "phrase": "嫉妒",
+    "prompt1": "嫉妒",
+    "prompt2": "写嫉字",
     "sentence": "这是“嫉”字。"
   },
   {
@@ -15109,6 +18885,8 @@ window.HSK_CHARS = [
     "meaning": "to dislike; suspicion; grudge",
     "level": 6,
     "phrase": "嫌",
+    "prompt1": "嫌疑",
+    "prompt2": "写嫌字",
     "sentence": "这是“嫌”字。"
   },
   {
@@ -15117,6 +18895,8 @@ window.HSK_CHARS = [
     "meaning": "hole",
     "level": 6,
     "phrase": "孔",
+    "prompt1": "孔字",
+    "prompt2": "写孔字",
     "sentence": "这是“孔”字。"
   },
   {
@@ -15125,6 +18905,8 @@ window.HSK_CHARS = [
     "meaning": "lonely; solitary",
     "level": 6,
     "phrase": "孤独",
+    "prompt1": "孤独",
+    "prompt2": "孤立",
     "sentence": "这是“孤”字。"
   },
   {
@@ -15133,6 +18915,8 @@ window.HSK_CHARS = [
     "meaning": "residence; tenement",
     "level": 6,
     "phrase": "住宅",
+    "prompt1": "住宅",
+    "prompt2": "写宅字",
     "sentence": "这是“宅”字。"
   },
   {
@@ -15141,6 +18925,8 @@ window.HSK_CHARS = [
     "meaning": "universe; cosmos",
     "level": 6,
     "phrase": "宇宙",
+    "prompt1": "宇宙",
+    "prompt2": "写宇字",
     "sentence": "这是“宇”字。"
   },
   {
@@ -15149,6 +18935,8 @@ window.HSK_CHARS = [
     "meaning": "macro-; macroscopic",
     "level": 6,
     "phrase": "宏观",
+    "prompt1": "宏伟",
+    "prompt2": "宏观",
     "sentence": "这是“宏”字。"
   },
   {
@@ -15157,6 +18945,8 @@ window.HSK_CHARS = [
     "meaning": "authentic, orthodox; old school",
     "level": 6,
     "phrase": "正宗",
+    "prompt1": "宗教",
+    "prompt2": "正宗",
     "sentence": "这是“宗”字。"
   },
   {
@@ -15165,6 +18955,8 @@ window.HSK_CHARS = [
     "meaning": "universe; cosmos",
     "level": 6,
     "phrase": "宇宙",
+    "prompt1": "宇宙",
+    "prompt2": "写宙字",
     "sentence": "这是“宙”字。"
   },
   {
@@ -15173,6 +18965,8 @@ window.HSK_CHARS = [
     "meaning": "examine; investigate; censorship",
     "level": 6,
     "phrase": "审查",
+    "prompt1": "审判",
+    "prompt2": "审美",
     "sentence": "这是“审”字。"
   },
   {
@@ -15181,6 +18975,8 @@ window.HSK_CHARS = [
     "meaning": "constitution; charter",
     "level": 6,
     "phrase": "宪法",
+    "prompt1": "宪法",
+    "prompt2": "写宪字",
     "sentence": "这是“宪”字。"
   },
   {
@@ -15189,6 +18985,8 @@ window.HSK_CHARS = [
     "meaning": "palace",
     "level": 6,
     "phrase": "宫殿",
+    "prompt1": "宫殿",
+    "prompt2": "写宫字",
     "sentence": "这是“宫”字。"
   },
   {
@@ -15197,6 +18995,8 @@ window.HSK_CHARS = [
     "meaning": "slaughter; butcher; govern; rule; imperial official in dynastic China",
     "level": 6,
     "phrase": "宰",
+    "prompt1": "宰字",
+    "prompt2": "写宰字",
     "sentence": "这是“宰”字。"
   },
   {
@@ -15205,6 +19005,8 @@ window.HSK_CHARS = [
     "meaning": "the Lantern Festival",
     "level": 6,
     "phrase": "元宵节",
+    "prompt1": "元宵节",
+    "prompt2": "写宵字",
     "sentence": "这是“宵”字。"
   },
   {
@@ -15213,6 +19015,8 @@ window.HSK_CHARS = [
     "meaning": "to forget even sleeping and eating",
     "level": 6,
     "phrase": "废寝忘食",
+    "prompt1": "废寝忘食",
+    "prompt2": "写寝字",
     "sentence": "这是“寝”字。"
   },
   {
@@ -15221,6 +19025,8 @@ window.HSK_CHARS = [
     "meaning": "propriety; the limits of proper speech or action",
     "level": 6,
     "phrase": "分寸",
+    "prompt1": "分寸",
+    "prompt2": "写寸字",
     "sentence": "这是“寸”字。"
   },
   {
@@ -15229,6 +19035,8 @@ window.HSK_CHARS = [
     "meaning": "temple; monastery",
     "level": 6,
     "phrase": "寺庙",
+    "prompt1": "寺庙",
+    "prompt2": "写寺字",
     "sentence": "这是“寺”字。"
   },
   {
@@ -15237,6 +19045,8 @@ window.HSK_CHARS = [
     "meaning": "highest peak; the tip; sharp pointed end; most advanced and sophisticated",
     "level": 6,
     "phrase": "尖端",
+    "prompt1": "尖端",
+    "prompt2": "尖锐",
     "sentence": "这是“尖”字。"
   },
   {
@@ -15245,6 +19055,8 @@ window.HSK_CHARS = [
     "meaning": "awkward; embarrassed",
     "level": 6,
     "phrase": "尴尬",
+    "prompt1": "尴尬",
+    "prompt2": "写尬字",
     "sentence": "这是“尬”字。"
   },
   {
@@ -15253,6 +19065,8 @@ window.HSK_CHARS = [
     "meaning": "awkward; embarrassed",
     "level": 6,
     "phrase": "尴尬",
+    "prompt1": "尴尬",
+    "prompt2": "写尴字",
     "sentence": "这是“尴”字。"
   },
   {
@@ -15261,6 +19075,8 @@ window.HSK_CHARS = [
     "meaning": "dead body; corpse; carcass",
     "level": 6,
     "phrase": "尸体",
+    "prompt1": "尸体",
+    "prompt2": "写尸字",
     "sentence": "这是“尸”字。"
   },
   {
@@ -15269,6 +19085,8 @@ window.HSK_CHARS = [
     "meaning": "butt; rear; rump",
     "level": 6,
     "phrase": "屁股",
+    "prompt1": "屁股",
+    "prompt2": "写屁字",
     "sentence": "这是“屁”字。"
   },
   {
@@ -15277,6 +19095,8 @@ window.HSK_CHARS = [
     "meaning": "screen (TV, etc.)",
     "level": 6,
     "phrase": "屏幕",
+    "prompt1": "屏幕",
+    "prompt2": "屏障",
     "sentence": "这是“屏”字。"
   },
   {
@@ -15285,6 +19105,8 @@ window.HSK_CHARS = [
     "meaning": "crumbs; filings; worth while",
     "level": 6,
     "phrase": "屑",
+    "prompt1": "不屑一顾",
+    "prompt2": "写屑字",
     "sentence": "这是“屑”字。"
   },
   {
@@ -15293,6 +19115,8 @@ window.HSK_CHARS = [
     "meaning": "repeatedly; time and again; frequently",
     "level": 6,
     "phrase": "屡次",
+    "prompt1": "屡次",
+    "prompt2": "写屡字",
     "sentence": "这是“屡”字。"
   },
   {
@@ -15301,6 +19125,8 @@ window.HSK_CHARS = [
     "meaning": "fulfill (one's obligations); carry out",
     "level": 6,
     "phrase": "履行",
+    "prompt1": "履行",
+    "prompt2": "写履字",
     "sentence": "这是“履”字。"
   },
   {
@@ -15309,6 +19135,8 @@ window.HSK_CHARS = [
     "meaning": "outrageous; ridiculous; absurd",
     "level": 6,
     "phrase": "岂有此理",
+    "prompt1": "岂有此理",
+    "prompt2": "写岂字",
     "sentence": "这是“岂”字。"
   },
   {
@@ -15317,6 +19145,8 @@ window.HSK_CHARS = [
     "meaning": "fork in the road; turn off; diverge",
     "level": 6,
     "phrase": "岔",
+    "prompt1": "岔字",
+    "prompt2": "写岔字",
     "sentence": "这是“岔”字。"
   },
   {
@@ -15325,6 +19155,8 @@ window.HSK_CHARS = [
     "meaning": "a post; a job",
     "level": 6,
     "phrase": "岗位",
+    "prompt1": "岗位",
+    "prompt2": "写岗字",
     "sentence": "这是“岗”字。"
   },
   {
@@ -15333,6 +19165,8 @@ window.HSK_CHARS = [
     "meaning": "rock; stone",
     "level": 6,
     "phrase": "岩石",
+    "prompt1": "岩石",
+    "prompt2": "写岩字",
     "sentence": "这是“岩”字。"
   },
   {
@@ -15341,6 +19175,8 @@ window.HSK_CHARS = [
     "meaning": "wife's mother; mother-in-law",
     "level": 6,
     "phrase": "岳母",
+    "prompt1": "岳母",
+    "prompt2": "写岳字",
     "sentence": "这是“岳”字。"
   },
   {
@@ -15349,6 +19185,8 @@ window.HSK_CHARS = [
     "meaning": "canyon; ravine; gorge",
     "level": 6,
     "phrase": "峡谷",
+    "prompt1": "峡谷",
+    "prompt2": "写峡字",
     "sentence": "这是“峡”字。"
   },
   {
@@ -15357,6 +19195,8 @@ window.HSK_CHARS = [
     "meaning": "steep; precipitous",
     "level": 6,
     "phrase": "陡峭",
+    "prompt1": "陡峭",
+    "prompt2": "悬崖峭壁",
     "sentence": "这是“峭”字。"
   },
   {
@@ -15365,6 +19205,8 @@ window.HSK_CHARS = [
     "meaning": "peak; summit; apex",
     "level": 6,
     "phrase": "高峰",
+    "prompt1": "高峰",
+    "prompt2": "写峰字",
     "sentence": "这是“峰”字。"
   },
   {
@@ -15373,6 +19215,8 @@ window.HSK_CHARS = [
     "meaning": "grim; severe; rigorous; harsh",
     "level": 6,
     "phrase": "严峻",
+    "prompt1": "严峻",
+    "prompt2": "写峻字",
     "sentence": "这是“峻”字。"
   },
   {
@@ -15381,6 +19225,8 @@ window.HSK_CHARS = [
     "meaning": "worship; adore",
     "level": 6,
     "phrase": "崇拜",
+    "prompt1": "崇拜",
+    "prompt2": "崇高",
     "sentence": "这是“崇”字。"
   },
   {
@@ -15389,6 +19235,8 @@ window.HSK_CHARS = [
     "meaning": "cliffside",
     "level": 6,
     "phrase": "悬崖峭壁",
+    "prompt1": "悬崖峭壁",
+    "prompt2": "写崖字",
     "sentence": "这是“崖”字。"
   },
   {
@@ -15397,6 +19245,8 @@ window.HSK_CHARS = [
     "meaning": "collapse; crumble; fall apart",
     "level": 6,
     "phrase": "崩溃",
+    "prompt1": "崩溃",
+    "prompt2": "写崩字",
     "sentence": "这是“崩”字。"
   },
   {
@@ -15405,6 +19255,8 @@ window.HSK_CHARS = [
     "meaning": "brand new",
     "level": 6,
     "phrase": "崭新",
+    "prompt1": "崭新",
+    "prompt2": "写崭字",
     "sentence": "这是“崭”字。"
   },
   {
@@ -15413,6 +19265,8 @@ window.HSK_CHARS = [
     "meaning": "inlay",
     "level": 6,
     "phrase": "镶嵌",
+    "prompt1": "镶嵌",
+    "prompt2": "写嵌字",
     "sentence": "这是“嵌”字。"
   },
   {
@@ -15421,6 +19275,8 @@ window.HSK_CHARS = [
     "meaning": "(saying) flowing of an endless stream",
     "level": 6,
     "phrase": "川流不息",
+    "prompt1": "川流不息",
+    "prompt2": "写川字",
     "sentence": "这是“川”字。"
   },
   {
@@ -15429,6 +19285,8 @@ window.HSK_CHARS = [
     "meaning": "province; sub-prefecture; (United States) state",
     "level": 6,
     "phrase": "州",
+    "prompt1": "州字",
+    "prompt2": "写州字",
     "sentence": "这是“州”字。"
   },
   {
@@ -15437,6 +19295,8 @@ window.HSK_CHARS = [
     "meaning": "to patrol (police, army or navy)",
     "level": 6,
     "phrase": "巡逻",
+    "prompt1": "巡逻",
+    "prompt2": "写巡字",
     "sentence": "这是“巡”字。"
   },
   {
@@ -15445,6 +19305,8 @@ window.HSK_CHARS = [
     "meaning": "lair; nest; den; hideout",
     "level": 6,
     "phrase": "巢穴",
+    "prompt1": "巢穴",
+    "prompt2": "写巢字",
     "sentence": "这是“巢”字。"
   },
   {
@@ -15453,6 +19315,8 @@ window.HSK_CHARS = [
     "meaning": "consolidate; solidify",
     "level": 6,
     "phrase": "巩固",
+    "prompt1": "巩固",
+    "prompt2": "写巩字",
     "sentence": "这是“巩”字。"
   },
   {
@@ -15461,6 +19325,8 @@ window.HSK_CHARS = [
     "meaning": "lane; alley",
     "level": 6,
     "phrase": "巷",
+    "prompt1": "巷字",
+    "prompt2": "写巷字",
     "sentence": "这是“巷”字。"
   },
   {
@@ -15469,6 +19335,8 @@ window.HSK_CHARS = [
     "meaning": "(saying) smooth sailing",
     "level": 6,
     "phrase": "一帆风顺",
+    "prompt1": "一帆风顺",
+    "prompt2": "写帆字",
     "sentence": "这是“帆”字。"
   },
   {
@@ -15477,6 +19345,8 @@ window.HSK_CHARS = [
     "meaning": "tent",
     "level": 6,
     "phrase": "帐篷",
+    "prompt1": "帐篷",
+    "prompt2": "写帐字",
     "sentence": "这是“帐”字。"
   },
   {
@@ -15485,6 +19355,8 @@ window.HSK_CHARS = [
     "meaning": "invitation card; written invitation",
     "level": 6,
     "phrase": "请帖",
+    "prompt1": "请帖",
+    "prompt2": "写帖字",
     "sentence": "这是“帖”字。"
   },
   {
@@ -15493,6 +19365,8 @@ window.HSK_CHARS = [
     "meaning": "flag; banner",
     "level": 6,
     "phrase": "旗帜",
+    "prompt1": "旗帜",
+    "prompt2": "写帜字",
     "sentence": "这是“帜”字。"
   },
   {
@@ -15501,6 +19375,8 @@ window.HSK_CHARS = [
     "meaning": "emperor",
     "level": 6,
     "phrase": "皇帝",
+    "prompt1": "皇帝",
+    "prompt2": "写帝字",
     "sentence": "这是“帝”字。"
   },
   {
@@ -15509,6 +19385,8 @@ window.HSK_CHARS = [
     "meaning": "(mw for houses, buildings); tent",
     "level": 6,
     "phrase": "幢",
+    "prompt1": "幢字",
+    "prompt2": "写幢字",
     "sentence": "这是“幢”字。"
   },
   {
@@ -15517,6 +19395,8 @@ window.HSK_CHARS = [
     "meaning": "farm crops",
     "level": 6,
     "phrase": "庄稼",
+    "prompt1": "庄严",
+    "prompt2": "庄重",
     "sentence": "这是“庄”字。"
   },
   {
@@ -15525,6 +19405,8 @@ window.HSK_CHARS = [
     "meaning": "to shield; to harbor; cover up",
     "level": 6,
     "phrase": "包庇",
+    "prompt1": "包庇",
+    "prompt2": "写庇字",
     "sentence": "这是“庇”字。"
   },
   {
@@ -15533,6 +19415,8 @@ window.HSK_CHARS = [
     "meaning": "temple; monastery",
     "level": 6,
     "phrase": "寺庙",
+    "prompt1": "寺庙",
+    "prompt2": "写庙字",
     "sentence": "这是“庙”字。"
   },
   {
@@ -15541,6 +19425,8 @@ window.HSK_CHARS = [
     "meaning": "enormous; huge; tremendous",
     "level": 6,
     "phrase": "庞大",
+    "prompt1": "庞大",
+    "prompt2": "写庞字",
     "sentence": "这是“庞”字。"
   },
   {
@@ -15549,6 +19435,8 @@ window.HSK_CHARS = [
     "meaning": "mediocre",
     "level": 6,
     "phrase": "平庸",
+    "prompt1": "庸俗",
+    "prompt2": "平庸",
     "sentence": "这是“庸”字。"
   },
   {
@@ -15557,6 +19445,8 @@ window.HSK_CHARS = [
     "meaning": "honest; incorruptible",
     "level": 6,
     "phrase": "廉洁",
+    "prompt1": "廉洁",
+    "prompt2": "物美价廉",
     "sentence": "这是“廉”字。"
   },
   {
@@ -15565,6 +19455,8 @@ window.HSK_CHARS = [
     "meaning": "corridor; hallway",
     "level": 6,
     "phrase": "走廊",
+    "prompt1": "走廊",
+    "prompt2": "写廊字",
     "sentence": "这是“廊”字。"
   },
   {
@@ -15573,6 +19465,8 @@ window.HSK_CHARS = [
     "meaning": "outline; silhouette",
     "level": 6,
     "phrase": "轮廓",
+    "prompt1": "轮廓",
+    "prompt2": "写廓字",
     "sentence": "这是“廓”字。"
   },
   {
@@ -15581,6 +19475,8 @@ window.HSK_CHARS = [
     "meaning": "flabbergasted; astonished",
     "level": 6,
     "phrase": "诧异",
+    "prompt1": "异常",
+    "prompt2": "诧异",
     "sentence": "这是“异”字。"
   },
   {
@@ -15589,6 +19485,8 @@ window.HSK_CHARS = [
     "meaning": "malady; evil; malpractice; drawback",
     "level": 6,
     "phrase": "弊病",
+    "prompt1": "弊病",
+    "prompt2": "作弊",
     "sentence": "这是“弊”字。"
   },
   {
@@ -15597,6 +19495,8 @@ window.HSK_CHARS = [
     "meaning": "make up for a deficiency; remedy; offset",
     "level": 6,
     "phrase": "弥补",
+    "prompt1": "弥漫",
+    "prompt2": "弥补",
     "sentence": "这是“弥”字。"
   },
   {
@@ -15605,6 +19505,8 @@ window.HSK_CHARS = [
     "meaning": "bow string; string of musical instruments",
     "level": 6,
     "phrase": "弦",
+    "prompt1": "弦字",
+    "prompt2": "写弦字",
     "sentence": "这是“弦”字。"
   },
   {
@@ -15613,6 +19515,8 @@ window.HSK_CHARS = [
     "meaning": "cite (in dispatches); commend",
     "level": 6,
     "phrase": "表彰",
+    "prompt1": "表彰",
+    "prompt2": "写彰字",
     "sentence": "这是“彰”字。"
   },
   {
@@ -15621,6 +19525,8 @@ window.HSK_CHARS = [
     "meaning": "military campaign; battle",
     "level": 6,
     "phrase": "战役",
+    "prompt1": "战役",
+    "prompt2": "写役字",
     "sentence": "这是“役”字。"
   },
   {
@@ -15629,6 +19535,8 @@ window.HSK_CHARS = [
     "meaning": "track and field",
     "level": 6,
     "phrase": "田径",
+    "prompt1": "田径",
+    "prompt2": "途径",
     "sentence": "这是“径”字。"
   },
   {
@@ -15637,6 +19545,8 @@ window.HSK_CHARS = [
     "meaning": "pace back and forth; hesitate; waver",
     "level": 6,
     "phrase": "徘徊",
+    "prompt1": "徘徊",
+    "prompt2": "写徊字",
     "sentence": "这是“徊”字。"
   },
   {
@@ -15645,6 +19555,8 @@ window.HSK_CHARS = [
     "meaning": "evil person who commits crimes; villain; gangster",
     "level": 6,
     "phrase": "歹徒",
+    "prompt1": "徒弟",
+    "prompt2": "歹徒",
     "sentence": "这是“徒”字。"
   },
   {
@@ -15653,6 +19565,8 @@ window.HSK_CHARS = [
     "meaning": "pace back and forth; hesitate; waver",
     "level": 6,
     "phrase": "徘徊",
+    "prompt1": "徘徊",
+    "prompt2": "写徘字",
     "sentence": "这是“徘”字。"
   },
   {
@@ -15661,6 +19575,8 @@ window.HSK_CHARS = [
     "meaning": "migrate; move; change one's residence",
     "level": 6,
     "phrase": "迁徙",
+    "prompt1": "迁徙",
+    "prompt2": "写徙字",
     "sentence": "这是“徙”字。"
   },
   {
@@ -15669,6 +19585,8 @@ window.HSK_CHARS = [
     "meaning": "defense; resist; to guard",
     "level": 6,
     "phrase": "防御",
+    "prompt1": "防御",
+    "prompt2": "写御字",
     "sentence": "这是“御”字。"
   },
   {
@@ -15677,6 +19595,8 @@ window.HSK_CHARS = [
     "meaning": "circular cycle; loop; circulate",
     "level": 6,
     "phrase": "循环",
+    "prompt1": "循环",
+    "prompt2": "遵循",
     "sentence": "这是“循”字。"
   },
   {
@@ -15685,6 +19605,8 @@ window.HSK_CHARS = [
     "meaning": "avoid as a taboo; abstain from; taboo",
     "level": 6,
     "phrase": "忌讳",
+    "prompt1": "忌讳",
+    "prompt2": "肆无忌惮",
     "sentence": "这是“忌”字。"
   },
   {
@@ -15693,6 +19615,8 @@ window.HSK_CHARS = [
     "meaning": "honest; loyalty; devoted",
     "level": 6,
     "phrase": "忠诚",
+    "prompt1": "忠实",
+    "prompt2": "忠诚",
     "sentence": "这是“忠”字。"
   },
   {
@@ -15701,6 +19625,8 @@ window.HSK_CHARS = [
     "meaning": "fears of trouble in the rear (idiom); family worries (obstructing freedom to act); trouble back at home; worries about the future consequences; often in negative expressions, meaning no worries about anything",
     "level": 6,
     "phrase": "后顾之忧",
+    "prompt1": "忧郁",
+    "prompt2": "后顾之忧",
     "sentence": "这是“忧”字。"
   },
   {
@@ -15709,6 +19635,8 @@ window.HSK_CHARS = [
     "meaning": "angry; indignant; furious; anger; indignation; wrath; ire",
     "level": 6,
     "phrase": "愤怒",
+    "prompt1": "愤怒",
+    "prompt2": "写怒字",
     "sentence": "这是“怒”字。"
   },
   {
@@ -15717,6 +19645,8 @@ window.HSK_CHARS = [
     "meaning": "afraid; terror",
     "level": 6,
     "phrase": "恐怖",
+    "prompt1": "恐怖",
+    "prompt2": "写怖字",
     "sentence": "这是“怖”字。"
   },
   {
@@ -15725,6 +19655,8 @@ window.HSK_CHARS = [
     "meaning": "to slight; give somebody a cold shoulder; treat somebody in a cold manner",
     "level": 6,
     "phrase": "怠慢",
+    "prompt1": "怠慢",
+    "prompt2": "写怠字",
     "sentence": "这是“怠”字。"
   },
   {
@@ -15733,6 +19665,8 @@ window.HSK_CHARS = [
     "meaning": "timid; coward",
     "level": 6,
     "phrase": "胆怯",
+    "prompt1": "胆怯",
+    "prompt2": "写怯字",
     "sentence": "这是“怯”字。"
   },
   {
@@ -15741,6 +19675,8 @@ window.HSK_CHARS = [
     "meaning": "suddenly see the light; suddenly realize what has happened; twig",
     "level": 6,
     "phrase": "恍然大悟",
+    "prompt1": "恍然大悟",
+    "prompt2": "写恍字",
     "sentence": "这是“恍”字。"
   },
   {
@@ -15749,6 +19685,8 @@ window.HSK_CHARS = [
     "meaning": "eternal; everlasting",
     "level": 6,
     "phrase": "永恒",
+    "prompt1": "永恒",
+    "prompt2": "写恒字",
     "sentence": "这是“恒”字。"
   },
   {
@@ -15757,6 +19695,8 @@ window.HSK_CHARS = [
     "meaning": "forgive; pardon; spare",
     "level": 6,
     "phrase": "饶恕",
+    "prompt1": "饶恕",
+    "prompt2": "写恕字",
     "sentence": "这是“恕”字。"
   },
   {
@@ -15765,6 +19705,8 @@ window.HSK_CHARS = [
     "meaning": "grievance; old rivalry; mixture of gratitude and resentment",
     "level": 6,
     "phrase": "恩怨",
+    "prompt1": "恩怨",
+    "prompt2": "写恩字",
     "sentence": "这是“恩”字。"
   },
   {
@@ -15773,6 +19715,8 @@ window.HSK_CHARS = [
     "meaning": "appropriate; suitable; proper",
     "level": 6,
     "phrase": "恰当",
+    "prompt1": "恰巧",
+    "prompt2": "恰当",
     "sentence": "这是“恰”字。"
   },
   {
@@ -15781,6 +19725,8 @@ window.HSK_CHARS = [
     "meaning": "suddenly see the light; suddenly realize what has happened; twig",
     "level": 6,
     "phrase": "恍然大悟",
+    "prompt1": "觉悟",
+    "prompt2": "领悟",
     "sentence": "这是“悟”字。"
   },
   {
@@ -15789,6 +19735,8 @@ window.HSK_CHARS = [
     "meaning": "sufferer; patient; the sick",
     "level": 6,
     "phrase": "患者",
+    "prompt1": "患者",
+    "prompt2": "隐患",
     "sentence": "这是“患”字。"
   },
   {
@@ -15797,6 +19745,8 @@ window.HSK_CHARS = [
     "meaning": "happy; joyous",
     "level": 6,
     "phrase": "喜悦",
+    "prompt1": "喜悦",
+    "prompt2": "写悦字",
     "sentence": "这是“悦”字。"
   },
   {
@@ -15805,6 +19755,8 @@ window.HSK_CHARS = [
     "meaning": "suspend; hang; suspension (cable car)",
     "level": 6,
     "phrase": "悬挂",
+    "prompt1": "悬念",
+    "prompt2": "悬殊",
     "sentence": "这是“悬”字。"
   },
   {
@@ -15813,6 +19765,8 @@ window.HSK_CHARS = [
     "meaning": "mourning; memorial (service, etc.)",
     "level": 6,
     "phrase": "追悼",
+    "prompt1": "追悼",
+    "prompt2": "写悼字",
     "sentence": "这是“悼”字。"
   },
   {
@@ -15821,6 +19775,8 @@ window.HSK_CHARS = [
     "meaning": "feel sorry for a person; sympathize; to regret",
     "level": 6,
     "phrase": "惋惜",
+    "prompt1": "惋惜",
+    "prompt2": "写惋字",
     "sentence": "这是“惋”字。"
   },
   {
@@ -15829,6 +19785,8 @@ window.HSK_CHARS = [
     "meaning": "to puzzle; confuse; mystify",
     "level": 6,
     "phrase": "迷惑",
+    "prompt1": "疑惑",
+    "prompt2": "迷惑",
     "sentence": "这是“惑”字。"
   },
   {
@@ -15837,6 +19795,8 @@ window.HSK_CHARS = [
     "meaning": "vigilant; alert; be on guard",
     "level": 6,
     "phrase": "警惕",
+    "prompt1": "警惕",
+    "prompt2": "写惕字",
     "sentence": "这是“惕”字。"
   },
   {
@@ -15845,6 +19805,8 @@ window.HSK_CHARS = [
     "meaning": "to remember with concern; to be concerned about; to think about; to keep thinking about; to worry about",
     "level": 6,
     "phrase": "惦记",
+    "prompt1": "惦记",
+    "prompt2": "写惦字",
     "sentence": "这是“惦”字。"
   },
   {
@@ -15853,6 +19815,8 @@ window.HSK_CHARS = [
     "meaning": "fear; dread; phobia",
     "level": 6,
     "phrase": "恐惧",
+    "prompt1": "恐惧",
+    "prompt2": "畏惧",
     "sentence": "这是“惧”字。"
   },
   {
@@ -15861,6 +19825,8 @@ window.HSK_CHARS = [
     "meaning": "miserable; tragic",
     "level": 6,
     "phrase": "悲惨",
+    "prompt1": "悲惨",
+    "prompt2": "写惨字",
     "sentence": "这是“惨”字。"
   },
   {
@@ -15869,6 +19835,8 @@ window.HSK_CHARS = [
     "meaning": "penalty; punishment; to punish; to penalize",
     "level": 6,
     "phrase": "惩罚",
+    "prompt1": "惩罚",
+    "prompt2": "写惩字",
     "sentence": "这是“惩”字。"
   },
   {
@@ -15877,6 +19845,8 @@ window.HSK_CHARS = [
     "meaning": "beaten; exhausted; tired",
     "level": 6,
     "phrase": "疲惫",
+    "prompt1": "疲惫",
+    "prompt2": "写惫字",
     "sentence": "这是“惫”字。"
   },
   {
@@ -15885,6 +19855,8 @@ window.HSK_CHARS = [
     "meaning": "absolutely unrestrained; unbridled; without the slightest scruple",
     "level": 6,
     "phrase": "肆无忌惮",
+    "prompt1": "肆无忌惮",
+    "prompt2": "写惮字",
     "sentence": "这是“惮”字。"
   },
   {
@@ -15893,6 +19865,8 @@ window.HSK_CHARS = [
     "meaning": "lazy; idle",
     "level": 6,
     "phrase": "懒惰",
+    "prompt1": "懒惰",
+    "prompt2": "写惰字",
     "sentence": "这是“惰”字。"
   },
   {
@@ -15901,6 +19875,8 @@ window.HSK_CHARS = [
     "meaning": "stir up troubles",
     "level": 6,
     "phrase": "惹祸",
+    "prompt1": "惹祸",
+    "prompt2": "写惹字",
     "sentence": "这是“惹”字。"
   },
   {
@@ -15909,6 +19885,8 @@ window.HSK_CHARS = [
     "meaning": "recover; heal; the more... the more",
     "level": 6,
     "phrase": "愈",
+    "prompt1": "愈字",
+    "prompt2": "写愈字",
     "sentence": "这是“愈”字。"
   },
   {
@@ -15917,6 +19895,8 @@ window.HSK_CHARS = [
     "meaning": "silly; stupid",
     "level": 6,
     "phrase": "愚蠢",
+    "prompt1": "愚昧",
+    "prompt2": "愚蠢",
     "sentence": "这是“愚”字。"
   },
   {
@@ -15925,6 +19905,8 @@ window.HSK_CHARS = [
     "meaning": "dumbfounded; stupefied; distracted; (spoken) blunt; rash",
     "level": 6,
     "phrase": "愣",
+    "prompt1": "愣字",
+    "prompt2": "写愣字",
     "sentence": "这是“愣”字。"
   },
   {
@@ -15933,6 +19915,8 @@ window.HSK_CHARS = [
     "meaning": "angry; indignant; furious; anger; indignation; wrath; ire",
     "level": 6,
     "phrase": "愤怒",
+    "prompt1": "愤怒",
+    "prompt2": "写愤字",
     "sentence": "这是“愤”字。"
   },
   {
@@ -15941,6 +19925,8 @@ window.HSK_CHARS = [
     "meaning": "philanthropic; benevolent; charitable",
     "level": 6,
     "phrase": "慈善",
+    "prompt1": "慈善",
+    "prompt2": "仁慈",
     "sentence": "这是“慈”字。"
   },
   {
@@ -15949,6 +19935,8 @@ window.HSK_CHARS = [
     "meaning": "lament; with a tinge of emotion or regret",
     "level": 6,
     "phrase": "感慨",
+    "prompt1": "感慨",
+    "prompt2": "慷慨",
     "sentence": "这是“慨”字。"
   },
   {
@@ -15957,6 +19945,8 @@ window.HSK_CHARS = [
     "meaning": "vehement; fervent; generous",
     "level": 6,
     "phrase": "慷慨",
+    "prompt1": "慷慨",
+    "prompt2": "写慷字",
     "sentence": "这是“慷”字。"
   },
   {
@@ -15965,6 +19955,8 @@ window.HSK_CHARS = [
     "meaning": "hold in (urine); hold (breath); choke",
     "level": 6,
     "phrase": "憋",
+    "prompt1": "憋字",
+    "prompt2": "写憋字",
     "sentence": "这是“憋”字。"
   },
   {
@@ -15973,6 +19965,8 @@ window.HSK_CHARS = [
     "meaning": "end; close; stop; expiration",
     "level": 6,
     "phrase": "截止",
+    "prompt1": "截止",
+    "prompt2": "截至",
     "sentence": "这是“截”字。"
   },
   {
@@ -15981,6 +19975,8 @@ window.HSK_CHARS = [
     "meaning": "flat",
     "level": 6,
     "phrase": "扁",
+    "prompt1": "扁字",
+    "prompt2": "写扁字",
     "sentence": "这是“扁”字。"
   },
   {
@@ -15989,6 +19985,8 @@ window.HSK_CHARS = [
     "meaning": "to prick; push a needle into; penetrating",
     "level": 6,
     "phrase": "扎",
+    "prompt1": "扎实",
+    "prompt2": "驻扎",
     "sentence": "这是“扎”字。"
   },
   {
@@ -15997,6 +19995,8 @@ window.HSK_CHARS = [
     "meaning": "to assault; rush at; throw oneself on",
     "level": 6,
     "phrase": "扑",
+    "prompt1": "扑字",
+    "prompt2": "写扑字",
     "sentence": "这是“扑”字。"
   },
   {
@@ -16005,6 +20005,8 @@ window.HSK_CHARS = [
     "meaning": "dig up; pull down; take off",
     "level": 6,
     "phrase": "扒",
+    "prompt1": "扒字",
+    "prompt2": "写扒字",
     "sentence": "这是“扒”字。"
   },
   {
@@ -16013,6 +20015,8 @@ window.HSK_CHARS = [
     "meaning": "to carry on one's shoulder",
     "level": 6,
     "phrase": "扛",
+    "prompt1": "扛字",
+    "prompt2": "写扛字",
     "sentence": "这是“扛”字。"
   },
   {
@@ -16021,6 +20025,8 @@ window.HSK_CHARS = [
     "meaning": "to fasten; to button; button; buckle; knot; to arrest; to confiscate; to deduct (money); discount; to knock; put upside down; to smash or spike (a ball); to cover (with a bowl etc); fig. to tag a label on sb",
     "level": 6,
     "phrase": "扣",
+    "prompt1": "纽扣儿",
+    "prompt2": "写扣字",
     "sentence": "这是“扣”字。"
   },
   {
@@ -16029,6 +20035,8 @@ window.HSK_CHARS = [
     "meaning": "awkward; unnatural",
     "level": 6,
     "phrase": "别扭",
+    "prompt1": "扭转",
+    "prompt2": "别扭",
     "sentence": "这是“扭”字。"
   },
   {
@@ -16037,6 +20045,8 @@ window.HSK_CHARS = [
     "meaning": "implicate; involve",
     "level": 6,
     "phrase": "牵扯",
+    "prompt1": "牵扯",
+    "prompt2": "写扯字",
     "sentence": "这是“扯”字。"
   },
   {
@@ -16045,6 +20055,8 @@ window.HSK_CHARS = [
     "meaning": "constrain or repress one's emotions; inhibition; repressive",
     "level": 6,
     "phrase": "压抑",
+    "prompt1": "压抑",
+    "prompt2": "写抑字",
     "sentence": "这是“抑”字。"
   },
   {
@@ -16053,6 +20065,8 @@ window.HSK_CHARS = [
     "meaning": "everyone gives their own view",
     "level": 6,
     "phrase": "各抒己见",
+    "prompt1": "各抒己见",
+    "prompt2": "写抒字",
     "sentence": "这是“抒”字。"
   },
   {
@@ -16061,6 +20075,8 @@ window.HSK_CHARS = [
     "meaning": "resist; resistance",
     "level": 6,
     "phrase": "抵抗",
+    "prompt1": "抗议",
+    "prompt2": "抵抗",
     "sentence": "这是“抗”字。"
   },
   {
@@ -16069,6 +20085,8 @@ window.HSK_CHARS = [
     "meaning": "gently caress and stroke; to pet; to fondle",
     "level": 6,
     "phrase": "抚摸",
+    "prompt1": "抚养",
+    "prompt2": "抚摸",
     "sentence": "这是“抚”字。"
   },
   {
@@ -16077,6 +20095,8 @@ window.HSK_CHARS = [
     "meaning": "discard; abandon; dump (sb)",
     "level": 6,
     "phrase": "抛弃",
+    "prompt1": "抛弃",
+    "prompt2": "写抛字",
     "sentence": "这是“抛”字。"
   },
   {
@@ -16085,6 +20105,8 @@ window.HSK_CHARS = [
     "meaning": "arrive; to reach (a destination); touch down",
     "level": 6,
     "phrase": "抵达",
+    "prompt1": "抵制",
+    "prompt2": "抵达",
     "sentence": "这是“抵”字。"
   },
   {
@@ -16093,6 +20115,8 @@ window.HSK_CHARS = [
     "meaning": "write off; erase; remove from evidence",
     "level": 6,
     "phrase": "抹杀",
+    "prompt1": "抹杀",
+    "prompt2": "涂抹",
     "sentence": "这是“抹”字。"
   },
   {
@@ -16101,6 +20125,8 @@ window.HSK_CHARS = [
     "meaning": "post; lean on a stick; prop",
     "level": 6,
     "phrase": "拄",
+    "prompt1": "拄字",
+    "prompt2": "写拄字",
     "sentence": "这是“拄”字。"
   },
   {
@@ -16109,6 +20135,8 @@ window.HSK_CHARS = [
     "meaning": "stir; mix up",
     "level": 6,
     "phrase": "搅拌",
+    "prompt1": "搅拌",
+    "prompt2": "写拌字",
     "sentence": "这是“拌”字。"
   },
   {
@@ -16117,6 +20145,8 @@ window.HSK_CHARS = [
     "meaning": "break new ground (for agriculture); development",
     "level": 6,
     "phrase": "开拓",
+    "prompt1": "开拓",
+    "prompt2": "写拓字",
     "sentence": "这是“拓”字。"
   },
   {
@@ -16125,6 +20155,8 @@ window.HSK_CHARS = [
     "meaning": "(literally) help shoots grow by pulling them out; spoil things by excessive enthusiasm",
     "level": 6,
     "phrase": "拔苗助长",
+    "prompt1": "挺拔",
+    "prompt2": "选拔",
     "sentence": "这是“拔”字。"
   },
   {
@@ -16133,6 +20165,8 @@ window.HSK_CHARS = [
     "meaning": "prolong; protraction; delay; stall; procrastinate",
     "level": 6,
     "phrase": "拖延",
+    "prompt1": "拖延",
+    "prompt2": "写拖字",
     "sentence": "这是“拖”字。"
   },
   {
@@ -16141,6 +20175,8 @@ window.HSK_CHARS = [
     "meaning": "detain (a prison); keep (someone) in custody",
     "level": 6,
     "phrase": "拘留",
+    "prompt1": "拘束",
+    "prompt2": "拘留",
     "sentence": "这是“拘”字。"
   },
   {
@@ -16149,6 +20185,8 @@ window.HSK_CHARS = [
     "meaning": "clumsy; awkward; stupid",
     "level": 6,
     "phrase": "笨拙",
+    "prompt1": "笨拙",
+    "prompt2": "写拙字",
     "sentence": "这是“拙”字。"
   },
   {
@@ -16157,6 +20195,8 @@ window.HSK_CHARS = [
     "meaning": "make an initial draft; draw up",
     "level": 6,
     "phrase": "拟定",
+    "prompt1": "拟定",
+    "prompt2": "写拟字",
     "sentence": "这是“拟”字。"
   },
   {
@@ -16165,6 +20205,8 @@ window.HSK_CHARS = [
     "meaning": "draw close; close up; move up",
     "level": 6,
     "phrase": "靠拢",
+    "prompt1": "靠拢",
+    "prompt2": "写拢字",
     "sentence": "这是“拢”字。"
   },
   {
@@ -16173,6 +20215,8 @@ window.HSK_CHARS = [
     "meaning": "choose; select; sort out",
     "level": 6,
     "phrase": "拣",
+    "prompt1": "拣字",
+    "prompt2": "写拣字",
     "sentence": "这是“拣”字。"
   },
   {
@@ -16181,6 +20225,8 @@ window.HSK_CHARS = [
     "meaning": "wring; to pinch",
     "level": 6,
     "phrase": "拧",
+    "prompt1": "拧字",
+    "prompt2": "写拧字",
     "sentence": "这是“拧”字。"
   },
   {
@@ -16189,6 +20235,8 @@ window.HSK_CHARS = [
     "meaning": "to dial; move with a hand/foot; stir; poke; allocate (money)",
     "level": 6,
     "phrase": "拨",
+    "prompt1": "挑拨",
+    "prompt2": "写拨字",
     "sentence": "这是“拨”字。"
   },
   {
@@ -16197,6 +20245,8 @@ window.HSK_CHARS = [
     "meaning": "drag; haul",
     "level": 6,
     "phrase": "拽",
+    "prompt1": "拽字",
+    "prompt2": "写拽字",
     "sentence": "这是“拽”字。"
   },
   {
@@ -16205,6 +20255,8 @@ window.HSK_CHARS = [
     "meaning": "carry over one's shoulder or slung on one's side",
     "level": 6,
     "phrase": "挎",
+    "prompt1": "挎字",
+    "prompt2": "写挎字",
     "sentence": "这是“挎”字。"
   },
   {
@@ -16213,6 +20265,8 @@ window.HSK_CHARS = [
     "meaning": "excavate; dig; unearth",
     "level": 6,
     "phrase": "挖掘",
+    "prompt1": "挖掘",
+    "prompt2": "写挖字",
     "sentence": "这是“挖”字。"
   },
   {
@@ -16221,6 +20275,8 @@ window.HSK_CHARS = [
     "meaning": "sincere; cordial; earnest",
     "level": 6,
     "phrase": "诚挚",
+    "prompt1": "真挚",
+    "prompt2": "诚挚",
     "sentence": "这是“挚”字。"
   },
   {
@@ -16229,6 +20285,8 @@ window.HSK_CHARS = [
     "meaning": "thwart; to obstruct (something); stand in the way",
     "level": 6,
     "phrase": "阻挠",
+    "prompt1": "阻挠",
+    "prompt2": "写挠字",
     "sentence": "这是“挠”字。"
   },
   {
@@ -16237,6 +20295,8 @@ window.HSK_CHARS = [
     "meaning": "get close to; in sequence",
     "level": 6,
     "phrase": "挨",
+    "prompt1": "挨字",
+    "prompt2": "写挨字",
     "sentence": "这是“挨”字。"
   },
   {
@@ -16245,6 +20305,8 @@ window.HSK_CHARS = [
     "meaning": "shift; move",
     "level": 6,
     "phrase": "挪",
+    "prompt1": "挪字",
+    "prompt2": "写挪字",
     "sentence": "这是“挪”字。"
   },
   {
@@ -16253,6 +20315,8 @@ window.HSK_CHARS = [
     "meaning": "setback; defeat; frustration",
     "level": 6,
     "phrase": "挫折",
+    "prompt1": "挫折",
+    "prompt2": "写挫字",
     "sentence": "这是“挫”字。"
   },
   {
@@ -16261,6 +20325,8 @@ window.HSK_CHARS = [
     "meaning": "reverse or salvage (a situation); redeem; retrieve",
     "level": 6,
     "phrase": "挽回",
+    "prompt1": "挽回",
+    "prompt2": "挽救",
     "sentence": "这是“挽”字。"
   },
   {
@@ -16269,6 +20335,8 @@ window.HSK_CHARS = [
     "meaning": "tie up; bundled",
     "level": 6,
     "phrase": "捆绑",
+    "prompt1": "捆绑",
+    "prompt2": "写捆字",
     "sentence": "这是“捆”字。"
   },
   {
@@ -16277,6 +20345,8 @@ window.HSK_CHARS = [
     "meaning": "catch; to seize",
     "level": 6,
     "phrase": "捕捉",
+    "prompt1": "捕捉",
+    "prompt2": "写捉字",
     "sentence": "这是“捉”字。"
   },
   {
@@ -16285,6 +20355,8 @@ window.HSK_CHARS = [
     "meaning": "defend; uphold; safeguard",
     "level": 6,
     "phrase": "捍卫",
+    "prompt1": "捍卫",
+    "prompt2": "写捍字",
     "sentence": "这是“捍”字。"
   },
   {
@@ -16293,6 +20365,8 @@ window.HSK_CHARS = [
     "meaning": "bring or take (along); deliver (a message)",
     "level": 6,
     "phrase": "捎",
+    "prompt1": "捎字",
+    "prompt2": "写捎字",
     "sentence": "这是“捎”字。"
   },
   {
@@ -16301,6 +20375,8 @@ window.HSK_CHARS = [
     "meaning": "to pinch (with one's fingers); knead",
     "level": 6,
     "phrase": "捏",
+    "prompt1": "捏字",
+    "prompt2": "写捏字",
     "sentence": "这是“捏”字。"
   },
   {
@@ -16309,6 +20385,8 @@ window.HSK_CHARS = [
     "meaning": "catch; to seize",
     "level": 6,
     "phrase": "捕捉",
+    "prompt1": "捕捉",
+    "prompt2": "逮捕",
     "sentence": "这是“捕”字。"
   },
   {
@@ -16317,6 +20395,8 @@ window.HSK_CHARS = [
     "meaning": "dredge up; fish up",
     "level": 6,
     "phrase": "捞",
+    "prompt1": "捞字",
+    "prompt2": "写捞字",
     "sentence": "这是“捞”字。"
   },
   {
@@ -16325,6 +20405,8 @@ window.HSK_CHARS = [
     "meaning": "cause a disturbance; look for trouble",
     "level": 6,
     "phrase": "捣乱",
+    "prompt1": "捣乱",
+    "prompt2": "写捣字",
     "sentence": "这是“捣”字。"
   },
   {
@@ -16333,6 +20415,8 @@ window.HSK_CHARS = [
     "meaning": "hold or carry with both hands facing up",
     "level": 6,
     "phrase": "捧",
+    "prompt1": "吹捧",
+    "prompt2": "写捧字",
     "sentence": "这是“捧”字。"
   },
   {
@@ -16341,6 +20425,8 @@ window.HSK_CHARS = [
     "meaning": "nimble; agile; shrewd",
     "level": 6,
     "phrase": "敏捷",
+    "prompt1": "敏捷",
+    "prompt2": "写捷字",
     "sentence": "这是“捷”字。"
   },
   {
@@ -16349,6 +20435,8 @@ window.HSK_CHARS = [
     "meaning": "lift; raise in height",
     "level": 6,
     "phrase": "掀起",
+    "prompt1": "掀起",
+    "prompt2": "写掀字",
     "sentence": "这是“掀”字。"
   },
   {
@@ -16357,6 +20445,8 @@ window.HSK_CHARS = [
     "meaning": "fish out (from pocket)",
     "level": 6,
     "phrase": "掏",
+    "prompt1": "掏字",
+    "prompt2": "写掏字",
     "sentence": "这是“掏”字。"
   },
   {
@@ -16365,6 +20455,8 @@ window.HSK_CHARS = [
     "meaning": "pick (flowers); pinch; clutch",
     "level": 6,
     "phrase": "掐",
+    "prompt1": "掐字",
+    "prompt2": "写掐字",
     "sentence": "这是“掐”字。"
   },
   {
@@ -16373,6 +20465,8 @@ window.HSK_CHARS = [
     "meaning": "excavate; dig; unearth",
     "level": 6,
     "phrase": "挖掘",
+    "prompt1": "挖掘",
+    "prompt2": "写掘字",
     "sentence": "这是“掘”字。"
   },
   {
@@ -16381,6 +20475,8 @@ window.HSK_CHARS = [
     "meaning": "to plunder; rob; pillage",
     "level": 6,
     "phrase": "掠夺",
+    "prompt1": "掠夺",
+    "prompt2": "写掠字",
     "sentence": "这是“掠”字。"
   },
   {
@@ -16389,6 +20485,8 @@ window.HSK_CHARS = [
     "meaning": "exploration",
     "level": 6,
     "phrase": "勘探",
+    "prompt1": "探望",
+    "prompt2": "勘探",
     "sentence": "这是“探”字。"
   },
   {
@@ -16397,6 +20495,8 @@ window.HSK_CHARS = [
     "meaning": "conceal; cover up; hide behind",
     "level": 6,
     "phrase": "掩盖",
+    "prompt1": "掩护",
+    "prompt2": "掩饰",
     "sentence": "这是“掩”字。"
   },
   {
@@ -16405,6 +20505,8 @@ window.HSK_CHARS = [
     "meaning": "break with both hands",
     "level": 6,
     "phrase": "掰",
+    "prompt1": "掰字",
+    "prompt2": "写掰字",
     "sentence": "这是“掰”字。"
   },
   {
@@ -16413,6 +20515,8 @@ window.HSK_CHARS = [
     "meaning": "throw something a long distance; hurl",
     "level": 6,
     "phrase": "投掷",
+    "prompt1": "投掷",
+    "prompt2": "写掷字",
     "sentence": "这是“掷”字。"
   },
   {
@@ -16421,6 +20525,8 @@ window.HSK_CHARS = [
     "meaning": "knead; to massage; to rub",
     "level": 6,
     "phrase": "揉",
+    "prompt1": "揉字",
+    "prompt2": "写揉字",
     "sentence": "这是“揉”字。"
   },
   {
@@ -16429,6 +20535,8 @@ window.HSK_CHARS = [
     "meaning": "(informal) beat; hit; (regional) smash; break",
     "level": 6,
     "phrase": "揍",
+    "prompt1": "揍字",
+    "prompt2": "写揍字",
     "sentence": "这是“揍”字。"
   },
   {
@@ -16437,6 +20545,8 @@ window.HSK_CHARS = [
     "meaning": "expose; unmask",
     "level": 6,
     "phrase": "揭露",
+    "prompt1": "揭露",
+    "prompt2": "写揭字",
     "sentence": "这是“揭”字。"
   },
   {
@@ -16445,6 +20555,8 @@ window.HSK_CHARS = [
     "meaning": "to support; assist; aid",
     "level": 6,
     "phrase": "支援",
+    "prompt1": "支援",
+    "prompt2": "写援字",
     "sentence": "这是“援”字。"
   },
   {
@@ -16453,6 +20565,8 @@ window.HSK_CHARS = [
     "meaning": "assist by the arm; mix; support; sustain",
     "level": 6,
     "phrase": "搀",
+    "prompt1": "搀字",
+    "prompt2": "写搀字",
     "sentence": "这是“搀”字。"
   },
   {
@@ -16461,6 +20575,8 @@ window.HSK_CHARS = [
     "meaning": "to place; put aside",
     "level": 6,
     "phrase": "搁",
+    "prompt1": "搁字",
+    "prompt2": "写搁字",
     "sentence": "这是“搁”字。"
   },
   {
@@ -16469,6 +20585,8 @@ window.HSK_CHARS = [
     "meaning": "to hug; to embrace",
     "level": 6,
     "phrase": "搂",
+    "prompt1": "搂字",
+    "prompt2": "写搂字",
     "sentence": "这是“搂”字。"
   },
   {
@@ -16477,6 +20595,8 @@ window.HSK_CHARS = [
     "meaning": "stir; mix up",
     "level": 6,
     "phrase": "搅拌",
+    "prompt1": "搅拌",
+    "prompt2": "写搅字",
     "sentence": "这是“搅”字。"
   },
   {
@@ -16485,6 +20605,8 @@ window.HSK_CHARS = [
     "meaning": "fight; struggle; wrestle",
     "level": 6,
     "phrase": "搏斗",
+    "prompt1": "搏斗",
+    "prompt2": "脉搏",
     "sentence": "这是“搏”字。"
   },
   {
@@ -16493,6 +20615,8 @@ window.HSK_CHARS = [
     "meaning": "rub or roll between the hands or fingers; to twist",
     "level": 6,
     "phrase": "搓",
+    "prompt1": "搓字",
+    "prompt2": "写搓字",
     "sentence": "这是“搓”字。"
   },
   {
@@ -16501,6 +20625,8 @@ window.HSK_CHARS = [
     "meaning": "to erect; to build; travel by (car, plane, etc.); to hang; to join",
     "level": 6,
     "phrase": "搭",
+    "prompt1": "搭档",
+    "prompt2": "搭配",
     "sentence": "这是“搭”字。"
   },
   {
@@ -16509,6 +20635,8 @@ window.HSK_CHARS = [
     "meaning": "take with; portable",
     "level": 6,
     "phrase": "携带",
+    "prompt1": "携带",
+    "prompt2": "写携字",
     "sentence": "这是“携”字。"
   },
   {
@@ -16517,6 +20645,8 @@ window.HSK_CHARS = [
     "meaning": "to spread out; vendor's stand; booth; fry; (mw for puddles)",
     "level": 6,
     "phrase": "摊",
+    "prompt1": "摊字",
+    "prompt2": "写摊字",
     "sentence": "这是“摊”字。"
   },
   {
@@ -16525,6 +20655,8 @@ window.HSK_CHARS = [
     "meaning": "to ruin; devastate; vandalize",
     "level": 6,
     "phrase": "摧残",
+    "prompt1": "摧残",
+    "prompt2": "写摧字",
     "sentence": "这是“摧”字。"
   },
   {
@@ -16533,6 +20665,8 @@ window.HSK_CHARS = [
     "meaning": "left-curving stroke (); throw; fling",
     "level": 6,
     "phrase": "撇",
+    "prompt1": "撇字",
+    "prompt2": "写撇字",
     "sentence": "这是“撇”字。"
   },
   {
@@ -16541,6 +20675,8 @@ window.HSK_CHARS = [
     "meaning": "support; prop up; crutch; brace",
     "level": 6,
     "phrase": "支撑",
+    "prompt1": "支撑",
+    "prompt2": "写撑字",
     "sentence": "这是“撑”字。"
   },
   {
@@ -16549,6 +20685,8 @@ window.HSK_CHARS = [
     "meaning": "to tell lies",
     "level": 6,
     "phrase": "撒谎",
+    "prompt1": "撒谎",
+    "prompt2": "写撒字",
     "sentence": "这是“撒”字。"
   },
   {
@@ -16557,6 +20695,8 @@ window.HSK_CHARS = [
     "meaning": "retreat",
     "level": 6,
     "phrase": "撤退",
+    "prompt1": "撤退",
+    "prompt2": "撤销",
     "sentence": "这是“撤”字。"
   },
   {
@@ -16565,6 +20705,8 @@ window.HSK_CHARS = [
     "meaning": "to shake",
     "level": 6,
     "phrase": "震撼",
+    "prompt1": "震撼",
+    "prompt2": "写撼字",
     "sentence": "这是“撼”字。"
   },
   {
@@ -16573,6 +20715,8 @@ window.HSK_CHARS = [
     "meaning": "be good at; be expert in",
     "level": 6,
     "phrase": "擅长",
+    "prompt1": "擅自",
+    "prompt2": "擅长",
     "sentence": "这是“擅”字。"
   },
   {
@@ -16581,6 +20725,8 @@ window.HSK_CHARS = [
     "meaning": "engine",
     "level": 6,
     "phrase": "引擎",
+    "prompt1": "引擎",
+    "prompt2": "写擎字",
     "sentence": "这是“擎”字。"
   },
   {
@@ -16589,6 +20735,8 @@ window.HSK_CHARS = [
     "meaning": "to climb; clamber; to pull oneself up",
     "level": 6,
     "phrase": "攀登",
+    "prompt1": "攀登",
+    "prompt2": "写攀字",
     "sentence": "这是“攀”字。"
   },
   {
@@ -16597,6 +20745,8 @@ window.HSK_CHARS = [
     "meaning": "save; hoard",
     "level": 6,
     "phrase": "攒",
+    "prompt1": "攒字",
+    "prompt2": "写攒字",
     "sentence": "这是“攒”字。"
   },
   {
@@ -16605,6 +20755,8 @@ window.HSK_CHARS = [
     "meaning": "to attack; accuse; to charge",
     "level": 6,
     "phrase": "攻击",
+    "prompt1": "攻克",
+    "prompt2": "进攻",
     "sentence": "这是“攻”字。"
   },
   {
@@ -16613,6 +20765,8 @@ window.HSK_CHARS = [
     "meaning": "open wide",
     "level": 6,
     "phrase": "敞开",
+    "prompt1": "敞开",
+    "prompt2": "宽敞",
     "sentence": "这是“敞”字。"
   },
   {
@@ -16621,6 +20775,8 @@ window.HSK_CHARS = [
     "meaning": "to elaborate (on a theme); to expound (the classics); to do sth. half-heartedly or just for show; barely enough to get by; perfunctory; apathetic; to skimp; to botch",
     "level": 6,
     "phrase": "敷衍",
+    "prompt1": "敷衍",
+    "prompt2": "写敷字",
     "sentence": "这是“敷”字。"
   },
   {
@@ -16629,6 +20785,8 @@ window.HSK_CHARS = [
     "meaning": "variety; speckled; spot; colored patch; stripe",
     "level": 6,
     "phrase": "斑",
+    "prompt1": "斑字",
+    "prompt2": "写斑字",
     "sentence": "这是“斑”字。"
   },
   {
@@ -16637,6 +20795,8 @@ window.HSK_CHARS = [
     "meaning": "Consider; deliberate",
     "level": 6,
     "phrase": "斟酌",
+    "prompt1": "斟酌",
+    "prompt2": "写斟字",
     "sentence": "这是“斟”字。"
   },
   {
@@ -16645,6 +20805,8 @@ window.HSK_CHARS = [
     "meaning": "to reject; repulse; exclude",
     "level": 6,
     "phrase": "排斥",
+    "prompt1": "排斥",
+    "prompt2": "写斥字",
     "sentence": "这是“斥”字。"
   },
   {
@@ -16653,6 +20815,8 @@ window.HSK_CHARS = [
     "meaning": "to chop the nail and slice the iron (idiom); resolute and decisive; definitely",
     "level": 6,
     "phrase": "斩钉截铁",
+    "prompt1": "斩钉截铁",
+    "prompt2": "写斩字",
     "sentence": "这是“斩”字。"
   },
   {
@@ -16661,6 +20825,8 @@ window.HSK_CHARS = [
     "meaning": "refined; educated; cultured; intellectual; men of letters; scholars; literati; polite; gentle",
     "level": 6,
     "phrase": "斯文",
+    "prompt1": "斯文",
+    "prompt2": "写斯字",
     "sentence": "这是“斯”字。"
   },
   {
@@ -16669,6 +20835,8 @@ window.HSK_CHARS = [
     "meaning": "spiral; coil; circle; go around",
     "level": 6,
     "phrase": "盘旋",
+    "prompt1": "旋律",
+    "prompt2": "盘旋",
     "sentence": "这是“旋”字。"
   },
   {
@@ -16677,6 +20845,8 @@ window.HSK_CHARS = [
     "meaning": "cheongsam; Chinese-style dress",
     "level": 6,
     "phrase": "旗袍",
+    "prompt1": "旗帜",
+    "prompt2": "旗袍",
     "sentence": "这是“旗”字。"
   },
   {
@@ -16685,6 +20855,8 @@ window.HSK_CHARS = [
     "meaning": "purpose; objective; aim; goal",
     "level": 6,
     "phrase": "宗旨",
+    "prompt1": "宗旨",
+    "prompt2": "写旨字",
     "sentence": "这是“旨”字。"
   },
   {
@@ -16693,6 +20865,8 @@ window.HSK_CHARS = [
     "meaning": "drought; dry",
     "level": 6,
     "phrase": "干旱",
+    "prompt1": "干旱",
+    "prompt2": "写旱字",
     "sentence": "这是“旱”字。"
   },
   {
@@ -16701,6 +20875,8 @@ window.HSK_CHARS = [
     "meaning": "cut school; be truant from school",
     "level": 6,
     "phrase": "旷课",
+    "prompt1": "旷课",
+    "prompt2": "写旷字",
     "sentence": "这是“旷”字。"
   },
   {
@@ -16709,6 +20885,8 @@ window.HSK_CHARS = [
     "meaning": "prosperous; thriving; to prosper",
     "level": 6,
     "phrase": "兴旺",
+    "prompt1": "兴旺",
+    "prompt2": "写旺字",
     "sentence": "这是“旺”字。"
   },
   {
@@ -16717,6 +20895,8 @@ window.HSK_CHARS = [
     "meaning": "expensive; costly",
     "level": 6,
     "phrase": "昂贵",
+    "prompt1": "昂贵",
+    "prompt2": "写昂字",
     "sentence": "这是“昂”字。"
   },
   {
@@ -16725,6 +20905,8 @@ window.HSK_CHARS = [
     "meaning": "prosperous",
     "level": 6,
     "phrase": "昌盛",
+    "prompt1": "昌盛",
+    "prompt2": "写昌字",
     "sentence": "这是“昌”字。"
   },
   {
@@ -16733,6 +20915,8 @@ window.HSK_CHARS = [
     "meaning": "dusk; evening; nightfall",
     "level": 6,
     "phrase": "黄昏",
+    "prompt1": "昏迷",
+    "prompt2": "黄昏",
     "sentence": "这是“昏”字。"
   },
   {
@@ -16741,6 +20925,8 @@ window.HSK_CHARS = [
     "meaning": "formerly; in olden days",
     "level": 6,
     "phrase": "昔日",
+    "prompt1": "昔日",
+    "prompt2": "写昔字",
     "sentence": "这是“昔”字。"
   },
   {
@@ -16749,6 +20935,8 @@ window.HSK_CHARS = [
     "meaning": "ambiguous; shady",
     "level": 6,
     "phrase": "暧昧",
+    "prompt1": "愚昧",
+    "prompt2": "暧昧",
     "sentence": "这是“昧”字。"
   },
   {
@@ -16757,6 +20945,8 @@ window.HSK_CHARS = [
     "meaning": "day and night; continuously without stop",
     "level": 6,
     "phrase": "昼夜",
+    "prompt1": "昼夜",
+    "prompt2": "写昼字",
     "sentence": "这是“昼”字。"
   },
   {
@@ -16765,6 +20955,8 @@ window.HSK_CHARS = [
     "meaning": "to sway; to shake",
     "level": 6,
     "phrase": "晃",
+    "prompt1": "晃字",
+    "prompt2": "写晃字",
     "sentence": "这是“晃”字。"
   },
   {
@@ -16773,6 +20965,8 @@ window.HSK_CHARS = [
     "meaning": "promote to a higher position",
     "level": 6,
     "phrase": "晋升",
+    "prompt1": "晋升",
+    "prompt2": "写晋字",
     "sentence": "这是“晋”字。"
   },
   {
@@ -16781,6 +20975,8 @@ window.HSK_CHARS = [
     "meaning": "become a household name; well-known",
     "level": 6,
     "phrase": "家喻户晓",
+    "prompt1": "家喻户晓",
+    "prompt2": "写晓字",
     "sentence": "这是“晓”字。"
   },
   {
@@ -16789,6 +20985,8 @@ window.HSK_CHARS = [
     "meaning": "meet; meeting; conference",
     "level": 6,
     "phrase": "会晤",
+    "prompt1": "会晤",
+    "prompt2": "写晤字",
     "sentence": "这是“晤”字。"
   },
   {
@@ -16797,6 +20995,8 @@ window.HSK_CHARS = [
     "meaning": "early in the morning",
     "level": 6,
     "phrase": "凌晨",
+    "prompt1": "凌晨",
+    "prompt2": "清晨",
     "sentence": "这是“晨”字。"
   },
   {
@@ -16805,6 +21005,8 @@ window.HSK_CHARS = [
     "meaning": "clear; distinct; clarity",
     "level": 6,
     "phrase": "清晰",
+    "prompt1": "清晰",
+    "prompt2": "写晰字",
     "sentence": "这是“晰”字。"
   },
   {
@@ -16813,6 +21015,8 @@ window.HSK_CHARS = [
     "meaning": "a crystal; to crystallize",
     "level": 6,
     "phrase": "结晶",
+    "prompt1": "结晶",
+    "prompt2": "写晶字",
     "sentence": "这是“晶”字。"
   },
   {
@@ -16821,6 +21025,8 @@ window.HSK_CHARS = [
     "meaning": "dry in the air/sun; (colloquial) snub or ignore",
     "level": 6,
     "phrase": "晾",
+    "prompt1": "晾字",
+    "prompt2": "写晾字",
     "sentence": "这是“晾”字。"
   },
   {
@@ -16829,6 +21035,8 @@ window.HSK_CHARS = [
     "meaning": "exchanging conventional greetings; winter and summer",
     "level": 6,
     "phrase": "寒暄",
+    "prompt1": "寒暄",
+    "prompt2": "写暄字",
     "sentence": "这是“暄”字。"
   },
   {
@@ -16837,6 +21045,8 @@ window.HSK_CHARS = [
     "meaning": "ambiguous; shady",
     "level": 6,
     "phrase": "暧昧",
+    "prompt1": "暧昧",
+    "prompt2": "写暧字",
     "sentence": "这是“暧”字。"
   },
   {
@@ -16845,6 +21055,8 @@ window.HSK_CHARS = [
     "meaning": "violence; (use) force",
     "level": 6,
     "phrase": "暴力",
+    "prompt1": "暴力",
+    "prompt2": "风暴",
     "sentence": "这是“暴”字。"
   },
   {
@@ -16853,6 +21065,8 @@ window.HSK_CHARS = [
     "meaning": "to expose; to make public",
     "level": 6,
     "phrase": "曝光",
+    "prompt1": "曝光",
+    "prompt2": "写曝字",
     "sentence": "这是“曝”字。"
   },
   {
@@ -16861,6 +21075,8 @@ window.HSK_CHARS = [
     "meaning": "winding; zigzag; complicated",
     "level": 6,
     "phrase": "曲折",
+    "prompt1": "曲子",
+    "prompt2": "歪曲",
     "sentence": "这是“曲”字。"
   },
   {
@@ -16869,6 +21085,8 @@ window.HSK_CHARS = [
     "meaning": "plain; sober; down-to-earth",
     "level": 6,
     "phrase": "朴实",
+    "prompt1": "朴实",
+    "prompt2": "朴素",
     "sentence": "这是“朴”字。"
   },
   {
@@ -16877,6 +21095,8 @@ window.HSK_CHARS = [
     "meaning": "rotten; decayed; decadent; degenerate",
     "level": 6,
     "phrase": "腐朽",
+    "prompt1": "腐朽",
+    "prompt2": "写朽字",
     "sentence": "这是“朽”字。"
   },
   {
@@ -16885,6 +21105,8 @@ window.HSK_CHARS = [
     "meaning": "lever; pry bar; crowbar; financial leverage",
     "level": 6,
     "phrase": "杠杆",
+    "prompt1": "杠杆",
+    "prompt2": "写杆字",
     "sentence": "这是“杆”字。"
   },
   {
@@ -16893,6 +21115,8 @@ window.HSK_CHARS = [
     "meaning": "crutch; walking stick",
     "level": 6,
     "phrase": "拐杖",
+    "prompt1": "拐杖",
+    "prompt2": "写杖字",
     "sentence": "这是“杖”字。"
   },
   {
@@ -16901,6 +21125,8 @@ window.HSK_CHARS = [
     "meaning": "put an end to",
     "level": 6,
     "phrase": "杜绝",
+    "prompt1": "杜绝",
+    "prompt2": "写杜字",
     "sentence": "这是“杜”字。"
   },
   {
@@ -16909,6 +21135,8 @@ window.HSK_CHARS = [
     "meaning": "lever; pry bar; crowbar; financial leverage",
     "level": 6,
     "phrase": "杠杆",
+    "prompt1": "杠杆",
+    "prompt2": "写杠字",
     "sentence": "这是“杠”字。"
   },
   {
@@ -16917,6 +21145,8 @@ window.HSK_CHARS = [
     "meaning": "outstanding; preeminent",
     "level": 6,
     "phrase": "杰出",
+    "prompt1": "杰出",
+    "prompt2": "写杰字",
     "sentence": "这是“杰”字。"
   },
   {
@@ -16925,6 +21155,8 @@ window.HSK_CHARS = [
     "meaning": "to wrong; injustice; not worthwhile",
     "level": 6,
     "phrase": "冤枉",
+    "prompt1": "冤枉",
+    "prompt2": "写枉字",
     "sentence": "这是“枉”字。"
   },
   {
@@ -16933,6 +21165,8 @@ window.HSK_CHARS = [
     "meaning": "pillow",
     "level": 6,
     "phrase": "枕头",
+    "prompt1": "枕头",
+    "prompt2": "写枕字",
     "sentence": "这是“枕”字。"
   },
   {
@@ -16941,6 +21175,8 @@ window.HSK_CHARS = [
     "meaning": "(mw for coins, rings, medals)",
     "level": 6,
     "phrase": "枚",
+    "prompt1": "枚字",
+    "prompt2": "写枚字",
     "sentence": "这是“枚”字。"
   },
   {
@@ -16949,6 +21185,8 @@ window.HSK_CHARS = [
     "meaning": "branch; twig; (mw for sticks, rods, pencils)",
     "level": 6,
     "phrase": "枝",
+    "prompt1": "枝字",
+    "prompt2": "写枝字",
     "sentence": "这是“枝”字。"
   },
   {
@@ -16957,6 +21195,8 @@ window.HSK_CHARS = [
     "meaning": "wither; withered",
     "level": 6,
     "phrase": "枯萎",
+    "prompt1": "枯燥",
+    "prompt2": "枯萎",
     "sentence": "这是“枯”字。"
   },
   {
@@ -16965,6 +21205,8 @@ window.HSK_CHARS = [
     "meaning": "invitation card; written invitation",
     "level": 6,
     "phrase": "请柬",
+    "prompt1": "请柬",
+    "prompt2": "写柬字",
     "sentence": "这是“柬”字。"
   },
   {
@@ -16973,6 +21215,8 @@ window.HSK_CHARS = [
     "meaning": "pillar; prop; mainstay; backbone",
     "level": 6,
     "phrase": "支柱",
+    "prompt1": "支柱",
+    "prompt2": "写柱字",
     "sentence": "这是“柱”字。"
   },
   {
@@ -16981,6 +21225,8 @@ window.HSK_CHARS = [
     "meaning": "roof beam; (mw for buildings)",
     "level": 6,
     "phrase": "栋",
+    "prompt1": "栋字",
+    "prompt2": "写栋字",
     "sentence": "这是“栋”字。"
   },
   {
@@ -16989,6 +21235,8 @@ window.HSK_CHARS = [
     "meaning": "column (in a newspaper,TV,etc)",
     "level": 6,
     "phrase": "栏目",
+    "prompt1": "栏目",
+    "prompt2": "写栏字",
     "sentence": "这是“栏”字。"
   },
   {
@@ -16997,6 +21245,8 @@ window.HSK_CHARS = [
     "meaning": "stem; root; trunk; (mw for plants)",
     "level": 6,
     "phrase": "株",
+    "prompt1": "株字",
+    "prompt2": "写株字",
     "sentence": "这是“株”字。"
   },
   {
@@ -17005,6 +21255,8 @@ window.HSK_CHARS = [
     "meaning": "grow; educate; cultivate",
     "level": 6,
     "phrase": "栽培",
+    "prompt1": "栽培",
+    "prompt2": "写栽字",
     "sentence": "这是“栽”字。"
   },
   {
@@ -17013,6 +21265,8 @@ window.HSK_CHARS = [
     "meaning": "frame; framework; skeleton",
     "level": 6,
     "phrase": "框架",
+    "prompt1": "框架",
+    "prompt2": "写框字",
     "sentence": "这是“框”字。"
   },
   {
@@ -17021,6 +21275,8 @@ window.HSK_CHARS = [
     "meaning": "experienced many changes",
     "level": 6,
     "phrase": "饱经沧桑",
+    "prompt1": "饱经沧桑",
+    "prompt2": "写桑字",
     "sentence": "这是“桑”字。"
   },
   {
@@ -17029,6 +21285,8 @@ window.HSK_CHARS = [
     "meaning": "oar; paddle",
     "level": 6,
     "phrase": "桨",
+    "prompt1": "桨字",
+    "prompt2": "写桨字",
     "sentence": "这是“桨”字。"
   },
   {
@@ -17037,6 +21295,8 @@ window.HSK_CHARS = [
     "meaning": "bridge",
     "level": 6,
     "phrase": "桥梁",
+    "prompt1": "桥梁",
+    "prompt2": "写梁字",
     "sentence": "这是“梁”字。"
   },
   {
@@ -17045,6 +21305,8 @@ window.HSK_CHARS = [
     "meaning": "tip of a branch",
     "level": 6,
     "phrase": "梢",
+    "prompt1": "梢字",
+    "prompt2": "写梢字",
     "sentence": "这是“梢”字。"
   },
   {
@@ -17053,6 +21315,8 @@ window.HSK_CHARS = [
     "meaning": "machine; mechanical",
     "level": 6,
     "phrase": "机械",
+    "prompt1": "机械",
+    "prompt2": "写械字",
     "sentence": "这是“械”字。"
   },
   {
@@ -17061,6 +21325,8 @@ window.HSK_CHARS = [
     "meaning": "cotton",
     "level": 6,
     "phrase": "棉花",
+    "prompt1": "棉花",
+    "prompt2": "写棉字",
     "sentence": "这是“棉”字。"
   },
   {
@@ -17069,6 +21335,8 @@ window.HSK_CHARS = [
     "meaning": "club",
     "level": 6,
     "phrase": "棍棒",
+    "prompt1": "棍棒",
+    "prompt2": "写棍字",
     "sentence": "这是“棍”字。"
   },
   {
@@ -17077,6 +21345,8 @@ window.HSK_CHARS = [
     "meaning": "brown (the color)",
     "level": 6,
     "phrase": "棕色",
+    "prompt1": "棕色",
+    "prompt2": "写棕字",
     "sentence": "这是“棕”字。"
   },
   {
@@ -17085,6 +21355,8 @@ window.HSK_CHARS = [
     "meaning": "cervical vertebra; the seven cervical vertebrae in the neck of humans and most mammals",
     "level": 6,
     "phrase": "颈椎",
+    "prompt1": "颈椎",
+    "prompt2": "写椎字",
     "sentence": "这是“椎”字。"
   },
   {
@@ -17093,6 +21365,8 @@ window.HSK_CHARS = [
     "meaning": "ellipse; oval",
     "level": 6,
     "phrase": "椭圆",
+    "prompt1": "椭圆",
+    "prompt2": "写椭字",
     "sentence": "这是“椭”字。"
   },
   {
@@ -17101,6 +21375,8 @@ window.HSK_CHARS = [
     "meaning": "example; model",
     "level": 6,
     "phrase": "榜样",
+    "prompt1": "榜样",
+    "prompt2": "写榜字",
     "sentence": "这是“榜”字。"
   },
   {
@@ -17109,6 +21385,8 @@ window.HSK_CHARS = [
     "meaning": "to press; to squeeze; to extract juice, oil, etc. by squeezing",
     "level": 6,
     "phrase": "压榨",
+    "prompt1": "压榨",
+    "prompt2": "写榨字",
     "sentence": "这是“榨”字。"
   },
   {
@@ -17117,6 +21395,8 @@ window.HSK_CHARS = [
     "meaning": "horizontal; across; (horizontal character stroke)",
     "level": 6,
     "phrase": "横",
+    "prompt1": "纵横",
+    "prompt2": "写横字",
     "sentence": "这是“横”字。"
   },
   {
@@ -17125,6 +21405,8 @@ window.HSK_CHARS = [
     "meaning": "orange (color); orange (fruit, tree)",
     "level": 6,
     "phrase": "橙",
+    "prompt1": "橙字",
+    "prompt2": "写橙字",
     "sentence": "这是“橙”字。"
   },
   {
@@ -17133,6 +21415,8 @@ window.HSK_CHARS = [
     "meaning": "desire; lust",
     "level": 6,
     "phrase": "欲望",
+    "prompt1": "欲望",
+    "prompt2": "写欲字",
     "sentence": "这是“欲”字。"
   },
   {
@@ -17141,6 +21425,8 @@ window.HSK_CHARS = [
     "meaning": "to bully; intimidate",
     "level": 6,
     "phrase": "欺负",
+    "prompt1": "欺负",
+    "prompt2": "欺骗",
     "sentence": "这是“欺”字。"
   },
   {
@@ -17149,6 +21435,8 @@ window.HSK_CHARS = [
     "meaning": "difference (of opinion/position",
     "level": 6,
     "phrase": "分歧",
+    "prompt1": "歧视",
+    "prompt2": "分歧",
     "sentence": "这是“歧”字。"
   },
   {
@@ -17157,6 +21445,8 @@ window.HSK_CHARS = [
     "meaning": "evil person who commits crimes; villain; gangster",
     "level": 6,
     "phrase": "歹徒",
+    "prompt1": "歹徒",
+    "prompt2": "写歹字",
     "sentence": "这是“歹”字。"
   },
   {
@@ -17165,6 +21455,8 @@ window.HSK_CHARS = [
     "meaning": "to suffer a calamity; go through a disaster",
     "level": 6,
     "phrase": "遭殃",
+    "prompt1": "遭殃",
+    "prompt2": "写殃字",
     "sentence": "这是“殃”字。"
   },
   {
@@ -17173,6 +21465,8 @@ window.HSK_CHARS = [
     "meaning": "deformity; handicapped; crippled",
     "level": 6,
     "phrase": "残疾",
+    "prompt1": "残忍",
+    "prompt2": "摧残",
     "sentence": "这是“残”字。"
   },
   {
@@ -17181,6 +21475,8 @@ window.HSK_CHARS = [
     "meaning": "propagate; to breed; reproduce",
     "level": 6,
     "phrase": "繁殖",
+    "prompt1": "繁殖",
+    "prompt2": "殖民地",
     "sentence": "这是“殖”字。"
   },
   {
@@ -17189,6 +21485,8 @@ window.HSK_CHARS = [
     "meaning": "beat up; hit",
     "level": 6,
     "phrase": "殴打",
+    "prompt1": "殴打",
+    "prompt2": "写殴字",
     "sentence": "这是“殴”字。"
   },
   {
@@ -17197,6 +21495,8 @@ window.HSK_CHARS = [
     "meaning": "palace",
     "level": 6,
     "phrase": "宫殿",
+    "prompt1": "宫殿",
+    "prompt2": "写殿字",
     "sentence": "这是“殿”字。"
   },
   {
@@ -17205,6 +21505,8 @@ window.HSK_CHARS = [
     "meaning": "perish; ruin; destroy",
     "level": 6,
     "phrase": "毁灭",
+    "prompt1": "毁灭",
+    "prompt2": "销毁",
     "sentence": "这是“毁”字。"
   },
   {
@@ -17213,6 +21515,8 @@ window.HSK_CHARS = [
     "meaning": "willpower; perseverance; will; stamina; tenacity",
     "level": 6,
     "phrase": "毅力",
+    "prompt1": "毅力",
+    "prompt2": "毅然",
     "sentence": "这是“毅”字。"
   },
   {
@@ -17221,6 +21525,8 @@ window.HSK_CHARS = [
     "meaning": "degrees Celsius",
     "level": 6,
     "phrase": "摄氏度",
+    "prompt1": "摄氏度",
+    "prompt2": "写氏字",
     "sentence": "这是“氏”字。"
   },
   {
@@ -17229,6 +21535,8 @@ window.HSK_CHARS = [
     "meaning": "rogue; hooligan; gangster",
     "level": 6,
     "phrase": "流氓",
+    "prompt1": "流氓",
+    "prompt2": "写氓字",
     "sentence": "这是“氓”字。"
   },
   {
@@ -17237,6 +21545,8 @@ window.HSK_CHARS = [
     "meaning": "carbon dioxide; CO2",
     "level": 6,
     "phrase": "二氧化碳",
+    "prompt1": "氧气",
+    "prompt2": "二氧化碳",
     "sentence": "这是“氧”字。"
   },
   {
@@ -17245,6 +21555,8 @@ window.HSK_CHARS = [
     "meaning": "eliminate (in a competition); natural selection; die/phase out",
     "level": 6,
     "phrase": "淘汰",
+    "prompt1": "淘汰",
+    "prompt2": "优胜劣汰",
     "sentence": "这是“汰”字。"
   },
   {
@@ -17253,6 +21565,8 @@ window.HSK_CHARS = [
     "meaning": "(used in reference to an ocean, river, lake etc.) violently surge up; turbulent",
     "level": 6,
     "phrase": "汹涌",
+    "prompt1": "汹涌",
+    "prompt2": "写汹字",
     "sentence": "这是“汹”字。"
   },
   {
@@ -17261,6 +21575,8 @@ window.HSK_CHARS = [
     "meaning": "fertile",
     "level": 6,
     "phrase": "肥沃",
+    "prompt1": "肥沃",
+    "prompt2": "写沃字",
     "sentence": "这是“沃”字。"
   },
   {
@@ -17269,6 +21585,8 @@ window.HSK_CHARS = [
     "meaning": "take a bath; revel; immerse",
     "level": 6,
     "phrase": "沐浴",
+    "prompt1": "沐浴",
+    "prompt2": "写沐字",
     "sentence": "这是“沐”字。"
   },
   {
@@ -17277,6 +21595,8 @@ window.HSK_CHARS = [
     "meaning": "abundant; plentiful; vigorous",
     "level": 6,
     "phrase": "充沛",
+    "prompt1": "充沛",
+    "prompt2": "写沛字",
     "sentence": "这是“沛”字。"
   },
   {
@@ -17285,6 +21605,8 @@ window.HSK_CHARS = [
     "meaning": "experienced many changes",
     "level": 6,
     "phrase": "饱经沧桑",
+    "prompt1": "饱经沧桑",
+    "prompt2": "写沧字",
     "sentence": "这是“沧”字。"
   },
   {
@@ -17293,6 +21615,8 @@ window.HSK_CHARS = [
     "meaning": "foam; (soap bubble); (economic) bubble",
     "level": 6,
     "phrase": "泡沫",
+    "prompt1": "泡沫",
+    "prompt2": "写沫字",
     "sentence": "这是“沫”字。"
   },
   {
@@ -17301,6 +21625,8 @@ window.HSK_CHARS = [
     "meaning": "dejected; depressed; dispirited",
     "level": 6,
     "phrase": "沮丧",
+    "prompt1": "沮丧",
+    "prompt2": "写沮字",
     "sentence": "这是“沮”字。"
   },
   {
@@ -17309,6 +21635,8 @@ window.HSK_CHARS = [
     "meaning": "to boil; boiling",
     "level": 6,
     "phrase": "沸腾",
+    "prompt1": "沸腾",
+    "prompt2": "写沸字",
     "sentence": "这是“沸”字。"
   },
   {
@@ -17317,6 +21645,8 @@ window.HSK_CHARS = [
     "meaning": "marsh; swamp; glade; wetlands",
     "level": 6,
     "phrase": "沼泽",
+    "prompt1": "沼泽",
+    "prompt2": "写沼字",
     "sentence": "这是“沼”字。"
   },
   {
@@ -17325,6 +21655,8 @@ window.HSK_CHARS = [
     "meaning": "bask in the light; benefit from association with sth.; reflected glory",
     "level": 6,
     "phrase": "沾光",
+    "prompt1": "沾光",
+    "prompt2": "写沾字",
     "sentence": "这是“沾”字。"
   },
   {
@@ -17333,6 +21665,8 @@ window.HSK_CHARS = [
     "meaning": "coastal",
     "level": 6,
     "phrase": "沿海",
+    "prompt1": "沿海",
+    "prompt2": "写沿字",
     "sentence": "这是“沿”字。"
   },
   {
@@ -17341,6 +21675,8 @@ window.HSK_CHARS = [
     "meaning": "leak (information); divulge",
     "level": 6,
     "phrase": "泄露",
+    "prompt1": "泄气",
+    "prompt2": "泄露",
     "sentence": "这是“泄”字。"
   },
   {
@@ -17349,6 +21685,8 @@ window.HSK_CHARS = [
     "meaning": "lake",
     "level": 6,
     "phrase": "湖泊",
+    "prompt1": "停泊",
+    "prompt2": "湖泊",
     "sentence": "这是“泊”字。"
   },
   {
@@ -17357,6 +21695,8 @@ window.HSK_CHARS = [
     "meaning": "secrete",
     "level": 6,
     "phrase": "分泌",
+    "prompt1": "分泌",
+    "prompt2": "写泌字",
     "sentence": "这是“泌”字。"
   },
   {
@@ -17365,6 +21705,8 @@ window.HSK_CHARS = [
     "meaning": "to soak",
     "level": 6,
     "phrase": "浸泡",
+    "prompt1": "泡沫",
+    "prompt2": "浸泡",
     "sentence": "这是“泡”字。"
   },
   {
@@ -17373,6 +21715,8 @@ window.HSK_CHARS = [
     "meaning": "rush about; be busy running about",
     "level": 6,
     "phrase": "奔波",
+    "prompt1": "波浪",
+    "prompt2": "奔波",
     "sentence": "这是“波”字。"
   },
   {
@@ -17381,6 +21725,8 @@ window.HSK_CHARS = [
     "meaning": "weep; cry; sob",
     "level": 6,
     "phrase": "哭泣",
+    "prompt1": "哭泣",
+    "prompt2": "写泣字",
     "sentence": "这是“泣”字。"
   },
   {
@@ -17389,6 +21735,8 @@ window.HSK_CHARS = [
     "meaning": "cement",
     "level": 6,
     "phrase": "水泥",
+    "prompt1": "水泥",
+    "prompt2": "写泥字",
     "sentence": "这是“泥”字。"
   },
   {
@@ -17397,6 +21745,8 @@ window.HSK_CHARS = [
     "meaning": "leading scholar of his time; magnate",
     "level": 6,
     "phrase": "泰斗",
+    "prompt1": "泰斗",
+    "prompt2": "写泰字",
     "sentence": "这是“泰”字。"
   },
   {
@@ -17405,6 +21755,8 @@ window.HSK_CHARS = [
     "meaning": "diarrhea",
     "level": 6,
     "phrase": "腹泻",
+    "prompt1": "腹泻",
+    "prompt2": "写泻字",
     "sentence": "这是“泻”字。"
   },
   {
@@ -17413,6 +21765,8 @@ window.HSK_CHARS = [
     "meaning": "marsh; swamp; glade; wetlands",
     "level": 6,
     "phrase": "沼泽",
+    "prompt1": "沼泽",
+    "prompt2": "写泽字",
     "sentence": "这是“泽”字。"
   },
   {
@@ -17421,6 +21775,8 @@ window.HSK_CHARS = [
     "meaning": "pure; unadulterated; cleanse",
     "level": 6,
     "phrase": "纯洁",
+    "prompt1": "廉洁",
+    "prompt2": "纯洁",
     "sentence": "这是“洁”字。"
   },
   {
@@ -17429,6 +21785,8 @@ window.HSK_CHARS = [
     "meaning": "(saying) with gusto; eagerly; with great interest",
     "level": 6,
     "phrase": "津津有味",
+    "prompt1": "津津有味",
+    "prompt2": "写津字",
     "sentence": "这是“津”字。"
   },
   {
@@ -17437,6 +21795,8 @@ window.HSK_CHARS = [
     "meaning": "flood",
     "level": 6,
     "phrase": "洪水",
+    "prompt1": "洪水",
+    "prompt2": "写洪字",
     "sentence": "这是“洪”字。"
   },
   {
@@ -17445,6 +21805,8 @@ window.HSK_CHARS = [
     "meaning": "discuss; talk over",
     "level": 6,
     "phrase": "洽谈",
+    "prompt1": "洽谈",
+    "prompt2": "融洽",
     "sentence": "这是“洽”字。"
   },
   {
@@ -17453,6 +21815,8 @@ window.HSK_CHARS = [
     "meaning": "muddy; dirty; turbid",
     "level": 6,
     "phrase": "混浊",
+    "prompt1": "混浊",
+    "prompt2": "写浊字",
     "sentence": "这是“浊”字。"
   },
   {
@@ -17461,6 +21825,8 @@ window.HSK_CHARS = [
     "meaning": "entire body; from head to foot",
     "level": 6,
     "phrase": "浑身",
+    "prompt1": "浑身",
+    "prompt2": "写浑字",
     "sentence": "这是“浑”字。"
   },
   {
@@ -17469,6 +21835,8 @@ window.HSK_CHARS = [
     "meaning": "superficial; float; hover; drift",
     "level": 6,
     "phrase": "漂浮",
+    "prompt1": "漂浮",
+    "prompt2": "写浮字",
     "sentence": "这是“浮”字。"
   },
   {
@@ -17477,6 +21845,8 @@ window.HSK_CHARS = [
     "meaning": "take a bath; revel; immerse",
     "level": 6,
     "phrase": "沐浴",
+    "prompt1": "沐浴",
+    "prompt2": "写浴字",
     "sentence": "这是“浴”字。"
   },
   {
@@ -17485,6 +21855,8 @@ window.HSK_CHARS = [
     "meaning": "to soak",
     "level": 6,
     "phrase": "浸泡",
+    "prompt1": "浸泡",
+    "prompt2": "写浸字",
     "sentence": "这是“浸”字。"
   },
   {
@@ -17493,6 +21865,8 @@ window.HSK_CHARS = [
     "meaning": "interfere; intervene; meddle",
     "level": 6,
     "phrase": "干涉",
+    "prompt1": "涉及",
+    "prompt2": "干涉",
     "sentence": "这是“涉”字。"
   },
   {
@@ -17501,6 +21875,8 @@ window.HSK_CHARS = [
     "meaning": "(used in reference to an ocean, river, lake etc.) violently surge up; turbulent",
     "level": 6,
     "phrase": "汹涌",
+    "prompt1": "涌现",
+    "prompt2": "汹涌",
     "sentence": "这是“涌”字。"
   },
   {
@@ -17509,6 +21885,8 @@ window.HSK_CHARS = [
     "meaning": "nasal mucus; snivel",
     "level": 6,
     "phrase": "鼻涕",
+    "prompt1": "鼻涕",
+    "prompt2": "写涕字",
     "sentence": "这是“涕”字。"
   },
   {
@@ -17517,6 +21895,8 @@ window.HSK_CHARS = [
     "meaning": "great waves; billows",
     "level": 6,
     "phrase": "波涛",
+    "prompt1": "波涛",
+    "prompt2": "写涛字",
     "sentence": "这是“涛”字。"
   },
   {
@@ -17525,6 +21905,8 @@ window.HSK_CHARS = [
     "meaning": "bitter and astringent; pained; agonized; anguished",
     "level": 6,
     "phrase": "苦涩",
+    "prompt1": "苦涩",
+    "prompt2": "写涩字",
     "sentence": "这是“涩”字。"
   },
   {
@@ -17533,6 +21915,8 @@ window.HSK_CHARS = [
     "meaning": "to instant-boil (mutton, beef, vegetables, etc.)",
     "level": 6,
     "phrase": "涮火锅",
+    "prompt1": "涮火锅",
+    "prompt2": "写涮字",
     "sentence": "这是“涮”字。"
   },
   {
@@ -17541,6 +21925,8 @@ window.HSK_CHARS = [
     "meaning": "liquid",
     "level": 6,
     "phrase": "液体",
+    "prompt1": "液体",
+    "prompt2": "写液字",
     "sentence": "这是“液”字。"
   },
   {
@@ -17549,6 +21935,8 @@ window.HSK_CHARS = [
     "meaning": "connotation",
     "level": 6,
     "phrase": "内涵",
+    "prompt1": "内涵",
+    "prompt2": "写涵字",
     "sentence": "这是“涵”字。"
   },
   {
@@ -17557,6 +21945,8 @@ window.HSK_CHARS = [
     "meaning": "to precipitate (solid sediment out of a solution); to settle",
     "level": 6,
     "phrase": "沉淀",
+    "prompt1": "沉淀",
+    "prompt2": "写淀字",
     "sentence": "这是“淀”字。"
   },
   {
@@ -17565,6 +21955,8 @@ window.HSK_CHARS = [
     "meaning": "obscure; confuse; mix up; blur; mislead; confusing",
     "level": 6,
     "phrase": "混淆",
+    "prompt1": "混淆",
+    "prompt2": "写淆字",
     "sentence": "这是“淆”字。"
   },
   {
@@ -17573,6 +21965,8 @@ window.HSK_CHARS = [
     "meaning": "to drain; to drip; drench",
     "level": 6,
     "phrase": "淋",
+    "prompt1": "淋字",
+    "prompt2": "写淋字",
     "sentence": "这是“淋”字。"
   },
   {
@@ -17581,6 +21975,8 @@ window.HSK_CHARS = [
     "meaning": "to mix; to blend",
     "level": 6,
     "phrase": "混合",
+    "prompt1": "混乱",
+    "prompt2": "混淆",
     "sentence": "这是“混”字。"
   },
   {
@@ -17589,6 +21985,8 @@ window.HSK_CHARS = [
     "meaning": "submerge; drown; to flood",
     "level": 6,
     "phrase": "淹没",
+    "prompt1": "淹没",
+    "prompt2": "写淹字",
     "sentence": "这是“淹”字。"
   },
   {
@@ -17597,6 +21995,8 @@ window.HSK_CHARS = [
     "meaning": "draw legs on a snake (idiom); to ruin something by adding something superfluous",
     "level": 6,
     "phrase": "画蛇添足",
+    "prompt1": "增添",
+    "prompt2": "锦上添花",
     "sentence": "这是“添”字。"
   },
   {
@@ -17605,6 +22005,8 @@ window.HSK_CHARS = [
     "meaning": "fisherman; fisher folk",
     "level": 6,
     "phrase": "渔民",
+    "prompt1": "渔民",
+    "prompt2": "写渔字",
     "sentence": "这是“渔”字。"
   },
   {
@@ -17613,6 +22015,8 @@ window.HSK_CHARS = [
     "meaning": "infiltrate; permeate",
     "level": 6,
     "phrase": "渗透",
+    "prompt1": "渗透",
+    "prompt2": "写渗字",
     "sentence": "这是“渗”字。"
   },
   {
@@ -17621,6 +22025,8 @@ window.HSK_CHARS = [
     "meaning": "irrigation ditch; medium or channel of communication",
     "level": 6,
     "phrase": "渠道",
+    "prompt1": "渠道",
+    "prompt2": "写渠字",
     "sentence": "这是“渠”字。"
   },
   {
@@ -17629,6 +22035,8 @@ window.HSK_CHARS = [
     "meaning": "to cross a river by ferry; transition; interim",
     "level": 6,
     "phrase": "过渡",
+    "prompt1": "过渡",
+    "prompt2": "写渡字",
     "sentence": "这是“渡”字。"
   },
   {
@@ -17637,6 +22045,8 @@ window.HSK_CHARS = [
     "meaning": "dregs; slag",
     "level": 6,
     "phrase": "渣",
+    "prompt1": "渣字",
+    "prompt2": "写渣字",
     "sentence": "这是“渣”字。"
   },
   {
@@ -17645,6 +22055,8 @@ window.HSK_CHARS = [
     "meaning": "port; harbor",
     "level": 6,
     "phrase": "港口",
+    "prompt1": "港口",
+    "prompt2": "港湾",
     "sentence": "这是“港”字。"
   },
   {
@@ -17653,6 +22065,8 @@ window.HSK_CHARS = [
     "meaning": "tiny; minute; negligible",
     "level": 6,
     "phrase": "渺小",
+    "prompt1": "渺小",
+    "prompt2": "写渺字",
     "sentence": "这是“渺”字。"
   },
   {
@@ -17661,6 +22075,8 @@ window.HSK_CHARS = [
     "meaning": "lake",
     "level": 6,
     "phrase": "湖泊",
+    "prompt1": "湖泊",
+    "prompt2": "写湖字",
     "sentence": "这是“湖”字。"
   },
   {
@@ -17669,6 +22085,8 @@ window.HSK_CHARS = [
     "meaning": "harbor; estuary",
     "level": 6,
     "phrase": "港湾",
+    "prompt1": "港湾",
+    "prompt2": "写湾字",
     "sentence": "这是“湾”字。"
   },
   {
@@ -17677,6 +22095,8 @@ window.HSK_CHARS = [
     "meaning": "collapse; crumble; fall apart",
     "level": 6,
     "phrase": "崩溃",
+    "prompt1": "崩溃",
+    "prompt2": "写溃字",
     "sentence": "这是“溃”字。"
   },
   {
@@ -17685,6 +22105,8 @@ window.HSK_CHARS = [
     "meaning": "to splash",
     "level": 6,
     "phrase": "溅",
+    "prompt1": "溅字",
+    "prompt2": "写溅字",
     "sentence": "这是“溅”字。"
   },
   {
@@ -17693,6 +22115,8 @@ window.HSK_CHARS = [
     "meaning": "irrigate",
     "level": 6,
     "phrase": "灌溉",
+    "prompt1": "灌溉",
+    "prompt2": "写溉字",
     "sentence": "这是“溉”字。"
   },
   {
@@ -17701,6 +22125,8 @@ window.HSK_CHARS = [
     "meaning": "slip away; to skate; to glide",
     "level": 6,
     "phrase": "溜",
+    "prompt1": "溜字",
+    "prompt2": "写溜字",
     "sentence": "这是“溜”字。"
   },
   {
@@ -17709,6 +22135,8 @@ window.HSK_CHARS = [
     "meaning": "creek",
     "level": 6,
     "phrase": "溪",
+    "prompt1": "溪字",
+    "prompt2": "写溪字",
     "sentence": "这是“溪”字。"
   },
   {
@@ -17717,6 +22145,8 @@ window.HSK_CHARS = [
     "meaning": "dissolve; solution",
     "level": 6,
     "phrase": "溶解",
+    "prompt1": "溶解",
+    "prompt2": "写溶字",
     "sentence": "这是“溶”字。"
   },
   {
@@ -17725,6 +22155,8 @@ window.HSK_CHARS = [
     "meaning": "quenched; moist",
     "level": 6,
     "phrase": "滋润",
+    "prompt1": "滋味",
+    "prompt2": "滋润",
     "sentence": "这是“滋”字。"
   },
   {
@@ -17733,6 +22165,8 @@ window.HSK_CHARS = [
     "meaning": "(saying) talking non-stop; gushing; torrential",
     "level": 6,
     "phrase": "滔滔不绝",
+    "prompt1": "滔滔不绝",
+    "prompt2": "写滔字",
     "sentence": "这是“滔”字。"
   },
   {
@@ -17741,6 +22175,8 @@ window.HSK_CHARS = [
     "meaning": "stagnation; be at a standstill; bogged down",
     "level": 6,
     "phrase": "停滞",
+    "prompt1": "滞留",
+    "prompt2": "停滞",
     "sentence": "这是“滞”字。"
   },
   {
@@ -17749,6 +22185,8 @@ window.HSK_CHARS = [
     "meaning": "to filter; filter",
     "level": 6,
     "phrase": "过滤",
+    "prompt1": "过滤",
+    "prompt2": "写滤字",
     "sentence": "这是“滤”字。"
   },
   {
@@ -17757,6 +22195,8 @@ window.HSK_CHARS = [
     "meaning": "to be in flood; to overflow (the banks); to inundate; to spread unchecked",
     "level": 6,
     "phrase": "泛滥",
+    "prompt1": "泛滥",
+    "prompt2": "写滥字",
     "sentence": "这是“滥”字。"
   },
   {
@@ -17765,6 +22205,8 @@ window.HSK_CHARS = [
     "meaning": "shore; seaside",
     "level": 6,
     "phrase": "海滨",
+    "prompt1": "海滨",
+    "prompt2": "写滨字",
     "sentence": "这是“滨”字。"
   },
   {
@@ -17773,6 +22215,8 @@ window.HSK_CHARS = [
     "meaning": "oil paint; varnish",
     "level": 6,
     "phrase": "油漆",
+    "prompt1": "油漆",
+    "prompt2": "写漆字",
     "sentence": "这是“漆”字。"
   },
   {
@@ -17781,6 +22225,8 @@ window.HSK_CHARS = [
     "meaning": "free and easy",
     "level": 6,
     "phrase": "潇洒",
+    "prompt1": "潇洒",
+    "prompt2": "写潇字",
     "sentence": "这是“潇”字。"
   },
   {
@@ -17789,6 +22235,8 @@ window.HSK_CHARS = [
     "meaning": "potential; capacity",
     "level": 6,
     "phrase": "潜力",
+    "prompt1": "潜力",
+    "prompt2": "潜水",
     "sentence": "这是“潜”字。"
   },
   {
@@ -17797,6 +22245,8 @@ window.HSK_CHARS = [
     "meaning": "(of liquid) settle; become clear; (Chem.) precipitate",
     "level": 6,
     "phrase": "澄清",
+    "prompt1": "澄清",
+    "prompt2": "写澄字",
     "sentence": "这是“澄”字。"
   },
   {
@@ -17805,6 +22255,8 @@ window.HSK_CHARS = [
     "meaning": "clear; limpid",
     "level": 6,
     "phrase": "清澈",
+    "prompt1": "清澈",
+    "prompt2": "写澈字",
     "sentence": "这是“澈”字。"
   },
   {
@@ -17813,6 +22265,8 @@ window.HSK_CHARS = [
     "meaning": "on the verge of",
     "level": 6,
     "phrase": "濒临",
+    "prompt1": "濒临",
+    "prompt2": "写濒字",
     "sentence": "这是“濒”字。"
   },
   {
@@ -17821,6 +22275,8 @@ window.HSK_CHARS = [
     "meaning": "waterfall",
     "level": 6,
     "phrase": "瀑布",
+    "prompt1": "瀑布",
+    "prompt2": "写瀑字",
     "sentence": "这是“瀑”字。"
   },
   {
@@ -17829,6 +22285,8 @@ window.HSK_CHARS = [
     "meaning": "irrigate",
     "level": 6,
     "phrase": "灌溉",
+    "prompt1": "灌溉",
+    "prompt2": "写灌字",
     "sentence": "这是“灌”字。"
   },
   {
@@ -17837,6 +22295,8 @@ window.HSK_CHARS = [
     "meaning": "perish; ruin; destroy",
     "level": 6,
     "phrase": "毁灭",
+    "prompt1": "灭亡",
+    "prompt2": "熄灭",
     "sentence": "这是“灭”字。"
   },
   {
@@ -17845,6 +22305,8 @@ window.HSK_CHARS = [
     "meaning": "kitchen range; cooking range; stovetop range",
     "level": 6,
     "phrase": "炉灶",
+    "prompt1": "炉灶",
+    "prompt2": "写灶字",
     "sentence": "这是“灶”字。"
   },
   {
@@ -17853,6 +22315,8 @@ window.HSK_CHARS = [
     "meaning": "to glitter; brilliant; splendid",
     "level": 6,
     "phrase": "灿烂",
+    "prompt1": "灿烂",
+    "prompt2": "写灿字",
     "sentence": "这是“灿”字。"
   },
   {
@@ -17861,6 +22325,8 @@ window.HSK_CHARS = [
     "meaning": "kitchen range; cooking range; stovetop range",
     "level": 6,
     "phrase": "炉灶",
+    "prompt1": "炉灶",
+    "prompt2": "写炉字",
     "sentence": "这是“炉”字。"
   },
   {
@@ -17869,6 +22335,8 @@ window.HSK_CHARS = [
     "meaning": "smoke from kitchen chimneys",
     "level": 6,
     "phrase": "炊烟",
+    "prompt1": "炊烟",
+    "prompt2": "写炊字",
     "sentence": "这是“炊”字。"
   },
   {
@@ -17877,6 +22345,8 @@ window.HSK_CHARS = [
     "meaning": "become inflamed from infection or injury",
     "level": 6,
     "phrase": "发炎",
+    "prompt1": "炎热",
+    "prompt2": "发炎",
     "sentence": "这是“炎”字。"
   },
   {
@@ -17885,6 +22355,8 @@ window.HSK_CHARS = [
     "meaning": "to show off; flaunt",
     "level": 6,
     "phrase": "炫耀",
+    "prompt1": "炫耀",
+    "prompt2": "写炫字",
     "sentence": "这是“炫”字。"
   },
   {
@@ -17893,6 +22365,8 @@ window.HSK_CHARS = [
     "meaning": "to twinkle; to flicker; glimmer",
     "level": 6,
     "phrase": "闪烁",
+    "prompt1": "闪烁",
+    "prompt2": "写烁字",
     "sentence": "这是“烁”字。"
   },
   {
@@ -17901,6 +22375,8 @@ window.HSK_CHARS = [
     "meaning": "to dry or warm by the fire; to bake; to heat by fire; to set off by contrast",
     "level": 6,
     "phrase": "烘",
+    "prompt1": "烘字",
+    "prompt2": "写烘字",
     "sentence": "这是“烘”字。"
   },
   {
@@ -17909,6 +22385,8 @@ window.HSK_CHARS = [
     "meaning": "candle",
     "level": 6,
     "phrase": "蜡烛",
+    "prompt1": "蜡烛",
+    "prompt2": "写烛字",
     "sentence": "这是“烛”字。"
   },
   {
@@ -17917,6 +22395,8 @@ window.HSK_CHARS = [
     "meaning": "cooking; culinary arts",
     "level": 6,
     "phrase": "烹饪",
+    "prompt1": "烹饪",
+    "prompt2": "写烹字",
     "sentence": "这是“烹”字。"
   },
   {
@@ -17925,6 +22405,8 @@ window.HSK_CHARS = [
     "meaning": "focus; focal point",
     "level": 6,
     "phrase": "焦点",
+    "prompt1": "焦急",
+    "prompt2": "焦点",
     "sentence": "这是“焦”字。"
   },
   {
@@ -17933,6 +22415,8 @@ window.HSK_CHARS = [
     "meaning": "blaze; flame",
     "level": 6,
     "phrase": "火焰",
+    "prompt1": "火焰",
+    "prompt2": "写焰字",
     "sentence": "这是“焰”字。"
   },
   {
@@ -17941,6 +22425,8 @@ window.HSK_CHARS = [
     "meaning": "splendid; glorious",
     "level": 6,
     "phrase": "辉煌",
+    "prompt1": "辉煌",
+    "prompt2": "写煌字",
     "sentence": "这是“煌”字。"
   },
   {
@@ -17949,6 +22435,8 @@ window.HSK_CHARS = [
     "meaning": "pan-fry; fry in shallow oil",
     "level": 6,
     "phrase": "煎",
+    "prompt1": "煎字",
+    "prompt2": "写煎字",
     "sentence": "这是“煎”字。"
   },
   {
@@ -17957,6 +22445,8 @@ window.HSK_CHARS = [
     "meaning": "extinguish; go out (of fire); die out; extinction",
     "level": 6,
     "phrase": "熄灭",
+    "prompt1": "熄灭",
+    "prompt2": "写熄字",
     "sentence": "这是“熄”字。"
   },
   {
@@ -17965,6 +22455,8 @@ window.HSK_CHARS = [
     "meaning": "to influence (positively)",
     "level": 6,
     "phrase": "熏陶",
+    "prompt1": "熏陶",
+    "prompt2": "写熏字",
     "sentence": "这是“熏”字。"
   },
   {
@@ -17973,6 +22465,8 @@ window.HSK_CHARS = [
     "meaning": "iron; press",
     "level": 6,
     "phrase": "熨",
+    "prompt1": "熨字",
+    "prompt2": "写熨字",
     "sentence": "这是“熨”字。"
   },
   {
@@ -17981,6 +22475,8 @@ window.HSK_CHARS = [
     "meaning": "break out; erupt; explode",
     "level": 6,
     "phrase": "爆发",
+    "prompt1": "爆发",
+    "prompt2": "爆炸",
     "sentence": "这是“爆”字。"
   },
   {
@@ -17989,6 +22485,8 @@ window.HSK_CHARS = [
     "meaning": "refreshed; rejuvenated; frank",
     "level": 6,
     "phrase": "爽快",
+    "prompt1": "爽快",
+    "prompt2": "写爽字",
     "sentence": "这是“爽”字。"
   },
   {
@@ -17997,6 +22495,8 @@ window.HSK_CHARS = [
     "meaning": "firm; secure; solid",
     "level": 6,
     "phrase": "牢固",
+    "prompt1": "牢固",
+    "prompt2": "牢骚",
     "sentence": "这是“牢”字。"
   },
   {
@@ -18005,6 +22505,8 @@ window.HSK_CHARS = [
     "meaning": "raise animals",
     "level": 6,
     "phrase": "畜牧",
+    "prompt1": "畜牧",
+    "prompt2": "写牧字",
     "sentence": "这是“牧”字。"
   },
   {
@@ -18013,6 +22515,8 @@ window.HSK_CHARS = [
     "meaning": "livestock; domesticated animals",
     "level": 6,
     "phrase": "牲畜",
+    "prompt1": "牲畜",
+    "prompt2": "牺牲",
     "sentence": "这是“牲”字。"
   },
   {
@@ -18021,6 +22525,8 @@ window.HSK_CHARS = [
     "meaning": "to lead along; to pull (an animal on a tether)",
     "level": 6,
     "phrase": "牵",
+    "prompt1": "牵制",
+    "prompt2": "牵扯",
     "sentence": "这是“牵”字。"
   },
   {
@@ -18029,6 +22535,8 @@ window.HSK_CHARS = [
     "meaning": "sacrifice (one's life, etc.)",
     "level": 6,
     "phrase": "牺牲",
+    "prompt1": "牺牲",
+    "prompt2": "写牺字",
     "sentence": "这是“牺”字。"
   },
   {
@@ -18037,6 +22545,8 @@ window.HSK_CHARS = [
     "meaning": "dog (Kangxi radical 94)",
     "level": 6,
     "phrase": "犬",
+    "prompt1": "犬字",
+    "prompt2": "写犬字",
     "sentence": "这是“犬”字。"
   },
   {
@@ -18045,6 +22555,8 @@ window.HSK_CHARS = [
     "meaning": "offend; violate",
     "level": 6,
     "phrase": "触犯",
+    "prompt1": "侵犯",
+    "prompt2": "触犯",
     "sentence": "这是“犯”字。"
   },
   {
@@ -18053,6 +22565,8 @@ window.HSK_CHARS = [
     "meaning": "in a difficult position or situation; in a tight corner; scoundrel! (derogatory)",
     "level": 6,
     "phrase": "狼狈",
+    "prompt1": "狼狈",
+    "prompt2": "写狈字",
     "sentence": "这是“狈”字。"
   },
   {
@@ -18061,6 +22575,8 @@ window.HSK_CHARS = [
     "meaning": "callous; cruel; cold-blooded",
     "level": 6,
     "phrase": "狠心",
+    "prompt1": "狠心",
+    "prompt2": "写狠字",
     "sentence": "这是“狠”字。"
   },
   {
@@ -18069,6 +22585,8 @@ window.HSK_CHARS = [
     "meaning": "narrow; tight; narrow (minded); lacking in experience",
     "level": 6,
     "phrase": "狭隘",
+    "prompt1": "狭窄",
+    "prompt2": "狭隘",
     "sentence": "这是“狭”字。"
   },
   {
@@ -18077,6 +22595,8 @@ window.HSK_CHARS = [
     "meaning": "prison; jail",
     "level": 6,
     "phrase": "监狱",
+    "prompt1": "监狱",
+    "prompt2": "写狱字",
     "sentence": "这是“狱”字。"
   },
   {
@@ -18085,6 +22605,8 @@ window.HSK_CHARS = [
     "meaning": "in a difficult position or situation; in a tight corner; scoundrel! (derogatory)",
     "level": 6,
     "phrase": "狼狈",
+    "prompt1": "狼狈",
+    "prompt2": "狼吞虎咽",
     "sentence": "这是“狼”字。"
   },
   {
@@ -18093,6 +22615,8 @@ window.HSK_CHARS = [
     "meaning": "hunt; to go hunting",
     "level": 6,
     "phrase": "打猎",
+    "prompt1": "打猎",
+    "prompt2": "写猎字",
     "sentence": "这是“猎”字。"
   },
   {
@@ -18101,6 +22625,8 @@ window.HSK_CHARS = [
     "meaning": "fierce; violent",
     "level": 6,
     "phrase": "猛烈",
+    "prompt1": "猛烈",
+    "prompt2": "写猛字",
     "sentence": "这是“猛”字。"
   },
   {
@@ -18109,6 +22635,8 @@ window.HSK_CHARS = [
     "meaning": "pearl",
     "level": 6,
     "phrase": "珍珠",
+    "prompt1": "珍珠",
+    "prompt2": "写珠字",
     "sentence": "这是“珠”字。"
   },
   {
@@ -18117,6 +22645,8 @@ window.HSK_CHARS = [
     "meaning": "ponder; (also zhuómó: to polish (gems or literary works))",
     "level": 6,
     "phrase": "琢磨",
+    "prompt1": "琢磨",
+    "prompt2": "写琢字",
     "sentence": "这是“琢”字。"
   },
   {
@@ -18125,6 +22655,8 @@ window.HSK_CHARS = [
     "meaning": "petal",
     "level": 6,
     "phrase": "花瓣",
+    "prompt1": "花瓣",
+    "prompt2": "写瓣字",
     "sentence": "这是“瓣”字。"
   },
   {
@@ -18133,6 +22665,8 @@ window.HSK_CHARS = [
     "meaning": "collapse; disintegrate; crumble",
     "level": 6,
     "phrase": "瓦解",
+    "prompt1": "瓦解",
+    "prompt2": "写瓦字",
     "sentence": "这是“瓦”字。"
   },
   {
@@ -18141,6 +22675,8 @@ window.HSK_CHARS = [
     "meaning": "ceramics; pottery and porcelain",
     "level": 6,
     "phrase": "陶瓷",
+    "prompt1": "陶瓷",
+    "prompt2": "写瓷字",
     "sentence": "这是“瓷”字。"
   },
   {
@@ -18149,6 +22685,8 @@ window.HSK_CHARS = [
     "meaning": "sweetness comes after bitterness; the hard times are over and the good times are just beginning",
     "level": 6,
     "phrase": "苦尽甘来",
+    "prompt1": "心甘情愿",
+    "prompt2": "苦尽甘来",
     "sentence": "这是“甘”字。"
   },
   {
@@ -18157,6 +22695,8 @@ window.HSK_CHARS = [
     "meaning": "need not; (contraction of and )",
     "level": 6,
     "phrase": "甭",
+    "prompt1": "甭字",
+    "prompt2": "写甭字",
     "sentence": "这是“甭”字。"
   },
   {
@@ -18165,6 +22705,8 @@ window.HSK_CHARS = [
     "meaning": "track and field",
     "level": 6,
     "phrase": "田径",
+    "prompt1": "田径",
+    "prompt2": "田野",
     "sentence": "这是“田”字。"
   },
   {
@@ -18173,6 +22715,8 @@ window.HSK_CHARS = [
     "meaning": "unimpeded; unclogged; free-flowing; straight path; to expedite",
     "level": 6,
     "phrase": "畅通",
+    "prompt1": "畅通",
+    "prompt2": "舒畅",
     "sentence": "这是“畅”字。"
   },
   {
@@ -18181,6 +22725,8 @@ window.HSK_CHARS = [
     "meaning": "to fear; foreboding",
     "level": 6,
     "phrase": "畏惧",
+    "prompt1": "畏惧",
+    "prompt2": "写畏字",
     "sentence": "这是“畏”字。"
   },
   {
@@ -18189,6 +22735,8 @@ window.HSK_CHARS = [
     "meaning": "riverbank; side; boundary",
     "level": 6,
     "phrase": "畔",
+    "prompt1": "畔字",
+    "prompt2": "写畔字",
     "sentence": "这是“畔”字。"
   },
   {
@@ -18197,6 +22745,8 @@ window.HSK_CHARS = [
     "meaning": "livestock; domesticated animals",
     "level": 6,
     "phrase": "牲畜",
+    "prompt1": "畜牧",
+    "prompt2": "牲畜",
     "sentence": "这是“畜”字。"
   },
   {
@@ -18205,6 +22755,8 @@ window.HSK_CHARS = [
     "meaning": "(mw for acts or deeds); foreign",
     "level": 6,
     "phrase": "番",
+    "prompt1": "番字",
+    "prompt2": "写番字",
     "sentence": "这是“番”字。"
   },
   {
@@ -18213,6 +22765,8 @@ window.HSK_CHARS = [
     "meaning": "category",
     "level": 6,
     "phrase": "范畴",
+    "prompt1": "范畴",
+    "prompt2": "写畴字",
     "sentence": "这是“畴”字。"
   },
   {
@@ -18221,6 +22775,8 @@ window.HSK_CHARS = [
     "meaning": "border area; borderland; frontier; frontier region",
     "level": 6,
     "phrase": "边疆",
+    "prompt1": "边疆",
+    "prompt2": "写疆字",
     "sentence": "这是“疆”字。"
   },
   {
@@ -18229,6 +22785,8 @@ window.HSK_CHARS = [
     "meaning": "unfamiliar; strange; out of practice",
     "level": 6,
     "phrase": "生疏",
+    "prompt1": "疏忽",
+    "prompt2": "生疏",
     "sentence": "这是“疏”字。"
   },
   {
@@ -18237,6 +22795,8 @@ window.HSK_CHARS = [
     "meaning": "swelling or lump on skin",
     "level": 6,
     "phrase": "疙瘩",
+    "prompt1": "疙瘩",
+    "prompt2": "写疙字",
     "sentence": "这是“疙”字。"
   },
   {
@@ -18245,6 +22805,8 @@ window.HSK_CHARS = [
     "meaning": "scar",
     "level": 6,
     "phrase": "疤",
+    "prompt1": "疤字",
+    "prompt2": "写疤字",
     "sentence": "这是“疤”字。"
   },
   {
@@ -18253,6 +22815,8 @@ window.HSK_CHARS = [
     "meaning": "immune",
     "level": 6,
     "phrase": "免疫",
+    "prompt1": "免疫",
+    "prompt2": "写疫字",
     "sentence": "这是“疫”字。"
   },
   {
@@ -18261,6 +22825,8 @@ window.HSK_CHARS = [
     "meaning": "deformity; handicapped; crippled",
     "level": 6,
     "phrase": "残疾",
+    "prompt1": "疾病",
+    "prompt2": "残疾",
     "sentence": "这是“疾”字。"
   },
   {
@@ -18269,6 +22835,8 @@ window.HSK_CHARS = [
     "meaning": "cancer",
     "level": 6,
     "phrase": "癌症",
+    "prompt1": "症状",
+    "prompt2": "癌症",
     "sentence": "这是“症”字。"
   },
   {
@@ -18277,6 +22845,8 @@ window.HSK_CHARS = [
     "meaning": "vestige; trace",
     "level": 6,
     "phrase": "痕迹",
+    "prompt1": "痕迹",
+    "prompt2": "写痕字",
     "sentence": "这是“痕”字。"
   },
   {
@@ -18285,6 +22855,8 @@ window.HSK_CHARS = [
     "meaning": "paralysis",
     "level": 6,
     "phrase": "瘫痪",
+    "prompt1": "瘫痪",
+    "prompt2": "写痪字",
     "sentence": "这是“痪”字。"
   },
   {
@@ -18293,6 +22865,8 @@ window.HSK_CHARS = [
     "meaning": "paralysis; palsy; numbness",
     "level": 6,
     "phrase": "麻痹",
+    "prompt1": "麻痹",
+    "prompt2": "写痹字",
     "sentence": "这是“痹”字。"
   },
   {
@@ -18301,6 +22875,8 @@ window.HSK_CHARS = [
     "meaning": "tumor; neoplasm",
     "level": 6,
     "phrase": "肿瘤",
+    "prompt1": "肿瘤",
+    "prompt2": "写瘤字",
     "sentence": "这是“瘤”字。"
   },
   {
@@ -18309,6 +22885,8 @@ window.HSK_CHARS = [
     "meaning": "swelling or lump on skin",
     "level": 6,
     "phrase": "疙瘩",
+    "prompt1": "疙瘩",
+    "prompt2": "写瘩字",
     "sentence": "这是“瘩”字。"
   },
   {
@@ -18317,6 +22895,8 @@ window.HSK_CHARS = [
     "meaning": "paralysis",
     "level": 6,
     "phrase": "瘫痪",
+    "prompt1": "瘫痪",
+    "prompt2": "写瘫字",
     "sentence": "这是“瘫”字。"
   },
   {
@@ -18325,6 +22905,8 @@ window.HSK_CHARS = [
     "meaning": "lame",
     "level": 6,
     "phrase": "瘸",
+    "prompt1": "瘸字",
+    "prompt2": "写瘸字",
     "sentence": "这是“瘸”字。"
   },
   {
@@ -18333,6 +22915,8 @@ window.HSK_CHARS = [
     "meaning": "satisfy a craving; get a kick out of sth; do to one's heart's content",
     "level": 6,
     "phrase": "过瘾",
+    "prompt1": "上瘾",
+    "prompt2": "过瘾",
     "sentence": "这是“瘾”字。"
   },
   {
@@ -18341,6 +22925,8 @@ window.HSK_CHARS = [
     "meaning": "cancer",
     "level": 6,
     "phrase": "癌症",
+    "prompt1": "癌症",
+    "prompt2": "写癌字",
     "sentence": "这是“癌”字。"
   },
   {
@@ -18349,6 +22935,8 @@ window.HSK_CHARS = [
     "meaning": "all; each and every; in all cases",
     "level": 6,
     "phrase": "皆",
+    "prompt1": "皆字",
+    "prompt2": "写皆字",
     "sentence": "这是“皆”字。"
   },
   {
@@ -18357,6 +22945,8 @@ window.HSK_CHARS = [
     "meaning": "emperor",
     "level": 6,
     "phrase": "皇帝",
+    "prompt1": "皇后",
+    "prompt2": "皇帝",
     "sentence": "这是“皇”字。"
   },
   {
@@ -18365,6 +22955,8 @@ window.HSK_CHARS = [
     "meaning": "wrinkle; furrow",
     "level": 6,
     "phrase": "皱纹",
+    "prompt1": "皱纹",
+    "prompt2": "写皱字",
     "sentence": "这是“皱”字。"
   },
   {
@@ -18373,6 +22965,8 @@ window.HSK_CHARS = [
     "meaning": "(saying) eyes brimming with tears; extremely moved",
     "level": 6,
     "phrase": "热泪盈眶",
+    "prompt1": "盈利",
+    "prompt2": "热泪盈眶",
     "sentence": "这是“盈”字。"
   },
   {
@@ -18381,6 +22975,8 @@ window.HSK_CHARS = [
     "meaning": "control; monitor; supervise; inspect",
     "level": 6,
     "phrase": "监督",
+    "prompt1": "监狱",
+    "prompt2": "监视",
     "sentence": "这是“监”字。"
   },
   {
@@ -18389,6 +22985,8 @@ window.HSK_CHARS = [
     "meaning": "steal; pilfer",
     "level": 6,
     "phrase": "盗窃",
+    "prompt1": "盗窃",
+    "prompt2": "写盗字",
     "sentence": "这是“盗”字。"
   },
   {
@@ -18397,6 +22995,8 @@ window.HSK_CHARS = [
     "meaning": "contain; to ladle; to fill | flourishing; grand; abundant",
     "level": 6,
     "phrase": "盛",
+    "prompt1": "盛产",
+    "prompt2": "茂盛",
     "sentence": "这是“盛”字。"
   },
   {
@@ -18405,6 +23005,8 @@ window.HSK_CHARS = [
     "meaning": "alliance; union; coalition",
     "level": 6,
     "phrase": "联盟",
+    "prompt1": "联盟",
+    "prompt2": "写盟字",
     "sentence": "这是“盟”字。"
   },
   {
@@ -18413,6 +23015,8 @@ window.HSK_CHARS = [
     "meaning": "to stare; to gaze",
     "level": 6,
     "phrase": "盯",
+    "prompt1": "盯字",
+    "prompt2": "写盯字",
     "sentence": "这是“盯”字。"
   },
   {
@@ -18421,6 +23025,8 @@ window.HSK_CHARS = [
     "meaning": "blindness; aimless",
     "level": 6,
     "phrase": "盲目",
+    "prompt1": "盲目",
+    "prompt2": "写盲字",
     "sentence": "这是“盲”字。"
   },
   {
@@ -18429,6 +23035,8 @@ window.HSK_CHARS = [
     "meaning": "wink; blink",
     "level": 6,
     "phrase": "眨",
+    "prompt1": "眨字",
+    "prompt2": "写眨字",
     "sentence": "这是“眨”字。"
   },
   {
@@ -18437,6 +23045,8 @@ window.HSK_CHARS = [
     "meaning": "to squint; to take a nap",
     "level": 6,
     "phrase": "眯",
+    "prompt1": "眯字",
+    "prompt2": "写眯字",
     "sentence": "这是“眯”字。"
   },
   {
@@ -18445,6 +23055,8 @@ window.HSK_CHARS = [
     "meaning": "(saying) eyes brimming with tears; extremely moved",
     "level": 6,
     "phrase": "热泪盈眶",
+    "prompt1": "热泪盈眶",
+    "prompt2": "写眶字",
     "sentence": "这是“眶”字。"
   },
   {
@@ -18453,6 +23065,8 @@ window.HSK_CHARS = [
     "meaning": "supervise and urge sb. to complete a task",
     "level": 6,
     "phrase": "督促",
+    "prompt1": "督促",
+    "prompt2": "监督",
     "sentence": "这是“督”字。"
   },
   {
@@ -18461,6 +23075,8 @@ window.HSK_CHARS = [
     "meaning": "peaceful relations; harmonious",
     "level": 6,
     "phrase": "和睦",
+    "prompt1": "和睦",
+    "prompt2": "写睦字",
     "sentence": "这是“睦”字。"
   },
   {
@@ -18469,6 +23085,8 @@ window.HSK_CHARS = [
     "meaning": "heed; pay attention to (usually used in the negative)",
     "level": 6,
     "phrase": "理睬",
+    "prompt1": "理睬",
+    "prompt2": "写睬字",
     "sentence": "这是“睬”字。"
   },
   {
@@ -18477,6 +23095,8 @@ window.HSK_CHARS = [
     "meaning": "witness; see first hand",
     "level": 6,
     "phrase": "目睹",
+    "prompt1": "目睹",
+    "prompt2": "写睹字",
     "sentence": "这是“睹”字。"
   },
   {
@@ -18485,6 +23105,8 @@ window.HSK_CHARS = [
     "meaning": "take aim (a weapon at a target)",
     "level": 6,
     "phrase": "瞄准",
+    "prompt1": "瞄准",
+    "prompt2": "写瞄字",
     "sentence": "这是“瞄”字。"
   },
   {
@@ -18493,6 +23115,8 @@ window.HSK_CHARS = [
     "meaning": "conceal; hide; (a taboo subject); cover up the truth",
     "level": 6,
     "phrase": "隐瞒",
+    "prompt1": "隐瞒",
+    "prompt2": "写瞒字",
     "sentence": "这是“瞒”字。"
   },
   {
@@ -18501,6 +23125,8 @@ window.HSK_CHARS = [
     "meaning": "attract worldwide attention",
     "level": 6,
     "phrase": "举世瞩目",
+    "prompt1": "举世瞩目",
+    "prompt2": "写瞩字",
     "sentence": "这是“瞩”字。"
   },
   {
@@ -18509,6 +23135,8 @@ window.HSK_CHARS = [
     "meaning": "stare at; to glower",
     "level": 6,
     "phrase": "瞪",
+    "prompt1": "瞪字",
+    "prompt2": "写瞪字",
     "sentence": "这是“瞪”字。"
   },
   {
@@ -18517,6 +23145,8 @@ window.HSK_CHARS = [
     "meaning": "in the twinkling of an eye; in an instant; momentary",
     "level": 6,
     "phrase": "瞬间",
+    "prompt1": "瞬间",
+    "prompt2": "写瞬字",
     "sentence": "这是“瞬”字。"
   },
   {
@@ -18525,6 +23155,8 @@ window.HSK_CHARS = [
     "meaning": "look at with reverence; admire",
     "level": 6,
     "phrase": "瞻仰",
+    "prompt1": "瞻仰",
+    "prompt2": "写瞻字",
     "sentence": "这是“瞻”字。"
   },
   {
@@ -18533,6 +23165,8 @@ window.HSK_CHARS = [
     "meaning": "brick",
     "level": 6,
     "phrase": "砖",
+    "prompt1": "砖字",
+    "prompt2": "写砖字",
     "sentence": "这是“砖”字。"
   },
   {
@@ -18541,6 +23175,8 @@ window.HSK_CHARS = [
     "meaning": "to smash; to pound; to break; fail",
     "level": 6,
     "phrase": "砸",
+    "prompt1": "砸字",
+    "prompt2": "写砸字",
     "sentence": "这是“砸”字。"
   },
   {
@@ -18549,6 +23185,8 @@ window.HSK_CHARS = [
     "meaning": "be busy; bustling",
     "level": 6,
     "phrase": "忙碌",
+    "prompt1": "忙碌",
+    "prompt2": "写碌字",
     "sentence": "这是“碌”字。"
   },
   {
@@ -18557,6 +23195,8 @@ window.HSK_CHARS = [
     "meaning": "milestone",
     "level": 6,
     "phrase": "里程碑",
+    "prompt1": "里程碑",
+    "prompt2": "写碑字",
     "sentence": "这是“碑”字。"
   },
   {
@@ -18565,6 +23205,8 @@ window.HSK_CHARS = [
     "meaning": "carbon dioxide; CO2",
     "level": 6,
     "phrase": "二氧化碳",
+    "prompt1": "二氧化碳",
+    "prompt2": "写碳字",
     "sentence": "这是“碳”字。"
   },
   {
@@ -18573,6 +23215,8 @@ window.HSK_CHARS = [
     "meaning": "cassette tape",
     "level": 6,
     "phrase": "磁带",
+    "prompt1": "磁带",
+    "prompt2": "写磁字",
     "sentence": "这是“磁”字。"
   },
   {
@@ -18581,6 +23225,8 @@ window.HSK_CHARS = [
     "meaning": "pound; weigh; scale",
     "level": 6,
     "phrase": "磅",
+    "prompt1": "磅字",
+    "prompt2": "写磅字",
     "sentence": "这是“磅”字。"
   },
   {
@@ -18589,6 +23235,8 @@ window.HSK_CHARS = [
     "meaning": "discuss seriously; consult; negotiate",
     "level": 6,
     "phrase": "磋商",
+    "prompt1": "磋商",
+    "prompt2": "写磋字",
     "sentence": "这是“磋”字。"
   },
   {
@@ -18597,6 +23245,8 @@ window.HSK_CHARS = [
     "meaning": "knock; tap",
     "level": 6,
     "phrase": "磕",
+    "prompt1": "磕字",
+    "prompt2": "写磕字",
     "sentence": "这是“磕”字。"
   },
   {
@@ -18605,6 +23255,8 @@ window.HSK_CHARS = [
     "meaning": "adapt gradually to each other; to consult; break in; wear in",
     "level": 6,
     "phrase": "磨合",
+    "prompt1": "磨合",
+    "prompt2": "琢磨",
     "sentence": "这是“磨”字。"
   },
   {
@@ -18613,6 +23265,8 @@ window.HSK_CHARS = [
     "meaning": "paternal grandfather",
     "level": 6,
     "phrase": "祖父",
+    "prompt1": "祖先",
+    "prompt2": "祖父",
     "sentence": "这是“祖”字。"
   },
   {
@@ -18621,6 +23275,8 @@ window.HSK_CHARS = [
     "meaning": "a kindly person; benevolent (often of older people)",
     "level": 6,
     "phrase": "慈祥",
+    "prompt1": "吉祥",
+    "prompt2": "慈祥",
     "sentence": "这是“祥”字。"
   },
   {
@@ -18629,6 +23285,8 @@ window.HSK_CHARS = [
     "meaning": "stir up troubles",
     "level": 6,
     "phrase": "惹祸",
+    "prompt1": "惹祸",
+    "prompt2": "写祸字",
     "sentence": "这是“祸”字。"
   },
   {
@@ -18637,6 +23295,8 @@ window.HSK_CHARS = [
     "meaning": "birds and animals; the beasts of the field and the birds of the air",
     "level": 6,
     "phrase": "飞禽走兽",
+    "prompt1": "飞禽走兽",
+    "prompt2": "写禽字",
     "sentence": "这是“禽”字。"
   },
   {
@@ -18645,6 +23305,8 @@ window.HSK_CHARS = [
     "meaning": "bald; blunt",
     "level": 6,
     "phrase": "秃",
+    "prompt1": "秃字",
+    "prompt2": "写秃字",
     "sentence": "这是“秃”字。"
   },
   {
@@ -18653,6 +23315,8 @@ window.HSK_CHARS = [
     "meaning": "balance; scale; steelyard",
     "level": 6,
     "phrase": "秤",
+    "prompt1": "秤字",
+    "prompt2": "写秤字",
     "sentence": "这是“秤”字。"
   },
   {
@@ -18661,6 +23325,8 @@ window.HSK_CHARS = [
     "meaning": "rare; precious and uncommon",
     "level": 6,
     "phrase": "珍稀",
+    "prompt1": "珍稀",
+    "prompt2": "写稀字",
     "sentence": "这是“稀”字。"
   },
   {
@@ -18669,6 +23335,8 @@ window.HSK_CHARS = [
     "meaning": "childish; naïve; immature",
     "level": 6,
     "phrase": "幼稚",
+    "prompt1": "幼稚",
+    "prompt2": "写稚字",
     "sentence": "这是“稚”字。"
   },
   {
@@ -18677,6 +23345,8 @@ window.HSK_CHARS = [
     "meaning": "dense; thick",
     "level": 6,
     "phrase": "稠密",
+    "prompt1": "稠密",
+    "prompt2": "写稠字",
     "sentence": "这是“稠”字。"
   },
   {
@@ -18685,6 +23355,8 @@ window.HSK_CHARS = [
     "meaning": "rice crops/paddy",
     "level": 6,
     "phrase": "稻谷",
+    "prompt1": "稻谷",
+    "prompt2": "写稻字",
     "sentence": "这是“稻”字。"
   },
   {
@@ -18693,6 +23365,8 @@ window.HSK_CHARS = [
     "meaning": "farm crops",
     "level": 6,
     "phrase": "庄稼",
+    "prompt1": "庄稼",
+    "prompt2": "写稼字",
     "sentence": "这是“稼”字。"
   },
   {
@@ -18701,6 +23375,8 @@ window.HSK_CHARS = [
     "meaning": "rough draft of a document",
     "level": 6,
     "phrase": "稿件",
+    "prompt1": "稿件",
+    "prompt2": "写稿字",
     "sentence": "这是“稿”字。"
   },
   {
@@ -18709,6 +23385,8 @@ window.HSK_CHARS = [
     "meaning": "lair; nest; den; hideout",
     "level": 6,
     "phrase": "巢穴",
+    "prompt1": "巢穴",
+    "prompt2": "写穴字",
     "sentence": "这是“穴”字。"
   },
   {
@@ -18717,6 +23395,8 @@ window.HSK_CHARS = [
     "meaning": "steal; pilfer",
     "level": 6,
     "phrase": "盗窃",
+    "prompt1": "盗窃",
+    "prompt2": "写窃字",
     "sentence": "这是“窃”字。"
   },
   {
@@ -18725,6 +23405,8 @@ window.HSK_CHARS = [
     "meaning": "special tricks",
     "level": 6,
     "phrase": "窍门",
+    "prompt1": "窍门",
+    "prompt2": "写窍字",
     "sentence": "这是“窍”字。"
   },
   {
@@ -18733,6 +23415,8 @@ window.HSK_CHARS = [
     "meaning": "to flee; to escape; run away",
     "level": 6,
     "phrase": "窜",
+    "prompt1": "窜字",
+    "prompt2": "写窜字",
     "sentence": "这是“窜”字。"
   },
   {
@@ -18741,6 +23425,8 @@ window.HSK_CHARS = [
     "meaning": "nest; den",
     "level": 6,
     "phrase": "窝",
+    "prompt1": "窝字",
+    "prompt2": "写窝字",
     "sentence": "这是“窝”字。"
   },
   {
@@ -18749,6 +23435,8 @@ window.HSK_CHARS = [
     "meaning": "vertical; to erect; vertical stroke",
     "level": 6,
     "phrase": "竖",
+    "prompt1": "竖字",
+    "prompt2": "写竖字",
     "sentence": "这是“竖”字。"
   },
   {
@@ -18757,6 +23445,8 @@ window.HSK_CHARS = [
     "meaning": "to spare no efforts; do one's utmost",
     "level": 6,
     "phrase": "竭尽全力",
+    "prompt1": "竭尽全力",
+    "prompt2": "写竭字",
     "sentence": "这是“竭”字。"
   },
   {
@@ -18765,6 +23455,8 @@ window.HSK_CHARS = [
     "meaning": "end; beginning; extremity; carry holding something from the sides",
     "level": 6,
     "phrase": "端",
+    "prompt1": "端正",
+    "prompt2": "极端",
     "sentence": "这是“端”字。"
   },
   {
@@ -18773,6 +23465,8 @@ window.HSK_CHARS = [
     "meaning": "lantern",
     "level": 6,
     "phrase": "灯笼",
+    "prompt1": "笼罩",
+    "prompt2": "灯笼",
     "sentence": "这是“笼”字。"
   },
   {
@@ -18781,6 +23475,8 @@ window.HSK_CHARS = [
     "meaning": "troublesome; bothersome",
     "level": 6,
     "phrase": "伤脑筋",
+    "prompt1": "伤脑筋",
+    "prompt2": "写筋字",
     "sentence": "这是“筋”字。"
   },
   {
@@ -18789,6 +23485,8 @@ window.HSK_CHARS = [
     "meaning": "basket",
     "level": 6,
     "phrase": "筐",
+    "prompt1": "筐字",
+    "prompt2": "写筐字",
     "sentence": "这是“筐”字。"
   },
   {
@@ -18797,6 +23495,8 @@ window.HSK_CHARS = [
     "meaning": "microphone; transmitter; megaphone",
     "level": 6,
     "phrase": "话筒",
+    "prompt1": "话筒",
+    "prompt2": "写筒字",
     "sentence": "这是“筒”字。"
   },
   {
@@ -18805,6 +23505,8 @@ window.HSK_CHARS = [
     "meaning": "spur on; urge on",
     "level": 6,
     "phrase": "鞭策",
+    "prompt1": "策划",
+    "prompt2": "鞭策",
     "sentence": "这是“策”字。"
   },
   {
@@ -18813,6 +23515,8 @@ window.HSK_CHARS = [
     "meaning": "to filter; to sift",
     "level": 6,
     "phrase": "筛选",
+    "prompt1": "筛选",
+    "prompt2": "写筛字",
     "sentence": "这是“筛”字。"
   },
   {
@@ -18821,6 +23525,8 @@ window.HSK_CHARS = [
     "meaning": "make preparations; get ready for something",
     "level": 6,
     "phrase": "筹备",
+    "prompt1": "筹备",
+    "prompt2": "统筹兼顾",
     "sentence": "这是“筹”字。"
   },
   {
@@ -18829,6 +23535,8 @@ window.HSK_CHARS = [
     "meaning": "rocket",
     "level": 6,
     "phrase": "火箭",
+    "prompt1": "火箭",
+    "prompt2": "写箭字",
     "sentence": "这是“箭”字。"
   },
   {
@@ -18837,6 +23545,8 @@ window.HSK_CHARS = [
     "meaning": "tent",
     "level": 6,
     "phrase": "帐篷",
+    "prompt1": "帐篷",
+    "prompt2": "写篷字",
     "sentence": "这是“篷”字。"
   },
   {
@@ -18845,6 +23555,8 @@ window.HSK_CHARS = [
     "meaning": "shake; to jolt; bump",
     "level": 6,
     "phrase": "颠簸",
+    "prompt1": "颠簸",
+    "prompt2": "写簸字",
     "sentence": "这是“簸”字。"
   },
   {
@@ -18853,6 +23565,8 @@ window.HSK_CHARS = [
     "meaning": "fine powder; dust",
     "level": 6,
     "phrase": "粉末",
+    "prompt1": "粉末",
+    "prompt2": "粉色",
     "sentence": "这是“粉”字。"
   },
   {
@@ -18861,6 +23575,8 @@ window.HSK_CHARS = [
     "meaning": "a grain; granule; (mw for grain-like things)",
     "level": 6,
     "phrase": "粒",
+    "prompt1": "粒字",
+    "prompt2": "写粒字",
     "sentence": "这是“粒”字。"
   },
   {
@@ -18869,6 +23585,8 @@ window.HSK_CHARS = [
     "meaning": "porridge; congee; gruel",
     "level": 6,
     "phrase": "粥",
+    "prompt1": "粥字",
+    "prompt2": "写粥字",
     "sentence": "这是“粥”字。"
   },
   {
@@ -18877,6 +23595,8 @@ window.HSK_CHARS = [
     "meaning": "purely; pure",
     "level": 6,
     "phrase": "纯粹",
+    "prompt1": "纯粹",
+    "prompt2": "写粹字",
     "sentence": "这是“粹”字。"
   },
   {
@@ -18885,6 +23605,8 @@ window.HSK_CHARS = [
     "meaning": "in an orderly way; methodically; systematically; methodical",
     "level": 6,
     "phrase": "有条不紊",
+    "prompt1": "有条不紊",
+    "prompt2": "写紊字",
     "sentence": "这是“紊”字。"
   },
   {
@@ -18893,6 +23615,8 @@ window.HSK_CHARS = [
     "meaning": "dispute; quarrel",
     "level": 6,
     "phrase": "纠纷",
+    "prompt1": "纠正",
+    "prompt2": "纠纷",
     "sentence": "这是“纠”字。"
   },
   {
@@ -18901,6 +23625,8 @@ window.HSK_CHARS = [
     "meaning": "fiber",
     "level": 6,
     "phrase": "纤维",
+    "prompt1": "纤维",
+    "prompt2": "写纤字",
     "sentence": "这是“纤”字。"
   },
   {
@@ -18909,6 +23635,8 @@ window.HSK_CHARS = [
     "meaning": "warp and woof; longitude and latitude; main points",
     "level": 6,
     "phrase": "经纬",
+    "prompt1": "经纬",
+    "prompt2": "写纬字",
     "sentence": "这是“纬”字。"
   },
   {
@@ -18917,6 +23645,8 @@ window.HSK_CHARS = [
     "meaning": "operate; control; manipulation",
     "level": 6,
     "phrase": "操纵",
+    "prompt1": "纵横",
+    "prompt2": "操纵",
     "sentence": "这是“纵”字。"
   },
   {
@@ -18925,6 +23655,8 @@ window.HSK_CHARS = [
     "meaning": "wrinkle; furrow",
     "level": 6,
     "phrase": "皱纹",
+    "prompt1": "皱纹",
+    "prompt2": "写纹字",
     "sentence": "这是“纹”字。"
   },
   {
@@ -18933,6 +23665,8 @@ window.HSK_CHARS = [
     "meaning": "spinning and weaving; textile",
     "level": 6,
     "phrase": "纺织",
+    "prompt1": "纺织",
+    "prompt2": "写纺字",
     "sentence": "这是“纺”字。"
   },
   {
@@ -18941,6 +23675,8 @@ window.HSK_CHARS = [
     "meaning": "button",
     "level": 6,
     "phrase": "纽扣儿",
+    "prompt1": "纽扣儿",
+    "prompt2": "写纽字",
     "sentence": "这是“纽”字。"
   },
   {
@@ -18949,6 +23685,8 @@ window.HSK_CHARS = [
     "meaning": "gentleman",
     "level": 6,
     "phrase": "绅士",
+    "prompt1": "绅士",
+    "prompt2": "写绅字",
     "sentence": "这是“绅”字。"
   },
   {
@@ -18957,6 +23695,8 @@ window.HSK_CHARS = [
     "meaning": "endless stream",
     "level": 6,
     "phrase": "络绎不绝",
+    "prompt1": "演绎",
+    "prompt2": "络绎不绝",
     "sentence": "这是“绎”字。"
   },
   {
@@ -18965,6 +23705,8 @@ window.HSK_CHARS = [
     "meaning": "kidnap; staking",
     "level": 6,
     "phrase": "绑架",
+    "prompt1": "绑架",
+    "prompt2": "捆绑",
     "sentence": "这是“绑”字。"
   },
   {
@@ -18973,6 +23715,8 @@ window.HSK_CHARS = [
     "meaning": "down jacket",
     "level": 6,
     "phrase": "羽绒服",
+    "prompt1": "羽绒服",
+    "prompt2": "写绒字",
     "sentence": "这是“绒”字。"
   },
   {
@@ -18981,6 +23725,8 @@ window.HSK_CHARS = [
     "meaning": "describe; portray",
     "level": 6,
     "phrase": "描绘",
+    "prompt1": "描绘",
+    "prompt2": "写绘字",
     "sentence": "这是“绘”字。"
   },
   {
@@ -18989,6 +23735,8 @@ window.HSK_CHARS = [
     "meaning": "embroider; embroidery",
     "level": 6,
     "phrase": "绣",
+    "prompt1": "绣字",
+    "prompt2": "写绣字",
     "sentence": "这是“绣”字。"
   },
   {
@@ -18997,6 +23745,8 @@ window.HSK_CHARS = [
     "meaning": "decorate; an ornament; beautify; embellish; be the finishing touch",
     "level": 6,
     "phrase": "点缀",
+    "prompt1": "点缀",
+    "prompt2": "写缀字",
     "sentence": "这是“缀”字。"
   },
   {
@@ -19005,6 +23755,8 @@ window.HSK_CHARS = [
     "meaning": "order the arrest of a criminal",
     "level": 6,
     "phrase": "通缉",
+    "prompt1": "通缉",
+    "prompt2": "写缉字",
     "sentence": "这是“缉”字。"
   },
   {
@@ -19013,6 +23765,8 @@ window.HSK_CHARS = [
     "meaning": "to ban; suppress",
     "level": 6,
     "phrase": "取缔",
+    "prompt1": "取缔",
+    "prompt2": "写缔字",
     "sentence": "这是“缔”字。"
   },
   {
@@ -19021,6 +23775,8 @@ window.HSK_CHARS = [
     "meaning": "edge; fringe; verge; brink",
     "level": 6,
     "phrase": "边缘",
+    "prompt1": "缘故",
+    "prompt2": "边缘",
     "sentence": "这是“缘”字。"
   },
   {
@@ -19029,6 +23785,8 @@ window.HSK_CHARS = [
     "meaning": "to bind; restrict; to tie",
     "level": 6,
     "phrase": "束缚",
+    "prompt1": "束缚",
+    "prompt2": "写缚字",
     "sentence": "这是“缚”字。"
   },
   {
@@ -19037,6 +23795,8 @@ window.HSK_CHARS = [
     "meaning": "tailor; dressmaker",
     "level": 6,
     "phrase": "裁缝",
+    "prompt1": "裁缝",
+    "prompt2": "写缝字",
     "sentence": "这是“缝”字。"
   },
   {
@@ -19045,6 +23805,8 @@ window.HSK_CHARS = [
     "meaning": "bind; wind; twirl; twist; intertwine",
     "level": 6,
     "phrase": "缠绕",
+    "prompt1": "缠绕",
+    "prompt2": "写缠字",
     "sentence": "这是“缠”字。"
   },
   {
@@ -19053,6 +23815,8 @@ window.HSK_CHARS = [
     "meaning": "to pay (taxes)",
     "level": 6,
     "phrase": "缴纳",
+    "prompt1": "缴纳",
+    "prompt2": "写缴字",
     "sentence": "这是“缴”字。"
   },
   {
@@ -19061,6 +23825,8 @@ window.HSK_CHARS = [
     "meaning": "can; jar; pot; pitcher; jug",
     "level": 6,
     "phrase": "罐",
+    "prompt1": "罐字",
+    "prompt2": "写罐字",
     "sentence": "这是“罐”字。"
   },
   {
@@ -19069,6 +23835,8 @@ window.HSK_CHARS = [
     "meaning": "rare; rarely seen; peculiar",
     "level": 6,
     "phrase": "罕见",
+    "prompt1": "罕见",
+    "prompt2": "写罕字",
     "sentence": "这是“罕”字。"
   },
   {
@@ -19077,6 +23845,8 @@ window.HSK_CHARS = [
     "meaning": "to strike; go on strike",
     "level": 6,
     "phrase": "罢工",
+    "prompt1": "罢工",
+    "prompt2": "写罢字",
     "sentence": "这是“罢”字。"
   },
   {
@@ -19085,6 +23855,8 @@ window.HSK_CHARS = [
     "meaning": "envelop; to shroud; be masked by",
     "level": 6,
     "phrase": "笼罩",
+    "prompt1": "笼罩",
+    "prompt2": "写罩字",
     "sentence": "这是“罩”字。"
   },
   {
@@ -19093,6 +23865,8 @@ window.HSK_CHARS = [
     "meaning": "offend; a faux pas",
     "level": 6,
     "phrase": "得罪",
+    "prompt1": "罪犯",
+    "prompt2": "得罪",
     "sentence": "这是“罪”字。"
   },
   {
@@ -19101,6 +23875,8 @@ window.HSK_CHARS = [
     "meaning": "dispose; deploy",
     "level": 6,
     "phrase": "部署",
+    "prompt1": "签署",
+    "prompt2": "部署",
     "sentence": "这是“署”字。"
   },
   {
@@ -19109,6 +23885,8 @@ window.HSK_CHARS = [
     "meaning": "fly; hover",
     "level": 6,
     "phrase": "飞翔",
+    "prompt1": "飞翔",
+    "prompt2": "写翔字",
     "sentence": "这是“翔”字。"
   },
   {
@@ -19117,6 +23895,8 @@ window.HSK_CHARS = [
     "meaning": "stick up; bend upwards",
     "level": 6,
     "phrase": "翘",
+    "prompt1": "翘字",
+    "prompt2": "写翘字",
     "sentence": "这是“翘”字。"
   },
   {
@@ -19125,6 +23905,8 @@ window.HSK_CHARS = [
     "meaning": "wings; fins on fish; shelter",
     "level": 6,
     "phrase": "翼",
+    "prompt1": "小心翼翼",
+    "prompt2": "写翼字",
     "sentence": "这是“翼”字。"
   },
   {
@@ -19133,6 +23915,8 @@ window.HSK_CHARS = [
     "meaning": "to show off; flaunt",
     "level": 6,
     "phrase": "炫耀",
+    "prompt1": "耀眼",
+    "prompt2": "照耀",
     "sentence": "这是“耀”字。"
   },
   {
@@ -19141,6 +23925,8 @@ window.HSK_CHARS = [
     "meaning": "play/mess around with; juggle",
     "level": 6,
     "phrase": "耍",
+    "prompt1": "耍字",
+    "prompt2": "写耍字",
     "sentence": "这是“耍”字。"
   },
   {
@@ -19149,6 +23935,8 @@ window.HSK_CHARS = [
     "meaning": "arable land; to plow land",
     "level": 6,
     "phrase": "耕地",
+    "prompt1": "耕地",
+    "prompt2": "写耕字",
     "sentence": "这是“耕”字。"
   },
   {
@@ -19157,6 +23945,8 @@ window.HSK_CHARS = [
     "meaning": "waste; spend; consume",
     "level": 6,
     "phrase": "耗费",
+    "prompt1": "耗费",
+    "prompt2": "消耗",
     "sentence": "这是“耗”字。"
   },
   {
@@ -19165,6 +23955,8 @@ window.HSK_CHARS = [
     "meaning": "shrug; towering; shock (alarm)",
     "level": 6,
     "phrase": "耸",
+    "prompt1": "耸字",
+    "prompt2": "写耸字",
     "sentence": "这是“耸”字。"
   },
   {
@@ -19173,6 +23965,8 @@ window.HSK_CHARS = [
     "meaning": "without any sense of shame; shameless; audaciousness",
     "level": 6,
     "phrase": "无耻",
+    "prompt1": "无耻",
+    "prompt2": "羞耻",
     "sentence": "这是“耻”字。"
   },
   {
@@ -19181,6 +23975,8 @@ window.HSK_CHARS = [
     "meaning": "deaf and dumb; deaf-mute",
     "level": 6,
     "phrase": "聋哑",
+    "prompt1": "聋哑",
+    "prompt2": "写聋字",
     "sentence": "这是“聋”字。"
   },
   {
@@ -19189,6 +23985,8 @@ window.HSK_CHARS = [
     "meaning": "wantonly; without any constraint",
     "level": 6,
     "phrase": "大肆",
+    "prompt1": "大肆",
+    "prompt2": "肆无忌惮",
     "sentence": "这是“肆”字。"
   },
   {
@@ -19197,6 +23995,8 @@ window.HSK_CHARS = [
     "meaning": "Chinese zodiac",
     "level": 6,
     "phrase": "生肖",
+    "prompt1": "肖像",
+    "prompt2": "生肖",
     "sentence": "这是“肖”字。"
   },
   {
@@ -19205,6 +24005,8 @@ window.HSK_CHARS = [
     "meaning": "arms and legs; the four limbs of the body",
     "level": 6,
     "phrase": "四肢",
+    "prompt1": "四肢",
+    "prompt2": "写肢字",
     "sentence": "这是“肢”字。"
   },
   {
@@ -19213,6 +24015,8 @@ window.HSK_CHARS = [
     "meaning": "body fat",
     "level": 6,
     "phrase": "脂肪",
+    "prompt1": "脂肪",
+    "prompt2": "写肪字",
     "sentence": "这是“肪”字。"
   },
   {
@@ -19221,6 +24025,8 @@ window.HSK_CHARS = [
     "meaning": "delicacy",
     "level": 6,
     "phrase": "佳肴",
+    "prompt1": "佳肴",
+    "prompt2": "写肴字",
     "sentence": "这是“肴”字。"
   },
   {
@@ -19229,6 +24035,8 @@ window.HSK_CHARS = [
     "meaning": "lung",
     "level": 6,
     "phrase": "肺",
+    "prompt1": "肺字",
+    "prompt2": "写肺字",
     "sentence": "这是“肺”字。"
   },
   {
@@ -19237,6 +24045,8 @@ window.HSK_CHARS = [
     "meaning": "tumor; neoplasm",
     "level": 6,
     "phrase": "肿瘤",
+    "prompt1": "肿瘤",
+    "prompt2": "写肿字",
     "sentence": "这是“肿”字。"
   },
   {
@@ -19245,6 +24055,8 @@ window.HSK_CHARS = [
     "meaning": "inflation",
     "level": 6,
     "phrase": "通货膨胀",
+    "prompt1": "通货膨胀",
+    "prompt2": "写胀字",
     "sentence": "这是“胀”字。"
   },
   {
@@ -19253,6 +24065,8 @@ window.HSK_CHARS = [
     "meaning": "tire (of a wheel)",
     "level": 6,
     "phrase": "轮胎",
+    "prompt1": "轮胎",
+    "prompt2": "双胞胎",
     "sentence": "这是“胎”字。"
   },
   {
@@ -19261,6 +24075,8 @@ window.HSK_CHARS = [
     "meaning": "twins",
     "level": 6,
     "phrase": "双胞胎",
+    "prompt1": "同胞",
+    "prompt2": "细胞",
     "sentence": "这是“胞”字。"
   },
   {
@@ -19269,6 +24085,8 @@ window.HSK_CHARS = [
     "meaning": "body fat",
     "level": 6,
     "phrase": "脂肪",
+    "prompt1": "脂肪",
+    "prompt2": "写脂字",
     "sentence": "这是“脂”字。"
   },
   {
@@ -19277,6 +24095,8 @@ window.HSK_CHARS = [
     "meaning": "artery",
     "level": 6,
     "phrase": "动脉",
+    "prompt1": "脉搏",
+    "prompt2": "山脉",
     "sentence": "这是“脉”字。"
   },
   {
@@ -19285,6 +24105,8 @@ window.HSK_CHARS = [
     "meaning": "space inside mouth (oral cavity)",
     "level": 6,
     "phrase": "口腔",
+    "prompt1": "口腔",
+    "prompt2": "写腔字",
     "sentence": "这是“腔”字。"
   },
   {
@@ -19293,6 +24115,8 @@ window.HSK_CHARS = [
     "meaning": "fishy (smell)",
     "level": 6,
     "phrase": "腥",
+    "prompt1": "腥字",
+    "prompt2": "写腥字",
     "sentence": "这是“腥”字。"
   },
   {
@@ -19301,6 +24125,8 @@ window.HSK_CHARS = [
     "meaning": "diarrhea",
     "level": 6,
     "phrase": "腹泻",
+    "prompt1": "腹泻",
+    "prompt2": "写腹字",
     "sentence": "这是“腹”字。"
   },
   {
@@ -19309,6 +24135,8 @@ window.HSK_CHARS = [
     "meaning": "greasy or oily (food)",
     "level": 6,
     "phrase": "油腻",
+    "prompt1": "油腻",
+    "prompt2": "写腻字",
     "sentence": "这是“腻”字。"
   },
   {
@@ -19317,6 +24145,8 @@ window.HSK_CHARS = [
     "meaning": "to boil; boiling",
     "level": 6,
     "phrase": "沸腾",
+    "prompt1": "折腾",
+    "prompt2": "沸腾",
     "sentence": "这是“腾”字。"
   },
   {
@@ -19325,6 +24155,8 @@ window.HSK_CHARS = [
     "meaning": "chest",
     "level": 6,
     "phrase": "胸膛",
+    "prompt1": "胸膛",
+    "prompt2": "写膛字",
     "sentence": "这是“膛”字。"
   },
   {
@@ -19333,6 +24165,8 @@ window.HSK_CHARS = [
     "meaning": "membrane; film",
     "level": 6,
     "phrase": "膜",
+    "prompt1": "膜字",
+    "prompt2": "写膜字",
     "sentence": "这是“膜”字。"
   },
   {
@@ -19341,6 +24175,8 @@ window.HSK_CHARS = [
     "meaning": "knee",
     "level": 6,
     "phrase": "膝盖",
+    "prompt1": "膝盖",
+    "prompt2": "写膝字",
     "sentence": "这是“膝”字。"
   },
   {
@@ -19349,6 +24185,8 @@ window.HSK_CHARS = [
     "meaning": "inflation",
     "level": 6,
     "phrase": "通货膨胀",
+    "prompt1": "通货膨胀",
+    "prompt2": "写膨字",
     "sentence": "这是“膨”字。"
   },
   {
@@ -19357,6 +24195,8 @@ window.HSK_CHARS = [
     "meaning": "arm",
     "level": 6,
     "phrase": "臂",
+    "prompt1": "臂字",
+    "prompt2": "写臂字",
     "sentence": "这是“臂”字。"
   },
   {
@@ -19365,6 +24205,8 @@ window.HSK_CHARS = [
     "meaning": "chancellor",
     "level": 6,
     "phrase": "大臣",
+    "prompt1": "大臣",
+    "prompt2": "写臣字",
     "sentence": "这是“臣”字。"
   },
   {
@@ -19373,6 +24215,8 @@ window.HSK_CHARS = [
     "meaning": "public opinion",
     "level": 6,
     "phrase": "舆论",
+    "prompt1": "舆论",
+    "prompt2": "写舆字",
     "sentence": "这是“舆”字。"
   },
   {
@@ -19381,6 +24225,8 @@ window.HSK_CHARS = [
     "meaning": "tongue",
     "level": 6,
     "phrase": "舌头",
+    "prompt1": "舌头",
+    "prompt2": "写舌字",
     "sentence": "这是“舌”字。"
   },
   {
@@ -19389,6 +24235,8 @@ window.HSK_CHARS = [
     "meaning": "to lick",
     "level": 6,
     "phrase": "舔",
+    "prompt1": "舔字",
+    "prompt2": "写舔字",
     "sentence": "这是“舔”字。"
   },
   {
@@ -19397,6 +24245,8 @@ window.HSK_CHARS = [
     "meaning": "boat (Kangxi radical 137)",
     "level": 6,
     "phrase": "舟",
+    "prompt1": "舟字",
+    "prompt2": "写舟字",
     "sentence": "这是“舟”字。"
   },
   {
@@ -19405,6 +24255,8 @@ window.HSK_CHARS = [
     "meaning": "warship; naval vessel",
     "level": 6,
     "phrase": "舰艇",
+    "prompt1": "舰艇",
+    "prompt2": "写舰字",
     "sentence": "这是“舰”字。"
   },
   {
@@ -19413,6 +24265,8 @@ window.HSK_CHARS = [
     "meaning": "cabin; hold (of a ship or airplane)",
     "level": 6,
     "phrase": "舱",
+    "prompt1": "舱字",
+    "prompt2": "写舱字",
     "sentence": "这是“舱”字。"
   },
   {
@@ -19421,6 +24275,8 @@ window.HSK_CHARS = [
     "meaning": "ships; boats; watercraft",
     "level": 6,
     "phrase": "船舶",
+    "prompt1": "船舶",
+    "prompt2": "写舶字",
     "sentence": "这是“舶”字。"
   },
   {
@@ -19429,6 +24285,8 @@ window.HSK_CHARS = [
     "meaning": "warship; naval vessel",
     "level": 6,
     "phrase": "舰艇",
+    "prompt1": "舰艇",
+    "prompt2": "写艇字",
     "sentence": "这是“艇”字。"
   },
   {
@@ -19437,6 +24295,8 @@ window.HSK_CHARS = [
     "meaning": "(mw for boats and ships)",
     "level": 6,
     "phrase": "艘",
+    "prompt1": "艘字",
+    "prompt2": "写艘字",
     "sentence": "这是“艘”字。"
   },
   {
@@ -19445,6 +24305,8 @@ window.HSK_CHARS = [
     "meaning": "rays of light; brilliant rays; radiance",
     "level": 6,
     "phrase": "光芒",
+    "prompt1": "光芒",
+    "prompt2": "写芒字",
     "sentence": "这是“芒”字。"
   },
   {
@@ -19453,6 +24315,8 @@ window.HSK_CHARS = [
     "meaning": "sprout; bud; germ of a plant",
     "level": 6,
     "phrase": "萌芽",
+    "prompt1": "萌芽",
+    "prompt2": "写芽字",
     "sentence": "这是“芽”字。"
   },
   {
@@ -19461,6 +24325,8 @@ window.HSK_CHARS = [
     "meaning": "pale; wan; pallid",
     "level": 6,
     "phrase": "苍白",
+    "prompt1": "苍白",
+    "prompt2": "写苍字",
     "sentence": "这是“苍”字。"
   },
   {
@@ -19469,6 +24335,8 @@ window.HSK_CHARS = [
     "meaning": "wake up; regain consciousness",
     "level": 6,
     "phrase": "苏醒",
+    "prompt1": "苏醒",
+    "prompt2": "写苏字",
     "sentence": "这是“苏”字。"
   },
   {
@@ -19477,6 +24345,8 @@ window.HSK_CHARS = [
     "meaning": "(literally) not one thread loose; strictly according to the rules; meticulous",
     "level": 6,
     "phrase": "一丝不苟",
+    "prompt1": "一丝不苟",
+    "prompt2": "写苟字",
     "sentence": "这是“苟”字。"
   },
   {
@@ -19485,6 +24355,8 @@ window.HSK_CHARS = [
     "meaning": "a certain number or amount; how many; how much",
     "level": 6,
     "phrase": "若干",
+    "prompt1": "若干",
+    "prompt2": "倘若",
     "sentence": "这是“若”字。"
   },
   {
@@ -19493,6 +24365,8 @@ window.HSK_CHARS = [
     "meaning": "exuberance; luxuriant",
     "level": 6,
     "phrase": "茂盛",
+    "prompt1": "茂盛",
+    "prompt2": "写茂字",
     "sentence": "这是“茂”字。"
   },
   {
@@ -19501,6 +24375,8 @@ window.HSK_CHARS = [
     "meaning": "stalk; stem",
     "level": 6,
     "phrase": "茎",
+    "prompt1": "茎字",
+    "prompt2": "写茎字",
     "sentence": "这是“茎”字。"
   },
   {
@@ -19509,6 +24385,8 @@ window.HSK_CHARS = [
     "meaning": "boundless; vast and obscure",
     "level": 6,
     "phrase": "茫茫",
+    "prompt1": "茫然",
+    "prompt2": "茫茫",
     "sentence": "这是“茫”字。"
   },
   {
@@ -19517,6 +24395,8 @@ window.HSK_CHARS = [
     "meaning": "desolate",
     "level": 6,
     "phrase": "荒凉",
+    "prompt1": "荒凉",
+    "prompt2": "荒谬",
     "sentence": "这是“荒”字。"
   },
   {
@@ -19525,6 +24405,8 @@ window.HSK_CHARS = [
     "meaning": "(social or political) turmoil; unrest; upheaval",
     "level": 6,
     "phrase": "动荡",
+    "prompt1": "动荡",
+    "prompt2": "写荡字",
     "sentence": "这是“荡”字。"
   },
   {
@@ -19533,6 +24415,8 @@ window.HSK_CHARS = [
     "meaning": "meat or fish dish; pungent vegetables forbidden to Buddhist vegetarians",
     "level": 6,
     "phrase": "荤",
+    "prompt1": "荤字",
+    "prompt2": "写荤字",
     "sentence": "这是“荤”字。"
   },
   {
@@ -19541,6 +24425,8 @@ window.HSK_CHARS = [
     "meaning": "odd; baffling; unaccountable",
     "level": 6,
     "phrase": "莫名其妙",
+    "prompt1": "莫名其妙",
+    "prompt2": "写莫字",
     "sentence": "这是“莫”字。"
   },
   {
@@ -19549,6 +24435,8 @@ window.HSK_CHARS = [
     "meaning": "bacteria; virus; germ",
     "level": 6,
     "phrase": "细菌",
+    "prompt1": "细菌",
+    "prompt2": "写菌字",
     "sentence": "这是“菌”字。"
   },
   {
@@ -19557,6 +24445,8 @@ window.HSK_CHARS = [
     "meaning": "sprout; bud; germ of a plant",
     "level": 6,
     "phrase": "萌芽",
+    "prompt1": "萌芽",
+    "prompt2": "写萌字",
     "sentence": "这是“萌”字。"
   },
   {
@@ -19565,6 +24455,8 @@ window.HSK_CHARS = [
     "meaning": "wither; withered",
     "level": 6,
     "phrase": "枯萎",
+    "prompt1": "枯萎",
+    "prompt2": "写萎字",
     "sentence": "这是“萎”字。"
   },
   {
@@ -19573,6 +24465,8 @@ window.HSK_CHARS = [
     "meaning": "chairman of the board",
     "level": 6,
     "phrase": "董事长",
+    "prompt1": "古董",
+    "prompt2": "董事长",
     "sentence": "这是“董”字。"
   },
   {
@@ -19581,6 +24475,8 @@ window.HSK_CHARS = [
     "meaning": "bury",
     "level": 6,
     "phrase": "埋葬",
+    "prompt1": "埋葬",
+    "prompt2": "写葬字",
     "sentence": "这是“葬”字。"
   },
   {
@@ -19589,6 +24485,8 @@ window.HSK_CHARS = [
     "meaning": "deep-rooted; ingrained; inveterate (problem, etc.)",
     "level": 6,
     "phrase": "根深蒂固",
+    "prompt1": "根深蒂固",
+    "prompt2": "写蒂字",
     "sentence": "这是“蒂”字。"
   },
   {
@@ -19597,6 +24495,8 @@ window.HSK_CHARS = [
     "meaning": "enlighten; enlightenment instruct the young; to initiate",
     "level": 6,
     "phrase": "启蒙",
+    "prompt1": "启蒙",
+    "prompt2": "写蒙字",
     "sentence": "这是“蒙”字。"
   },
   {
@@ -19605,6 +24505,8 @@ window.HSK_CHARS = [
     "meaning": "evaporate; evaporation",
     "level": 6,
     "phrase": "蒸发",
+    "prompt1": "蒸发",
+    "prompt2": "写蒸字",
     "sentence": "这是“蒸”字。"
   },
   {
@@ -19613,6 +24515,8 @@ window.HSK_CHARS = [
     "meaning": "to save; to deposit",
     "level": 6,
     "phrase": "储蓄",
+    "prompt1": "储蓄",
+    "prompt2": "写蓄字",
     "sentence": "这是“蓄”字。"
   },
   {
@@ -19621,6 +24525,8 @@ window.HSK_CHARS = [
     "meaning": "full of youthful energy (idiom); full of vigour and vitality; energetic; spirited; a bright spark",
     "level": 6,
     "phrase": "朝气蓬勃",
+    "prompt1": "朝气蓬勃",
+    "prompt2": "写蓬字",
     "sentence": "这是“蓬”字。"
   },
   {
@@ -19629,6 +24535,8 @@ window.HSK_CHARS = [
     "meaning": "despise; loathe; disparage; scorn",
     "level": 6,
     "phrase": "蔑视",
+    "prompt1": "蔑视",
+    "prompt2": "污蔑",
     "sentence": "这是“蔑”字。"
   },
   {
@@ -19637,6 +24545,8 @@ window.HSK_CHARS = [
     "meaning": "extend; spread; to creep",
     "level": 6,
     "phrase": "蔓延",
+    "prompt1": "蔓延",
+    "prompt2": "写蔓字",
     "sentence": "这是“蔓”字。"
   },
   {
@@ -19645,6 +24555,8 @@ window.HSK_CHARS = [
     "meaning": "azure; sky blue",
     "level": 6,
     "phrase": "蔚蓝",
+    "prompt1": "蔚蓝",
+    "prompt2": "写蔚字",
     "sentence": "这是“蔚”字。"
   },
   {
@@ -19653,6 +24565,8 @@ window.HSK_CHARS = [
     "meaning": "kindly; good-tempered; amiable",
     "level": 6,
     "phrase": "和蔼",
+    "prompt1": "和蔼",
+    "prompt2": "写蔼字",
     "sentence": "这是“蔼”字。"
   },
   {
@@ -19661,6 +24575,8 @@ window.HSK_CHARS = [
     "meaning": "conceal; hide; covert; under cover; Take cover!",
     "level": 6,
     "phrase": "隐蔽",
+    "prompt1": "隐蔽",
+    "prompt2": "写蔽字",
     "sentence": "这是“蔽”字。"
   },
   {
@@ -19669,6 +24585,8 @@ window.HSK_CHARS = [
     "meaning": "hold in store; contain untapped quantities",
     "level": 6,
     "phrase": "蕴藏",
+    "prompt1": "蕴藏",
+    "prompt2": "写蕴字",
     "sentence": "这是“蕴”字。"
   },
   {
@@ -19677,6 +24595,8 @@ window.HSK_CHARS = [
     "meaning": "(flower) bud",
     "level": 6,
     "phrase": "花蕾",
+    "prompt1": "花蕾",
+    "prompt2": "写蕾字",
     "sentence": "这是“蕾”字。"
   },
   {
@@ -19685,6 +24605,8 @@ window.HSK_CHARS = [
     "meaning": "salary; wage; pay; stipend",
     "level": 6,
     "phrase": "薪水",
+    "prompt1": "薪水",
+    "prompt2": "写薪字",
     "sentence": "这是“薪”字。"
   },
   {
@@ -19693,6 +24615,8 @@ window.HSK_CHARS = [
     "meaning": "treat with contempt",
     "level": 6,
     "phrase": "藐视",
+    "prompt1": "藐视",
+    "prompt2": "写藐字",
     "sentence": "这是“藐”字。"
   },
   {
@@ -19701,6 +24625,8 @@ window.HSK_CHARS = [
     "meaning": "captive; prisoner",
     "level": 6,
     "phrase": "俘虏",
+    "prompt1": "俘虏",
+    "prompt2": "写虏字",
     "sentence": "这是“虏”字。"
   },
   {
@@ -19709,6 +24635,8 @@ window.HSK_CHARS = [
     "meaning": "to abuse; maltreat; tyrannize",
     "level": 6,
     "phrase": "虐待",
+    "prompt1": "虐待",
+    "prompt2": "写虐字",
     "sentence": "这是“虐”字。"
   },
   {
@@ -19717,6 +24645,8 @@ window.HSK_CHARS = [
     "meaning": "erode; corrode; corrupt; rusty",
     "level": 6,
     "phrase": "腐蚀",
+    "prompt1": "腐蚀",
+    "prompt2": "写蚀字",
     "sentence": "这是“蚀”字。"
   },
   {
@@ -19725,6 +24655,8 @@ window.HSK_CHARS = [
     "meaning": "ant",
     "level": 6,
     "phrase": "蚂蚁",
+    "prompt1": "蚂蚁",
+    "prompt2": "写蚁字",
     "sentence": "这是“蚁”字。"
   },
   {
@@ -19733,6 +24665,8 @@ window.HSK_CHARS = [
     "meaning": "ant",
     "level": 6,
     "phrase": "蚂蚁",
+    "prompt1": "蚂蚁",
+    "prompt2": "写蚂字",
     "sentence": "这是“蚂”字。"
   },
   {
@@ -19741,6 +24675,8 @@ window.HSK_CHARS = [
     "meaning": "barbarous; uncivilized; cruel; wild",
     "level": 6,
     "phrase": "野蛮",
+    "prompt1": "野蛮",
+    "prompt2": "写蛮字",
     "sentence": "这是“蛮”字。"
   },
   {
@@ -19749,6 +24685,8 @@ window.HSK_CHARS = [
     "meaning": "candle",
     "level": 6,
     "phrase": "蜡烛",
+    "prompt1": "蜡烛",
+    "prompt2": "写蜡字",
     "sentence": "这是“蜡”字。"
   },
   {
@@ -19757,6 +24695,8 @@ window.HSK_CHARS = [
     "meaning": "banking finance; financial",
     "level": 6,
     "phrase": "金融",
+    "prompt1": "融化",
+    "prompt2": "金融",
     "sentence": "这是“融”字。"
   },
   {
@@ -19765,6 +24705,8 @@ window.HSK_CHARS = [
     "meaning": "silly; stupid",
     "level": 6,
     "phrase": "愚蠢",
+    "prompt1": "愚蠢",
+    "prompt2": "写蠢字",
     "sentence": "这是“蠢”字。"
   },
   {
@@ -19773,6 +24715,8 @@ window.HSK_CHARS = [
     "meaning": "provoke; defiance",
     "level": 6,
     "phrase": "挑衅",
+    "prompt1": "挑衅",
+    "prompt2": "写衅字",
     "sentence": "这是“衅”字。"
   },
   {
@@ -19781,6 +24725,8 @@ window.HSK_CHARS = [
     "meaning": "to elaborate (on a theme); to expound (the classics); to do sth. half-heartedly or just for show; barely enough to get by; perfunctory; apathetic; to skimp; to botch",
     "level": 6,
     "phrase": "敷衍",
+    "prompt1": "敷衍",
+    "prompt2": "写衍字",
     "sentence": "这是“衍”字。"
   },
   {
@@ -19789,6 +24735,8 @@ window.HSK_CHARS = [
     "meaning": "to join together; to combine",
     "level": 6,
     "phrase": "衔接",
+    "prompt1": "衔接",
+    "prompt2": "写衔字",
     "sentence": "这是“衔”字。"
   },
   {
@@ -19797,6 +24745,8 @@ window.HSK_CHARS = [
     "meaning": "grow old; age; deteriorate",
     "level": 6,
     "phrase": "衰老",
+    "prompt1": "衰老",
+    "prompt2": "衰退",
     "sentence": "这是“衰”字。"
   },
   {
@@ -19805,6 +24755,8 @@ window.HSK_CHARS = [
     "meaning": "aloof; indifferent; unconcerned; untouched",
     "level": 6,
     "phrase": "无动于衷",
+    "prompt1": "衷心",
+    "prompt2": "无动于衷",
     "sentence": "这是“衷”字。"
   },
   {
@@ -19813,6 +24765,8 @@ window.HSK_CHARS = [
     "meaning": "cheongsam; Chinese-style dress",
     "level": 6,
     "phrase": "旗袍",
+    "prompt1": "旗袍",
+    "prompt2": "写袍字",
     "sentence": "这是“袍”字。"
   },
   {
@@ -19821,6 +24775,8 @@ window.HSK_CHARS = [
     "meaning": "leader",
     "level": 6,
     "phrase": "领袖",
+    "prompt1": "领袖",
+    "prompt2": "写袖字",
     "sentence": "这是“袖”字。"
   },
   {
@@ -19829,6 +24785,8 @@ window.HSK_CHARS = [
     "meaning": "surprise attack; to raid",
     "level": 6,
     "phrase": "袭击",
+    "prompt1": "袭击",
+    "prompt2": "写袭字",
     "sentence": "这是“袭”字。"
   },
   {
@@ -19837,6 +24795,8 @@ window.HSK_CHARS = [
     "meaning": "bundle wrapped in cloth; cloth-wrapper",
     "level": 6,
     "phrase": "包袱",
+    "prompt1": "包袱",
+    "prompt2": "写袱字",
     "sentence": "这是“袱”字。"
   },
   {
@@ -19845,6 +24805,8 @@ window.HSK_CHARS = [
     "meaning": "split up; to divide; separate",
     "level": 6,
     "phrase": "分裂",
+    "prompt1": "分裂",
+    "prompt2": "写裂字",
     "sentence": "这是“裂”字。"
   },
   {
@@ -19853,6 +24815,8 @@ window.HSK_CHARS = [
     "meaning": "rich; to prosper; wealthy",
     "level": 6,
     "phrase": "富裕",
+    "prompt1": "富裕",
+    "prompt2": "写裕字",
     "sentence": "这是“裕”字。"
   },
   {
@@ -19861,6 +24825,8 @@ window.HSK_CHARS = [
     "meaning": "clothes",
     "level": 6,
     "phrase": "衣裳",
+    "prompt1": "衣裳",
+    "prompt2": "写裳字",
     "sentence": "这是“裳”字。"
   },
   {
@@ -19869,6 +24835,8 @@ window.HSK_CHARS = [
     "meaning": "to cover",
     "level": 6,
     "phrase": "覆盖",
+    "prompt1": "覆盖",
+    "prompt2": "写覆字",
     "sentence": "这是“覆”字。"
   },
   {
@@ -19877,6 +24845,8 @@ window.HSK_CHARS = [
     "meaning": "to seek; to look for",
     "level": 6,
     "phrase": "寻觅",
+    "prompt1": "寻觅",
+    "prompt2": "写觅字",
     "sentence": "这是“觅”字。"
   },
   {
@@ -19885,6 +24855,8 @@ window.HSK_CHARS = [
     "meaning": "fame; reputation; honor; honorary",
     "level": 6,
     "phrase": "名誉",
+    "prompt1": "信誉",
+    "prompt2": "荣誉",
     "sentence": "这是“誉”字。"
   },
   {
@@ -19893,6 +24865,8 @@ window.HSK_CHARS = [
     "meaning": "to vow; to pledge; swear",
     "level": 6,
     "phrase": "发誓",
+    "prompt1": "发誓",
+    "prompt2": "宣誓",
     "sentence": "这是“誓”字。"
   },
   {
@@ -19901,6 +24875,8 @@ window.HSK_CHARS = [
     "meaning": "for example; for instance; such as",
     "level": 6,
     "phrase": "譬如",
+    "prompt1": "譬如",
+    "prompt2": "写譬字",
     "sentence": "这是“譬”字。"
   },
   {
@@ -19909,6 +24885,8 @@ window.HSK_CHARS = [
     "meaning": "sneer at; deride",
     "level": 6,
     "phrase": "讥笑",
+    "prompt1": "讥笑",
+    "prompt2": "写讥字",
     "sentence": "这是“讥”字。"
   },
   {
@@ -19917,6 +24895,8 @@ window.HSK_CHARS = [
     "meaning": "communication; correspondence; news dispatch",
     "level": 6,
     "phrase": "通讯",
+    "prompt1": "通讯",
+    "prompt2": "写讯字",
     "sentence": "这是“讯”字。"
   },
   {
@@ -19925,6 +24905,8 @@ window.HSK_CHARS = [
     "meaning": "avoid as a taboo; abstain from; taboo",
     "level": 6,
     "phrase": "忌讳",
+    "prompt1": "忌讳",
+    "prompt2": "写讳字",
     "sentence": "这是“讳”字。"
   },
   {
@@ -19933,6 +24915,8 @@ window.HSK_CHARS = [
     "meaning": "surprised; astonished; astound",
     "level": 6,
     "phrase": "惊讶",
+    "prompt1": "惊讶",
+    "prompt2": "写讶字",
     "sentence": "这是“讶”字。"
   },
   {
@@ -19941,6 +24925,8 @@ window.HSK_CHARS = [
     "meaning": "lawsuit",
     "level": 6,
     "phrase": "诉讼",
+    "prompt1": "诉讼",
+    "prompt2": "写讼字",
     "sentence": "这是“讼”字。"
   },
   {
@@ -19949,6 +24935,8 @@ window.HSK_CHARS = [
     "meaning": "defraud; swindle; blackmail",
     "level": 6,
     "phrase": "诈骗",
+    "prompt1": "诈骗",
+    "prompt2": "写诈字",
     "sentence": "这是“诈”字。"
   },
   {
@@ -19957,6 +24945,8 @@ window.HSK_CHARS = [
     "meaning": "birthday",
     "level": 6,
     "phrase": "诞辰",
+    "prompt1": "诞生",
+    "prompt2": "诞辰",
     "sentence": "这是“诞”字。"
   },
   {
@@ -19965,6 +24955,8 @@ window.HSK_CHARS = [
     "meaning": "flabbergasted; astonished",
     "level": 6,
     "phrase": "诧异",
+    "prompt1": "诧异",
+    "prompt2": "写诧字",
     "sentence": "这是“诧”字。"
   },
   {
@@ -19973,6 +24965,8 @@ window.HSK_CHARS = [
     "meaning": "warn; admonish",
     "level": 6,
     "phrase": "告诫",
+    "prompt1": "告诫",
+    "prompt2": "写诫字",
     "sentence": "这是“诫”字。"
   },
   {
@@ -19981,6 +24975,8 @@ window.HSK_CHARS = [
     "meaning": "entrap; to frame; plant false evidence against sb.",
     "level": 6,
     "phrase": "诬陷",
+    "prompt1": "诬陷",
+    "prompt2": "写诬字",
     "sentence": "这是“诬”字。"
   },
   {
@@ -19989,6 +24985,8 @@ window.HSK_CHARS = [
     "meaning": "tempt; temptation; entice; lure; attract",
     "level": 6,
     "phrase": "诱惑",
+    "prompt1": "诱惑",
+    "prompt2": "写诱字",
     "sentence": "这是“诱”字。"
   },
   {
@@ -19997,6 +24995,8 @@ window.HSK_CHARS = [
     "meaning": "recite",
     "level": 6,
     "phrase": "背诵",
+    "prompt1": "背诵",
+    "prompt2": "写诵字",
     "sentence": "这是“诵”字。"
   },
   {
@@ -20005,6 +25005,8 @@ window.HSK_CHARS = [
     "meaning": "(pronoun) everyone; ladies and gentlemen",
     "level": 6,
     "phrase": "诸位",
+    "prompt1": "诸位",
+    "prompt2": "写诸字",
     "sentence": "这是“诸”字。"
   },
   {
@@ -20013,6 +25015,8 @@ window.HSK_CHARS = [
     "meaning": "to promise",
     "level": 6,
     "phrase": "承诺",
+    "prompt1": "承诺",
+    "prompt2": "写诺字",
     "sentence": "这是“诺”字。"
   },
   {
@@ -20021,6 +25025,8 @@ window.HSK_CHARS = [
     "meaning": "slander; libel",
     "level": 6,
     "phrase": "诽谤",
+    "prompt1": "诽谤",
+    "prompt2": "写诽字",
     "sentence": "这是“诽”字。"
   },
   {
@@ -20029,6 +25035,8 @@ window.HSK_CHARS = [
     "meaning": "advisor; give advice",
     "level": 6,
     "phrase": "参谋",
+    "prompt1": "谋求",
+    "prompt2": "阴谋",
     "sentence": "这是“谋”字。"
   },
   {
@@ -20037,6 +25045,8 @@ window.HSK_CHARS = [
     "meaning": "a spy; intelligence agent",
     "level": 6,
     "phrase": "间谍",
+    "prompt1": "间谍",
+    "prompt2": "写谍字",
     "sentence": "这是“谍”字。"
   },
   {
@@ -20045,6 +25055,8 @@ window.HSK_CHARS = [
     "meaning": "to tell lies",
     "level": 6,
     "phrase": "撒谎",
+    "prompt1": "撒谎",
+    "prompt2": "写谎字",
     "sentence": "这是“谎”字。"
   },
   {
@@ -20053,6 +25065,8 @@ window.HSK_CHARS = [
     "meaning": "harmonious; concordant",
     "level": 6,
     "phrase": "和谐",
+    "prompt1": "和谐",
+    "prompt2": "写谐字",
     "sentence": "这是“谐”字。"
   },
   {
@@ -20061,6 +25075,8 @@ window.HSK_CHARS = [
     "meaning": "riddle; conundrum",
     "level": 6,
     "phrase": "谜语",
+    "prompt1": "谜语",
+    "prompt2": "写谜字",
     "sentence": "这是“谜”字。"
   },
   {
@@ -20069,6 +25085,8 @@ window.HSK_CHARS = [
     "meaning": "rumor",
     "level": 6,
     "phrase": "谣言",
+    "prompt1": "谣言",
+    "prompt2": "写谣字",
     "sentence": "这是“谣”字。"
   },
   {
@@ -20077,6 +25095,8 @@ window.HSK_CHARS = [
     "meaning": "slander; libel",
     "level": 6,
     "phrase": "诽谤",
+    "prompt1": "诽谤",
+    "prompt2": "写谤字",
     "sentence": "这是“谤”字。"
   },
   {
@@ -20085,6 +25105,8 @@ window.HSK_CHARS = [
     "meaning": "ridiculous; nonsensical",
     "level": 6,
     "phrase": "荒谬",
+    "prompt1": "荒谬",
+    "prompt2": "写谬字",
     "sentence": "这是“谬”字。"
   },
   {
@@ -20093,6 +25115,8 @@ window.HSK_CHARS = [
     "meaning": "sheet music",
     "level": 6,
     "phrase": "乐谱",
+    "prompt1": "乐谱",
+    "prompt2": "写谱字",
     "sentence": "这是“谱”字。"
   },
   {
@@ -20101,6 +25125,8 @@ window.HSK_CHARS = [
     "meaning": "denounce; condemn; criticize",
     "level": 6,
     "phrase": "谴责",
+    "prompt1": "谴责",
+    "prompt2": "写谴字",
     "sentence": "这是“谴”字。"
   },
   {
@@ -20109,6 +25135,8 @@ window.HSK_CHARS = [
     "meaning": "rice crops/paddy",
     "level": 6,
     "phrase": "稻谷",
+    "prompt1": "峡谷",
+    "prompt2": "稻谷",
     "sentence": "这是“谷”字。"
   },
   {
@@ -20117,6 +25145,8 @@ window.HSK_CHARS = [
     "meaning": "virtuous and dutiful (of women)",
     "level": 6,
     "phrase": "贤惠",
+    "prompt1": "贤惠",
+    "prompt2": "写贤字",
     "sentence": "这是“贤”字。"
   },
   {
@@ -20125,6 +25155,8 @@ window.HSK_CHARS = [
     "meaning": "sell; peddle; (often derogatory) to traffic in",
     "level": 6,
     "phrase": "贩卖",
+    "prompt1": "贩卖",
+    "prompt2": "写贩字",
     "sentence": "这是“贩”字。"
   },
   {
@@ -20133,6 +25165,8 @@ window.HSK_CHARS = [
     "meaning": "greedy; avaricious",
     "level": 6,
     "phrase": "贪婪",
+    "prompt1": "贪婪",
+    "prompt2": "贪污",
     "sentence": "这是“贪”字。"
   },
   {
@@ -20141,6 +25175,8 @@ window.HSK_CHARS = [
     "meaning": "lacking; incomplete",
     "level": 6,
     "phrase": "贫乏",
+    "prompt1": "贫乏",
+    "prompt2": "贫困",
     "sentence": "这是“贫”字。"
   },
   {
@@ -20149,6 +25185,8 @@ window.HSK_CHARS = [
     "meaning": "to belittle; depreciate; disparage",
     "level": 6,
     "phrase": "贬低",
+    "prompt1": "贬义",
+    "prompt2": "贬低",
     "sentence": "这是“贬”字。"
   },
   {
@@ -20157,6 +25195,8 @@ window.HSK_CHARS = [
     "meaning": "to implement; put into practice; carry out",
     "level": 6,
     "phrase": "贯彻",
+    "prompt1": "贯彻",
+    "prompt2": "籍贯",
     "sentence": "这是“贯”字。"
   },
   {
@@ -20165,6 +25205,8 @@ window.HSK_CHARS = [
     "meaning": "thief",
     "level": 6,
     "phrase": "贼",
+    "prompt1": "贼字",
+    "prompt2": "写贼字",
     "sentence": "这是“贼”字。"
   },
   {
@@ -20173,6 +25215,8 @@ window.HSK_CHARS = [
     "meaning": "to bribe",
     "level": 6,
     "phrase": "贿赂",
+    "prompt1": "贿赂",
+    "prompt2": "写贿字",
     "sentence": "这是“贿”字。"
   },
   {
@@ -20181,6 +25225,8 @@ window.HSK_CHARS = [
     "meaning": "rent; lease",
     "level": 6,
     "phrase": "租赁",
+    "prompt1": "租赁",
+    "prompt2": "写赁字",
     "sentence": "这是“赁”字。"
   },
   {
@@ -20189,6 +25235,8 @@ window.HSK_CHARS = [
     "meaning": "to bribe",
     "level": 6,
     "phrase": "贿赂",
+    "prompt1": "贿赂",
+    "prompt2": "写赂字",
     "sentence": "这是“赂”字。"
   },
   {
@@ -20197,6 +25245,8 @@ window.HSK_CHARS = [
     "meaning": "confer upon; bestow; endow; entrust (a task)",
     "level": 6,
     "phrase": "赋予",
+    "prompt1": "赋予",
+    "prompt2": "天赋",
     "sentence": "这是“赋”字。"
   },
   {
@@ -20205,6 +25255,8 @@ window.HSK_CHARS = [
     "meaning": "to gamble",
     "level": 6,
     "phrase": "赌博",
+    "prompt1": "赌博",
+    "prompt2": "写赌字",
     "sentence": "这是“赌”字。"
   },
   {
@@ -20213,6 +25265,8 @@ window.HSK_CHARS = [
     "meaning": "hoodlum; rascal; rogue; rascally; scoundrelly",
     "level": 6,
     "phrase": "无赖",
+    "prompt1": "依赖",
+    "prompt2": "无赖",
     "sentence": "这是“赖”字。"
   },
   {
@@ -20221,6 +25275,8 @@ window.HSK_CHARS = [
     "meaning": "give as a present",
     "level": 6,
     "phrase": "赠送",
+    "prompt1": "赠送",
+    "prompt2": "写赠字",
     "sentence": "这是“赠”字。"
   },
   {
@@ -20229,6 +25285,8 @@ window.HSK_CHARS = [
     "meaning": "the equator",
     "level": 6,
     "phrase": "赤道",
+    "prompt1": "赤字",
+    "prompt2": "赤道",
     "sentence": "这是“赤”字。"
   },
   {
@@ -20237,6 +25295,8 @@ window.HSK_CHARS = [
     "meaning": "do at all costs; make an all-out effort",
     "level": 6,
     "phrase": "全力以赴",
+    "prompt1": "全力以赴",
+    "prompt2": "写赴字",
     "sentence": "这是“赴”字。"
   },
   {
@@ -20245,6 +25305,8 @@ window.HSK_CHARS = [
     "meaning": "lie on one's stomach",
     "level": 6,
     "phrase": "趴",
+    "prompt1": "趴字",
+    "prompt2": "写趴字",
     "sentence": "这是“趴”字。"
   },
   {
@@ -20253,6 +25315,8 @@ window.HSK_CHARS = [
     "meaning": "to fall down; to drop",
     "level": 6,
     "phrase": "跌",
+    "prompt1": "跌字",
+    "prompt2": "写跌字",
     "sentence": "这是“跌”字。"
   },
   {
@@ -20261,6 +25325,8 @@ window.HSK_CHARS = [
     "meaning": "step across; stride; straddle; to cross",
     "level": 6,
     "phrase": "跨",
+    "prompt1": "跨字",
+    "prompt2": "写跨字",
     "sentence": "这是“跨”字。"
   },
   {
@@ -20269,6 +25335,8 @@ window.HSK_CHARS = [
     "meaning": "kneel",
     "level": 6,
     "phrase": "跪",
+    "prompt1": "跪字",
+    "prompt2": "写跪字",
     "sentence": "这是“跪”字。"
   },
   {
@@ -20277,6 +25345,8 @@ window.HSK_CHARS = [
     "meaning": "eager; enthusiastically",
     "level": 6,
     "phrase": "踊跃",
+    "prompt1": "踊跃",
+    "prompt2": "写踊字",
     "sentence": "这是“踊”字。"
   },
   {
@@ -20285,6 +25355,8 @@ window.HSK_CHARS = [
     "meaning": "trample",
     "level": 6,
     "phrase": "践踏",
+    "prompt1": "踏实",
+    "prompt2": "践踏",
     "sentence": "这是“踏”字。"
   },
   {
@@ -20293,6 +25365,8 @@ window.HSK_CHARS = [
     "meaning": "follow somebody's tracks; tail; shadow",
     "level": 6,
     "phrase": "跟踪",
+    "prompt1": "踪迹",
+    "prompt2": "跟踪",
     "sentence": "这是“踪”字。"
   },
   {
@@ -20301,6 +25375,8 @@ window.HSK_CHARS = [
     "meaning": "a dance",
     "level": 6,
     "phrase": "舞蹈",
+    "prompt1": "舞蹈",
+    "prompt2": "写蹈字",
     "sentence": "这是“蹈”字。"
   },
   {
@@ -20309,6 +25385,8 @@ window.HSK_CHARS = [
     "meaning": "waste; ruin; wreck; spoil; slander",
     "level": 6,
     "phrase": "糟蹋",
+    "prompt1": "糟蹋",
+    "prompt2": "写蹋字",
     "sentence": "这是“蹋”字。"
   },
   {
@@ -20317,6 +25395,8 @@ window.HSK_CHARS = [
     "meaning": "jump; bounce; hop",
     "level": 6,
     "phrase": "蹦",
+    "prompt1": "蹦字",
+    "prompt2": "写蹦字",
     "sentence": "这是“蹦”字。"
   },
   {
@@ -20325,6 +25405,8 @@ window.HSK_CHARS = [
     "meaning": "press down with the foot; step back or into something",
     "level": 6,
     "phrase": "蹬",
+    "prompt1": "蹬字",
+    "prompt2": "写蹬字",
     "sentence": "这是“蹬”字。"
   },
   {
@@ -20333,6 +25415,8 @@ window.HSK_CHARS = [
     "meaning": "irritable; impetuous; impatient",
     "level": 6,
     "phrase": "急躁",
+    "prompt1": "急躁",
+    "prompt2": "写躁字",
     "sentence": "这是“躁”字。"
   },
   {
@@ -20341,6 +25425,8 @@ window.HSK_CHARS = [
     "meaning": "to bow",
     "level": 6,
     "phrase": "鞠躬",
+    "prompt1": "鞠躬",
+    "prompt2": "写躬字",
     "sentence": "这是“躬”字。"
   },
   {
@@ -20349,6 +25435,8 @@ window.HSK_CHARS = [
     "meaning": "orbit; railway; trajectory",
     "level": 6,
     "phrase": "轨道",
+    "prompt1": "轨道",
+    "prompt2": "写轨字",
     "sentence": "这是“轨”字。"
   },
   {
@@ -20357,6 +25445,8 @@ window.HSK_CHARS = [
     "meaning": "a sensation; a stir",
     "level": 6,
     "phrase": "轰动",
+    "prompt1": "轰动",
+    "prompt2": "写轰字",
     "sentence": "这是“轰”字。"
   },
   {
@@ -20365,6 +25455,8 @@ window.HSK_CHARS = [
     "meaning": "radiance; brilliant; glory",
     "level": 6,
     "phrase": "光辉",
+    "prompt1": "辉煌",
+    "prompt2": "光辉",
     "sentence": "这是“辉”字。"
   },
   {
@@ -20373,6 +25465,8 @@ window.HSK_CHARS = [
     "meaning": "radiation",
     "level": 6,
     "phrase": "辐射",
+    "prompt1": "辐射",
+    "prompt2": "写辐字",
     "sentence": "这是“辐”字。"
   },
   {
@@ -20381,6 +25475,8 @@ window.HSK_CHARS = [
     "meaning": "at odds with; act in a way that defeats one's purpose",
     "level": 6,
     "phrase": "南辕北辙",
+    "prompt1": "南辕北辙",
+    "prompt2": "写辕字",
     "sentence": "这是“辕”字。"
   },
   {
@@ -20389,6 +25485,8 @@ window.HSK_CHARS = [
     "meaning": "administer; have jurisdiction (over)",
     "level": 6,
     "phrase": "管辖",
+    "prompt1": "管辖",
+    "prompt2": "写辖字",
     "sentence": "这是“辖”字。"
   },
   {
@@ -20397,6 +25495,8 @@ window.HSK_CHARS = [
     "meaning": "at odds with; act in a way that defeats one's purpose",
     "level": 6,
     "phrase": "南辕北辙",
+    "prompt1": "南辕北辙",
+    "prompt2": "写辙字",
     "sentence": "这是“辙”字。"
   },
   {
@@ -20405,6 +25505,8 @@ window.HSK_CHARS = [
     "meaning": "let down; disappoint; fail to live up to",
     "level": 6,
     "phrase": "辜负",
+    "prompt1": "辜负",
+    "prompt2": "无辜",
     "sentence": "这是“辜”字。"
   },
   {
@@ -20413,6 +25515,8 @@ window.HSK_CHARS = [
     "meaning": "open up; to start; to build",
     "level": 6,
     "phrase": "开辟",
+    "prompt1": "开辟",
+    "prompt2": "写辟字",
     "sentence": "这是“辟”字。"
   },
   {
@@ -20421,6 +25525,8 @@ window.HSK_CHARS = [
     "meaning": "distinguish; identify; recognize",
     "level": 6,
     "phrase": "辨认",
+    "prompt1": "辨认",
+    "prompt2": "分辨",
     "sentence": "这是“辨”字。"
   },
   {
@@ -20429,6 +25535,8 @@ window.HSK_CHARS = [
     "meaning": "plait; braid; pigtail",
     "level": 6,
     "phrase": "辫子",
+    "prompt1": "辫子",
+    "prompt2": "写辫字",
     "sentence": "这是“辫”字。"
   },
   {
@@ -20437,6 +25545,8 @@ window.HSK_CHARS = [
     "meaning": "birthday",
     "level": 6,
     "phrase": "诞辰",
+    "prompt1": "诞辰",
+    "prompt2": "写辰字",
     "sentence": "这是“辰”字。"
   },
   {
@@ -20445,6 +25555,8 @@ window.HSK_CHARS = [
     "meaning": "to insult; humiliate",
     "level": 6,
     "phrase": "侮辱",
+    "prompt1": "侮辱",
+    "prompt2": "写辱字",
     "sentence": "这是“辱”字。"
   },
   {
@@ -20453,6 +25565,8 @@ window.HSK_CHARS = [
     "meaning": "vast; extensive",
     "level": 6,
     "phrase": "辽阔",
+    "prompt1": "辽阔",
+    "prompt2": "写辽字",
     "sentence": "这是“辽”字。"
   },
   {
@@ -20461,6 +25575,8 @@ window.HSK_CHARS = [
     "meaning": "changes; vicissitude",
     "level": 6,
     "phrase": "变迁",
+    "prompt1": "迁就",
+    "prompt2": "变迁",
     "sentence": "这是“迁”字。"
   },
   {
@@ -20469,6 +25585,8 @@ window.HSK_CHARS = [
     "meaning": "until now; so far; to date",
     "level": 6,
     "phrase": "迄今为止",
+    "prompt1": "迄今为止",
+    "prompt2": "写迄字",
     "sentence": "这是“迄”字。"
   },
   {
@@ -20477,6 +25595,8 @@ window.HSK_CHARS = [
     "meaning": "to step; stride",
     "level": 6,
     "phrase": "迈",
+    "prompt1": "豪迈",
+    "prompt2": "写迈字",
     "sentence": "这是“迈”字。"
   },
   {
@@ -20485,6 +25605,8 @@ window.HSK_CHARS = [
     "meaning": "burst forth; burst out",
     "level": 6,
     "phrase": "迸发",
+    "prompt1": "迸发",
+    "prompt2": "写迸字",
     "sentence": "这是“迸”字。"
   },
   {
@@ -20493,6 +25615,8 @@ window.HSK_CHARS = [
     "meaning": "go/drive against the traffic; go in the wrong direction; regress; retrograde",
     "level": 6,
     "phrase": "逆行",
+    "prompt1": "逆行",
+    "prompt2": "写逆字",
     "sentence": "这是“逆”字。"
   },
   {
@@ -20501,6 +25625,8 @@ window.HSK_CHARS = [
     "meaning": "humble; modest; humility",
     "level": 6,
     "phrase": "谦逊",
+    "prompt1": "谦逊",
+    "prompt2": "写逊字",
     "sentence": "这是“逊”字。"
   },
   {
@@ -20509,6 +25635,8 @@ window.HSK_CHARS = [
     "meaning": "pass away; to die",
     "level": 6,
     "phrase": "逝世",
+    "prompt1": "逝世",
+    "prompt2": "写逝字",
     "sentence": "这是“逝”字。"
   },
   {
@@ -20517,6 +25645,8 @@ window.HSK_CHARS = [
     "meaning": "to meet; come upon",
     "level": 6,
     "phrase": "逢",
+    "prompt1": "逢字",
+    "prompt2": "写逢字",
     "sentence": "这是“逢”字。"
   },
   {
@@ -20525,6 +25655,8 @@ window.HSK_CHARS = [
     "meaning": "to arrest; to capture",
     "level": 6,
     "phrase": "逮捕",
+    "prompt1": "逮捕",
+    "prompt2": "写逮字",
     "sentence": "这是“逮”字。"
   },
   {
@@ -20533,6 +25665,8 @@ window.HSK_CHARS = [
     "meaning": "to force; compel; coerce",
     "level": 6,
     "phrase": "逼迫",
+    "prompt1": "逼迫",
+    "prompt2": "写逼字",
     "sentence": "这是“逼”字。"
   },
   {
@@ -20541,6 +25675,8 @@ window.HSK_CHARS = [
     "meaning": "keep within limits; contain; restrain; hold back",
     "level": 6,
     "phrase": "遏制",
+    "prompt1": "遏制",
+    "prompt2": "写遏字",
     "sentence": "这是“遏”字。"
   },
   {
@@ -20549,6 +25685,8 @@ window.HSK_CHARS = [
     "meaning": "send (on a mission); dispatch",
     "level": 6,
     "phrase": "派遣",
+    "prompt1": "派遣",
+    "prompt2": "写遣字",
     "sentence": "这是“遣”字。"
   },
   {
@@ -20557,6 +25695,8 @@ window.HSK_CHARS = [
     "meaning": "remote control",
     "level": 6,
     "phrase": "遥控",
+    "prompt1": "遥控",
+    "prompt2": "遥远",
     "sentence": "这是“遥”字。"
   },
   {
@@ -20565,6 +25705,8 @@ window.HSK_CHARS = [
     "meaning": "suffer; suffering; be subjected to (something unfortunate)",
     "level": 6,
     "phrase": "遭受",
+    "prompt1": "遭受",
+    "prompt2": "遭遇",
     "sentence": "这是“遭”字。"
   },
   {
@@ -20573,6 +25715,8 @@ window.HSK_CHARS = [
     "meaning": "shelter from; keep out",
     "level": 6,
     "phrase": "遮挡",
+    "prompt1": "遮挡",
+    "prompt2": "写遮字",
     "sentence": "这是“遮”字。"
   },
   {
@@ -20581,6 +25725,8 @@ window.HSK_CHARS = [
     "meaning": "melancholy; dejected",
     "level": 6,
     "phrase": "忧郁",
+    "prompt1": "忧郁",
+    "prompt2": "写郁字",
     "sentence": "这是“郁”字。"
   },
   {
@@ -20589,6 +25735,8 @@ window.HSK_CHARS = [
     "meaning": "bridegroom; groom",
     "level": 6,
     "phrase": "新郎",
+    "prompt1": "新郎",
+    "prompt2": "写郎字",
     "sentence": "这是“郎”字。"
   },
   {
@@ -20597,6 +25745,8 @@ window.HSK_CHARS = [
     "meaning": "serious; solemn",
     "level": 6,
     "phrase": "郑重",
+    "prompt1": "郑重",
+    "prompt2": "写郑字",
     "sentence": "这是“郑”字。"
   },
   {
@@ -20605,6 +25755,8 @@ window.HSK_CHARS = [
     "meaning": "base; mean; despicable; contemptible; unprincipled",
     "level": 6,
     "phrase": "卑鄙",
+    "prompt1": "鄙视",
+    "prompt2": "卑鄙",
     "sentence": "这是“鄙”字。"
   },
   {
@@ -20613,6 +25765,8 @@ window.HSK_CHARS = [
     "meaning": "Consider; deliberate",
     "level": 6,
     "phrase": "斟酌",
+    "prompt1": "斟酌",
+    "prompt2": "写酌字",
     "sentence": "这是“酌”字。"
   },
   {
@@ -20621,6 +25775,8 @@ window.HSK_CHARS = [
     "meaning": "heavy drinking; drink to excess; binge drink",
     "level": 6,
     "phrase": "酗酒",
+    "prompt1": "酗酒",
+    "prompt2": "写酗字",
     "sentence": "这是“酗”字。"
   },
   {
@@ -20629,6 +25785,8 @@ window.HSK_CHARS = [
     "meaning": "mull over (an issue); hold a preliminary round of exploratory discussions",
     "level": 6,
     "phrase": "酝酿",
+    "prompt1": "酝酿",
+    "prompt2": "写酝字",
     "sentence": "这是“酝”字。"
   },
   {
@@ -20637,6 +25795,8 @@ window.HSK_CHARS = [
     "meaning": "reward; remuneration",
     "level": 6,
     "phrase": "报酬",
+    "prompt1": "应酬",
+    "prompt2": "报酬",
     "sentence": "这是“酬”字。"
   },
   {
@@ -20645,6 +25805,8 @@ window.HSK_CHARS = [
     "meaning": "cruel",
     "level": 6,
     "phrase": "残酷",
+    "prompt1": "冷酷",
+    "prompt2": "残酷",
     "sentence": "这是“酷”字。"
   },
   {
@@ -20653,6 +25815,8 @@ window.HSK_CHARS = [
     "meaning": "mull over (an issue); hold a preliminary round of exploratory discussions",
     "level": 6,
     "phrase": "酝酿",
+    "prompt1": "酝酿",
+    "prompt2": "写酿字",
     "sentence": "这是“酿”字。"
   },
   {
@@ -20661,6 +25825,8 @@ window.HSK_CHARS = [
     "meaning": "field of vision",
     "level": 6,
     "phrase": "视野",
+    "prompt1": "野心",
+    "prompt2": "视野",
     "sentence": "这是“野”字。"
   },
   {
@@ -20669,6 +25835,8 @@ window.HSK_CHARS = [
     "meaning": "differentiate; distinguish",
     "level": 6,
     "phrase": "鉴别",
+    "prompt1": "鉴于",
+    "prompt2": "借鉴",
     "sentence": "这是“鉴”字。"
   },
   {
@@ -20677,6 +25845,8 @@ window.HSK_CHARS = [
     "meaning": "to chop the nail and slice the iron (idiom); resolute and decisive; definitely",
     "level": 6,
     "phrase": "斩钉截铁",
+    "prompt1": "斩钉截铁",
+    "prompt2": "写钉字",
     "sentence": "这是“钉”字。"
   },
   {
@@ -20685,6 +25855,8 @@ window.HSK_CHARS = [
     "meaning": "calcium",
     "level": 6,
     "phrase": "钙",
+    "prompt1": "钙字",
+    "prompt2": "写钙字",
     "sentence": "这是“钙”字。"
   },
   {
@@ -20693,6 +25865,8 @@ window.HSK_CHARS = [
     "meaning": "slow (witted); stupid; dull",
     "level": 6,
     "phrase": "迟钝",
+    "prompt1": "迟钝",
+    "prompt2": "写钝字",
     "sentence": "这是“钝”字。"
   },
   {
@@ -20701,6 +25875,8 @@ window.HSK_CHARS = [
     "meaning": "paper money; bill",
     "level": 6,
     "phrase": "钞票",
+    "prompt1": "钞票",
+    "prompt2": "写钞字",
     "sentence": "这是“钞”字。"
   },
   {
@@ -20709,6 +25885,8 @@ window.HSK_CHARS = [
     "meaning": "admire; have great respect for",
     "level": 6,
     "phrase": "钦佩",
+    "prompt1": "钦佩",
+    "prompt2": "写钦字",
     "sentence": "这是“钦”字。"
   },
   {
@@ -20717,6 +25895,8 @@ window.HSK_CHARS = [
     "meaning": "hook",
     "level": 6,
     "phrase": "钩子",
+    "prompt1": "钩子",
+    "prompt2": "写钩字",
     "sentence": "这是“钩”字。"
   },
   {
@@ -20725,6 +25905,8 @@ window.HSK_CHARS = [
     "meaning": "study intensively; delve into",
     "level": 6,
     "phrase": "钻研",
+    "prompt1": "钻石",
+    "prompt2": "钻研",
     "sentence": "这是“钻”字。"
   },
   {
@@ -20733,6 +25915,8 @@ window.HSK_CHARS = [
     "meaning": "copper",
     "level": 6,
     "phrase": "铜",
+    "prompt1": "铜字",
+    "prompt2": "写铜字",
     "sentence": "这是“铜”字。"
   },
   {
@@ -20741,6 +25925,8 @@ window.HSK_CHARS = [
     "meaning": "motto",
     "level": 6,
     "phrase": "座右铭",
+    "prompt1": "座右铭",
+    "prompt2": "写铭字",
     "sentence": "这是“铭”字。"
   },
   {
@@ -20749,6 +25935,8 @@ window.HSK_CHARS = [
     "meaning": "cast (pour metal into a mold)",
     "level": 6,
     "phrase": "铸造",
+    "prompt1": "铸造",
+    "prompt2": "写铸字",
     "sentence": "这是“铸”字。"
   },
   {
@@ -20757,6 +25945,8 @@ window.HSK_CHARS = [
     "meaning": "bed; store | to spread; to lay",
     "level": 6,
     "phrase": "铺",
+    "prompt1": "铺字",
+    "prompt2": "写铺字",
     "sentence": "这是“铺”字。"
   },
   {
@@ -20765,6 +25955,8 @@ window.HSK_CHARS = [
     "meaning": "to rust",
     "level": 6,
     "phrase": "生锈",
+    "prompt1": "生锈",
+    "prompt2": "写锈字",
     "sentence": "这是“锈”字。"
   },
   {
@@ -20773,6 +25965,8 @@ window.HSK_CHARS = [
     "meaning": "sharp (i.e. a knife blade); incisive; to the point",
     "level": 6,
     "phrase": "锋利",
+    "prompt1": "锋利",
+    "prompt2": "写锋字",
     "sentence": "这是“锋”字。"
   },
   {
@@ -20781,6 +25975,8 @@ window.HSK_CHARS = [
     "meaning": "sharp; intense; penetrating",
     "level": 6,
     "phrase": "尖锐",
+    "prompt1": "尖锐",
+    "prompt2": "敏锐",
     "sentence": "这是“锐”字。"
   },
   {
@@ -20789,6 +25985,8 @@ window.HSK_CHARS = [
     "meaning": "hammer; weight",
     "level": 6,
     "phrase": "锤",
+    "prompt1": "锤字",
+    "prompt2": "写锤字",
     "sentence": "这是“锤”字。"
   },
   {
@@ -20797,6 +25995,8 @@ window.HSK_CHARS = [
     "meaning": "lit. on brocade, add flowers (idiom); to decorate sth already perfect / gilding the lily",
     "level": 6,
     "phrase": "锦上添花",
+    "prompt1": "锦上添花",
+    "prompt2": "写锦字",
     "sentence": "这是“锦”字。"
   },
   {
@@ -20805,6 +26005,8 @@ window.HSK_CHARS = [
     "meaning": "keep on chipping away; work with perseverance",
     "level": 6,
     "phrase": "锲而不舍",
+    "prompt1": "锲而不舍",
+    "prompt2": "写锲字",
     "sentence": "这是“锲”字。"
   },
   {
@@ -20813,6 +26015,8 @@ window.HSK_CHARS = [
     "meaning": "village and town",
     "level": 6,
     "phrase": "乡镇",
+    "prompt1": "镇定",
+    "prompt2": "乡镇",
     "sentence": "这是“镇”字。"
   },
   {
@@ -20821,6 +26025,8 @@ window.HSK_CHARS = [
     "meaning": "inlay",
     "level": 6,
     "phrase": "镶嵌",
+    "prompt1": "镶嵌",
+    "prompt2": "写镶字",
     "sentence": "这是“镶”字。"
   },
   {
@@ -20829,6 +26035,8 @@ window.HSK_CHARS = [
     "meaning": "oppressive (of weather); heavy; depressed; not happy",
     "level": 6,
     "phrase": "沉闷",
+    "prompt1": "沉闷",
+    "prompt2": "纳闷儿",
     "sentence": "这是“闷”字。"
   },
   {
@@ -20837,6 +26045,8 @@ window.HSK_CHARS = [
     "meaning": "estrangement; misunderstanding",
     "level": 6,
     "phrase": "隔阂",
+    "prompt1": "隔阂",
+    "prompt2": "写阂字",
     "sentence": "这是“阂”字。"
   },
   {
@@ -20845,6 +26055,8 @@ window.HSK_CHARS = [
     "meaning": "expound (a position); elaborate (on a topic)",
     "level": 6,
     "phrase": "阐述",
+    "prompt1": "阐述",
+    "prompt2": "写阐字",
     "sentence": "这是“阐”字。"
   },
   {
@@ -20853,6 +26065,8 @@ window.HSK_CHARS = [
     "meaning": "wide; vast",
     "level": 6,
     "phrase": "广阔",
+    "prompt1": "广阔",
+    "prompt2": "辽阔",
     "sentence": "这是“阔”字。"
   },
   {
@@ -20861,6 +26075,8 @@ window.HSK_CHARS = [
     "meaning": "trap; snare",
     "level": 6,
     "phrase": "陷阱",
+    "prompt1": "陷阱",
+    "prompt2": "写阱字",
     "sentence": "这是“阱”字。"
   },
   {
@@ -20869,6 +26085,8 @@ window.HSK_CHARS = [
     "meaning": "old fashioned; outmoded; obsolete",
     "level": 6,
     "phrase": "陈旧",
+    "prompt1": "陈列",
+    "prompt2": "陈述",
     "sentence": "这是“陈”字。"
   },
   {
@@ -20877,6 +26095,8 @@ window.HSK_CHARS = [
     "meaning": "simple and crude (i.e. room or building)",
     "level": 6,
     "phrase": "简陋",
+    "prompt1": "简陋",
+    "prompt2": "写陋字",
     "sentence": "这是“陋”字。"
   },
   {
@@ -20885,6 +26105,8 @@ window.HSK_CHARS = [
     "meaning": "steep; precipitous",
     "level": 6,
     "phrase": "陡峭",
+    "prompt1": "陡峭",
+    "prompt2": "写陡字",
     "sentence": "这是“陡”字。"
   },
   {
@@ -20893,6 +26115,8 @@ window.HSK_CHARS = [
     "meaning": "hills",
     "level": 6,
     "phrase": "丘陵",
+    "prompt1": "丘陵",
+    "prompt2": "写陵字",
     "sentence": "这是“陵”字。"
   },
   {
@@ -20901,6 +26125,8 @@ window.HSK_CHARS = [
     "meaning": "ceramics; pottery and porcelain",
     "level": 6,
     "phrase": "陶瓷",
+    "prompt1": "陶瓷",
+    "prompt2": "熏陶",
     "sentence": "这是“陶”字。"
   },
   {
@@ -20909,6 +26135,8 @@ window.HSK_CHARS = [
     "meaning": "a defect; a flaw; disfigurement",
     "level": 6,
     "phrase": "缺陷",
+    "prompt1": "陷入",
+    "prompt2": "诬陷",
     "sentence": "这是“陷”字。"
   },
   {
@@ -20917,6 +26145,8 @@ window.HSK_CHARS = [
     "meaning": "grand; prosperous; ceremonious",
     "level": 6,
     "phrase": "隆重",
+    "prompt1": "隆重",
+    "prompt2": "兴隆",
     "sentence": "这是“隆”字。"
   },
   {
@@ -20925,6 +26155,8 @@ window.HSK_CHARS = [
     "meaning": "conceal; hide; covert; under cover; Take cover!",
     "level": 6,
     "phrase": "隐蔽",
+    "prompt1": "隐患",
+    "prompt2": "隐蔽",
     "sentence": "这是“隐”字。"
   },
   {
@@ -20933,6 +26165,8 @@ window.HSK_CHARS = [
     "meaning": "narrow; tight; narrow (minded); lacking in experience",
     "level": 6,
     "phrase": "狭隘",
+    "prompt1": "狭隘",
+    "prompt2": "写隘字",
     "sentence": "这是“隘”字。"
   },
   {
@@ -20941,6 +26175,8 @@ window.HSK_CHARS = [
     "meaning": "crack; gap between two objects",
     "level": 6,
     "phrase": "空隙",
+    "prompt1": "空隙",
+    "prompt2": "写隙字",
     "sentence": "这是“隙”字。"
   },
   {
@@ -20949,6 +26185,8 @@ window.HSK_CHARS = [
     "meaning": "ensure; to guarantee; protect",
     "level": 6,
     "phrase": "保障",
+    "prompt1": "障碍",
+    "prompt2": "故障",
     "sentence": "这是“障”字。"
   },
   {
@@ -20957,6 +26195,8 @@ window.HSK_CHARS = [
     "meaning": "tunnel",
     "level": 6,
     "phrase": "隧道",
+    "prompt1": "隧道",
+    "prompt2": "写隧字",
     "sentence": "这是“隧”字。"
   },
   {
@@ -20965,6 +26205,8 @@ window.HSK_CHARS = [
     "meaning": "slave",
     "level": 6,
     "phrase": "奴隶",
+    "prompt1": "奴隶",
+    "prompt2": "写隶字",
     "sentence": "这是“隶”字。"
   },
   {
@@ -20973,6 +26215,8 @@ window.HSK_CHARS = [
     "meaning": "not even a crow or sparrow can be heard (idiom); silence reigns",
     "level": 6,
     "phrase": "鸦雀无声",
+    "prompt1": "鸦雀无声",
+    "prompt2": "写雀字",
     "sentence": "这是“雀”字。"
   },
   {
@@ -20981,6 +26225,8 @@ window.HSK_CHARS = [
     "meaning": "elegant; refined",
     "level": 6,
     "phrase": "文雅",
+    "prompt1": "文雅",
+    "prompt2": "写雅字",
     "sentence": "这是“雅”字。"
   },
   {
@@ -20989,6 +26235,8 @@ window.HSK_CHARS = [
     "meaning": "employ; hire",
     "level": 6,
     "phrase": "雇佣",
+    "prompt1": "雇佣",
+    "prompt2": "解雇",
     "sentence": "这是“雇”字。"
   },
   {
@@ -20997,6 +26245,8 @@ window.HSK_CHARS = [
     "meaning": "male and female; winners and losers",
     "level": 6,
     "phrase": "雌雄",
+    "prompt1": "雌雄",
+    "prompt2": "写雌字",
     "sentence": "这是“雌”字。"
   },
   {
@@ -21005,6 +26255,8 @@ window.HSK_CHARS = [
     "meaning": "carve; engrave; sculpt",
     "level": 6,
     "phrase": "雕刻",
+    "prompt1": "雕刻",
+    "prompt2": "雕塑",
     "sentence": "这是“雕”字。"
   },
   {
@@ -21013,6 +26265,8 @@ window.HSK_CHARS = [
     "meaning": "hail",
     "level": 6,
     "phrase": "冰雹",
+    "prompt1": "冰雹",
+    "prompt2": "写雹字",
     "sentence": "这是“雹”字。"
   },
   {
@@ -21021,6 +26275,8 @@ window.HSK_CHARS = [
     "meaning": "squander money without restraint; squander",
     "level": 6,
     "phrase": "挥霍",
+    "prompt1": "挥霍",
+    "prompt2": "写霍字",
     "sentence": "这是“霍”字。"
   },
   {
@@ -21029,6 +26285,8 @@ window.HSK_CHARS = [
     "meaning": "(literally) add frost to snow; one disaster after another; insult added to injury",
     "level": 6,
     "phrase": "雪上加霜",
+    "prompt1": "雪上加霜",
+    "prompt2": "写霜字",
     "sentence": "这是“霜”字。"
   },
   {
@@ -21037,6 +26295,8 @@ window.HSK_CHARS = [
     "meaning": "red clouds",
     "level": 6,
     "phrase": "霞",
+    "prompt1": "霞字",
+    "prompt2": "写霞字",
     "sentence": "这是“霞”字。"
   },
   {
@@ -21045,6 +26305,8 @@ window.HSK_CHARS = [
     "meaning": "expose; reveal; lay bare",
     "level": 6,
     "phrase": "暴露",
+    "prompt1": "揭露",
+    "prompt2": "透露",
     "sentence": "这是“露”字。"
   },
   {
@@ -21053,6 +26315,8 @@ window.HSK_CHARS = [
     "meaning": "overbearing; despotic hegemony; rule by force; (of liquor, medicine, etc.) strong",
     "level": 6,
     "phrase": "霸道",
+    "prompt1": "霸道",
+    "prompt2": "写霸字",
     "sentence": "这是“霸”字。"
   },
   {
@@ -21061,6 +26325,8 @@ window.HSK_CHARS = [
     "meaning": "to bow",
     "level": 6,
     "phrase": "鞠躬",
+    "prompt1": "鞠躬",
+    "prompt2": "写鞠字",
     "sentence": "这是“鞠”字。"
   },
   {
@@ -21069,6 +26335,8 @@ window.HSK_CHARS = [
     "meaning": "tough and durable; hard-bitten; firm and tenacious",
     "level": 6,
     "phrase": "坚韧",
+    "prompt1": "坚韧",
+    "prompt2": "写韧字",
     "sentence": "这是“韧”字。"
   },
   {
@@ -21077,6 +26345,8 @@ window.HSK_CHARS = [
     "meaning": "stubborn; obstinate",
     "level": 6,
     "phrase": "顽固",
+    "prompt1": "顽固",
+    "prompt2": "顽强",
     "sentence": "这是“顽”字。"
   },
   {
@@ -21085,6 +26355,8 @@ window.HSK_CHARS = [
     "meaning": "promulgate; to issue; publish (e.g a decree)",
     "level": 6,
     "phrase": "颁布",
+    "prompt1": "颁发",
+    "prompt2": "颁布",
     "sentence": "这是“颁”字。"
   },
   {
@@ -21093,6 +26365,8 @@ window.HSK_CHARS = [
     "meaning": "sing the praise of; extol; eulogize",
     "level": 6,
     "phrase": "歌颂",
+    "prompt1": "歌颂",
+    "prompt2": "写颂字",
     "sentence": "这是“颂”字。"
   },
   {
@@ -21101,6 +26375,8 @@ window.HSK_CHARS = [
     "meaning": "rather; quite; inclined to one side",
     "level": 6,
     "phrase": "颇",
+    "prompt1": "颇字",
+    "prompt2": "写颇字",
     "sentence": "这是“颇”字。"
   },
   {
@@ -21109,6 +26385,8 @@ window.HSK_CHARS = [
     "meaning": "cervical vertebra; the seven cervical vertebrae in the neck of humans and most mammals",
     "level": 6,
     "phrase": "颈椎",
+    "prompt1": "颈椎",
+    "prompt2": "写颈字",
     "sentence": "这是“颈”字。"
   },
   {
@@ -21117,6 +26395,8 @@ window.HSK_CHARS = [
     "meaning": "new and original; novel",
     "level": 6,
     "phrase": "新颖",
+    "prompt1": "新颖",
+    "prompt2": "写颖字",
     "sentence": "这是“颖”字。"
   },
   {
@@ -21125,6 +26405,8 @@ window.HSK_CHARS = [
     "meaning": "extra; added; additional",
     "level": 6,
     "phrase": "额外",
+    "prompt1": "额外",
+    "prompt2": "数额",
     "sentence": "这是“额”字。"
   },
   {
@@ -21133,6 +26415,8 @@ window.HSK_CHARS = [
     "meaning": "shake; to jolt; bump",
     "level": 6,
     "phrase": "颠簸",
+    "prompt1": "颠倒",
+    "prompt2": "颠簸",
     "sentence": "这是“颠”字。"
   },
   {
@@ -21141,6 +26425,8 @@ window.HSK_CHARS = [
     "meaning": "tremble; to shiver; to shake",
     "level": 6,
     "phrase": "颤抖",
+    "prompt1": "颤抖",
+    "prompt2": "写颤字",
     "sentence": "这是“颤”字。"
   },
   {
@@ -21149,6 +26435,8 @@ window.HSK_CHARS = [
     "meaning": "hunger; hungry; starve",
     "level": 6,
     "phrase": "饥饿",
+    "prompt1": "饥饿",
+    "prompt2": "写饥字",
     "sentence": "这是“饥”字。"
   },
   {
@@ -21157,6 +26445,8 @@ window.HSK_CHARS = [
     "meaning": "cooking; culinary arts",
     "level": 6,
     "phrase": "烹饪",
+    "prompt1": "烹饪",
+    "prompt2": "写饪字",
     "sentence": "这是“饪”字。"
   },
   {
@@ -21165,6 +26455,8 @@ window.HSK_CHARS = [
     "meaning": "to raise; to rear (domestic animal)",
     "level": 6,
     "phrase": "饲养",
+    "prompt1": "饲养",
+    "prompt2": "写饲字",
     "sentence": "这是“饲”字。"
   },
   {
@@ -21173,6 +26465,8 @@ window.HSK_CHARS = [
     "meaning": "forgive; pardon; spare",
     "level": 6,
     "phrase": "饶恕",
+    "prompt1": "饶恕",
+    "prompt2": "写饶字",
     "sentence": "这是“饶”字。"
   },
   {
@@ -21181,6 +26475,8 @@ window.HSK_CHARS = [
     "meaning": "stuffing; filling",
     "level": 6,
     "phrase": "馅儿",
+    "prompt1": "馅儿",
+    "prompt2": "写馅字",
     "sentence": "这是“馅”字。"
   },
   {
@@ -21189,6 +26485,8 @@ window.HSK_CHARS = [
     "meaning": "feedback; send information back",
     "level": 6,
     "phrase": "反馈",
+    "prompt1": "反馈",
+    "prompt2": "写馈字",
     "sentence": "这是“馈”字。"
   },
   {
@@ -21197,6 +26495,8 @@ window.HSK_CHARS = [
     "meaning": "gluttonous; greedy",
     "level": 6,
     "phrase": "馋",
+    "prompt1": "馋字",
+    "prompt2": "写馋字",
     "sentence": "这是“馋”字。"
   },
   {
@@ -21205,6 +26505,8 @@ window.HSK_CHARS = [
     "meaning": "run quickly; speed; Mercedes-Benz (German vehicle manufacturer)",
     "level": 6,
     "phrase": "奔驰",
+    "prompt1": "奔驰",
+    "prompt2": "写驰字",
     "sentence": "这是“驰”字。"
   },
   {
@@ -21213,6 +26515,8 @@ window.HSK_CHARS = [
     "meaning": "banishment; expel; deport",
     "level": 6,
     "phrase": "驱逐",
+    "prompt1": "驱逐",
+    "prompt2": "写驱字",
     "sentence": "这是“驱”字。"
   },
   {
@@ -21221,6 +26525,8 @@ window.HSK_CHARS = [
     "meaning": "retort; refute",
     "level": 6,
     "phrase": "反驳",
+    "prompt1": "反驳",
+    "prompt2": "写驳字",
     "sentence": "这是“驳”字。"
   },
   {
@@ -21229,6 +26535,8 @@ window.HSK_CHARS = [
     "meaning": "to station; to garrison (troops)",
     "level": 6,
     "phrase": "驻扎",
+    "prompt1": "驻扎",
+    "prompt2": "写驻字",
     "sentence": "这是“驻”字。"
   },
   {
@@ -21237,6 +26545,8 @@ window.HSK_CHARS = [
     "meaning": "grumble; complaint",
     "level": 6,
     "phrase": "牢骚",
+    "prompt1": "骚扰",
+    "prompt2": "牢骚",
     "sentence": "这是“骚”字。"
   },
   {
@@ -21245,6 +26555,8 @@ window.HSK_CHARS = [
     "meaning": "soul; spirit; conscience",
     "level": 6,
     "phrase": "灵魂",
+    "prompt1": "灵魂",
+    "prompt2": "写魂字",
     "sentence": "这是“魂”字。"
   },
   {
@@ -21253,6 +26565,8 @@ window.HSK_CHARS = [
     "meaning": "daring resolution; boldness; courage",
     "level": 6,
     "phrase": "魄力",
+    "prompt1": "魄力",
+    "prompt2": "气魄",
     "sentence": "这是“魄”字。"
   },
   {
@@ -21261,6 +26575,8 @@ window.HSK_CHARS = [
     "meaning": "devil; demon; monster",
     "level": 6,
     "phrase": "魔鬼",
+    "prompt1": "魔术",
+    "prompt2": "魔鬼",
     "sentence": "这是“魔”字。"
   },
   {
@@ -21269,6 +26585,8 @@ window.HSK_CHARS = [
     "meaning": "crude; coarse; rough; language",
     "level": 6,
     "phrase": "粗鲁",
+    "prompt1": "粗鲁",
+    "prompt2": "写鲁字",
     "sentence": "这是“鲁”字。"
   },
   {
@@ -21277,6 +26595,8 @@ window.HSK_CHARS = [
     "meaning": "physical resonance; sympathetic response to something",
     "level": 6,
     "phrase": "共鸣",
+    "prompt1": "共鸣",
+    "prompt2": "写鸣字",
     "sentence": "这是“鸣”字。"
   },
   {
@@ -21285,6 +26605,8 @@ window.HSK_CHARS = [
     "meaning": "not even a crow or sparrow can be heard (idiom); silence reigns",
     "level": 6,
     "phrase": "鸦雀无声",
+    "prompt1": "鸦雀无声",
+    "prompt2": "写鸦字",
     "sentence": "这是“鸦”字。"
   },
   {
@@ -21293,6 +26615,8 @@ window.HSK_CHARS = [
     "meaning": "dove; pigeon",
     "level": 6,
     "phrase": "鸽子",
+    "prompt1": "鸽子",
+    "prompt2": "写鸽字",
     "sentence": "这是“鸽”字。"
   },
   {
@@ -21301,6 +26625,8 @@ window.HSK_CHARS = [
     "meaning": "dawn; daybreak",
     "level": 6,
     "phrase": "黎明",
+    "prompt1": "黎明",
+    "prompt2": "写黎字",
     "sentence": "这是“黎”字。"
   }
 ];

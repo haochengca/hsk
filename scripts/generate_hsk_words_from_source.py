@@ -50,6 +50,8 @@ def build_items() -> list[dict[str, object]]:
                     "meaning": meaning,
                     "level": level,
                     "phrase": word,
+                    "prompt1": word,
+                    "prompt2": meaning,
                     "sentence": f"我正在学习“{word}”。",
                 }
             )
