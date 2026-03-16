@@ -916,8 +916,10 @@ async function handleApi(req, res, pathname) {
       reviewedAt: Number(body.reviewedAt) || 0,
       createdAt: Number(body.createdAt) || now()
     };
+    console.log("[submissions] writing row:", JSON.stringify(row, null, 2));
     db.submissions.push(row);
     await saveDb(db);
+    console.log("[submissions] saved row:", row.id);
     return sendJson(res, 201, { ok: true, submission: row });
   }
 
