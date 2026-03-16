@@ -183,7 +183,12 @@ test("child user can navigate learn, write and review flows", async ({ page }) =
   for (let attempt = 0; attempt < 3 && submissionResponses.length === 0; attempt += 1) {
     await drawScribble(page, "#dictation-writer canvas");
     await page.click("#review-start");
-    await page.waitForTimeout(1200);
+    await page.waitForTimeout(300);
+    const summaryVisible = await page.locator("#review-summary-card").isVisible();
+    if (!summaryVisible) {
+      expect(submissionResponses.length).toBe(0);
+    }
+    await page.waitForTimeout(900);
     const feedback = await page.locator("#review-feedback").textContent();
     if (submissionResponses.length > 0) break;
     if (!String(feedback || "").includes("接近正确")) break;
