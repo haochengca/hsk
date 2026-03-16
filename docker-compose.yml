@@ -1,16 +1,39 @@
 services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: hsk-postgres
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-hsk}
+      POSTGRES_USER: ${POSTGRES_USER:-hsk}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-hsk_password}
+    ports:
+      - "${POSTGRES_HOST_PORT:-5432}:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-hsk} -d ${POSTGRES_DB:-hsk}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 15s
+    restart: unless-stopped
+
   app:
     build:
       context: .
       dockerfile: Dockerfile
     container_name: hsk-app
     depends_on:
+      postgres:
+        condition: service_healthy
       ocr-service:
         condition: service_healthy
     environment:
       HOST: 0.0.0.0
       PORT: 8787
       DB_PATH: /app/data/server_db.sqlite
+      DATABASE_URL: postgresql://${POSTGRES_USER:-hsk}:${POSTGRES_PASSWORD:-hsk_password}@postgres:5432/${POSTGRES_DB:-hsk}
+      PGSSL: disable
       OCR_SERVICE_URL: http://ocr-service:8788
       OCR_SERVICE_TIMEOUT_MS: 30000
       RECOGNITION_V2_ENABLED: "1"
@@ -43,4 +66,5 @@ services:
     restart: unless-stopped
 
 volumes:
+  postgres-data:
   paddle-model-cache:

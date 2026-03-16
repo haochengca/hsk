@@ -50,6 +50,36 @@ OCR_SERVICE_URL=http://192.168.1.33:8788 npm start
 详细部署说明见：
 - [PaddleOCR Docker 部署](./docs/DEPLOY_PADDLEOCR_DOCKER.md)
 
+### Docker Compose 启动
+
+项目自带 `docker-compose.yml`，默认会同时启动：
+
+- `app`：Node.js 应用
+- `postgres`：Postgres 16 数据库
+- `ocr-service`：PaddleOCR 服务
+
+启动：
+
+```bash
+docker compose up -d --build
+```
+
+默认数据库连接已在 compose 中启用：
+
+```bash
+DATABASE_URL=postgresql://hsk:hsk_password@postgres:5432/hsk
+```
+
+如需自定义库名、账号、密码或映射端口，可通过环境变量覆盖：
+
+```bash
+POSTGRES_DB=hsk
+POSTGRES_USER=hsk
+POSTGRES_PASSWORD=your_password
+POSTGRES_HOST_PORT=5432
+OCR_HOST_PORT=8788
+```
+
 ## 数据与存储
 - HSK 基础词库文件位于 `data/hsk_source/L1.txt` 到 `L6.txt`
 - 可通过 `npm run data:hsk` 重新生成汉字/词汇 JSON 与 JS 数据文件
