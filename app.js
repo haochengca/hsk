@@ -1353,6 +1353,7 @@ async function postSubmissionPayload(payload) {
 
 function queueSubmissionPayload(payload) {
   if (!state.reviewDraftActive) beginReviewDraftSession();
+  console.log("pending submission payload", payload);
   state.pendingSubmissionPayloads.push(payload);
   return Promise.resolve({ ok: true, queued: true });
 }
