@@ -2099,15 +2099,18 @@ function getAdminEditableItems() {
   const merged = [...CHAR_ITEMS, ...WORD_ITEMS];
   const typeFilter = state.adminItemsTypeFilter || "all";
   const levelFilter = state.adminItemsLevelFilter || "all";
-  const keyword = "";
+  const keyword = String(state.adminItemsSearch || "").trim().toLowerCase();
   return merged.filter((it) => {
     if (typeFilter !== "all" && it.type !== typeFilter) return false;
     if (levelFilter !== "all" && String(it.level) !== String(levelFilter)) return false;
     if (!keyword) return true;
+    const [prompt1, prompt2] = getPromptPhrases(it);
     return (
-      String(it.text || "").includes(keyword) ||
+      String(it.text || "").toLowerCase().includes(keyword) ||
       String(it.pinyin || "").toLowerCase().includes(keyword) ||
-      String(it.meaning || "").toLowerCase().includes(keyword)
+      String(it.meaning || "").toLowerCase().includes(keyword) ||
+      String(prompt1 || "").toLowerCase().includes(keyword) ||
+      String(prompt2 || "").toLowerCase().includes(keyword)
     );
   });
 }

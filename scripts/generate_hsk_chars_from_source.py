@@ -314,14 +314,28 @@ FALLBACK_PROMPT_MAP: dict[str, list[str]] = {
 }
 
 
-def get_default_fallback_prompts(ch: str) -> tuple[str, str]:
+def get_default_fallback_prompts(ch: str, source_word: str = "") -> tuple[str, str]:
     pair = FALLBACK_PROMPT_MAP.get(ch)
     if pair and len(pair) >= 2:
         return pair[0], pair[1]
-    return f"{ch}字", f"写{ch}字"
+    preferred = str(source_word or "").strip()
+    options: list[str] = []
+    if preferred:
+        options.append(preferred)
+    if ch and ch not in options:
+        options.append(ch)
+    if not options:
+        options = [ch, ch]
+    if len(options) == 1:
+        options.append(options[0])
+    return options[0], options[1]
 
 
-def build_char_prompt_map(char_order: list[str], rows: list[dict[str, object]]) -> dict[str, list[str]]:
+def build_char_prompt_map(
+    char_order: list[str],
+    rows: list[dict[str, object]],
+    source_word_map: dict[str, str],
+) -> dict[str, list[str]]:
     candidate_map: dict[str, list[dict[str, object]]] = {char: [] for char in char_order}
     for row in rows:
         word = str(row.get("word", "")).strip()
@@ -384,15 +398,13 @@ def build_char_prompt_map(char_order: list[str], rows: list[dict[str, object]]) 
             if best_second and str(best_second["text"]) not in selected:
                 selected.append(str(best_second["text"]))
 
-        fallback_a, fallback_b = get_default_fallback_prompts(ch)
+        fallback_a, fallback_b = get_default_fallback_prompts(ch, source_word_map.get(ch, ""))
         if len(selected) < 1 and fallback_a not in selected:
             selected.append(fallback_a)
         if len(selected) < 2 and fallback_b not in selected:
             selected.append(fallback_b)
-        if len(selected) < 2:
-            fallback = fallback_a if fallback_a not in selected else f"{ch}{ch}"
-            if fallback not in selected:
-                selected.append(fallback)
+        if len(selected) < 2 and selected:
+            selected.append(selected[0])
         prompt_map[ch] = selected[:2]
     return prompt_map
 
@@ -458,14 +470,14 @@ def build_items() -> list[dict[str, object]]:
                 char_first_word[char] = word
 
     ordered_chars = [char for char, _ in sorted(char_first_seen.items(), key=lambda item: (int(item[1]["level"]), item[0]))]
-    prompt_map = build_char_prompt_map(ordered_chars, rows)
+    prompt_map = build_char_prompt_map(ordered_chars, rows, char_first_word)
 
     items: list[dict[str, object]] = []
     for char in ordered_chars:
         row = char_first_seen[char]
         direct = direct_char_rows.get(char)
         source_word = char_first_word[char]
-        prompt1, prompt2 = prompt_map.get(char, list(get_default_fallback_prompts(char)))
+        prompt1, prompt2 = prompt_map.get(char, list(get_default_fallback_prompts(char, source_word)))
         if direct:
             pinyin = str(direct["pinyin"]) or char_pinyin_hints.get(char, "-")
             meaning = sanitize_meaning(str(direct["meaning"]))

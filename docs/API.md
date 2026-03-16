@@ -411,7 +411,7 @@ Base URL: `/api`
 说明：
 - 父母账号可使用 `PUT /submissions/:id/review` 与错题本管理接口（`/api/admin/users/:username/wrong-book` 的查询/编辑）。
 - 管理员账号不可使用 `PUT /submissions/:id/review`，可使用用户管理接口（`GET/DELETE /api/admin/users...`）与学习项管理接口。
-- 管理员菜单中的“提示词1 / 提示词2”默认值由前端运行时生成；一旦通过本接口保存，就以后端 `lexiconOverrides` 为准。
+- 管理员菜单中的“提示词1 / 提示词2”默认值来自 HSK 数据文件中的预生成字段；一旦通过本接口保存，就以后端 `lexiconOverrides` 为准。
 
 ## 9. HSK 数据生成约定
 - HSK 原始源文件位于：
