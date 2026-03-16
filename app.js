@@ -2926,6 +2926,27 @@ function weightedSampleWithoutReplacement(list, count, getWeight) {
   return result;
 }
 
+function getItemAttemptCount(item) {
+  const p = getProgress(item);
+  return Math.max(0, Number(p.attempts) || 0);
+}
+
+function prioritizeReviewItems(list, count, getWeight) {
+  const sorted = [...list].sort((a, b) => {
+    const attemptsDiff = getItemAttemptCount(a) - getItemAttemptCount(b);
+    if (attemptsDiff !== 0) return attemptsDiff;
+    const weightDiff = Number(getWeight(b)) - Number(getWeight(a));
+    if (Number.isFinite(weightDiff) && weightDiff !== 0) return weightDiff;
+    const lastAttemptDiff = (Number(getProgress(a).lastAttemptAt) || 0) - (Number(getProgress(b).lastAttemptAt) || 0);
+    if (lastAttemptDiff !== 0) return lastAttemptDiff;
+    const levelDiff = (Number(a.level) || 0) - (Number(b.level) || 0);
+    if (levelDiff !== 0) return levelDiff;
+    return String(a.text || "").localeCompare(String(b.text || ""), "zh-Hans-CN");
+  });
+  if (count >= sorted.length) return sorted;
+  return sorted.slice(0, Math.max(0, count));
+}
+
 function buildMemoryCurveWeight(item, context = {}) {
   const dayMs = 24 * 60 * 60 * 1000;
   const now = Date.now();
@@ -2965,10 +2986,10 @@ function buildReviewSessionList(source) {
   if (state.reviewType !== "char") {
     const weightedPool = uniqueByKey(levelFiltered);
     if (state.reviewCount === "all") {
-      return weightedSampleWithoutReplacement(weightedPool, weightedPool.length, (it) => buildMemoryCurveWeight(it));
+      return prioritizeReviewItems(weightedPool, weightedPool.length, (it) => buildMemoryCurveWeight(it));
     }
     const limit = Number(state.reviewCount) || 10;
-    return weightedSampleWithoutReplacement(weightedPool, limit, (it) => buildMemoryCurveWeight(it));
+    return prioritizeReviewItems(weightedPool, limit, (it) => buildMemoryCurveWeight(it));
   }
 
   const wrongChars = uniqueByKey(
@@ -2988,20 +3009,20 @@ function buildReviewSessionList(source) {
 
   if (state.reviewCount === "all") {
     const merged = uniqueByKey([...base, ...wrongChars]);
-    return weightedSampleWithoutReplacement(merged, merged.length, weighted);
+    return prioritizeReviewItems(merged, merged.length, weighted);
   }
 
   const limit = Number(state.reviewCount) || 10;
   let wrongQuota = Math.floor(limit * ratio);
   if (ratio > 0 && wrongQuota === 0) wrongQuota = 1;
   wrongQuota = Math.min(limit, wrongChars.length, Math.max(0, wrongQuota));
-  const selectedWrong = weightedSampleWithoutReplacement(wrongChars, wrongQuota, weighted);
+  const selectedWrong = prioritizeReviewItems(wrongChars, wrongQuota, weighted);
   selectedWrong.forEach((it) => exclude.add(makeItemKey(it)));
 
   const normalPool = base.filter((it) => !exclude.has(makeItemKey(it)));
-  const selectedNormal = weightedSampleWithoutReplacement(normalPool, Math.max(0, limit - selectedWrong.length), weighted);
+  const selectedNormal = prioritizeReviewItems(normalPool, Math.max(0, limit - selectedWrong.length), weighted);
   const merged = uniqueByKey([...selectedNormal, ...selectedWrong]);
-  return weightedSampleWithoutReplacement(merged, Math.min(limit, merged.length), weighted);
+  return prioritizeReviewItems(merged, Math.min(limit, merged.length), weighted);
 }
 
 function currentReviewItem() {
