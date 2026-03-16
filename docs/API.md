@@ -4,7 +4,29 @@ Base URL: `/api`
 
 ## 1. 健康检查
 ### `GET /health`
-- 响应：`{ ok: true, now }`
+- 响应示例（Postgres）：
+```json
+{
+  "ok": true,
+  "now": 1710000000000,
+  "db": {
+    "type": "postgres",
+    "host": "postgres",
+    "database": "hsk"
+  }
+}
+```
+- 响应示例（SQLite）：
+```json
+{
+  "ok": true,
+  "now": 1710000000000,
+  "db": {
+    "type": "sqlite",
+    "path": "/app/data/server_db.sqlite"
+  }
+}
+```
 
 ### `GET /ocr/health`
 - 说明：代理 PaddleOCR 容器健康状态

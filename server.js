@@ -37,6 +37,27 @@ const MIME = {
   ".ico": "image/x-icon"
 };
 
+function getDbHealthInfo() {
+  if (USE_POSTGRES) {
+    let host = "";
+    let database = "";
+    try {
+      const parsed = new URL(DATABASE_URL);
+      host = String(parsed.hostname || "");
+      database = String(parsed.pathname || "").replace(/^\/+/, "");
+    } catch {}
+    return {
+      type: "postgres",
+      host,
+      database
+    };
+  }
+  return {
+    type: "sqlite",
+    path: DB_PATH
+  };
+}
+
 function now() {
   return Date.now();
 }
@@ -607,7 +628,7 @@ async function handleApi(req, res, pathname) {
   if (req.method === "OPTIONS") return sendJson(res, 200, { ok: true });
 
   if (req.method === "GET" && pathname === "/api/health") {
-    return sendJson(res, 200, { ok: true, now: now() });
+    return sendJson(res, 200, { ok: true, now: now(), db: getDbHealthInfo() });
   }
 
   if (req.method === "GET" && pathname === "/api/ocr/health") {

@@ -24,6 +24,7 @@ docker compose up --build
 - Web/API：`http://127.0.0.1:8787`
 - PaddleOCR 健康检查：`http://127.0.0.1:8788/health`
 - 主服务会通过 `/api/ocr/*` 代理 OCR 能力
+- 主服务健康检查：`http://127.0.0.1:8787/api/health`
 
 说明：
 - 容器内部署时，`docker-compose.yml` 已将主服务的 `OCR_SERVICE_URL` 固定为 `http://ocr-service:8788`
@@ -85,6 +86,9 @@ OCR_HOST_PORT=8788
 - 可通过 `npm run data:hsk` 重新生成汉字/词汇 JSON 与 JS 数据文件
 - 未配置 `DATABASE_URL` 时，服务端使用 SQLite（默认文件：`data/server_db.sqlite`）
 - 配置 `DATABASE_URL` 后，服务端切换到 Postgres；若目标库为空，会自动尝试导入本地旧数据
+- `GET /api/health` 会返回当前数据库类型：
+  - `db.type = "postgres"` 时表示已连接 Postgres
+  - `db.type = "sqlite"` 时表示仍在使用 SQLite
 
 ## 适用对象
 - 孩子：学习汉字、练习书写、进行默写、复习错题
