@@ -1362,10 +1362,17 @@ async function commitReviewDraftSession(options = {}) {
   if (!state.reviewDraftActive) return;
   const shouldSyncUserData = options.syncUserData !== false;
   const pendingPayloads = Array.isArray(state.pendingSubmissionPayloads) ? [...state.pendingSubmissionPayloads] : [];
-  endReviewDraftSession();
+  let submittedCount = 0;
   for (const payload of pendingPayloads) {
-    await postSubmissionPayload(payload);
+    try {
+      await postSubmissionPayload(payload);
+      submittedCount += 1;
+    } catch (err) {
+      state.pendingSubmissionPayloads = pendingPayloads.slice(submittedCount);
+      throw err;
+    }
   }
+  endReviewDraftSession();
   if (shouldSyncUserData) await syncUserDataToServer();
   renderAdminPanel();
   renderUserRecords();
