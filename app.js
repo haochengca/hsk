@@ -519,6 +519,7 @@ function renderTabContent(tab, options = {}) {
   if (wasRendered && !force) return;
 
   if (currentTab === "write") syncWriteListFromLearnSelection();
+  if (currentTab === "write") updateWriteTarget(writeSelect && writeSelect.value ? writeSelect.value : (CHAR_ITEMS[0] && CHAR_ITEMS[0].text));
   if (currentTab === "admin") renderAdminPanel();
   if (currentTab === "admin-users") {
     renderAdminUsersPanel();
@@ -650,6 +651,7 @@ const writePrevChar = document.getElementById("write-prev-char");
 const writeNextChar = document.getElementById("write-next-char");
 const targetChar = document.getElementById("target-char");
 const targetMeta = document.getElementById("target-meta");
+const targetPrompts = document.getElementById("target-prompts");
 const writeFeedback = document.getElementById("write-feedback");
 const strokeDemoPlay = document.getElementById("stroke-demo-play");
 const strokeDemoReplay = document.getElementById("stroke-demo-replay");
@@ -3292,6 +3294,8 @@ function applyLexiconOverrides(overrides) {
     if (typeof x.prompt1 === "string") item.prompt1 = x.prompt1.trim();
     if (typeof x.prompt2 === "string") item.prompt2 = x.prompt2.trim();
   });
+
+  if (writeSelect && writeSelect.value) updateWriteTarget(writeSelect.value);
 }
 
 function getPromptPhrases(item) {
@@ -3313,10 +3317,13 @@ function initLevelFilter() {
 }
 
 function initWriteSelect() {
+  const currentValue = writeSelect.value;
   writeSelect.innerHTML = CHAR_ITEMS.map(
     (it) => `<option value="${it.text}">HSK${it.level} · ${it.text} · ${it.pinyin}</option>`
   ).join("");
-  updateWriteTarget(writeSelect.value || CHAR_ITEMS[0].text);
+  const nextValue = CHAR_MAP.has(currentValue) ? currentValue : (CHAR_ITEMS[0] && CHAR_ITEMS[0].text);
+  if (nextValue) writeSelect.value = nextValue;
+  updateWriteTarget(nextValue);
 }
 
 function setWriteBatchPlaying(playing) {
@@ -3557,8 +3564,13 @@ function initReviewSettings() {
 
 function updateWriteTarget(text) {
   const item = CHAR_MAP.get(text) || CHAR_ITEMS[0];
+  const [prompt1, prompt2] = getPromptPhrases(item);
   targetChar.textContent = item.text;
   targetMeta.textContent = `${item.pinyin} · ${item.meaning}`;
+  if (targetPrompts) {
+    const prompts = [prompt1, prompt2].map((x) => String(x || "").trim()).filter(Boolean);
+    targetPrompts.textContent = prompts.length ? `提示词：${prompts.join(" · ")}` : "提示词：-";
+  }
   initStrokeWriter(item.text);
   resetWriteRetryState(makeItemKey(item));
   if (typeof state.refreshWriteCanvas === "function") state.refreshWriteCanvas({ clear: true });
