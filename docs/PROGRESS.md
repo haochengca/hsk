@@ -1,11 +1,15 @@
 # 项目进度（执行与验证）
 
+## 本轮任务执行状态（2026-03-23）
+| 任务 | 状态 | 实现文件 | 验证结果 |
+|---|---|---|---|
+| README 与部署文档统一重写 | 已完成 | `README.md` `docs/DEPLOY_PADDLEOCR_DOCKER.md` | 通过：已统一本地 Node 与 Docker Compose 两条启动路径，修正文档中 Docker 为三容器部署、补充环境变量、验证步骤与排障说明 |
+
 ## 本轮任务执行状态（2026-03-13）
 | 任务 | 状态 | 实现文件 | 验证结果 |
 |---|---|---|---|
 | README 补充本地启动与存储说明 | 已完成 | `README.md` | 通过：已补充 `npm install` / `npm start`、Node 版本、默认管理员账号、SQLite/Postgres 切换说明 |
 | API 文档补充错题本管理与会话规则 | 已完成 | `docs/API.md` | 通过：已补充 `/admin/users/:username/wrong-book`、任务下线路由说明、会话有效期与改密后的会话规则 |
-| Koyeb 部署文档补充运行端口与验证项 | 已完成 | `docs/DEPLOY_KOYEB.md` | 通过：已补充 `PORT` / `PGSSL` 说明与首页验证方式 |
 
 ## 本轮任务执行状态（2026-03-10）
 | 任务 | 状态 | 实现文件 | 验证结果 |
