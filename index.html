@@ -559,14 +559,6 @@
               报告对象
               <select id="records-target-select"></select>
             </label>
-            <label>
-              判定记录
-              <select id="records-judged-days">
-                <option value="1">1天</option>
-                <option value="3">3天</option>
-                <option value="7" selected>7天</option>
-              </select>
-            </label>
           </div>
           <div id="records-report"></div>
         </article>
@@ -577,6 +569,16 @@
           <div id="records-daily-chart"></div>
         </article>
         <article class="card">
+          <div class="actions">
+            <label>
+              判定记录
+              <select id="records-judged-days">
+                <option value="1">1天</option>
+                <option value="3">3天</option>
+                <option value="7" selected>7天</option>
+              </select>
+            </label>
+          </div>
           <div id="records-list"></div>
           <div class="actions">
             <button id="records-prev" class="ghost">上一页</button>
