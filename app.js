@@ -439,6 +439,9 @@ const state = {
   reviewMessage: "请选择默写类型、等级和字数，然后点击“开始默写”。",
   recordsReportUser: "",
   recordsChartDays: 14,
+  recordsJudgedDays: 7,
+  recordsPage: 1,
+  recordsPageSize: 10,
   progress: {},
   wrongBook: [],
   wrongLevelFilter: "all",
@@ -612,11 +615,15 @@ const adminItemsMsg = document.getElementById("admin-items-msg");
 const adminItemsList = document.getElementById("admin-items-list");
 const recordsTargetRow = document.getElementById("records-target-row");
 const recordsTargetSelect = document.getElementById("records-target-select");
+const recordsJudgedDays = document.getElementById("records-judged-days");
 const recordsReport = document.getElementById("records-report");
 const recordsCount = document.getElementById("records-count");
 const recordsList = document.getElementById("records-list");
 const recordsStats = document.getElementById("records-stats");
 const recordsDailyChart = document.getElementById("records-daily-chart");
+const recordsPrev = document.getElementById("records-prev");
+const recordsNext = document.getElementById("records-next");
+const recordsPageInfo = document.getElementById("records-page-info");
 
 const learnTabBtn = document.querySelector('.tab[data-tab="learn"]');
 const writeTabBtn = document.querySelector('.tab[data-tab="write"]');
@@ -2267,10 +2274,30 @@ function formatMonthDayLabel(dateKey) {
   return `${month}-${day}`;
 }
 
+function isSubmissionJudged(row) {
+  if (!row || typeof row !== "object") return false;
+  if (row.reviewedBy || Number(row.reviewedAt) > 0) return true;
+  if (Object.prototype.hasOwnProperty.call(row, "finalResult")) return true;
+  if (Object.prototype.hasOwnProperty.call(row, "systemResult")) return true;
+  if (row.judgeDetail) return true;
+  if (Array.isArray(row.wordCharResults) && row.wordCharResults.length > 0) return true;
+  return false;
+}
+
+function filterJudgedRowsByDays(rows, days) {
+  const safeDays = [1, 3, 7].includes(Number(days)) ? Number(days) : 7;
+  const nowTs = Date.now();
+  const windowMs = safeDays * 24 * 60 * 60 * 1000;
+  return (Array.isArray(rows) ? rows : []).filter(
+    (row) => isSubmissionJudged(row) && nowTs - Number(row.createdAt || 0) <= windowMs
+  );
+}
+
 function buildDailyPracticeSeries(rows, days = 14) {
   const safeDays = Math.max(1, Number(days) || 14);
   const now = new Date();
   now.setHours(0, 0, 0, 0);
+  const judgedRows = Array.isArray(rows) ? rows.filter((row) => isSubmissionJudged(row)) : [];
   const buckets = [];
   const map = new Map();
 
@@ -2283,7 +2310,7 @@ function buildDailyPracticeSeries(rows, days = 14) {
     map.set(key, bucket);
   }
 
-  rows.forEach((row) => {
+  judgedRows.forEach((row) => {
     const key = formatLocalDateKey(row && row.createdAt);
     const bucket = map.get(key);
     if (!bucket) return;
@@ -2317,11 +2344,11 @@ function renderDailyPracticeChart(rows) {
       <div class="records-chart-head">
         <div>
           <h3>每日练习图表</h3>
-          <p>最近 ${days} 天还没有练习数据。</p>
+          <p>最近 ${days} 天还没有已判定记录。</p>
         </div>
         <div class="records-chart-range" role="group" aria-label="练习图表时间范围">${dayButtons}</div>
       </div>
-      <p class="records-chart-empty">开始练习后，这里会按天显示练习次数和正确率。</p>
+      <p class="records-chart-empty">完成判定后，这里会按天显示练习次数和正确率。</p>
     `;
     return;
   }
@@ -2330,7 +2357,7 @@ function renderDailyPracticeChart(rows) {
     <div class="records-chart-head">
       <div>
         <h3>每日练习图表</h3>
-        <p>最近 ${days} 天共练习 ${totalAttempts} 次，有记录的天数 ${activeDays} 天。</p>
+        <p>最近 ${days} 天已判定 ${totalAttempts} 次，有记录的天数 ${activeDays} 天。</p>
       </div>
       <div class="records-chart-head-side">
         <div class="records-chart-range" role="group" aria-label="练习图表时间范围">${dayButtons}</div>
@@ -2458,6 +2485,9 @@ function renderUserRecords() {
     recordsStats.innerHTML = "<p>仅父母或孩子可查看自己的统计。</p>";
     if (recordsDailyChart) recordsDailyChart.innerHTML = "<p>仅父母或孩子可查看每日练习图表。</p>";
     recordsList.innerHTML = "<p>仅父母或孩子可查看自己的记录。</p>";
+    if (recordsPageInfo) recordsPageInfo.textContent = "第 1 / 1 页";
+    if (recordsPrev) recordsPrev.disabled = true;
+    if (recordsNext) recordsNext.disabled = true;
     return;
   }
   const options = getRecordsTargetOptions();
@@ -2474,6 +2504,9 @@ function renderUserRecords() {
     recordsStats.innerHTML = "<p>关联孩子后可查看周报/月报。</p>";
     if (recordsDailyChart) recordsDailyChart.innerHTML = "<p>关联孩子后可查看每日练习图表。</p>";
     recordsList.innerHTML = "<p>暂无可展示记录。</p>";
+    if (recordsPageInfo) recordsPageInfo.textContent = "第 1 / 1 页";
+    if (recordsPrev) recordsPrev.disabled = true;
+    if (recordsNext) recordsNext.disabled = true;
     return;
   }
   const rows = state.submissions
@@ -2482,12 +2515,23 @@ function renderUserRecords() {
   renderRecordsReport(targetUsername, rows);
   renderUserRecordStats(rows);
   renderDailyPracticeChart(rows);
-  recordsCount.textContent = `${targetUsername} 的记录：${rows.length} 条`;
-  if (rows.length === 0) {
-    recordsList.innerHTML = `<p>${escapeHtmlAttr(targetUsername)} 还没有默写记录。</p>`;
+  const judgedDays = [1, 3, 7].includes(Number(state.recordsJudgedDays)) ? Number(state.recordsJudgedDays) : 7;
+  const judgedRows = filterJudgedRowsByDays(rows, judgedDays);
+  recordsCount.textContent = `${targetUsername} 的判定记录：${judgedRows.length} 条（近${judgedDays}天）`;
+  const pageSize = Math.max(1, Number(state.recordsPageSize) || 10);
+  const totalPages = Math.max(1, Math.ceil(judgedRows.length / pageSize));
+  state.recordsPage = Math.max(1, Math.min(Number(state.recordsPage) || 1, totalPages));
+  const start = (state.recordsPage - 1) * pageSize;
+  const pageRows = judgedRows.slice(start, start + pageSize);
+  if (recordsPageInfo) recordsPageInfo.textContent = `第 ${state.recordsPage} / ${totalPages} 页`;
+  if (recordsPrev) recordsPrev.disabled = state.recordsPage <= 1;
+  if (recordsNext) recordsNext.disabled = state.recordsPage >= totalPages;
+  if (recordsJudgedDays) recordsJudgedDays.value = String(judgedDays);
+  if (judgedRows.length === 0) {
+    recordsList.innerHTML = `<p>${escapeHtmlAttr(targetUsername)} 近 ${judgedDays} 天还没有判定记录。</p>`;
     return;
   }
-  recordsList.innerHTML = rows
+  recordsList.innerHTML = pageRows
     .map((it) => {
       ensureSubmissionWordCharResults(it);
       const status = it.finalResult ? "正确" : "错误";
@@ -5628,6 +5672,15 @@ function wireRecords() {
   if (recordsTargetSelect) {
     recordsTargetSelect.addEventListener("change", (event) => {
       state.recordsReportUser = event.target.value || "";
+      state.recordsPage = 1;
+      renderUserRecords();
+    });
+  }
+  if (recordsJudgedDays) {
+    recordsJudgedDays.addEventListener("change", (event) => {
+      const nextDays = Number(event.target.value);
+      state.recordsJudgedDays = [1, 3, 7].includes(nextDays) ? nextDays : 7;
+      state.recordsPage = 1;
       renderUserRecords();
     });
   }
@@ -5639,6 +5692,19 @@ function wireRecords() {
       if (![7, 14, 30].includes(nextDays)) return;
       if (state.recordsChartDays === nextDays) return;
       state.recordsChartDays = nextDays;
+      renderUserRecords();
+    });
+  }
+  if (recordsPrev) {
+    recordsPrev.addEventListener("click", () => {
+      if (state.recordsPage <= 1) return;
+      state.recordsPage -= 1;
+      renderUserRecords();
+    });
+  }
+  if (recordsNext) {
+    recordsNext.addEventListener("click", () => {
+      state.recordsPage += 1;
       renderUserRecords();
     });
   }
