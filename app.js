@@ -5710,6 +5710,14 @@ function wireRecords() {
   }
 }
 
+function wireBeforeUnloadGuard() {
+  window.addEventListener("beforeunload", (event) => {
+    event.preventDefault();
+    // Modern browsers ignore custom text here and show a generic confirmation dialog.
+    event.returnValue = "";
+  });
+}
+
 function wireTabs() {
   tabs.forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -6366,6 +6374,7 @@ async function init() {
   wireReview();
   wireWrongBook();
   wireRecords();
+  wireBeforeUnloadGuard();
   wireAdmin();
   setupCanvas();
   scheduleRecognitionTierWarmup(300);
