@@ -19,6 +19,11 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  overscroll-behavior: none;
+}
+
 body {
   margin: 0;
   min-height: 100vh;
@@ -708,6 +713,16 @@ select {
   margin: 0 0 0.2rem;
   color: #48607f;
   font-weight: 500;
+}
+
+.review-restore-banner {
+  margin: 0 0 0.7rem;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid rgba(0, 168, 168, 0.22);
+  border-radius: 12px;
+  background: rgba(0, 168, 168, 0.1);
+  color: #0f766e;
+  font-weight: 600;
 }
 
 .dictation-preview {

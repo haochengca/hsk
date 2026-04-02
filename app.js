@@ -47,6 +47,7 @@ function rebuildLexiconCaches() {
 }
 
 const SESSION_KEY = "hsk_session_v1";
+const REVIEW_RECOVERY_KEY = "hsk_review_recovery_v1";
 const API_BASE = "";
 
 
@@ -436,6 +437,8 @@ const state = {
   reviewSessionWrongItems: [],
   reviewSettlementPoints: 0,
   reviewSettlementAnimated: false,
+  allowBeforeUnloadPrompt: false,
+  reviewRestoreBanner: "",
   reviewMessage: "请选择默写类型、等级和字数，然后点击“开始默写”。",
   recordsReportUser: "",
   recordsChartDays: 14,
@@ -705,6 +708,7 @@ const reviewSummaryText = document.getElementById("review-summary-text");
 const reviewSummaryActions = document.getElementById("review-summary-actions");
 const reviewSettleBtn = document.getElementById("review-settle-btn");
 const reviewCard = document.getElementById("review-card");
+const reviewRestoreBanner = document.getElementById("review-restore-banner");
 const wordAnswerRow = document.getElementById("word-answer-row");
 const wordReviewInput = document.getElementById("word-review-input");
 const wordReviewSubmit = document.getElementById("word-review-submit");
@@ -1251,6 +1255,71 @@ function clearSession() {
   localStorage.removeItem(SESSION_KEY);
 }
 
+function cloneSerializable(value, fallback) {
+  try {
+    return JSON.parse(JSON.stringify(value));
+  } catch {
+    return fallback;
+  }
+}
+
+function clearReviewRecoveryState() {
+  try {
+    localStorage.removeItem(REVIEW_RECOVERY_KEY);
+  } catch {}
+}
+
+function buildReviewRecoveryState() {
+  if (!state.auth.loggedIn || !state.auth.username || !isLearnerRole(state.auth.role)) return null;
+  const hasRecoverableSession =
+    state.reviewDraftActive ||
+    state.reviewPreviewRunning ||
+    state.reviewActive ||
+    (Array.isArray(state.reviewList) && state.reviewList.length > 0 && state.reviewFlowState !== "ended");
+  if (!hasRecoverableSession || !Array.isArray(state.reviewList) || state.reviewList.length === 0) return null;
+  return {
+    username: state.auth.username,
+    updatedAt: Date.now(),
+    reviewType: state.reviewType,
+    reviewLevel: state.reviewLevel,
+    reviewCount: state.reviewCount,
+    reviewWrongMixRatio: state.reviewWrongMixRatio,
+    reviewPreviewMode: state.reviewPreviewMode,
+    reviewSessionSource: state.reviewSessionSource,
+    reviewListKeys: state.reviewList.map((item) => makeItemKey(item)),
+    reviewIndex: state.reviewIndex,
+    reviewActive: state.reviewActive,
+    reviewFlowState: state.reviewFlowState,
+    reviewAwaitingNext: state.reviewAwaitingNext,
+    reviewMessage: state.reviewMessage,
+    reviewSessionPointsEarned: state.reviewSessionPointsEarned,
+    reviewSessionStartedAt: state.reviewSessionStartedAt,
+    reviewSessionFinishedAt: state.reviewSessionFinishedAt,
+    reviewSessionTotal: state.reviewSessionTotal,
+    reviewSessionCorrect: state.reviewSessionCorrect,
+    reviewSessionWrong: state.reviewSessionWrong,
+    reviewSessionWrongItems: cloneSerializable(state.reviewSessionWrongItems || [], []),
+    reviewSettlementPoints: state.reviewSettlementPoints,
+    reviewSettlementAnimated: state.reviewSettlementAnimated,
+    reviewLastResult: cloneSerializable(state.reviewLastResult, null),
+    reviewLastJudgeDisplay: cloneSerializable(state.reviewLastJudgeDisplay || { feedback: "", answer: "" }, { feedback: "", answer: "" }),
+    reviewDraftActive: state.reviewDraftActive,
+    reviewSessionSnapshot: cloneSerializable(state.reviewSessionSnapshot, null),
+    pendingSubmissionPayloads: cloneSerializable(state.pendingSubmissionPayloads || [], [])
+  };
+}
+
+function persistReviewRecoveryState() {
+  try {
+    const payload = buildReviewRecoveryState();
+    if (!payload) {
+      clearReviewRecoveryState();
+      return;
+    }
+    localStorage.setItem(REVIEW_RECOVERY_KEY, JSON.stringify(payload));
+  } catch {}
+}
+
 async function apiRequest(path, options = {}) {
   const headers = { "Content-Type": "application/json", ...(options.headers || {}) };
   if (state.auth.token) headers.Authorization = `Bearer ${state.auth.token}`;
@@ -1320,6 +1389,98 @@ function queueUserDataSync() {
   }, 300);
 }
 
+function applyQueuedSubmissionEffects(payload) {
+  if (!payload || !payload.type || !payload.target) return;
+  const item = resolveItemByKey(`${payload.type}:${payload.target}`);
+  if (!item) return;
+  const isGood = Boolean(payload.finalResult);
+  scheduleProgress(item, isGood);
+  if (item.type === "word") {
+    if (isGood) removeWrongItem(item);
+    if (Array.isArray(payload.wordCharResults)) {
+      payload.wordCharResults.forEach((row) => {
+        const ch = String((row && row.char) || "").trim();
+        if (!ch || row.isGood) return;
+        const charItem = CHAR_MAP.get(ch);
+        if (charItem) addWrongItem(charItem);
+      });
+    }
+    return;
+  }
+  if (isGood) removeWrongItem(item);
+  else addWrongItem(item);
+}
+
+function restoreReviewRecoveryState() {
+  if (!state.auth.loggedIn || !state.auth.username || !isLearnerRole(state.auth.role)) return false;
+  let saved = null;
+  try {
+    saved = JSON.parse(localStorage.getItem(REVIEW_RECOVERY_KEY) || "null");
+  } catch {
+    saved = null;
+  }
+  if (!saved || saved.username !== state.auth.username) {
+    clearReviewRecoveryState();
+    return false;
+  }
+  const list = Array.isArray(saved.reviewListKeys) ? saved.reviewListKeys.map((key) => resolveItemByKey(key)).filter(Boolean) : [];
+  if (!list.length) {
+    clearReviewRecoveryState();
+    return false;
+  }
+
+  state.reviewType = saved.reviewType === "word" ? "word" : "char";
+  state.reviewLevel = saved.reviewLevel === "all" ? "all" : String(saved.reviewLevel || "all");
+  state.reviewCount = normalizeReviewCount(saved.reviewCount);
+  state.reviewWrongMixRatio = String(saved.reviewWrongMixRatio || "30");
+  state.reviewPreviewMode = String(saved.reviewPreviewMode || "0");
+  state.reviewSessionSource = saved.reviewSessionSource ? String(saved.reviewSessionSource) : "normal";
+  state.reviewList = list;
+  state.reviewIndex = Math.max(0, Math.min(list.length - 1, Number(saved.reviewIndex) || 0));
+  const restoredFlow = reviewStateModule && typeof reviewStateModule.toFlow === "function"
+    ? reviewStateModule.toFlow(saved.reviewFlowState)
+    : String(saved.reviewFlowState || "idle");
+  state.reviewPreviewRunning = restoredFlow === "preview";
+  state.reviewActive =
+    restoredFlow === "answering" ||
+    restoredFlow === "reviewed" ||
+    Boolean(saved.reviewActive && restoredFlow !== "preview" && restoredFlow !== "ended");
+  state.reviewAwaitingNext = Boolean(saved.reviewAwaitingNext);
+  state.reviewLastResult = saved.reviewLastResult && typeof saved.reviewLastResult === "object" ? saved.reviewLastResult : null;
+  state.reviewLastJudgeDisplay =
+    saved.reviewLastJudgeDisplay && typeof saved.reviewLastJudgeDisplay === "object"
+      ? saved.reviewLastJudgeDisplay
+      : { feedback: "", answer: "" };
+  state.reviewSessionPointsEarned = Math.max(0, Number(saved.reviewSessionPointsEarned) || 0);
+  state.reviewSessionStartedAt = Number(saved.reviewSessionStartedAt) || Date.now();
+  state.reviewSessionFinishedAt = Number(saved.reviewSessionFinishedAt) || 0;
+  state.reviewSessionTotal = Math.max(list.length, Number(saved.reviewSessionTotal) || list.length);
+  state.reviewSessionCorrect = Math.max(0, Number(saved.reviewSessionCorrect) || 0);
+  state.reviewSessionWrong = Math.max(0, Number(saved.reviewSessionWrong) || 0);
+  state.reviewSessionWrongItems = Array.isArray(saved.reviewSessionWrongItems) ? saved.reviewSessionWrongItems : [];
+  state.reviewSettlementPoints = Math.max(0, Number(saved.reviewSettlementPoints) || 0);
+  state.reviewSettlementAnimated = Boolean(saved.reviewSettlementAnimated);
+  state.reviewRestoreBanner = "已恢复上次未完成的默写，请继续。";
+  state.reviewDraftActive = Boolean(saved.reviewDraftActive);
+  state.reviewSessionSnapshot =
+    saved.reviewSessionSnapshot && typeof saved.reviewSessionSnapshot === "object" ? cloneSerializable(saved.reviewSessionSnapshot, null) : null;
+  state.pendingSubmissionPayloads = Array.isArray(saved.pendingSubmissionPayloads) ? saved.pendingSubmissionPayloads : [];
+  if (state.reviewDraftActive && state.reviewSessionSnapshot) {
+    state.progress = cloneSerializable(state.reviewSessionSnapshot.progress || {}, {});
+    state.wrongBook = cloneSerializable(state.reviewSessionSnapshot.wrongBook || [], []);
+    state.rewards = cloneSerializable(state.reviewSessionSnapshot.rewards || state.rewards, state.rewards);
+    state.pendingSubmissionPayloads.forEach((payload) => applyQueuedSubmissionEffects(payload));
+  }
+  setReviewFlowState(restoredFlow);
+  state.reviewMessage = saved.reviewMessage ? String(saved.reviewMessage) : "已恢复上次未完成的默写，请继续。";
+  rebuildWrongQueue();
+  refreshStats();
+  refreshRewards();
+  initReviewSettings();
+  persistReviewRecoveryState();
+  return true;
+}
+
 function beginReviewDraftSession() {
   state.reviewDraftActive = true;
   state.reviewSessionSnapshot = {
@@ -1328,6 +1489,7 @@ function beginReviewDraftSession() {
     rewards: JSON.parse(JSON.stringify(state.rewards || {}))
   };
   state.pendingSubmissionPayloads = [];
+  persistReviewRecoveryState();
 }
 
 function rollbackReviewDraftSession() {
@@ -1343,12 +1505,14 @@ function rollbackReviewDraftSession() {
   refreshRewards();
   renderAdminPanel();
   renderUserRecords();
+  clearReviewRecoveryState();
 }
 
 function endReviewDraftSession() {
   state.reviewDraftActive = false;
   state.reviewSessionSnapshot = null;
   state.pendingSubmissionPayloads = [];
+  clearReviewRecoveryState();
 }
 
 function refreshReviewDraftSnapshotToCurrent() {
@@ -1358,6 +1522,7 @@ function refreshReviewDraftSnapshotToCurrent() {
     wrongBook: JSON.parse(JSON.stringify(state.wrongBook || [])),
     rewards: JSON.parse(JSON.stringify(state.rewards || {}))
   };
+  persistReviewRecoveryState();
 }
 
 async function postSubmissionPayload(payload) {
@@ -1373,6 +1538,7 @@ function queueSubmissionPayload(payload) {
   if (!state.reviewDraftActive) beginReviewDraftSession();
   console.log("pending submission payload", payload);
   state.pendingSubmissionPayloads.push(payload);
+  persistReviewRecoveryState();
   return Promise.resolve({ ok: true, queued: true });
 }
 
@@ -2636,7 +2802,9 @@ async function setAuthState(username, role, token, profile = {}) {
   else if (manager) switchTab("admin-wrong");
   else switchTab("learn");
   await loadUserData();
+  const restoredReview = restoreReviewRecoveryState();
   renderReviewCard();
+  if (restoredReview) switchTab("review");
   warmHiddenTabs();
 }
 
@@ -2687,6 +2855,7 @@ async function logout() {
   state.adminWrongBookItems = [];
   state.adminUsers = [];
   clearSession();
+  clearReviewRecoveryState();
   statsText.classList.remove("hidden");
   rewardText.classList.remove("hidden");
   appShell.classList.add("hidden");
@@ -3339,6 +3508,7 @@ function renderReviewButtons() {
 
 function finishReviewSession(isWrongBookSinglePractice) {
   resetReviewRetryState();
+  state.reviewRestoreBanner = "";
   const sessionPoints = Math.max(0, Number(state.reviewSessionPointsEarned) || 0);
   state.reviewSessionPointsEarned = 0;
   state.reviewSessionFinishedAt = Date.now();
@@ -4121,6 +4291,7 @@ function startReviewSession(source, emptyMessage) {
   clearAdvanceTimer();
   stopReviewPreviewSequence();
   resetReviewRetryState();
+  state.reviewRestoreBanner = "";
   if (state.reviewDraftActive) rollbackReviewDraftSession();
   const filtered = buildReviewSessionList(source);
   state.reviewList = filtered;
@@ -4148,6 +4319,7 @@ function startDirectReviewSession(items, emptyMessage, options = {}) {
   clearAdvanceTimer();
   stopReviewPreviewSequence();
   resetReviewRetryState();
+  state.reviewRestoreBanner = "";
   if (state.reviewDraftActive) rollbackReviewDraftSession();
   const unique = [];
   const seen = new Set();
@@ -4174,6 +4346,7 @@ function cancelReviewSessionWithoutSave() {
   clearAdvanceTimer();
   stopReviewPreviewSequence();
   resetReviewRetryState();
+  state.reviewRestoreBanner = "";
   rollbackReviewDraftSession();
   state.reviewActive = false;
   state.reviewList = [];
@@ -4189,6 +4362,10 @@ function cancelReviewSessionWithoutSave() {
 function renderReviewCard() {
   clearAdvanceTimer();
   const item = state.reviewActive ? currentReviewItem() : null;
+  if (reviewRestoreBanner) {
+    reviewRestoreBanner.textContent = state.reviewRestoreBanner || "";
+    reviewRestoreBanner.classList.toggle("hidden", !state.reviewRestoreBanner);
+  }
   renderReviewButtons();
   reviewBegin.title = state.reviewPreviewRunning
     ? "默写前预览进行中，当前不可点击开始。"
@@ -4235,6 +4412,7 @@ function renderReviewCard() {
     if (reviewStopBtn) reviewStopBtn.classList.add("hidden");
     wordAnswerRow.classList.add("hidden");
     syncIpadLandscapeReviewScale();
+    persistReviewRecoveryState();
     return;
   }
 
@@ -4255,6 +4433,7 @@ function renderReviewCard() {
   renderReviewButtons();
   syncIpadLandscapeReviewScale();
   if (!state.reviewAwaitingNext) speakPrompt(item);
+  persistReviewRecoveryState();
 }
 
 function finalizeReviewResult(item, isGood, accuracyPercent, meta = {}) {
@@ -4335,6 +4514,7 @@ function finalizeReviewResult(item, isGood, accuracyPercent, meta = {}) {
   }
   setReviewFlowState("reviewed");
   renderReviewButtons();
+  persistReviewRecoveryState();
 }
 
 function evaluateWordInput() {
@@ -5711,11 +5891,105 @@ function wireRecords() {
 }
 
 function wireBeforeUnloadGuard() {
-  window.addEventListener("beforeunload", (event) => {
+  const beforeUnloadHandler = (event) => {
+    if (state.allowBeforeUnloadPrompt) return;
+    persistReviewRecoveryState();
     event.preventDefault();
     // Modern browsers ignore custom text here and show a generic confirmation dialog.
-    event.returnValue = "";
+    event.returnValue = true;
+    return true;
+  };
+  window.addEventListener("beforeunload", beforeUnloadHandler);
+  window.onbeforeunload = beforeUnloadHandler;
+  window.addEventListener("pagehide", () => {
+    persistReviewRecoveryState();
   });
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "hidden") persistReviewRecoveryState();
+  });
+}
+
+function wirePullToRefreshGuard() {
+  const isTouchDevice =
+    ("ontouchstart" in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0) &&
+    typeof window.matchMedia === "function" &&
+    window.matchMedia("(pointer: coarse)").matches;
+  if (!isTouchDevice) return;
+
+  const getScrollTop = () => {
+    const scrollingElement = document.scrollingElement || document.documentElement || document.body;
+    return Math.max(0, Number((scrollingElement && scrollingElement.scrollTop) || window.scrollY || 0));
+  };
+
+  let startY = 0;
+  let startX = 0;
+  let armed = false;
+  let maxPullDistance = 0;
+  const triggerDistance = 72;
+  const activationEdge = 28;
+
+  const resetGesture = () => {
+    armed = false;
+    startY = 0;
+    startX = 0;
+    maxPullDistance = 0;
+  };
+
+  document.addEventListener(
+    "touchstart",
+    (event) => {
+      if (!event.touches || event.touches.length !== 1) {
+        resetGesture();
+        return;
+      }
+      startY = event.touches[0].clientY;
+      startX = event.touches[0].clientX;
+      armed = getScrollTop() <= 2 && startY <= activationEdge;
+      maxPullDistance = 0;
+    },
+    { passive: true, capture: true }
+  );
+
+  document.addEventListener(
+    "touchmove",
+    (event) => {
+      if (!armed || !event.touches || event.touches.length !== 1) return;
+      const touch = event.touches[0];
+      const deltaY = touch.clientY - startY;
+      const deltaX = Math.abs(touch.clientX - startX);
+      if (getScrollTop() > 0 || deltaY <= 0 || deltaX > deltaY) {
+        armed = false;
+        return;
+      }
+      maxPullDistance = Math.max(maxPullDistance, deltaY);
+      // Stop the browser from taking over with native pull-to-refresh.
+      event.preventDefault();
+    },
+    { passive: false, capture: true }
+  );
+
+  document.addEventListener(
+    "touchend",
+    () => {
+      if (armed && getScrollTop() <= 2 && maxPullDistance >= triggerDistance) {
+        const ok = window.confirm("确认刷新页面吗？");
+        if (ok) {
+          state.allowBeforeUnloadPrompt = true;
+          window.location.reload();
+        }
+      }
+      resetGesture();
+    },
+    { passive: true, capture: true }
+  );
+
+  document.addEventListener(
+    "touchcancel",
+    () => {
+      resetGesture();
+    },
+    { passive: true, capture: true }
+  );
 }
 
 function wireTabs() {
@@ -6375,6 +6649,7 @@ async function init() {
   wireWrongBook();
   wireRecords();
   wireBeforeUnloadGuard();
+  wirePullToRefreshGuard();
   wireAdmin();
   setupCanvas();
   scheduleRecognitionTierWarmup(300);

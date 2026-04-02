@@ -191,6 +191,7 @@ test("child user can navigate learn, write and review flows", async ({ page }) =
     await page.waitForTimeout(900);
     const feedback = await page.locator("#review-feedback").textContent();
     if (submissionResponses.length > 0) break;
+    if (String(feedback || "").includes("请先写完字")) continue;
     if (!String(feedback || "").includes("接近正确")) break;
   }
 
@@ -200,7 +201,7 @@ test("child user can navigate learn, write and review flows", async ({ page }) =
 
   await page.click("#records-tab");
   await expect(page.locator("#records-panel")).toHaveClass(/is-active/);
-  await expect(page.locator("#records-count")).toContainText("1 条");
+  await expect(page.locator("#records-count")).toContainText(`${childUsername} 的判定记录：1 条（近7天）`);
   await expect(page.locator("#records-list")).toContainText(String(selectedText || "").trim());
 
   await page.click("#user-menu-toggle");
@@ -217,7 +218,7 @@ test("child user can navigate learn, write and review flows", async ({ page }) =
   await expect(page.locator("#records-target-select")).toHaveValue(childUsername);
   await expect(page.locator("#records-report")).toContainText("报告对象");
   await expect(page.locator("#records-report")).toContainText("HSK 各级掌握度");
-  await expect(page.locator("#records-count")).toContainText(`${childUsername} 的记录：1 条`);
+  await expect(page.locator("#records-count")).toContainText(`${childUsername} 的判定记录：1 条（近7天）`);
 });
 
 test("wrong-book single practice is saved into records and parent review audit", async ({ page }) => {
@@ -268,6 +269,7 @@ test("wrong-book single practice is saved into records and parent review audit",
     await page.waitForTimeout(1200);
     if (submissionResponses.length > 0) break;
     const feedback = await page.locator("#review-feedback").textContent();
+    if (String(feedback || "").includes("请先写完字")) continue;
     if (!String(feedback || "").includes("接近正确")) break;
   }
 
@@ -277,7 +279,7 @@ test("wrong-book single practice is saved into records and parent review audit",
 
   await page.click("#records-tab");
   await expect(page.locator("#records-panel")).toHaveClass(/is-active/);
-  await expect(page.locator("#records-count")).toContainText("1 条");
+  await expect(page.locator("#records-count")).toContainText(`${childUsername} 的判定记录：1 条（近7天）`);
   await expect(page.locator("#records-list")).toContainText(charText);
 
   await page.click("#user-menu-toggle");
@@ -292,4 +294,81 @@ test("wrong-book single practice is saved into records and parent review audit",
   await expect(page.locator("#admin-count")).toContainText("记录：");
   await expect(page.locator("#admin-list")).toContainText(childUsername);
   await expect(page.locator("#admin-list")).toContainText(charText);
+});
+
+test("child review session recovers after page reload", async ({ page }) => {
+  const parentUsername = `parent_${Date.now()}`;
+  const childUsername = `child_${Date.now()}`;
+  const password = "study123";
+
+  await createUser({ username: parentUsername, password, role: "parent", linkedParentUsername: "" });
+  await createUser({ username: childUsername, password, role: "child", linkedParentUsername: parentUsername });
+
+  await page.goto(BASE_URL, { waitUntil: "networkidle" });
+  await page.fill("#auth-username", childUsername);
+  await page.fill("#auth-password", password);
+  await page.click("#auth-login");
+
+  await expect(page.locator("#app-shell")).toBeVisible();
+  await page.click('.tab[data-tab="review"]');
+  await expect(page.locator("#review-panel")).toHaveClass(/is-active/);
+  await page.click("#review-begin");
+  await page.waitForTimeout(900);
+
+  await expect.poll(async () => {
+    return page.evaluate(() => Boolean(localStorage.getItem("hsk_review_recovery_v1")));
+  }).toBeTruthy();
+
+  await page.reload({ waitUntil: "networkidle" });
+  await expect(page.locator("#review-panel")).toHaveClass(/is-active/);
+  await expect(page.locator("#review-restore-banner")).toContainText("已恢复上次未完成的默写");
+  await expect(page.locator("#review-card")).toBeVisible();
+  await expect(page.locator("#review-start")).toBeVisible();
+});
+
+test("child can continue reviewed item after page reload", async ({ page }) => {
+  const parentUsername = `parent_${Date.now()}`;
+  const childUsername = `child_${Date.now()}`;
+  const password = "study123";
+
+  await createUser({ username: parentUsername, password, role: "parent", linkedParentUsername: "" });
+  await createUser({ username: childUsername, password, role: "child", linkedParentUsername: parentUsername });
+
+  await page.goto(BASE_URL, { waitUntil: "networkidle" });
+  await page.fill("#auth-username", childUsername);
+  await page.fill("#auth-password", password);
+  await page.click("#auth-login");
+
+  await expect(page.locator("#app-shell")).toBeVisible();
+  await page.locator('#learn-char-list input[data-action="select-item"]').nth(0).check();
+  await page.locator('#learn-char-list input[data-action="select-item"]').nth(1).check();
+  await page.click("#learn-dictate-selected");
+  await expect(page.locator("#review-panel")).toHaveClass(/is-active/);
+  await expect(page.locator("#review-start")).toBeVisible();
+
+  for (let attempt = 0; attempt < 3; attempt += 1) {
+    await drawScribble(page, "#dictation-writer canvas");
+    await page.click("#review-start");
+    await page.waitForTimeout(1200);
+    const nextVisible = await page.locator("#review-next").isVisible();
+    if (nextVisible) break;
+    const feedback = await page.locator("#review-feedback").textContent();
+    if (!String(feedback || "").includes("接近正确")) break;
+  }
+
+  await expect(page.locator("#review-next")).toBeVisible();
+  await expect(page.locator("#review-next")).toBeEnabled();
+
+  await page.reload({ waitUntil: "networkidle" });
+
+  await expect(page.locator("#review-panel")).toHaveClass(/is-active/);
+  await expect(page.locator("#review-restore-banner")).toContainText("已恢复上次未完成的默写");
+  await expect(page.locator("#review-next")).toBeVisible();
+  await expect(page.locator("#review-next")).toBeEnabled();
+  await expect(page.locator("#review-start")).toBeDisabled();
+  await expect(page.locator("#review-reset")).toBeDisabled();
+
+  await page.click("#review-next");
+  await expect(page.locator("#review-start")).toBeEnabled();
+  await expect(page.locator("#review-reset")).toBeEnabled();
 });
