@@ -10,7 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;500;700&family=Outfit:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=20260401-records-chart" />
   </head>
   <body>
     <div class="bg-shape shape-a"></div>
@@ -322,10 +322,10 @@
                 <label>
                   默写字数
                   <select id="review-count-filter">
-                    <option value="1">1</option>
                     <option value="5">5</option>
                     <option value="10" selected>10</option>
                     <option value="20">20</option>
+                    <option value="50">50</option>
                     <option value="all">全部</option>
                   </select>
                 </label>
@@ -566,6 +566,9 @@
           <div id="records-stats" class="records-stats"></div>
         </article>
         <article class="card">
+          <div id="records-daily-chart"></div>
+        </article>
+        <article class="card">
           <div id="records-list"></div>
         </article>
       </section>
@@ -576,8 +579,8 @@
     </main>
 
     <script src="https://unpkg.com/hanzi-writer@3.7/dist/hanzi-writer.min.js"></script>
-    <script src="review-state.js"></script>
-    <script src="recognition-core.js"></script>
-    <script src="app.js"></script>
+    <script src="review-state.js?v=20260401-records-chart"></script>
+    <script src="recognition-core.js?v=20260401-records-chart"></script>
+    <script src="app.js?v=20260401-records-chart"></script>
   </body>
 </html>

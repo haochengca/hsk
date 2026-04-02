@@ -438,6 +438,7 @@ const state = {
   reviewSettlementAnimated: false,
   reviewMessage: "请选择默写类型、等级和字数，然后点击“开始默写”。",
   recordsReportUser: "",
+  recordsChartDays: 14,
   progress: {},
   wrongBook: [],
   wrongLevelFilter: "all",
@@ -615,6 +616,7 @@ const recordsReport = document.getElementById("records-report");
 const recordsCount = document.getElementById("records-count");
 const recordsList = document.getElementById("records-list");
 const recordsStats = document.getElementById("records-stats");
+const recordsDailyChart = document.getElementById("records-daily-chart");
 
 const learnTabBtn = document.querySelector('.tab[data-tab="learn"]');
 const writeTabBtn = document.querySelector('.tab[data-tab="write"]');
@@ -1102,10 +1104,12 @@ function loadReviewPrefs(username = state.auth.username) {
   const normalizeMixRatio = (value) => (allowedMixRatios.has(String(value)) ? String(value) : "30");
   const allowedPreview = new Set(["0", "all"]);
   const normalizePreview = (value) => (allowedPreview.has(String(value)) ? String(value) : "0");
+  const allowedReviewCounts = new Set(["5", "10", "20", "50", "all"]);
+  const normalizeReviewCount = (value) => (allowedReviewCounts.has(String(value)) ? String(value) : "10");
   return {
     reviewType: state.reviewType === "word" ? "word" : "char",
     reviewLevel: state.reviewLevel === "all" ? "all" : String(state.reviewLevel || "all"),
-    reviewCount: state.reviewCount === "all" ? "all" : String(state.reviewCount || "10"),
+    reviewCount: normalizeReviewCount(state.reviewCount),
     reviewWrongMixRatio: normalizeMixRatio(state.reviewWrongMixRatio),
     reviewPreviewMode: normalizePreview(state.reviewPreviewMode)
   };
@@ -1121,6 +1125,11 @@ function normalizeAccuracyPercent(value) {
   let num = Number(value);
   if (num >= 0 && num <= 1) num *= 100;
   return Math.max(0, Math.min(100, Math.round(num)));
+}
+
+function normalizeReviewCount(value) {
+  const allowedReviewCounts = new Set(["5", "10", "20", "50", "all"]);
+  return allowedReviewCounts.has(String(value)) ? String(value) : "10";
 }
 
 function normalizeJudgeDetail(detail) {
@@ -1685,7 +1694,7 @@ async function loadUserData() {
   state.learnType = "char";
   state.reviewType = prefs.reviewType === "word" ? "word" : "char";
   state.reviewLevel = prefs.reviewLevel === "all" ? "all" : String(prefs.reviewLevel || "all");
-  state.reviewCount = prefs.reviewCount === "all" ? "all" : String(prefs.reviewCount || "10");
+  state.reviewCount = normalizeReviewCount(prefs.reviewCount);
   state.reviewWrongMixRatio = String(prefs.reviewWrongMixRatio || "30");
   state.reviewPreviewMode = String(prefs.reviewPreviewMode || "0");
   const recordTargets = getRecordsTargetOptions();
@@ -2244,6 +2253,113 @@ function escapeHtmlAttr(value) {
     .replace(/>/g, "&gt;");
 }
 
+function formatLocalDateKey(timestamp) {
+  const date = new Date(Number(timestamp) || Date.now());
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+}
+
+function formatMonthDayLabel(dateKey) {
+  const [year, month, day] = String(dateKey || "").split("-");
+  if (!year || !month || !day) return dateKey || "-";
+  return `${month}-${day}`;
+}
+
+function buildDailyPracticeSeries(rows, days = 14) {
+  const safeDays = Math.max(1, Number(days) || 14);
+  const now = new Date();
+  now.setHours(0, 0, 0, 0);
+  const buckets = [];
+  const map = new Map();
+
+  for (let index = safeDays - 1; index >= 0; index -= 1) {
+    const date = new Date(now);
+    date.setDate(now.getDate() - index);
+    const key = formatLocalDateKey(date.getTime());
+    const bucket = { dateKey: key, total: 0, correct: 0, wrong: 0 };
+    buckets.push(bucket);
+    map.set(key, bucket);
+  }
+
+  rows.forEach((row) => {
+    const key = formatLocalDateKey(row && row.createdAt);
+    const bucket = map.get(key);
+    if (!bucket) return;
+    bucket.total += 1;
+    if (row.finalResult) bucket.correct += 1;
+    else bucket.wrong += 1;
+  });
+
+  return buckets.map((bucket) => ({
+    ...bucket,
+    accuracy: bucket.total > 0 ? Math.round((bucket.correct / bucket.total) * 100) : 0
+  }));
+}
+
+function renderDailyPracticeChart(rows) {
+  if (!recordsDailyChart) return;
+  const days = [7, 14, 30].includes(Number(state.recordsChartDays)) ? Number(state.recordsChartDays) : 14;
+  const series = buildDailyPracticeSeries(rows, days);
+  const activeDays = series.filter((item) => item.total > 0).length;
+  const totalAttempts = series.reduce((sum, item) => sum + item.total, 0);
+  const maxCount = Math.max(1, ...series.map((item) => item.total));
+  const dayButtons = [7, 14, 30]
+    .map(
+      (value) =>
+        `<button type="button" class="ghost records-chart-range-btn${value === days ? " is-active" : ""}" data-range="${value}">${value}天</button>`
+    )
+    .join("");
+
+  if (totalAttempts === 0) {
+    recordsDailyChart.innerHTML = `
+      <div class="records-chart-head">
+        <div>
+          <h3>每日练习图表</h3>
+          <p>最近 ${days} 天还没有练习数据。</p>
+        </div>
+        <div class="records-chart-range" role="group" aria-label="练习图表时间范围">${dayButtons}</div>
+      </div>
+      <p class="records-chart-empty">开始练习后，这里会按天显示练习次数和正确率。</p>
+    `;
+    return;
+  }
+
+  recordsDailyChart.innerHTML = `
+    <div class="records-chart-head">
+      <div>
+        <h3>每日练习图表</h3>
+        <p>最近 ${days} 天共练习 ${totalAttempts} 次，有记录的天数 ${activeDays} 天。</p>
+      </div>
+      <div class="records-chart-head-side">
+        <div class="records-chart-range" role="group" aria-label="练习图表时间范围">${dayButtons}</div>
+        <div class="records-chart-legend">
+          <span><i class="records-chart-dot is-total"></i>练习次数</span>
+          <span><i class="records-chart-dot is-accuracy"></i>正确率</span>
+        </div>
+      </div>
+    </div>
+    <div class="records-chart-bars" style="--records-chart-cols:${series.length}">
+      ${series
+        .map((item) => {
+          const height = `${Math.max(item.total > 0 ? 14 : 4, (item.total / maxCount) * 100)}%`;
+          const accuracyText = item.total > 0 ? `${item.accuracy}%` : "-";
+          const summary = `${item.dateKey}：练习 ${item.total} 次，正确 ${item.correct} 次，错误 ${item.wrong} 次，正确率 ${accuracyText}`;
+          return `<div class="records-chart-col" title="${escapeHtmlAttr(summary)}" aria-label="${escapeHtmlAttr(summary)}">
+            <p class="records-chart-value">${item.total}</p>
+            <div class="records-chart-bar-wrap">
+              <div class="records-chart-bar" style="height:${height}"></div>
+            </div>
+            <p class="records-chart-accuracy">${accuracyText}</p>
+            <p class="records-chart-date">${formatMonthDayLabel(item.dateKey)}</p>
+          </div>`;
+        })
+        .join("")}
+    </div>
+  `;
+}
+
 function renderAdminItemsPanel() {
   if (!adminItemsList || !adminItemsCount) return;
   if (state.auth.role !== "admin") {
@@ -2340,6 +2456,7 @@ function renderUserRecords() {
     if (recordsTargetRow) recordsTargetRow.classList.add("hidden");
     if (recordsReport) recordsReport.innerHTML = "<p>仅父母或孩子可查看学习报告。</p>";
     recordsStats.innerHTML = "<p>仅父母或孩子可查看自己的统计。</p>";
+    if (recordsDailyChart) recordsDailyChart.innerHTML = "<p>仅父母或孩子可查看每日练习图表。</p>";
     recordsList.innerHTML = "<p>仅父母或孩子可查看自己的记录。</p>";
     return;
   }
@@ -2355,6 +2472,7 @@ function renderUserRecords() {
     recordsCount.textContent = "记录：0 条";
     if (recordsReport) recordsReport.innerHTML = "<p>当前父母账号还没有关联孩子，暂时无法生成学习报告。</p>";
     recordsStats.innerHTML = "<p>关联孩子后可查看周报/月报。</p>";
+    if (recordsDailyChart) recordsDailyChart.innerHTML = "<p>关联孩子后可查看每日练习图表。</p>";
     recordsList.innerHTML = "<p>暂无可展示记录。</p>";
     return;
   }
@@ -2363,6 +2481,7 @@ function renderUserRecords() {
     .sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
   renderRecordsReport(targetUsername, rows);
   renderUserRecordStats(rows);
+  renderDailyPracticeChart(rows);
   recordsCount.textContent = `${targetUsername} 的记录：${rows.length} 条`;
   if (rows.length === 0) {
     recordsList.innerHTML = `<p>${escapeHtmlAttr(targetUsername)} 还没有默写记录。</p>`;
@@ -5509,6 +5628,17 @@ function wireRecords() {
   if (recordsTargetSelect) {
     recordsTargetSelect.addEventListener("change", (event) => {
       state.recordsReportUser = event.target.value || "";
+      renderUserRecords();
+    });
+  }
+  if (recordsDailyChart) {
+    recordsDailyChart.addEventListener("click", (event) => {
+      const button = event.target && event.target.closest ? event.target.closest("[data-range]") : null;
+      if (!button) return;
+      const nextDays = Number(button.getAttribute("data-range"));
+      if (![7, 14, 30].includes(nextDays)) return;
+      if (state.recordsChartDays === nextDays) return;
+      state.recordsChartDays = nextDays;
       renderUserRecords();
     });
   }
