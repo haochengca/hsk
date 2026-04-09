@@ -1113,8 +1113,6 @@ function loadRewards(username = state.auth.username) {
 function loadReviewPrefs(username = state.auth.username) {
   const allowedMixRatios = new Set(["0", "10", "20", "30", "40", "50", "70", "100"]);
   const normalizeMixRatio = (value) => (allowedMixRatios.has(String(value)) ? String(value) : "30");
-  const allowedPreview = new Set(["0", "all"]);
-  const normalizePreview = (value) => (allowedPreview.has(String(value)) ? String(value) : "0");
   const allowedReviewCounts = new Set(["5", "10", "20", "50", "all"]);
   const normalizeReviewCount = (value) => (allowedReviewCounts.has(String(value)) ? String(value) : "10");
   return {
@@ -1122,7 +1120,7 @@ function loadReviewPrefs(username = state.auth.username) {
     reviewLevel: state.reviewLevel === "all" ? "all" : String(state.reviewLevel || "all"),
     reviewCount: normalizeReviewCount(state.reviewCount),
     reviewWrongMixRatio: normalizeMixRatio(state.reviewWrongMixRatio),
-    reviewPreviewMode: normalizePreview(state.reviewPreviewMode)
+    reviewPreviewMode: "0"
   };
 }
 
@@ -1433,7 +1431,7 @@ function restoreReviewRecoveryState() {
   state.reviewLevel = saved.reviewLevel === "all" ? "all" : String(saved.reviewLevel || "all");
   state.reviewCount = normalizeReviewCount(saved.reviewCount);
   state.reviewWrongMixRatio = String(saved.reviewWrongMixRatio || "30");
-  state.reviewPreviewMode = String(saved.reviewPreviewMode || "0");
+  state.reviewPreviewMode = "0";
   state.reviewSessionSource = saved.reviewSessionSource ? String(saved.reviewSessionSource) : "normal";
   state.reviewList = list;
   state.reviewIndex = Math.max(0, Math.min(list.length - 1, Number(saved.reviewIndex) || 0));
@@ -1577,7 +1575,7 @@ async function syncUserDataToServer() {
           reviewLevel: state.reviewLevel,
           reviewCount: state.reviewCount,
           reviewWrongMixRatio: state.reviewWrongMixRatio,
-          reviewPreviewMode: state.reviewPreviewMode
+          reviewPreviewMode: "0"
         }
       })
     });
@@ -1869,7 +1867,7 @@ async function loadUserData() {
   state.reviewLevel = prefs.reviewLevel === "all" ? "all" : String(prefs.reviewLevel || "all");
   state.reviewCount = normalizeReviewCount(prefs.reviewCount);
   state.reviewWrongMixRatio = String(prefs.reviewWrongMixRatio || "30");
-  state.reviewPreviewMode = String(prefs.reviewPreviewMode || "0");
+  state.reviewPreviewMode = "0";
   const recordTargets = getRecordsTargetOptions();
   state.recordsReportUser = recordTargets.length ? recordTargets[0].username : "";
   rebuildWrongQueue();
@@ -4225,7 +4223,7 @@ async function runPreReviewPreviewAndStart() {
     renderReviewCard();
     return;
   }
-  const enablePreview = state.reviewPreviewMode === "all";
+  const enablePreview = false;
   if (!enablePreview) {
     state.reviewPreviewRunning = false;
     resetPreviewTimerUi();
@@ -4301,7 +4299,7 @@ function startReviewSession(source, emptyMessage) {
   state.reviewSessionPointsEarned = 0;
   setReviewFlowState(filtered.length > 0 ? "preview" : "idle");
   resetReviewSessionStats();
-  state.reviewMessage = filtered.length > 0 ? "默写前预览中..." : emptyMessage;
+  state.reviewMessage = filtered.length > 0 ? "默写已开始，请听读音后书写。" : emptyMessage;
   if (filtered.length > 0) beginReviewDraftSession();
   runPreReviewPreviewAndStart();
   scrollReviewCardToTopIfNeeded();
@@ -4337,7 +4335,7 @@ function startDirectReviewSession(items, emptyMessage, options = {}) {
   state.reviewSessionPointsEarned = 0;
   setReviewFlowState(unique.length > 0 ? "preview" : "idle");
   resetReviewSessionStats(options.initialStats || {});
-  state.reviewMessage = unique.length > 0 ? "默写前预览中..." : emptyMessage;
+  state.reviewMessage = unique.length > 0 ? "默写已开始，请听读音后书写。" : emptyMessage;
   if (unique.length > 0 && options.useDraftSession !== false) beginReviewDraftSession();
   runPreReviewPreviewAndStart();
 }
@@ -5776,22 +5774,7 @@ function wireReview() {
     renderReviewCard();
   });
 
-  if (reviewPreviewFilter) {
-    reviewPreviewFilter.addEventListener("change", (event) => {
-      if (state.reviewDraftActive) rollbackReviewDraftSession();
-      state.reviewPreviewMode = event.target.value || "0";
-      saveReviewPrefs();
-      state.reviewActive = false;
-      state.reviewList = [];
-      state.reviewIndex = 0;
-      state.reviewAwaitingNext = false;
-      state.reviewLastResult = null;
-      state.reviewLastJudgeDisplay = { feedback: "", answer: "" };
-      setReviewFlowState("idle");
-      state.reviewMessage = "设置已更新，请点击“开始默写”。";
-      renderReviewCard();
-    });
-  }
+  state.reviewPreviewMode = "0";
 }
 
 function wireWrongBook() {
